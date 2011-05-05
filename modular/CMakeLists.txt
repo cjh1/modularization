@@ -1,0 +1,605 @@
+cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+
+project(VTK)
+
+set(VTK_CMAKE_DIR "${VTK_SOURCE_DIR}/CMake")
+set(CMAKE_MODULE_PATH ${VTK_CMAKE_DIR} ${CMAKE_MODULE_PATH})
+
+# Set a default build type if none was specified
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  message(STATUS "Setting build type to 'Debug' as none was specified.")
+  set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build." FORCE)
+  # Set the possible values of build type for cmake-gui
+  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release"
+    "MinSizeRel" "RelWithDebInfo")
+endif()
+
+# Set up our directory structure for output libraries and binaries
+if(NOT CMAKE_RUNTIME_OUTPUT_DIRECTORY)
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${VTK_BINARY_DIR}/bin"
+    CACHE PATH "Runtime output directory")
+endif()
+if(NOT CMAKE_LIBRARY_OUTPUT_DIRECTORY)
+  if(UNIX)
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${VTK_BINARY_DIR}/lib"
+      CACHE PATH "Library output directory")
+  else()
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${VTK_BINARY_DIR}/bin"
+      CACHE PATH "Library output directory")
+  endif()
+endif()
+if(NOT CMAKE_ARCHIVE_OUTPUT_DIRECTORY)
+  set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${VTK_BINARY_DIR}/lib)
+endif()
+
+#-----------------------------------------------------------------------------
+# VTK version number.  An even minor number corresponds to releases.
+set(VTK_MAJOR_VERSION 5)
+set(VTK_MINOR_VERSION 9)
+set(VTK_BUILD_VERSION 9)
+set(VTK_VERSION
+    "${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}.${VTK_BUILD_VERSION}")
+
+# Append the library version information to the library target
+# properties.  A parent project may set its own properties and/or may
+# block this.
+if(NOT VTK_NO_LIBRARY_VERSION)
+  set(VTK_LIBRARY_PROPERTIES ${VTK_LIBRARY_PROPERTIES}
+    VERSION "${VTK_VERSION}"
+    SOVERSION "${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}"
+    )
+endif()
+
+#-----------------------------------------------------------------------------
+# Choose static or shared libraries.
+include(vtkSelectSharedLibraries)
+
+#-----------------------------------------------------------------------------
+# Select a streams library.
+
+include(vtkSelectStreamsLibrary)
+VTK_SELECT_STREAMS_LIBRARY(VTK_USE_ANSI_STDLIB ${VTK_SOURCE_DIR})
+# Check the severity of EOF bugs in the streams library.
+# this must be after the test for the long types
+include(vtkTestStreamsLibrary)
+
+if(VTK_USE_RENDERING AND WIN32)
+  # Check for vfw32 support
+  include(vtkTestVideoForWindows)
+endif()
+
+#-----------------------------------------------------------------------------
+# Configure KWSys to be named "vtksys".
+set(KWSYS_NAMESPACE vtksys)
+set(KWSYS_USE_Base64 1)
+set(KWSYS_USE_CommandLineArguments 1)
+set(KWSYS_USE_DynamicLoader 1)
+set(KWSYS_USE_Process 1)
+set(KWSYS_USE_RegularExpression 1)
+set(KWSYS_USE_SystemTools 1)
+set(KWSYS_USE_SystemInformation 1)
+set(KWSYS_USE_FundamentalType 1)
+set(KWSYS_USE_MD5 1)
+set(KWSYS_USE_Glob 1)
+set(KWSYS_USE_DateStamp 1)
+set(KWSYS_HEADER_ROOT ${VTK_BINARY_DIR}/Utilities)
+set(KWSYS_PROPERTIES_CXX ${VTK_LIBRARY_PROPERTIES})
+set(KWSYS_INSTALL_EXPORT_NAME ${VTK_INSTALL_EXPORT_NAME})
+
+if(NOT VTK_USE_ANSI_STDLIB)
+  set(KWSYS_IOS_FORCE_OLD 1)
+endif()
+
+if(NOT VTK_INSTALL_NO_LIBRARIES)
+  set(KWSYS_LIBRARY_INSTALL_DIR ${VTK_INSTALL_LIB_DIR})
+  set(KWSYS_INSTALL_BIN_DIR ${VTK_INSTALL_BIN_DIR_CM24})
+  set(KWSYS_INSTALL_LIB_DIR ${VTK_INSTALL_LIB_DIR_CM24})
+  set(KWSYS_INSTALL_COMPONENT_NAME_RUNTIME RuntimeLibraries)
+endif()
+if(NOT VTK_INSTALL_NO_DEVELOPMENT)
+  set(KWSYS_INSTALL_INCLUDE_DIR ${VTK_INSTALL_INCLUDE_DIR_CM24})
+  set(KWSYS_INSTALL_COMPONENT_NAME_DEVELOPMENT Development)
+endif()
+
+#add_subdirectory(Utilities)
+
+#-----------------------------------------------------------------------------
+# Load some macros.
+INCLUDE(vtkDependentOption)
+INCLUDE(vtkThirdParty)
+INCLUDE(vtkExportKit)
+INCLUDE(vtkMakeInstantiator)
+
+#-----------------------------------------------------------------------------
+# Choose static or shared libraries.
+INCLUDE(vtkSelectSharedLibraries)
+
+#-----------------------------------------------------------------------------
+# Does VTK require support for 64 bit file systems
+INCLUDE(CheckCXXSourceRuns)
+FILE(READ "${VTK_CMAKE_DIR}/vtkRequireLargeFilesSupport.cxx"
+  VTK_REQUIRE_LARGE_FILE_SUPPORT_FILE)
+CHECK_CXX_SOURCE_RUNS("${VTK_REQUIRE_LARGE_FILE_SUPPORT_FILE}"
+  CMAKE_REQUIRE_LARGE_FILE_SUPPORT "Support for 64 bit file systems")
+SET(VTK_REQUIRE_LARGE_FILE_SUPPORT ${CMAKE_REQUIRE_LARGE_FILE_SUPPORT})
+
+#-----------------------------------------------------------------------------
+# Does the const_reverse_iterator have the comparison operators? Before GCC
+# 4.1 they were not present.
+INCLUDE(CheckCXXSourceCompiles)
+SET(VTK_CONST_REVERSE_ITERATOR_COMPARISON_FILE
+"#include <vector>
+int main()
+{
+  std::vector<int> test;
+  std::vector<int>::const_reverse_iterator it = test.rbegin();
+  it != test.rend();
+  return 0;
+}")
+CHECK_CXX_SOURCE_COMPILES("${VTK_CONST_REVERSE_ITERATOR_COMPARISON_FILE}"
+  VTK_CONST_REVERSE_ITERATOR_COMPARISON)
+
+
+#-----------------------------------------------------------------------------
+# VTK requires special compiler flags on some platforms.
+INCLUDE(vtkDetermineCompilerFlags)
+
+# Tell VTK source files they are being built inside VTK.
+ADD_DEFINITIONS(-DVTK_IN_VTK)
+
+#-----------------------------------------------------------------------------
+# Platform configuration tests.
+INCLUDE(CMakeBackwardCompatibilityC)
+INCLUDE(TestForANSIStreamHeaders)
+INCLUDE(TestForSTDNamespace)
+INCLUDE(TestForANSIForScope)
+INCLUDE(CheckTypeSize)
+
+# Simulate old CMakeBackwardCompatibilityCXX test.
+INCLUDE(TestForSSTREAM)
+
+# Tests for various integer, bool and float types
+INCLUDE(vtkTestTypes)
+
+# Socket tests etc.
+#INCLUDE(Parallel/VTKParallelCMakeTests.cmake)
+
+# Check for full template specialization support by compiler.
+INCLUDE(vtkTestFullSpecialization)
+
+# Check for explicit template instantiation support by compiler.
+INCLUDE(vtkTestExplicitInstantiation)
+
+# Setup clean configuration of vtkConfigure.h and vtkToolkits.h.
+MACRO(VTK_PREPARE_CMAKEDEFINE not invar outvar)
+  IF(${not} ${invar})
+    SET(${outvar} 1)
+  ELSE(${not} ${invar})
+    SET(${outvar})
+  ENDIF(${not} ${invar})
+ENDMACRO(VTK_PREPARE_CMAKEDEFINE)
+
+VTK_PREPARE_CMAKEDEFINE("" CMAKE_WORDS_BIGENDIAN VTK_WORDS_BIGENDIAN)
+VTK_PREPARE_CMAKEDEFINE("" CMAKE_USE_PTHREADS VTK_USE_PTHREADS)
+VTK_PREPARE_CMAKEDEFINE("" CMAKE_USE_SPROC VTK_USE_SPROC)
+VTK_PREPARE_CMAKEDEFINE("" CMAKE_HP_PTHREADS VTK_HP_PTHREADS)
+VTK_PREPARE_CMAKEDEFINE("" CMAKE_USE_WIN32_THREADS VTK_USE_WIN32_THREADS)
+VTK_PREPARE_CMAKEDEFINE("" CMAKE_NO_ANSI_STRING_STREAM VTK_NO_ANSI_STRING_STREAM)
+VTK_PREPARE_CMAKEDEFINE("" CMAKE_NO_STD_NAMESPACE VTK_NO_STD_NAMESPACE)
+VTK_PREPARE_CMAKEDEFINE(NOT CMAKE_ANSI_FOR_SCOPE VTK_NO_FOR_SCOPE)
+VTK_PREPARE_CMAKEDEFINE(NOT VTK_EXPLICIT_TEMPLATES
+                  VTK_NO_EXPLICIT_TEMPLATE_INSTANTIATION)
+VTK_PREPARE_CMAKEDEFINE(NOT VTK_COMPILER_HAS_FULL_SPECIALIZATION
+                        VTK_NO_FULL_TEMPLATE_SPECIALIZATION)
+
+#-----------------------------------------------------------------------------
+# Include file dependency tracking regular expression.
+SET(VTK_REGEX "vtk[^.]*\\.([^t]|t[^x]|tx[^x]|cxx|hxx)")
+IF(VTK_NO_EXPLICIT_TEMPLATE_INSTANTIATION)
+  # Track all .txx file dependencies.
+  SET(VTK_REGEX_TXX "vtk[^.]*\\.txx")
+ELSE(VTK_NO_EXPLICIT_TEMPLATE_INSTANTIATION)
+  # Track all .txx file dependencies except *Implicit.txx files.
+  SET(VTK_REGEX_TXX "vtk[^.]*([^t]|[^i]t|[^c]it|[^i]cit|[^l]icit|[^p]licit|[^m]plicit|[^I]mplicit)\\.txx")
+ENDIF(VTK_NO_EXPLICIT_TEMPLATE_INSTANTIATION)
+INCLUDE_REGULAR_EXPRESSION("(^|/)((lex|png|j|z|t|D|Q|verdict).*|${VTK_REGEX}|${VTK_REGEX_TXX})$")
+#-----------------------------------------------------------------------------
+# Dispatch the build into the proper subdirectories.
+
+
+SET(VTK_HAS_EXODUS 1)
+
+#-----------------------------------------------------------------------------
+# Provide a few configuration options.
+OPTION(BUILD_EXAMPLES "Build VTK examples." OFF)
+
+IF("${CMAKE_SIZEOF_VOID_P}" GREATER 4)
+ SET(VTK_USE_64BIT_IDS_DEFAULT ON)
+ELSE("${CMAKE_SIZEOF_VOID_P}" GREATER 4)
+ SET(VTK_USE_64BIT_IDS_DEFAULT OFF)
+ENDIF("${CMAKE_SIZEOF_VOID_P}" GREATER 4)
+OPTION(VTK_USE_64BIT_IDS "Build VTK with 64 bit ids"
+      ${VTK_USE_64BIT_IDS_DEFAULT})
+
+OPTION(VTK_DEBUG_LEAKS "Build leak checking support into VTK." OFF)
+MARK_AS_ADVANCED(VTK_DEBUG_LEAKS VTK_USE_64BIT_IDS)
+
+OPTION(VTK_LEGACY_REMOVE "Remove all legacy code completely." ON)
+MARK_AS_ADVANCED(VTK_LEGACY_REMOVE VTK_LEGACY_SILENT)
+
+VTK_DEPENDENT_OPTION(VTK_USE_MANGLED_MESA "Use mangled Mesa with OpenGL." OFF
+                     "VTK_USE_RENDERING" OFF)
+VTK_DEPENDENT_OPTION(VTK_OPENGL_HAS_OSMESA
+                     "The opengl library being used supports off screen Mesa calls." OFF
+                     "VTK_USE_RENDERING;UNIX" OFF)
+
+
+# Off-Screen MESA cannot be used with Mangled MESA.
+IF(VTK_OPENGL_HAS_OSMESA  AND  VTK_USE_MANGLED_MESA)
+  MESSAGE(FATAL_ERROR
+    "Off-Screen MESA cannot be used with Mangled MESA.  Turn off either "
+    "VTK_OPENGL_HAS_OSMESA or VTK_USE_MANGLED_MESA.")
+ENDIF(VTK_OPENGL_HAS_OSMESA  AND  VTK_USE_MANGLED_MESA)
+
+
+SET(VTK_CAN_DO_OFF_SCREEN)
+IF(VTK_USE_MANGLED_MESA OR VTK_OPENGL_HAS_OSMESA OR WIN32)
+  SET(VTK_CAN_DO_OFF_SCREEN 1)
+ENDIF(VTK_USE_MANGLED_MESA OR VTK_OPENGL_HAS_OSMESA OR WIN32)
+
+VTK_DEPENDENT_OPTION(VTK_USE_OFFSCREEN
+                     "Use off screen calls by default." OFF
+                     "VTK_CAN_DO_OFF_SCREEN" OFF)
+VTK_DEPENDENT_OPTION(VTK_USE_MPI
+                     "Use Message Passing Interface (MPI) library for parallel support." OFF
+                     "VTK_USE_PARALLEL" OFF)
+VTK_DEPENDENT_OPTION(VTK_USE_MATROX_IMAGING
+                     "Use Matrox Imaging Library for video input." OFF
+                     "VTK_USE_RENDERING;WIN32" OFF)
+VTK_DEPENDENT_OPTION(VTK_USE_GL2PS "Build VTK with gl2ps support." OFF
+                     "VTK_USE_RENDERING" ON)
+VTK_DEPENDENT_OPTION(VTK_USE_PARALLEL_BGL
+                     "Use the Parallel Boost Graph Library"
+                     OFF
+                     "VTK_USE_BOOST;VTK_USE_MPI;VTK_USE_PARALLEL;VTK_USE_64BIT_IDS"
+                     OFF)
+
+SET(VTK_CAN_USE_TK OFF)
+SET(VTK_USE_TK_DEFAULT ON)
+IF(VTK_WRAP_PYTHON OR VTK_WRAP_TCL)
+  IF(NOT VTK_DISABLE_TK_INIT)
+    SET(VTK_CAN_USE_TK ON)
+    IF(APPLE)
+      IF (OSX_SDK_VERSION)
+        IF (${OSX_SDK_VERSION} VERSION_LESS "10.6")
+          # Until OS X 10.6, building Tk with Cocoa was not possible
+          IF (VTK_USE_COCOA)
+            SET(VTK_CAN_USE_TK OFF)
+          ENDIF (VTK_USE_COCOA)
+        ELSE (${OSX_SDK_VERSION} VERSION_LESS "10.6")
+          # For OS X 10.6, the default system Tk is Cocoa, not Carbon
+          IF (VTK_USE_CARBON)
+            SET(VTK_USE_TK_DEFAULT OFF)
+          ENDIF (VTK_USE_CARBON)
+        ENDIF (${OSX_SDK_VERSION} VERSION_LESS "10.6")
+      ENDIF (OSX_SDK_VERSION)
+    ENDIF(APPLE)
+  ENDIF(NOT VTK_DISABLE_TK_INIT)
+ENDIF(VTK_WRAP_PYTHON OR VTK_WRAP_TCL)
+VTK_DEPENDENT_OPTION(VTK_USE_TK "Build VTK with Tk support"
+                     ${VTK_USE_TK_DEFAULT} "VTK_CAN_USE_TK" OFF)
+
+MARK_AS_ADVANCED(VTK_OPENGL_HAS_OSMESA
+                 VTK_USE_OFFSCREEN
+                 VTK_USE_TK
+                 VTK_USE_GL2PS
+                 VTK_USE_MANGLED_MESA
+                 VTK_USE_MATROX_IMAGING
+                 VTK_USE_MPI
+                 VTK_USE_PARALLEL_BGL)
+
+#-----------------------------------------------------------------------------
+# Provide options to use system versions of third-party libraries.
+VTK_THIRD_PARTY_OPTION(ZLIB zlib)
+VTK_THIRD_PARTY_OPTION(HDF5 hdf5)
+INCLUDE(vtkHDF5Library)
+IF(VTK_USE_GL2PS)
+VTK_THIRD_PARTY_OPTION(GL2PS gl2ps)
+ENDIF(VTK_USE_GL2PS)
+VTK_THIRD_PARTY_OPTION(JPEG jpeg)
+VTK_THIRD_PARTY_OPTION(PNG  png)
+VTK_THIRD_PARTY_OPTION(TIFF tiff)
+VTK_THIRD_PARTY_OPTION(EXPAT expat)
+VTK_THIRD_PARTY_OPTION(FREETYPE freetype)
+VTK_THIRD_PARTY_OPTION(LIBXML2 libxml2)
+VTK_THIRD_PARTY_OPTION(LIBPROJ4 proj4)
+if(VTK_USE_OGGTHEORA_ENCODER)
+  VTK_THIRD_PARTY_OPTION(OGGTHEORA oggtheora)
+endif(VTK_USE_OGGTHEORA_ENCODER)
+
+#-----------------------------------------------------------------------------
+# Configure OpenGL support.
+IF(VTK_USE_RENDERING)
+  # At the moment CMake's FindOpenGL considers OpenGL should be found
+  # in the framework version on OSX. This is a reasonable assumption for
+  # few people are going to use X. The module warns that if X is to be
+  # used, one has to set the libs and include dir manually, which is
+  # exactly what we are going to do below.
+  IF(APPLE AND VTK_USE_X)
+    FIND_PATH(OPENGL_INCLUDE_DIR GL/gl.h
+      /usr/X11R6/include)
+    FIND_PATH(OPENGL_xmesa_INCLUDE_DIR GL/xmesa.h
+      /usr/X11R6/include)
+    FIND_LIBRARY(OPENGL_gl_LIBRARY NAMES GL MesaGL
+      PATHS /usr/lib /usr/local/lib /usr/X11R6/lib)
+    FIND_LIBRARY(OPENGL_glu_LIBRARY NAMES GLU MesaGLU
+      PATHS ${OPENGL_gl_LIBRARY} /usr/lib /usr/local/lib /usr/X11R6/lib)
+  ENDIF(APPLE AND VTK_USE_X)
+  FIND_PACKAGE(OpenGL)
+
+  FIND_PACKAGE(DirectX QUIET)
+    if(DirectX_FOUND)
+      set(VTK_USE_DIRECTX 1)
+  endif(DirectX_FOUND)
+
+  find_package(ApplicationServices)
+  find_package(IOKit)
+  if(ApplicationServices_FOUND AND IOKit_FOUND)
+    set(VTK_USE_CORE_GRAPHICS 1)
+  endif(ApplicationServices_FOUND AND IOKit_FOUND)
+
+  if(VTK_USE_X)
+    option(VTK_USE_NVCONTROL "Use NVIDIAs X server extension NVCONTROL." OFF)
+     if(VTK_USE_NVCONTROL)
+       find_package(NVCtrlLib REQUIRED)
+     endif(VTK_USE_NVCONTROL)
+     mark_as_advanced(VTK_USE_NVCONTROL)
+  endif(VTK_USE_X)
+
+ENDIF(VTK_USE_RENDERING)
+
+VTK_PREPARE_CMAKEDEFINE("" OPENGL_LIBRARY VTK_USE_OPENGL_LIBRARY)
+
+IF(VTK_USE_MPI)
+  FIND_PACKAGE(MPI)
+ENDIF(VTK_USE_MPI)
+
+#-----------------------------------------------------------------------------
+# Configure MPI testing support.
+# FLAGS used and set for MPI testing
+# VTK_MPIRUN_EXE - full path to mpirun command
+# VTK_MPI_PRENUMPROC_FLAGS - flags used directly before the num. of procs flag
+# VTK_MPI_NUMPROC_FLAG - flag that is used to tell this mpirun how many procs to start
+# VTK_MPI_PREFLAGS - flags used directly before process to be run by mpirun
+# VTK_MPI_POSTFLAGS - flags used after all other flags by mpirun
+# So, tests will be run something like this:
+# ${VTK_MPIRUN_EXE} ${VTK_MPI_PRENUMPROC_FLAGS} ${VTK_MPI_NUMPROC_FLAG} 2 ${VTK_MPI_PREFLAGS} executable ${VTK_MPI_POSTFLAGS}
+#
+IF(VTK_USE_MPI)
+
+  # Use MPI variables defined in the CMake (2.8) FindMPI module.
+  IF(${MPIEXEC})
+    SET(VTK_MPIRUN_EXE CACHE FILEPATH ${MPIEXEC} FORCE)
+    SET(VTK_MPI_PRENUMPROC_FLAGS ${MPIEXEC_PREFLAGS} CACHE STRING "These flags will be directly before the number of processess flag (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)" FORCE)
+    IF(NOT ${MPI_NUMPROC_FLAG})
+      SET(VTK_MPI_NUMPROC_FLAG "-np" CACHE STRING "Flag used by mpi to specify the number of processes, the next option will be the number of processes. (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)" FORCE)
+    ELSE(NOT ${MPI_NUMPROC_FLAG})
+      SET(VTK_MPI_NUMPROC_FLAG ${MPIEXEC_NUMPROC_FLAG} CACHE STRING "Flag used by mpi to specify the number of processes, the next option will be the number of processes. (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)" FORCE)
+    ENDIF(NOT ${MPI_NUMPROC_FLAG})
+    SET(VTK_MPI_PREFLAGS ${MPIEXEC_PREFLAGS} CACHE STRING "These flags will be directly before the executable that is being run by VTK_MPIRUN_EXE. (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)" FORCE)
+    SET(VTK_MPI_POSTFLAGS ${MPIEXEC_POSTFLAGS} CACHE STRING "These flags will come after all flags given to MPIRun.(see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)" FORCE)
+    SET(VTK_MPI_MAX_NUMPROCS ${MPIEXEC_MAX_NUMPROCS} CACHE STRING "Maximum number of processors available to run parallel applications. (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)" FORCE)
+  ELSE(${MPIEXEC})
+  # set to the default hardcoded values. This else can probably be deleted when VTK requires CMake 2.8+.
+    FIND_PROGRAM(VTK_MPIRUN_EXE NAMES mpiexec mpirun lamexec PATHS "C:/Program Files/MPICH/mpd/bin")
+    SET(VTK_MPI_PRENUMPROC_FLAGS "" CACHE STRING "These flags will be directly before the number of processess flag (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)")
+    SET(VTK_MPI_NUMPROC_FLAG "-np" CACHE STRING "Flag used by mpi to specify the number of processes, the next option will be the number of processes. (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)")
+    SET(VTK_MPI_PREFLAGS "" CACHE STRING "These flags will be directly before the executable that is being run by VTK_MPIRUN_EXE. (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)")
+    SET(VTK_MPI_POSTFLAGS "" CACHE STRING "These flags will come after all flags given to MPIRun.(see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)")
+    SET(VTK_MPI_MAX_NUMPROCS "2" CACHE STRING "Maximum number of processors available to run parallel applications. (see ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt for more info.)")
+  ENDIF(${MPIEXEC})
+
+  MARK_AS_ADVANCED(
+    VTK_MPI_PRENUMPROC_FLAGS VTK_MPI_NUMPROC_FLAG VTK_MPIRUN_EXE VTK_MPI_PREFLAGS VTK_MPI_POSTFLAGS VTK_MPI_MAX_NUMPROCS)
+  SEPARATE_ARGUMENTS(VTK_MPI_PRENUMPROC_FLAGS)
+  SEPARATE_ARGUMENTS(VTK_MPI_PREFLAGS)
+  SEPARATE_ARGUMENTS(VTK_MPI_POSTFLAGS)
+ENDIF(VTK_USE_MPI)
+
+#-----------------------------------------------------------------------------
+# Create STL header wrappers to block warnings in the STL headers.
+FOREACH(header
+  algorithm
+  deque
+  exception
+  functional
+  iterator
+  limits
+  list
+  map
+  memory
+  new
+  numeric
+  queue
+  set
+  stack
+  stdexcept
+  string
+  utility
+  vector
+  )
+  SET(VTK_STL_HEADER "${header}")
+  CONFIGURE_FILE(${VTK_SOURCE_DIR}/Utilities/vtkstd.h.in
+                 ${VTK_BINARY_DIR}/vtkstd/${header} @ONLY IMMEDIATE)
+  IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+    INSTALL(FILES ${VTK_BINARY_DIR}/vtkstd/${header}
+      DESTINATION ${VTK_INSTALL_INCLUDE_DIR_CM24}/vtkstd
+      COMPONENT Development)
+  ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+ENDFOREACH(header)
+
+# Add the VTK binary dir to the include path to pick up the vtkConfigure.h
+include_directories(${VTK_BINARY_DIR} ${VTK_BINARY_DIR}/Utilities)
+
+include(vtkModular)
+
+#----------------------------------------------------------------------
+# Load the module DAG.
+set(VTK_MODULES_ALL)
+file(GLOB meta RELATIVE "${VTK_SOURCE_DIR}"
+   "${VTK_SOURCE_DIR}/*/*/module.cmake" # grouped modules
+  )
+foreach(f ${meta})
+  include(${VTK_SOURCE_DIR}/${f})
+  list(APPEND VTK_MODULES_ALL ${vtk-module})
+  get_filename_component(${vtk-module}_BASE ${f} PATH)
+  set(${vtk-module}_SOURCE_DIR ${VTK_SOURCE_DIR}/${${vtk-module}_BASE})
+  set(${vtk-module}_BINARY_DIR ${VTK_BINARY_DIR}/${${vtk-module}_BASE})
+  if(BUILD_TESTING AND EXISTS ${${vtk-module}_SOURCE_DIR}/Testing)
+    list(APPEND VTK_MODULES_ALL ${vtk-module-test})
+    set(${vtk-module-test}_SOURCE_DIR ${${vtk-module}_SOURCE_DIR}/Testing)
+    set(${vtk-module-test}_BINARY_DIR ${${vtk-module}_BINARY_DIR}/Testing)
+    set(${vtk-module-test}_IS_TEST 1)
+    set(${vtk-module}_TESTED_BY ${vtk-module-test})
+  endif()
+endforeach()
+
+message(STATUS "VTK Modules: ${VTK_MODULES_ALL}")
+
+# Provide an option for every module.
+if("$ENV{DASHBOARD_TEST_FROM_CTEST}" STREQUAL "")
+  # developer build
+  set(VTK_BUILD_ALL_MODULES_DEFAULT OFF)
+else()
+  # dashboard build
+  set(VTK_BUILD_ALL_MODULES_DEFAULT ON)
+endif()
+option(VTK_BUILD_ALL_MODULES "Request to build all modules"
+  ${VTK_BUILD_ALL_MODULES_DEFAULT})
+mark_as_advanced(VTK_BUILD_ALL_MODULES)
+
+foreach(vtk-module ${VTK_MODULES_ALL})
+  if(NOT ${vtk-module}_IS_TEST)
+    option(Module_${vtk-module} "Request building ${vtk-module}"
+      "${VTK_MODULE_${vtk-module}_DEFAULT}")
+    mark_as_advanced(Module_${vtk-module})
+  endif()
+endforeach()
+
+foreach(vtk-module ${VTK_MODULES_ALL})
+  if(Module_${vtk-module} OR VTK_BUILD_ALL_MODULES)
+    vtk_module_enable("${vtk-module}" "")
+  elseif(VTK_MODULE_${vtk-module}_REQUEST_BY)
+    vtk_module_enable("${vtk-module}" "${VTK_MODULE_${vtk-module}_REQUEST_BY}")
+  endif()
+endforeach()
+
+# Build final list of enabled modules.
+set(VTK_MODULES_ENABLED "")
+set(VTK_MODULES_DISABLED "")
+foreach(vtk-module ${VTK_MODULES_ALL})
+  if(${vtk-module}_ENABLED)
+    list(APPEND VTK_MODULES_ENABLED ${vtk-module})
+  else()
+    list(APPEND VTK_MODULES_DISABLED ${vtk-module})
+  endif()
+endforeach()
+list(SORT VTK_MODULES_ENABLED) # Deterministic order.
+list(SORT VTK_MODULES_DISABLED) # Deterministic order.
+
+message(STATUS "Enabled: ${VTK_MODULES_ENABLED}")
+message(STATUS "Disabled: ${VTK_MODULES_DISABLED}")
+
+# Order list to satisfy dependencies.
+include(CMake/TopologicalSort.cmake)
+topological_sort(VTK_MODULES_ENABLED VTK_MODULE_ _DEPENDS)
+
+# Report what will be built.
+foreach(vtk-module ${VTK_MODULES_ENABLED})
+  if(NOT ${vtk-module}_IS_TEST)
+    if(Module_${vtk-module})
+      set(_reason ", requested by Module_${vtk-module}")
+    elseif(VTK_BUILD_ALL_MODULES)
+      set(_reason ", requested by VTK_BUILD_ALL_MODULES")
+    else()
+      set(_reason ", needed by [${VTK_MODULE_${vtk-module}_NEEDED_BY}]")
+    endif()
+    message(STATUS "Enabled ${vtk-module}${_reason}.")
+  endif()
+endforeach()
+
+#-----------------------------------------------------------------------------
+# Write a Project.xml file to send the description of the submodules and
+# their dependencies up to CDash:
+
+set(main_project_name "VTKModular")
+
+if(VTK_GENERATE_PROJECT_XML)
+  set(filename "${VTK_BINARY_DIR}/${main_project_name}.Project.xml")
+
+  set(xml "<?xml version='1.0' encoding='UTF-8'?>\n")
+  set(xml "${xml}<Project name='${main_project_name}'>\n")
+  foreach(module ${VTK_MODULES_ENABLED})
+    set(xml "${xml}  <SubProject name='${module}'>\n")
+    set(deps "")
+    foreach(dep ${VTK_MODULE_${module}_DEPENDS})
+      set(xml "${xml}    <Dependency name='${dep}'/>\n")
+    endforeach()
+    set(xml "${xml}  </SubProject>\n")
+  endforeach()
+  set(xml "${xml}</Project>\n")
+
+  # Always write out "${filename}.in":
+  file(WRITE ${filename}.in "${xml}")
+
+  # Use configure_file so "${filename}" only changes when its content changes:
+  configure_file(${filename}.in ${filename} COPYONLY)
+endif()
+
+#-----------------------------------------------------------------------------
+# Write the list of enabled modules out for ctest scripts to use as an
+# in-order subproject list:
+
+if(VTK_GENERATE_SUBPROJECTS_CMAKE)
+  set(filename "${VTK_BINARY_DIR}/${main_project_name}.SubProjects.cmake")
+
+  set(s "# Generated by CMake, do not edit!\n")
+  set(s "${s}set(vtk_subprojects\n")
+  foreach(vtk-module ${VTK_MODULES_ENABLED})
+    if(NOT ${vtk-module}_IS_TEST)
+      set(s "${s}  \"${vtk-module}\"\n")
+    endif()
+  endforeach()
+  set(s "${s})\n")
+
+  # Always write out "${filename}.in":
+  file(WRITE ${filename}.in "${s}")
+
+  # Use configure_file so "${filename}" only changes when its content changes:
+ configure_file(${filename}.in ${filename} COPYONLY)
+endif()
+
+#-----------------------------------------------------------------------------
+if(NOT VTK_MODULES_ENABLED)
+  message(WARNING "No modules enabled!")
+  file(REMOVE "${VTK_BINARY_DIR}/VTKTargets.cmake")
+  return()
+endif()
+
+file(WRITE "${VTK_BINARY_DIR}/VTKTargets.cmake"
+  "# Generated by CMake, do not edit!")
+
+# Build all modules.
+foreach(vtk-module ${VTK_MODULES_ENABLED})
+  if(NOT ${vtk-module}_IS_TEST)
+    init_module_vars()
+  endif()
+  add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
+endforeach()
+foreach(vtk-module ${VTK_MODULES_ENABLED})
+  if(NOT ${vtk-module}_IS_TEST)
+    add_module_target()
+  endif()
+endforeach()
+
+#add_subdirectory(Common/Core)
