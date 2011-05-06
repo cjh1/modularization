@@ -64,6 +64,7 @@ VolumeRendering/Testing/: <ignore>
 VolumeRendering/CMakeLists.txt: <ignore>
 # Deprecated, not moved forward
 GUISupport/Qt/Chart/: <ignore>
+modular/: <ignore>
 
 [.]
 
