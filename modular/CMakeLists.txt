@@ -224,9 +224,6 @@ OPTION(VTK_USE_64BIT_IDS "Build VTK with 64 bit ids"
 OPTION(VTK_DEBUG_LEAKS "Build leak checking support into VTK." OFF)
 MARK_AS_ADVANCED(VTK_DEBUG_LEAKS VTK_USE_64BIT_IDS)
 
-OPTION(VTK_LEGACY_REMOVE "Remove all legacy code completely." ON)
-MARK_AS_ADVANCED(VTK_LEGACY_REMOVE VTK_LEGACY_SILENT)
-
 VTK_DEPENDENT_OPTION(VTK_USE_MANGLED_MESA "Use mangled Mesa with OpenGL." OFF
                      "VTK_USE_RENDERING" OFF)
 VTK_DEPENDENT_OPTION(VTK_OPENGL_HAS_OSMESA
@@ -449,12 +446,15 @@ set(VTK_MODULES_ALL)
 file(GLOB meta RELATIVE "${VTK_SOURCE_DIR}"
    "${VTK_SOURCE_DIR}/*/*/module.cmake" # grouped modules
   )
+message("About to assess all possibly modules...")
 foreach(f ${meta})
+  message("meta: ${meta}")
   include(${VTK_SOURCE_DIR}/${f})
   list(APPEND VTK_MODULES_ALL ${vtk-module})
   get_filename_component(${vtk-module}_BASE ${f} PATH)
   set(${vtk-module}_SOURCE_DIR ${VTK_SOURCE_DIR}/${${vtk-module}_BASE})
   set(${vtk-module}_BINARY_DIR ${VTK_BINARY_DIR}/${${vtk-module}_BASE})
+  message("${vtk-module}_SOURCE_DIR: ${${vtk-module}_SOURCE_DIR}")
   if(BUILD_TESTING AND EXISTS ${${vtk-module}_SOURCE_DIR}/Testing)
     list(APPEND VTK_MODULES_ALL ${vtk-module-test})
     set(${vtk-module-test}_SOURCE_DIR ${${vtk-module}_SOURCE_DIR}/Testing)
@@ -462,6 +462,15 @@ foreach(f ${meta})
     set(${vtk-module-test}_IS_TEST 1)
     set(${vtk-module}_TESTED_BY ${vtk-module-test})
   endif()
+endforeach()
+
+# Add the third party libraries
+set(vtk_tpl_modules vtksys)
+foreach(tpl ${vtk_tpl_modules})
+  set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${${tpl}_BASE})
+  set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${${tpl}_BASE})
+  set(${vtk-module-test}_IS_TPL 1)
+  message("${tpl}_SOURCE_DIR: ${${tpl}_SOURCE_DIR}")
 endforeach()
 
 message(STATUS "VTK Modules: ${VTK_MODULES_ALL}")
@@ -591,10 +600,15 @@ file(WRITE "${VTK_BINARY_DIR}/VTKTargets.cmake"
 
 # Build all modules.
 foreach(vtk-module ${VTK_MODULES_ENABLED})
-  if(NOT ${vtk-module}_IS_TEST)
+  if(NOT ${vtk-module}_IS_TEST AND NOT ${vtk-module}_IS_TPL)
+    message("Initializing variables for ${vtk-module}")
     init_module_vars()
   endif()
-  add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
+  if(${vtk-module}_IS_TPL)
+    add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
+  else()
+    add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
+  endif()
 endforeach()
 foreach(vtk-module ${VTK_MODULES_ENABLED})
   if(NOT ${vtk-module}_IS_TEST)
