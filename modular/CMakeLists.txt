@@ -69,6 +69,12 @@ if(VTK_USE_RENDERING AND WIN32)
 endif()
 
 #-----------------------------------------------------------------------------
+# Provide compatibility options.
+OPTION(VTK_LEGACY_REMOVE "Remove all legacy code completely." ON)
+OPTION(VTK_LEGACY_SILENT "Silence all legacy code messages." OFF)
+MARK_AS_ADVANCED(VTK_LEGACY_REMOVE VTK_LEGACY_SILENT)
+
+#-----------------------------------------------------------------------------
 # Configure KWSys to be named "vtksys".
 set(KWSYS_NAMESPACE vtksys)
 set(KWSYS_USE_Base64 1)
@@ -465,10 +471,10 @@ foreach(f ${meta})
 endforeach()
 
 # Add the third party libraries
-set(vtk_tpl_modules vtksys)
+set(vtk_tpl_modules kwsys)
 foreach(tpl ${vtk_tpl_modules})
-  set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${${tpl}_BASE})
-  set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${${tpl}_BASE})
+  set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${tpl})
+  set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${tpl})
   set(${vtk-module-test}_IS_TPL 1)
   message("${tpl}_SOURCE_DIR: ${${tpl}_SOURCE_DIR}")
 endforeach()
