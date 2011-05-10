@@ -1,3 +1,3 @@
 vtk_module(CommonCore
-  DEPENDS vtksys
+  DEPENDS kwsys
   DEFAULT ON)

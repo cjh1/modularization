@@ -1,3 +1,3 @@
 vtk_module(CommonMath
-  DEPENDS CommonCore vtksys
+  DEPENDS CommonCore
   DEFAULT ON)
