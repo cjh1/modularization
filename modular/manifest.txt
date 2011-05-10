@@ -3300,6 +3300,8 @@ Hybrid/vtkAxesActor.cxx:
 Hybrid/vtkAxesActor.h:
 Hybrid/vtkAxisActor.cxx:
 Hybrid/vtkAxisActor.h:
+Hybrid/vtkAxisFollower.cxx:
+Hybrid/vtkAxisFollower.h:
 Rendering/vtkAxisActor2D.cxx:
 Rendering/vtkAxisActor2D.h:
 Hybrid/vtkBarChartActor.cxx:
@@ -3410,8 +3412,6 @@ Rendering/vtkActorCollection.cxx:
 Rendering/vtkActorCollection.h:
 Rendering/vtkAssembly.cxx:
 Rendering/vtkAssembly.h:
-Rendering/vtkAxesFollower.cxx:
-Rendering/vtkAxesFollower.h:
 Rendering/vtkCamera.cxx:
 Rendering/vtkCamera.h:
 Rendering/vtkCameraActor.cxx:
