@@ -56,7 +56,8 @@ Imaging/Testing/: <ignore>
 Examples/: <ignore>
 Wrapping/: <ignore>
 GenericFiltering/README.html: <ignore>
-modular/: <ignore>
+modular/manifest.txt: <ignore>
+modular/modularize.py: <ignore>
 
 GUISupport/Qt/Testing/: <ignore>
 GUISupport/CMakeLists.txt: <ignore>
@@ -67,7 +68,7 @@ VolumeRendering/CMakeLists.txt: <ignore>
 GUISupport/Qt/Chart/: <ignore>
 
 [.]
-
+modular/CMakeLists.txt:
 Copyright.txt:
 README.html:
 TestingLogo.gif:
@@ -75,7 +76,8 @@ vtkLogo.ico:
 vtkLogo.jpg:
 
 [Common/Core]
-
+modular/Common/Core/CMakeLists.txt:
+modular/Common/Core/module.cmake:
 vtkToolkits.h.in:
 vtkConfigure.h.in:
 Common/CaseFolding.txt:
@@ -1440,6 +1442,8 @@ IO/vtkXYZMolReader.h:
 
 [Common/Math]
 
+modular/Common/Math/CMakeLists.txt:
+modular/Common/Math/module.cmake:
 Common/vtkAmoebaMinimizer.cxx:
 Common/vtkAmoebaMinimizer.h:
 Common/vtkFastNumericConversion.cxx:
@@ -1589,6 +1593,8 @@ Utilities/:
 
 [CMake]
 
+modular/CMake/TopologicalSort.cmake:
+modular/CMake/vtkModular.cmake:
 CMake/CheckCXXSourceRuns.cmake:
 CMake/CMakeBackwardCompatibilityC.cmake:
 CMake/CMakeEmptyInputFile.in:
