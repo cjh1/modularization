@@ -50,64 +50,7 @@ if(NOT VTK_NO_LIBRARY_VERSION)
     )
 endif()
 
-#-----------------------------------------------------------------------------
-# Choose static or shared libraries.
-include(vtkSelectSharedLibraries)
 
-#-----------------------------------------------------------------------------
-# Select a streams library.
-
-include(vtkSelectStreamsLibrary)
-VTK_SELECT_STREAMS_LIBRARY(VTK_USE_ANSI_STDLIB ${VTK_SOURCE_DIR})
-# Check the severity of EOF bugs in the streams library.
-# this must be after the test for the long types
-include(vtkTestStreamsLibrary)
-
-if(VTK_USE_RENDERING AND WIN32)
-  # Check for vfw32 support
-  include(vtkTestVideoForWindows)
-endif()
-
-#-----------------------------------------------------------------------------
-# Provide compatibility options.
-OPTION(VTK_LEGACY_REMOVE "Remove all legacy code completely." ON)
-OPTION(VTK_LEGACY_SILENT "Silence all legacy code messages." OFF)
-MARK_AS_ADVANCED(VTK_LEGACY_REMOVE VTK_LEGACY_SILENT)
-
-#-----------------------------------------------------------------------------
-# Configure KWSys to be named "vtksys".
-set(KWSYS_NAMESPACE vtksys)
-set(KWSYS_USE_Base64 1)
-set(KWSYS_USE_CommandLineArguments 1)
-set(KWSYS_USE_DynamicLoader 1)
-set(KWSYS_USE_Process 1)
-set(KWSYS_USE_RegularExpression 1)
-set(KWSYS_USE_SystemTools 1)
-set(KWSYS_USE_SystemInformation 1)
-set(KWSYS_USE_FundamentalType 1)
-set(KWSYS_USE_MD5 1)
-set(KWSYS_USE_Glob 1)
-set(KWSYS_USE_DateStamp 1)
-set(KWSYS_HEADER_ROOT ${VTK_BINARY_DIR}/Utilities)
-set(KWSYS_PROPERTIES_CXX ${VTK_LIBRARY_PROPERTIES})
-set(KWSYS_INSTALL_EXPORT_NAME ${VTK_INSTALL_EXPORT_NAME})
-
-if(NOT VTK_USE_ANSI_STDLIB)
-  set(KWSYS_IOS_FORCE_OLD 1)
-endif()
-
-if(NOT VTK_INSTALL_NO_LIBRARIES)
-  set(KWSYS_LIBRARY_INSTALL_DIR ${VTK_INSTALL_LIB_DIR})
-  set(KWSYS_INSTALL_BIN_DIR ${VTK_INSTALL_BIN_DIR_CM24})
-  set(KWSYS_INSTALL_LIB_DIR ${VTK_INSTALL_LIB_DIR_CM24})
-  set(KWSYS_INSTALL_COMPONENT_NAME_RUNTIME RuntimeLibraries)
-endif()
-if(NOT VTK_INSTALL_NO_DEVELOPMENT)
-  set(KWSYS_INSTALL_INCLUDE_DIR ${VTK_INSTALL_INCLUDE_DIR_CM24})
-  set(KWSYS_INSTALL_COMPONENT_NAME_DEVELOPMENT Development)
-endif()
-
-#add_subdirectory(Utilities)
 
 #-----------------------------------------------------------------------------
 # Load some macros.
@@ -147,6 +90,13 @@ CHECK_CXX_SOURCE_COMPILES("${VTK_CONST_REVERSE_ITERATOR_COMPARISON_FILE}"
 
 
 #-----------------------------------------------------------------------------
+# Provide compatibility options.
+OPTION(VTK_LEGACY_REMOVE "Remove all legacy code completely." OFF)
+OPTION(VTK_LEGACY_SILENT "Silence all legacy code messages." OFF)
+MARK_AS_ADVANCED(VTK_LEGACY_REMOVE VTK_LEGACY_SILENT)
+
+
+#-----------------------------------------------------------------------------
 # VTK requires special compiler flags on some platforms.
 INCLUDE(vtkDetermineCompilerFlags)
 
@@ -175,6 +125,9 @@ INCLUDE(vtkTestFullSpecialization)
 
 # Check for explicit template instantiation support by compiler.
 INCLUDE(vtkTestExplicitInstantiation)
+
+# Test for atomics and other compiler intrinsics
+INCLUDE(vtkTestBuiltins)
 
 # Setup clean configuration of vtkConfigure.h and vtkToolkits.h.
 MACRO(VTK_PREPARE_CMAKEDEFINE not invar outvar)
@@ -209,6 +162,53 @@ ELSE(VTK_NO_EXPLICIT_TEMPLATE_INSTANTIATION)
   SET(VTK_REGEX_TXX "vtk[^.]*([^t]|[^i]t|[^c]it|[^i]cit|[^l]icit|[^p]licit|[^m]plicit|[^I]mplicit)\\.txx")
 ENDIF(VTK_NO_EXPLICIT_TEMPLATE_INSTANTIATION)
 INCLUDE_REGULAR_EXPRESSION("(^|/)((lex|png|j|z|t|D|Q|verdict).*|${VTK_REGEX}|${VTK_REGEX_TXX})$")
+#-----------------------------------------------------------------------------
+# Select a streams library.
+
+INCLUDE(vtkSelectStreamsLibrary)
+VTK_SELECT_STREAMS_LIBRARY(VTK_USE_ANSI_STDLIB ${VTK_SOURCE_DIR})
+# Check the severity of EOF bugs in the streams library.
+# this must be after the test for the long types
+INCLUDE(vtkTestStreamsLibrary)
+
+IF(VTK_USE_RENDERING AND WIN32)
+  # Check for vfw32 support
+  INCLUDE(vtkTestVideoForWindows)
+ENDIF(VTK_USE_RENDERING AND WIN32)
+
+#-----------------------------------------------------------------------------
+# Configure KWSys to be named "vtksys".
+SET(KWSYS_NAMESPACE vtksys)
+SET(KWSYS_USE_Base64 1)
+SET(KWSYS_USE_CommandLineArguments 1)
+SET(KWSYS_USE_DynamicLoader 1)
+SET(KWSYS_USE_Process 1)
+SET(KWSYS_USE_RegularExpression 1)
+SET(KWSYS_USE_SystemTools 1)
+SET(KWSYS_USE_SystemInformation 1)
+SET(KWSYS_USE_FundamentalType 1)
+SET(KWSYS_USE_MD5 1)
+SET(KWSYS_USE_Glob 1)
+SET(KWSYS_USE_DateStamp 1)
+SET(KWSYS_HEADER_ROOT ${VTK_BINARY_DIR}/Utilities)
+SET(KWSYS_PROPERTIES_CXX ${VTK_LIBRARY_PROPERTIES})
+SET(KWSYS_INSTALL_EXPORT_NAME ${VTK_INSTALL_EXPORT_NAME})
+
+IF(NOT VTK_USE_ANSI_STDLIB)
+  SET(KWSYS_IOS_FORCE_OLD 1)
+ENDIF(NOT VTK_USE_ANSI_STDLIB)
+
+if(NOT VTK_INSTALL_NO_LIBRARIES)
+  set(KWSYS_LIBRARY_INSTALL_DIR ${VTK_INSTALL_LIB_DIR})
+  set(KWSYS_INSTALL_BIN_DIR ${VTK_INSTALL_BIN_DIR_CM24})
+  set(KWSYS_INSTALL_LIB_DIR ${VTK_INSTALL_LIB_DIR_CM24})
+  set(KWSYS_INSTALL_COMPONENT_NAME_RUNTIME RuntimeLibraries)
+endif()
+if(NOT VTK_INSTALL_NO_DEVELOPMENT)
+  set(KWSYS_INSTALL_INCLUDE_DIR ${VTK_INSTALL_INCLUDE_DIR_CM24})
+  set(KWSYS_INSTALL_COMPONENT_NAME_DEVELOPMENT Development)
+endif()
+
 #-----------------------------------------------------------------------------
 # Dispatch the build into the proper subdirectories.
 
