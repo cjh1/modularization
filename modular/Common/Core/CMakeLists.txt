@@ -410,10 +410,10 @@ SET(KIT_JAVA_DEPS)
 
 if(WIN32)
   if(NOT VTK_USE_X)
-    list(APPLEND Kit_SRCS vtkWin32OutputWindow.cxx
+    list(APPEND Kit_SRCS vtkWin32OutputWindow.cxx
       vtkWin32ProcessOutputWindow.cxx)
     set(Kit_EXTRA_SRCS ${Kit_EXTRA_SRCS} vtkWin32OutputWindowProcessEncoded.c)
-    set_source_file_properties(vtkWin32OutputWindowProcessEncoded.c
+    set_source_files_properties(vtkWin32OutputWindowProcessEncoded.c
       PROPERTIES WRAP_EXCLUDE 1)
   endif()
 
@@ -422,17 +422,17 @@ if(WIN32)
   endif()
 endif()
 
-IF(NOT HAVE_SOCKETS)
+if(NOT HAVE_SOCKETS)
   # Tell vtkSocket.cxx that there are no sockets on this platform.
-  SET_SOURCE_FILES_PROPERTIES(vtkSocket.cxx PROPERTIES
+  set_source_files_properties(vtkSocket.cxx PROPERTIES
     COMPILE_FLAGS -DVTK_SOCKET_FAKE_API)
-ENDIF(NOT HAVE_SOCKETS)
+endif()
 
 # Need nsl to resolve gethostbyname on SunOS-5.8
 # and socket also
-IF(CMAKE_SYSTEM MATCHES "SunOS.*")
-  SET(KIT_LIBS ${KIT_LIBS} socket nsl)
-ENDIF(CMAKE_SYSTEM MATCHES "SunOS.*")
+if(CMAKE_SYSTEM MATCHES "SunOS.*")
+  set(KIT_LIBS ${KIT_LIBS} socket nsl)
+endif()
 
 add_library(vtkCore ${Kit_SRCS})
 
