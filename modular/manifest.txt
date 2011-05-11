@@ -7,7 +7,6 @@ Common/Testing/:	<ignore>
 CMake/CMake2.4/: <ignore>
 CMake/vtk-forward.c.in: <ignore>
 CMake/vtkForwardingExecutable.cmake: <ignore>
-CMake/vtkTestBuiltins.cmake: <ignore>
 CMake/vtkTestSyncBuiltins.cxx: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
@@ -1659,6 +1658,7 @@ CMake/vtkSelectStreamsLibrary.cmake:
 CMake/vtkTargetExportMacros.cmake:
 CMake/vtkTclTkMacros.cmake:
 CMake/vtkTestBoolType.cxx:
+CMake/vtkTestBuiltins.cmake:
 CMake/vtkTestCharSignedness.cxx:
 CMake/vtkTestCompareTypes.cxx:
 CMake/vtkTestCompilerIsVC6.cxx:
