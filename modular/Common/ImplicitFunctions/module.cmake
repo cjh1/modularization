@@ -1,3 +1,3 @@
 vtk_module(CommonImplicitFunctions
-  DEPENDS CommonCore CommonMath
+  DEPENDS CommonCore CommonMath CommonMisc
   DEFAULT ON)

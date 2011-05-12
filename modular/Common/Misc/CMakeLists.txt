@@ -1,15 +1,17 @@
 
 SET(Kit_SRCS
-  vtkAssemblyNode.cxx
-  vtkAssemblyNode.h
-  vtkAssemblyPath.cxx
-  vtkAssemblyPath.h
-  vtkAssemblyPaths.cxx
-  vtkAssemblyPaths.h
+  #vtkAssemblyNode.cxx
+  #vtkAssemblyNode.h
+  #vtkAssemblyPath.cxx
+  #vtkAssemblyPath.h
+  #vtkAssemblyPaths.cxx
+  #vtkAssemblyPaths.h
   vtkContourValues.cxx
   vtkContourValues.h
   vtkEdgeTable.cxx
   vtkEdgeTable.h
+  vtkErrorCode.cxx
+  vtkErrorCode.h
   vtkFunctionParser.cxx
   vtkFunctionParser.h
   vtkHeap.cxx
@@ -26,7 +28,10 @@ SET(Kit_SRCS
   vtkSimpleScalarTree.h
   )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR} ${VTK_SOURCE_DIR}/Common/Core)
+include_directories(
+  ${CMAKE_CURRENT_BINARY_DIR} 
+  ${VTK_SOURCE_DIR}/Common/Core
+  )
 
 #SET_SOURCE_FILES_PROPERTIES(
 #ABSTRACT

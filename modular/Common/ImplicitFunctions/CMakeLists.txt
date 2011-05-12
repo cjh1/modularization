@@ -45,6 +45,7 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR} 
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_SOURCE_DIR}/Common/Math
+  ${VTK_SOURCE_DIR}/Common/Misc
   )
 
 #SET_SOURCE_FILES_PROPERTIES(
@@ -61,4 +62,4 @@ include_directories(
 
 add_library(vtkImplicitFunctions ${Kit_SRCS})
 
-target_link_libraries(vtkImplicitFunctions vtkCommonCore vtkCommonMath)
+target_link_libraries(vtkImplicitFunctions vtkCommonCore vtkCommonMath vtkCommonMisc)

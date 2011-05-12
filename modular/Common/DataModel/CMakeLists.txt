@@ -453,6 +453,7 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_SOURCE_DIR}/Common/ImplicitFunctions
   ${VTK_SOURCE_DIR}/Common/Math
+  ${VTK_SOURCE_DIR}/Common/Misc
   ${VTK_SOURCE_DIR}/Common/System
   )
 
@@ -470,4 +471,4 @@ include_directories(
 
 add_library(vtkCommonDataModel ${Kit_SRCS})
 
-target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonSystem vtkCommonMath vtkCommonImplicitFunctions)
+target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonSystem vtkCommonMath vtkCommonMisc vtkCommonImplicitFunctions)
