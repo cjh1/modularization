@@ -1,21 +1,29 @@
 
 SET(Kit_SRCS
-  vtkClientSocket.cxx:
-  vtkClientSocket.h:
-  vtkDirectory.cxx:
-  vtkDirectory.h:
-  vtkProcessStatistics.cxx:
-  vtkProcessStatistics.h:
-  vtkServerSocket.cxx:
-  vtkServerSocket.h:
-  vtkSocketCollection.cxx:
-  vtkSocketCollection.h:
-  vtkSocket.cxx:
-  vtkSocket.h:
-  vtkThreadMessager.cxx:
-  vtkThreadMessager.h:
-  vtkTimerLog.cxx:
-  vtkTimerLog.h:
+  vtkAssemblyNode.cxx
+  vtkAssemblyNode.h
+  vtkAssemblyPath.cxx
+  vtkAssemblyPath.h
+  vtkAssemblyPaths.cxx
+  vtkAssemblyPaths.h
+  vtkContourValues.cxx
+  vtkContourValues.h
+  vtkEdgeTable.cxx
+  vtkEdgeTable.h
+  vtkFunctionParser.cxx
+  vtkFunctionParser.h
+  vtkHeap.cxx
+  vtkHeap.h
+  vtkAbstractInterpolatedVelocityField.cxx
+  vtkAbstractInterpolatedVelocityField.h
+  vtkInterpolatedVelocityField.cxx
+  vtkInterpolatedVelocityField.h
+  vtkMarchingCubesCases.h
+  vtkMarchingSquaresCases.h
+  vtkScalarTree.cxx
+  vtkScalarTree.h
+  vtkSimpleScalarTree.cxx
+  vtkSimpleScalarTree.h
   )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${VTK_SOURCE_DIR}/Common/Core)
