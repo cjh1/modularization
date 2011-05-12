@@ -418,6 +418,9 @@ Filtering/vtkParametricSpline.h:
 
 [Common/DataModel]
 
+modular/Common/DataModel/CMakeLists.txt:
+modular/Common/DataModel/module.cmake:
+
 Common/vtkPoints2D.cxx:
 Common/vtkPoints2D.h:
 Common/vtkPoints.cxx:
@@ -707,7 +710,10 @@ Filtering/vtkWedge.cxx:
 Filtering/vtkWedge.h:
 
 
-[Common/ExecutionModel]
+#[Common/ExecutionModel]
+
+modular/Common/ExecutionModel/CMakeLists.txt: <ignore>
+modular/Common/ExecutionModel/module.cmake: <ignore>
 
 Common/vtkExtentSplitter.cxx:
 Common/vtkExtentSplitter.h:
@@ -988,8 +994,8 @@ Common/vtkTimerLog.h:
 
 [Common/Transforms]
 
-modular/Common/Transforms/CMakeLists.txt:
-modular/Common/Transforms/module.cmake:
+modular/Common/Transforms/CMakeLists.txt: <ignore>
+modular/Common/Transforms/module.cmake: <ignore>
 
 Common/vtkAbstractTransform.cxx:
 Common/vtkAbstractTransform.h:
