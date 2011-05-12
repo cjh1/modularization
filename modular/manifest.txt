@@ -7,7 +7,6 @@ Common/Testing/:	<ignore>
 CMake/CMake2.4/: <ignore>
 CMake/vtk-forward.c.in: <ignore>
 CMake/vtkForwardingExecutable.cmake: <ignore>
-CMake/vtkTestSyncBuiltins.cxx: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
 Imaging/CMakeLists.txt: <ignore>
@@ -117,6 +116,8 @@ Common/vtkBitArrayIterator.cxx:
 Common/vtkBitArrayIterator.h:
 Common/vtkBoundingBox.cxx:
 Common/vtkBoundingBox.h:
+Common/vtkBoxMuellerRandomSequence.cxx:
+Common/vtkBoxMuellerRandomSequence.h:
 Common/vtkBreakPoint.cxx:
 Common/vtkBreakPoint.h:
 Common/vtkByteSwap.cxx:
@@ -167,6 +168,8 @@ Common/vtkGarbageCollector.cxx:
 Common/vtkGarbageCollector.h:
 Common/vtkGarbageCollectorManager.cxx:
 Common/vtkGarbageCollectorManager.h:
+Common/vtkGaussianRandomSequence.cxx:
+Common/vtkGaussianRandomSequence.h:
 Common/vtkIdListCollection.cxx:
 Common/vtkIdListCollection.h:
 Common/vtkIdList.cxx:
@@ -233,6 +236,8 @@ Common/vtkLongArray.cxx:
 Common/vtkLongArray.h:
 Common/vtkLongLongArray.cxx:
 Common/vtkLongLongArray.h:
+Common/vtkMinimalStandardRandomSequence.cxx:
+Common/vtkMinimalStandardRandomSequence.h:
 Common/vtkNew.h:
 Common/vtkObjectBase.cxx:
 Common/vtkObjectBase.h:
@@ -257,6 +262,8 @@ Common/vtkOverrideInformation.h:
 Common/vtkPointAccumulator.hxx:
 Common/vtkPriorityQueue.cxx:
 Common/vtkPriorityQueue.h:
+Common/vtkRandomSequence.cxx:
+Common/vtkRandomSequence.h:
 Common/vtkReferenceCount.cxx:
 Common/vtkReferenceCount.h:
 Common/vtkSetGet.h:
@@ -1474,22 +1481,15 @@ Common/vtkAssemblyPath.cxx:
 Common/vtkAssemblyPath.h:
 Common/vtkAssemblyPaths.cxx:
 Common/vtkAssemblyPaths.h:
-Common/vtkBoxMuellerRandomSequence.cxx:
-Common/vtkBoxMuellerRandomSequence.h:
+
 Common/vtkContourValues.cxx:
 Common/vtkContourValues.h:
 Common/vtkEdgeTable.cxx:
 Common/vtkEdgeTable.h:
 Common/vtkFunctionParser.cxx:
 Common/vtkFunctionParser.h:
-Common/vtkGaussianRandomSequence.cxx:
-Common/vtkGaussianRandomSequence.h:
 Common/vtkHeap.cxx:
 Common/vtkHeap.h:
-Common/vtkMinimalStandardRandomSequence.cxx:
-Common/vtkMinimalStandardRandomSequence.h:
-Common/vtkRandomSequence.cxx:
-Common/vtkRandomSequence.h:
 Filtering/vtkAbstractInterpolatedVelocityField.cxx:
 Filtering/vtkAbstractInterpolatedVelocityField.h:
 Filtering/vtkAbstractPointLocator.cxx:
@@ -1674,6 +1674,7 @@ CMake/vtkTestSocklenT.cxx:
 CMake/vtkTestStreamEOF.cxx.in:
 CMake/vtkTestStreamLongLong.cxx.in:
 CMake/vtkTestStreamsLibrary.cmake:
+CMake/vtkTestSyncBuiltins.cxx:
 CMake/vtkTestTypes.cmake:
 CMake/vtkTestvfw32Capture.cxx:
 CMake/vtkTestvfw32.cxx:
