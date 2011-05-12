@@ -369,6 +369,9 @@ Common/vtkDynamicLoader.h:
 
 [Common/ComputationalGeometry]
 
+modular/Common/ComputationalGeometry/CMakeLists.txt:
+modular/Common/ComputationalGeometry/module.cmake:
+
 Filtering/vtkCardinalSpline.cxx:
 Filtering/vtkCardinalSpline.h:
 Filtering/vtkKochanekSpline.cxx:
@@ -940,19 +943,21 @@ Common/vtkRungeKutta4.h:
 
 [Common/Misc]
 
-modular/Common/Misc/CMakeLists.txt: <ignore>
-modular/Common/Misc/module.cmake: <ignore>
+modular/Common/Misc/CMakeLists.txt:
+modular/Common/Misc/module.cmake:
 
-Common/vtkAssemblyNode.cxx:
-Common/vtkAssemblyNode.h:
-Common/vtkAssemblyPath.cxx:
-Common/vtkAssemblyPath.h:
-Common/vtkAssemblyPaths.cxx:
-Common/vtkAssemblyPaths.h:
+Common/vtkAssemblyNode.cxx: <ignore>
+Common/vtkAssemblyNode.h: <ignore>
+Common/vtkAssemblyPath.cxx: <ignore>
+Common/vtkAssemblyPath.h: <ignore>
+Common/vtkAssemblyPaths.cxx: <ignore>
+Common/vtkAssemblyPaths.h: <ignore>
 Common/vtkContourValues.cxx:
 Common/vtkContourValues.h:
 Common/vtkEdgeTable.cxx:
 Common/vtkEdgeTable.h:
+Common/vtkErrorCode.cxx:
+Common/vtkErrorCode.h:
 Common/vtkFunctionParser.cxx:
 Common/vtkFunctionParser.h:
 Common/vtkHeap.cxx:
@@ -1034,8 +1039,6 @@ Hybrid/vtkIterativeClosestPointTransform.h:
 
 [IO/Core]
 
-Common/vtkErrorCode.cxx:
-Common/vtkErrorCode.h:
 Common/vtkXMLDataElement.cxx:
 Common/vtkXMLDataElement.h:
 IO/vtkASCIITextCodec.cxx:
