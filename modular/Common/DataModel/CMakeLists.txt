@@ -452,6 +452,7 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_SOURCE_DIR}/Common/Math
+  ${VTK_SOURCE_DIR}/Common/System
   )
 
 #SET_SOURCE_FILES_PROPERTIES(
@@ -468,4 +469,4 @@ include_directories(
 
 add_library(vtkCommonDataModel ${Kit_SRCS})
 
-target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonMath)
+target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonSystem vtkCommonMath)
