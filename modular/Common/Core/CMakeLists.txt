@@ -276,6 +276,7 @@ vtkAbstractArray
 vtkArrayIterator
 vtkArrayIteratorTemplate
 vtkAbstractTransform
+vtkArray
 vtkCallbackCommand
 vtkCommand
 vtkCommonInformationKeyManager
@@ -323,7 +324,13 @@ ABSTRACT
 )
 
 SET_SOURCE_FILES_PROPERTIES(
+  vtkArrayCoordinates.cxx
+  vtkArrayExtents.cxx
+  vtkArrayExtentsList.cxx
   vtkArrayIteratorTemplate.txx
+  vtkArrayRange.cxx
+  vtkArraySort.cxx
+  vtkArrayWeights.cxx
   vtkBoundingBox.cxx
   vtkBreakPoint.cxx
   vtkCallbackCommand.cxx
@@ -350,6 +357,10 @@ SET_SOURCE_FILES_PROPERTIES(
 )
 
 SET_SOURCE_FILES_PROPERTIES(
+  vtkArrayCoordinates.cxx
+  vtkArrayExtents.cxx
+  vtkArrayExtentsList.cxx
+  vtkArrayRange.cxx
   vtkTimeStamp.cxx
   vtkVariant.cxx
 
@@ -359,45 +370,6 @@ SET_SOURCE_FILES_PROPERTIES(
 # Activate code in "vtkVariant.cxx".  See the comment in the source.
 SET_SOURCE_FILES_PROPERTIES(vtkVariant.cxx PROPERTIES
   COMPILE_FLAGS -DVTK_VARIANT_IMPL)
-
-
-IF(VTK_USE_N_WAY_ARRAYS)
-
-  SET(Kit_SRCS
-    ${Kit_SRCS}
-    vtkArray.cxx
-    vtkArrayCoordinates.cxx
-    vtkArrayExtents.cxx
-    vtkArrayExtentsList.cxx
-    vtkArrayRange.cxx
-    vtkArraySort.cxx
-    vtkArrayWeights.cxx
-    )
-
-  SET_SOURCE_FILES_PROPERTIES(
-    vtkArray.cxx
-    ABSTRACT
-    )
-
-  SET_SOURCE_FILES_PROPERTIES(
-    vtkArrayCoordinates.cxx
-    vtkArrayExtents.cxx
-    vtkArrayExtentsList.cxx
-    vtkArrayRange.cxx
-    vtkArraySort.cxx
-    vtkArrayWeights.cxx
-    WRAP_EXCLUDE
-    )
-
-  SET_SOURCE_FILES_PROPERTIES(
-    vtkArrayCoordinates.cxx
-    vtkArrayExtents.cxx
-    vtkArrayExtentsList.cxx
-    vtkArrayRange.cxx
-    PROPERTIES WRAP_SPECIAL 1
-  )
-
-ENDIF(VTK_USE_N_WAY_ARRAYS)
 
 SET(Kit_EXTRA_SRCS)
 SET(Kit_EXTRA_CMDS)
