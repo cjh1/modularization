@@ -1,3 +1,3 @@
 vtk_module(CommonDataModel
-  DEPENDS CommonCore CommonSystem CommonMath
+  DEPENDS CommonCore CommonSystem CommonMath CommonImplicitFunctions
   DEFAULT ON)
