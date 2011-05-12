@@ -367,11 +367,6 @@ Common/vtkMutexLock.h:
 Common/vtkDynamicLoader.cxx:
 Common/vtkDynamicLoader.h:
 
-[AMR/Core]
-
-Common/vtkBox.cxx:
-Common/vtkBox.h:
-
 [Common/ComputationalGeometry]
 
 Filtering/vtkCardinalSpline.cxx:
@@ -421,6 +416,8 @@ Filtering/vtkParametricSpline.h:
 modular/Common/DataModel/CMakeLists.txt:
 modular/Common/DataModel/module.cmake:
 
+Common/vtkBox.cxx:
+Common/vtkBox.h:
 Common/vtkPoints2D.cxx:
 Common/vtkPoints2D.h:
 Common/vtkPoints.cxx:
@@ -869,6 +866,9 @@ Filtering/vtkUnstructuredGridToUnstructuredGridFilter.cxx:
 Filtering/vtkUnstructuredGridToUnstructuredGridFilter.h:
 
 [Common/ImplicitFunctions]
+
+modular/Common/ImplicitFunctions/CMakeLists.txt:
+modular/Common/ImplicitFunctions/module.cmake:
 
 Common/vtkImplicitFunctionCollection.cxx:
 Common/vtkImplicitFunctionCollection.h:
