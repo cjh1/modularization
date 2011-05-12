@@ -1,12 +1,3 @@
-set(KIT Math)
-
-set(KIT_INTERFACE_LIBRARIES ${KWSYS_NAMESPACE})
-
-if(UNIX)
-  set(KIT_LIBS ${KIT_LIBS} ${CMAKE_THREAD_LIBS} ${CMAKE_DL_LIBS})
-  set(KIT_INTERFACE_LIBRARIES ${KWSYS_NAMESPACE} -lm)
-endif()
-
 
 SET(Kit_SRCS
   vtkAmoebaMinimizer.cxx
@@ -44,16 +35,6 @@ endif()
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${VTK_SOURCE_DIR}/Common/Core)
 
-#SET_SOURCE_FILES_PROPERTIES(
-#ABSTRACT
-#)
+add_library(vtkCommonMath ${Kit_SRCS})
 
-#SET_SOURCE_FILES_PROPERTIES(
-#  WRAP_EXCLUDE
-#)
-
-#SET_SOURCE_FILES_PROPERTIES(
-#  PROPERTIES WRAP_SPECIAL 1
-#)
-
-add_library(vtkMath ${Kit_SRCS})
+target_link_libraries(vtkCommonMath vtkCommonCore)

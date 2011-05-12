@@ -1,17 +1,9 @@
-set(KIT Common)
-
-set(KIT_INTERFACE_LIBRARIES ${KWSYS_NAMESPACE})
 
 if(WIN32)
   if(NOT VTK_USE_X)
     set(VTK_OWP_ENCODED_C vtkWin32OutputWindowProcessEncoded.c)
     set_source_files_properties(${VTK_OWP_ENCODED_C} PROPERTIES WRAP_EXCLUDE 1)
   endif()
-endif()
-
-if(UNIX)
-  set(KIT_LIBS ${KIT_LIBS} ${CMAKE_THREAD_LIBS} ${CMAKE_DL_LIBS})
-  set(KIT_INTERFACE_LIBRARIES ${KWSYS_NAMESPACE} -lm)
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}
@@ -406,7 +398,9 @@ if(CMAKE_SYSTEM MATCHES "SunOS.*")
   set(KIT_LIBS ${KIT_LIBS} socket nsl)
 endif()
 
-add_library(vtkCore ${Kit_SRCS})
+add_library(vtkCommonCore ${Kit_SRCS})
+
+target_link_libraries(vtkCommonCore kwsys)
 
 IF(CMAKE_COMPILER_IS_GNUCXX AND MINGW)
   # MinGW fails to dllexport the explicit instantiations of
