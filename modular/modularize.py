@@ -356,7 +356,7 @@ def update_modules():
             if verbose: print '[INFO] Copied'
 
             # Add the files we just copied
-            run('git', 'add', value)
+            #run('git', 'add', value)
 
         # Handle the files that are new to the modularized boost
         if manifest.has_option(section, '<new>'):
@@ -373,7 +373,7 @@ def update_modules():
                     fd = open(path, "w")
                     fd.write('')
                     fd.close()
-                    run('git', 'add', file)
+                    #run('git', 'add', file)
                 else:
                     if verbose:
                         print '[INFO] Adding back', file, 'in', dst_module_dir
