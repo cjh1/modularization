@@ -84,8 +84,6 @@ Common/vtkAbstractArray.cxx:
 Common/vtkAbstractArray.h:
 Common/vtkAnimationCue.cxx:
 Common/vtkAnimationCue.h:
-Common/vtkAnimationScene.cxx:
-Common/vtkAnimationScene.h:
 Common/vtkArrayCoordinates.cxx:
 Common/vtkArrayCoordinates.h:
 Common/vtkArray.cxx:
@@ -209,8 +207,6 @@ Common/vtkInformationObjectBaseKey.cxx:
 Common/vtkInformationObjectBaseKey.h:
 Common/vtkInformationObjectBaseVectorKey.cxx:
 Common/vtkInformationObjectBaseVectorKey.h:
-Common/vtkInformationQuadratureSchemeDefinitionVectorKey.cxx:
-Common/vtkInformationQuadratureSchemeDefinitionVectorKey.h:
 Common/vtkInformationRequestKey.cxx:
 Common/vtkInformationRequestKey.h:
 Common/vtkInformationStringKey.cxx:
@@ -421,10 +417,14 @@ modular/Common/DataModel/module.cmake:
 
 Filtering/vtkAbstractInterpolatedVelocityField.cxx:
 Filtering/vtkAbstractInterpolatedVelocityField.h:
+Common/vtkAnimationScene.cxx:
+Common/vtkAnimationScene.h:
 Common/vtkBox.cxx:
 Common/vtkBox.h:
 Common/vtkEdgeTable.cxx:
 Common/vtkEdgeTable.h:
+Common/vtkInformationQuadratureSchemeDefinitionVectorKey.cxx:
+Common/vtkInformationQuadratureSchemeDefinitionVectorKey.h:
 Common/vtkPoints2D.cxx:
 Common/vtkPoints2D.h:
 Common/vtkPoints.cxx:
@@ -439,6 +439,8 @@ Common/vtkStructuredVisibilityConstraint.cxx:
 Common/vtkStructuredVisibilityConstraint.h:
 Common/vtkTensor.cxx:
 Common/vtkTensor.h:
+Common/vtkXMLDataElement.cxx:
+Common/vtkXMLDataElement.h:
 Filtering/vtkAbstractCellLocator.cxx:
 Filtering/vtkAbstractCellLocator.h:
 Filtering/vtkAbstractPointLocator.cxx:
@@ -1043,8 +1045,6 @@ Hybrid/vtkIterativeClosestPointTransform.h:
 
 [IO/Core]
 
-Common/vtkXMLDataElement.cxx:
-Common/vtkXMLDataElement.h:
 IO/vtkASCIITextCodec.cxx:
 IO/vtkASCIITextCodec.h:
 IO/vtkAbstractParticleWriter.cxx:
