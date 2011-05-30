@@ -421,6 +421,7 @@ Common/vtkAnimationScene.cxx:
 Common/vtkAnimationScene.h:
 Common/vtkBox.cxx:
 Common/vtkBox.h:
+Common/vtkColor.h:
 Common/vtkEdgeTable.cxx:
 Common/vtkEdgeTable.h:
 Common/vtkInformationQuadratureSchemeDefinitionVectorKey.cxx:
@@ -431,6 +432,7 @@ Common/vtkPoints.cxx:
 Common/vtkPoints.h:
 Common/vtkQuadratureSchemeDefinition.cxx:
 Common/vtkQuadratureSchemeDefinition.h:
+Common/vtkRect.h:
 Common/vtkStructuredData.cxx:
 Common/vtkStructuredData.h:
 Common/vtkStructuredExtent.cxx:
@@ -439,6 +441,7 @@ Common/vtkStructuredVisibilityConstraint.cxx:
 Common/vtkStructuredVisibilityConstraint.h:
 Common/vtkTensor.cxx:
 Common/vtkTensor.h:
+Common/vtkVector.h:
 Common/vtkXMLDataElement.cxx:
 Common/vtkXMLDataElement.h:
 Filtering/vtkAbstractCellLocator.cxx:
@@ -2221,7 +2224,6 @@ Charts/vtkBlockItem.h:
 Charts/vtkBlockItem.cxx:
 Charts/vtkBrush.h:
 Charts/vtkBrush.cxx:
-Charts/vtkColor.h:
 Charts/vtkContext2D.h:
 Charts/vtkContext2D.cxx:
 Charts/vtkContextActor.h:
@@ -2255,7 +2257,6 @@ Charts/vtkPen.h:
 Charts/vtkPen.cxx:
 Charts/vtkTooltipItem.h:
 Charts/vtkTooltipItem.cxx:
-Charts/vtkVector.h:
 
 [Views/Context2D]
 
@@ -2837,8 +2838,6 @@ Graphics/vtkShrinkPolyData.cxx:
 Graphics/vtkShrinkPolyData.h:
 Graphics/vtkSliceCubes.cxx:
 Graphics/vtkSliceCubes.h:
-Graphics/vtkSortDataArray.cxx:
-Graphics/vtkSortDataArray.h:
 Graphics/vtkSpatialRepresentationFilter.cxx:
 Graphics/vtkSpatialRepresentationFilter.h:
 Graphics/vtkSplineFilter.cxx:

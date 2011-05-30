@@ -62,6 +62,7 @@ vtkCellLocator.h
 vtkCellType.h
 vtkCellTypes.cxx
 vtkCellTypes.h
+vtkColor.h
 vtkCompositeDataIterator.cxx
 vtkCompositeDataIterator.h
 vtkCompositeDataPipeline.cxx
@@ -342,6 +343,7 @@ vtkQuadraticWedge.cxx
 vtkQuadraticWedge.h
 vtkQuadratureSchemeDefinition.cxx
 vtkQuadratureSchemeDefinition.h
+vtkRect.h
 vtkRectilinearGrid.cxx
 vtkRectilinearGrid.h
 vtkRectilinearGridAlgorithm.cxx
@@ -448,6 +450,7 @@ vtkUnstructuredGridToPolyDataFilter.cxx
 vtkUnstructuredGridToPolyDataFilter.h
 vtkUnstructuredGridToUnstructuredGridFilter.cxx
 vtkUnstructuredGridToUnstructuredGridFilter.h
+vtkVector.h
 vtkVertex.cxx
 vtkVertex.h
 vtkVertexListIterator.cxx
