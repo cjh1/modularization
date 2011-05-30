@@ -1,3 +1,3 @@
 vtk_module(CommonComputationalGeometry
-  DEPENDS CommonCore CommonSystem
+  DEPENDS CommonCore CommonSystem CommonMath CommonDataModel
   DEFAULT ON)

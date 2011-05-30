@@ -1,21 +1,21 @@
 
 SET(Kit_SRCS
-  vtkClientSocket.cxx
-  vtkClientSocket.h
-  vtkDirectory.cxx
-  vtkDirectory.h
-  vtkProcessStatistics.cxx
-  vtkProcessStatistics.h
-  vtkServerSocket.cxx
-  vtkServerSocket.h
-  vtkSocketCollection.cxx
-  vtkSocketCollection.h
-  vtkSocket.cxx
-  vtkSocket.h
-  vtkThreadMessager.cxx
-  vtkThreadMessager.h
-  vtkTimerLog.cxx
-  vtkTimerLog.h
+vtkClientSocket.cxx
+vtkClientSocket.h
+vtkDirectory.cxx
+vtkDirectory.h
+vtkProcessStatistics.cxx
+vtkProcessStatistics.h
+vtkServerSocket.cxx
+vtkServerSocket.h
+vtkSocket.cxx
+vtkSocket.h
+vtkSocketCollection.cxx
+vtkSocketCollection.h
+vtkThreadMessager.cxx
+vtkThreadMessager.h
+vtkTimerLog.cxx
+vtkTimerLog.h
   )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${VTK_SOURCE_DIR}/Common/Core)

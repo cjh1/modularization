@@ -1,27 +1,31 @@
 
 SET(Kit_SRCS
-  vtkAmoebaMinimizer.cxx
-  vtkAmoebaMinimizer.h
-  vtkFastNumericConversion.cxx
-  vtkFastNumericConversion.h
-  vtkFunctionSet.cxx
-  vtkFunctionSet.h
-  vtkInitialValueProblemSolver.cxx
-  vtkInitialValueProblemSolver.h
-  vtkMatrix3x3.cxx
-  vtkMatrix3x3.h
-  vtkMatrix4x4.cxx
-  vtkMatrix4x4.h
-  vtkPolynomialSolversUnivariate.cxx
-  vtkPolynomialSolversUnivariate.h
-  vtkQuaternionInterpolator.cxx
-  vtkQuaternionInterpolator.h
-  vtkRungeKutta2.cxx
-  vtkRungeKutta2.h
-  vtkRungeKutta45.cxx
-  vtkRungeKutta45.h
-  vtkRungeKutta4.cxx
-  vtkRungeKutta4.h
+vtkAmoebaMinimizer.cxx
+vtkAmoebaMinimizer.h
+vtkFastNumericConversion.cxx
+vtkFastNumericConversion.h
+vtkFunctionSet.cxx
+vtkFunctionSet.h
+vtkInitialValueProblemSolver.cxx
+vtkInitialValueProblemSolver.h
+vtkMatrix3x3.cxx
+vtkMatrix3x3.h
+vtkMatrix4x4.cxx
+vtkMatrix4x4.h
+vtkPiecewiseFunction.cxx
+vtkPiecewiseFunction.h
+vtkPiecewiseFunctionShiftScale.cxx
+vtkPiecewiseFunctionShiftScale.h
+vtkPolynomialSolversUnivariate.cxx
+vtkPolynomialSolversUnivariate.h
+vtkQuaternionInterpolator.cxx
+vtkQuaternionInterpolator.h
+vtkRungeKutta2.cxx
+vtkRungeKutta2.h
+vtkRungeKutta4.cxx
+vtkRungeKutta4.h
+vtkRungeKutta45.cxx
+vtkRungeKutta45.h
   )
 
 if(CMAKE_COMPILER_IS_GNUCXX)

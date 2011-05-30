@@ -1,31 +1,15 @@
 
 SET(Kit_SRCS
-  #vtkAssemblyNode.cxx
-  #vtkAssemblyNode.h
-  #vtkAssemblyPath.cxx
-  #vtkAssemblyPath.h
-  #vtkAssemblyPaths.cxx
-  #vtkAssemblyPaths.h
-  vtkContourValues.cxx
-  vtkContourValues.h
-  vtkEdgeTable.cxx
-  vtkEdgeTable.h
-  vtkErrorCode.cxx
-  vtkErrorCode.h
-  vtkFunctionParser.cxx
-  vtkFunctionParser.h
-  vtkHeap.cxx
-  vtkHeap.h
-  vtkAbstractInterpolatedVelocityField.cxx
-  vtkAbstractInterpolatedVelocityField.h
-  vtkInterpolatedVelocityField.cxx
-  vtkInterpolatedVelocityField.h
-  vtkMarchingCubesCases.h
-  vtkMarchingSquaresCases.h
-  vtkScalarTree.cxx
-  vtkScalarTree.h
-  vtkSimpleScalarTree.cxx
-  vtkSimpleScalarTree.h
+vtkContourValues.cxx
+vtkContourValues.h
+vtkErrorCode.cxx
+vtkErrorCode.h
+vtkFunctionParser.cxx
+vtkFunctionParser.h
+vtkHeap.cxx
+vtkHeap.h
+vtkMarchingCubesCases.h
+vtkMarchingSquaresCases.h
   )
 
 include_directories(

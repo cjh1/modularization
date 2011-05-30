@@ -1,44 +1,44 @@
 
 SET(Kit_SRCS
-  vtkImplicitFunctionCollection.cxx
-  vtkImplicitFunctionCollection.h
-  vtkImplicitFunction.cxx
-  vtkImplicitFunction.h
-  vtkPlaneCollection.cxx
-  vtkPlaneCollection.h
-  vtkPlane.cxx
-  vtkPlane.h
-  vtkPlanes.cxx
-  vtkPlanes.h
-  vtkQuadric.cxx
-  vtkQuadric.h
-  vtkCone.cxx
-  vtkCone.h
-  vtkCylinder.cxx
-  vtkCylinder.h
-  vtkImplicitBoolean.cxx
-  vtkImplicitBoolean.h
-  vtkImplicitDataSet.cxx
-  vtkImplicitDataSet.h
-  vtkImplicitHalo.cxx
-  vtkImplicitHalo.h
-  vtkImplicitSelectionLoop.cxx
-  vtkImplicitSelectionLoop.h
-  vtkImplicitSum.cxx
-  vtkImplicitSum.h
-  vtkImplicitVolume.cxx
-  vtkImplicitVolume.h
-  vtkImplicitWindowFunction.cxx
-  vtkImplicitWindowFunction.h
-  vtkPerlinNoise.cxx
-  vtkPerlinNoise.h
-  vtkPlanesIntersection.cxx
-  vtkPlanesIntersection.h
-  vtkPolyPlane.h
-  vtkSphere.cxx
-  vtkSphere.h
-  vtkSuperquadric.cxx
-  vtkSuperquadric.h
+vtkCone.cxx
+vtkCone.h
+vtkCylinder.cxx
+vtkCylinder.h
+vtkImplicitBoolean.cxx
+vtkImplicitBoolean.h
+vtkImplicitDataSet.cxx
+vtkImplicitDataSet.h
+vtkImplicitFunction.cxx
+vtkImplicitFunction.h
+vtkImplicitFunctionCollection.cxx
+vtkImplicitFunctionCollection.h
+vtkImplicitHalo.cxx
+vtkImplicitHalo.h
+vtkImplicitSelectionLoop.cxx
+vtkImplicitSelectionLoop.h
+vtkImplicitSum.cxx
+vtkImplicitSum.h
+vtkImplicitVolume.cxx
+vtkImplicitVolume.h
+vtkImplicitWindowFunction.cxx
+vtkImplicitWindowFunction.h
+vtkPerlinNoise.cxx
+vtkPerlinNoise.h
+vtkPlane.cxx
+vtkPlane.h
+vtkPlaneCollection.cxx
+vtkPlaneCollection.h
+vtkPlanes.cxx
+vtkPlanes.h
+vtkPlanesIntersection.cxx
+vtkPlanesIntersection.h
+vtkPolyPlane.h
+vtkQuadric.cxx
+vtkQuadric.h
+vtkSphere.cxx
+vtkSphere.h
+vtkSuperquadric.cxx
+vtkSuperquadric.h
   )
 
 include_directories(
