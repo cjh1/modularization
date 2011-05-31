@@ -4,8 +4,6 @@ vtkClientSocket.cxx
 vtkClientSocket.h
 vtkDirectory.cxx
 vtkDirectory.h
-vtkProcessStatistics.cxx
-vtkProcessStatistics.h
 vtkServerSocket.cxx
 vtkServerSocket.h
 vtkSocket.cxx
@@ -20,9 +18,10 @@ vtkTimerLog.h
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${VTK_SOURCE_DIR}/Common/Core)
 
-#SET_SOURCE_FILES_PROPERTIES(
-#ABSTRACT
-#)
+SET_SOURCE_FILES_PROPERTIES(
+  vtkSocket
+  ABSTRACT
+)
 
 #SET_SOURCE_FILES_PROPERTIES(
 #  WRAP_EXCLUDE

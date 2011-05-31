@@ -12,10 +12,10 @@ vtkMatrix3x3.cxx
 vtkMatrix3x3.h
 vtkMatrix4x4.cxx
 vtkMatrix4x4.h
-vtkPiecewiseFunction.cxx
-vtkPiecewiseFunction.h
-vtkPiecewiseFunctionShiftScale.cxx
-vtkPiecewiseFunctionShiftScale.h
+#vtkPiecewiseFunction.cxx
+#vtkPiecewiseFunction.h
+#vtkPiecewiseFunctionShiftScale.cxx
+#vtkPiecewiseFunctionShiftScale.h
 vtkPolynomialSolversUnivariate.cxx
 vtkPolynomialSolversUnivariate.h
 vtkQuaternionInterpolator.cxx

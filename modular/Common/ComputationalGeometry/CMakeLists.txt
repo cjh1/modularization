@@ -4,10 +4,6 @@ vtkCardinalSpline.cxx
 vtkCardinalSpline.h
 vtkKochanekSpline.cxx
 vtkKochanekSpline.h
-vtkMeanValueCoordinatesInterpolator.cxx
-vtkMeanValueCoordinatesInterpolator.h
-vtkOrderedTriangulator.cxx
-vtkOrderedTriangulator.h
 vtkParametricBoy.cxx
 vtkParametricBoy.h
 vtkParametricConicSpiral.cxx
@@ -43,7 +39,7 @@ vtkParametricTorus.h
   )
 
 include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR} 
+  ${CMAKE_CURRENT_BINARY_DIR}
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_SOURCE_DIR}/Common/DataModel
   ${VTK_SOURCE_DIR}/Common/Math

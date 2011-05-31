@@ -1,6 +1,13 @@
 
 # DataModel
 set(Kit_SRCS
+vtkMeanValueCoordinatesInterpolator.cxx
+vtkMeanValueCoordinatesInterpolator.h
+vtkOrderedTriangulator.cxx
+vtkOrderedTriangulator.h
+vtkSelection.cxx
+vtkSelectionNode.cxx
+
 vtkAMRBox.cxx
 vtkAMRBox.h
 vtkAbstractCellLocator.cxx
@@ -41,8 +48,6 @@ vtkBiQuadraticQuadraticWedge.cxx
 vtkBiQuadraticQuadraticWedge.h
 vtkBiQuadraticTriangle.cxx
 vtkBiQuadraticTriangle.h
-vtkBox.cxx
-vtkBox.h
 vtkCachedStreamingDemandDrivenPipeline.cxx
 vtkCachedStreamingDemandDrivenPipeline.h
 vtkCastToConcrete.cxx
@@ -466,7 +471,6 @@ vtkXMLDataElement.h
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   ${VTK_SOURCE_DIR}/Common/Core
-  ${VTK_SOURCE_DIR}/Common/ImplicitFunctions
   ${VTK_SOURCE_DIR}/Common/Math
   ${VTK_SOURCE_DIR}/Common/Misc
   ${VTK_SOURCE_DIR}/Common/System
@@ -486,4 +490,4 @@ include_directories(
 
 add_library(vtkCommonDataModel ${Kit_SRCS})
 
-target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonSystem vtkCommonMath vtkCommonMisc vtkCommonImplicitFunctions)
+target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonSystem vtkCommonMath vtkCommonMisc)

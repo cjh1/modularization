@@ -16,6 +16,8 @@ Infovis/TitanReadme.txt: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.eps: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.ipe: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.png: <ignore>
+Common/vtkProcessStatistics.cxx: <ignore>
+Common/vtkProcessStatistics.h: <ignore>
 # For now - this list will shrink as we map all of the files
 CMakeLists.txt: <ignore>
 CTestConfig.cmake: <ignore>
@@ -372,10 +374,6 @@ Filtering/vtkCardinalSpline.cxx:
 Filtering/vtkCardinalSpline.h:
 Filtering/vtkKochanekSpline.cxx:
 Filtering/vtkKochanekSpline.h:
-Filtering/vtkMeanValueCoordinatesInterpolator.cxx:
-Filtering/vtkMeanValueCoordinatesInterpolator.h:
-Filtering/vtkOrderedTriangulator.cxx:
-Filtering/vtkOrderedTriangulator.h:
 Common/vtkParametricBoy.cxx:
 Common/vtkParametricBoy.h:
 Common/vtkParametricConicSpiral.cxx:
@@ -720,6 +718,26 @@ Filtering/vtkVoxel.h:
 Filtering/vtkWedge.cxx:
 Filtering/vtkWedge.h:
 
+# For vtkCell
+Filtering/vtkOrderedTriangulator.cxx:
+Filtering/vtkOrderedTriangulator.h:
+
+# For vtkAnnotation - these may well need to move back though
+Filtering/vtkSelection.cxx:
+Filtering/vtkSelection.h:
+Filtering/vtkSelectionNode.cxx:
+Filtering/vtkSelectionNode.h:
+
+# Derived from vtkDataObject
+Filtering/vtkPiecewiseFunction.cxx:
+Filtering/vtkPiecewiseFunction.h:
+Filtering/vtkPiecewiseFunctionShiftScale.cxx:
+Filtering/vtkPiecewiseFunctionShiftScale.h:
+
+# Needed in DataModel, may not be the best place.
+Filtering/vtkMeanValueCoordinatesInterpolator.cxx:
+Filtering/vtkMeanValueCoordinatesInterpolator.h:
+
 
 #[Common/ExecutionModel]
 
@@ -945,10 +963,6 @@ Common/vtkMatrix3x3.cxx:
 Common/vtkMatrix3x3.h:
 Common/vtkMatrix4x4.cxx:
 Common/vtkMatrix4x4.h:
-Filtering/vtkPiecewiseFunction.cxx:
-Filtering/vtkPiecewiseFunction.h:
-Filtering/vtkPiecewiseFunctionShiftScale.cxx:
-Filtering/vtkPiecewiseFunctionShiftScale.h:
 Common/vtkPolynomialSolversUnivariate.cxx:
 Common/vtkPolynomialSolversUnivariate.h:
 Rendering/vtkQuaternionInterpolator.cxx:
@@ -992,8 +1006,6 @@ Common/vtkClientSocket.cxx:
 Common/vtkClientSocket.h:
 Common/vtkDirectory.cxx:
 Common/vtkDirectory.h:
-Common/vtkProcessStatistics.cxx:
-Common/vtkProcessStatistics.h:
 Common/vtkServerSocket.cxx:
 Common/vtkServerSocket.h:
 Common/vtkSocketCollection.cxx:
@@ -3014,10 +3026,6 @@ Hybrid/vtkWeightedTransformFilter.h:
 
 [Interaction/Selection]
 
-Filtering/vtkSelection.cxx:
-Filtering/vtkSelection.h:
-Filtering/vtkSelectionNode.cxx:
-Filtering/vtkSelectionNode.h:
 Filtering/vtkSelectionAlgorithm.cxx:
 Filtering/vtkSelectionAlgorithm.h:
 Rendering/vtkHardwareSelectionPolyDataPainter.cxx:

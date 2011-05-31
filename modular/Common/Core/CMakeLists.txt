@@ -115,10 +115,10 @@ vtkIdTypeArray.cxx
 vtkIdTypeArray.h
 vtkIndent.cxx
 vtkIndent.h
-vtkInformation.cxx
-vtkInformation.h
-vtkInformationDataObjectKey.cxx
-vtkInformationDataObjectKey.h
+#vtkInformation.cxx
+#vtkInformation.h
+#vtkInformationDataObjectKey.cxx
+#vtkInformationDataObjectKey.h
 vtkInformationDoubleKey.cxx
 vtkInformationDoubleKey.h
 vtkInformationDoubleVectorKey.cxx
@@ -253,8 +253,6 @@ vtkUnsignedLongLongArray.cxx
 vtkUnsignedLongLongArray.h
 vtkUnsignedShortArray.cxx
 vtkUnsignedShortArray.h
-vtkUnsigned__Int64Array.cxx
-vtkUnsigned__Int64Array.h
 vtkVariant.cxx
 vtkVariant.h
 vtkVariantArray.cxx
@@ -272,19 +270,28 @@ vtkWeakPointer.h
 vtkWeakPointerBase.cxx
 vtkWeakPointerBase.h
 vtkWin32Header.h
-vtkWin32OutputWindow.cxx
-vtkWin32OutputWindow.h
-vtkWin32OutputWindowProcessEncoded.c
-vtkWin32ProcessOutputWindow.cxx
-vtkWin32ProcessOutputWindow.h
 vtkWindow.cxx
 vtkWindow.h
 vtkWindows.h
 vtkXMLFileOutputWindow.cxx
 vtkXMLFileOutputWindow.h
-vtk__Int64Array.cxx
-vtk__Int64Array.h
   )
+
+# __int64 seems to be platform specific, turning on if
+if(HAVE_VTK_SIZEOF__INT64)
+  list(APPEND Kit_SRCS
+    vtkUnsigned__Int64Array.cxx
+    vtk__Int64Array.cxx
+    )
+endif()
+
+if(WIN32)
+  list(APPEND Kit_SRCS
+    vtkWin32OutputWindow.cxx
+    vtkWin32OutputWindowProcessEncoded.c
+    vtkWin32ProcessOutputWindow.cxx
+    )
+endif()
 
 # Generate data for folding Unicode strings
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/vtkUnicodeString.cmake.in
@@ -564,7 +571,7 @@ endif()
 
 add_library(vtkCommonCore ${Kit_SRCS})
 
-target_link_libraries(vtkCommonCore kwsys)
+target_link_libraries(vtkCommonCore vtksys)
 
 IF(CMAKE_COMPILER_IS_GNUCXX AND MINGW)
   # MinGW fails to dllexport the explicit instantiations of

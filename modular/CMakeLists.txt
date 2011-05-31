@@ -441,6 +441,11 @@ FOREACH(header
   ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)
 ENDFOREACH(header)
 
+
+# Include the sockets test.
+# FIXME: The test should be moved and rewritten.
+include(${VTK_SOURCE_DIR}/Parallel/Core/VTKParallelCMakeTests.cmake)
+
 # Add the VTK binary dir to the include path to pick up the vtkConfigure.h
 include_directories(${VTK_BINARY_DIR} ${VTK_BINARY_DIR}/Utilities)
 
