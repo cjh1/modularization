@@ -1,5 +1,7 @@
 
 SET(Kit_SRCS
+vtkBox.cxx
+vtkBox.h
 vtkCone.cxx
 vtkCone.h
 vtkCylinder.cxx
