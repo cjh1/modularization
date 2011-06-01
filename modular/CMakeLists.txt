@@ -50,7 +50,7 @@ if(NOT VTK_NO_LIBRARY_VERSION)
     )
 endif()
 
-
+INCLUDE(vtkTargetExportMacros)
 
 #-----------------------------------------------------------------------------
 # Load some macros.
@@ -476,7 +476,7 @@ foreach(f ${meta})
 endforeach()
 
 # Add the third party libraries
-set(vtk_tpl_modules kwsys)
+set(vtk_tpl_modules kwsys vtkalglib)
 foreach(tpl ${vtk_tpl_modules})
   set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${tpl})
   set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${tpl})
@@ -614,6 +614,10 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
   if(NOT ${vtk-module}_IS_TEST AND NOT ${vtk-module}_IS_TPL)
     message("Initializing variables for ${vtk-module}")
     init_module_vars()
+  endif()
+  message("vtk-module ${vtk-module}")
+  if(NOT EXISTS ${${vtk-module}_SOURCE_DIR})
+    message("Module directory does not exist!")
   endif()
   add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
 endforeach()
