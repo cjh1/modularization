@@ -417,8 +417,6 @@ Filtering/vtkAbstractInterpolatedVelocityField.cxx:
 Filtering/vtkAbstractInterpolatedVelocityField.h:
 Common/vtkAnimationScene.cxx:
 Common/vtkAnimationScene.h:
-Common/vtkBox.cxx:
-Common/vtkBox.h:
 Common/vtkColor.h:
 Common/vtkEdgeTable.cxx:
 Common/vtkEdgeTable.h:
@@ -673,6 +671,10 @@ Filtering/vtkReebGraph.cxx:
 Filtering/vtkReebGraph.h:
 Filtering/vtkReebGraphSimplificationMetric.cxx:
 Filtering/vtkReebGraphSimplificationMetric.h:
+Filtering/vtkSelection.cxx:
+Filtering/vtkSelection.h:
+Filtering/vtkSelectionNode.cxx:
+Filtering/vtkSelectionNode.h:
 Filtering/vtkSimpleCellTessellator.cxx:
 Filtering/vtkSimpleCellTessellator.h:
 Filtering/vtkSmoothErrorMetric.cxx:
@@ -721,12 +723,6 @@ Filtering/vtkWedge.h:
 # For vtkCell
 Filtering/vtkOrderedTriangulator.cxx:
 Filtering/vtkOrderedTriangulator.h:
-
-# For vtkAnnotation - these may well need to move back though
-Filtering/vtkSelection.cxx:
-Filtering/vtkSelection.h:
-Filtering/vtkSelectionNode.cxx:
-Filtering/vtkSelectionNode.h:
 
 # Derived from vtkDataObject
 Filtering/vtkPiecewiseFunction.cxx:
@@ -901,11 +897,13 @@ Filtering/vtkUnstructuredGridToPolyDataFilter.h:
 Filtering/vtkUnstructuredGridToUnstructuredGridFilter.cxx:
 Filtering/vtkUnstructuredGridToUnstructuredGridFilter.h:
 
-[Common/ImplicitFunctions]
+#[Common/ImplicitFunctions]
 
-modular/Common/ImplicitFunctions/CMakeLists.txt:
-modular/Common/ImplicitFunctions/module.cmake:
+modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
+modular/Common/ImplicitFunctions/module.cmake: <ignore>
 
+Common/vtkBox.cxx:
+Common/vtkBox.h:
 Common/vtkImplicitFunctionCollection.cxx:
 Common/vtkImplicitFunctionCollection.h:
 Common/vtkImplicitFunction.cxx:
@@ -1726,6 +1724,7 @@ CMake/vtkWrapPython.cmake:
 CMake/vtkWrapPythonSIP.cmake:
 CMake/vtkWrapPython.sip.in:
 CMake/vtkWrapTcl.cmake:
+Parallel/VTKParallelCMakeTests.cmake:
 
 
 [Deprecated]
@@ -4359,7 +4358,6 @@ Parallel/vtkMultiProcessController.cxx:
 Parallel/vtkMultiProcessController.h:
 Parallel/vtkMultiProcessStream.cxx:
 Parallel/vtkMultiProcessStream.h:
-Parallel/VTKParallelCMakeTests.cmake:
 Parallel/vtkParallelFactory.cxx:
 Parallel/vtkParallelFactory.h:
 Parallel/vtkParallelRenderManager.cxx:
