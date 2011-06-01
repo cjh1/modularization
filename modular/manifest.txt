@@ -16,8 +16,6 @@ Infovis/TitanReadme.txt: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.eps: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.ipe: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.png: <ignore>
-Common/vtkProcessStatistics.cxx: <ignore>
-Common/vtkProcessStatistics.h: <ignore>
 # For now - this list will shrink as we map all of the files
 CMakeLists.txt: <ignore>
 CTestConfig.cmake: <ignore>
