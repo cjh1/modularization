@@ -33,18 +33,36 @@ vtkStreamingStatistics.h
 vtkStreamingStatistics.cxx
 vtkUnivariateStatisticsAlgorithm.h
 vtkUnivariateStatisticsAlgorithm.cxx
-vtkRAdapter.cxx
-vtkRAdapter.h
-vtkRCalculatorFilter.cxx
-vtkRCalculatorFilter.h
-vtkRInterface.cxx
-vtkRInterface.h
   )
+
+# Add Gnu R interface related files.
+IF(VTK_USE_GNU_R)
+  SET(Kit_SRCS
+    ${Kit_SRCS}
+    vtkRAdapter.cxx
+    vtkRAdapter.h
+    vtkRCalculatorFilter.cxx
+    vtkRCalculatorFilter.h
+    vtkRInterface.cxx
+    vtkRInterface.h
+  )
+  SET_SOURCE_FILES_PROPERTIES(
+    vtkRAdapter.cxx
+    WRAP_EXCLUDE
+  )
+
+  SET(KIT_LIBS ${KIT_LIBS} ${R_LIBRARIES})
+
+ENDIF(VTK_USE_GNU_R)
 
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
+  ${VTK_SOURCE_DIR}/Utilities/vtkalglib
+  ${VTK_BINARY_DIR}/Utilities/vtkalglib
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_SOURCE_DIR}/Common/Math
+  ${VTK_SOURCE_DIR}/Common/System
+  ${VTK_SOURCE_DIR}/Common/Misc
   ${VTK_SOURCE_DIR}/Common/DataModel
   )
 
