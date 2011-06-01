@@ -1,3 +1,3 @@
 vtk_module(FilteringStatistics
-  DEPENDS CommonCore CommonMath CommonDataModel CommonTransforms
+  DEPENDS CommonCore CommonMath CommonSystem CommonMisc CommonDataModel CommonTransforms vtkalglib
   DEFAULT ON)
