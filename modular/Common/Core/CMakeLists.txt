@@ -115,10 +115,10 @@ vtkIdTypeArray.cxx
 vtkIdTypeArray.h
 vtkIndent.cxx
 vtkIndent.h
-#vtkInformation.cxx
-#vtkInformation.h
-#vtkInformationDataObjectKey.cxx
-#vtkInformationDataObjectKey.h
+vtkInformation.cxx
+vtkInformation.h
+vtkInformationDataObjectKey.cxx
+vtkInformationDataObjectKey.h
 vtkInformationDoubleKey.cxx
 vtkInformationDoubleKey.h
 vtkInformationDoubleVectorKey.cxx
