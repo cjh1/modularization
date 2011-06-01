@@ -57,4 +57,4 @@ include_directories(
 
 add_library(vtkCommonTransforms ${Kit_SRCS})
 
-target_link_libraries(vtkCommonTransforms vtkCommonCore vtkCommonMath)
+target_link_libraries(vtkCommonTransforms vtkCommonCore vtkCommonMath vtkCommonDataModel)
