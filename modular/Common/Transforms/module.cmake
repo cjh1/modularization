@@ -1,3 +1,3 @@
 vtk_module(CommonTransforms
-  DEPENDS CommonCore CommonMath
+  DEPENDS CommonCore CommonMath CommonDataModel
   DEFAULT ON)
