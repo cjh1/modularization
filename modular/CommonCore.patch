@@ -1,0 +1,13 @@
+diff --git a/Common/vtkInformationDataObjectKey.cxx b/Common/vtkInformationDataObjectKey.cxx
+index ff88b71..95b315d 100644
+--- a/Common/vtkInformationDataObjectKey.cxx
++++ b/Common/vtkInformationDataObjectKey.cxx
+@@ -14,7 +14,7 @@
+ =========================================================================*/
+ #include "vtkInformationDataObjectKey.h"
+
+-#include "vtkDataObject.h"
++#include "../DataModel/vtkDataObject.h"
+
+
+ //----------------------------------------------------------------------------
