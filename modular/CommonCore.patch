@@ -11,39 +11,3 @@ index ff88b71..95b315d 100644
  
  
  //----------------------------------------------------------------------------
-diff --git a/modular/CommonCore.patch b/modular/CommonCore.patch
-index 6579b17..e69de29 100644
---- a/modular/CommonCore.patch
-+++ b/modular/CommonCore.patch
-@@ -1,31 +0,0 @@
--diff --git a/Common/vtkInformationDataObjectKey.cxx b/Common/vtkInformationDataObjectKey.cxx
--index ff88b71..95b315d 100644
----- a/Common/vtkInformationDataObjectKey.cxx
--+++ b/Common/vtkInformationDataObjectKey.cxx
--@@ -14,7 +14,7 @@
-- =========================================================================*/
-- #include "vtkInformationDataObjectKey.h"
-- 
---#include "vtkDataObject.h"
--+#include "../DataModel/vtkDataObject.h"
-- 
-- 
-- //----------------------------------------------------------------------------
--diff --git a/modular/CommonCore.patch b/modular/CommonCore.patch
--index c4d2d9f..e69de29 100644
----- a/modular/CommonCore.patch
--+++ b/modular/CommonCore.patch
--@@ -1,13 +0,0 @@
---diff --git a/Common/vtkInformationDataObjectKey.cxx b/Common/vtkInformationDataObjectKey.cxx
---index ff88b71..95b315d 100644
------ a/Common/vtkInformationDataObjectKey.cxx
---+++ b/Common/vtkInformationDataObjectKey.cxx
---@@ -14,7 +14,7 @@
--- =========================================================================*/
--- #include "vtkInformationDataObjectKey.h"
---
----#include "vtkDataObject.h"
---+#include "../DataModel/vtkDataObject.h"
---
---
--- //----------------------------------------------------------------------------
