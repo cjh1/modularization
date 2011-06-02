@@ -78,6 +78,6 @@ include_directories(
 #  PROPERTIES WRAP_SPECIAL 1
 #)
 
-add_library(vtkFilteringStatistics ${Kit_SRCS})
+add_library(vtkFiltersStatistics ${Kit_SRCS})
 
-target_link_libraries(vtkFilteringStatistics vtkCommonCore vtkCommonMath vtkCommonDataModel)
+target_link_libraries(vtkFiltersStatistics vtkCommonCore vtkCommonMath vtkCommonDataModel)

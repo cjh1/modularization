@@ -2962,10 +2962,10 @@ Hybrid/vtkWeightedTransformFilter.cxx:
 Hybrid/vtkWeightedTransformFilter.h:
 
 
-[Filtering/Statistics]
+[Filters/Statistics]
 
-modular/Filtering/Statistics/CMakeLists.txt:
-modular/Filtering/Statistics/module.cmake:
+modular/Filters/Statistics/CMakeLists.txt:
+modular/Filters/Statistics/module.cmake:
 
 Infovis/vtkBivariateLinearTableThreshold.h:
 Infovis/vtkBivariateLinearTableThreshold.cxx:
@@ -3007,7 +3007,7 @@ Graphics/vtkRCalculatorFilter.h:
 Graphics/vtkRInterface.cxx:
 Graphics/vtkRInterface.h:
 
-[Filtering/ParallelStatistics]
+[Filters/ParallelStatistics]
 
 Infovis/vtkPContingencyStatistics.h:
 Infovis/vtkPContingencyStatistics.cxx:
