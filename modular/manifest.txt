@@ -363,6 +363,9 @@ Common/vtkMutexLock.h:
 Common/vtkDynamicLoader.cxx:
 Common/vtkDynamicLoader.h:
 
+modular/CommonCore.patch: <ignore>
+#<patch>: modular/CommonCore.patch
+
 [Common/ComputationalGeometry]
 
 modular/Common/ComputationalGeometry/CMakeLists.txt:
@@ -731,7 +734,6 @@ Filtering/vtkPiecewiseFunctionShiftScale.h:
 # Needed in DataModel, may not be the best place.
 Filtering/vtkMeanValueCoordinatesInterpolator.cxx:
 Filtering/vtkMeanValueCoordinatesInterpolator.h:
-
 
 #[Common/ExecutionModel]
 
