@@ -1,520 +1,258 @@
 
 # DataModel
 set(Kit_SRCS
-vtkMeanValueCoordinatesInterpolator.cxx
-vtkMeanValueCoordinatesInterpolator.h
-vtkOrderedTriangulator.cxx
-vtkOrderedTriangulator.h
-vtkSelection.cxx
-vtkSelectionNode.cxx
-vtkPiecewiseFunction.cxx
-vtkPiecewiseFunctionShiftScale.cxx
-
-vtkAMRBox.cxx
-vtkAMRBox.h
 vtkAbstractCellLocator.cxx
-vtkAbstractCellLocator.h
-vtkAbstractInterpolatedVelocityField.cxx
-vtkAbstractInterpolatedVelocityField.h
-vtkAbstractPointLocator.cxx
-vtkAbstractPointLocator.h
-vtkAdjacentVertexIterator.cxx
-vtkAdjacentVertexIterator.h
-vtkAlgorithm.cxx
-vtkAlgorithm.h
-vtkAlgorithmOutput.cxx
-vtkAlgorithmOutput.h
-vtkAnimationScene.cxx
-vtkAnimationScene.h
-vtkAnnotation.cxx
-vtkAnnotation.h
-vtkAnnotationLayers.cxx
-vtkAnnotationLayers.h
-vtkAnnotationLayersAlgorithm.cxx
-vtkAnnotationLayersAlgorithm.h
-vtkArrayData.cxx
-vtkArrayData.h
-vtkArrayDataAlgorithm.cxx
-vtkArrayDataAlgorithm.h
-vtkAttributesErrorMetric.cxx
-vtkAttributesErrorMetric.h
-vtkBSPCuts.cxx
-vtkBSPCuts.h
-vtkBSPIntersections.cxx
-vtkBSPIntersections.h
-vtkBiQuadraticQuad.cxx
-vtkBiQuadraticQuad.h
-vtkBiQuadraticQuadraticHexahedron.cxx
-vtkBiQuadraticQuadraticHexahedron.h
-vtkBiQuadraticQuadraticWedge.cxx
-vtkBiQuadraticQuadraticWedge.h
-vtkBiQuadraticTriangle.cxx
-vtkBiQuadraticTriangle.h
-vtkCachedStreamingDemandDrivenPipeline.cxx
-vtkCachedStreamingDemandDrivenPipeline.h
-vtkCastToConcrete.cxx
-vtkCastToConcrete.h
-vtkCell.cxx
-vtkCell.h
-vtkCell3D.cxx
-vtkCell3D.h
-vtkCellArray.cxx
-vtkCellArray.h
-vtkCellData.cxx
-vtkCellData.h
-vtkCellLinks.cxx
-vtkCellLinks.h
-vtkCellLocator.cxx
-vtkCellLocator.h
-vtkCellType.h
-vtkCellTypes.cxx
-vtkCellTypes.h
-vtkColor.h
-vtkCompositeDataIterator.cxx
-vtkCompositeDataIterator.h
-vtkCompositeDataPipeline.cxx
-vtkCompositeDataPipeline.h
-vtkCompositeDataSet.cxx
-vtkCompositeDataSet.h
-vtkCompositeDataSetAlgorithm.cxx
-vtkCompositeDataSetAlgorithm.h
-vtkCompositeDataSetInternals.h
-vtkComputingResources.cxx
-vtkComputingResources.h
-vtkConvexPointSet.cxx
-vtkConvexPointSet.h
-vtkCubicLine.cxx
-vtkCubicLine.h
-vtkDataObject.cxx
-vtkDataObject.h
-vtkDataObjectAlgorithm.cxx
-vtkDataObjectAlgorithm.h
-vtkDataObjectCollection.cxx
-vtkDataObjectCollection.h
-vtkDataObjectSource.cxx
-vtkDataObjectSource.h
-vtkDataObjectTypes.cxx
-vtkDataObjectTypes.h
-vtkDataSet.cxx
-vtkDataSet.h
-vtkDataSetAlgorithm.cxx
-vtkDataSetAlgorithm.h
-vtkDataSetAttributes.cxx
-vtkDataSetAttributes.h
-vtkDataSetCollection.cxx
-vtkDataSetCollection.h
-vtkDataSetSource.cxx
-vtkDataSetSource.h
-vtkDataSetToDataSetFilter.cxx
-vtkDataSetToDataSetFilter.h
-vtkDataSetToImageFilter.cxx
-vtkDataSetToImageFilter.h
-vtkDataSetToPolyDataFilter.cxx
-vtkDataSetToPolyDataFilter.h
-vtkDataSetToStructuredGridFilter.cxx
-vtkDataSetToStructuredGridFilter.h
-vtkDataSetToStructuredPointsFilter.cxx
-vtkDataSetToStructuredPointsFilter.h
-vtkDataSetToUnstructuredGridFilter.cxx
-vtkDataSetToUnstructuredGridFilter.h
-vtkDemandDrivenPipeline.cxx
-vtkDemandDrivenPipeline.h
-vtkDirectedAcyclicGraph.cxx
-vtkDirectedAcyclicGraph.h
-vtkDirectedGraph.cxx
-vtkDirectedGraph.h
-vtkDirectedGraphAlgorithm.cxx
-vtkDirectedGraphAlgorithm.h
-vtkDistributedGraphHelper.cxx
-vtkDistributedGraphHelper.h
-vtkEdgeListIterator.cxx
-vtkEdgeListIterator.h
-vtkEdgeTable.cxx
-vtkEdgeTable.h
-vtkEmptyCell.cxx
-vtkEmptyCell.h
-vtkExecutionScheduler.cxx
-vtkExecutionScheduler.h
-vtkExecutionSchedulerManager.cxx
-vtkExecutionSchedulerManager.h
-vtkExecutive.cxx
-vtkExecutive.h
-vtkExecutiveCollection.cxx
-vtkExecutiveCollection.h
-vtkExplicitCell.cxx
-vtkExplicitCell.h
-vtkExtentSplitter.cxx
-vtkExtentSplitter.h
-vtkExtentTranslator.cxx
-vtkExtentTranslator.h
-vtkFieldData.cxx
-vtkFieldData.h
-vtkFilteringInformationKeyManager.cxx
-vtkFilteringInformationKeyManager.h
-vtkGenericAdaptorCell.cxx
-vtkGenericAdaptorCell.h
-vtkGenericAttribute.cxx
-vtkGenericAttribute.h
-vtkGenericAttributeCollection.cxx
-vtkGenericAttributeCollection.h
-vtkGenericCell.cxx
-vtkGenericCell.h
-vtkGenericCellIterator.cxx
-vtkGenericCellIterator.h
-vtkGenericCellTessellator.cxx
-vtkGenericCellTessellator.h
-vtkGenericDataSet.cxx
-vtkGenericDataSet.h
-vtkGenericDataSetAlgorithm.cxx
-vtkGenericDataSetAlgorithm.h
-vtkGenericEdgeTable.cxx
-vtkGenericEdgeTable.h
-vtkGenericInterpolatedVelocityField.cxx
-vtkGenericInterpolatedVelocityField.h
-vtkGenericPointIterator.cxx
-vtkGenericPointIterator.h
-vtkGenericSubdivisionErrorMetric.cxx
-vtkGenericSubdivisionErrorMetric.h
-vtkGeometricErrorMetric.cxx
-vtkGeometricErrorMetric.h
-vtkGraph.cxx
-vtkGraph.h
-vtkGraphAlgorithm.cxx
-vtkGraphAlgorithm.h
-vtkGraphEdge.cxx
-vtkGraphEdge.h
-vtkGraphInternals.cxx
-vtkGraphInternals.h
-vtkHexagonalPrism.cxx
-vtkHexagonalPrism.h
-vtkHexahedron.cxx
-vtkHexahedron.h
-vtkHierarchicalBoxDataIterator.cxx
-vtkHierarchicalBoxDataIterator.h
-vtkHierarchicalBoxDataSet.cxx
-vtkHierarchicalBoxDataSet.h
-vtkHierarchicalBoxDataSetAlgorithm.cxx
-vtkHierarchicalBoxDataSetAlgorithm.h
-vtkHyperOctree.cxx
-vtkHyperOctree.h
-vtkHyperOctreeAlgorithm.cxx
-vtkHyperOctreeAlgorithm.h
-vtkHyperOctreeCursor.cxx
-vtkHyperOctreeCursor.h
-vtkHyperOctreePointsGrabber.cxx
-vtkHyperOctreePointsGrabber.h
-vtkImageAlgorithm.cxx
-vtkImageAlgorithm.h
-vtkImageData.cxx
-vtkImageData.h
-vtkImageInPlaceFilter.cxx
-vtkImageInPlaceFilter.h
-vtkImageIterator.cxx
-vtkImageIterator.h
-vtkImageIterator.txx
-vtkImageMultipleInputFilter.cxx
-vtkImageMultipleInputFilter.h
-vtkImageMultipleInputOutputFilter.cxx
-vtkImageMultipleInputOutputFilter.h
-vtkImageProgressIterator.cxx
-vtkImageProgressIterator.h
-vtkImageProgressIterator.txx
-vtkImageSource.cxx
-vtkImageSource.h
-vtkImageToImageFilter.cxx
-vtkImageToImageFilter.h
-vtkImageToStructuredGrid.cxx
-vtkImageToStructuredGrid.h
-vtkImageToStructuredPoints.cxx
-vtkImageToStructuredPoints.h
-vtkImageTwoInputFilter.cxx
-vtkImageTwoInputFilter.h
-vtkInEdgeIterator.cxx
-vtkInEdgeIterator.h
-vtkIncrementalOctreeNode.cxx
-vtkIncrementalOctreeNode.h
-vtkIncrementalOctreePointLocator.cxx
-vtkIncrementalOctreePointLocator.h
-vtkIncrementalPointLocator.cxx
-vtkIncrementalPointLocator.h
-vtkInformationExecutivePortKey.cxx
-vtkInformationExecutivePortKey.h
-vtkInformationExecutivePortVectorKey.cxx
-vtkInformationExecutivePortVectorKey.h
-vtkInformationQuadratureSchemeDefinitionVectorKey.cxx
-vtkInformationQuadratureSchemeDefinitionVectorKey.h
-vtkInterpolatedVelocityField.cxx
-vtkInterpolatedVelocityField.h
-vtkKdNode.cxx
-vtkKdNode.h
-vtkKdTree.cxx
-vtkKdTree.h
-vtkKdTreePointLocator.cxx
-vtkKdTreePointLocator.h
-vtkLine.cxx
-vtkLine.h
-vtkLocator.cxx
-vtkLocator.h
-vtkMergePoints.cxx
-vtkMergePoints.h
-vtkMultiBlockDataSet.cxx
-vtkMultiBlockDataSet.h
-vtkMultiBlockDataSetAlgorithm.cxx
-vtkMultiBlockDataSetAlgorithm.h
-vtkMultiPieceDataSet.cxx
-vtkMultiPieceDataSet.h
-vtkMutableDirectedGraph.cxx
-vtkMutableDirectedGraph.h
-vtkMutableUndirectedGraph.cxx
-vtkMutableUndirectedGraph.h
-vtkNonLinearCell.cxx
-vtkNonLinearCell.h
-vtkNonMergingPointLocator.cxx
-vtkNonMergingPointLocator.h
-vtkOctreePointLocator.cxx
-vtkOctreePointLocator.h
-vtkOctreePointLocatorNode.cxx
-vtkOctreePointLocatorNode.h
-vtkOnePieceExtentTranslator.cxx
-vtkOnePieceExtentTranslator.h
-vtkOutEdgeIterator.cxx
-vtkOutEdgeIterator.h
-vtkPassInputTypeAlgorithm.cxx
-vtkPassInputTypeAlgorithm.h
-vtkPentagonalPrism.cxx
-vtkPentagonalPrism.h
-vtkPiecewiseFunctionAlgorithm.cxx
-vtkPiecewiseFunctionAlgorithm.h
-vtkPixel.cxx
-vtkPixel.h
-vtkPointData.cxx
-vtkPointData.h
-vtkPointLocator.cxx
-vtkPointLocator.h
-vtkPointSet.cxx
-vtkPointSet.h
-vtkPointSetAlgorithm.cxx
-vtkPointSetAlgorithm.h
-vtkPointSetSource.cxx
-vtkPointSetSource.h
-vtkPointSetToPointSetFilter.cxx
-vtkPointSetToPointSetFilter.h
-vtkPoints.cxx
-vtkPoints.h
-vtkPoints2D.cxx
-vtkPoints2D.h
-vtkPointsProjectedHull.cxx
-vtkPointsProjectedHull.h
-vtkPolyData.cxx
-vtkPolyData.h
-vtkPolyDataAlgorithm.cxx
-vtkPolyDataAlgorithm.h
-vtkPolyDataCollection.cxx
-vtkPolyDataCollection.h
-vtkPolyDataSource.cxx
-vtkPolyDataSource.h
-vtkPolyDataToPolyDataFilter.cxx
-vtkPolyDataToPolyDataFilter.h
-vtkPolyLine.cxx
-vtkPolyLine.h
-vtkPolyPlane.cxx
-vtkPolyVertex.cxx
-vtkPolyVertex.h
-vtkPolygon.cxx
-vtkPolygon.h
-vtkPolyhedron.cxx
-vtkPolyhedron.h
-vtkProcessObject.cxx
-vtkProcessObject.h
-vtkPyramid.cxx
-vtkPyramid.h
-vtkQuad.cxx
-vtkQuad.h
-vtkQuadraticEdge.cxx
-vtkQuadraticEdge.h
-vtkQuadraticHexahedron.cxx
-vtkQuadraticHexahedron.h
-vtkQuadraticLinearQuad.cxx
-vtkQuadraticLinearQuad.h
-vtkQuadraticLinearWedge.cxx
-vtkQuadraticLinearWedge.h
-vtkQuadraticPyramid.cxx
-vtkQuadraticPyramid.h
-vtkQuadraticQuad.cxx
-vtkQuadraticQuad.h
-vtkQuadraticTetra.cxx
-vtkQuadraticTetra.h
-vtkQuadraticTriangle.cxx
-vtkQuadraticTriangle.h
-vtkQuadraticWedge.cxx
-vtkQuadraticWedge.h
-vtkQuadratureSchemeDefinition.cxx
-vtkQuadratureSchemeDefinition.h
-vtkRect.h
-vtkRectilinearGrid.cxx
-vtkRectilinearGrid.h
-vtkRectilinearGridAlgorithm.cxx
-vtkRectilinearGridAlgorithm.h
-vtkRectilinearGridSource.cxx
-vtkRectilinearGridSource.h
-vtkRectilinearGridToPolyDataFilter.cxx
-vtkRectilinearGridToPolyDataFilter.h
-vtkReebGraph.cxx
-vtkReebGraph.h
-vtkReebGraphSimplificationMetric.cxx
-vtkReebGraphSimplificationMetric.h
-vtkScalarTree.cxx
-vtkScalarTree.h
-vtkSimpleCellTessellator.cxx
-vtkSimpleCellTessellator.h
-vtkSimpleImageToImageFilter.cxx
-vtkSimpleImageToImageFilter.h
-vtkSimpleScalarTree.cxx
-vtkSimpleScalarTree.h
-vtkSmoothErrorMetric.cxx
-vtkSmoothErrorMetric.h
-vtkSource.cxx
-vtkSource.h
-vtkSpline.cxx
-vtkSpline.h
-vtkStreamingDemandDrivenPipeline.cxx
-vtkStreamingDemandDrivenPipeline.h
-vtkStructuredData.cxx
-vtkStructuredData.h
-vtkStructuredExtent.cxx
-vtkStructuredExtent.h
-vtkStructuredGrid.cxx
-vtkStructuredGrid.h
-vtkStructuredGridAlgorithm.cxx
-vtkStructuredGridAlgorithm.h
-vtkStructuredGridSource.cxx
-vtkStructuredGridSource.h
-vtkStructuredGridToPolyDataFilter.cxx
-vtkStructuredGridToPolyDataFilter.h
-vtkStructuredGridToStructuredGridFilter.cxx
-vtkStructuredGridToStructuredGridFilter.h
-vtkStructuredPoints.cxx
-vtkStructuredPoints.h
-vtkStructuredPointsCollection.cxx
-vtkStructuredPointsCollection.h
-vtkStructuredPointsSource.cxx
-vtkStructuredPointsSource.h
-vtkStructuredPointsToPolyDataFilter.cxx
-vtkStructuredPointsToPolyDataFilter.h
-vtkStructuredPointsToStructuredPointsFilter.cxx
-vtkStructuredPointsToStructuredPointsFilter.h
-vtkStructuredPointsToUnstructuredGridFilter.cxx
-vtkStructuredPointsToUnstructuredGridFilter.h
-vtkStructuredVisibilityConstraint.cxx
-vtkStructuredVisibilityConstraint.h
-vtkTable.cxx
-vtkTable.h
-vtkTableAlgorithm.cxx
-vtkTableAlgorithm.h
-vtkTableExtentTranslator.cxx
-vtkTableExtentTranslator.h
-vtkTemporalDataSet.cxx
-vtkTemporalDataSet.h
-vtkTemporalDataSetAlgorithm.cxx
-vtkTemporalDataSetAlgorithm.h
-vtkTensor.cxx
-vtkTensor.h
-vtkTetra.cxx
-vtkTetra.h
-vtkThreadedImageAlgorithm.cxx
-vtkThreadedImageAlgorithm.h
-vtkThreadedStreamingPipeline.cxx
-vtkThreadedStreamingPipeline.h
-vtkTree.cxx
-vtkTree.h
-vtkTreeAlgorithm.cxx
-vtkTreeAlgorithm.h
-vtkTreeBFSIterator.cxx
-vtkTreeBFSIterator.h
-vtkTreeDFSIterator.cxx
-vtkTreeDFSIterator.h
-vtkTriQuadraticHexahedron.cxx
-vtkTriQuadraticHexahedron.h
-vtkTriangle.cxx
-vtkTriangle.h
-vtkTriangleStrip.cxx
-vtkTriangleStrip.h
-vtkTrivialProducer.cxx
-vtkTrivialProducer.h
-vtkUndirectedGraph.cxx
-vtkUndirectedGraph.h
-vtkUndirectedGraphAlgorithm.cxx
-vtkUndirectedGraphAlgorithm.h
-vtkUniformGrid.cxx
-vtkUniformGrid.h
-vtkUnstructuredGrid.cxx
-vtkUnstructuredGrid.h
-vtkUnstructuredGridAlgorithm.cxx
-vtkUnstructuredGridAlgorithm.h
-vtkUnstructuredGridSource.cxx
-vtkUnstructuredGridSource.h
-vtkUnstructuredGridToPolyDataFilter.cxx
-vtkUnstructuredGridToPolyDataFilter.h
-vtkUnstructuredGridToUnstructuredGridFilter.cxx
-vtkUnstructuredGridToUnstructuredGridFilter.h
-vtkVector.h
-vtkVertex.cxx
-vtkVertex.h
-vtkVertexListIterator.cxx
-vtkVertexListIterator.h
-vtkVoxel.cxx
-vtkVoxel.h
-vtkWedge.cxx
-vtkWedge.h
-vtkXMLDataElement.cxx
-vtkXMLDataElement.h
+  vtkAbstractInterpolatedVelocityField.cxx
+  vtkAbstractPointLocator.cxx
+  vtkAdjacentVertexIterator.cxx
+  vtkAlgorithm.cxx
+  vtkAlgorithmOutput.cxx
+  vtkAMRBox.cxx
+  vtkAnimationScene.cxx
+  vtkAnnotation.cxx
+  vtkAnnotationLayersAlgorithm.cxx
+  vtkAnnotationLayers.cxx
+  vtkArrayDataAlgorithm.cxx
+  vtkArrayData.cxx
+  vtkAttributesErrorMetric.cxx
+  vtkBiQuadraticQuad.cxx
+  vtkBiQuadraticQuadraticHexahedron.cxx
+  vtkBiQuadraticQuadraticWedge.cxx
+  vtkBiQuadraticTriangle.cxx
+  vtkBox.cxx
+  vtkBSPCuts.cxx
+  vtkBSPIntersections.cxx
+  vtkCachedStreamingDemandDrivenPipeline.cxx
+  vtkCastToConcrete.cxx
+  vtkCell3D.cxx
+  vtkCellArray.cxx
+  vtkCell.cxx
+  vtkCellData.cxx
+  vtkCellLinks.cxx
+  vtkCellLocator.cxx
+  vtkCellTypes.cxx
+  vtkCompositeDataIterator.cxx
+  vtkCompositeDataPipeline.cxx
+  vtkCompositeDataSetAlgorithm.cxx
+  vtkCompositeDataSet.cxx
+  vtkComputingResources.cxx
+  vtkCone.cxx
+  vtkConvexPointSet.cxx
+  vtkCubicLine.cxx
+  vtkCylinder.cxx
+  vtkDataObjectAlgorithm.cxx
+  vtkDataObjectCollection.cxx
+  vtkDataObject.cxx
+  vtkDataObjectSource.cxx
+  vtkDataObjectTypes.cxx
+  vtkDataSetAlgorithm.cxx
+  vtkDataSetAttributes.cxx
+  vtkDataSetCollection.cxx
+  vtkDataSet.cxx
+  vtkDataSetSource.cxx
+  vtkDataSetToDataSetFilter.cxx
+  vtkDataSetToImageFilter.cxx
+  vtkDataSetToPolyDataFilter.cxx
+  vtkDataSetToStructuredGridFilter.cxx
+  vtkDataSetToStructuredPointsFilter.cxx
+  vtkDataSetToUnstructuredGridFilter.cxx
+  vtkDemandDrivenPipeline.cxx
+  vtkDirectedAcyclicGraph.cxx
+  vtkDirectedGraphAlgorithm.cxx
+  vtkDirectedGraph.cxx
+  vtkDistributedGraphHelper.cxx
+  vtkEdgeListIterator.cxx
+  vtkEdgeTable.cxx
+  vtkEmptyCell.cxx
+  vtkExecutionScheduler.cxx
+  vtkExecutionSchedulerManager.cxx
+  vtkExecutiveCollection.cxx
+  vtkExecutive.cxx
+  vtkExplicitCell.cxx
+  vtkExtentSplitter.cxx
+  vtkExtentTranslator.cxx
+  vtkFieldData.cxx
+  vtkFilteringInformationKeyManager.cxx
+  vtkGenericAdaptorCell.cxx
+  vtkGenericAttributeCollection.cxx
+  vtkGenericAttribute.cxx
+  vtkGenericCell.cxx
+  vtkGenericCellIterator.cxx
+  vtkGenericCellTessellator.cxx
+  vtkGenericDataSetAlgorithm.cxx
+  vtkGenericDataSet.cxx
+  vtkGenericEdgeTable.cxx
+  vtkGenericInterpolatedVelocityField.cxx
+  vtkGenericPointIterator.cxx
+  vtkGenericSubdivisionErrorMetric.cxx
+  vtkGeometricErrorMetric.cxx
+  vtkGraphAlgorithm.cxx
+  vtkGraph.cxx
+  vtkGraphEdge.cxx
+  vtkGraphInternals.cxx
+  vtkHexagonalPrism.cxx
+  vtkHexahedron.cxx
+  vtkHierarchicalBoxDataIterator.cxx
+  vtkHierarchicalBoxDataSetAlgorithm.cxx
+  vtkHierarchicalBoxDataSet.cxx
+  vtkHyperOctreeAlgorithm.cxx
+  vtkHyperOctreeCursor.cxx
+  vtkHyperOctree.cxx
+  vtkHyperOctreePointsGrabber.cxx
+  vtkImageAlgorithm.cxx
+  vtkImageData.cxx
+  vtkImageInPlaceFilter.cxx
+  vtkImageIterator.cxx
+  vtkImageMultipleInputFilter.cxx
+  vtkImageMultipleInputOutputFilter.cxx
+  vtkImageProgressIterator.cxx
+  vtkImageSource.cxx
+  vtkImageToImageFilter.cxx
+  vtkImageToStructuredGrid.cxx
+  vtkImageToStructuredPoints.cxx
+  vtkImageTwoInputFilter.cxx
+  vtkImplicitBoolean.cxx
+  vtkImplicitDataSet.cxx
+  vtkImplicitFunctionCollection.cxx
+  vtkImplicitFunction.cxx
+  vtkImplicitHalo.cxx
+  vtkImplicitSelectionLoop.cxx
+  vtkImplicitSum.cxx
+  vtkImplicitVolume.cxx
+  vtkImplicitWindowFunction.cxx
+  vtkIncrementalOctreeNode.cxx
+  vtkIncrementalOctreePointLocator.cxx
+  vtkIncrementalPointLocator.cxx
+  vtkInEdgeIterator.cxx
+  vtkInformationExecutivePortKey.cxx
+  vtkInformationExecutivePortVectorKey.cxx
+  vtkInformationQuadratureSchemeDefinitionVectorKey.cxx
+  vtkInterpolatedVelocityField.cxx
+  vtkIterativeClosestPointTransform.cxx
+  vtkKdNode.cxx
+  vtkKdTree.cxx
+  vtkKdTreePointLocator.cxx
+  vtkLine.cxx
+  vtkLocator.cxx
+  vtkMeanValueCoordinatesInterpolator.cxx
+  vtkMergePoints.cxx
+  vtkMultiBlockDataSetAlgorithm.cxx
+  vtkMultiBlockDataSet.cxx
+  vtkMultiPieceDataSet.cxx
+  vtkMutableDirectedGraph.cxx
+  vtkMutableUndirectedGraph.cxx
+  vtkNonLinearCell.cxx
+  vtkNonMergingPointLocator.cxx
+  vtkOctreePointLocator.cxx
+  vtkOctreePointLocatorNode.cxx
+  vtkOnePieceExtentTranslator.cxx
+  vtkOrderedTriangulator.cxx
+  vtkOutEdgeIterator.cxx
+  vtkPassInputTypeAlgorithm.cxx
+  vtkPentagonalPrism.cxx
+  vtkPerlinNoise.cxx
+  vtkPiecewiseFunctionAlgorithm.cxx
+  vtkPiecewiseFunction.cxx
+  vtkPiecewiseFunctionShiftScale.cxx
+  vtkPixel.cxx
+  vtkPlaneCollection.cxx
+  vtkPlane.cxx
+  vtkPlanes.cxx
+  vtkPlanesIntersection.cxx
+  vtkPointData.cxx
+  vtkPointLocator.cxx
+  vtkPointSetAlgorithm.cxx
+  vtkPointSet.cxx
+  vtkPointSetSource.cxx
+  vtkPointSetToPointSetFilter.cxx
+  vtkPointsProjectedHull.cxx
+  vtkPolyDataAlgorithm.cxx
+  vtkPolyDataCollection.cxx
+  vtkPolyData.cxx
+  vtkPolyDataSource.cxx
+  vtkPolyDataToPolyDataFilter.cxx
+  vtkPolygon.cxx
+  vtkPolyhedron.cxx
+  vtkPolyLine.cxx
+  vtkPolyPlane.cxx
+  vtkPolyVertex.cxx
+  vtkProcessObject.cxx
+  vtkPyramid.cxx
+  vtkQuad.cxx
+  vtkQuadraticEdge.cxx
+  vtkQuadraticHexahedron.cxx
+  vtkQuadraticLinearQuad.cxx
+  vtkQuadraticLinearWedge.cxx
+  vtkQuadraticPyramid.cxx
+  vtkQuadraticQuad.cxx
+  vtkQuadraticTetra.cxx
+  vtkQuadraticTriangle.cxx
+  vtkQuadraticWedge.cxx
+  vtkQuadratureSchemeDefinition.cxx
+  vtkQuadric.cxx
+  vtkRectilinearGridAlgorithm.cxx
+  vtkRectilinearGrid.cxx
+  vtkRectilinearGridSource.cxx
+  vtkRectilinearGridToPolyDataFilter.cxx
+  vtkReebGraph.cxx
+  vtkReebGraphSimplificationMetric.cxx
+  vtkScalarTree.cxx
+  vtkSelection.cxx
+  vtkSelectionNode.cxx
+  vtkSimpleCellTessellator.cxx
+  vtkSimpleImageToImageFilter.cxx
+  vtkSimpleScalarTree.cxx
+  vtkSmoothErrorMetric.cxx
+  vtkSource.cxx
+  vtkSphere.cxx
+  vtkSpline.cxx
+  vtkStreamingDemandDrivenPipeline.cxx
+  vtkStructuredData.cxx
+  vtkStructuredExtent.cxx
+  vtkStructuredGridAlgorithm.cxx
+  vtkStructuredGrid.cxx
+  vtkStructuredGridSource.cxx
+  vtkStructuredGridToPolyDataFilter.cxx
+  vtkStructuredGridToStructuredGridFilter.cxx
+  vtkStructuredPointsCollection.cxx
+  vtkStructuredPoints.cxx
+  vtkStructuredPointsSource.cxx
+  vtkStructuredPointsToPolyDataFilter.cxx
+  vtkStructuredPointsToStructuredPointsFilter.cxx
+  vtkStructuredPointsToUnstructuredGridFilter.cxx
+  vtkStructuredVisibilityConstraint.cxx
+  vtkSuperquadric.cxx
+  vtkTableAlgorithm.cxx
+  vtkTable.cxx
+  vtkTableExtentTranslator.cxx
+  vtkTemporalDataSetAlgorithm.cxx
+  vtkTemporalDataSet.cxx
+  vtkTensor.cxx
+  vtkTetra.cxx
+  vtkThreadedImageAlgorithm.cxx
+  vtkThreadedStreamingPipeline.cxx
+  vtkTreeAlgorithm.cxx
+  vtkTreeBFSIterator.cxx
+  vtkTree.cxx
+  vtkTreeDFSIterator.cxx
+  vtkTriangle.cxx
+  vtkTriangleStrip.cxx
+  vtkTriQuadraticHexahedron.cxx
+  vtkTrivialProducer.cxx
+  vtkUndirectedGraphAlgorithm.cxx
+  vtkUndirectedGraph.cxx
+  vtkUniformGrid.cxx
+  vtkUnstructuredGridAlgorithm.cxx
+  vtkUnstructuredGrid.cxx
+  vtkUnstructuredGridSource.cxx
+  vtkUnstructuredGridToPolyDataFilter.cxx
+  vtkUnstructuredGridToUnstructuredGridFilter.cxx
+  vtkVertex.cxx
+  vtkVertexListIterator.cxx
+  vtkVoxel.cxx
+  vtkWedge.cxx
+  vtkXMLDataElement.cxx
   )
-
-set(${Kit_SRCS}
-${Kit_SRCS}
-vtkBox.cxx
-vtkBox.h
-vtkImplicitFunctionCollection.cxx
-vtkImplicitFunctionCollection.h
-vtkImplicitFunction.cxx
-vtkImplicitFunction.h
-vtkPlaneCollection.cxx
-vtkPlaneCollection.h
-vtkPlane.cxx
-vtkPlane.h
-vtkPlanes.cxx
-vtkPlanes.h
-vtkQuadric.cxx
-vtkQuadric.h
-vtkCone.cxx
-vtkCone.h
-vtkCylinder.cxx
-vtkCylinder.h
-vtkImplicitBoolean.cxx
-vtkImplicitBoolean.h
-vtkImplicitDataSet.cxx
-vtkImplicitDataSet.h
-vtkImplicitHalo.cxx
-vtkImplicitHalo.h
-vtkImplicitSelectionLoop.cxx
-vtkImplicitSelectionLoop.h
-vtkImplicitSum.cxx
-vtkImplicitSum.h
-vtkImplicitVolume.cxx
-vtkImplicitVolume.h
-vtkImplicitWindowFunction.cxx
-vtkImplicitWindowFunction.h
-vtkPerlinNoise.cxx
-vtkPerlinNoise.h
-vtkPlanesIntersection.cxx
-vtkPlanesIntersection.h
-vtkPolyPlane.h
-vtkSphere.cxx
-vtkSphere.h
-vtkSuperquadric.cxx
-vtkSuperquadric.h
-)
-  
 
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
@@ -522,6 +260,8 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/Math
   ${VTK_SOURCE_DIR}/Common/Misc
   ${VTK_SOURCE_DIR}/Common/System
+  ${VTK_SOURCE_DIR}/Common/ImplicitFunctions
+  ${VTK_SOURCE_DIR}/Common/Transforms
   )
 
 #SET_SOURCE_FILES_PROPERTIES(
@@ -538,4 +278,5 @@ include_directories(
 
 add_library(vtkCommonDataModel ${Kit_SRCS})
 
-target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonSystem vtkCommonMath vtkCommonMisc)
+target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonSystem
+  vtkCommonMath vtkCommonMisc vtkCommonTransforms)

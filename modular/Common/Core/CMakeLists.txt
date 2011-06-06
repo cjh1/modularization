@@ -10,271 +10,116 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
   ${VTK_SOURCE_DIR}/Utilities/utf8/source)
 
 SET(Kit_SRCS
-vtkABI.h
-vtkAbstractArray.cxx
-vtkAbstractArray.h
-vtkAnimationCue.cxx
-vtkAnimationCue.h
-vtkArray.cxx
-vtkArray.h
-vtkArrayCoordinates.cxx
-vtkArrayCoordinates.h
-vtkArrayExtents.cxx
-vtkArrayExtents.h
-vtkArrayExtentsList.cxx
-vtkArrayExtentsList.h
-vtkArrayInterpolate.h
-vtkArrayInterpolate.txx
-vtkArrayIterator.cxx
-vtkArrayIterator.h
-vtkArrayIteratorIncludes.h
-vtkArrayIteratorTemplate.h
-vtkArrayIteratorTemplate.txx
-vtkArrayIteratorTemplateImplicit.txx
-vtkArrayPrint.h
-vtkArrayPrint.txx
-vtkArrayRange.cxx
-vtkArrayRange.h
-vtkArraySort.cxx
-vtkArraySort.h
-vtkArrayWeights.cxx
-vtkArrayWeights.h
-vtkBitArray.cxx
-vtkBitArray.h
-vtkBitArrayIterator.cxx
-vtkBitArrayIterator.h
-vtkBoundingBox.cxx
-vtkBoundingBox.h
-vtkBoxMuellerRandomSequence.cxx
-vtkBoxMuellerRandomSequence.h
-vtkBreakPoint.cxx
-vtkBreakPoint.h
-vtkByteSwap.cxx
-vtkByteSwap.h
-vtkCallbackCommand.cxx
-vtkCallbackCommand.h
-vtkCharArray.cxx
-vtkCharArray.h
-vtkCollection.cxx
-vtkCollection.h
-vtkCollectionIterator.cxx
-vtkCollectionIterator.h
-vtkCommand.cxx
-vtkCommand.h
-vtkCommonInformationKeyManager.cxx
-vtkCommonInformationKeyManager.h
-vtkConditionVariable.cxx
-vtkConditionVariable.h
-vtkConfigure.h.in
-vtkCriticalSection.cxx
-vtkCriticalSection.h
-vtkDataArray.cxx
-vtkDataArray.h
-vtkDataArrayCollection.cxx
-vtkDataArrayCollection.h
-vtkDataArrayCollectionIterator.cxx
-vtkDataArrayCollectionIterator.h
-vtkDataArraySelection.cxx
-vtkDataArraySelection.h
-vtkDataArrayTemplate.h
-vtkDataArrayTemplate.txx
-vtkDataArrayTemplateImplicit.txx
-vtkDebugLeaks.cxx
-vtkDebugLeaks.h
-vtkDebugLeaksManager.cxx
-vtkDebugLeaksManager.h
-vtkDenseArray.h
-vtkDenseArray.txx
-vtkDoubleArray.cxx
-vtkDoubleArray.h
-vtkDynamicLoader.cxx
-vtkDynamicLoader.h
-vtkEventForwarderCommand.cxx
-vtkEventForwarderCommand.h
-vtkFileOutputWindow.cxx
-vtkFileOutputWindow.h
-vtkFloatArray.cxx
-vtkFloatArray.h
-vtkFloatingPointExceptions.cxx
-vtkFloatingPointExceptions.h
-vtkFloatingPointExceptionsConfigure.h.in
-vtkGarbageCollector.cxx
-vtkGarbageCollector.h
-vtkGarbageCollectorManager.cxx
-vtkGarbageCollectorManager.h
-vtkGaussianRandomSequence.cxx
-vtkGaussianRandomSequence.h
-vtkIOStream.cxx
-vtkIOStream.h
-vtkIOStreamFwd.h
-vtkIdList.cxx
-vtkIdList.h
-vtkIdListCollection.cxx
-vtkIdListCollection.h
-vtkIdTypeArray.cxx
-vtkIdTypeArray.h
-vtkIndent.cxx
-vtkIndent.h
-vtkInformation.cxx
-vtkInformation.h
-vtkInformationDataObjectKey.cxx
-vtkInformationDataObjectKey.h
-vtkInformationDoubleKey.cxx
-vtkInformationDoubleKey.h
-vtkInformationDoubleVectorKey.cxx
-vtkInformationDoubleVectorKey.h
-vtkInformationIdTypeKey.cxx
-vtkInformationIdTypeKey.h
-vtkInformationInformationKey.cxx
-vtkInformationInformationKey.h
-vtkInformationInformationVectorKey.cxx
-vtkInformationInformationVectorKey.h
-vtkInformationIntegerKey.cxx
-vtkInformationIntegerKey.h
-vtkInformationIntegerPointerKey.cxx
-vtkInformationIntegerPointerKey.h
-vtkInformationIntegerVectorKey.cxx
-vtkInformationIntegerVectorKey.h
-vtkInformationInternals.h
-vtkInformationIterator.cxx
-vtkInformationIterator.h
-vtkInformationKey.cxx
-vtkInformationKey.h
-vtkInformationKeyVectorKey.cxx
-vtkInformationKeyVectorKey.h
-vtkInformationObjectBaseKey.cxx
-vtkInformationObjectBaseKey.h
-vtkInformationObjectBaseVectorKey.cxx
-vtkInformationObjectBaseVectorKey.h
-vtkInformationRequestKey.cxx
-vtkInformationRequestKey.h
-vtkInformationStringKey.cxx
-vtkInformationStringKey.h
-vtkInformationStringVectorKey.cxx
-vtkInformationStringVectorKey.h
-vtkInformationUnsignedLongKey.cxx
-vtkInformationUnsignedLongKey.h
-vtkInformationVector.cxx
-vtkInformationVector.h
-vtkInstantiator.cxx
-vtkInstantiator.h
-vtkIntArray.cxx
-vtkIntArray.h
-vtkLargeInteger.cxx
-vtkLargeInteger.h
-vtkLongArray.cxx
-vtkLongArray.h
-vtkLongLongArray.cxx
-vtkLongLongArray.h
-vtkLookupTable.cxx
-vtkLookupTable.h
-vtkMath.cxx
-vtkMath.h
-vtkMathConfigure.h.in
-vtkMinimalStandardRandomSequence.cxx
-vtkMinimalStandardRandomSequence.h
-vtkMultiThreader.cxx
-vtkMultiThreader.h
-vtkMutexLock.cxx
-vtkMutexLock.h
-vtkNew.h
-vtkOStrStreamWrapper.cxx
-vtkOStrStreamWrapper.h
-vtkOStreamWrapper.cxx
-vtkOStreamWrapper.h
-vtkObject.cxx
-vtkObject.h
-vtkObjectBase.cxx
-vtkObjectBase.h
-vtkObjectFactory.cxx
-vtkObjectFactory.h
-vtkObjectFactoryCollection.cxx
-vtkObjectFactoryCollection.h
-vtkOldStyleCallbackCommand.cxx
-vtkOldStyleCallbackCommand.h
-vtkOutputWindow.cxx
-vtkOutputWindow.h
-vtkOverrideInformation.cxx
-vtkOverrideInformation.h
-vtkOverrideInformationCollection.cxx
-vtkOverrideInformationCollection.h
-vtkPointAccumulator.hxx
-vtkPriorityQueue.cxx
-vtkPriorityQueue.h
-vtkRandomSequence.cxx
-vtkRandomSequence.h
-vtkReferenceCount.cxx
-vtkReferenceCount.h
-vtkScalarsToColors.cxx
-vtkScalarsToColors.h
-vtkSetGet.h
-vtkShortArray.cxx
-vtkShortArray.h
-vtkSignedCharArray.cxx
-vtkSignedCharArray.h
-vtkSmartPointer.h
-vtkSmartPointerBase.cxx
-vtkSmartPointerBase.h
-vtkSortDataArray.cxx
-vtkSortDataArray.h
-vtkSparseArray.h
-vtkSparseArray.txx
-vtkStdString.cxx
-vtkStdString.h
-vtkStringArray.cxx
-vtkStringArray.h
-vtkSystemIncludes.h
-vtkTemplateAliasMacro.h
-vtkTimePointUtility.cxx
-vtkTimePointUtility.h
-vtkTimeStamp.cxx
-vtkTimeStamp.h
-vtkToolkits.h.in
-vtkTryDowncast.h
-vtkType.h
-vtkTypeTemplate.h
-vtkTypeTraits.h
-vtkTypedArray.cxx.in
-vtkTypedArray.h
-vtkTypedArray.h.in
-vtkTypedArray.txx
-vtkUnicodeString.cmake.in
-vtkUnicodeString.cxx
-vtkUnicodeString.h
-vtkUnicodeStringArray.cxx
-vtkUnicodeStringArray.h
-vtkUnsignedCharArray.cxx
-vtkUnsignedCharArray.h
-vtkUnsignedIntArray.cxx
-vtkUnsignedIntArray.h
-vtkUnsignedLongArray.cxx
-vtkUnsignedLongArray.h
-vtkUnsignedLongLongArray.cxx
-vtkUnsignedLongLongArray.h
-vtkUnsignedShortArray.cxx
-vtkUnsignedShortArray.h
-vtkVariant.cxx
-vtkVariant.h
-vtkVariantArray.cxx
-vtkVariantArray.h
-vtkVariantBoostSerialization.h
-vtkVariantCast.h
-vtkVariantCreate.h
-vtkVariantExtract.h
-vtkVariantInlineOperators.h
-vtkVersion.cxx
-vtkVersion.h
-vtkVoidArray.cxx
-vtkVoidArray.h
-vtkWeakPointer.h
-vtkWeakPointerBase.cxx
-vtkWeakPointerBase.h
-vtkWin32Header.h
-vtkWindow.cxx
-vtkWindow.h
-vtkWindows.h
-vtkXMLFileOutputWindow.cxx
-vtkXMLFileOutputWindow.h
+  vtkAbstractArray.cxx
+  vtkAnimationCue.cxx
+  vtkArrayCoordinates.cxx
+  vtkArray.cxx
+  vtkArrayExtents.cxx
+  vtkArrayExtentsList.cxx
+  vtkArrayIterator.cxx
+  vtkArrayRange.cxx
+  vtkArraySort.cxx
+  vtkArrayWeights.cxx
+  vtkBitArray.cxx
+  vtkBitArrayIterator.cxx
+  vtkBoundingBox.cxx
+  vtkBoxMuellerRandomSequence.cxx
+  vtkBreakPoint.cxx
+  vtkByteSwap.cxx
+  vtkCallbackCommand.cxx
+  vtkCharArray.cxx
+  vtkCollection.cxx
+  vtkCollectionIterator.cxx
+  vtkCommand.cxx
+  vtkCommonInformationKeyManager.cxx
+  vtkConditionVariable.cxx
+  vtkCriticalSection.cxx
+  vtkDataArrayCollection.cxx
+  vtkDataArrayCollectionIterator.cxx
+  vtkDataArray.cxx
+  vtkDataArraySelection.cxx
+  vtkDebugLeaks.cxx
+  vtkDebugLeaksManager.cxx
+  vtkDoubleArray.cxx
+  vtkDynamicLoader.cxx
+  vtkEventForwarderCommand.cxx
+  vtkFileOutputWindow.cxx
+  vtkFloatArray.cxx
+  vtkFloatingPointExceptions.cxx
+  vtkGarbageCollector.cxx
+  vtkGarbageCollectorManager.cxx
+  vtkGaussianRandomSequence.cxx
+  vtkIdListCollection.cxx
+  vtkIdList.cxx
+  vtkIdTypeArray.cxx
+  vtkIndent.cxx
+  vtkInformation.cxx
+  vtkInformationDataObjectKey.cxx
+  vtkInformationDoubleKey.cxx
+  vtkInformationDoubleVectorKey.cxx
+  vtkInformationIdTypeKey.cxx
+  vtkInformationInformationKey.cxx
+  vtkInformationInformationVectorKey.cxx
+  vtkInformationIntegerKey.cxx
+  vtkInformationIntegerPointerKey.cxx
+  vtkInformationIntegerVectorKey.cxx
+  vtkInformationIterator.cxx
+  vtkInformationKey.cxx
+  vtkInformationKeyVectorKey.cxx
+  vtkInformationObjectBaseKey.cxx
+  vtkInformationObjectBaseVectorKey.cxx
+  vtkInformationRequestKey.cxx
+  vtkInformationStringKey.cxx
+  vtkInformationStringVectorKey.cxx
+  vtkInformationUnsignedLongKey.cxx
+  vtkInformationVector.cxx
+  vtkInstantiator.cxx
+  vtkIntArray.cxx
+  vtkIOStream.cxx
+  vtkLargeInteger.cxx
+  vtkLongArray.cxx
+  vtkLookupTable.cxx
+  vtkMath.cxx
+  vtkMinimalStandardRandomSequence.cxx
+  vtkMultiThreader.cxx
+  vtkMutexLock.cxx
+  vtkObjectBase.cxx
+  vtkObject.cxx
+  vtkObjectFactoryCollection.cxx
+  vtkObjectFactory.cxx
+  vtkOldStyleCallbackCommand.cxx
+  vtkOStreamWrapper.cxx
+  vtkOStrStreamWrapper.cxx
+  vtkOutputWindow.cxx
+  vtkOverrideInformationCollection.cxx
+  vtkOverrideInformation.cxx
+  vtkPoints2D.cxx
+  vtkPoints.cxx
+  vtkPriorityQueue.cxx
+  vtkRandomSequence.cxx
+  vtkReferenceCount.cxx
+  vtkScalarsToColors.cxx
+  vtkShortArray.cxx
+  vtkSignedCharArray.cxx
+  vtkSmartPointerBase.cxx
+  vtkSortDataArray.cxx
+  vtkStdString.cxx
+  vtkStringArray.cxx
+  vtkTimePointUtility.cxx
+  vtkTimeStamp.cxx
+  vtkUnicodeStringArray.cxx
+  vtkUnicodeString.cxx
+  vtkUnsignedCharArray.cxx
+  vtkUnsignedIntArray.cxx
+  vtkUnsignedLongArray.cxx
+  vtkUnsignedShortArray.cxx
+  vtkVariantArray.cxx
+  vtkVariant.cxx
+  vtkVersion.cxx
+  vtkVoidArray.cxx
+  vtkWeakPointerBase.cxx
+  vtkWindow.cxx
+  vtkXMLFileOutputWindow.cxx
   )
 
 # __int64 seems to be platform specific, turning on if
@@ -438,7 +283,6 @@ SET_SOURCE_FILES_PROPERTIES(
 vtkAbstractArray
 vtkArrayIterator
 vtkArrayIteratorTemplate
-vtkAbstractTransform
 vtkArray
 vtkCallbackCommand
 vtkCommand
@@ -448,8 +292,6 @@ vtkEventForwarderCommand
 vtkFloatingPointExceptions
 vtkFunctionSet
 vtkGaussianRandomSequence
-vtkHomogeneousTransform
-vtkImplicitFunction
 vtkInformationDataObjectKey
 vtkInformationDoubleKey
 vtkInformationDoubleVectorKey
@@ -468,20 +310,13 @@ vtkInformationRequestKey
 vtkInformationStringKey
 vtkInformationStringVectorKey
 vtkInformationUnsignedLongKey
-vtkInitialValueProblemSolver
-vtkLinearTransform
 vtkObjectBase
 vtkObjectFactory
 vtkOldStyleCallbackCommand
 vtkOverrideInformation
 vtkOverrideInformationCollection
-vtkParametricFunction
-vtkProp
 vtkRandomSequence
 vtkScalarsToColors
-vtkSocket
-vtkStructuredData
-vtkWarpTransform
 vtkWindow
 ABSTRACT
 )
@@ -534,15 +369,6 @@ SET_SOURCE_FILES_PROPERTIES(
 SET_SOURCE_FILES_PROPERTIES(vtkVariant.cxx PROPERTIES
   COMPILE_FLAGS -DVTK_VARIANT_IMPL)
 
-SET(Kit_EXTRA_SRCS)
-SET(Kit_EXTRA_CMDS)
-SET(Kit_TCL_EXTRA_SRCS vtkTclUtil.cxx)
-SET(Kit_PYTHON_EXTRA_SRCS vtkPythonCommand.cxx)
-SET(Kit_JAVA_EXTRA_SRCS vtkJavaUtil.cxx)
-SET(KIT_TCL_DEPS)
-SET(KIT_PYTHON_DEPS)
-SET(KIT_JAVA_DEPS)
-
 if(WIN32)
   if(NOT VTK_USE_X)
     list(APPEND Kit_SRCS vtkWin32OutputWindow.cxx
@@ -551,16 +377,6 @@ if(WIN32)
     set_source_files_properties(vtkWin32OutputWindowProcessEncoded.c
       PROPERTIES WRAP_EXCLUDE 1)
   endif()
-
-  if(NOT BORLAND)
-    set(KIT_LIBS ${KIT_LIBS} wsock32)
-  endif()
-endif()
-
-if(NOT HAVE_SOCKETS)
-  # Tell vtkSocket.cxx that there are no sockets on this platform.
-  set_source_files_properties(vtkSocket.cxx PROPERTIES
-    COMPILE_FLAGS -DVTK_SOCKET_FAKE_API)
 endif()
 
 # Need nsl to resolve gethostbyname on SunOS-5.8
@@ -571,7 +387,7 @@ endif()
 
 add_library(vtkCommonCore ${Kit_SRCS})
 
-target_link_libraries(vtkCommonCore vtksys)
+target_link_libraries(vtkCommonCore vtksys ${CMAKE_THREAD_LIBS_INIT})
 
 IF(CMAKE_COMPILER_IS_GNUCXX AND MINGW)
   # MinGW fails to dllexport the explicit instantiations of

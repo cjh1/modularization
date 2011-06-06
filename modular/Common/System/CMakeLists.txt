@@ -1,19 +1,12 @@
 
 SET(Kit_SRCS
-vtkClientSocket.cxx
-vtkClientSocket.h
-vtkDirectory.cxx
-vtkDirectory.h
-vtkServerSocket.cxx
-vtkServerSocket.h
-vtkSocket.cxx
-vtkSocket.h
-vtkSocketCollection.cxx
-vtkSocketCollection.h
-vtkThreadMessager.cxx
-vtkThreadMessager.h
-vtkTimerLog.cxx
-vtkTimerLog.h
+  vtkClientSocket.cxx
+  vtkDirectory.cxx
+  vtkServerSocket.cxx
+  vtkSocket.cxx
+  vtkSocketCollection.cxx
+  vtkThreadMessager.cxx
+  vtkTimerLog.cxx
   )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${VTK_SOURCE_DIR}/Common/Core)
@@ -23,14 +16,16 @@ SET_SOURCE_FILES_PROPERTIES(
   ABSTRACT
 )
 
-#SET_SOURCE_FILES_PROPERTIES(
-#  WRAP_EXCLUDE
-#)
+if(NOT HAVE_SOCKETS)
+  # Tell vtkSocket.cxx that there are no sockets on this platform.
+  set_source_files_properties(vtkSocket.cxx PROPERTIES
+    COMPILE_FLAGS -DVTK_SOCKET_FAKE_API)
+endif()
 
-#SET_SOURCE_FILES_PROPERTIES(
-#  PROPERTIES WRAP_SPECIAL 1
-#)
+if(WIN32 AND NOT BORLAND)
+  set(KIT_LIBS ${KIT_LIBS} wsock32)
+endif()
 
 add_library(vtkCommonSystem ${Kit_SRCS})
 
-target_link_libraries(vtkCommonSystem vtkCommonCore)
+target_link_libraries(vtkCommonSystem vtkCommonCore ${KIT_LIBS})

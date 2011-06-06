@@ -61,4 +61,7 @@ include_directories(
 
 add_library(vtkCommonComputationalGeometry ${Kit_SRCS})
 
-target_link_libraries(vtkCommonComputationalGeometry vtkCommonCore vtkCommonSystem vtkCommonMisc)
+target_link_libraries(vtkCommonComputationalGeometry vtkCommonCore
+  vtkCommonSystem
+  vtkCommonDataModel
+  vtkCommonMisc)
