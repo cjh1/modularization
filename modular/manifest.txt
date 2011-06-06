@@ -364,7 +364,7 @@ Common/vtkDynamicLoader.cxx:
 Common/vtkDynamicLoader.h:
 
 modular/CommonCore.patch: <ignore>
-#<patch>: modular/CommonCore.patch
+<patch>: CommonCore.patch
 
 [Common/ComputationalGeometry]
 

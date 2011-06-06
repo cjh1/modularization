@@ -388,14 +388,14 @@ def update_modules():
             run('git', 'apply', patch)
 
             # Find out what changed as a result of the patch and add those files
-            o = popen('git', 'status', '--porcelain', '--untracked-files=no')
-            lines = [l for l in o.split('\n') if not l == '']
-            for line in lines:
+            #o = popen('git', 'status', '--porcelain', '--untracked-files=no')
+            #lines = [l for l in o.split('\n') if not l == '']
+            #for line in lines:
                 # line matches the regex [ MARC][ MD] file( -> file2)?
-                file = line[3:].split(' -> ')[0]
-                if verbose:
-                    print '[INFO] Adding patched file', file
-                run('git', 'add', file)
+            #    file = line[3:].split(' -> ')[0]
+            #    if verbose:
+            #        print '[INFO] Adding patched file', file
+            #    run('git', 'add', file)
 
         if verbose:
             print '[INFO] Committing changes to module at:', dst_module_dir
