@@ -7,6 +7,8 @@ vtkOrderedTriangulator.cxx
 vtkOrderedTriangulator.h
 vtkSelection.cxx
 vtkSelectionNode.cxx
+vtkPiecewiseFunction.cxx
+vtkPiecewiseFunctionShiftScale.cxx
 
 vtkAMRBox.cxx
 vtkAMRBox.h

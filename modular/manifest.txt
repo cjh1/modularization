@@ -897,7 +897,7 @@ Filtering/vtkUnstructuredGridToPolyDataFilter.h:
 Filtering/vtkUnstructuredGridToUnstructuredGridFilter.cxx:
 Filtering/vtkUnstructuredGridToUnstructuredGridFilter.h:
 
-#[Common/ImplicitFunctions]
+[Common/ImplicitFunctions]
 
 modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/module.cmake: <ignore>
@@ -1898,7 +1898,7 @@ Infovis/vtkTreeOrbitLayoutStrategy.cxx:
 Infovis/vtkTreeRingToPolyData.h:
 Infovis/vtkTreeRingToPolyData.cxx:
 
-[InfoVis/BoostGraphAlgorithms]
+[Infovis/BoostGraphAlgorithms]
 
 Infovis/vtkBoostBetweennessClustering.h:
 Infovis/vtkBoostBetweennessClustering.cxx:
