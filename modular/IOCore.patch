@@ -1,0 +1,98 @@
+diff --git a/IO/Core/vtkASCIITextCodec.cxx b/IO/Core/vtkASCIITextCodec.cxx
+index 0720b38..4eff82e 100644
+--- a/IO/Core/vtkASCIITextCodec.cxx
++++ b/IO/Core/vtkASCIITextCodec.cxx
+@@ -18,10 +18,10 @@ PURPOSE.  See the above copyright notice for more information.
+   the U.S. Government retains certain rights in this software.
+ -------------------------------------------------------------------------*/
+ 
+-#include <vtkASCIITextCodec.h>
++#include "vtkASCIITextCodec.h"
+ 
+-#include <vtkObjectFactory.h>
+-#include <vtkTextCodecFactory.h>
++#include "vtkObjectFactory.h"
++#include "vtkTextCodecFactory.h"
+ 
+ #include <stdexcept>
+ 
+diff --git a/IO/Core/vtkArrayWriter.cxx b/IO/Core/vtkArrayWriter.cxx
+index e799e20..484e333 100644
+--- a/IO/Core/vtkArrayWriter.cxx
++++ b/IO/Core/vtkArrayWriter.cxx
+@@ -13,9 +13,9 @@
+ 
+ =========================================================================*/
+ 
++#include "vtkArrayWriter.h"
+ #include <vtkArrayData.h>
+ #include <vtkArrayPrint.h>
+-#include <vtkArrayWriter.h>
+ #include <vtkDenseArray.h>
+ #include <vtkExecutive.h>
+ #include <vtkInformation.h>
+diff --git a/IO/Core/vtkArrayWriter.h b/IO/Core/vtkArrayWriter.h
+index 1655910..740872c 100644
+--- a/IO/Core/vtkArrayWriter.h
++++ b/IO/Core/vtkArrayWriter.h
+@@ -50,8 +50,8 @@
+ #ifndef __vtkArrayWriter_h
+ #define __vtkArrayWriter_h
+ 
+-#include <vtkWriter.h>
+-#include <vtkStdString.h> // For string API
++#include "vtkWriter.h"
++#include "vtkStdString.h" // For string API
+ 
+ class vtkArray;
+ 
+diff --git a/IO/Core/vtkTextCodec.cxx b/IO/Core/vtkTextCodec.cxx
+index a2b3ece..8ec94da 100644
+--- a/IO/Core/vtkTextCodec.cxx
++++ b/IO/Core/vtkTextCodec.cxx
+@@ -18,8 +18,7 @@ PURPOSE.  See the above copyright notice for more information.
+   the U.S. Government retains certain rights in this software.
+ -------------------------------------------------------------------------*/
+ 
+-#include <vtkTextCodec.h>
+-
++#include "vtkTextCodec.h"
+ 
+ const char* vtkTextCodec::Name()
+ {
+diff --git a/IO/Core/vtkUTF16TextCodec.cxx b/IO/Core/vtkUTF16TextCodec.cxx
+index ab2b20b..cec0aad 100644
+--- a/IO/Core/vtkUTF16TextCodec.cxx
++++ b/IO/Core/vtkUTF16TextCodec.cxx
+@@ -18,10 +18,10 @@ PURPOSE.  See the above copyright notice for more information.
+   the U.S. Government retains certain rights in this software.
+ -------------------------------------------------------------------------*/
+ 
+-#include <vtkUTF16TextCodec.h>
++#include "vtkUTF16TextCodec.h"
+ 
+-#include <vtkObjectFactory.h>
+-#include <vtkTextCodecFactory.h>
++#include "vtkObjectFactory.h"
++#include "vtkTextCodecFactory.h"
+ 
+ #include <stdexcept>
+ 
+diff --git a/IO/Core/vtkUTF8TextCodec.cxx b/IO/Core/vtkUTF8TextCodec.cxx
+index e82cfaa..a75a9ea 100644
+--- a/IO/Core/vtkUTF8TextCodec.cxx
++++ b/IO/Core/vtkUTF8TextCodec.cxx
+@@ -18,10 +18,10 @@ PURPOSE.  See the above copyright notice for more information.
+   the U.S. Government retains certain rights in this software.
+ -------------------------------------------------------------------------*/
+ 
+-#include <vtkUTF8TextCodec.h>
++#include "vtkUTF8TextCodec.h"
+ 
+-#include <vtkObjectFactory.h>
+-#include <vtkTextCodecFactory.h>
++#include "vtkObjectFactory.h"
++#include "vtkTextCodecFactory.h"
+ 
+ #include <utf8.h>
+ 

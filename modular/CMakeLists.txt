@@ -52,6 +52,9 @@ endif()
 
 INCLUDE(vtkTargetExportMacros)
 
+# FIXME: These will be removed, used by vtkzlib etc
+set(VTK_INSTALL_LIB_DIR_CM24 lib)
+
 #-----------------------------------------------------------------------------
 # Load some macros.
 INCLUDE(vtkDependentOption)
@@ -62,6 +65,8 @@ INCLUDE(vtkMakeInstantiator)
 #-----------------------------------------------------------------------------
 # Choose static or shared libraries.
 INCLUDE(vtkSelectSharedLibraries)
+
+include(vtkCompilerExtras)
 
 #-----------------------------------------------------------------------------
 # Does VTK require support for 64 bit file systems
@@ -476,7 +481,7 @@ foreach(f ${meta})
 endforeach()
 
 # Add the third party libraries
-set(vtk_tpl_modules kwsys vtkalglib)
+set(vtk_tpl_modules kwsys vtkalglib vtkzlib)
 foreach(tpl ${vtk_tpl_modules})
   set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${tpl})
   set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${tpl})
@@ -617,7 +622,7 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
   endif()
   message("vtk-module ${vtk-module}")
   if(NOT EXISTS ${${vtk-module}_SOURCE_DIR})
-    message("Module directory does not exist!")
+    message("Module directory does not exist! '${${vtk-module}_SOURCE_DIR}'")
   endif()
   add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
 endforeach()

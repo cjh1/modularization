@@ -1063,6 +1063,9 @@ Hybrid/vtkLandmarkTransform.h:
 
 [IO/Core]
 
+modular/IO/Core/CMakeLists.txt:
+modular/IO/Core/module.cmake:
+
 IO/vtkASCIITextCodec.cxx:
 IO/vtkASCIITextCodec.h:
 IO/vtkAbstractParticleWriter.cxx:
@@ -1077,10 +1080,6 @@ IO/vtkBase64OutputStream.cxx:
 IO/vtkBase64OutputStream.h:
 IO/vtkBase64Utilities.cxx:
 IO/vtkBase64Utilities.h:
-IO/vtkCompositeDataReader.cxx:
-IO/vtkCompositeDataReader.h:
-IO/vtkCompositeDataWriter.cxx:
-IO/vtkCompositeDataWriter.h:
 IO/vtkDataCompressor.cxx:
 IO/vtkDataCompressor.h:
 IO/vtkDataObjectReader.cxx:
@@ -1089,20 +1088,10 @@ IO/vtkDataObjectWriter.cxx:
 IO/vtkDataObjectWriter.h:
 IO/vtkDataReader.cxx:
 IO/vtkDataReader.h:
-IO/vtkDataSetReader.cxx:
-IO/vtkDataSetReader.h:
-IO/vtkDataSetWriter.cxx:
-IO/vtkDataSetWriter.h:
 IO/vtkDataWriter.cxx:
 IO/vtkDataWriter.h:
-IO/vtkDatabaseToTableReader.cxx:
-IO/vtkDatabaseToTableReader.h:
 IO/vtkDelimitedTextWriter.cxx:
 IO/vtkDelimitedTextWriter.h:
-IO/vtkGenericDataObjectReader.cxx:
-IO/vtkGenericDataObjectReader.h:
-IO/vtkGenericDataObjectWriter.cxx:
-IO/vtkGenericDataObjectWriter.h:
 IO/vtkGlobFileNames.cxx:
 IO/vtkGlobFileNames.h:
 IO/vtkGraphReader.cxx:
@@ -1111,14 +1100,9 @@ IO/vtkGraphWriter.cxx:
 IO/vtkGraphWriter.h:
 IO/vtkInputStream.cxx:
 IO/vtkInputStream.h:
-IO/vtkJavaPanel.cxx:
+IO/vtkJavaPanel.cxx: <ignore>
 IO/vtkJavaScriptDataWriter.cxx:
 IO/vtkJavaScriptDataWriter.h:
-IO/vtkODBCDatabase.cxx:
-IO/vtkODBCDatabase.h:
-IO/vtkODBCInternals.h:
-IO/vtkODBCQuery.cxx:
-IO/vtkODBCQuery.h:
 IO/vtkOffsetsManagerArray.h:
 IO/vtkSortFileNames.cxx:
 IO/vtkSortFileNames.h:
@@ -1130,16 +1114,18 @@ IO/vtkOutputStream.cxx:
 IO/vtkOutputStream.h:
 IO/vtkShaderCodeLibrary.cxx:
 IO/vtkShaderCodeLibrary.h:
-IO/vtkSimplePointsReader.cxx:
-IO/vtkSimplePointsReader.h:
-IO/vtkSimplePointsWriter.cxx:
-IO/vtkSimplePointsWriter.h:
+IO/vtkTextCodec.cxx:
+IO/vtkTextCodec.h:
+IO/vtkTextCodecFactory.cxx:
+IO/vtkTextCodecFactory.h:
 IO/vtkWriter.cxx:
 IO/vtkWriter.h:
 # FIXME: Should this go in its own kit? ZLib is pretty small/widely used.
 IO/vtkZLibDataCompressor.cxx:
 IO/vtkZLibDataCompressor.h:
 
+modular/IOCore.patch: <ignore>
+<patch>: IOCore.patch
 
 [IO/Exodus]
 
@@ -1277,10 +1263,6 @@ IO/vtkStructuredGridWriter.cxx:
 IO/vtkStructuredGridWriter.h:
 IO/vtkTecplotReader.cxx:
 IO/vtkTecplotReader.h:
-IO/vtkTextCodec.cxx:
-IO/vtkTextCodec.h:
-IO/vtkTextCodecFactory.cxx:
-IO/vtkTextCodecFactory.h:
 IO/vtkTreeReader.cxx:
 IO/vtkTreeReader.h:
 IO/vtkTreeWriter.cxx:
@@ -1291,6 +1273,23 @@ IO/vtkUnstructuredGridReader.cxx:
 IO/vtkUnstructuredGridReader.h:
 IO/vtkUnstructuredGridWriter.cxx:
 IO/vtkUnstructuredGridWriter.h:
+
+IO/vtkCompositeDataReader.cxx:
+IO/vtkCompositeDataReader.h:
+IO/vtkCompositeDataWriter.cxx:
+IO/vtkCompositeDataWriter.h:
+IO/vtkDataSetReader.cxx:
+IO/vtkDataSetReader.h:
+IO/vtkDataSetWriter.cxx:
+IO/vtkDataSetWriter.h:
+IO/vtkGenericDataObjectReader.cxx:
+IO/vtkGenericDataObjectReader.h:
+IO/vtkGenericDataObjectWriter.cxx:
+IO/vtkGenericDataObjectWriter.h:
+IO/vtkSimplePointsReader.cxx:
+IO/vtkSimplePointsReader.h:
+IO/vtkSimplePointsWriter.cxx:
+IO/vtkSimplePointsWriter.h:
 
 
 [IO/Image]
@@ -1378,6 +1377,13 @@ Hybrid/vtkVRMLImporter.h:
 
 [IO/SQL]
 
+IO/vtkDatabaseToTableReader.cxx:
+IO/vtkDatabaseToTableReader.h:
+IO/vtkODBCDatabase.cxx:
+IO/vtkODBCDatabase.h:
+IO/vtkODBCInternals.h:
+IO/vtkODBCQuery.cxx:
+IO/vtkODBCQuery.h:
 IO/vtkRowQuery.cxx:
 IO/vtkRowQuery.h:
 IO/vtkRowQueryToTable.cxx:
@@ -1678,7 +1684,8 @@ CMake/TestOggTheoraSubsampling.c:
 CMake/TryRunResults-VTK-bgl-gcc.cmake:
 CMake/UseMatlabMex.cmake:
 CMake/vtkCheckSourceTree.cmake:
-CMake/vtkCompilerExtras.cmake:
+CMake/vtkCompilerExtras.cmake: <ignore>
+modular/CMake/vtkCompilerExtras.cmake:
 CMake/vtkDependentOption.cmake:
 CMake/vtkDetermineCompilerFlags.cmake:
 CMake/vtkExportKit.cmake:
