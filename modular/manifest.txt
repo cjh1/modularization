@@ -74,7 +74,7 @@ README.html:
 TestingLogo.gif:
 vtkLogo.ico:
 vtkLogo.jpg:
-CTestConfig.cmake
+modular/CTestConfig.cmake:
 
 [Common/Core]
 modular/Common/Core/CMakeLists.txt:
@@ -373,7 +373,7 @@ Common/vtkPoints.cxx:
 Common/vtkPoints.h:
 
 modular/CommonCore.patch: <ignore>
-<patch>: CommonCore.patch
+#<patch>: CommonCore.patch
 
 [Common/ComputationalGeometry]
 
@@ -4303,6 +4303,9 @@ GUISupport/MFC/vtkMFCWindow.cpp:
 GUISupport/MFC/vtkMFCWindow.h:
 
 [Parallel/Core]
+
+modular/Parallel/Core/CMakeLists.txt:
+modular/Parallel/Core/module.cmake:
 
 Parallel/vtkBlockDistribution.h:
 Parallel/vtkBranchExtentTranslator.cxx:
