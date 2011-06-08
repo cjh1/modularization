@@ -373,7 +373,7 @@ Common/vtkPoints.cxx:
 Common/vtkPoints.h:
 
 modular/CommonCore.patch: <ignore>
-#<patch>: CommonCore.patch
+<patch>: CommonCore.patch
 
 [Common/ComputationalGeometry]
 
