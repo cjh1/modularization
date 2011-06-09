@@ -322,25 +322,6 @@ MARK_AS_ADVANCED(VTK_OPENGL_HAS_OSMESA
                  VTK_USE_PARALLEL_BGL)
 
 #-----------------------------------------------------------------------------
-# Provide options to use system versions of third-party libraries.
-VTK_THIRD_PARTY_OPTION(ZLIB zlib)
-VTK_THIRD_PARTY_OPTION(HDF5 hdf5)
-INCLUDE(vtkHDF5Library)
-IF(VTK_USE_GL2PS)
-VTK_THIRD_PARTY_OPTION(GL2PS gl2ps)
-ENDIF(VTK_USE_GL2PS)
-VTK_THIRD_PARTY_OPTION(JPEG jpeg)
-VTK_THIRD_PARTY_OPTION(PNG  png)
-VTK_THIRD_PARTY_OPTION(TIFF tiff)
-VTK_THIRD_PARTY_OPTION(EXPAT expat)
-VTK_THIRD_PARTY_OPTION(FREETYPE freetype)
-VTK_THIRD_PARTY_OPTION(LIBXML2 libxml2)
-VTK_THIRD_PARTY_OPTION(LIBPROJ4 proj4)
-if(VTK_USE_OGGTHEORA_ENCODER)
-  VTK_THIRD_PARTY_OPTION(OGGTHEORA oggtheora)
-endif(VTK_USE_OGGTHEORA_ENCODER)
-
-#-----------------------------------------------------------------------------
 # Configure OpenGL support.
 IF(VTK_USE_RENDERING)
   # At the moment CMake's FindOpenGL considers OpenGL should be found
@@ -496,7 +477,7 @@ foreach(f ${meta})
 endforeach()
 
 # Add the third party libraries
-set(vtk_tpl_modules kwsys vtkalglib vtkzlib HashSource)
+set(vtk_tpl_modules kwsys vtkalglib vtkzlib vtksqlite HashSource)
 foreach(tpl ${vtk_tpl_modules})
   set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${tpl})
   set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${tpl})
