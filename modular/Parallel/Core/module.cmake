@@ -1,3 +1,3 @@
 vtk_module(ParallelCore
-  DEPENDS CommonDataModel
+  DEPENDS CommonDataModel HashSource
   DEFAULT ON)
