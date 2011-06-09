@@ -1,20 +1,19 @@
 
 SET(Kit_SRCS
-  vtkBivariateLinearTableThreshold.cxx
-  vtkBivariateStatisticsAlgorithm.cxx
-  vtkContingencyStatistics.cxx
-  vtkCorrelativeStatistics.cxx
-  vtkDescriptiveStatistics.cxx
-  vtkKMeansDistanceFunctorCalculator.cxx
-  vtkKMeansDistanceFunctor.cxx
-  vtkKMeansStatistics.cxx
-  vtkMultiCorrelativeStatistics.cxx
-  vtkOrderStatistics.cxx
-  vtkPCAStatistics.cxx
-  vtkStatisticsAlgorithm.cxx
-  vtkStrahlerMetric.cxx
-  vtkStreamingStatistics.cxx
-  vtkUnivariateStatisticsAlgorithm.cxx
+  vtkPContingencyStatistics.h
+  vtkPContingencyStatistics.cxx
+  vtkPCorrelativeStatistics.h
+  vtkPCorrelativeStatistics.cxx
+  vtkPDescriptiveStatistics.h
+  vtkPDescriptiveStatistics.cxx
+  vtkPKMeansStatistics.h
+  vtkPKMeansStatistics.cxx
+  vtkPMultiCorrelativeStatistics.h
+  vtkPMultiCorrelativeStatistics.cxx
+  vtkPOrderStatistics.h
+  vtkPOrderStatistics.cxx
+  vtkPPCAStatistics.h
+  vtkPPCAStatistics.cxx
   )
 
 include_directories(
@@ -27,6 +26,7 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/Misc
   ${VTK_SOURCE_DIR}/Common/DataModel
   ${VTK_SOURCE_DIR}/Filters/Statistics
+  ${VTK_SOURCE_DIR}/Parallel/Core
   )
 
 add_library(vtkFiltersParallelStatistics ${Kit_SRCS})
@@ -37,4 +37,5 @@ target_link_libraries(vtkFiltersParallelStatistics
   vtkCommonDataModel
   vtkalglib
   vtkFiltersStatistics
+#  vtkParallelCore
   )
