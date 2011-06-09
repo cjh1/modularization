@@ -37,5 +37,5 @@ target_link_libraries(vtkFiltersParallelStatistics
   vtkCommonDataModel
   vtkalglib
   vtkFiltersStatistics
-#  vtkParallelCore
+  vtkParallelCore
   )

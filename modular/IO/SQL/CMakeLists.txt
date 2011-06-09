@@ -9,9 +9,7 @@ set(Kit_SRCS
   vtkSQLDatabaseTableSource.cxx
   #vtkSQLGraphReader.cxx
   vtkSQLQuery.cxx
-  vtkTableReader.cxx
   vtkTableToDatabaseWriter.cxx
-  vtkTableWriter.cxx
   )
 
 set(SQLite_SRCS

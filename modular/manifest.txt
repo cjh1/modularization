@@ -1124,6 +1124,10 @@ IO/vtkWriter.h:
 # FIXME: Should this go in its own kit? ZLib is pretty small/widely used.
 IO/vtkZLibDataCompressor.cxx:
 IO/vtkZLibDataCompressor.h:
+IO/vtkTableReader.cxx:
+IO/vtkTableReader.h:
+IO/vtkTableWriter.cxx:
+IO/vtkTableWriter.h:
 
 modular/IOCore.patch: <ignore>
 <patch>: IOCore.patch
@@ -1291,6 +1295,10 @@ IO/vtkSimplePointsReader.cxx:
 IO/vtkSimplePointsReader.h:
 IO/vtkSimplePointsWriter.cxx:
 IO/vtkSimplePointsWriter.h:
+IO/vtkStructuredPointsReader.cxx:
+IO/vtkStructuredPointsReader.h:
+IO/vtkStructuredPointsWriter.cxx:
+IO/vtkStructuredPointsWriter.h:
 
 
 [IO/Image]
@@ -1301,10 +1309,6 @@ IO/vtkBMPReader.cxx:
 IO/vtkBMPReader.h:
 IO/vtkBMPWriter.cxx:
 IO/vtkBMPWriter.h:
-IO/vtkStructuredPointsReader.cxx:
-IO/vtkStructuredPointsReader.h:
-IO/vtkStructuredPointsWriter.cxx:
-IO/vtkStructuredPointsWriter.h:
 IO/vtkTIFFReader.cxx:
 IO/vtkTIFFReader.h:
 IO/vtkTIFFWriter.cxx:
@@ -1378,6 +1382,9 @@ Hybrid/vtkVRMLImporter.h:
 
 [IO/SQL]
 
+modular/IO/SQL/CMakeLists.txt:
+modular/IO/SQL/module.cmake:
+
 IO/vtkDatabaseToTableReader.cxx:
 IO/vtkDatabaseToTableReader.h:
 IO/vtkODBCDatabase.cxx:
@@ -1421,12 +1428,8 @@ IO/vtkTableToPostgreSQLWriter.cxx:
 IO/vtkTableToPostgreSQLWriter.h:
 IO/vtkTableToSQLiteWriter.cxx:
 IO/vtkTableToSQLiteWriter.h:
-IO/vtkTableReader.cxx:
-IO/vtkTableReader.h:
 IO/vtkTableToDatabaseWriter.cxx:
 IO/vtkTableToDatabaseWriter.h:
-IO/vtkTableWriter.cxx:
-IO/vtkTableWriter.h:
 Infovis/vtkSQLDatabaseGraphSource.h:
 Infovis/vtkSQLDatabaseGraphSource.cxx:
 Infovis/vtkSQLDatabaseTableSource.h:

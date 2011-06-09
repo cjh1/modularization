@@ -27,6 +27,9 @@ SET(Kit_SRCS
   vtkUTF8TextCodec.cxx
   vtkWriter.cxx
   vtkZLibDataCompressor.cxx
+
+  vtkTableReader.cxx
+  vtkTableWriter.cxx
   )
 
 include_directories(
