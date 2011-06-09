@@ -1,0 +1,13 @@
+diff --git a/Parallel/vtkSocketCommunicator.cxx b/Parallel/vtkSocketCommunicator.cxx
+index 789306b..349175e 100644
+--- a/Parallel/vtkSocketCommunicator.cxx
++++ b/Parallel/vtkSocketCommunicator.cxx
+@@ -32,7 +32,7 @@
+ // represent the CVS revision number of this file, so the value must
+ // be larger than the last revision which used that strategy.
+ #define vtkSocketCommunicatorHashId 100 /* MD5 */
+-#include "Parallel/vtkSocketCommunicatorHash.h"
++#include "vtkSocketCommunicatorHash.h"
+ 
+ vtkStandardNewMacro(vtkSocketCommunicator);
+ vtkCxxSetObjectMacro(vtkSocketCommunicator, Socket, vtkClientSocket);
