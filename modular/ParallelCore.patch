@@ -1,7 +1,7 @@
-diff --git a/Parallel/vtkSocketCommunicator.cxx b/Parallel/vtkSocketCommunicator.cxx
+diff --git a/Parallel/Core/vtkSocketCommunicator.cxx b/Parallel/Core/vtkSocketCommunicator.cxx
 index 789306b..349175e 100644
---- a/Parallel/vtkSocketCommunicator.cxx
-+++ b/Parallel/vtkSocketCommunicator.cxx
+--- a/Parallel/Core/vtkSocketCommunicator.cxx
++++ b/Parallel/Core/vtkSocketCommunicator.cxx
 @@ -32,7 +32,7 @@
  // represent the CVS revision number of this file, so the value must
  // be larger than the last revision which used that strategy.
@@ -12,10 +12,10 @@ index 789306b..349175e 100644
  vtkStandardNewMacro(vtkSocketCommunicator);
  vtkCxxSetObjectMacro(vtkSocketCommunicator, Socket, vtkClientSocket);
 
-diff --git a/Parallel/vtkCommunicator.cxx b/Parallel/vtkCommunicator.cxx
+diff --git a/Parallel/Core/vtkCommunicator.cxx b/Parallel/Core/vtkCommunicator.cxx
 index 7014b39..590df79 100644
---- a/Parallel/vtkCommunicator.cxx
-+++ b/Parallel/vtkCommunicator.cxx
+--- a/Parallel/Core/vtkCommunicator.cxx
++++ b/Parallel/Core/vtkCommunicator.cxx
 @@ -25,7 +25,6 @@
  #include "vtkGenericDataObjectReader.h"
  #include "vtkGenericDataObjectWriter.h"

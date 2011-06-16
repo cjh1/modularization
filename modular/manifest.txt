@@ -1101,7 +1101,6 @@ IO/vtkGraphWriter.cxx:
 IO/vtkGraphWriter.h:
 IO/vtkInputStream.cxx:
 IO/vtkInputStream.h:
-IO/vtkJavaPanel.cxx: <ignore>
 IO/vtkJavaScriptDataWriter.cxx:
 IO/vtkJavaScriptDataWriter.h:
 IO/vtkOffsetsManagerArray.h:
@@ -3795,7 +3794,6 @@ Rendering/vtkImageSlice.h:
 Rendering/vtkImageSliceMapper.cxx:
 Rendering/vtkImageSliceMapper.h:
 
-
 [Rendering/FreeType]
 
 Rendering/vtkFreeTypeLabelRenderStrategy.cxx:
@@ -3938,8 +3936,6 @@ Rendering/vtkOpenGLStateCache.h:
 Rendering/vtkOpenGLTexture.cxx:
 Rendering/vtkOpenGLTexture.h:
 Rendering/vtkgluPickMatrix.h:
-Rendering/vtkOpenGLImageResliceMapper.cxx:
-Rendering/vtkOpenGLImageResliceMapper.h:
 Rendering/vtkOpenGLImageSliceMapper.cxx:
 Rendering/vtkOpenGLImageSliceMapper.h:
 Rendering/vtkTextureBicubicARB_fp.asm:
@@ -3982,8 +3978,6 @@ Rendering/vtkMesaScalarsToColorsPainter.cxx:
 Rendering/vtkMesaScalarsToColorsPainter.h:
 Rendering/vtkMesaTexture.cxx:
 Rendering/vtkMesaTexture.h:
-Rendering/vtkMesaImageResliceMapper.cxx:
-Rendering/vtkMesaImageResliceMapper.h:
 Rendering/vtkMesaImageSliceMapper.cxx:
 Rendering/vtkMesaImageSliceMapper.h:
 

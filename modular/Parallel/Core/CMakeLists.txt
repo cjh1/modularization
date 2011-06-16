@@ -50,9 +50,10 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/Misc
   ${VTK_SOURCE_DIR}/Common/System
   ${VTK_SOURCE_DIR}/IO/Core
+  ${VTK_SOURCE_DIR}/IO/Geometry
   ${VTK_SOURCE_DIR}/Utilities
   )
 
 add_library(vtkParallelCore ${Kit_SRCS})
 
-target_link_libraries(vtkParallelCore vtkCommonDataModel vtkIOCore)
+target_link_libraries(vtkParallelCore vtkCommonDataModel vtkIOGeometry)
