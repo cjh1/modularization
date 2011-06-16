@@ -19,25 +19,6 @@ set(SQLite_SRCS
   vtkTableToSQLiteWriter.cxx
   )
 
-set(ODBC_SRCS
-  vtkODBCDatabase.cxx
-  vtkODBCQuery.cxx
-  )
-
-set(MySQL_SRCS
-  vtkMySQLDatabase.cxx
-  vtkMySQLQuery.cxx
-  vtkMySQLToTableReader.cxx
-  vtkTableToMySQLWriter.cxx
-  )
-
-set(PGSQL_SRCS
-  vtkPostgreSQLDatabase.cxx
-  vtkPostgreSQLQuery.cxx
-  vtkPostgreSQLToTableReader.cxx
-  vtkTableToPostgreSQLWriter.cxx
-  )
-
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   ${VTK_SOURCE_DIR}/Common/Core

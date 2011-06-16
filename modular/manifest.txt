@@ -1192,6 +1192,9 @@ Rendering/vtkVRMLExporter.h:
 
 [IO/Geometry]
 
+modular/IO/Geometry/CMakeLists.txt:
+modular/IO/Geometry/module.cmake:
+
 IO/vtkAVSucdReader.cxx:
 IO/vtkAVSucdReader.h:
 IO/vtkBYUReader.cxx:
@@ -1387,29 +1390,10 @@ modular/IO/SQL/module.cmake:
 
 IO/vtkDatabaseToTableReader.cxx:
 IO/vtkDatabaseToTableReader.h:
-IO/vtkODBCDatabase.cxx:
-IO/vtkODBCDatabase.h:
-IO/vtkODBCInternals.h:
-IO/vtkODBCQuery.cxx:
-IO/vtkODBCQuery.h:
 IO/vtkRowQuery.cxx:
 IO/vtkRowQuery.h:
 IO/vtkRowQueryToTable.cxx:
 IO/vtkRowQueryToTable.h:
-IO/vtkMySQLDatabase.cxx:
-IO/vtkMySQLDatabase.h:
-IO/vtkMySQLDatabasePrivate.h:
-IO/vtkMySQLQuery.cxx:
-IO/vtkMySQLQuery.h:
-IO/vtkMySQLToTableReader.cxx:
-IO/vtkMySQLToTableReader.h:
-IO/vtkPostgreSQLDatabase.cxx:
-IO/vtkPostgreSQLDatabase.h:
-IO/vtkPostgreSQLDatabasePrivate.h:
-IO/vtkPostgreSQLQuery.cxx:
-IO/vtkPostgreSQLQuery.h:
-IO/vtkPostgreSQLToTableReader.cxx:
-IO/vtkPostgreSQLToTableReader.h:
 IO/vtkSQLDatabase.cxx:
 IO/vtkSQLDatabase.h:
 IO/vtkSQLDatabaseSchema.cxx:
@@ -1422,10 +1406,6 @@ IO/vtkSQLiteQuery.cxx:
 IO/vtkSQLiteQuery.h:
 IO/vtkSQLiteToTableReader.cxx:
 IO/vtkSQLiteToTableReader.h:
-IO/vtkTableToMySQLWriter.cxx:
-IO/vtkTableToMySQLWriter.h:
-IO/vtkTableToPostgreSQLWriter.cxx:
-IO/vtkTableToPostgreSQLWriter.h:
 IO/vtkTableToSQLiteWriter.cxx:
 IO/vtkTableToSQLiteWriter.h:
 IO/vtkTableToDatabaseWriter.cxx:
@@ -1437,6 +1417,46 @@ Infovis/vtkSQLDatabaseTableSource.cxx:
 Infovis/vtkSQLGraphReader.h:
 Infovis/vtkSQLGraphReader.cxx:
 
+[IO/MySQL]
+
+modular/IO/MySQL/CMakeLists.txt:
+modular/IO/MySQL/module.cmake:
+
+IO/vtkMySQLDatabase.cxx:
+IO/vtkMySQLDatabase.h:
+IO/vtkMySQLDatabasePrivate.h:
+IO/vtkMySQLQuery.cxx:
+IO/vtkMySQLQuery.h:
+IO/vtkMySQLToTableReader.cxx:
+IO/vtkMySQLToTableReader.h:
+IO/vtkTableToMySQLWriter.cxx:
+IO/vtkTableToMySQLWriter.h:
+
+[IO/PostgreSQL]
+
+modular/IO/PostgreSQL/CMakeLists.txt:
+modular/IO/PostgreSQL/module.cmake:
+
+IO/vtkPostgreSQLDatabase.cxx:
+IO/vtkPostgreSQLDatabase.h:
+IO/vtkPostgreSQLDatabasePrivate.h:
+IO/vtkPostgreSQLQuery.cxx:
+IO/vtkPostgreSQLQuery.h:
+IO/vtkPostgreSQLToTableReader.cxx:
+IO/vtkPostgreSQLToTableReader.h:
+IO/vtkTableToPostgreSQLWriter.cxx:
+IO/vtkTableToPostgreSQLWriter.h:
+
+[IO/ODBC]
+
+modular/IO/ODBC/CMakeLists.txt:
+modular/IO/ODBC/module.cmake:
+
+IO/vtkODBCDatabase.cxx:
+IO/vtkODBCDatabase.h:
+IO/vtkODBCInternals.h:
+IO/vtkODBCQuery.cxx:
+IO/vtkODBCQuery.h:
 
 [IO/MINC]
 
