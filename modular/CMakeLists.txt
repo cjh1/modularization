@@ -486,16 +486,7 @@ foreach(tpl ${vtk_tpl_modules})
   message("${tpl}_SOURCE_DIR: ${${tpl}_SOURCE_DIR}")
 endforeach()
 
-message(STATUS "VTK Modules: ${VTK_MODULES_ALL}")
-
-# Provide an option for every module.
-if("$ENV{DASHBOARD_TEST_FROM_CTEST}" STREQUAL "")
-  # developer build
-  set(VTK_BUILD_ALL_MODULES_DEFAULT OFF)
-else()
-  # dashboard build
-  set(VTK_BUILD_ALL_MODULES_DEFAULT ON)
-endif()
+set(VTK_BUILD_ALL_MODULES_DEFAULT OFF)
 option(VTK_BUILD_ALL_MODULES "Request to build all modules"
   ${VTK_BUILD_ALL_MODULES_DEFAULT})
 mark_as_advanced(VTK_BUILD_ALL_MODULES)
