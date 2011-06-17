@@ -16,10 +16,10 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/DataModel
   ${VTK_SOURCE_DIR}/IO/Core
   ${VTK_SOURCE_DIR}/IO/SQL
-  ${PostgreSQL_INCLUDE_DIRECTORIES}
+  ${PostgreSQL_INCLUDE_DIRS}
   )
 
 add_library(vtkIOPostgreSQL ${PostgreSQL_SRCS})
 
 target_link_libraries(vtkIOPostgreSQL vtkCommonDataModel vtkIOSQL
-  ${PostgreSQL_LIBRARIES})
+  ${PostgreSQL_LIBRARY})
