@@ -1687,7 +1687,8 @@ CMake/FindNVCtrlLib.cmake:
 CMake/FindODBC.cmake:
 CMake/FindOGGTHEORA.cmake:
 CMake/FindOSMesa.cmake:
-CMake/FindPOSTGRES.cmake:
+CMake/FindPOSTGRES.cmake:<ignore>
+CMake/FindPostgreSQL.cmake:
 CMake/FindPQXX.cmake:
 CMake/FindPythonLibs.cmake:
 CMake/FindR.cmake:
