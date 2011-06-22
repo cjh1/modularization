@@ -442,6 +442,19 @@ FOREACH(header
   ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)
 ENDFOREACH(header)
 
+#-----------------------------------------------------------------------------
+# Configure files with settings for use by the build.
+# Configure into Common/Core?
+#CONFIGURE_FILE(${VTK_SOURCE_DIR}/vtkConfigure.h.in
+#               ${VTK_BINARY_DIR}/vtkConfigure.h @ONLY IMMEDIATE)
+
+CONFIGURE_FILE(${VTK_SOURCE_DIR}/UseVTK.cmake.in
+               ${VTK_BINARY_DIR}/UseVTK.cmake COPYONLY IMMEDIATE)
+
+# Configure into Common/Core?
+#CONFIGURE_FILE(${VTK_SOURCE_DIR}/vtkToolkits.h.in
+#               ${VTK_BINARY_DIR}/vtkToolkits.h @ONLY)
+
 
 # Include the sockets test.
 # FIXME: The test should be moved and rewritten.
@@ -622,3 +635,9 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
 endforeach()
 
 #add_subdirectory(Common/Core)
+
+#-----------------------------------------------------------------------------
+# The commands in this directory are intended to be executed as
+# the end of the whole configuration process, as a "last step".
+# This directory is typically the last add_subdirectory in the main CMakeLists.txt.
+add_subdirectory(Utilities/LastConfigureStep)

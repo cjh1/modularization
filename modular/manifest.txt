@@ -32,8 +32,6 @@ Infovis/CMakeLists.txt: <ignore>
 Rendering/CMakeLists.txt: <ignore>
 UseVTK.cmake.in: <ignore>
 VTKCPack.cmake: <ignore>
-VTKConfig.cmake.in: <ignore>
-VTKConfigVersion.cmake.in: <ignore>
 Views/CMakeLists.txt: <ignore>
 Widgets/CMakeLists.txt: <ignore>
 vtkBanner.gif: <ignore>
@@ -75,6 +73,8 @@ TestingLogo.gif:
 vtkLogo.ico:
 vtkLogo.jpg:
 modular/CTestConfig.cmake:
+VTKConfig.cmake.in:
+VTKConfigVersion.cmake.in:
 
 [Common/Core]
 modular/Common/Core/CMakeLists.txt:
