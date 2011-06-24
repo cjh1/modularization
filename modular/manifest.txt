@@ -1,6 +1,5 @@
 [<ignore>]
 
-vtkGenerateVTKConfig.cmake: <ignore>
 vtkIncludeDirectories.cmake: <ignore>
 Common/CMakeLists.txt: <ignore>
 Common/Testing/: <ignore>
@@ -30,7 +29,6 @@ Hybrid/CMakeLists.txt: <ignore>
 IO/CMakeLists.txt: <ignore>
 Infovis/CMakeLists.txt: <ignore>
 Rendering/CMakeLists.txt: <ignore>
-UseVTK.cmake.in: <ignore>
 VTKCPack.cmake: <ignore>
 Views/CMakeLists.txt: <ignore>
 Widgets/CMakeLists.txt: <ignore>
@@ -73,8 +71,10 @@ TestingLogo.gif:
 vtkLogo.ico:
 vtkLogo.jpg:
 modular/CTestConfig.cmake:
+UseVTK.cmake.in:
 VTKConfig.cmake.in:
 VTKConfigVersion.cmake.in:
+vtkGenerateVTKConfig.cmake:
 
 [Common/Core]
 modular/Common/Core/CMakeLists.txt:
@@ -1061,6 +1061,10 @@ Common/vtkWarpTransform.cxx:
 Common/vtkWarpTransform.h:
 Hybrid/vtkLandmarkTransform.cxx:
 Hybrid/vtkLandmarkTransform.h:
+
+[Examples]
+modular/Examples/CMakeLists.txt:
+modular/Examples/ExampleKMeansStatistics.cxx:
 
 [IO/Core]
 
