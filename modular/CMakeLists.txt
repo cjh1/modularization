@@ -32,6 +32,16 @@ if(NOT CMAKE_ARCHIVE_OUTPUT_DIRECTORY)
   set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${VTK_BINARY_DIR}/lib)
 endif()
 
+
+# FixMe: LIBRARY_OUTPUT_PATH and EXECUTABLE_OUTPUT_PATH useage is scattered about VTK.
+# when we can patch everything they should simply be replaced with CMAKE_<blah>_OUTPUT_DIRECTORY variables. 
+IF(NOT LIBRARY_OUTPUT_PATH)
+  SET(LIBRARY_OUTPUT_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY} CACHE INTERNAL "Single output directory for building all libraries.")
+ENDIF(NOT LIBRARY_OUTPUT_PATH)
+IF(NOT EXECUTABLE_OUTPUT_PATH)
+  SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} CACHE INTERNAL "Single output directory for building all executables.")
+ENDIF(NOT EXECUTABLE_OUTPUT_PATH)
+
 #-----------------------------------------------------------------------------
 # VTK version number.  An even minor number corresponds to releases.
 set(VTK_MAJOR_VERSION 5)
@@ -69,6 +79,7 @@ INCLUDE(vtkTargetExportMacros)
 
 # FIXME: These will be removed, used by vtkzlib etc
 set(VTK_INSTALL_LIB_DIR_CM24 lib)
+set(VTK_INSTALL_PACKAGE_DIR_CM24 ${VTK_INSTALL_LIB_DIR_CM24})
 
 #-----------------------------------------------------------------------------
 # Load some macros.
@@ -107,7 +118,6 @@ int main()
 }")
 CHECK_CXX_SOURCE_COMPILES("${VTK_CONST_REVERSE_ITERATOR_COMPARISON_FILE}"
   VTK_CONST_REVERSE_ITERATOR_COMPARISON)
-
 
 #-----------------------------------------------------------------------------
 # Provide compatibility options.
@@ -445,8 +455,8 @@ ENDFOREACH(header)
 #-----------------------------------------------------------------------------
 # Configure files with settings for use by the build.
 # Configure into Common/Core?
-#CONFIGURE_FILE(${VTK_SOURCE_DIR}/vtkConfigure.h.in
-#               ${VTK_BINARY_DIR}/vtkConfigure.h @ONLY IMMEDIATE)
+CONFIGURE_FILE(${VTK_SOURCE_DIR}/Common/Core/vtkConfigure.h.in
+               ${VTK_BINARY_DIR}/Common/Core/vtkConfigure.h @ONLY IMMEDIATE)
 
 CONFIGURE_FILE(${VTK_SOURCE_DIR}/UseVTK.cmake.in
                ${VTK_BINARY_DIR}/UseVTK.cmake COPYONLY IMMEDIATE)
@@ -461,7 +471,8 @@ CONFIGURE_FILE(${VTK_SOURCE_DIR}/UseVTK.cmake.in
 include(VTKParallelCMakeTests)
 
 # Add the VTK binary dir to the include path to pick up the vtkConfigure.h
-include_directories(${VTK_BINARY_DIR} ${VTK_BINARY_DIR}/Utilities)
+set(VTK_INCLUDE_DIRS_BUILD_TREE ${VTK_BINARY_DIR} ${VTK_BINARY_DIR}/Utilities)
+include_directories(${VTK_INCLUDE_DIRS_BUILD_TREE})
 
 include(vtkModular)
 
@@ -627,6 +638,11 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
     message("Module directory does not exist! '${${vtk-module}_SOURCE_DIR}'")
   endif()
   add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
+
+  # These two variables are combined into VTK_INCLUDE_DIRS_CONFIG which is used
+  # to construct VTK_INCLUDE_DIRS in vtkConfig.cmake
+  list(APPEND VTK_INCLUDE_DIRS_SOURCE_TREE "${${vtk-module}_SOURCE_DIR}")
+  list(APPEND VTK_INCLUDE_DIRS_BUILD_TREE "${${vtk-module}_BINARY_DIR}")
 endforeach()
 foreach(vtk-module ${VTK_MODULES_ENABLED})
   if(NOT ${vtk-module}_IS_TEST)
