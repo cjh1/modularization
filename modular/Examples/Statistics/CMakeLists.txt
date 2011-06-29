@@ -10,6 +10,10 @@ endif(NOT VTK_BINARY_DIR)
 
 link_directories(${VTK_LIBRARY_DIRS})
 
-add_executable(ExampleKMeansStatistics ExampleKMeansStatistics.cxx)
+# Add example use of vtkDescriptiveStatistics
+add_executable(ExampleDescriptiveStatistics ExampleDescriptiveStatistics.cxx)
+target_link_libraries(ExampleDescriptiveStatistics vtkCommonCore vtkCommonSystem vtkCommonDataModel vtkFiltersStatistics)
 
+# Add example use of vtkKMeansStatistics
+add_executable(ExampleKMeansStatistics ExampleKMeansStatistics.cxx)
 target_link_libraries(ExampleKMeansStatistics vtkCommonCore vtkCommonSystem vtkCommonDataModel vtkFiltersStatistics)
