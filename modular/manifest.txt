@@ -1062,9 +1062,9 @@ Common/vtkWarpTransform.h:
 Hybrid/vtkLandmarkTransform.cxx:
 Hybrid/vtkLandmarkTransform.h:
 
-[Examples]
-modular/Examples/CMakeLists.txt:
-modular/Examples/ExampleKMeansStatistics.cxx:
+[Examples/Statistics]
+modular/Examples/Statistics/CMakeLists.txt:
+modular/Examples/Statistics/ExampleKMeansStatistics.cxx:
 
 [IO/Core]
 
