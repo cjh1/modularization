@@ -1533,6 +1533,9 @@ Hybrid/vtkWin32VideoSource.h:
 
 [IO/XML]
 
+modular/IO/XML/CMakeLists.txt:
+modular/IO/XML/module.cmake:
+
 IO/vtkXMLCompositeDataReader.cxx:
 IO/vtkXMLCompositeDataReader.h:
 IO/vtkXMLCompositeDataWriter.cxx:
