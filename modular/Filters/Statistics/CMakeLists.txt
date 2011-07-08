@@ -1,7 +1,6 @@
 
 SET(Kit_SRCS
   vtkBivariateLinearTableThreshold.cxx
-  vtkBivariateStatisticsAlgorithm.cxx
   vtkContingencyStatistics.cxx
   vtkCorrelativeStatistics.cxx
   vtkDescriptiveStatistics.cxx
@@ -14,7 +13,6 @@ SET(Kit_SRCS
   vtkStatisticsAlgorithm.cxx
   vtkStrahlerMetric.cxx
   vtkStreamingStatistics.cxx
-  vtkUnivariateStatisticsAlgorithm.cxx
   )
 
 include_directories(
