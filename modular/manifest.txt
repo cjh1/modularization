@@ -63,6 +63,34 @@ GUISupport/Qt/Chart/: <ignore>
 modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/module.cmake: <ignore>
 
+# Find these classes a home - deferring until I get there (or get some help)
+Graphics/vtkResliceCursor.cxx: <ignore>
+Graphics/vtkResliceCursor.h: <ignore>
+Graphics/vtkResliceCursorPolyDataAlgorithm.cxx: <ignore>
+Graphics/vtkResliceCursorPolyDataAlgorithm.h: <ignore>
+Imaging/vtkImageSlab.cxx: <ignore>
+Imaging/vtkImageSlab.h: <ignore>
+Imaging/vtkImageSlabReslice.cxx: <ignore>
+Imaging/vtkImageSlabReslice.h: <ignore>
+Infovis/vtkKCoreDecomposition.cxx: <ignore>
+Infovis/vtkKCoreDecomposition.h: <ignore>
+Infovis/vtkKCoreLayout.cxx: <ignore>
+Infovis/vtkKCoreLayout.h: <ignore>
+Rendering/vtkResliceCursorActor.cxx: <ignore>
+Rendering/vtkResliceCursorActor.h: <ignore>
+Rendering/vtkResliceCursorPicker.cxx: <ignore>
+Rendering/vtkResliceCursorPicker.h: <ignore>
+Widgets/vtkResliceCursorLineRepresentation.cxx: <ignore>
+Widgets/vtkResliceCursorLineRepresentation.h: <ignore>
+Widgets/vtkResliceCursorRepresentation.cxx: <ignore>
+Widgets/vtkResliceCursorRepresentation.h: <ignore>
+Widgets/vtkResliceCursorThickLineRepresentation.cxx: <ignore>
+Widgets/vtkResliceCursorThickLineRepresentation.h: <ignore>
+Widgets/vtkResliceCursorWidget.cxx: <ignore>
+Widgets/vtkResliceCursorWidget.h: <ignore>
+Widgets/vtkResliceImageViewer.cxx: <ignore>
+Widgets/vtkResliceImageViewer.h: <ignore>
+
 [.]
 modular/CMakeLists.txt:
 Copyright.txt:
@@ -2314,6 +2342,9 @@ Charts/vtkPlotStacked.cxx:
 Charts/vtkScalarsToColorsItem.h:
 Charts/vtkScalarsToColorsItem.cxx:
 
+Charts/vtkContextInteractorStyle.cxx:
+Charts/vtkContextInteractorStyle.h:
+
 
 [Filters/Core]
 
@@ -3013,8 +3044,6 @@ modular/Filters/Statistics/module.cmake:
 
 Infovis/vtkBivariateLinearTableThreshold.h:
 Infovis/vtkBivariateLinearTableThreshold.cxx:
-Infovis/vtkBivariateStatisticsAlgorithm.h:
-Infovis/vtkBivariateStatisticsAlgorithm.cxx:
 Infovis/vtkContingencyStatistics.h:
 Infovis/vtkContingencyStatistics.cxx:
 Infovis/vtkCorrelativeStatistics.h:
@@ -3042,8 +3071,6 @@ Infovis/vtkStrahlerMetric.h:
 Infovis/vtkStrahlerMetric.cxx:
 Infovis/vtkStreamingStatistics.h:
 Infovis/vtkStreamingStatistics.cxx:
-Infovis/vtkUnivariateStatisticsAlgorithm.h:
-Infovis/vtkUnivariateStatisticsAlgorithm.cxx:
 
 [Filters/StatisticsGnuR]
 
@@ -3947,7 +3974,6 @@ Rendering/vtkOpenGLTexture.h:
 Rendering/vtkgluPickMatrix.h:
 Rendering/vtkOpenGLImageSliceMapper.cxx:
 Rendering/vtkOpenGLImageSliceMapper.h:
-Rendering/vtkTextureBicubicARB_fp.asm:
 
 [Rendering/MESA]
 
@@ -4711,8 +4737,6 @@ Imaging/vtkImagePadFilter.cxx:
 Imaging/vtkImagePadFilter.h:
 Imaging/vtkImagePermute.cxx:
 Imaging/vtkImagePermute.h:
-Imaging/vtkImageProjection.cxx:
-Imaging/vtkImageProjection.h:
 Imaging/vtkImageQuantizeRGBToIndex.cxx:
 Imaging/vtkImageQuantizeRGBToIndex.h:
 Imaging/vtkImageRange3D.cxx:
