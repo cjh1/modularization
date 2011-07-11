@@ -1,6 +1,7 @@
 
 SET(Kit_SRCS
-vtkXMLCompositeDataReader.cxx
+  vtkRTXMLPolyDataReader.cxx
+  vtkXMLCompositeDataReader.cxx
   vtkXMLCompositeDataWriter.cxx
   vtkXMLDataParser.cxx
   vtkXMLDataReader.cxx
@@ -62,6 +63,7 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_BINARY_DIR}/Common/Core
   ${VTK_SOURCE_DIR}/Common/Misc
+  ${VTK_SOURCE_DIR}/Common/System
   ${VTK_SOURCE_DIR}/Common/DataModel
   ${VTK_SOURCE_DIR}/IO/Core
   ${VTK_SOURCE_DIR}/IO/Geometry
@@ -70,4 +72,5 @@ include_directories(
 
 add_library(vtkIOXML ${Kit_SRCS})
 
-target_link_libraries(vtkIOXML vtkCommonDataModel vtkIOGeometry vtkexpat)
+target_link_libraries(vtkIOXML vtkCommonDataModel vtkCommonSystem vtkIOGeometry
+  vtkexpat)

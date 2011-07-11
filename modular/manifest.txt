@@ -1271,12 +1271,8 @@ IO/vtkPolyDataReader.cxx:
 IO/vtkPolyDataReader.h:
 IO/vtkPolyDataWriter.cxx:
 IO/vtkPolyDataWriter.h:
-IO/vtkPostScriptWriter.cxx:
-IO/vtkPostScriptWriter.h:
 IO/vtkProStarReader.cxx:
 IO/vtkProStarReader.h:
-IO/vtkRTXMLPolyDataReader.cxx:
-IO/vtkRTXMLPolyDataReader.h:
 IO/vtkRectilinearGridReader.cxx:
 IO/vtkRectilinearGridReader.h:
 IO/vtkRectilinearGridWriter.cxx:
@@ -1404,6 +1400,10 @@ IO/vtkVolumeReader.h:
 # Derived from vtkImageReader2
 IO/vtkSLCReader.cxx:
 IO/vtkSLCReader.h:
+
+# Derived from vtkImageWriter
+IO/vtkPostScriptWriter.cxx:
+IO/vtkPostScriptWriter.h:
 
 [IO/Import]
 
@@ -1690,6 +1690,10 @@ IO/vtkXMLWriter.h:
 IO/vtkXMLWriterC.cxx:
 IO/vtkXMLWriterC.h:
 IO/vtkXMLWriterF.h:
+
+# Moved from Geometry - requires vtkDirectory from the CommonSystem module.
+IO/vtkRTXMLPolyDataReader.cxx:
+IO/vtkRTXMLPolyDataReader.h:
 
 [Wrapping]
 

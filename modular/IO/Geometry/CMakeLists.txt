@@ -29,11 +29,9 @@ SET(Kit_SRCS
   vtkPLOT3DReader.cxx
   vtkPolyDataReader.cxx
   vtkPolyDataWriter.cxx
-  #vtkPostScriptWriter.cxx
   vtkProStarReader.cxx
   vtkRectilinearGridReader.cxx
   vtkRectilinearGridWriter.cxx
-  #vtkRTXMLPolyDataReader.cxx
   vtkSESAMEReader.cxx
   vtkSimplePointsReader.cxx
   vtkSimplePointsWriter.cxx
