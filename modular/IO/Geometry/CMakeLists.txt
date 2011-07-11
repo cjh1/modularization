@@ -16,7 +16,7 @@ SET(Kit_SRCS
   vtkGenericDataObjectWriter.cxx
   vtkGenericMovieWriter.cxx
   #vtkIVWriter.cxx
-  #vtkMaterialLibrary.cxx
+  vtkMaterialLibrary.cxx
   vtkMCubesReader.cxx
   vtkMCubesWriter.cxx
   vtkMFIXReader.cxx
@@ -54,6 +54,8 @@ SET(Kit_SRCS
 
   vtkStructuredPointsReader.cxx
   vtkStructuredPointsWriter.cxx
+
+  vtkShaderCodeLibrary.cxx
   )
 
 include_directories(
@@ -67,6 +69,7 @@ include_directories(
   ${VTK_SOURCE_DIR}/IO/Core
   ${VTK_SOURCE_DIR}/IO/SQL
   ${VTK_SOURCE_DIR}/Utilities
+  ${VTK_BINARY_DIR}/Utilities/MaterialLibrary
   )
 
 add_library(vtkIOGeometry ${Kit_SRCS})

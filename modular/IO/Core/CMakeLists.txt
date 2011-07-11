@@ -19,7 +19,6 @@ SET(Kit_SRCS
   vtkInputStream.cxx
   vtkJavaScriptDataWriter.cxx
   vtkOutputStream.cxx
-  #vtkShaderCodeLibrary.cxx
   vtkSortFileNames.cxx
   vtkTextCodec.cxx
   vtkTextCodecFactory.cxx

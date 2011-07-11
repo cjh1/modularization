@@ -1,3 +1,3 @@
 vtk_module(IOGeometry
-  DEPENDS CommonDataModel IOCore
+  DEPENDS CommonDataModel IOCore MaterialLibrary
   DEFAULT ON)

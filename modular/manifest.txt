@@ -1145,8 +1145,6 @@ IO/vtkUTF8TextCodec.cxx:
 IO/vtkUTF8TextCodec.h:
 IO/vtkOutputStream.cxx:
 IO/vtkOutputStream.h:
-IO/vtkShaderCodeLibrary.cxx:
-IO/vtkShaderCodeLibrary.h:
 IO/vtkTextCodec.cxx:
 IO/vtkTextCodec.h:
 IO/vtkTextCodecFactory.cxx:
@@ -1227,7 +1225,7 @@ Rendering/vtkVRMLExporter.h:
 modular/IO/Geometry/CMakeLists.txt:
 modular/IO/Geometry/module.cmake:
 
-IO/vtkAVSucdReader.cxx:
+IO/vtkAVSucdReader.cxx: 
 IO/vtkAVSucdReader.h:
 IO/vtkBYUReader.cxx:
 IO/vtkBYUReader.h:
@@ -1334,6 +1332,10 @@ IO/vtkStructuredPointsReader.cxx:
 IO/vtkStructuredPointsReader.h:
 IO/vtkStructuredPointsWriter.cxx:
 IO/vtkStructuredPointsWriter.h:
+
+# The Shader and Material library code should be in the same module.
+IO/vtkShaderCodeLibrary.cxx:
+IO/vtkShaderCodeLibrary.h:
 
 
 [IO/Image]
@@ -1693,6 +1695,10 @@ Common/vtkTk.h:
 [Utilities]
 
 Utilities/:
+
+[Utilities/MaterialLibrary]
+
+modular/Utilities/MaterialLibrary/CMakeLists.txt:
 
 [CMake]
 

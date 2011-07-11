@@ -454,7 +454,7 @@ ENDFOREACH(header)
 
 #-----------------------------------------------------------------------------
 # Configure files with settings for use by the build.
-# Configure into Common/Core?
+# FIXME: Configure into Common/Core?
 CONFIGURE_FILE(${VTK_SOURCE_DIR}/Common/Core/vtkConfigure.h.in
                ${VTK_BINARY_DIR}/Common/Core/vtkConfigure.h @ONLY IMMEDIATE)
 
@@ -464,7 +464,6 @@ CONFIGURE_FILE(${VTK_SOURCE_DIR}/UseVTK.cmake.in
 # Configure into Common/Core?
 #CONFIGURE_FILE(${VTK_SOURCE_DIR}/vtkToolkits.h.in
 #               ${VTK_BINARY_DIR}/vtkToolkits.h @ONLY)
-
 
 # Include the sockets test.
 # FIXME: The test should be moved and rewritten.

@@ -14,9 +14,9 @@ vtkXMLCompositeDataReader.cxx
   vtkXMLHyperOctreeWriter.cxx
   vtkXMLImageDataReader.cxx
   vtkXMLImageDataWriter.cxx
-#  vtkXMLMaterial.cxx
-#  vtkXMLMaterialParser.cxx
-#  vtkXMLMaterialReader.cxx
+  vtkXMLMaterial.cxx
+  vtkXMLMaterialParser.cxx
+  vtkXMLMaterialReader.cxx
   vtkXMLMultiBlockDataReader.cxx
   vtkXMLMultiBlockDataWriter.cxx
   vtkXMLMultiGroupDataReader.cxx
@@ -43,7 +43,7 @@ vtkXMLCompositeDataReader.cxx
   vtkXMLReader.cxx
   vtkXMLRectilinearGridReader.cxx
   vtkXMLRectilinearGridWriter.cxx
-#  vtkXMLShader.cxx
+  vtkXMLShader.cxx
   vtkXMLStructuredDataReader.cxx
   vtkXMLStructuredDataWriter.cxx
   vtkXMLStructuredGridReader.cxx
@@ -65,9 +65,10 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/Misc
   ${VTK_SOURCE_DIR}/Common/DataModel
   ${VTK_SOURCE_DIR}/IO/Core
+  ${VTK_SOURCE_DIR}/IO/Geometry
   ${VTK_SOURCE_DIR}/Utilities
   )
 
 add_library(vtkIOXML ${Kit_SRCS})
 
-target_link_libraries(vtkIOXML vtkCommonDataModel vtkIOCore vtkexpat)
+target_link_libraries(vtkIOXML vtkCommonDataModel vtkIOGeometry vtkexpat)
