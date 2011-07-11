@@ -1337,6 +1337,9 @@ IO/vtkStructuredPointsWriter.h:
 IO/vtkShaderCodeLibrary.cxx:
 IO/vtkShaderCodeLibrary.h:
 
+# Moved from XML - more geometry than XML
+IO/vtkXYZMolReader.cxx:
+IO/vtkXYZMolReader.h:
 
 [IO/Image]
 
@@ -1677,8 +1680,6 @@ IO/vtkXMLWriter.h:
 IO/vtkXMLWriterC.cxx:
 IO/vtkXMLWriterC.h:
 IO/vtkXMLWriterF.h:
-IO/vtkXYZMolReader.cxx:
-IO/vtkXYZMolReader.h:
 
 [Wrapping]
 

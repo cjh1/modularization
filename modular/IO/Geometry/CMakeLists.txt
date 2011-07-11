@@ -56,6 +56,8 @@ SET(Kit_SRCS
   vtkStructuredPointsWriter.cxx
 
   vtkShaderCodeLibrary.cxx
+
+  vtkXYZMolReader.cxx
   )
 
 include_directories(

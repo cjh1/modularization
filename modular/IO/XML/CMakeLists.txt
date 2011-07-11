@@ -55,7 +55,6 @@ vtkXMLCompositeDataReader.cxx
   vtkXMLUtilities.cxx
   vtkXMLWriterC.cxx
   vtkXMLWriter.cxx
-#  vtkXYZMolReader.cxx
   )
 
 include_directories(
