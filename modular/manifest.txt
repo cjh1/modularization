@@ -1251,8 +1251,6 @@ IO/vtkMCubesWriter.cxx:
 IO/vtkMCubesWriter.h:
 IO/vtkMFIXReader.cxx:
 IO/vtkMFIXReader.h:
-IO/vtkMPASReader.cxx:
-IO/vtkMPASReader.h:
 IO/vtkMaterialLibrary.cxx:
 IO/vtkMaterialLibrary.h:
 IO/vtkMoleculeReaderBase.cxx:
@@ -1285,12 +1283,6 @@ IO/vtkRectilinearGridWriter.cxx:
 IO/vtkRectilinearGridWriter.h:
 IO/vtkSESAMEReader.cxx:
 IO/vtkSESAMEReader.h:
-IO/vtkSLACParticleReader.cxx:
-IO/vtkSLACParticleReader.h:
-IO/vtkSLACReader.cxx:
-IO/vtkSLACReader.h:
-IO/vtkSLCReader.cxx:
-IO/vtkSLCReader.h:
 IO/vtkSTLReader.cxx:
 IO/vtkSTLReader.h:
 IO/vtkSTLWriter.cxx:
@@ -1408,6 +1400,10 @@ IO/vtkVolume16Reader.cxx:
 IO/vtkVolume16Reader.h:
 IO/vtkVolumeReader.cxx:
 IO/vtkVolumeReader.h:
+
+# Derived from vtkImageReader2
+IO/vtkSLCReader.cxx:
+IO/vtkSLCReader.h:
 
 [IO/Import]
 
@@ -1537,6 +1533,9 @@ IO/vtkGenericEnSightReader.h:
 
 [IO/NetCDF]
 
+modular/IO/NetCDF/CMakeLists.txt:
+modular/IO/NetCDF/module.cmake:
+
 IO/vtkNetCDFCAMReader.cxx:
 IO/vtkNetCDFCAMReader.h:
 IO/vtkNetCDFCFReader.cxx:
@@ -1545,6 +1544,17 @@ IO/vtkNetCDFPOPReader.cxx:
 IO/vtkNetCDFPOPReader.h:
 IO/vtkNetCDFReader.cxx:
 IO/vtkNetCDFReader.h:
+
+# Use NetCDF, from Geometry
+IO/vtkSLACParticleReader.cxx:
+IO/vtkSLACParticleReader.h:
+IO/vtkSLACReader.cxx:
+IO/vtkSLACReader.h:
+IO/vtkMPASReader.cxx:
+IO/vtkMPASReader.h:
+
+modular/IONetCDF.patch:<ignore>
+<patch>: IONetCDF.patch
 
 [IO/PLY]
 

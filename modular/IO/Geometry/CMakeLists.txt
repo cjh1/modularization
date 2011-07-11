@@ -3,7 +3,7 @@ SET(Kit_SRCS
   vtkAVSucdReader.cxx
   vtkBYUReader.cxx
   vtkBYUWriter.cxx
-  #vtkCGMWriter.cxx
+  #vtkCGMWriter.cxx # Needs vtkViewport.
   vtkChacoReader.cxx
   vtkCompositeDataReader.cxx
   vtkCompositeDataWriter.cxx
@@ -15,13 +15,12 @@ SET(Kit_SRCS
   vtkGenericDataObjectReader.cxx
   vtkGenericDataObjectWriter.cxx
   vtkGenericMovieWriter.cxx
-  #vtkIVWriter.cxx
+  #vtkIVWriter.cxx # Needs vtkAbstractMapper
   vtkMaterialLibrary.cxx
   vtkMCubesReader.cxx
   vtkMCubesWriter.cxx
   vtkMFIXReader.cxx
   vtkMoleculeReaderBase.cxx
-  #vtkMPASReader.cxx
   vtkMultiBlockPLOT3DReader.cxx
   vtkOBJReader.cxx
   vtkOpenFOAMReader.cxx
@@ -38,9 +37,6 @@ SET(Kit_SRCS
   vtkSESAMEReader.cxx
   vtkSimplePointsReader.cxx
   vtkSimplePointsWriter.cxx
-  #vtkSLACParticleReader.cxx
-  #vtkSLACReader.cxx
-  #vtkSLCReader.cxx
   vtkSTLReader.cxx
   vtkSTLWriter.cxx
   vtkStructuredGridReader.cxx

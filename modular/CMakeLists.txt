@@ -500,7 +500,7 @@ foreach(f ${meta})
 endforeach()
 
 # Add the third party libraries
-set(vtk_tpl_modules kwsys vtkalglib vtkzlib vtksqlite vtkexpat
+set(vtk_tpl_modules kwsys vtkalglib vtkzlib vtksqlite vtkexpat vtknetcdf
   HashSource MaterialLibrary)
 foreach(tpl ${vtk_tpl_modules})
   set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${tpl})
