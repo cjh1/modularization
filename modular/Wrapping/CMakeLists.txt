@@ -6,7 +6,8 @@ include(${VTK_SOURCE_DIR}/Wrapping/LocalUserOptions.cmake OPTIONAL)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/Python
   ${VTK_SOURCE_DIR}/Common/Core
-  ${VTK_BINARY_DIR}/Common/Core)
+  ${VTK_BINARY_DIR}/Common/Core
+  ${VTK_BINARY_DIR}/Wrapping)
 
 if(NOT CMAKE_CROSSCOMPILING)
   if(VTK_WRAP_TCL OR VTK_WRAP_PYTHON OR VTK_WRAP_JAVA)

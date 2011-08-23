@@ -68,6 +68,7 @@ function(vtk_add_wrapping module_name)
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${VTK_SOURCE_DIR}/Wrapping/PythonCore
     ${VTK_SOURCE_DIR}/Wrapping
+    ${VTK_BINARY_DIR}/Wrapping
     ${PYTHON_INCLUDE_DIRS})
 
   get_target_property(module_srcs ${module_name} SOURCES)

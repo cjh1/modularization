@@ -252,6 +252,7 @@ set(Kit_SRCS
   vtkVoxel.cxx
   vtkWedge.cxx
   vtkXMLDataElement.cxx
+  vtkTreeIterator.cxx
   )
 
 set_source_files_properties(

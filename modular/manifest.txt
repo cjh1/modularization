@@ -89,6 +89,16 @@ Widgets/vtkResliceCursorWidget.cxx: <ignore>
 Widgets/vtkResliceCursorWidget.h: <ignore>
 Widgets/vtkResliceImageViewer.cxx: <ignore>
 Widgets/vtkResliceImageViewer.h: <ignore>
+Widgets/vtkResliceImageViewerMeasurements.cxx: <ignore>
+Widgets/vtkResliceImageViewerMeasurements.h: <ignore>
+Parallel/vtkPNetCDFPOPReader.cxx: <ignore>
+Parallel/vtkPNetCDFPOPReader.h: <ignore>
+Parallel/vtkPMaskPoints.cxx: <ignore>
+Parallel/vtkPMaskPoints.h: <ignore>
+Imaging/vtkImageThresholdConnectivity.cxx: <ignore>
+Imaging/vtkImageThresholdConnectivity.h: <ignore>
+Filtering/vtkCellTreeLocator.cxx: <ignore>
+Filtering/vtkCellTreeLocator.h: <ignore>
 
 [.]
 modular/CMakeLists.txt:
@@ -773,6 +783,10 @@ Filtering/vtkMeanValueCoordinatesInterpolator.h:
 # Needs vtkCellLocator
 Hybrid/vtkIterativeClosestPointTransform.cxx:
 Hybrid/vtkIterativeClosestPointTransform.h:
+
+# Needed by vtkTreeBFSIterator
+Filtering/vtkTreeIterator.cxx:
+Filtering/vtkTreeIterator.h:
 
 # Folding ImplicitFunctions into DataModel
 Common/vtkBox.cxx:
@@ -1740,6 +1754,8 @@ Wrapping/vtkWrapTcl.c:
 Wrapping/vtkWrapTclInit.c:
 Wrapping/vtkWrapText.c:
 Wrapping/vtkWrapText.h:
+
+Wrapping/Python/vtkPythonConfigure.h.in:
 
 [Wrapping/Python]
 

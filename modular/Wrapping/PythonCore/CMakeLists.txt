@@ -18,6 +18,7 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_BINARY_DIR}/Common/Core
   ${VTK_SOURCE_DIR}/Utilities
+  ${VTK_BINARY_DIR}/Wrapping
   )
 
 # SIP directory will be searched before other python dirs
