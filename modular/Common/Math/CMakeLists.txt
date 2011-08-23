@@ -21,9 +21,4 @@ if(CMAKE_COMPILER_IS_GNUCXX)
    )
 endif()
 
-
-include_directories(${CMAKE_CURRENT_BINARY_DIR} ${VTK_SOURCE_DIR}/Common/Core)
-
-add_library(vtkCommonMath ${Kit_SRCS})
-
-target_link_libraries(vtkCommonMath vtkCommonCore)
+vtk_add_library(vtkCommonMath ${Kit_SRCS})

@@ -1,3 +1,8 @@
-vtk_module(IONetCDF
-  DEPENDS CommonDataModel IOCore vtknetcdf
+vtk_module(vtkIONetCDF
+  DEPENDS
+    vtkCommonDataModel
+    vtkCommonSystem
+    vtkIOCore
+  COMPILE_DEPENDS
+    vtknetcdf
   DEFAULT ON)

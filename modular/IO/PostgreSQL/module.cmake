@@ -1,3 +1,5 @@
-vtk_module(IOPostgreSQL
-  DEPENDS CommonDataModel IOSQL
+vtk_module(vtkIOPostgreSQL
+  DEPENDS
+    vtkCommonDataModel
+    vtkIOSQL
   DEFAULT OFF)

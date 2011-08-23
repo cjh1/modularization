@@ -9,9 +9,7 @@ SET(Kit_SRCS
   vtkTimerLog.cxx
   )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR} ${VTK_SOURCE_DIR}/Common/Core)
-
-SET_SOURCE_FILES_PROPERTIES(
+set_source_files_properties(
   vtkSocket
   ABSTRACT
 )
@@ -26,6 +24,6 @@ if(WIN32 AND NOT BORLAND)
   set(KIT_LIBS ${KIT_LIBS} wsock32)
 endif()
 
-add_library(vtkCommonSystem ${Kit_SRCS})
+vtk_add_library(vtkCommonSystem ${Kit_SRCS})
 
-target_link_libraries(vtkCommonSystem vtkCommonCore ${KIT_LIBS})
+target_link_libraries(vtkCommonSystem ${KIT_LIBS})

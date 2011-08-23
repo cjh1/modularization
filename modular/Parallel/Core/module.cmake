@@ -1,3 +1,7 @@
-vtk_module(ParallelCore
-  DEPENDS CommonDataModel HashSource IOGeometry
+vtk_module(vtkParallelCore
+  DEPENDS
+    vtkCommonDataModel
+    vtkIOGeometry
+  COMPILE_DEPENDS
+    HashSource
   DEFAULT ON)

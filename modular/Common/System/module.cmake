@@ -1,3 +1,3 @@
-vtk_module(CommonSystem
-  DEPENDS CommonCore
+vtk_module(vtkCommonSystem
+  DEPENDS vtkCommonCore
   DEFAULT ON)

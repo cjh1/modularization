@@ -1,3 +1,3 @@
-vtk_module(CommonCore
-  DEPENDS kwsys
+vtk_module(vtkCommonCore
+  COMPILE_DEPENDS kwsys
   DEFAULT ON)

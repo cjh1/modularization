@@ -63,14 +63,8 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_BINARY_DIR}/Common/Core
   ${VTK_SOURCE_DIR}/Common/Misc
-  ${VTK_SOURCE_DIR}/Common/System
-  ${VTK_SOURCE_DIR}/Common/DataModel
   ${VTK_SOURCE_DIR}/IO/Core
-  ${VTK_SOURCE_DIR}/IO/Geometry
   ${VTK_SOURCE_DIR}/Utilities
   )
 
-add_library(vtkIOXML ${Kit_SRCS})
-
-target_link_libraries(vtkIOXML vtkCommonDataModel vtkCommonSystem vtkIOGeometry
-  vtkexpat)
+vtk_add_library(vtkIOXML ${Kit_SRCS})

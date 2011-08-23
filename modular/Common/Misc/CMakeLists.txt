@@ -1,5 +1,5 @@
 
-SET(Kit_SRCS
+set(Kit_SRCS
   vtkContourValues.cxx
   vtkErrorCode.cxx
   vtkFunctionParser.cxx
@@ -8,12 +8,9 @@ SET(Kit_SRCS
   vtkMarchingSquaresCases.h
   )
 
-include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}
-  ${VTK_SOURCE_DIR}/Common/Core
-  ${VTK_SOURCE_DIR}/Common/Math
+set_source_files_properties(
+  vtkErrorCode.cxx
+  WRAP_EXCLUDE
   )
 
-add_library(vtkCommonMisc ${Kit_SRCS})
-
-target_link_libraries(vtkCommonMisc vtkCommonCore vtkCommonMath)
+vtk_add_library(vtkCommonMisc ${Kit_SRCS})

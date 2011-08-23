@@ -1,28 +1,46 @@
-# Override CMake's built-in add_* commands: assign LABELS to tests and targets
+# Create vtk_* functions to add libraries, executables and modules. Add LABELS
 # automatically. Depends on the CMake variable vtk-module being set to the
 # "current" module when add_* is called.
-macro(verify_vtk_module_is_set)
+function(verify_vtk_module_is_set)
   if("" STREQUAL "${vtk-module}")
     message(FATAL_ERROR "CMake variable vtk-module is not set")
   endif()
-endmacro()
+endfunction()
 
-macro(add_executable)
-  _add_executable(${ARGN})
+function(vtk_add_executable)
+  add_executable(${ARGN})
   verify_vtk_module_is_set()
   set_property(TARGET ${ARGV0} PROPERTY LABELS ${vtk-module})
   set_property(GLOBAL APPEND PROPERTY ${vtk-module}_EXECUTABLE_TARGETS ${ARGV0})
-endmacro()
+endfunction()
 
-macro(add_library)
-  _add_library(${ARGN})
+function(vtk_add_library)
+  add_library(${ARGN})
   verify_vtk_module_is_set()
+
+  if(${vtk-module}_IS_TPL)
+    return()
+  endif()
+
+  foreach(dep IN LISTS VTK_MODULE_${vtk-module}_DEPENDS)
+    include_directories(${${dep}_SOURCE_DIR} ${${dep}_BINARY_DIR})
+  endforeach()
+
   set_property(TARGET ${ARGV0} PROPERTY LABELS ${vtk-module})
   set_property(GLOBAL APPEND PROPERTY ${vtk-module}_LIBRARY_TARGETS ${ARGV0})
-endmacro()
+  export(TARGETS ${vtk-module} FILE ${VTK_BINARY_DIR}/VTKTargets.cmake APPEND)
 
-macro(add_test)
-  _add_test(${ARGN})
+  #message(STATUS "\n\n\t Library dependencies: ${VTK_MODULE_${vtk-module}_DEPENDS}")
+  # Link to the libraries specified in dependencies
+  target_link_libraries(${vtk-module} ${VTK_MODULE_${vtk-module}_LINK_DEPENDS})
+
+  if(VTK_WRAP_PYTHON AND NOT ${vtk-module}_IS_TPL)
+    vtk_add_wrapping("${vtk-module}")
+  endif()
+endfunction()
+
+function(vtk_add_test)
+  add_test(${ARGN})
   verify_vtk_module_is_set()
   if("NAME" STREQUAL "${ARGV0}")
     set(_imm_test ${ARGV1})
@@ -31,7 +49,82 @@ macro(add_test)
   endif()
   set_property(TEST ${_imm_test} PROPERTY LABELS ${vtk-module})
   set_property(GLOBAL APPEND PROPERTY ${vtk-module}_TESTS ${_imm_test})
-endmacro()
+endfunction()
+
+# Handle Python wrapping
+if(VTK_WRAP_PYTHON)
+  find_package(PythonLibs REQUIRED)
+  include(vtkMakeInstantiator)
+  include(vtkWrapPython)
+  include(vtkWrapHierarchy)
+endif()
+
+function(vtk_add_wrapping module_name)
+  if(NOT VTK_WRAP_PYTHON_INIT_EXE)
+    message(FATAL_ERROR "VTK must be built with Python wrapping turned on.")
+  endif()
+  # Need to add the Wrapping/Python to the include directory
+  include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${VTK_SOURCE_DIR}/Wrapping/PythonCore
+    ${VTK_SOURCE_DIR}/Wrapping
+    ${PYTHON_INCLUDE_DIRS})
+
+  get_target_property(module_srcs ${module_name} SOURCES)
+
+  # FIXME: These must be here for now, should be fixed in the wrap hierarchy stuff
+  set(KIT_HIERARCHY_FILE ${CMAKE_CURRENT_BINARY_DIR}/${module_name}Hierarchy.txt)
+  string(REGEX REPLACE "^vtk" "" kit_name "${module_name}")
+  set(KIT ${kit_name})
+
+  # FIXME: Terrible temporary hack - add in the extra source file for CommonCore
+  if(${module_name} STREQUAL "vtkCommonCore")
+    set(extra_srcs vtkPythonCommand.cxx)
+    unset(extra_links)
+  else()
+    unset(extra_srcs)
+    # This contains the PyVTKClass....
+    set(extra_links vtkCommonCorePythonD)
+  endif()
+
+  # Set up the include directories for the wrapping
+  set(VTK_WRAP_INCLUDE_DIRS
+    ${vtkCommonCore_SOURCE_DIR}
+    ${vtkCommonCore_BINARY_DIR}
+    ${VTK_SOURCE_DIR}/Utilities
+    ${VTK_BINARY_DIR}/Utilities
+    ${${vtk-module}_SOURCE_DIR}
+    )
+
+  # Figure out the dependent PythonD libraries for the module
+  foreach(dep ${VTK_MODULE_${vtk-module}_DEPENDS})
+    if(NOT "${vtk-module}" STREQUAL "${dep}")
+      if(NOT ${dep}_IS_TPL)
+        list(APPEND extra_links ${dep}PythonD)
+        list(APPEND VTK_WRAP_INCLUDE_DIRS ${${dep}_SOURCE_DIR})
+      endif()
+    endif()
+  endforeach()
+
+  vtk_wrap_hierarchy(${module_name}Hierarchy ${CMAKE_CURRENT_BINARY_DIR}
+    "${module_srcs}")
+
+  vtk_wrap_python3(${module_name}Python Python_SRCS "${module_srcs}")
+  add_library(${module_name}PythonD ${Python_SRCS} ${extra_srcs})
+  target_link_libraries(${module_name}PythonD ${module_name}
+    vtkWrappingPythonCore ${extra_links} ${VTK_PYTHON_LIBRARIES})
+  python_add_module(${module_name}Python ${module_name}PythonInit.cxx)
+  if(PYTHON_ENABLE_MODULE_${module_name}Python)
+    target_link_libraries(${module_name}Python ${module_name}PythonD)
+    # Then write the Python code to import the module
+    file(WRITE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/${kit_name}.py"
+      "from ${module_name}Python import *\n")
+    if(NOT EXISTS "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/__init__.py")
+      file(WRITE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/__init__.py"
+        "import os\nimport sys\n")
+    endif()
+  endif()
+endfunction()
 
 # Follow dependencies.
 macro(vtk_module_enable vtk-module _needed_by)
@@ -46,6 +139,9 @@ macro(vtk_module_enable vtk-module _needed_by)
     foreach(dep IN LISTS VTK_MODULE_${vtk-module}_DEPENDS)
       vtk_module_enable(${dep} ${vtk-module})
     endforeach()
+    foreach(dep IN LISTS VTK_MODULE_${vtk-module}_COMPILE_DEPENDS)
+      vtk_module_enable(${dep} ${vtk-module})
+    endforeach()
     if(${vtk-module}_TESTED_BY)
       vtk_module_enable(${${vtk-module}_TESTED_BY} "")
     endif()
@@ -57,13 +153,16 @@ macro(vtk_module _name)
   set(vtk-module-test ${_name}-Test)
   set(_doing "")
   set(VTK_MODULE_${vtk-module}_DEPENDS "")
+  set(VTK_MODULE_${vtk-module}_COMPILE_DEPENDS "")
   set(VTK_MODULE_${vtk-module-test}_DEPENDS "${vtk-module}")
   set(VTK_MODULE_${vtk-module}_DEFAULT OFF)
   foreach(arg ${ARGN})
-    if("${arg}" MATCHES "^(DEPENDS|TEST_DEPENDS|DEFAULT)$")
+    if("${arg}" MATCHES "^(DEPENDS|COMPILE_DEPENDS|TEST_DEPENDS|DEFAULT)$")
       set(_doing "${arg}")
     elseif("${_doing}" MATCHES "^DEPENDS$")
       list(APPEND VTK_MODULE_${vtk-module}_DEPENDS "${arg}")
+    elseif("${_doing}" MATCHES "^COMPILE_DEPENDS$")
+      list(APPEND VTK_MODULE_${vtk-module}_COMPILE_DEPENDS "${arg}")
     elseif("${_doing}" MATCHES "^TEST_DEPENDS$")
       list(APPEND VTK_MODULE_${vtk-module-test}_DEPENDS "${arg}")
     elseif("${_doing}" MATCHES "^DEFAULT")
@@ -73,6 +172,10 @@ macro(vtk_module _name)
       message(AUTHOR_WARNING "Unknown argument [${arg}]")
     endif()
   endforeach()
+  list(SORT VTK_MODULE_${vtk-module}_DEPENDS) # Deterministic order.
+  set(VTK_MODULE_${vtk-module}_LINK_DEPENDS ${VTK_MODULE_${vtk-module}_DEPENDS})
+  list(APPEND VTK_MODULE_${vtk-module}_DEPENDS
+    ${VTK_MODULE_${vtk-module}_COMPILE_DEPENDS})
   list(SORT VTK_MODULE_${vtk-module}_DEPENDS) # Deterministic order.
   list(SORT VTK_MODULE_${vtk-module-test}_DEPENDS) # Deterministic order.
 endmacro()
@@ -91,7 +194,7 @@ macro(init_module_vars)
   set_property(GLOBAL PROPERTY ${vtk-module}_TESTS "")
 endmacro()
 
-macro(add_module_target)
+function(add_module_target)
   verify_vtk_module_is_set()
   add_custom_target(${vtk-module}-all)
   get_property(_imm_exe_targets GLOBAL PROPERTY ${vtk-module}_EXECUTABLE_TARGETS)
@@ -100,4 +203,4 @@ macro(add_module_target)
   if(_imm_dep_targets)
     add_dependencies(${vtk-module}-all ${_imm_dep_targets})
   endif()
-endmacro()
+endfunction()

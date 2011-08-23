@@ -1,3 +1,6 @@
-vtk_module(IOSQL
-  DEPENDS CommonDataModel IOCore vtksqlite
+vtk_module(vtkIOSQL
+  DEPENDS
+    vtkCommonDataModel
+    vtkIOCore
+    vtksqlite
   DEFAULT ON)

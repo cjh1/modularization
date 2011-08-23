@@ -36,11 +36,7 @@ include_directories(
   ${VTK_SOURCE_DIR}/Utilities/utf8/source
   ${VTK_SOURCE_DIR}/Common/Core
   ${VTK_BINARY_DIR}/Common/Core
-  ${VTK_SOURCE_DIR}/Common/Misc
-  ${VTK_SOURCE_DIR}/Common/DataModel
   ${VTK_SOURCE_DIR}/Utilities
   )
 
-add_library(vtkIOCore ${Kit_SRCS})
-
-target_link_libraries(vtkIOCore vtkCommonDataModel vtkzlib)
+vtk_add_library(vtkIOCore ${Kit_SRCS})

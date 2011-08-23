@@ -1,3 +1,6 @@
-vtk_module(IOCore
-  DEPENDS CommonDataModel vtkzlib
+vtk_module(vtkIOCore
+  DEPENDS
+    vtkCommonDataModel
+    vtkCommonMisc
+    vtkzlib
   DEFAULT ON)

@@ -1,33 +1,22 @@
 
 SET(Kit_SRCS
   vtkCommunicator.cxx
-  vtkCommunicator.h
   vtkDummyCommunicator.cxx
-  vtkDummyCommunicator.h
   vtkDummyController.cxx
-  vtkDummyController.h
   vtkMultiProcessController.cxx
-  vtkMultiProcessController.h
   vtkMultiProcessStream.cxx
-  vtkMultiProcessStream.h
 #  vtkParallelFactory.cxx
 #  vtkParallelFactory.h
   vtkProcess.cxx
-  vtkProcess.h
   vtkProcessGroup.cxx
-  vtkProcessGroup.h
   vtkSocketCommunicator.cxx
-  vtkSocketCommunicator.h
   vtkSocketController.cxx
-  vtkSocketController.h
   vtkSubCommunicator.cxx
-  vtkSubCommunicator.h
   vtkSubGroup.cxx
-  vtkSubGroup.h
   )
 
 # Generate "vtkSocketCommunicatorHash.h".
-ADD_CUSTOM_COMMAND(
+add_custom_command(
   OUTPUT ${VTK_BINARY_DIR}/Parallel/Core/vtkSocketCommunicatorHash.h
   DEPENDS ${VTK_SOURCE_DIR}/Parallel/Core/vtkSocketCommunicator.cxx
           vtkHashSource
@@ -54,6 +43,14 @@ include_directories(
   ${VTK_SOURCE_DIR}/Utilities
   )
 
-add_library(vtkParallelCore ${Kit_SRCS})
+set_source_files_properties(
+  vtkMultiProcessStream
+  WRAP_EXCLUDE
+  )
 
-target_link_libraries(vtkParallelCore vtkCommonDataModel vtkIOGeometry)
+set_source_files_properties(
+  vtkMultiProcessStream
+  ABSTRACT
+  )
+
+vtk_add_library(vtkParallelCore ${Kit_SRCS})

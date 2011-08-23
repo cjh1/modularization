@@ -1,7 +1,7 @@
 
 # DataModel
 set(Kit_SRCS
-vtkAbstractCellLocator.cxx
+  vtkAbstractCellLocator.cxx
   vtkAbstractInterpolatedVelocityField.cxx
   vtkAbstractPointLocator.cxx
   vtkAdjacentVertexIterator.cxx
@@ -254,29 +254,23 @@ vtkAbstractCellLocator.cxx
   vtkXMLDataElement.cxx
   )
 
-include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}
-  ${VTK_SOURCE_DIR}/Common/Core
-  ${VTK_SOURCE_DIR}/Common/Math
-  ${VTK_SOURCE_DIR}/Common/Misc
-  ${VTK_SOURCE_DIR}/Common/System
-  ${VTK_SOURCE_DIR}/Common/ImplicitFunctions
-  ${VTK_SOURCE_DIR}/Common/Transforms
+set_source_files_properties(
+  vtkAbstractCellLocator
+  vtkAbstractInterpolatedVelocityField
+  vtkAbstractPointLocator
+  vtkCell
+  vtkCell3D
+  vtkCompositeDataIterator
+  vtkCompositeDataSet
+  ABSTRACT
   )
 
-#SET_SOURCE_FILES_PROPERTIES(
-#ABSTRACT
-#)
+set_source_files_properties(
+  vtkAMRBox.cxx
+  vtkExecutionScheduler.cxx
+  vtkExecutionSchedulerManager.cxx
+  vtkFilteringInformationKeyManager.cxx
+  WRAP_EXCLUDE
+  )
 
-#SET_SOURCE_FILES_PROPERTIES(
-#  WRAP_EXCLUDE
-#)
-
-#SET_SOURCE_FILES_PROPERTIES(
-#  PROPERTIES WRAP_SPECIAL 1
-#)
-
-add_library(vtkCommonDataModel ${Kit_SRCS})
-
-target_link_libraries(vtkCommonDataModel vtkCommonCore vtkCommonSystem
-  vtkCommonMath vtkCommonMisc vtkCommonTransforms)
+vtk_add_library(vtkCommonDataModel ${Kit_SRCS})

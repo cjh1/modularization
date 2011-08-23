@@ -48,7 +48,6 @@ Views/Testing/: <ignore>
 Parallel/Testing/: <ignore>
 Imaging/Testing/: <ignore>
 Examples/: <ignore>
-Wrapping/: <ignore>
 GenericFiltering/README.html: <ignore>
 modular/manifest.txt: <ignore>
 modular/modularize.py: <ignore>
@@ -100,7 +99,8 @@ vtkLogo.ico:
 vtkLogo.jpg:
 modular/CTestConfig.cmake:
 UseVTK.cmake.in:
-VTKConfig.cmake.in:
+VTKConfig.cmake.in: <ignore>
+modular/VTKConfig.cmake.in:
 VTKConfigVersion.cmake.in:
 vtkGenerateVTKConfig.cmake:
 
@@ -109,6 +109,8 @@ modular/Common/Core/CMakeLists.txt:
 modular/Common/Core/module.cmake:
 vtkToolkits.h.in:
 vtkConfigure.h.in:
+Common/vtkPythonCommand.cxx:
+Common/vtkPythonCommand.h:
 Common/CaseFolding.txt:
 Common/vtkABI.h:
 Common/vtkAbstractArray.cxx:
@@ -1700,12 +1702,96 @@ IO/vtkRTXMLPolyDataReader.h:
 Common/vtkJavaAwt.h:
 Common/vtkJavaUtil.cxx:
 Common/vtkJavaUtil.h:
-Common/vtkPythonCommand.cxx:
-Common/vtkPythonCommand.h:
 Common/vtkTcl.h:
 Common/vtkTclUtil.cxx:
 Common/vtkTclUtil.h:
 Common/vtkTk.h:
+modular/Wrapping/CMakeLists.txt:
+
+Wrapping/hints:
+Wrapping/JavaDependencies.cmake.in:
+Wrapping/lex.yy.c:
+Wrapping/README.txt:
+Wrapping/vtkHTML.c:
+Wrapping/vtkParseExtras.c:
+Wrapping/vtkParseExtras.h:
+Wrapping/vtkParse.h:
+Wrapping/vtkParseHierarchy.c:
+Wrapping/vtkParseHierarchy.h:
+Wrapping/vtkParseInternal.h:
+Wrapping/vtkParseJavaBeans.c:
+Wrapping/vtkParseJava.c:
+Wrapping/vtkParse.l:
+Wrapping/vtkParseMain.c:
+Wrapping/vtkParseMain.h:
+Wrapping/vtkParsePreprocess.c:
+Wrapping/vtkParsePreprocess.h:
+Wrapping/vtkParse.tab.c:
+Wrapping/vtkParseType.h:
+Wrapping/vtkParse.y:
+Wrapping/vtkPrint.c:
+Wrapping/vtkWrap.c:
+Wrapping/vtkWrap.h:
+Wrapping/vtkWrapHierarchy.c:
+Wrapping/vtkWrapJava.c:
+Wrapping/vtkWrapPython.c:
+Wrapping/vtkWrapPythonInit.c:
+Wrapping/vtkWrapTcl.c:
+Wrapping/vtkWrapTclInit.c:
+Wrapping/vtkWrapText.c:
+Wrapping/vtkWrapText.h:
+
+[Wrapping/Python]
+
+Wrapping/Python/CMakeLists.txt: <ignore>
+modular/Wrapping/Python/CMakeLists.txt:
+Wrapping/Python/compile_all_vtk.py.in:
+Wrapping/Python/conversionlist.in:
+Wrapping/Python/PythonInstall.cmake.in:
+Wrapping/Python/README.txt:
+Wrapping/Python/README_WRAP.txt:
+Wrapping/Python/setup_install_paths.py:
+Wrapping/Python/setup.py.in:
+
+Wrapping/Python/vtkParaPythonAppInit.cxx:
+Wrapping/Python/vtkPythonAppInitConfigure.h.in:
+Wrapping/Python/vtkPythonAppInit.cxx: <ignore>
+modular/Wrapping/Python/vtkPythonAppInit.cxx:
+Wrapping/Python/vtkpython.rc:
+Wrapping/Python/vtkpython.cxx.in:
+
+[Wrapping/Python/vtk]
+
+Wrapping/Python/vtk/:
+
+[Wrapping/PythonCore]
+
+modular/Wrapping/PythonCore/CMakeLists.txt:
+modular/Wrapping/PythonCore/module.cmake:
+
+Wrapping/Python/vtkPython.h:
+Wrapping/Python/PyVTKClass.cxx:
+Wrapping/Python/PyVTKClass.h:
+Wrapping/Python/PyVTKMutableObject.cxx:
+Wrapping/Python/PyVTKMutableObject.h:
+Wrapping/Python/PyVTKObject.cxx:
+Wrapping/Python/PyVTKObject.h:
+Wrapping/Python/PyVTKSpecialObject.cxx:
+Wrapping/Python/PyVTKSpecialObject.h:
+Wrapping/Python/PyVTKTemplate.cxx:
+Wrapping/Python/PyVTKTemplate.h:
+Wrapping/Python/vtkPythonArgs.cxx:
+Wrapping/Python/vtkPythonArgs.h:
+Wrapping/Python/vtkPythonOverload.cxx:
+Wrapping/Python/vtkPythonOverload.h:
+Wrapping/Python/vtkPythonUtil.cxx:
+Wrapping/Python/vtkPythonUtil.h:
+
+Wrapping/CMakeLists.txt: <ignore>
+Wrapping/Python/.cvsignore: <ignore>
+
+Wrapping/Java/: <ignore>
+Wrapping/Tcl/: <ignore>
 
 [Utilities]
 
@@ -1720,6 +1806,7 @@ modular/Utilities/MaterialLibrary/CMakeLists.txt:
 modular/CMake/TopologicalSort.cmake:
 modular/CMake/vtkModular.cmake:
 modular/CMake/FindPostgreSQL.cmake:
+modular/CMake/vtkWrapHierarchy.cmake:
 CMake/CheckCXXSourceRuns.cmake:
 CMake/CMakeBackwardCompatibilityC.cmake:
 CMake/CMakeEmptyInputFile.in:
@@ -1810,7 +1897,7 @@ CMake/vtkThirdParty.cmake:
 CMake/vtkUseX.cmake:
 CMake/VTKValgrindSuppressions.supp:
 CMake/VTKVersionMacros.cmake:
-CMake/vtkWrapHierarchy.cmake:
+CMake/vtkWrapHierarchy.cmake: <ignore>
 CMake/vtkWrapJava.cmake:
 CMake/vtkWrapperInit.data.in:
 CMake/vtkWrapPython.cmake:

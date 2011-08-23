@@ -1,3 +1,5 @@
-vtk_module(CommonMisc
-  DEPENDS CommonCore
+vtk_module(vtkCommonMisc
+  DEPENDS
+    vtkCommonCore
+    vtkCommonMath
   DEFAULT ON)

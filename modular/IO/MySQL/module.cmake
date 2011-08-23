@@ -1,3 +1,5 @@
-vtk_module(IOMySQL
-  DEPENDS CommonDataModel IOSQL
+vtk_module(vtkIOMySQL
+  DEPENDS
+    vtkCommonDataModel
+    vtkIOSQL
   DEFAULT OFF)

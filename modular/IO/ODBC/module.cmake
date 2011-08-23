@@ -1,3 +1,5 @@
-vtk_module(IOODBC
-  DEPENDS CommonDataModel IOSQL
+vtk_module(vtkIOODBC
+  DEPENDS
+    vtkCommonDataModel
+    vtkIOSQL
   DEFAULT OFF)

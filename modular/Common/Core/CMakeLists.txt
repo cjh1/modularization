@@ -7,6 +7,7 @@ if(WIN32)
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_BINARY_DIR}
   ${VTK_SOURCE_DIR}/Utilities/utf8/source)
 
 SET(Kit_SRCS
@@ -268,8 +269,6 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/vtkFloatingPointExceptionsConfigure.h
   )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 # header files that have constants that can be wrapped
 set(Kit_WRAP_HEADERS
   vtkSystemIncludes.h
@@ -278,50 +277,50 @@ set(Kit_WRAP_HEADERS
   ${VTK_BINARY_DIR}/vtkConfigure.h
   )
 
-SET_SOURCE_FILES_PROPERTIES(
-# vtkObjectBase is marked ABSTRACT so that instantiators are happy.
-vtkAbstractArray
-vtkArrayIterator
-vtkArrayIteratorTemplate
-vtkArray
-vtkCallbackCommand
-vtkCommand
-vtkCommonInformationKeyManager
-vtkDataArray
-vtkEventForwarderCommand
-vtkFloatingPointExceptions
-vtkFunctionSet
-vtkGaussianRandomSequence
-vtkInformationDataObjectKey
-vtkInformationDoubleKey
-vtkInformationDoubleVectorKey
-vtkInformationIdTypeKey
-vtkInformationInformationKey
-vtkInformationInformationVectorKey
-vtkInformationIntegerKey
-vtkInformationIntegerPointerKey
-vtkInformationIntegerVectorKey
-vtkInformationKey
-vtkInformationKeyVectorKey
-vtkInformationObjectBaseKey
-vtkInformationObjectBaseVectorKey
-vtkInformationQuadratureSchemeDefinitionVectorKey
-vtkInformationRequestKey
-vtkInformationStringKey
-vtkInformationStringVectorKey
-vtkInformationUnsignedLongKey
-vtkObjectBase
-vtkObjectFactory
-vtkOldStyleCallbackCommand
-vtkOverrideInformation
-vtkOverrideInformationCollection
-vtkRandomSequence
-vtkScalarsToColors
-vtkWindow
-ABSTRACT
-)
+set_source_files_properties(
+  # vtkObjectBase is marked ABSTRACT so that instantiators are happy.
+  vtkAbstractArray
+  vtkArrayIterator
+  vtkArrayIteratorTemplate
+  vtkArray
+  vtkCallbackCommand
+  vtkCommand
+  vtkCommonInformationKeyManager
+  vtkDataArray
+  vtkEventForwarderCommand
+  vtkFloatingPointExceptions
+  vtkFunctionSet
+  vtkGaussianRandomSequence
+  vtkInformationDataObjectKey
+  vtkInformationDoubleKey
+  vtkInformationDoubleVectorKey
+  vtkInformationIdTypeKey
+  vtkInformationInformationKey
+  vtkInformationInformationVectorKey
+  vtkInformationIntegerKey
+  vtkInformationIntegerPointerKey
+  vtkInformationIntegerVectorKey
+  vtkInformationKey
+  vtkInformationKeyVectorKey
+  vtkInformationObjectBaseKey
+  vtkInformationObjectBaseVectorKey
+  vtkInformationQuadratureSchemeDefinitionVectorKey
+  vtkInformationRequestKey
+  vtkInformationStringKey
+  vtkInformationStringVectorKey
+  vtkInformationUnsignedLongKey
+  vtkObjectBase
+  vtkObjectFactory
+  vtkOldStyleCallbackCommand
+  vtkOverrideInformation
+  vtkOverrideInformationCollection
+  vtkRandomSequence
+  vtkScalarsToColors
+  vtkWindow
+  ABSTRACT
+  )
 
-SET_SOURCE_FILES_PROPERTIES(
+set_source_files_properties(
   vtkArrayCoordinates.cxx
   vtkArrayExtents.cxx
   vtkArrayExtentsList.cxx
@@ -334,7 +333,6 @@ SET_SOURCE_FILES_PROPERTIES(
   vtkCallbackCommand.cxx
   vtkCommonInformationKeyManager.cxx
   vtkDebugLeaksManager.cxx
-  vtkErrorCode.cxx
   vtkEventForwarderCommand.cxx
   vtkFloatingPointExceptions
   vtkGarbageCollectorManager.cxx
@@ -350,23 +348,21 @@ SET_SOURCE_FILES_PROPERTIES(
   vtkVariant.cxx
   vtkWeakPointerBase.cxx
   vtkUnicodeString.cxx
-
   WRAP_EXCLUDE
-)
+  )
 
-SET_SOURCE_FILES_PROPERTIES(
+set_source_files_properties(
   vtkArrayCoordinates.cxx
   vtkArrayExtents.cxx
   vtkArrayExtentsList.cxx
   vtkArrayRange.cxx
   vtkTimeStamp.cxx
   vtkVariant.cxx
-
   PROPERTIES WRAP_SPECIAL 1
 )
 
 # Activate code in "vtkVariant.cxx".  See the comment in the source.
-SET_SOURCE_FILES_PROPERTIES(vtkVariant.cxx PROPERTIES
+set_source_files_properties(vtkVariant.cxx PROPERTIES
   COMPILE_FLAGS -DVTK_VARIANT_IMPL)
 
 if(WIN32)
@@ -385,7 +381,7 @@ if(CMAKE_SYSTEM MATCHES "SunOS.*")
   set(KIT_LIBS ${KIT_LIBS} socket nsl)
 endif()
 
-add_library(vtkCommonCore ${Kit_SRCS})
+vtk_add_library(vtkCommonCore ${Kit_SRCS})
 
 target_link_libraries(vtkCommonCore vtksys ${CMAKE_THREAD_LIBS_INIT})
 
