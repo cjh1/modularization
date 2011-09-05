@@ -40,3 +40,5 @@ include_directories(
   )
 
 vtk_add_library(vtkIOCore ${Kit_SRCS})
+target_link_libraries(vtkIOCore vtksys)
+set_target_properties(vtkIOCore PROPERTIES LINK_INTERFACE_LIBRARIES "")

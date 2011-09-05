@@ -26,4 +26,5 @@ endif()
 
 vtk_add_library(vtkCommonSystem ${Kit_SRCS})
 
-target_link_libraries(vtkCommonSystem ${KIT_LIBS})
+target_link_libraries(vtkCommonSystem ${KIT_LIBS} vtksys)
+set_target_properties(vtkCommonSystem PROPERTIES LINK_INTERFACE_LIBRARIES "")

@@ -1,12 +1,9 @@
-vtk_module(vtkIOGeometry
+vtk_module(vtkFiltersCore
   DEPENDS
     vtkCommonCore
     vtkCommonDataModel
     vtkCommonSystem
     vtkCommonMisc
-    vtkIOCore
-    vtkzlib
-  COMPILE_DEPENDS
-    MaterialLibrary
-    kwsys
+    vtkCommonTransforms
+    vtkCommonMath
   DEFAULT ON)

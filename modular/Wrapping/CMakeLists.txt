@@ -9,6 +9,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
   ${VTK_BINARY_DIR}/Common/Core
   ${VTK_BINARY_DIR}/Wrapping)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/vtkPythonConfigure.h.in
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkPythonConfigure.h)
+
 if(NOT CMAKE_CROSSCOMPILING)
   if(VTK_WRAP_TCL OR VTK_WRAP_PYTHON OR VTK_WRAP_JAVA)
     add_executable(vtkWrapHierarchy vtkParse.tab.c vtkParsePreprocess.c

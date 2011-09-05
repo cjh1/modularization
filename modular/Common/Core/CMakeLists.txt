@@ -384,6 +384,7 @@ endif()
 vtk_add_library(vtkCommonCore ${Kit_SRCS})
 
 target_link_libraries(vtkCommonCore vtksys ${CMAKE_THREAD_LIBS_INIT})
+set_target_properties(vtkCommonCore PROPERTIES LINK_INTERFACE_LIBRARIES "")
 
 IF(CMAKE_COMPILER_IS_GNUCXX AND MINGW)
   # MinGW fails to dllexport the explicit instantiations of

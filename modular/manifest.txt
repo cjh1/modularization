@@ -114,6 +114,12 @@ modular/VTKConfig.cmake.in:
 VTKConfigVersion.cmake.in:
 vtkGenerateVTKConfig.cmake:
 
+[Utilities/LastConfigureStep]
+modular/Utilities/LastConfigureStep/CMakeLists.txt:
+
+[Utilities/vtklibxml2]
+modular/Utilities/vtklibxml2/CMakeLists.txt:
+
 [Common/Core]
 modular/Common/Core/CMakeLists.txt:
 modular/Common/Core/module.cmake:
@@ -1823,6 +1829,7 @@ modular/CMake/TopologicalSort.cmake:
 modular/CMake/vtkModular.cmake:
 modular/CMake/FindPostgreSQL.cmake:
 modular/CMake/vtkWrapHierarchy.cmake:
+modular/CMake/vtkWrapPython.cmake:
 CMake/CheckCXXSourceRuns.cmake:
 CMake/CMakeBackwardCompatibilityC.cmake:
 CMake/CMakeEmptyInputFile.in:
@@ -1934,6 +1941,9 @@ Infovis/vtkTimePointToString.cxx:
 
 
 [Infovis/Core]
+
+modular/Infovis/Core/CMakeLists.txt:
+modular/Infovis/Core/module.cmake:
 
 Infovis/vtkAddMembershipArray.h:
 Infovis/vtkAddMembershipArray.cxx:
@@ -2124,6 +2134,9 @@ Infovis/vtkBoostSplitTableField.cxx:
 
 
 [IO/Infovis]
+
+modular/IO/Infovis/CMakeLists.txt:
+modular/IO/Infovis/module.cmake:
 
 Infovis/vtkChacoGraphReader.h:
 Infovis/vtkChacoGraphReader.cxx:
@@ -2472,6 +2485,9 @@ Charts/vtkContextInteractorStyle.h:
 
 [Filters/Core]
 
+modular/Filters/Core/CMakeLists.txt:
+modular/Filters/Core/module.cmake:
+
 Graphics/vtkClipPolyData.cxx:
 Graphics/vtkClipPolyData.h:
 Graphics/vtkDecimatePolylineFilter.cxx:
@@ -2502,8 +2518,6 @@ Graphics/vtkContourFilter.cxx:
 Graphics/vtkContourFilter.h:
 Graphics/vtkContourGrid.cxx:
 Graphics/vtkContourGrid.h:
-Graphics/vtkConvertSelection.cxx:
-Graphics/vtkConvertSelection.h:
 Graphics/vtkDataObjectGenerator.cxx:
 Graphics/vtkDataObjectGenerator.h:
 Graphics/vtkDataObjectToDataSetFilter.cxx:
@@ -2534,8 +2548,6 @@ Graphics/vtkHull.cxx:
 Graphics/vtkHull.h:
 Graphics/vtkIdFilter.cxx:
 Graphics/vtkIdFilter.h:
-Graphics/vtkMarchingContourFilter.cxx:
-Graphics/vtkMarchingContourFilter.h:
 Graphics/vtkMarchingCubes.cxx:
 Graphics/vtkMarchingCubes.h:
 Graphics/vtkMarchingSquares.cxx:
@@ -2580,8 +2592,6 @@ Graphics/vtkStreamLine.cxx:
 Graphics/vtkStreamLine.h:
 Graphics/vtkStreamPoints.cxx:
 Graphics/vtkStreamPoints.h:
-Graphics/vtkStreamTracer.cxx:
-Graphics/vtkStreamTracer.h:
 Graphics/vtkStreamer.cxx:
 Graphics/vtkStreamer.h:
 Graphics/vtkStripper.cxx:
@@ -2608,6 +2618,21 @@ Graphics/vtkVectorNorm.cxx:
 Graphics/vtkVectorNorm.h:
 Graphics/vtkWindowedSincPolyDataFilter.cxx:
 Graphics/vtkWindowedSincPolyDataFilter.h:
+
+# Moved to Core as required by other Core classes.
+Graphics/vtkCutter.cxx:
+Graphics/vtkCutter.h:
+Graphics/vtkEdgeSubdivisionCriterion.cxx:
+Graphics/vtkEdgeSubdivisionCriterion.h:
+Graphics/vtkGridSynchronizedTemplates3D.cxx:
+Graphics/vtkGridSynchronizedTemplates3D.h:
+Graphics/vtkRectilinearSynchronizedTemplates.cxx:
+Graphics/vtkRectilinearSynchronizedTemplates.h:
+Filtering/vtkSelectionAlgorithm.cxx:
+Filtering/vtkSelectionAlgorithm.h:
+Graphics/vtkStreamingTessellator.cxx:
+Graphics/vtkStreamingTessellator.h:
+Graphics/vtkStreamingTessellatorGenerator.py:
 
 [Filters/Generic]
 
@@ -2697,6 +2722,14 @@ Graphics/vtkSpherePuzzleArrows.h:
 Graphics/vtkSubdivideTetra.cxx:
 Graphics/vtkSubdivideTetra.h:
 
+Graphics/vtkDijkstraGraphGeodesicPath.cxx:
+Graphics/vtkDijkstraGraphGeodesicPath.h:
+Graphics/vtkDijkstraGraphInternals.h:
+Graphics/vtkDijkstraImageGeodesicPath.cxx:
+Graphics/vtkDijkstraImageGeodesicPath.h:
+Graphics/vtkGraphGeodesicPath.cxx:
+Graphics/vtkGraphGeodesicPath.h:
+
 
 [Filters/Programmable]
 
@@ -2708,6 +2741,9 @@ Graphics/vtkProgrammableGlyphFilter.cxx:
 Graphics/vtkProgrammableGlyphFilter.h:
 
 [Filters/Extraction]
+
+modular/Filters/Extraction/CMakeLists.txt:
+modular/Filters/Extraction/module.cmake:
 
 Graphics/vtkExtractArraysOverTime.cxx:
 Graphics/vtkExtractArraysOverTime.h:
@@ -2758,6 +2794,14 @@ Graphics/vtkExtractUnstructuredGrid.h:
 Graphics/vtkExtractVectorComponents.cxx:
 Graphics/vtkExtractVectorComponents.h:
 
+Graphics/vtkConvertSelection.cxx:
+Graphics/vtkConvertSelection.h:
+Graphics/vtkHierarchicalDataExtractDataSets.cxx:
+Graphics/vtkHierarchicalDataExtractDataSets.h:
+Graphics/vtkHierarchicalDataExtractLevel.cxx:
+Graphics/vtkHierarchicalDataExtractLevel.h:
+Graphics/vtkProbeSelectedLocations.cxx:
+Graphics/vtkProbeSelectedLocations.h:
 
 [Filters/Sources]
 
@@ -2825,6 +2869,9 @@ Graphics/vtkTexturedSphereSource.h:
 
 [Filters/General]
 
+modular/Filters/General/CMakeLists.txt:
+modular/Filters/General/module.cmake:
+
 Graphics/vtkAnnotationLink.cxx:
 Graphics/vtkAnnotationLink.h:
 Graphics/vtkAppendCompositeDataLeaves.cxx:
@@ -2851,8 +2898,6 @@ Graphics/vtkCellDerivatives.cxx:
 Graphics/vtkCellDerivatives.h:
 Graphics/vtkCellLocatorInterpolatedVelocityField.cxx:
 Graphics/vtkCellLocatorInterpolatedVelocityField.h:
-Graphics/vtkCellQuality.cxx:
-Graphics/vtkCellQuality.h:
 Graphics/vtkClipClosedSurface.cxx:
 Graphics/vtkClipClosedSurface.h:
 Graphics/vtkClipConvexPolyData.cxx:
@@ -2869,8 +2914,6 @@ Graphics/vtkCursor3D.cxx:
 Graphics/vtkCursor3D.h:
 Graphics/vtkCurvatures.cxx:
 Graphics/vtkCurvatures.h:
-Graphics/vtkCutter.cxx:
-Graphics/vtkCutter.h:
 Graphics/vtkDashedStreamLine.cxx:
 Graphics/vtkDashedStreamLine.h:
 Graphics/vtkDataSetGradient.cxx:
@@ -2885,33 +2928,18 @@ Graphics/vtkDensifyPolyData.cxx:
 Graphics/vtkDensifyPolyData.h:
 Graphics/vtkDicer.cxx:
 Graphics/vtkDicer.h:
-Graphics/vtkDijkstraGraphGeodesicPath.cxx:
-Graphics/vtkDijkstraGraphGeodesicPath.h:
-Graphics/vtkDijkstraGraphInternals.h:
-Graphics/vtkDijkstraImageGeodesicPath.cxx:
-Graphics/vtkDijkstraImageGeodesicPath.h:
 Graphics/vtkDiscreteMarchingCubes.cxx:
 Graphics/vtkDiscreteMarchingCubes.h:
 Graphics/vtkEdgePoints.cxx:
 Graphics/vtkEdgePoints.h:
-Graphics/vtkEdgeSubdivisionCriterion.cxx:
-Graphics/vtkEdgeSubdivisionCriterion.h:
 Graphics/vtkGradientFilter.cxx:
 Graphics/vtkGradientFilter.h:
-Graphics/vtkGraphGeodesicPath.cxx:
-Graphics/vtkGraphGeodesicPath.h:
 Graphics/vtkGraphLayoutFilter.cxx:
 Graphics/vtkGraphLayoutFilter.h:
 Graphics/vtkGraphToPoints.cxx:
 Graphics/vtkGraphToPoints.h:
 Graphics/vtkGraphToPolyData.cxx:
 Graphics/vtkGraphToPolyData.h:
-Graphics/vtkGridSynchronizedTemplates3D.cxx:
-Graphics/vtkGridSynchronizedTemplates3D.h:
-Graphics/vtkHierarchicalDataExtractDataSets.cxx:
-Graphics/vtkHierarchicalDataExtractDataSets.h:
-Graphics/vtkHierarchicalDataExtractLevel.cxx:
-Graphics/vtkHierarchicalDataExtractLevel.h:
 Graphics/vtkHierarchicalDataLevelFilter.cxx:
 Graphics/vtkHierarchicalDataLevelFilter.h:
 Graphics/vtkHyperStreamline.cxx:
@@ -2930,8 +2958,6 @@ Graphics/vtkLevelIdScalars.cxx:
 Graphics/vtkLevelIdScalars.h:
 Graphics/vtkLinkEdgels.cxx:
 Graphics/vtkLinkEdgels.h:
-Graphics/vtkMatrixMathFilter.cxx:
-Graphics/vtkMatrixMathFilter.h:
 Graphics/vtkMergeCells.cxx:
 Graphics/vtkMergeCells.h:
 Graphics/vtkModelMetadata.cxx:
@@ -2956,8 +2982,6 @@ Graphics/vtkPolyDataToReebGraphFilter.cxx:
 Graphics/vtkPolyDataToReebGraphFilter.h:
 Graphics/vtkProbePolyhedron.cxx:
 Graphics/vtkProbePolyhedron.h:
-Graphics/vtkProbeSelectedLocations.cxx:
-Graphics/vtkProbeSelectedLocations.h:
 Graphics/vtkQuadraturePointInterpolator.cxx:
 Graphics/vtkQuadraturePointInterpolator.h:
 Graphics/vtkQuadraturePointsGenerator.cxx:
@@ -2973,8 +2997,6 @@ Graphics/vtkRectilinearGridClip.cxx:
 Graphics/vtkRectilinearGridClip.h:
 Graphics/vtkRectilinearGridToTetrahedra.cxx:
 Graphics/vtkRectilinearGridToTetrahedra.h:
-Graphics/vtkRectilinearSynchronizedTemplates.cxx:
-Graphics/vtkRectilinearSynchronizedTemplates.h:
 Graphics/vtkRecursiveDividingCubes.cxx:
 Graphics/vtkRecursiveDividingCubes.h:
 Graphics/vtkReflectionFilter.cxx:
@@ -2993,9 +3015,6 @@ Graphics/vtkSplineFilter.cxx:
 Graphics/vtkSplineFilter.h:
 Graphics/vtkSplitField.cxx:
 Graphics/vtkSplitField.h:
-Graphics/vtkStreamingTessellator.cxx:
-Graphics/vtkStreamingTessellator.h:
-Graphics/vtkStreamingTessellatorGenerator.py:
 Graphics/vtkStructuredGridClip.cxx:
 Graphics/vtkStructuredGridClip.h:
 Graphics/vtkSubPixelPositionEdgels.cxx:
@@ -3015,8 +3034,6 @@ Graphics/vtkTessellatorFilter.cxx:
 Graphics/vtkTessellatorFilter.h:
 Graphics/vtkTimeSourceExample.cxx:
 Graphics/vtkTimeSourceExample.h:
-Graphics/vtkTransformCoordinateSystems.cxx:
-Graphics/vtkTransformCoordinateSystems.h:
 Graphics/vtkTransformFilter.cxx:
 Graphics/vtkTransformFilter.h:
 Graphics/vtkTransformPolyDataFilter.cxx:
@@ -3046,10 +3063,20 @@ Infovis/vtkPassThrough.cxx:
 Infovis/vtkSCurveSpline.h:
 Infovis/vtkSCurveSpline.cxx:
 
+Graphics/vtkMarchingContourFilter.cxx:
+Graphics/vtkMarchingContourFilter.h:
+Graphics/vtkStreamTracer.cxx:
+Graphics/vtkStreamTracer.h:
+
 [Filters/Verdict]
 
 Graphics/vtkMeshQuality.cxx:
 Graphics/vtkMeshQuality.h:
+
+Graphics/vtkCellQuality.cxx:
+Graphics/vtkCellQuality.h:
+Graphics/vtkMatrixMathFilter.cxx:
+Graphics/vtkMatrixMathFilter.h:
 
 [Filters/HyperOctree]
 
@@ -3231,8 +3258,6 @@ Infovis/vtkPPCAStatistics.cxx:
 
 [Interaction/Selection]
 
-Filtering/vtkSelectionAlgorithm.cxx:
-Filtering/vtkSelectionAlgorithm.h:
 Rendering/vtkHardwareSelectionPolyDataPainter.cxx:
 Rendering/vtkHardwareSelectionPolyDataPainter.h:
 Rendering/vtkAbstractPropPicker.cxx:
@@ -3953,6 +3978,9 @@ Rendering/vtkImageSlice.cxx:
 Rendering/vtkImageSlice.h:
 Rendering/vtkImageSliceMapper.cxx:
 Rendering/vtkImageSliceMapper.h:
+
+Graphics/vtkTransformCoordinateSystems.cxx:
+Graphics/vtkTransformCoordinateSystems.h:
 
 [Rendering/FreeType]
 

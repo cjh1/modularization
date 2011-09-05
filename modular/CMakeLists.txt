@@ -33,7 +33,7 @@ if(NOT CMAKE_ARCHIVE_OUTPUT_DIRECTORY)
 endif()
 
 # FIXME: LIBRARY_OUTPUT_PATH and EXECUTABLE_OUTPUT_PATH useage is scattered about VTK.
-# when we can patch everything they should simply be replaced with CMAKE_<blah>_OUTPUT_DIRECTORY variables. 
+# when we can patch everything they should simply be replaced with CMAKE_<blah>_OUTPUT_DIRECTORY variables.
 IF(NOT LIBRARY_OUTPUT_PATH)
   SET(LIBRARY_OUTPUT_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY} CACHE INTERNAL "Single output directory for building all libraries.")
 ENDIF(NOT LIBRARY_OUTPUT_PATH)
@@ -515,8 +515,8 @@ foreach(f ${meta})
 endforeach()
 
 # Add the third party libraries
-set(vtk_tpl_modules kwsys vtkalglib vtkzlib vtksqlite vtkexpat vtknetcdf
-  HashSource MaterialLibrary)
+set(vtk_tpl_modules kwsys vtkalglib vtkzlib vtksqlite vtkexpat vtklibxml2 vtknetcdf
+  HashSource MaterialLibrary verdict)
 foreach(tpl ${vtk_tpl_modules})
   set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${tpl})
   set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${tpl})
@@ -664,3 +664,11 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
     add_module_target()
   endif()
 endforeach()
+
+#-----------------------------------------------------------------------------
+# The commands in this directory are intended to be executed as
+# the end of the whole configuration process, as a "last step".
+# This directory is typically the last add_subdirectory in the main CMakeLists.
+# It must be an add_subdirectory rather than include to assure that the install
+# command is processed after all of the other install commands.
+add_subdirectory(Utilities/LastConfigureStep)

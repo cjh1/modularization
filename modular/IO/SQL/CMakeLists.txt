@@ -27,3 +27,5 @@ include_directories(
   )
 
 vtk_add_library(vtkIOSQL ${Kit_SRCS} ${SQLite_SRCS})
+target_link_libraries(vtkIOSQL vtksys)
+set_target_properties(vtkIOSQL PROPERTIES LINK_INTERFACE_LIBRARIES "")

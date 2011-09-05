@@ -16,4 +16,5 @@ include_directories(
 
 vtk_add_library(vtkIONetCDF ${Kit_SRCS})
 
-target_link_libraries(vtkIONetCDF vtkNetCDF_cxx)
+target_link_libraries(vtkIONetCDF vtkNetCDF_cxx vtksys)
+set_target_properties(vtkIONetCDF PROPERTIES LINK_INTERFACE_LIBRARIES "")

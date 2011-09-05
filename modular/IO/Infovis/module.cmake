@@ -1,10 +1,12 @@
-vtk_module(vtkParallelCore
+vtk_module(vtkIOInfovis
   DEPENDS
     vtkCommonCore
     vtkCommonDataModel
     vtkCommonSystem
+    vtkCommonMisc
     vtkIOCore
-    vtkIOGeometry
+    vtkInfovisCore
+    vtklibxml2
   COMPILE_DEPENDS
-    HashSource
+    kwsys
   DEFAULT ON)

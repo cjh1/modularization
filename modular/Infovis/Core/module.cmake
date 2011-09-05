@@ -1,10 +1,8 @@
-vtk_module(vtkIONetCDF
+vtk_module(vtkInfovisCore
   DEPENDS
     vtkCommonCore
     vtkCommonDataModel
     vtkCommonSystem
-    vtkIOCore
-  COMPILE_DEPENDS
-    vtknetcdf
-    kwsys
+    vtkFiltersCore
+    vtkFiltersExtraction
   DEFAULT ON)

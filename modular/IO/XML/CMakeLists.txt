@@ -68,3 +68,5 @@ include_directories(
   )
 
 vtk_add_library(vtkIOXML ${Kit_SRCS})
+target_link_libraries(vtkIOXML vtksys)
+set_target_properties(vtkIOXML PROPERTIES LINK_INTERFACE_LIBRARIES "")
