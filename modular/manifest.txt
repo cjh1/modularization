@@ -462,6 +462,8 @@ Common/vtkParametricTorus.cxx:
 Common/vtkParametricTorus.h:
 Filtering/vtkParametricSpline.cxx:
 Filtering/vtkParametricSpline.h:
+Graphics/vtkDataSetSurfaceFilter.cxx:
+Graphics/vtkDataSetSurfaceFilter.h:
 
 
 [Common/DataModel]
@@ -1035,12 +1037,6 @@ Common/vtkRungeKutta4.h:
 modular/Common/Misc/CMakeLists.txt:
 modular/Common/Misc/module.cmake:
 
-Common/vtkAssemblyNode.cxx: <ignore>
-Common/vtkAssemblyNode.h: <ignore>
-Common/vtkAssemblyPath.cxx: <ignore>
-Common/vtkAssemblyPath.h: <ignore>
-Common/vtkAssemblyPaths.cxx: <ignore>
-Common/vtkAssemblyPaths.h: <ignore>
 Common/vtkContourValues.cxx:
 Common/vtkContourValues.h:
 Common/vtkErrorCode.cxx:
@@ -2920,8 +2916,6 @@ Graphics/vtkDataSetGradient.cxx:
 Graphics/vtkDataSetGradient.h:
 Graphics/vtkDataSetGradientPrecompute.cxx:
 Graphics/vtkDataSetGradientPrecompute.h:
-Graphics/vtkDataSetSurfaceFilter.cxx:
-Graphics/vtkDataSetSurfaceFilter.h:
 Graphics/vtkDataSetTriangleFilter.cxx:
 Graphics/vtkDataSetTriangleFilter.h:
 Graphics/vtkDensifyPolyData.cxx:
@@ -3254,30 +3248,6 @@ Infovis/vtkPOrderStatistics.h:
 Infovis/vtkPOrderStatistics.cxx:
 Infovis/vtkPPCAStatistics.h:
 Infovis/vtkPPCAStatistics.cxx:
-
-
-[Interaction/Selection]
-
-Rendering/vtkHardwareSelectionPolyDataPainter.cxx:
-Rendering/vtkHardwareSelectionPolyDataPainter.h:
-Rendering/vtkAbstractPropPicker.cxx:
-Rendering/vtkAbstractPropPicker.h:
-Rendering/vtkAreaPicker.cxx:
-Rendering/vtkAreaPicker.h:
-Rendering/vtkCellPicker.cxx:
-Rendering/vtkCellPicker.h:
-Rendering/vtkPicker.cxx:
-Rendering/vtkPicker.h:
-Rendering/vtkPointPicker.cxx:
-Rendering/vtkPointPicker.h:
-Rendering/vtkPropPicker.cxx:
-Rendering/vtkPropPicker.h:
-Rendering/vtkRenderedAreaPicker.cxx:
-Rendering/vtkRenderedAreaPicker.h:
-Rendering/vtkScenePicker.cxx:
-Rendering/vtkScenePicker.h:
-Rendering/vtkWorldPointPicker.cxx:
-Rendering/vtkWorldPointPicker.h:
 
 
 [Interaction/Widgets]
@@ -3981,6 +3951,45 @@ Rendering/vtkImageSliceMapper.h:
 
 Graphics/vtkTransformCoordinateSystems.cxx:
 Graphics/vtkTransformCoordinateSystems.h:
+# Needed by rendering classes
+Common/vtkAssemblyNode.cxx:
+Common/vtkAssemblyNode.h:
+Common/vtkAssemblyPath.cxx:
+Common/vtkAssemblyPath.h:
+Common/vtkAssemblyPaths.cxx:
+Common/vtkAssemblyPaths.h:
+# Too tightly coupled to be separate from Core
+Rendering/vtkHardwareSelectionPolyDataPainter.cxx:
+Rendering/vtkHardwareSelectionPolyDataPainter.h:
+Rendering/vtkAbstractPropPicker.cxx:
+Rendering/vtkAbstractPropPicker.h:
+Rendering/vtkAreaPicker.cxx:
+Rendering/vtkAreaPicker.h:
+Rendering/vtkCellPicker.cxx:
+Rendering/vtkCellPicker.h:
+Rendering/vtkPicker.cxx:
+Rendering/vtkPicker.h:
+Rendering/vtkPointPicker.cxx:
+Rendering/vtkPointPicker.h:
+Rendering/vtkPropPicker.cxx:
+Rendering/vtkPropPicker.h:
+Rendering/vtkRenderedAreaPicker.cxx:
+Rendering/vtkRenderedAreaPicker.h:
+Rendering/vtkScenePicker.cxx:
+Rendering/vtkScenePicker.h:
+Rendering/vtkWorldPointPicker.cxx:
+Rendering/vtkWorldPointPicker.h:
+# Needed by vtkInteractorStyle - could possibly be removed
+Rendering/vtkTDxInteractorStyle.cxx:
+Rendering/vtkTDxInteractorStyle.h:
+Rendering/vtkTDxInteractorStyleCamera.cxx:
+Rendering/vtkTDxInteractorStyleCamera.h:
+Rendering/vtkTDxInteractorStyleSettings.cxx:
+Rendering/vtkTDxInteractorStyleSettings.h:
+Rendering/vtkTDxMotionEventInfo.h:
+# Required by a Core class too
+Rendering/vtkLODProp3D.cxx:
+Rendering/vtkLODProp3D.h:
 
 [Rendering/FreeType]
 
@@ -4061,8 +4070,6 @@ Rendering/vtkLabeledTreeMapDataMapper.h:
 
 Rendering/vtkLODActor.cxx:
 Rendering/vtkLODActor.h:
-Rendering/vtkLODProp3D.cxx:
-Rendering/vtkLODProp3D.h:
 Rendering/vtkQuadricLODActor.cxx:
 Rendering/vtkQuadricLODActor.h:
 
@@ -4213,17 +4220,10 @@ Rendering/vtkTkWidgetsInit.cxx:
 Rendering/vtkTDxConfigure.h.in:
 Rendering/vtkTDxDevice.cxx:
 Rendering/vtkTDxDevice.h:
-Rendering/vtkTDxInteractorStyle.cxx:
-Rendering/vtkTDxInteractorStyle.h:
-Rendering/vtkTDxInteractorStyleCamera.cxx:
-Rendering/vtkTDxInteractorStyleCamera.h:
 Rendering/vtkTDxInteractorStyleGeo.cxx:
 Rendering/vtkTDxInteractorStyleGeo.h:
-Rendering/vtkTDxInteractorStyleSettings.cxx:
-Rendering/vtkTDxInteractorStyleSettings.h:
 Rendering/vtkTDxMacDevice.cxx:
 Rendering/vtkTDxMacDevice.h:
-Rendering/vtkTDxMotionEventInfo.h:
 Rendering/vtkTDxUnixDevice.cxx:
 Rendering/vtkTDxUnixDevice.h:
 Rendering/vtkTDxWinDevice.cxx:
