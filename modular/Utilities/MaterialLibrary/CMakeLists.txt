@@ -10,7 +10,8 @@ set(VTK_MATERIALS_DIRS
   CACHE STRING
   "A ; separated list of directories to search for materials/shaders.")
 
-include_directories("${VTK_SOURCE_DIR}/Common/Core")
+include_directories("${VTK_SOURCE_DIR}/Common/Core"
+  "${VTK_BINARY_DIR}/Common/Core")
 
 # Enable shared link forwarding support it needed.
 SET (ML_EXE_SUFFIX)
