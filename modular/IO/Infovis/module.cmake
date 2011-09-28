@@ -7,6 +7,5 @@ vtk_module(vtkIOInfovis
     vtkIOCore
     vtkInfovisCore
     vtklibxml2
-  COMPILE_DEPENDS
     kwsys
   DEFAULT ON)

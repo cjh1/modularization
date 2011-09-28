@@ -258,68 +258,6 @@ OPTION(VTK_USE_64BIT_IDS "Build VTK with 64 bit ids"
 OPTION(VTK_DEBUG_LEAKS "Build leak checking support into VTK." OFF)
 MARK_AS_ADVANCED(VTK_DEBUG_LEAKS VTK_USE_64BIT_IDS)
 
-VTK_DEPENDENT_OPTION(VTK_USE_MANGLED_MESA "Use mangled Mesa with OpenGL." OFF
-                     "VTK_USE_RENDERING" OFF)
-VTK_DEPENDENT_OPTION(VTK_OPENGL_HAS_OSMESA
-                     "The opengl library being used supports off screen Mesa calls." OFF
-                     "VTK_USE_RENDERING;UNIX" OFF)
-
-
-# Off-Screen MESA cannot be used with Mangled MESA.
-IF(VTK_OPENGL_HAS_OSMESA  AND  VTK_USE_MANGLED_MESA)
-  MESSAGE(FATAL_ERROR
-    "Off-Screen MESA cannot be used with Mangled MESA.  Turn off either "
-    "VTK_OPENGL_HAS_OSMESA or VTK_USE_MANGLED_MESA.")
-ENDIF(VTK_OPENGL_HAS_OSMESA  AND  VTK_USE_MANGLED_MESA)
-
-
-SET(VTK_CAN_DO_OFF_SCREEN)
-IF(VTK_USE_MANGLED_MESA OR VTK_OPENGL_HAS_OSMESA OR WIN32)
-  SET(VTK_CAN_DO_OFF_SCREEN 1)
-ENDIF(VTK_USE_MANGLED_MESA OR VTK_OPENGL_HAS_OSMESA OR WIN32)
-
-VTK_DEPENDENT_OPTION(VTK_USE_OFFSCREEN
-                     "Use off screen calls by default." OFF
-                     "VTK_CAN_DO_OFF_SCREEN" OFF)
-VTK_DEPENDENT_OPTION(VTK_USE_MPI
-                     "Use Message Passing Interface (MPI) library for parallel support." OFF
-                     "VTK_USE_PARALLEL" OFF)
-VTK_DEPENDENT_OPTION(VTK_USE_MATROX_IMAGING
-                     "Use Matrox Imaging Library for video input." OFF
-                     "VTK_USE_RENDERING;WIN32" OFF)
-VTK_DEPENDENT_OPTION(VTK_USE_GL2PS "Build VTK with gl2ps support." OFF
-                     "VTK_USE_RENDERING" ON)
-VTK_DEPENDENT_OPTION(VTK_USE_PARALLEL_BGL
-                     "Use the Parallel Boost Graph Library"
-                     OFF
-                     "VTK_USE_BOOST;VTK_USE_MPI;VTK_USE_PARALLEL;VTK_USE_64BIT_IDS"
-                     OFF)
-
-SET(VTK_CAN_USE_TK OFF)
-SET(VTK_USE_TK_DEFAULT ON)
-IF(VTK_WRAP_PYTHON OR VTK_WRAP_TCL)
-  IF(NOT VTK_DISABLE_TK_INIT)
-    SET(VTK_CAN_USE_TK ON)
-    IF(APPLE)
-      IF (OSX_SDK_VERSION)
-        IF (${OSX_SDK_VERSION} VERSION_LESS "10.6")
-          # Until OS X 10.6, building Tk with Cocoa was not possible
-          IF (VTK_USE_COCOA)
-            SET(VTK_CAN_USE_TK OFF)
-          ENDIF (VTK_USE_COCOA)
-        ELSE (${OSX_SDK_VERSION} VERSION_LESS "10.6")
-          # For OS X 10.6, the default system Tk is Cocoa, not Carbon
-          IF (VTK_USE_CARBON)
-            SET(VTK_USE_TK_DEFAULT OFF)
-          ENDIF (VTK_USE_CARBON)
-        ENDIF (${OSX_SDK_VERSION} VERSION_LESS "10.6")
-      ENDIF (OSX_SDK_VERSION)
-    ENDIF(APPLE)
-  ENDIF(NOT VTK_DISABLE_TK_INIT)
-ENDIF(VTK_WRAP_PYTHON OR VTK_WRAP_TCL)
-VTK_DEPENDENT_OPTION(VTK_USE_TK "Build VTK with Tk support"
-                     ${VTK_USE_TK_DEFAULT} "VTK_CAN_USE_TK" OFF)
-
 MARK_AS_ADVANCED(VTK_OPENGL_HAS_OSMESA
                  VTK_USE_OFFSCREEN
                  VTK_USE_TK
@@ -516,7 +454,17 @@ endforeach()
 
 # Add the third party libraries
 set(vtk_tpl_modules kwsys vtkalglib vtkzlib vtksqlite vtkexpat vtklibxml2 vtknetcdf
-  HashSource MaterialLibrary verdict)
+  HashSource MaterialLibrary verdict DICOMParser vtkjpeg vtkpng vtktiff vtkmetaio
+  vtkoggtheora ParseOGLExt EncodeString)
+# Some TPLs have multiple libraries, or different library names from the TPL
+# Provide a mapping here, may be better to make them into a real module.
+set(kwsys_TPL_LIBRARIES "vtksys")
+set(DICOMParser_TPL_LIBRARIES "vtkDICOMParser")
+set(HashSource_TPL_LIBRARIES "")
+set(MaterialLibrary_TPL_LIBRARIES "vtkHashSource")
+set(vtknetcdf_TPL_LIBRARIES vtkNetCDF vtkNetCDF_cxx)
+set(ParseOGLExt_TPL_LIBRARIES vtkParseOGLExt)
+set(EncodeString_TPL_LIBRARIES "")
 foreach(tpl ${vtk_tpl_modules})
   set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${tpl})
   set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${tpl})
@@ -648,6 +596,13 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
   if(NOT ${vtk-module}_IS_TEST AND NOT ${vtk-module}_IS_TPL)
     #message("Initializing variables for ${vtk-module}")
     init_module_vars()
+  else()
+    # Append the target name(s) to the VTK_TPL_TARGETS global
+    if(DEFINED ${vtk-module}_TPL_LIBRARIES)
+      set_property(GLOBAL APPEND PROPERTY VTK_TPL_TARGETS ${${vtk-module}_TPL_LIBRARIES})
+    else()
+      set_property(GLOBAL APPEND PROPERTY VTK_TPL_TARGETS ${vtk-module})
+    endif()
   endif()
   if(NOT EXISTS ${${vtk-module}_SOURCE_DIR})
     message("Module directory does not exist! '${${vtk-module}_SOURCE_DIR}'")

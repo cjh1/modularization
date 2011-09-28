@@ -22,6 +22,7 @@ function(vtk_add_library)
     return()
   endif()
 
+  include_directories(${CMAKE_CURRENT_BINARY_DIR})
   foreach(dep IN LISTS VTK_MODULE_${vtk-module}_DEPENDS)
     include_directories(${${dep}_SOURCE_DIR} ${${dep}_BINARY_DIR})
   endforeach()
@@ -30,8 +31,23 @@ function(vtk_add_library)
   set_property(GLOBAL APPEND PROPERTY ${vtk-module}_LIBRARY_TARGETS ${ARGV0})
   set_property(GLOBAL APPEND PROPERTY VTK_TARGETS ${ARGV0})
 
+  # Generate the export macro header for symbol visibility/Windows DLL declspec
+  include(GenerateExportHeader)
+  generate_export_header(${vtk-module} EXPORT_FILE_NAME ${vtk-module}Export.h)
+  add_compiler_export_flags(my_abi_flags)
+  set_property(TARGET ${vtk-module} APPEND
+    PROPERTY COMPILE_FLAGS "${VTK_ABI_CXX_FLAGS}")
+
   # Link to the libraries specified in dependencies
-  target_link_libraries(${vtk-module} ${VTK_MODULE_${vtk-module}_LINK_DEPENDS})
+  unset(_link_deps)
+  foreach(link_dep IN LISTS VTK_MODULE_${vtk-module}_LINK_DEPENDS)
+    if(${link_dep}_IS_TPL AND DEFINED ${link_dep}_TPL_LIBRARIES)
+      list(APPEND _link_deps ${${link_dep}_TPL_LIBRARIES})
+    else()
+      list(APPEND _link_deps ${link_dep})
+    endif()
+  endforeach()
+  target_link_libraries(${vtk-module} ${_link_deps})
   if(DEFINED VTK_MODULE_${vtk-module}_LINK_INTERFACE_LIBRARIES)
     set_target_properties(${vtk-module} PROPERTIES
       LINK_INTERFACE_LIBRARIES "${VTK_MODULE_${vtk-module}_LINK_INTERFACE_LIBRARIES}")

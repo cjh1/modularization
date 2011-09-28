@@ -62,5 +62,3 @@ include_directories(
   )
 
 vtk_add_library(vtkIOGeometry ${Kit_SRCS})
-target_link_libraries(vtkIOGeometry vtksys)
-set_target_properties(vtkIOGeometry PROPERTIES LINK_INTERFACE_LIBRARIES "")

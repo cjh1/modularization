@@ -1,4 +1,5 @@
 vtk_module(vtkCommonSystem
-  DEPENDS vtkCommonCore
-  COMPILE_DEPENDS kwsys
+  DEPENDS
+    vtkCommonCore
+    kwsys
   DEFAULT ON)

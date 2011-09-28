@@ -29,23 +29,19 @@ def searchReplace(path, search, replace, headerName):
             firstInclude = False
           sys.stdout.write(line)
 
-#modules = ["Common/Core", "Common/DataModel", "Common/Transforms", \
-#  "Common/Math", "Common/ComputationalGeometry", "Common/Misc", \
-#  "Common/System", "Common/Transforms", \
-modules = ["Filters/Core", "Filters/Extraction", "Filters/General", "Filters/Geometry", \
-  "Filters/ParallelStatistics", "Filters/Sources", "Filters/Statistics"]
+modules = ["Common/Core", "Common/DataModel", "Common/Transforms", \
+  "Common/Math", "Common/ComputationalGeometry", "Common/Misc", \
+  "Common/System", "Common/Transforms"]
 
-modules = ["IO/Core", "IO/Geometry", "IO/Image", "IO/Infovis", "IO/NetCDF", \
+modules += ["Filters/Core", "Filters/Extraction", "Filters/General", "Filters/Geometry", \
+  "Filters/ParallelStatistics", "Filters/Sources", "Filters/Statistics"]
+modules += ["IO/Core", "IO/Geometry", "IO/Image", "IO/Infovis", "IO/NetCDF", \
   "IO/SQL", "IO/XML"]
 
-modules = ["Parallel/Core"]
-
-modules = ["Infovis/Core"]
-
-modules = ["Imaging/Core"]
-modules = ["Rendering/Core"]
-modules = ["Rendering/OpenGL"]
-modules = ["Rendering/GLSL"]
+modules += ["Parallel/Core"]
+modules += ["Infovis/Core"]
+modules += ["Imaging/Core"]
+modules += ["Rendering/Core", "Rendering/OpenGL"]
 
 for module in modules:
   moduleName = "vtk" + module.replace("/", "")

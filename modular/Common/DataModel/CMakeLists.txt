@@ -275,5 +275,3 @@ set_source_files_properties(
   )
 
 vtk_add_library(vtkCommonDataModel ${Kit_SRCS})
-target_link_libraries(vtkCommonDataModel vtksys)
-set_target_properties(vtkCommonDataModel PROPERTIES LINK_INTERFACE_LIBRARIES "")

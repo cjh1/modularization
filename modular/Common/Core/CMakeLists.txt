@@ -8,6 +8,7 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_BINARY_DIR}
+  ${VTK_BINARY_DIR}/Common/DataModel
   ${VTK_SOURCE_DIR}/Utilities/utf8/source)
 
 SET(Kit_SRCS
@@ -383,7 +384,7 @@ endif()
 
 vtk_add_library(vtkCommonCore ${Kit_SRCS})
 
-target_link_libraries(vtkCommonCore vtksys ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(vtkCommonCore ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(vtkCommonCore PROPERTIES LINK_INTERFACE_LIBRARIES "")
 
 IF(CMAKE_COMPILER_IS_GNUCXX AND MINGW)

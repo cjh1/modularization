@@ -1,11 +1,8 @@
-
 set(Kit_SRCS
   vtkContourValues.cxx
   vtkErrorCode.cxx
   vtkFunctionParser.cxx
   vtkHeap.cxx
-  vtkMarchingCubesCases.h
-  vtkMarchingSquaresCases.h
   )
 
 set_source_files_properties(

@@ -3,6 +3,5 @@ vtk_module(vtkIOCore
     vtkCommonDataModel
     vtkCommonMisc
     vtkzlib
-  COMPILE_DEPENDS
     kwsys
   DEFAULT ON)

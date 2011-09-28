@@ -51,6 +51,7 @@ Examples/: <ignore>
 GenericFiltering/README.html: <ignore>
 modular/manifest.txt: <ignore>
 modular/modularize.py: <ignore>
+modular/export_headers.py: <ignore>
 
 GUISupport/Qt/Testing/: <ignore>
 GUISupport/CMakeLists.txt: <ignore>
@@ -462,9 +463,6 @@ Common/vtkParametricTorus.cxx:
 Common/vtkParametricTorus.h:
 Filtering/vtkParametricSpline.cxx:
 Filtering/vtkParametricSpline.h:
-Graphics/vtkDataSetSurfaceFilter.cxx:
-Graphics/vtkDataSetSurfaceFilter.h:
-
 
 [Common/DataModel]
 
@@ -796,6 +794,10 @@ Hybrid/vtkIterativeClosestPointTransform.h:
 Filtering/vtkTreeIterator.cxx:
 Filtering/vtkTreeIterator.h:
 
+# Used by several methods, seems like a good place, vtkCell* was using
+Filtering/vtkMarchingCubesCases.h:
+Filtering/vtkMarchingSquaresCases.h:
+
 # Folding ImplicitFunctions into DataModel
 Common/vtkBox.cxx:
 Common/vtkBox.h:
@@ -1045,9 +1047,6 @@ Common/vtkFunctionParser.cxx:
 Common/vtkFunctionParser.h:
 Common/vtkHeap.cxx:
 Common/vtkHeap.h:
-Filtering/vtkMarchingCubesCases.h:
-Filtering/vtkMarchingSquaresCases.h:
-
 
 [Common/System]
 
@@ -2669,7 +2668,8 @@ Graphics/vtkStructuredPointsGeometryFilter.cxx:
 Graphics/vtkStructuredPointsGeometryFilter.h:
 Graphics/vtkUnstructuredGridGeometryFilter.cxx:
 Graphics/vtkUnstructuredGridGeometryFilter.h:
-
+Graphics/vtkDataSetSurfaceFilter.cxx:
+Graphics/vtkDataSetSurfaceFilter.h:
 
 [Filters/Matlab]
 
@@ -3643,46 +3643,28 @@ Rendering/vtkCameraActor.cxx:
 Rendering/vtkCameraActor.h:
 Rendering/vtkCameraInterpolator.cxx:
 Rendering/vtkCameraInterpolator.h:
-Rendering/vtkCameraPass.cxx:
-Rendering/vtkCameraPass.h:
 Rendering/vtkCellCenterDepthSort.cxx:
 Rendering/vtkCellCenterDepthSort.h:
 Rendering/vtkChooserPainter.cxx:
 Rendering/vtkChooserPainter.h:
-Rendering/vtkClearZPass.cxx:
-Rendering/vtkClearZPass.h:
 Rendering/vtkClipPlanesPainter.cxx:
 Rendering/vtkClipPlanesPainter.h:
 Rendering/vtkCoincidentTopologyResolutionPainter.cxx:
 Rendering/vtkCoincidentTopologyResolutionPainter.h:
-Rendering/vtkColorMaterialHelper.cxx:
-Rendering/vtkColorMaterialHelper.h:
-Rendering/vtkColorMaterialHelper_vs.glsl:
 Rendering/vtkCompositePainter.cxx:
 Rendering/vtkCompositePainter.h:
 Rendering/vtkCompositePolyDataMapper.cxx:
 Rendering/vtkCompositePolyDataMapper.h:
 Rendering/vtkCompositePolyDataMapper2.cxx:
 Rendering/vtkCompositePolyDataMapper2.h:
-Rendering/vtkCoreGraphicsGPUInfoList.cxx:
-Rendering/vtkCoreGraphicsGPUInfoList.h:
 Rendering/vtkCuller.cxx:
 Rendering/vtkCuller.h:
 Rendering/vtkCullerCollection.cxx:
 Rendering/vtkCullerCollection.h:
 Rendering/vtkDataSetMapper.cxx:
 Rendering/vtkDataSetMapper.h:
-Rendering/vtkDataTransferHelper.cxx:
-Rendering/vtkDataTransferHelper.h:
 Rendering/vtkDefaultPainter.cxx:
 Rendering/vtkDefaultPainter.h:
-Rendering/vtkDefaultPass.cxx:
-Rendering/vtkDefaultPass.h:
-Rendering/vtkDepthPeelingPass.cxx:
-Rendering/vtkDepthPeelingPass.h:
-Rendering/vtkDepthPeeling_fs.glsl:
-Rendering/vtkDirectXGPUInfoList.cxx:
-Rendering/vtkDirectXGPUInfoList.h:
 Rendering/vtkDisplayListPainter.cxx:
 Rendering/vtkDisplayListPainter.h:
 Rendering/vtkDistanceToCamera.cxx:
@@ -3693,8 +3675,6 @@ Rendering/vtkDynamic2DLabelMapper.cxx:
 Rendering/vtkDynamic2DLabelMapper.h:
 Rendering/vtkFollower.cxx:
 Rendering/vtkFollower.h:
-Rendering/vtkFrameBufferObject.cxx:
-Rendering/vtkFrameBufferObject.h:
 Rendering/vtkFrustumCoverageCuller.cxx:
 Rendering/vtkFrustumCoverageCuller.h:
 Rendering/vtkGPUInfo.cxx:
@@ -3702,11 +3682,6 @@ Rendering/vtkGPUInfo.h:
 Rendering/vtkGPUInfoList.cxx:
 Rendering/vtkGPUInfoList.h:
 Rendering/vtkGPUInfoListArray.h:
-Rendering/vtkGaussianBlurPass.cxx:
-Rendering/vtkGaussianBlurPass.h:
-Rendering/vtkGaussianBlurPassShader_fs.glsl:
-Rendering/vtkGenericOpenGLRenderWindow.cxx:
-Rendering/vtkGenericOpenGLRenderWindow.h:
 Rendering/vtkGenericRenderWindowInteractor.cxx:
 Rendering/vtkGenericRenderWindowInteractor.h:
 Rendering/vtkGenericVertexAttributeMapping.cxx:
@@ -3723,16 +3698,12 @@ Rendering/vtkHardwareSelector.cxx:
 Rendering/vtkHardwareSelector.h:
 Rendering/vtkHierarchicalPolyDataMapper.cxx:
 Rendering/vtkHierarchicalPolyDataMapper.h:
-Rendering/vtkIdentColoredPainter.cxx:
-Rendering/vtkIdentColoredPainter.h:
 Rendering/vtkImageActor.cxx:
 Rendering/vtkImageActor.h:
 Rendering/vtkImageMapper.cxx:
 Rendering/vtkImageMapper.h:
 Rendering/vtkImageMapper3D.cxx:
 Rendering/vtkImageMapper3D.h:
-Rendering/vtkImageProcessingPass.cxx:
-Rendering/vtkImageProcessingPass.h:
 Rendering/vtkImageProperty.cxx:
 Rendering/vtkImageProperty.h:
 Rendering/vtkImageResliceMapper.cxx:
@@ -3767,19 +3738,8 @@ Rendering/vtkLightCollection.cxx:
 Rendering/vtkLightCollection.h:
 Rendering/vtkLightKit.cxx:
 Rendering/vtkLightKit.h:
-Rendering/vtkLightingHelper.cxx:
-Rendering/vtkLightingHelper.h:
-Rendering/vtkLightingHelper_s.glsl:
 Rendering/vtkLightingPainter.cxx:
 Rendering/vtkLightingPainter.h:
-Rendering/vtkLighting_s.glsl:
-Rendering/vtkLightsPass.cxx:
-Rendering/vtkLightsPass.h:
-Rendering/vtkLineIntegralConvolution2D.cxx:
-Rendering/vtkLineIntegralConvolution2D.h:
-Rendering/vtkLineIntegralConvolution2D_fs.glsl:
-Rendering/vtkLineIntegralConvolution2D_fs1.glsl:
-Rendering/vtkLineIntegralConvolution2D_fs2.glsl:
 Rendering/vtkLinesPainter.cxx:
 Rendering/vtkLinesPainter.h:
 Rendering/vtkMapArrayValues.cxx:
@@ -3789,14 +3749,8 @@ Rendering/vtkMapper.h:
 Rendering/vtkMapperCollection.cxx:
 Rendering/vtkMapperCollection.h:
 Rendering/vtkNoise200x200.h:
-Rendering/vtkOSOpenGLRenderWindow.cxx:
-Rendering/vtkOSOpenGLRenderWindow.h:
 Rendering/vtkObserverMediator.cxx:
 Rendering/vtkObserverMediator.h:
-Rendering/vtkOpaquePass.cxx:
-Rendering/vtkOpaquePass.h:
-Rendering/vtkOverlayPass.cxx:
-Rendering/vtkOverlayPass.h:
 Rendering/vtkPainter.cxx:
 Rendering/vtkPainter.h:
 Rendering/vtkPainterDeviceAdapter.cxx:
@@ -3807,8 +3761,6 @@ Rendering/vtkParallelCoordinatesActor.cxx:
 Rendering/vtkParallelCoordinatesActor.h:
 Rendering/vtkParallelCoordinatesInteractorStyle.cxx:
 Rendering/vtkParallelCoordinatesInteractorStyle.h:
-Rendering/vtkPixelBufferObject.cxx:
-Rendering/vtkPixelBufferObject.h:
 Rendering/vtkPointSetToLabelHierarchy.cxx:
 Rendering/vtkPointSetToLabelHierarchy.h:
 Rendering/vtkPointsPainter.cxx:
@@ -3832,10 +3784,6 @@ Rendering/vtkProp3DFollower.h:
 Rendering/vtkProperty.cxx:
 Rendering/vtkProperty.h:
 Rendering/vtkPythagoreanQuadruples.h:
-Rendering/vtkRenderPass.cxx:
-Rendering/vtkRenderPass.h:
-Rendering/vtkRenderPassCollection.cxx:
-Rendering/vtkRenderPassCollection.h:
 Rendering/vtkRenderState.cxx:
 Rendering/vtkRenderState.h:
 Rendering/vtkRenderWindow.cxx:
@@ -3858,34 +3806,12 @@ Rendering/vtkScalarsToColorsPainter.cxx:
 Rendering/vtkScalarsToColorsPainter.h:
 Rendering/vtkSelectVisiblePoints.cxx:
 Rendering/vtkSelectVisiblePoints.h:
-Rendering/vtkSequencePass.cxx:
-Rendering/vtkSequencePass.h:
 Rendering/vtkShader.cxx:
 Rendering/vtkShader.h:
-Rendering/vtkShader2.cxx:
-Rendering/vtkShader2.h:
-Rendering/vtkShader2Collection.cxx:
-Rendering/vtkShader2Collection.h:
 Rendering/vtkShaderDeviceAdapter.cxx:
 Rendering/vtkShaderDeviceAdapter.h:
 Rendering/vtkShaderProgram.cxx:
 Rendering/vtkShaderProgram.h:
-Rendering/vtkShaderProgram2.cxx:
-Rendering/vtkShaderProgram2.h:
-Rendering/vtkShadowMapBakerPass.cxx:
-Rendering/vtkShadowMapBakerPass.h:
-Rendering/vtkShadowMapPass.cxx:
-Rendering/vtkShadowMapPass.h:
-Rendering/vtkShadowMapPassInternal.h:
-Rendering/vtkShadowMapPassShader_fs.glsl:
-Rendering/vtkShadowMapPassShader_vs.glsl:
-Rendering/vtkSobelGradientMagnitudePass.cxx:
-Rendering/vtkSobelGradientMagnitudePass.h:
-Rendering/vtkSobelGradientMagnitudePassFigure.eps:
-Rendering/vtkSobelGradientMagnitudePassFigure.ipe:
-Rendering/vtkSobelGradientMagnitudePassFigure.png:
-Rendering/vtkSobelGradientMagnitudePassShader1_fs.glsl:
-Rendering/vtkSobelGradientMagnitudePassShader2_fs.glsl:
 Rendering/vtkStandardPolyDataPainter.cxx:
 Rendering/vtkStandardPolyDataPainter.h:
 Rendering/vtkStringToImage.cxx:
@@ -3894,9 +3820,6 @@ Rendering/vtkSurfaceLICDefaultPainter.cxx:
 Rendering/vtkSurfaceLICDefaultPainter.h:
 Rendering/vtkSurfaceLICPainter.cxx:
 Rendering/vtkSurfaceLICPainter.h:
-Rendering/vtkSurfaceLICPainter_fs1.glsl:
-Rendering/vtkSurfaceLICPainter_fs2.glsl:
-Rendering/vtkSurfaceLICPainter_vs1.glsl:
 Rendering/vtkTStripsPainter.cxx:
 Rendering/vtkTStripsPainter.h:
 Rendering/vtkTesting.cxx:
@@ -3908,20 +3831,12 @@ Rendering/vtkTestingObjectFactory.cxx:
 Rendering/vtkTestingObjectFactory.h:
 Rendering/vtkTexture.cxx:
 Rendering/vtkTexture.h:
-Rendering/vtkTextureObject.cxx:
-Rendering/vtkTextureObject.h:
-Rendering/vtkTextureUnitManager.cxx:
-Rendering/vtkTextureUnitManager.h:
 Rendering/vtkTexturedActor2D.cxx:
 Rendering/vtkTexturedActor2D.h:
 Rendering/vtkTransformInterpolator.cxx:
 Rendering/vtkTransformInterpolator.h:
-Rendering/vtkTranslucentPass.cxx:
-Rendering/vtkTranslucentPass.h:
 Rendering/vtkTupleInterpolator.cxx:
 Rendering/vtkTupleInterpolator.h:
-Rendering/vtkUniformVariables.cxx:
-Rendering/vtkUniformVariables.h:
 Rendering/vtkViewTheme.cxx:
 Rendering/vtkViewTheme.h:
 Rendering/vtkVisibilitySort.cxx:
@@ -3934,8 +3849,6 @@ Rendering/vtkVolumeCollection.cxx:
 Rendering/vtkVolumeCollection.h:
 Rendering/vtkVolumeProperty.cxx:
 Rendering/vtkVolumeProperty.h:
-Rendering/vtkVolumetricPass.cxx:
-Rendering/vtkVolumetricPass.h:
 Rendering/vtkWindowToImageFilter.cxx:
 Rendering/vtkWindowToImageFilter.h:
 Rendering/vtkImageMapper3D.cxx:
@@ -4028,19 +3941,6 @@ Rendering/fonts/uagk8a.pfb:
 Rendering/fonts/uagko8a.pfb:
 Rendering/fonts/vtkEmbeddedFonts.h:
 
-
-[Rendering/GLSL]
-
-Rendering/vtkGLSLShader.cxx:
-Rendering/vtkGLSLShader.h:
-Rendering/vtkGLSLShaderDeviceAdapter.cxx:
-Rendering/vtkGLSLShaderDeviceAdapter.h:
-Rendering/vtkGLSLShaderDeviceAdapter2.cxx:
-Rendering/vtkGLSLShaderDeviceAdapter2.h:
-Rendering/vtkGLSLShaderProgram.cxx:
-Rendering/vtkGLSLShaderProgram.h:
-
-
 [Rendering/Label]
 
 Rendering/vtkLabelHierarchy.cxx:
@@ -4126,13 +4026,112 @@ Rendering/vtkOpenGLScalarsToColorsPainter.cxx:
 Rendering/vtkOpenGLScalarsToColorsPainter.h:
 Rendering/vtkOpenGLState.cxx:
 Rendering/vtkOpenGLState.h:
-Rendering/vtkOpenGLStateCache.cxx:
-Rendering/vtkOpenGLStateCache.h:
+Rendering/vtkOpenGLStateCache.cxx: <ignore>
+Rendering/vtkOpenGLStateCache.h: <ignore>
 Rendering/vtkOpenGLTexture.cxx:
 Rendering/vtkOpenGLTexture.h:
 Rendering/vtkgluPickMatrix.h:
 Rendering/vtkOpenGLImageSliceMapper.cxx:
 Rendering/vtkOpenGLImageSliceMapper.h:
+
+# These are all tightly bound to OpenGL
+Rendering/vtkGLSLShader.cxx:
+Rendering/vtkGLSLShader.h:
+Rendering/vtkGLSLShaderDeviceAdapter.cxx:
+Rendering/vtkGLSLShaderDeviceAdapter.h:
+Rendering/vtkGLSLShaderDeviceAdapter2.cxx:
+Rendering/vtkGLSLShaderDeviceAdapter2.h:
+Rendering/vtkGLSLShaderProgram.cxx:
+Rendering/vtkGLSLShaderProgram.h:
+
+# These are all tightly bound to OpenGL too
+Rendering/vtkCameraPass.cxx:
+Rendering/vtkCameraPass.h:
+Rendering/vtkClearZPass.cxx:
+Rendering/vtkClearZPass.h:
+Rendering/vtkColorMaterialHelper.cxx:
+Rendering/vtkColorMaterialHelper.h:
+Rendering/vtkColorMaterialHelper_vs.glsl:
+Rendering/vtkCoreGraphicsGPUInfoList.cxx:
+Rendering/vtkCoreGraphicsGPUInfoList.h:
+Rendering/vtkDataTransferHelper.cxx:
+Rendering/vtkDataTransferHelper.h:
+Rendering/vtkDefaultPass.cxx:
+Rendering/vtkDefaultPass.h:
+Rendering/vtkDepthPeelingPass.cxx:
+Rendering/vtkDepthPeelingPass.h:
+Rendering/vtkDepthPeeling_fs.glsl:
+Rendering/vtkDirectXGPUInfoList.cxx:
+Rendering/vtkDirectXGPUInfoList.h::
+Rendering/vtkFrameBufferObject.cxx:
+Rendering/vtkFrameBufferObject.h:
+Rendering/vtkGaussianBlurPass.cxx:
+Rendering/vtkGaussianBlurPass.h:
+Rendering/vtkGaussianBlurPassShader_fs.glsl:
+Rendering/vtkGenericOpenGLRenderWindow.cxx:
+Rendering/vtkGenericOpenGLRenderWindow.h:
+Rendering/vtkIdentColoredPainter.cxx:
+Rendering/vtkIdentColoredPainter.h:
+Rendering/vtkImageProcessingPass.cxx:
+Rendering/vtkImageProcessingPass.h:
+Rendering/vtkLightingHelper.cxx:
+Rendering/vtkLightingHelper.h:
+Rendering/vtkLightingHelper_s.glsl:
+Rendering/vtkLighting_s.glsl:
+Rendering/vtkLightsPass.cxx:
+Rendering/vtkLightsPass.h:
+Rendering/vtkLineIntegralConvolution2D.cxx:
+Rendering/vtkLineIntegralConvolution2D.h:
+Rendering/vtkLineIntegralConvolution2D_fs.glsl:
+Rendering/vtkLineIntegralConvolution2D_fs1.glsl:
+Rendering/vtkLineIntegralConvolution2D_fs2.glsl:
+Rendering/vtkOSOpenGLRenderWindow.cxx:
+Rendering/vtkOSOpenGLRenderWindow.h:
+Rendering/vtkOpaquePass.cxx:
+Rendering/vtkOpaquePass.h:
+Rendering/vtkOverlayPass.cxx:
+Rendering/vtkOverlayPass.h:
+Rendering/vtkPixelBufferObject.cxx:
+Rendering/vtkPixelBufferObject.h:
+Rendering/vtkRenderPass.cxx:
+Rendering/vtkRenderPass.h:
+Rendering/vtkRenderPassCollection.cxx:
+Rendering/vtkRenderPassCollection.h:
+Rendering/vtkSequencePass.cxx:
+Rendering/vtkSequencePass.h:
+Rendering/vtkShader2.cxx:
+Rendering/vtkShader2.h:
+Rendering/vtkShader2Collection.cxx:
+Rendering/vtkShader2Collection.h:
+Rendering/vtkShaderProgram2.cxx:
+Rendering/vtkShaderProgram2.h:
+Rendering/vtkShadowMapBakerPass.cxx:
+Rendering/vtkShadowMapBakerPass.h:
+Rendering/vtkShadowMapPass.cxx:
+Rendering/vtkShadowMapPass.h:
+Rendering/vtkShadowMapPassInternal.h:
+Rendering/vtkShadowMapPassShader_fs.glsl:
+Rendering/vtkShadowMapPassShader_vs.glsl:
+Rendering/vtkSobelGradientMagnitudePass.cxx:
+Rendering/vtkSobelGradientMagnitudePass.h:
+Rendering/vtkSobelGradientMagnitudePassFigure.eps:
+Rendering/vtkSobelGradientMagnitudePassFigure.ipe:
+Rendering/vtkSobelGradientMagnitudePassFigure.png:
+Rendering/vtkSobelGradientMagnitudePassShader1_fs.glsl:
+Rendering/vtkSobelGradientMagnitudePassShader2_fs.glsl:
+Rendering/vtkSurfaceLICPainter_fs1.glsl:
+Rendering/vtkSurfaceLICPainter_fs2.glsl:
+Rendering/vtkSurfaceLICPainter_vs1.glsl:
+Rendering/vtkTextureObject.cxx:
+Rendering/vtkTextureObject.h:
+Rendering/vtkTextureUnitManager.cxx:
+Rendering/vtkTextureUnitManager.h:
+Rendering/vtkTranslucentPass.cxx:
+Rendering/vtkTranslucentPass.h:
+Rendering/vtkUniformVariables.cxx:
+Rendering/vtkUniformVariables.h:
+Rendering/vtkVolumetricPass.cxx:
+Rendering/vtkVolumetricPass.h:
 
 [Rendering/MESA]
 
