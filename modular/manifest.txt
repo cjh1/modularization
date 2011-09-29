@@ -1842,6 +1842,8 @@ modular/Utilities/MaterialLibrary/CMakeLists.txt:
 
 [CMake]
 
+modular/CMake/GenerateExportHeader.cmake:
+modular/CMake/exportheader.cmake.in:
 modular/CMake/TopologicalSort.cmake:
 modular/CMake/vtkModular.cmake:
 modular/CMake/FindPostgreSQL.cmake:
