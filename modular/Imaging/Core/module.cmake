@@ -1,10 +1,10 @@
-vtk_module(vtkFiltersCore
+vtk_module(vtkImagingCore
   DEPENDS
     vtkCommonCore
     vtkCommonDataModel
-    vtkCommonExecutionModel
     vtkCommonSystem
-    vtkCommonMisc
     vtkCommonTransforms
     vtkCommonMath
+    vtkCommonComputationalGeometry
+    vtkCommonExecutionModel
   DEFAULT ON)

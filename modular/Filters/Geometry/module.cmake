@@ -1,8 +1,7 @@
-vtk_module(vtkIOCore
+vtk_module(vtkFiltersGeometry
   DEPENDS
+    vtkCommonCore
     vtkCommonDataModel
     vtkCommonExecutionModel
-    vtkCommonMisc
-    vtkzlib
-    kwsys
+    vtkFiltersCore
   DEFAULT ON)

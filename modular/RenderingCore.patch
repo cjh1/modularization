@@ -1,0 +1,14 @@
+diff --git a/Rendering/Core/vtkRenderWindowInteractor.cxx b/Rendering/Core/vtkRenderWindowInteractor.cxx
+index f504034..b4d3650 100644
+--- a/Rendering/Core/vtkRenderWindowInteractor.cxx
++++ b/Rendering/Core/vtkRenderWindowInteractor.cxx
+@@ -65,7 +65,8 @@ vtkRenderWindowInteractor::vtkRenderWindowInteractor()
+ {
+   this->RenderWindow    = NULL;
+   this->InteractorStyle = NULL;
+-  this->SetInteractorStyle(vtkInteractorStyleSwitch::New()); 
++  // FIXME: Removed this for now - pulls in pretty much every interactor
++  //this->SetInteractorStyle(vtkInteractorStyleSwitch::New()); 
+   this->InteractorStyle->Delete();
+   
+   this->LightFollowCamera = 1;

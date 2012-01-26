@@ -1,8 +1,8 @@
-vtk_module(vtkIOCore
+vtk_module(vtkIOLSDyn
   DEPENDS
     vtkCommonDataModel
     vtkCommonExecutionModel
-    vtkCommonMisc
-    vtkzlib
-    kwsys
+    vtkIOXML
+  COMPILE_DEPENDS
+    vtkCommonCore
   DEFAULT ON)

@@ -20,7 +20,6 @@ CMakeLists.txt: <ignore>
 CTestConfig.cmake: <ignore>
 .gitattributes: <ignore>
 Testing.txt: <ignore>
-TextAnalysis/CMakeLists.txt: <ignore>
 Charts/CMakeLists.txt: <ignore>
 GenericFiltering/CMakeLists.txt: <ignore>
 Geovis/CMakeLists.txt: <ignore>
@@ -42,7 +41,6 @@ Hybrid/Testing/: <ignore>
 IO/Testing/: <ignore>
 Infovis/Testing/: <ignore>
 Widgets/Testing/: <ignore>
-TextAnalysis/Testing/: <ignore>
 Rendering/Testing/: <ignore>
 Views/Testing/: <ignore>
 Parallel/Testing/: <ignore>
@@ -100,6 +98,7 @@ Imaging/vtkImageThresholdConnectivity.cxx: <ignore>
 Imaging/vtkImageThresholdConnectivity.h: <ignore>
 Filtering/vtkCellTreeLocator.cxx: <ignore>
 Filtering/vtkCellTreeLocator.h: <ignore>
+TextAnalysis/: <ignore>
 
 [.]
 modular/CMakeLists.txt:
@@ -116,32 +115,159 @@ VTKConfigVersion.cmake.in:
 vtkGenerateVTKConfig.cmake:
 
 [Utilities/LastConfigureStep]
+Utilities/LastConfigureStep/:
 modular/Utilities/LastConfigureStep/CMakeLists.txt:
 
 [Utilities/vtklibxml2]
+Utilities/vtklibxml2/:
 modular/Utilities/vtklibxml2/CMakeLists.txt:
 
 [Utilities/DICOMParser]
+Utilities/DICOMParser/:
 modular/Utilities/DICOMParser/CMakeLists.txt:
 
 [Utilities/EncodeString]
+Utilities/EncodeString/:
 modular/Utilities/EncodeString/CMakeLists.txt:
 
 [Utilities/ParseOGLExt]
+Utilities/ParseOGLExt/:
 modular/Utilities/ParseOGLExt/CMakeLists.txt:
 modular/Utilities/ParseOGLExt/ParseOGLExt.cxx:
 
 [Utilities/vtkmetaio]
+Utilities/vtkmetaio/:
 modular/Utilities/vtkmetaio/CMakeLists.txt:
 
 [Utilities/vtkoggtheora]
+Utilities/vtkoggtheora/:
 modular/Utilities/vtkoggtheora/CMakeLists.txt:
 
 [Utilities/vtkpng]
+Utilities/vtkpng/:
 modular/Utilities/vtkpng/CMakeLists.txt:
 
 [Utilities/vtktiff]
+Utilities/vtktiff/:
 modular/Utilities/vtktiff/CMakeLists.txt:
+
+[Utilities/vtknetcdf]
+Utilities/vtknetcdf/:
+
+modular/UtilitiesNetCFD.patch:<ignore>
+<patch>: UtilitiesNetCFD.patch
+
+[Utilities/vtklibproj4]
+Utilities/vtklibproj4/:
+
+[Utilities/vtkzlib]
+Utilities/vtkzlib/:
+
+[Utilities/vtkjpeg]
+Utilities/vtkjpeg/:
+
+[Utilities/vtkhdf5]
+Utilities/vtkhdf5/:
+
+[Utilities/vtkfreetype]
+Utilities/vtkfreetype/:
+
+[Utilities/vtksqlite]
+Utilities/vtksqlite/:
+
+[Utilities/vtkgl2ps]
+Utilities/vtkgl2ps/:
+
+[Utilities/kwsys]
+Utilities/kwsys/:
+
+[Utilities/mrmpi]
+Utilities/mrmpi/:
+
+[Utilities/octree]
+Utilities/octree/:
+
+[Utilities/utf8]
+Utilities/utf8/:
+
+[Utilities/verdict]
+Utilities/verdict/:
+
+[Utilities/vtkTclTest2Py]
+Utilities/vtkTclTest2Py/:
+
+[Utilities/TclTk]
+Utilities/TclTk/:
+
+[Utilities/vtkexpat]
+Utilities/vtkexpat/:
+
+[Utilities/vtkexodus2]
+Utilities/vtkexodus2/:
+
+[Utilities/vtkalglib]
+Utilities/vtkalglib/:
+
+[Utilities/ftgl]
+Utilities/ftgl/:
+
+[Utilities/VPIC]
+Utilities/VPIC/:
+
+[Utilities/Upgrading]
+Utilities/Upgrading/:
+
+[Utilities/Scripts]
+Utilities/Scripts/:
+
+[Utilities/MaterialLibrary]
+Utilities/MaterialLibrary/:
+modular/Utilities/MaterialLibrary/CMakeLists.txt:
+
+[Utilities/Doxygen]
+Utilities/Doxygen/:
+
+[Utilities/Cosmo]
+Utilities/Cosmo/:
+
+[Utilities/OutputWindowProcess]
+Utilities/OutputWindowProcess/:
+
+[Utilities/Release]
+Utilities/Release/:
+
+[Utilities/Rpm]
+Utilities/Rpm/:
+
+[Utilities/freerange]
+Utilities/freerange/:
+
+[Utilities/HashSource]
+Utilities/HashSource/:
+
+[Utilities]
+
+Utilities/CMakeLists.txt:
+Utilities/SetupForDevelopment.sh:
+Utilities/internal_stdio_core.h.in:
+Utilities/tcl2py.py:
+Utilities/vtk2xml.py:
+Utilities/vtk_exodusII.h:
+Utilities/vtk_expat.h:
+Utilities/vtk_freetype.h:
+Utilities/vtk_gl2ps.h:
+Utilities/vtk_hdf5.h:
+Utilities/vtk_jpeg.h:
+Utilities/vtk_libproj4.h:
+Utilities/vtk_libxml2.h:
+Utilities/vtk_netcdf.h:
+Utilities/vtk_netcdfcpp.h:
+Utilities/vtk_oggtheora.h:
+Utilities/vtk_png.h:
+Utilities/vtk_tiff.h:
+Utilities/vtk_zlib.h:
+Utilities/vtkstd.h.in:
+Utilities/.gitattributes:
 
 [Common/Core]
 modular/Common/Core/CMakeLists.txt:
@@ -412,6 +538,9 @@ Common/vtkXMLFileOutputWindow.h:
 Common/vtkMathConfigure.h.in:
 Common/vtkMath.cxx:
 Common/vtkMath.h:
+Common/vtkMathUtilities.h:
+Common/vtkVectorBase.h:
+Common/vtkVectorOperators.h:
 
 # For vtkDataArray
 Common/vtkLookupTable.cxx:
@@ -604,8 +733,6 @@ Filtering/vtkGenericCellIterator.cxx:
 Filtering/vtkGenericCellIterator.h:
 Filtering/vtkGenericCellTessellator.cxx:
 Filtering/vtkGenericCellTessellator.h:
-Filtering/vtkGenericDataSetAlgorithm.cxx:
-Filtering/vtkGenericDataSetAlgorithm.h:
 Filtering/vtkGenericDataSet.cxx:
 Filtering/vtkGenericDataSet.h:
 Filtering/vtkGenericEdgeTable.cxx:
@@ -618,8 +745,6 @@ Filtering/vtkGenericSubdivisionErrorMetric.cxx:
 Filtering/vtkGenericSubdivisionErrorMetric.h:
 Filtering/vtkGeometricErrorMetric.cxx:
 Filtering/vtkGeometricErrorMetric.h:
-Filtering/vtkGraphAlgorithm.cxx:
-Filtering/vtkGraphAlgorithm.h:
 Filtering/vtkGraph.cxx:
 Filtering/vtkGraphEdge.cxx:
 Filtering/vtkGraphEdge.h:
@@ -645,13 +770,6 @@ Filtering/vtkImageData.h:
 Filtering/vtkImageIterator.cxx:
 Filtering/vtkImageIterator.h:
 Filtering/vtkImageIterator.txx:
-Filtering/vtkImageProgressIterator.cxx:
-Filtering/vtkImageProgressIterator.h:
-Filtering/vtkImageProgressIterator.txx:
-Filtering/vtkImageToStructuredGrid.cxx:
-Filtering/vtkImageToStructuredGrid.h:
-Filtering/vtkImageToStructuredPoints.cxx:
-Filtering/vtkImageToStructuredPoints.h:
 Filtering/vtkIncrementalOctreeNode.cxx:
 Filtering/vtkIncrementalOctreeNode.h:
 Filtering/vtkIncrementalOctreePointLocator.cxx:
@@ -801,8 +919,6 @@ Filtering/vtkOrderedTriangulator.h:
 # Derived from vtkDataObject
 Filtering/vtkPiecewiseFunction.cxx:
 Filtering/vtkPiecewiseFunction.h:
-Filtering/vtkPiecewiseFunctionShiftScale.cxx:
-Filtering/vtkPiecewiseFunctionShiftScale.h:
 
 # Needed in DataModel, may not be the best place.
 Filtering/vtkMeanValueCoordinatesInterpolator.cxx:
@@ -817,8 +933,8 @@ Filtering/vtkTreeIterator.cxx:
 Filtering/vtkTreeIterator.h:
 
 # Used by several methods, seems like a good place, vtkCell* was using
-Filtering/vtkMarchingCubesCases.h:
-Filtering/vtkMarchingSquaresCases.h:
+Filtering/vtkMarchingCubesCases.h: 
+Filtering/vtkMarchingSquaresCases.h: 
 
 # Folding ImplicitFunctions into DataModel
 Common/vtkBox.cxx:
@@ -862,170 +978,123 @@ Filtering/vtkSphere.cxx:
 Filtering/vtkSphere.h:
 Filtering/vtkSuperquadric.cxx:
 Filtering/vtkSuperquadric.h:
+Filtering/vtkMarchingCubesTriangleCases.cxx:
+Filtering/vtkMarchingCubesTriangleCases.h:
+Filtering/vtkMarchingSquaresLineCases.cxx:
+Filtering/vtkMarchingSquaresLineCases.h:
 
+[Common/ExecutionModel]
 
-#[Common/ExecutionModel]
+modular/Common/ExecutionModel/CMakeLists.txt: 
+modular/Common/ExecutionModel/module.cmake: 
 
-modular/Common/ExecutionModel/CMakeLists.txt: <ignore>
-modular/Common/ExecutionModel/module.cmake: <ignore>
-
-Common/vtkExtentSplitter.cxx:
-Common/vtkExtentSplitter.h:
-Common/vtkExtentTranslator.cxx:
-Common/vtkExtentTranslator.h:
-Common/vtkOnePieceExtentTranslator.cxx:
-Common/vtkOnePieceExtentTranslator.h:
-Common/vtkTableExtentTranslator.cxx:
-Common/vtkTableExtentTranslator.h:
-Filtering/vtkAlgorithm.cxx:
-Filtering/vtkAlgorithm.h:
-Filtering/vtkAlgorithmOutput.cxx:
-Filtering/vtkAlgorithmOutput.h:
-Filtering/vtkAnnotationLayersAlgorithm.cxx:
 Filtering/vtkAnnotationLayersAlgorithm.h:
-Filtering/vtkArrayDataAlgorithm.cxx:
-Filtering/vtkArrayDataAlgorithm.h:
-Filtering/vtkCachedStreamingDemandDrivenPipeline.cxx:
-Filtering/vtkCachedStreamingDemandDrivenPipeline.h:
-Filtering/vtkCastToConcrete.cxx:
-Filtering/vtkCastToConcrete.h:
-Filtering/vtkCompositeDataPipeline.cxx:
-Filtering/vtkCompositeDataPipeline.h:
-Filtering/vtkCompositeDataSetAlgorithm.cxx:
-Filtering/vtkCompositeDataSetAlgorithm.h:
-Filtering/vtkComputingResources.cxx:
-Filtering/vtkComputingResources.h:
-Filtering/vtkDataObjectAlgorithm.cxx:
-Filtering/vtkDataObjectAlgorithm.h:
-Filtering/vtkDataObjectSource.cxx:
-Filtering/vtkDataObjectSource.h:
-Filtering/vtkDataSetAlgorithm.cxx:
-Filtering/vtkDataSetAlgorithm.h:
-Filtering/vtkDataSetSource.cxx:
-Filtering/vtkDataSetSource.h:
-Filtering/vtkDataSetToDataSetFilter.cxx:
-Filtering/vtkDataSetToDataSetFilter.h:
-Filtering/vtkDataSetToImageFilter.cxx:
-Filtering/vtkDataSetToImageFilter.h:
-Filtering/vtkDataSetToPolyDataFilter.cxx:
-Filtering/vtkDataSetToPolyDataFilter.h:
-Filtering/vtkDataSetToStructuredGridFilter.cxx:
-Filtering/vtkDataSetToStructuredGridFilter.h:
-Filtering/vtkDataSetToStructuredPointsFilter.cxx:
-Filtering/vtkDataSetToStructuredPointsFilter.h:
-Filtering/vtkDataSetToUnstructuredGridFilter.cxx:
-Filtering/vtkDataSetToUnstructuredGridFilter.h:
-Filtering/vtkDemandDrivenPipeline.cxx:
-Filtering/vtkDemandDrivenPipeline.h:
-Filtering/vtkDirectedGraphAlgorithm.cxx:
-Filtering/vtkDirectedGraphAlgorithm.h:
-Filtering/vtkExecutionScheduler.cxx:
-Filtering/vtkExecutionScheduler.h:
-Filtering/vtkExecutionSchedulerManager.cxx:
-Filtering/vtkExecutionSchedulerManager.h:
-Filtering/vtkExecutiveCollection.cxx:
-Filtering/vtkExecutiveCollection.h:
-Filtering/vtkExecutive.cxx:
-Filtering/vtkExecutive.h:
-Filtering/vtkFilteringInformationKeyManager.cxx:
-Filtering/vtkFilteringInformationKeyManager.h:
-Filtering/vtkHierarchicalBoxDataSetAlgorithm.cxx:
-Filtering/vtkHierarchicalBoxDataSetAlgorithm.h:
-Filtering/vtkHyperOctreeAlgorithm.cxx:
-Filtering/vtkHyperOctreeAlgorithm.h:
-Filtering/vtkImageAlgorithm.cxx:
-Filtering/vtkImageAlgorithm.h:
-Filtering/vtkImageInPlaceFilter.cxx:
-Filtering/vtkImageInPlaceFilter.h:
-Filtering/vtkImageMultipleInputFilter.cxx:
-Filtering/vtkImageMultipleInputFilter.h:
-Filtering/vtkImageMultipleInputOutputFilter.cxx:
-Filtering/vtkImageMultipleInputOutputFilter.h:
-Filtering/vtkImageSource.cxx:
-Filtering/vtkImageSource.h:
-Filtering/vtkImageToImageFilter.cxx:
-Filtering/vtkImageToImageFilter.h:
-Filtering/vtkImageTwoInputFilter.cxx:
-Filtering/vtkImageTwoInputFilter.h:
-Filtering/vtkInformationExecutivePortKey.cxx:
-Filtering/vtkInformationExecutivePortKey.h:
-Filtering/vtkInformationExecutivePortVectorKey.cxx:
-Filtering/vtkInformationExecutivePortVectorKey.h:
-Filtering/vtkMultiBlockDataSetAlgorithm.cxx:
-Filtering/vtkMultiBlockDataSetAlgorithm.h:
-Filtering/vtkPassInputTypeAlgorithm.cxx:
-Filtering/vtkPassInputTypeAlgorithm.h:
-Filtering/vtkPiecewiseFunctionAlgorithm.cxx:
-Filtering/vtkPiecewiseFunctionAlgorithm.h:
-Filtering/vtkPointSetAlgorithm.cxx:
-Filtering/vtkPointSetAlgorithm.h:
-Filtering/vtkPointSetSource.cxx:
-Filtering/vtkPointSetSource.h:
-Filtering/vtkPointSetToPointSetFilter.cxx:
-Filtering/vtkPointSetToPointSetFilter.h:
-Filtering/vtkPolyDataAlgorithm.cxx:
-Filtering/vtkPolyDataAlgorithm.h:
-Filtering/vtkPolyDataSource.cxx:
-Filtering/vtkPolyDataSource.h:
-Filtering/vtkPolyDataToPolyDataFilter.cxx:
-Filtering/vtkPolyDataToPolyDataFilter.h:
-Filtering/vtkProcessObject.cxx:
-Filtering/vtkProcessObject.h:
 Filtering/vtkRectilinearGridAlgorithm.cxx:
-Filtering/vtkRectilinearGridAlgorithm.h:
-Filtering/vtkRectilinearGridSource.cxx:
-Filtering/vtkRectilinearGridSource.h:
-Filtering/vtkRectilinearGridToPolyDataFilter.cxx:
-Filtering/vtkRectilinearGridToPolyDataFilter.h:
-Filtering/vtkScalarTree.cxx:
-Filtering/vtkScalarTree.h:
-Filtering/vtkSimpleImageToImageFilter.cxx:
-Filtering/vtkSimpleImageToImageFilter.h:
-Filtering/vtkSimpleScalarTree.cxx:
+Filtering/vtkThreadedImageAlgorithm.cxx:
+Filtering/vtkTrivialProducer.cxx:
+Filtering/vtkAnnotationLayersAlgorithm.cxx:
+Filtering/vtkPiecewiseFunctionShiftScale.h:
+Filtering/vtkPiecewiseFunctionShiftScale.cxx:
+Filtering/vtkImageAlgorithm.h:
+Filtering/vtkCompositeDataSetAlgorithm.cxx:
+Filtering/vtkPassInputTypeAlgorithm.cxx:
+Filtering/vtkUnstructuredGridAlgorithm.cxx:
+Filtering/vtkInformationExecutivePortKey.cxx:
+Filtering/vtkExecutionScheduler.cxx:
+Filtering/vtkImageProgressIterator.cxx:
+Filtering/vtkImageProgressIterator.h:
+Filtering/vtkImageProgressIterator.txx:
+Filtering/vtkFilteringInformationKeyManager.h:
+Filtering/vtkCastToConcrete.cxx:
+Filtering/vtkUndirectedGraphAlgorithm.h:
+Filtering/vtkComputingResources.h:
+Filtering/vtkTrivialProducer.h:
+Common/vtkExtentSplitter.h:
+Filtering/vtkDataObjectAlgorithm.cxx:
+Filtering/vtkArrayDataAlgorithm.cxx:
+Filtering/vtkAlgorithmOutput.cxx:
 Filtering/vtkSimpleScalarTree.h:
-Filtering/vtkSource.cxx:
-Filtering/vtkSource.h:
+Filtering/vtkCompositeDataPipeline.cxx:
+Filtering/vtkCachedStreamingDemandDrivenPipeline.cxx:
+Filtering/vtkPiecewiseFunctionAlgorithm.cxx:
+Filtering/vtkPolyDataAlgorithm.h:
+Common/vtkOnePieceExtentTranslator.h:
+Filtering/vtkThreadedStreamingPipeline.h:
+Filtering/vtkImageToStructuredGrid.cxx:
+Filtering/vtkThreadedStreamingPipeline.cxx:
+Filtering/vtkInformationExecutivePortKey.h:
+Filtering/vtkImageAlgorithm.cxx:
+Filtering/vtkPiecewiseFunctionAlgorithm.h:
+Filtering/vtkRectilinearGridAlgorithm.h:
+Filtering/vtkDirectedGraphAlgorithm.h:
+Filtering/vtkScalarTree.h:
+Filtering/vtkArrayDataAlgorithm.h:
+Filtering/vtkAlgorithmOutput.h:
+Filtering/vtkFilteringInformationKeyManager.cxx:
+Filtering/vtkMultiBlockDataSetAlgorithm.cxx:
+Filtering/vtkExecutionSchedulerManager.cxx:
+Filtering/vtkThreadedImageAlgorithm.h:
+Filtering/vtkExecutive.cxx:
+Filtering/vtkImageProgressIterator.cxx:
+Filtering/vtkExecutionSchedulerManager.h:
+Filtering/vtkHyperOctreeAlgorithm.h:
+Filtering/vtkPointSetAlgorithm.cxx:
+Filtering/vtkPassInputTypeAlgorithm.h:
 Filtering/vtkStreamingDemandDrivenPipeline.cxx:
 Filtering/vtkStreamingDemandDrivenPipeline.h:
-Filtering/vtkStructuredGridAlgorithm.cxx:
-Filtering/vtkStructuredGridAlgorithm.h:
-Filtering/vtkStructuredGridSource.cxx:
-Filtering/vtkStructuredGridSource.h:
-Filtering/vtkStructuredGridToPolyDataFilter.cxx:
-Filtering/vtkStructuredGridToPolyDataFilter.h:
-Filtering/vtkStructuredGridToStructuredGridFilter.cxx:
-Filtering/vtkStructuredGridToStructuredGridFilter.h:
-Filtering/vtkStructuredPointsSource.cxx:
-Filtering/vtkStructuredPointsSource.h:
-Filtering/vtkStructuredPointsToPolyDataFilter.cxx:
-Filtering/vtkStructuredPointsToPolyDataFilter.h:
-Filtering/vtkStructuredPointsToStructuredPointsFilter.cxx:
-Filtering/vtkStructuredPointsToStructuredPointsFilter.h:
-Filtering/vtkStructuredPointsToUnstructuredGridFilter.cxx:
-Filtering/vtkStructuredPointsToUnstructuredGridFilter.h:
-Filtering/vtkTableAlgorithm.cxx:
-Filtering/vtkTableAlgorithm.h:
-Filtering/vtkTemporalDataSetAlgorithm.cxx:
-Filtering/vtkTemporalDataSetAlgorithm.h:
-Filtering/vtkThreadedImageAlgorithm.cxx:
-Filtering/vtkThreadedImageAlgorithm.h:
-Filtering/vtkThreadedStreamingPipeline.cxx:
-Filtering/vtkThreadedStreamingPipeline.h:
-Filtering/vtkTreeAlgorithm.cxx:
-Filtering/vtkTreeAlgorithm.h:
-Filtering/vtkTrivialProducer.cxx:
-Filtering/vtkTrivialProducer.h:
-Filtering/vtkUndirectedGraphAlgorithm.cxx:
-Filtering/vtkUndirectedGraphAlgorithm.h:
-Filtering/vtkUnstructuredGridAlgorithm.cxx:
+Filtering/vtkPolyDataAlgorithm.cxx:
+Filtering/vtkScalarTree.cxx:
 Filtering/vtkUnstructuredGridAlgorithm.h:
-Filtering/vtkUnstructuredGridSource.cxx:
-Filtering/vtkUnstructuredGridSource.h:
-Filtering/vtkUnstructuredGridToPolyDataFilter.cxx:
-Filtering/vtkUnstructuredGridToPolyDataFilter.h:
-Filtering/vtkUnstructuredGridToUnstructuredGridFilter.cxx:
-Filtering/vtkUnstructuredGridToUnstructuredGridFilter.h:
-
+Filtering/vtkInformationExecutivePortVectorKey.cxx:
+Filtering/vtkAlgorithm.cxx:
+Common/vtkTableExtentTranslator.cxx:
+Filtering/vtkTemporalDataSetAlgorithm.cxx:
+Common/vtkOnePieceExtentTranslator.cxx:
+Filtering/vtkPointSetAlgorithm.h:
+Filtering/vtkTableAlgorithm.h:
+Filtering/vtkStructuredGridAlgorithm.h:
+Filtering/vtkCompositeDataSetAlgorithm.h:
+Filtering/vtkInformationExecutivePortVectorKey.h:
+Filtering/vtkCachedStreamingDemandDrivenPipeline.h:
+Filtering/vtkTreeAlgorithm.cxx:
+Filtering/vtkComputingResources.cxx:
+Filtering/vtkExecutiveCollection.h:
+Filtering/vtkAlgorithm.h:
+Filtering/vtkExecutive.h:
+Filtering/vtkSimpleImageToImageFilter.h:
+Filtering/vtkTableAlgorithm.cxx:
+Filtering/vtkExecutiveCollection.cxx:
+Filtering/vtkHyperOctreeAlgorithm.cxx:
+Common/vtkExtentSplitter.cxx:
+Filtering/vtkGraphAlgorithm.h:
+Filtering/vtkGraphAlgorithm.cxx:
+Filtering/vtkImageToStructuredGrid.h:
+Filtering/vtkImageToStructuredGrid.cxx:
+Filtering/vtkHierarchicalBoxDataSetAlgorithm.h:
+Filtering/vtkDemandDrivenPipeline.cxx:
+Filtering/vtkUndirectedGraphAlgorithm.cxx:
+Filtering/vtkDemandDrivenPipeline.h:
+Filtering/vtkCastToConcrete.h:
+Filtering/vtkCompositeDataPipeline.h:
+Filtering/vtkSimpleScalarTree.cxx:
+Filtering/vtkMultiBlockDataSetAlgorithm.h:
+Filtering/vtkImageToStructuredPoints.h:
+Filtering/vtkImageToStructuredPoints.cxx:
+Filtering/vtkImageInPlaceFilter.cxx:
+Filtering/vtkSimpleImageToImageFilter.cxx:
+Filtering/vtkDataSetAlgorithm.cxx:
+Filtering/vtkExecutionScheduler.h:
+Common/vtkTableExtentTranslator.h:
+Filtering/vtkImageInPlaceFilter.h:
+Common/vtkExtentTranslator.cxx:
+Common/vtkExtentTranslator.h:
+Filtering/vtkTreeAlgorithm.h:
+Filtering/vtkDataSetAlgorithm.h:
+Filtering/vtkStructuredGridAlgorithm.cxx:
+Filtering/vtkDirectedGraphAlgorithm.cxx:
+Filtering/vtkDataObjectAlgorithm.h:
+Filtering/vtkTemporalDataSetAlgorithm.h:
+Filtering/vtkHierarchicalBoxDataSetAlgorithm.cxx:
 
 
 [Common/Math]
@@ -1129,6 +1198,7 @@ Common/vtkWarpTransform.h:
 Hybrid/vtkLandmarkTransform.cxx:
 Hybrid/vtkLandmarkTransform.h:
 
+
 [Examples/Statistics]
 modular/Examples/Statistics/CMakeLists.txt:
 modular/Examples/Statistics/ExampleDescriptiveStatistics.cxx:
@@ -1200,6 +1270,12 @@ IO/vtkTableWriter.h:
 
 modular/IOCore.patch: <ignore>
 <patch>: IOCore.patch
+
+IO/vtkArrayDataReader.cxx:
+IO/vtkArrayDataReader.h:
+IO/vtkArrayDataWriter.cxx:
+IO/vtkArrayDataWriter.h:
+
 
 [IO/Exodus]
 
@@ -1302,8 +1378,6 @@ IO/vtkOpenFOAMReader.cxx:
 IO/vtkOpenFOAMReader.h:
 IO/vtkPDBReader.cxx:
 IO/vtkPDBReader.h:
-IO/vtkPLOT3DReader.cxx:
-IO/vtkPLOT3DReader.h:
 IO/vtkParticleReader.cxx:
 IO/vtkParticleReader.h:
 IO/vtkPolyDataReader.cxx:
@@ -1369,6 +1443,9 @@ IO/vtkXYZMolReader.cxx:
 IO/vtkXYZMolReader.h:
 
 [IO/Image]
+
+modular/IO/Imaging/CMakeLists.txt:
+modular/IO/Imaging/module.cmake:
 
 IO/vtkAVIWriter.cxx:
 IO/vtkAVIWriter.h:
@@ -1734,6 +1811,40 @@ IO/vtkXMLWriterF.h:
 IO/vtkRTXMLPolyDataReader.cxx:
 IO/vtkRTXMLPolyDataReader.h:
 
+modular/IOXML.patch: <ignore>
+<patch>: IOXML.patch
+
+[IO/LSDyna]
+
+modular/IO/LSDyna/CMakeLists.txt:
+modular/IO/LSDyna/module.cmake:
+
+IO/vtkLSDynaPart.cxx:
+IO/vtkLSDynaPart.h:
+IO/vtkLSDynaPartCollection.cxx:
+IO/vtkLSDynaPartCollection.h:
+IO/vtkLSDynaReader.cxx:
+IO/vtkLSDynaReader.h:
+IO/vtkLSDynaSummaryParser.cxx:
+IO/vtkLSDynaSummaryParser.h:
+
+[IO/LSDyna/private]
+Utilities/LSDyna/LSDynaExport.h.in:
+Utilities/LSDyna/LSDynaFamily.cxx:
+Utilities/LSDyna/LSDynaFamily.h:
+Utilities/LSDyna/LSDynaMetaData.cxx:
+Utilities/LSDyna/LSDynaMetaData.h:
+Utilities/LSDyna/CMakeLists.txt:<ignore>
+
+[IO/ParallelLSDyna]
+
+modular/IO/ParallelLSDyna/CMakeLists.txt:
+modular/IO/ParallelLSDyna/module.cmake:
+
+Parallel/vtkPLSDynaReader.cxx:
+Parallel/vtkPLSDynaReader.h:
+
+
 [Wrapping]
 
 Common/vtkJavaAwt.h:
@@ -1832,16 +1943,10 @@ Wrapping/Python/.cvsignore: <ignore>
 Wrapping/Java/: <ignore>
 Wrapping/Tcl/: <ignore>
 
-[Utilities]
-
-Utilities/:
-
-[Utilities/MaterialLibrary]
-
-modular/Utilities/MaterialLibrary/CMakeLists.txt:
-
 [CMake]
 
+modular/CMake/vtkObjectFactory.cxx.in:
+modular/CMake/vtkObjectFactory.h.in:
 modular/CMake/GenerateExportHeader.cmake:
 modular/CMake/exportheader.cmake.in:
 modular/CMake/TopologicalSort.cmake:
@@ -1849,6 +1954,7 @@ modular/CMake/vtkModular.cmake:
 modular/CMake/FindPostgreSQL.cmake:
 modular/CMake/vtkWrapHierarchy.cmake:
 modular/CMake/vtkWrapPython.cmake:
+modular/CMake/vtkBuildPath.cmake:
 CMake/CheckCXXSourceRuns.cmake:
 CMake/CMakeBackwardCompatibilityC.cmake:
 CMake/CMakeEmptyInputFile.in:
@@ -1879,7 +1985,6 @@ CMake/FindPQXX.cmake:
 CMake/FindPythonLibs.cmake:
 CMake/FindR.cmake:
 CMake/FindTCL.cmake:
-CMake/FindVLI.cmake:
 CMake/KitCommonBlock.cmake:
 CMake/KitCommonJavaWrapBlock.cmake:
 CMake/KitCommonPythonWrapBlock.cmake:
@@ -2034,7 +2139,10 @@ Infovis/vtkVertexDegree.h:
 Infovis/vtkVertexDegree.cxx:
 Infovis/vtkEdgeCenters.h:
 Infovis/vtkEdgeCenters.cxx:
-
+Infovis/vtkConvexHull2D.cxx:
+Infovis/vtkConvexHull2D.h:
+Infovis/vtkGraphAnnotationLayersFilter.cxx:
+Infovis/vtkGraphAnnotationLayersFilter.h:
 
 [Infovis/Layout]
 
@@ -2122,6 +2230,7 @@ Infovis/vtkTreeOrbitLayoutStrategy.h:
 Infovis/vtkTreeOrbitLayoutStrategy.cxx:
 Infovis/vtkTreeRingToPolyData.h:
 Infovis/vtkTreeRingToPolyData.cxx:
+
 
 [Infovis/BoostGraphAlgorithms]
 
@@ -2339,58 +2448,6 @@ Geovis/vtkGeoView.cxx:
 Geovis/vtkGeoView2D.h:
 Geovis/vtkGeoView2D.cxx:
 
-[TextAnalysis/Core]
-
-TextAnalysis/vtkAssignMimeType.h:
-TextAnalysis/vtkAssignMimeType.cxx:
-TextAnalysis/vtkConcatenateArray.h:
-TextAnalysis/vtkConcatenateArray.cxx:
-TextAnalysis/vtkDocumentReader.h:
-TextAnalysis/vtkDocumentReader.cxx:
-TextAnalysis/vtkEntropyMatrixWeighting.h:
-TextAnalysis/vtkEntropyMatrixWeighting.cxx:
-TextAnalysis/vtkExtractSelectedSlices.h:
-TextAnalysis/vtkExtractSelectedSlices.cxx:
-TextAnalysis/vtkFeatureDictionary.h:
-TextAnalysis/vtkFeatureDictionary.cxx:
-TextAnalysis/vtkFileExtensionMimeTypeStrategy.h:
-TextAnalysis/vtkFileExtensionMimeTypeStrategy.cxx:
-TextAnalysis/vtkFoldCase.h:
-TextAnalysis/vtkFoldCase.cxx:
-TextAnalysis/vtkForceMimeTypeStrategy.h:
-TextAnalysis/vtkForceMimeTypeStrategy.cxx:
-TextAnalysis/vtkMimeTypeStrategy.h:
-TextAnalysis/vtkMimeTypeStrategy.cxx:
-TextAnalysis/vtkMimeTypes.h:
-TextAnalysis/vtkMimeTypes.cxx:
-TextAnalysis/vtkNGramExtraction.h:
-TextAnalysis/vtkNGramExtraction.cxx:
-TextAnalysis/vtkPlainTextExtractionStrategy.h:
-TextAnalysis/vtkPlainTextExtractionStrategy.cxx:
-TextAnalysis/vtkPointwiseMutualInformation.h:
-TextAnalysis/vtkPointwiseMutualInformation.cxx:
-TextAnalysis/vtkPowerWeighting.h:
-TextAnalysis/vtkPowerWeighting.cxx:
-TextAnalysis/vtkQtXMLProcessor.h:
-TextAnalysis/vtkQtXMLProcessor.cxx:
-TextAnalysis/vtkScaleDimension.h:
-TextAnalysis/vtkScaleDimension.cxx:
-TextAnalysis/vtkSelectArraySlices.h:
-TextAnalysis/vtkSelectArraySlices.cxx:
-TextAnalysis/vtkTextAnalysisUtility.h:
-TextAnalysis/vtkTextAnalysisUtility.cxx:
-TextAnalysis/vtkTextExtraction.h:
-TextAnalysis/vtkTextExtraction.cxx:
-TextAnalysis/vtkTextExtractionStrategy.h:
-TextAnalysis/vtkTextExtractionStrategy.cxx:
-TextAnalysis/vtkTokenLengthFilter.h:
-TextAnalysis/vtkTokenLengthFilter.cxx:
-TextAnalysis/vtkTokenValueFilter.h:
-TextAnalysis/vtkTokenValueFilter.cxx:
-TextAnalysis/vtkTokenizer.h:
-TextAnalysis/vtkTokenizer.cxx:
-TextAnalysis/vtkUnityMatrixWeighting.h:
-TextAnalysis/vtkUnityMatrixWeighting.cxx:
 
 [Rendering/Context2D]
 
@@ -2417,6 +2474,7 @@ Charts/vtkContextItem.cxx:
 Charts/vtkContextMapper2D.h:
 Charts/vtkContextMapper2D.cxx:
 Charts/vtkContextMouseEvent.h:
+Charts/vtkContextMouseEvent.cxx:
 Charts/vtkContextScene.h:
 Charts/vtkContextScene.cxx:
 Charts/vtkContextScenePrivate.h:
@@ -2435,6 +2493,10 @@ Charts/vtkPen.h:
 Charts/vtkPen.cxx:
 Charts/vtkTooltipItem.h:
 Charts/vtkTooltipItem.cxx:
+Charts/vtkContextKeyEvent.cxx:
+Charts/vtkContextKeyEvent.h:
+Charts/vtkPiecewisePointHandleItem.cxx:
+Charts/vtkPiecewisePointHandleItem.h:
 
 [Views/Context2D]
 
@@ -2500,6 +2562,12 @@ Charts/vtkScalarsToColorsItem.cxx:
 
 Charts/vtkContextInteractorStyle.cxx:
 Charts/vtkContextInteractorStyle.h:
+Charts/vtkAxisExtended.cxx:
+Charts/vtkAxisExtended.h:
+Charts/vtkChartMatrix.cxx:
+Charts/vtkChartMatrix.h:
+Charts/vtkScatterPlotMatrix.cxx:
+Charts/vtkScatterPlotMatrix.h:
 
 
 [Filters/Core]
@@ -2637,6 +2705,9 @@ Graphics/vtkVectorNorm.cxx:
 Graphics/vtkVectorNorm.h:
 Graphics/vtkWindowedSincPolyDataFilter.cxx:
 Graphics/vtkWindowedSincPolyDataFilter.h:
+Graphics/vtkStreamerBase.cxx:
+Graphics/vtkStreamerBase.h:
+
 
 # Moved to Core as required by other Core classes.
 Graphics/vtkCutter.cxx:
@@ -2652,6 +2723,10 @@ Filtering/vtkSelectionAlgorithm.h:
 Graphics/vtkStreamingTessellator.cxx:
 Graphics/vtkStreamingTessellator.h:
 Graphics/vtkStreamingTessellatorGenerator.py:
+Graphics/vtkImplicitPolyDataDistance.cxx:
+Graphics/vtkImplicitPolyDataDistance.h:
+Graphics/vtkCenterOfMass.h:
+Graphics/vtkCenterOfMass.cxx:
 
 [Filters/Generic]
 
@@ -2675,6 +2750,9 @@ GenericFiltering/vtkGenericStreamTracer.cxx:
 GenericFiltering/vtkGenericStreamTracer.h:
 
 [Filters/Geometry]
+
+modular/Filters/Geometry/CMakeLists.txt:
+modular/Filters/Geometry/module.cmake:
 
 Graphics/vtkCompositeDataGeometryFilter.cxx:
 Graphics/vtkCompositeDataGeometryFilter.h:
@@ -2749,6 +2827,8 @@ Graphics/vtkDijkstraImageGeodesicPath.cxx:
 Graphics/vtkDijkstraImageGeodesicPath.h:
 Graphics/vtkGraphGeodesicPath.cxx:
 Graphics/vtkGraphGeodesicPath.h:
+Graphics/vtkQuadRotationalExtrusionFilter.cxx:
+Graphics/vtkQuadRotationalExtrusionFilter.h:
 
 
 [Filters/Programmable]
@@ -2822,8 +2902,14 @@ Graphics/vtkHierarchicalDataExtractLevel.cxx:
 Graphics/vtkHierarchicalDataExtractLevel.h:
 Graphics/vtkProbeSelectedLocations.cxx:
 Graphics/vtkProbeSelectedLocations.h:
+Filtering/vtkLinearExtractor.cxx:
+Filtering/vtkLinearExtractor.h:
+
 
 [Filters/Sources]
+
+modular/Filters/Sources/CMakeLists.txt:
+modular/Filters/Sources/module.cmake:
 
 Graphics/vtkArcSource.cxx:
 Graphics/vtkArcSource.h:
@@ -3085,6 +3171,20 @@ Graphics/vtkMarchingContourFilter.cxx:
 Graphics/vtkMarchingContourFilter.h:
 Graphics/vtkStreamTracer.cxx:
 Graphics/vtkStreamTracer.h:
+Graphics/vtkRectilinearGridToPointSet.cxx:
+Graphics/vtkRectilinearGridToPointSet.h:
+Filtering/vtkGraphWeightEuclideanDistanceFilter.cxx:
+Filtering/vtkGraphWeightEuclideanDistanceFilter.h:
+Filtering/vtkGraphWeightFilter.cxx:
+Filtering/vtkGraphWeightFilter.h:
+Graphics/vtkImageDataToPointSet.cxx:
+Graphics/vtkImageDataToPointSet.h:
+Graphics/vtkIntersectionPolyDataFilter.cxx:
+Graphics/vtkIntersectionPolyDataFilter.h:
+Graphics/vtkBooleanOperationPolyDataFilter.cxx:
+Graphics/vtkBooleanOperationPolyDataFilter.h:
+Graphics/vtkDistancePolyDataFilter.cxx:
+Graphics/vtkDistancePolyDataFilter.h:
 
 [Filters/Verdict]
 
@@ -3175,8 +3275,6 @@ Hybrid/vtkImageToPolyDataFilter.cxx:
 Hybrid/vtkImageToPolyDataFilter.h:
 Hybrid/vtkImplicitModeller.cxx:
 Hybrid/vtkImplicitModeller.h:
-Hybrid/vtkLSDynaReader.cxx:
-Hybrid/vtkLSDynaReader.h:
 Hybrid/vtkPCAAnalysisFilter.cxx:
 Hybrid/vtkPCAAnalysisFilter.h:
 Hybrid/vtkPolyDataSilhouette.cxx:
@@ -3204,7 +3302,8 @@ Hybrid/vtkTransformToGrid.cxx:
 Hybrid/vtkTransformToGrid.h:
 Hybrid/vtkWeightedTransformFilter.cxx:
 Hybrid/vtkWeightedTransformFilter.h:
-
+Hybrid/vtkBSplineTransform.cxx:
+Hybrid/vtkBSplineTransform.h:
 
 [Filters/Statistics]
 
@@ -3510,7 +3609,14 @@ Widgets/vtkWidgetSet.cxx:
 Widgets/vtkWidgetSet.h:
 Widgets/vtkXYPlotWidget.cxx:
 Widgets/vtkXYPlotWidget.h:
-
+Widgets/vtkImageCroppingRegionsWidget.cxx:
+Widgets/vtkImageCroppingRegionsWidget.h:
+Widgets/vtkFixedSizeHandleRepresentation3D.cxx:
+Widgets/vtkFixedSizeHandleRepresentation3D.h:
+Widgets/vtkCellCentersPointPlacer.cxx:
+Widgets/vtkCellCentersPointPlacer.h:
+Widgets/vtkBrokenLineWidget.cxx:
+Widgets/vtkBrokenLineWidget.h:
 
 [Interaction/Style]
 
@@ -3581,7 +3687,8 @@ Hybrid/vtkSpiderPlotActor.cxx:
 Hybrid/vtkSpiderPlotActor.h:
 Hybrid/vtkXYPlotActor.cxx:
 Hybrid/vtkXYPlotActor.h:
-
+Hybrid/vtkPolarAxesActor.cxx:
+Hybrid/vtkPolarAxesActor.h:
 
 [Rendering/Carbon]
 
@@ -3615,6 +3722,9 @@ Rendering/vtkCocoaTkUtilities.mm:
 
 
 [Rendering/Core]
+
+modular/Rendering/Core/CMakeLists.txt:
+modular/Rendering/Core/module.cmake:
 
 Common/vtkLogLookupTable.cxx:
 Common/vtkLogLookupTable.h:
@@ -3927,6 +4037,11 @@ Rendering/vtkTDxMotionEventInfo.h:
 # Required by a Core class too
 Rendering/vtkLODProp3D.cxx:
 Rendering/vtkLODProp3D.h:
+Rendering/vtkShaderDeviceAdapter2.cxx:
+Rendering/vtkShaderDeviceAdapter2.h:
+
+modular/RenderingCore.patch:<ignore>
+<patch>: RenderingCore.patch
 
 [Rendering/FreeType]
 
@@ -4000,6 +4115,9 @@ Rendering/vtkQuadricLODActor.h:
 
 [Rendering/OpenGL]
 
+modular/Rendering/OpenGL/CMakeLists.txt:
+modular/Rendering/OpenGL/module.cmake:
+
 Rendering/vtkOpenGL.h:
 Rendering/vtkOpenGLActor.cxx:
 Rendering/vtkOpenGLActor.h:
@@ -4050,8 +4168,6 @@ Rendering/vtkOpenGLScalarsToColorsPainter.cxx:
 Rendering/vtkOpenGLScalarsToColorsPainter.h:
 Rendering/vtkOpenGLState.cxx:
 Rendering/vtkOpenGLState.h:
-Rendering/vtkOpenGLStateCache.cxx: <ignore>
-Rendering/vtkOpenGLStateCache.h: <ignore>
 Rendering/vtkOpenGLTexture.cxx:
 Rendering/vtkOpenGLTexture.h:
 Rendering/vtkgluPickMatrix.h:
@@ -4156,6 +4272,9 @@ Rendering/vtkUniformVariables.cxx:
 Rendering/vtkUniformVariables.h:
 Rendering/vtkVolumetricPass.cxx:
 Rendering/vtkVolumetricPass.h:
+
+[Rendering/OpenGL/Testing]
+modular/Rendering/OpenGL/Testing/:
 
 [Rendering/MESA]
 
@@ -4357,8 +4476,6 @@ VolumeRendering/vtkOpenGLProjectedTetrahedraMapper.cxx:
 VolumeRendering/vtkOpenGLProjectedTetrahedraMapper.h:
 VolumeRendering/vtkOpenGLRayCastImageDisplayHelper.cxx:
 VolumeRendering/vtkOpenGLRayCastImageDisplayHelper.h:
-VolumeRendering/vtkOpenGLVolumeProVP1000Mapper.cxx:
-VolumeRendering/vtkOpenGLVolumeProVP1000Mapper.h:
 VolumeRendering/vtkOpenGLVolumeTextureMapper2D.cxx:
 VolumeRendering/vtkOpenGLVolumeTextureMapper2D.h:
 VolumeRendering/vtkOpenGLVolumeTextureMapper3D.cxx:
@@ -4406,10 +4523,6 @@ VolumeRendering/vtkVolumeOutlineSource.cxx:
 VolumeRendering/vtkVolumeOutlineSource.h:
 VolumeRendering/vtkVolumePicker.cxx:
 VolumeRendering/vtkVolumePicker.h:
-VolumeRendering/vtkVolumeProMapper.cxx:
-VolumeRendering/vtkVolumeProMapper.h:
-VolumeRendering/vtkVolumeProVP1000Mapper.cxx:
-VolumeRendering/vtkVolumeProVP1000Mapper.h:
 VolumeRendering/vtkVolumeRayCastCompositeFunction.cxx:
 VolumeRendering/vtkVolumeRayCastCompositeFunction.h:
 VolumeRendering/vtkVolumeRayCastFunction.cxx:
@@ -4569,8 +4682,6 @@ Parallel/vtkCollectPolyData.cxx:
 Parallel/vtkCollectPolyData.h:
 Parallel/vtkCollectTable.cxx:
 Parallel/vtkCollectTable.h:
-Parallel/vtkBranchExtentTranslator.cxx:
-Parallel/vtkBranchExtentTranslator.h:
 Parallel/vtkCachingInterpolatedVelocityField.cxx:
 Parallel/vtkCachingInterpolatedVelocityField.h:
 Parallel/vtkCutMaterial.cxx:
@@ -4649,6 +4760,9 @@ Parallel/vtkTransmitStructuredGridPiece.cxx:
 Parallel/vtkTransmitStructuredGridPiece.h:
 Parallel/vtkTransmitUnstructuredGridPiece.cxx:
 Parallel/vtkTransmitUnstructuredGridPiece.h:
+Parallel/vtkPYoungsMaterialInterface.cxx:
+Parallel/vtkPYoungsMaterialInterface.h:
+
 
 
 [IO/Parallel]
@@ -4671,8 +4785,6 @@ Parallel/vtkPNrrdReader.cxx:
 Parallel/vtkPNrrdReader.h:
 Parallel/vtkPOpenFOAMReader.cxx:
 Parallel/vtkPOpenFOAMReader.h:
-Parallel/vtkPOPReader.cxx:
-Parallel/vtkPOPReader.h:
 Parallel/vtkPSLACReader.cxx:
 Parallel/vtkPSLACReader.h:
 Parallel/vtkVPICReader.cxx:
@@ -4765,6 +4877,9 @@ Parallel/vtkMPIGroup.h:
 Parallel/vtkMPI.h:
 
 [Imaging/Core]
+
+modular/Imaging/Core/CMakeLists.txt:
+modular/Imaging/Core/module.cmake:
 
 Imaging/vtkBooleanTexture.cxx:
 Imaging/vtkBooleanTexture.h:
@@ -4948,8 +5063,6 @@ Imaging/vtkImageSobel3D.cxx:
 Imaging/vtkImageSobel3D.h:
 Imaging/vtkImageSpatialAlgorithm.cxx:
 Imaging/vtkImageSpatialAlgorithm.h:
-Imaging/vtkImageSpatialFilter.cxx:
-Imaging/vtkImageSpatialFilter.h:
 Imaging/vtkImageStencilAlgorithm.cxx:
 Imaging/vtkImageStencilAlgorithm.h:
 Imaging/vtkImageStencil.cxx:
@@ -4997,3 +5110,22 @@ Imaging/vtkTriangularTexture.cxx:
 Imaging/vtkTriangularTexture.h:
 Imaging/vtkVoxelModeller.cxx:
 Imaging/vtkVoxelModeller.h:
+Imaging/vtkImageHistogram.cxx:
+Imaging/vtkImageHistogram.h:
+Imaging/vtkImageHistogramStatistics.cxx:
+Imaging/vtkImageHistogramStatistics.h:
+Imaging/vtkImageResize.cxx:
+Imaging/vtkImageResize.h:
+Filtering/vtkAbstractImageInterpolator.cxx:
+Filtering/vtkAbstractImageInterpolator.h:
+Filtering/vtkImageBSplineInternals.cxx:
+Filtering/vtkImageBSplineInternals.h:
+Filtering/vtkImageBSplineInterpolator.cxx:
+Filtering/vtkImageBSplineInterpolator.h:
+Imaging/vtkImageBSplineCoefficients.cxx:
+Imaging/vtkImageBSplineCoefficients.h:
+Filtering/vtkImageSincInterpolator.cxx:
+Filtering/vtkImageSincInterpolator.h:
+Filtering/vtkImageInterpolator.cxx:
+Filtering/vtkImageInterpolator.h:
+Filtering/vtkImageInterpolatorInternals.h:
