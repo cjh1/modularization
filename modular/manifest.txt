@@ -118,7 +118,7 @@ vtkGenerateVTKConfig.cmake:
 Utilities/LastConfigureStep/:
 modular/Utilities/LastConfigureStep/CMakeLists.txt:
 
-[Utilities/vtklibxml2]
+[TPL/vtklibxml2]
 Utilities/vtklibxml2/:
 modular/Utilities/vtklibxml2/CMakeLists.txt:
 
@@ -129,89 +129,95 @@ modular/Utilities/DICOMParser/CMakeLists.txt:
 [Utilities/EncodeString]
 Utilities/EncodeString/:
 modular/Utilities/EncodeString/CMakeLists.txt:
+modular/Utilities/EncodeString/module.cmake:
 
 [Utilities/ParseOGLExt]
 Utilities/ParseOGLExt/:
 modular/Utilities/ParseOGLExt/CMakeLists.txt:
 modular/Utilities/ParseOGLExt/ParseOGLExt.cxx:
+modular/Utilities/ParseOGLExt/module.cmake:
 
 [Utilities/vtkmetaio]
 Utilities/vtkmetaio/:
 modular/Utilities/vtkmetaio/CMakeLists.txt:
 
-[Utilities/vtkoggtheora]
+[TPL/vtkoggtheora]
 Utilities/vtkoggtheora/:
 modular/Utilities/vtkoggtheora/CMakeLists.txt:
 
-[Utilities/vtkpng]
+[TPL/vtkpng]
 Utilities/vtkpng/:
-modular/Utilities/vtkpng/CMakeLists.txt:
+modular/TPL/vtkpng/CMakeLists.txt:
 
-[Utilities/vtktiff]
+[TPL/vtktiff]
 Utilities/vtktiff/:
-modular/Utilities/vtktiff/CMakeLists.txt:
+modular/TPL/vtktiff/CMakeLists.txt:
 
-[Utilities/vtknetcdf]
+[TPL/vtknetcdf]
 Utilities/vtknetcdf/:
+modular/TPL/vtknetcdf/CMakeLists.txt:
 
 modular/UtilitiesNetCFD.patch:<ignore>
 <patch>: UtilitiesNetCFD.patch
 
-[Utilities/vtklibproj4]
+[TPL/vtklibproj4]
 Utilities/vtklibproj4/:
 
-[Utilities/vtkzlib]
+[TPL/vtkzlib]
 Utilities/vtkzlib/:
 
-[Utilities/vtkjpeg]
+[TPL/vtkjpeg]
 Utilities/vtkjpeg/:
 
-[Utilities/vtkhdf5]
+[TPL/vtkhdf5]
 Utilities/vtkhdf5/:
 
-[Utilities/vtkfreetype]
+[TPL/vtkfreetype]
 Utilities/vtkfreetype/:
+modular/TPL/vtkfreetype/CMakeLists.txt:
 
-[Utilities/vtksqlite]
+[TPL/vtksqlite]
 Utilities/vtksqlite/:
 
-[Utilities/vtkgl2ps]
+[TPL/vtkgl2ps]
 Utilities/vtkgl2ps/:
 
 [Utilities/kwsys]
 Utilities/kwsys/:
 
-[Utilities/mrmpi]
+[TPL/mrmpi]
 Utilities/mrmpi/:
 
-[Utilities/octree]
+[TPL/octree]
 Utilities/octree/:
 
-[Utilities/utf8]
+[TPL/utf8]
 Utilities/utf8/:
 
-[Utilities/verdict]
+[TPL/verdict]
 Utilities/verdict/:
 
 [Utilities/vtkTclTest2Py]
 Utilities/vtkTclTest2Py/:
 
-[Utilities/TclTk]
+[TPL/TclTk]
 Utilities/TclTk/:
 
-[Utilities/vtkexpat]
+[TPL/vtkexpat]
 Utilities/vtkexpat/:
 
-[Utilities/vtkexodus2]
+[TPL/vtkexodus2]
 Utilities/vtkexodus2/:
+modular/TPL/vtkexodus2/CMakeLists.txt:
 
-[Utilities/vtkalglib]
+[TPL/vtkalglib]
 Utilities/vtkalglib/:
 
-[Utilities/ftgl]
+[TPL/ftgl]
 Utilities/ftgl/:
+modular/TPL/ftgl/CMakeLists.txt:
 
-[Utilities/VPIC]
+[TPL/VPIC]
 Utilities/VPIC/:
 
 [Utilities/Upgrading]
@@ -227,7 +233,7 @@ modular/Utilities/MaterialLibrary/CMakeLists.txt:
 [Utilities/Doxygen]
 Utilities/Doxygen/:
 
-[Utilities/Cosmo]
+[TPL/Cosmo]
 Utilities/Cosmo/:
 
 [Utilities/OutputWindowProcess]
@@ -244,13 +250,18 @@ Utilities/freerange/:
 
 [Utilities/HashSource]
 Utilities/HashSource/:
+modular/Utilities/HashSource/module.cmake:
 
 [Utilities]
 
-Utilities/CMakeLists.txt:
+Utilities/CMakeLists.txt:<ignore>
 Utilities/SetupForDevelopment.sh:
 Utilities/internal_stdio_core.h.in:
 Utilities/tcl2py.py:
+Utilities/vtkstd.h.in:
+Utilities/.gitattributes:
+
+[TPL]
 Utilities/vtk2xml.py:
 Utilities/vtk_exodusII.h:
 Utilities/vtk_expat.h:
@@ -266,8 +277,7 @@ Utilities/vtk_oggtheora.h:
 Utilities/vtk_png.h:
 Utilities/vtk_tiff.h:
 Utilities/vtk_zlib.h:
-Utilities/vtkstd.h.in:
-Utilities/.gitattributes:
+
 
 [Common/Core]
 modular/Common/Core/CMakeLists.txt:
@@ -1279,6 +1289,9 @@ IO/vtkArrayDataWriter.h:
 
 [IO/Exodus]
 
+modular/IO/Exodus/CMakeLists.txt:
+modular/IO/Exodus/module.cmake:
+
 Hybrid/vtkExodusIICache.cxx:
 Hybrid/vtkExodusIICache.h:
 Hybrid/vtkExodusIIReader.cxx:
@@ -1290,15 +1303,23 @@ Hybrid/vtkExodusIIReaderVariableCheck.cxx:
 Hybrid/vtkExodusIIReaderVariableCheck.h:
 Hybrid/vtkExodusModel.cxx:
 Hybrid/vtkExodusModel.h:
-Hybrid/vtkExodusReader.cxx:
-Hybrid/vtkExodusReader.h:
+Hybrid/vtkExodusReader.cxx:<ignore>
+Hybrid/vtkExodusReader.h:<ignore>
+
+[IO/ParallelExodus]
+
+modular/IO/ParallelExodus/CMakeLists.txt:
+modular/IO/ParallelExodus/module.cmake:
+
 Hybrid/vtkPExodusIIReader.cxx:
 Hybrid/vtkPExodusIIReader.h:
-Hybrid/vtkPExodusReader.cxx:
-Hybrid/vtkPExodusReader.h:
+Hybrid/vtkPExodusReader.cxx:<ignore>
+Hybrid/vtkPExodusReader.h:<ignore>
 
 
 [IO/Export]
+modular/IO/Export/CMakeLists.txt:
+modular/IO/Export/module.cmake:
 
 Hybrid/vtkRIBExporter.cxx:
 Hybrid/vtkRIBExporter.h:
@@ -1523,6 +1544,9 @@ IO/vtkPostScriptWriter.h:
 
 [IO/Import]
 
+modular/IO/Import/CMakeLists.txt:
+modular/IO/Import/module.cmake:
+
 Rendering/vtkImporter.cxx:
 Rendering/vtkImporter.h:
 Hybrid/vtk3DS.h:
@@ -1608,6 +1632,9 @@ IO/vtkODBCQuery.cxx:
 IO/vtkODBCQuery.h:
 
 [IO/MINC]
+
+modular/IO/MINC/CMakeLists.txt:
+modular/IO/MINC/module.cmake:
 
 IO/vtkMINC.h:
 IO/vtkMINCImageAttributes.cxx:
@@ -3253,6 +3280,9 @@ Graphics/vtkTriangularTCoords.h:
 
 [Filters/Hybrid]
 
+modular/Filters/Hybrid/CMakeLists.txt:
+modular/Filters/Hybrid/module.cmake:
+
 Hybrid/vtkDSPFilterDefinition.cxx:
 Hybrid/vtkDSPFilterDefinition.h:
 Hybrid/vtkDSPFilterGroup.cxx:
@@ -4045,14 +4075,17 @@ modular/RenderingCore.patch:<ignore>
 
 [Rendering/FreeType]
 
-Rendering/vtkFreeTypeLabelRenderStrategy.cxx:
-Rendering/vtkFreeTypeLabelRenderStrategy.h:
-Rendering/vtkFreeTypeStringToImage.cxx:
-Rendering/vtkFreeTypeStringToImage.h:
-Rendering/vtkFreeTypeTools.cxx:
-Rendering/vtkFreeTypeTools.h:
-Rendering/vtkFreeTypeUtilities.cxx:
-Rendering/vtkFreeTypeUtilities.h:
+modular/Rendering/FreeType/CMakeLists.txt:
+modular/Rendering/FreeType/module.cmake:
+
+#Rendering/vtkFreeTypeLabelRenderStrategy.cxx:
+#Rendering/vtkFreeTypeLabelRenderStrategy.h:
+#Rendering/vtkFreeTypeStringToImage.cxx:
+#Rendering/vtkFreeTypeStringToImage.h:
+#Rendering/vtkFreeTypeTools.cxx:
+#Rendering/vtkFreeTypeTools.h:
+#Rendering/vtkFreeTypeUtilities.cxx:
+#Rendering/vtkFreeTypeUtilities.h:
 Rendering/fonts/bin2c.tcl:
 Rendering/fonts/c0419bt_.pfb:
 Rendering/fonts/c0582bt_.pfb:
@@ -4082,6 +4115,9 @@ Rendering/fonts/vtkEmbeddedFonts.h:
 
 [Rendering/Label]
 
+modular/Rendering/Label/CMakeLists.txt:
+modular/Rendering/Label/module.cmake:
+
 Rendering/vtkLabelHierarchy.cxx:
 Rendering/vtkLabelHierarchy.h:
 Rendering/vtkLabelHierarchyAlgorithm.cxx:
@@ -4103,6 +4139,8 @@ Rendering/vtkLabeledDataMapper.cxx:
 Rendering/vtkLabeledDataMapper.h:
 Rendering/vtkLabeledTreeMapDataMapper.cxx:
 Rendering/vtkLabeledTreeMapDataMapper.h:
+Rendering/vtkFreeTypeLabelRenderStrategy.cxx:
+Rendering/vtkFreeTypeLabelRenderStrategy.h:
 
 
 [Rendering/LOD]
@@ -4319,6 +4357,9 @@ Rendering/vtkMesaImageSliceMapper.h:
 
 [Rendering/Text]
 
+modular/Rendering/Text/CMakeLists.txt:
+modular/Rendering/Text/module.cmake:
+
 Rendering/vtkScaledTextActor.cxx:
 Rendering/vtkScaledTextActor.h:
 Rendering/vtkTextActor.cxx:
@@ -4331,7 +4372,12 @@ Rendering/vtkTextProperty.cxx:
 Rendering/vtkTextProperty.h:
 Hybrid/vtkVectorText.cxx:
 Hybrid/vtkVectorText.h:
-
+Rendering/vtkFreeTypeStringToImage.cxx:
+Rendering/vtkFreeTypeStringToImage.h:
+Rendering/vtkFreeTypeTools.cxx:
+Rendering/vtkFreeTypeTools.h:
+Rendering/vtkFreeTypeUtilities.cxx:
+Rendering/vtkFreeTypeUtilities.h:
 
 [Rendering/Qt]
 
