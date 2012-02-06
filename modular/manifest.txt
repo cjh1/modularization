@@ -3422,6 +3422,9 @@ Infovis/vtkPPCAStatistics.cxx:
 
 [Interaction/Widgets]
 
+modular/Interaction/Widgets/CMakeLists.txt:
+modular/Interaction/Widgets/module.cmake:
+
 Widgets/vtk3DWidget.cxx:
 Widgets/vtk3DWidget.h:
 Widgets/vtkAbstractPolygonalHandleRepresentation3D.cxx:
