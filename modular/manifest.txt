@@ -2273,6 +2273,9 @@ Infovis/vtkTreeRingToPolyData.cxx:
 
 [Infovis/BoostGraphAlgorithms]
 
+modular/Infovis/BoostGraphAlgorithms/CMakeLists.txt:
+modular/Infovis/BoostGraphAlgorithms/module.cmake:
+
 Infovis/vtkBoostBetweennessClustering.h:
 Infovis/vtkBoostBetweennessClustering.cxx:
 Infovis/vtkBoostBiconnectedComponents.h:
@@ -4703,6 +4706,9 @@ GUISupport/MFC/vtkMFCWindow.cpp:
 GUISupport/MFC/vtkMFCWindow.h:
 
 [Infovis/Parallel]
+
+modular/Infovis/Parallel/CMakeLists.txt:
+modular/Infovis/Parallel/module.cmake:
 
 Parallel/vtkPBGLBreadthFirstSearch.cxx:
 Parallel/vtkPBGLBreadthFirstSearch.h:
