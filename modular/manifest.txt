@@ -1659,6 +1659,9 @@ Hybrid/vtkMNITransformWriter.h:
 
 [IO/EnSight]
 
+modular/IO/EnSight/CMakeLists.txt:
+modular/IO/EnSight/module.cmake:
+
 IO/vtkEnSight6BinaryReader.cxx:
 IO/vtkEnSight6BinaryReader.h:
 IO/vtkEnSight6Reader.cxx:
