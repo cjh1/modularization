@@ -1716,6 +1716,9 @@ IO/vtkPLYWriter.h:
 
 [IO/Video]
 
+modular/IO/Video/CMakeLists.txt:
+modular/IO/Video/module.cmake:
+
 Hybrid/vtkMILVideoSource.cxx:
 Hybrid/vtkMILVideoSource.h:
 Hybrid/vtkVideoSource.cxx:
