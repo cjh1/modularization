@@ -1704,6 +1704,9 @@ modular/IONetCDF.patch:<ignore>
 
 [IO/PLY]
 
+modular/IO/PLY/CMakeLists.txt:
+modular/IO/PLY/module.cmake:
+
 IO/vtkPLY.cxx:
 IO/vtkPLY.h:
 IO/vtkPLYReader.cxx:
