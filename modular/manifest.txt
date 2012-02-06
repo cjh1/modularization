@@ -2368,6 +2368,9 @@ Infovis/vtkTransferAttributes.cxx:
 
 [Views/Core]
 
+modular/Views/Core/CMakeLists.txt:
+modular/Views/Core/module.cmake:
+
 Views/vtkConvertSelectionDomain.h:
 Views/vtkConvertSelectionDomain.cxx:
 Views/vtkDataRepresentation.h:
@@ -2380,6 +2383,8 @@ Views/vtkView.h:
 Views/vtkView.cxx:
 Views/vtkViewUpdater.h:
 Views/vtkViewUpdater.cxx:
+Views/vtkRenderView.h:
+Views/vtkRenderView.cxx:
 
 [Views/Infovis]
 
@@ -2407,8 +2412,6 @@ Views/vtkParallelCoordinatesView.h:
 Views/vtkParallelCoordinatesView.cxx:
 Views/vtkPipelineGraphSource.h:
 Views/vtkPipelineGraphSource.cxx:
-Views/vtkRenderView.h:
-Views/vtkRenderView.cxx:
 Views/vtkRenderedGraphRepresentation.h:
 Views/vtkRenderedGraphRepresentation.cxx:
 Views/vtkRenderedHierarchyRepresentation.h:
