@@ -2182,6 +2182,9 @@ Infovis/vtkGraphAnnotationLayersFilter.h:
 
 [Infovis/Layout]
 
+modular/Infovis/Layout/CMakeLists.txt:
+modular/Infovis/Layout/module.cmake:
+
 Infovis/vtkArcParallelEdgeStrategy.h:
 Infovis/vtkArcParallelEdgeStrategy.cxx:
 Infovis/vtkAreaLayout.h:
@@ -3007,7 +3010,8 @@ Graphics/vtkTextSource.cxx:
 Graphics/vtkTextSource.h:
 Graphics/vtkTexturedSphereSource.cxx:
 Graphics/vtkTexturedSphereSource.h:
-
+Graphics/vtkGraphToPolyData.cxx:
+Graphics/vtkGraphToPolyData.h:
 
 [Filters/General]
 
@@ -3078,8 +3082,6 @@ Graphics/vtkGraphLayoutFilter.cxx:
 Graphics/vtkGraphLayoutFilter.h:
 Graphics/vtkGraphToPoints.cxx:
 Graphics/vtkGraphToPoints.h:
-Graphics/vtkGraphToPolyData.cxx:
-Graphics/vtkGraphToPolyData.h:
 Graphics/vtkHierarchicalDataLevelFilter.cxx:
 Graphics/vtkHierarchicalDataLevelFilter.h:
 Graphics/vtkHyperStreamline.cxx:
