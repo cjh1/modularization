@@ -4399,6 +4399,11 @@ Rendering/vtkFreeTypeTools.h:
 Rendering/vtkFreeTypeUtilities.cxx:
 Rendering/vtkFreeTypeUtilities.h:
 
+modular/RenderingText.patch:<ignore>
+<patch>: RenderingText.patch
+
+
+
 [Rendering/Qt]
 
 Rendering/vtkQImageToImageSource.cxx:
