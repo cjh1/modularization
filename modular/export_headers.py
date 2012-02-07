@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 
-import fileinput, glob, string, sys, os, re
+import fileinput, glob, string, sys, os, re, fnmatch
 
 # Build up a list of all export macros to replace.
 
@@ -29,19 +29,14 @@ def searchReplace(path, search, replace, headerName):
             firstInclude = False
           sys.stdout.write(line)
 
-modules = ["Common/Core", "Common/DataModel", "Common/Transforms", \
-  "Common/Math", "Common/ComputationalGeometry", "Common/Misc", \
-  "Common/System", "Common/Transforms"]
+def getModules():
+  modules = []
+  for root, dirnames, filenames in os.walk('.'):
+    for filename in fnmatch.filter(filenames, 'module.cmake'):
+      modules.append(root[2:])
+  return modules
 
-modules += ["Filters/Core", "Filters/Extraction", "Filters/General", "Filters/Geometry", \
-  "Filters/ParallelStatistics", "Filters/Sources", "Filters/Statistics"]
-modules += ["IO/Core", "IO/Geometry", "IO/Image", "IO/Infovis", "IO/NetCDF", \
-  "IO/SQL", "IO/XML"]
-
-modules += ["Parallel/Core"]
-modules += ["Infovis/Core"]
-modules += ["Imaging/Core"]
-modules += ["Rendering/Core", "Rendering/OpenGL"]
+modules = getModules()
 
 for module in modules:
   moduleName = "vtk" + module.replace("/", "")
