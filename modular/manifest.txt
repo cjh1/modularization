@@ -1149,6 +1149,9 @@ Common/vtkFunctionParser.h:
 Common/vtkHeap.cxx:
 Common/vtkHeap.h:
 
+modular/CommonMisc.patch:<ignore>
+<patch>: CommonMisc.patch
+
 [Common/System]
 
 modular/Common/System/CMakeLists.txt:
