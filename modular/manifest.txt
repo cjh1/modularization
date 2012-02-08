@@ -4334,6 +4334,10 @@ Rendering/vtkUniformVariables.h:
 Rendering/vtkVolumetricPass.cxx:
 Rendering/vtkVolumetricPass.h:
 
+# Add the export header
+modular/RenderingOpenGL.patch:<ignore>
+<patch>: RenderingOpenGL.patch
+
 [Rendering/OpenGL/Testing]
 modular/Rendering/OpenGL/Testing/:
 
