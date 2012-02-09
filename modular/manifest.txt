@@ -993,6 +993,9 @@ Filtering/vtkMarchingCubesTriangleCases.h:
 Filtering/vtkMarchingSquaresLineCases.cxx:
 Filtering/vtkMarchingSquaresLineCases.h:
 
+modular/CommonDataModel.patch:<ignore>
+<patch>: CommonDataModel.patch
+
 [Common/ExecutionModel]
 
 modular/Common/ExecutionModel/CMakeLists.txt: 
@@ -1106,6 +1109,8 @@ Filtering/vtkDataObjectAlgorithm.h:
 Filtering/vtkTemporalDataSetAlgorithm.h:
 Filtering/vtkHierarchicalBoxDataSetAlgorithm.cxx:
 
+modular/CommonExecutionModel.patch:<ignore>
+<patch>: CommonExecutionModel.patch
 
 [Common/Math]
 
@@ -5213,3 +5218,7 @@ Filtering/vtkImageSincInterpolator.h:
 Filtering/vtkImageInterpolator.cxx:
 Filtering/vtkImageInterpolator.h:
 Filtering/vtkImageInterpolatorInternals.h:
+
+modular/ImagingCore.patch:<ignore>
+<patch>: ImagingCore.patch
+
