@@ -4437,6 +4437,9 @@ Rendering/vtkTkWidgetsInit.cxx:
 
 [Rendering/TDx]
 
+modular/Rendering/TDx/CMakeLists.txt:
+modular/Rendering/TDx/module.cmake:
+
 Rendering/vtkTDxConfigure.h.in:
 Rendering/vtkTDxDevice.cxx:
 Rendering/vtkTDxDevice.h:
