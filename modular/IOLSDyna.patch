@@ -1,0 +1,27 @@
+diff --git a/IO/LSDyna/private/LSDynaFamily.h b/IO/LSDyna/private/LSDynaFamily.h
+index 78d0f9b..73bb811 100644
+--- a/IO/LSDyna/private/LSDynaFamily.h
++++ b/IO/LSDyna/private/LSDynaFamily.h
+@@ -67,7 +67,7 @@ typedef FILE* vtkLSDynaFile_t;
+ #  include <errno.h>
+ #endif
+ 
+-class LSDyna_EXPORT LSDynaFamily
++class LSDynaFamily
+ {
+ public:
+   LSDynaFamily();
+diff --git a/IO/LSDyna/private/LSDynaMetaData.h b/IO/LSDyna/private/LSDynaMetaData.h
+index 531771c..2bd4c97 100644
+--- a/IO/LSDyna/private/LSDynaMetaData.h
++++ b/IO/LSDyna/private/LSDynaMetaData.h
+@@ -35,7 +35,7 @@
+ #include <set>
+ #include <vector>
+ 
+-class LSDyna_EXPORT LSDynaMetaData
++class LSDynaMetaData
+ {
+ public:
+   LSDynaMetaData();
+

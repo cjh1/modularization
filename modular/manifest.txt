@@ -1880,6 +1880,9 @@ Utilities/LSDyna/LSDynaMetaData.cxx:
 Utilities/LSDyna/LSDynaMetaData.h:
 Utilities/LSDyna/CMakeLists.txt:<ignore>
 
+modular/IOLSDyna.patch: <ignore>
+<patch>: IOLSDyna.patch
+
 [IO/ParallelLSDyna]
 
 modular/IO/ParallelLSDyna/CMakeLists.txt:
