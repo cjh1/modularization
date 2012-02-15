@@ -118,7 +118,7 @@ vtkGenerateVTKConfig.cmake:
 Utilities/LastConfigureStep/:
 modular/Utilities/LastConfigureStep/CMakeLists.txt:
 
-[TPL/vtklibxml2]
+[ThirdParty/vtklibxml2]
 Utilities/vtklibxml2/:
 modular/Utilities/vtklibxml2/CMakeLists.txt:
 
@@ -141,83 +141,83 @@ modular/Utilities/ParseOGLExt/module.cmake:
 Utilities/vtkmetaio/:
 modular/Utilities/vtkmetaio/CMakeLists.txt:
 
-[TPL/vtkoggtheora]
+[ThirdParty/vtkoggtheora]
 Utilities/vtkoggtheora/:
 modular/Utilities/vtkoggtheora/CMakeLists.txt:
 
-[TPL/vtkpng]
+[ThirdParty/vtkpng]
 Utilities/vtkpng/:
-modular/TPL/vtkpng/CMakeLists.txt:
+modular/ThirdParty/vtkpng/CMakeLists.txt:
 
-[TPL/vtktiff]
+[ThirdParty/vtktiff]
 Utilities/vtktiff/:
-modular/TPL/vtktiff/CMakeLists.txt:
+modular/ThirdParty/vtktiff/CMakeLists.txt:
 
-[TPL/vtknetcdf]
+[ThirdParty/vtknetcdf]
 Utilities/vtknetcdf/:
-modular/TPL/vtknetcdf/CMakeLists.txt:
+modular/ThirdParty/vtknetcdf/CMakeLists.txt:
 
 modular/UtilitiesNetCFD.patch:<ignore>
 <patch>: UtilitiesNetCFD.patch
 
-[TPL/vtklibproj4]
+[ThirdParty/vtklibproj4]
 Utilities/vtklibproj4/:
 
-[TPL/vtkzlib]
+[ThirdParty/vtkzlib]
 Utilities/vtkzlib/:
 
-[TPL/vtkjpeg]
+[ThirdParty/vtkjpeg]
 Utilities/vtkjpeg/:
 
-[TPL/vtkhdf5]
+[ThirdParty/vtkhdf5]
 Utilities/vtkhdf5/:
 
-[TPL/vtkfreetype]
+[ThirdParty/vtkfreetype]
 Utilities/vtkfreetype/:
-modular/TPL/vtkfreetype/CMakeLists.txt:
+modular/ThirdParty/vtkfreetype/CMakeLists.txt:
 
-[TPL/vtksqlite]
+[ThirdParty/vtksqlite]
 Utilities/vtksqlite/:
 
-[TPL/vtkgl2ps]
+[ThirdParty/vtkgl2ps]
 Utilities/vtkgl2ps/:
 
 [Utilities/kwsys]
 Utilities/kwsys/:
 
-[TPL/mrmpi]
+[ThirdParty/mrmpi]
 Utilities/mrmpi/:
 
-[TPL/octree]
+[ThirdParty/octree]
 Utilities/octree/:
 
-[TPL/utf8]
+[ThirdParty/utf8]
 Utilities/utf8/:
 
-[TPL/verdict]
+[ThirdParty/verdict]
 Utilities/verdict/:
 
 [Utilities/vtkTclTest2Py]
 Utilities/vtkTclTest2Py/:
 
-[TPL/TclTk]
+[ThirdParty/TclTk]
 Utilities/TclTk/:
 
-[TPL/vtkexpat]
+[ThirdParty/vtkexpat]
 Utilities/vtkexpat/:
 
-[TPL/vtkexodus2]
+[ThirdParty/vtkexodus2]
 Utilities/vtkexodus2/:
-modular/TPL/vtkexodus2/CMakeLists.txt:
+modular/ThirdParty/vtkexodus2/CMakeLists.txt:
 
-[TPL/vtkalglib]
+[ThirdParty/vtkalglib]
 Utilities/vtkalglib/:
 
-[TPL/ftgl]
+[ThirdParty/ftgl]
 Utilities/ftgl/:
-modular/TPL/ftgl/CMakeLists.txt:
+modular/ThirdParty/ftgl/CMakeLists.txt:
 
-[TPL/VPIC]
+[ThirdParty/VPIC]
 Utilities/VPIC/:
 
 [Utilities/Upgrading]
@@ -233,7 +233,7 @@ modular/Utilities/MaterialLibrary/CMakeLists.txt:
 [Utilities/Doxygen]
 Utilities/Doxygen/:
 
-[TPL/Cosmo]
+[ThirdParty/Cosmo]
 Utilities/Cosmo/:
 
 [Utilities/OutputWindowProcess]
@@ -261,7 +261,7 @@ Utilities/tcl2py.py:
 Utilities/vtkstd.h.in:
 Utilities/.gitattributes:
 
-[TPL]
+[ThirdParty]
 Utilities/vtk2xml.py:
 Utilities/vtk_exodusII.h:
 Utilities/vtk_expat.h:
