@@ -56,6 +56,30 @@ set(VTK_BUILD_VERSION 9)
 set(VTK_VERSION
     "${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}.${VTK_BUILD_VERSION}")
 
+# VTK installation structure
+if(NOT VTK_INSTALL_RUNTIME_DIR)
+  set(VTK_INSTALL_RUNTIME_DIR bin)
+endif()
+if(NOT VTK_INSTALL_LIBRARY_DIR)
+  set(VTK_INSTALL_LIBRARY_DIR lib)
+endif()
+if(NOT VTK_INSTALL_ARCHIVE_DIR)
+  set(VTK_INSTALL_ARCHIVE_DIR lib)
+endif()
+if(NOT VTK_INSTALL_INCLUDE_DIR)
+  set(VTK_INSTALL_INCLUDE_DIR include/VTK-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION})
+endif()
+if(NOT VTK_INSTALL_DATA_DIR)
+  set(VTK_INSTALL_DATA_DIR share/VTK-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION})
+endif()
+if(NOT VTK_INSTALL_DOC_DIR)
+  set(VTK_INSTALL_DOC_DIR share/doc/VTK-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION})
+endif()
+if(NOT VTK_INSTALL_PACKAGE_DIR)
+  set(VTK_INSTALL_PACKAGE_DIR "lib/cmake/VTK-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}")
+endif()
+set(VTK_MODULES_DIR "${VTK_BINARY_DIR}/${VTK_INSTALL_PACKAGE_DIR}/Modules")
+
 # Append the library version information to the library target
 # properties.  A parent project may set its own properties and/or may
 # block this.
