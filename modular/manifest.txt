@@ -129,6 +129,8 @@ VTKConfig.cmake.in: <ignore>
 modular/VTKConfig.cmake.in:
 VTKConfigVersion.cmake.in:
 vtkGenerateVTKConfig.cmake:
+modular/GenerateVTKConfig.patch:<ignore>
+<patch>: GenerateVTKConfig.patch
 
 [Utilities/LastConfigureStep]
 Utilities/LastConfigureStep/:
