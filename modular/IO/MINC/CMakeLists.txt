@@ -12,11 +12,6 @@ set(Kit_SRCS
 
 vtk_add_library(vtkIOMINC ${Kit_SRCS})
 
-include_directories(
-  ${CMAKE_BINARY_DIR}
-  ${VTK_SOURCE_DIR}/TPL
-  )
-
 #IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
 #  INSTALL(FILES
 #    ${CMAKE_CURRENT_SOURCE_DIR}/vtkMINC.h

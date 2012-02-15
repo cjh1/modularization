@@ -8,10 +8,6 @@ set(Kit_SRCS
   vtkSLACReader.cxx
   )
 
-include_directories(
-  ${VTK_SOURCE_DIR}/TPL
-  )
-
 vtk_add_library(vtkIONetCDF ${Kit_SRCS})
 
 target_link_libraries(vtkIONetCDF vtkNetCDF_cxx)

@@ -23,7 +23,6 @@ set(Kit_SRCS
 
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
-  ${VTK_SOURCE_DIR}/TPL
   )
 
 vtk_add_library(vtkIOInfovis ${Kit_SRCS})
