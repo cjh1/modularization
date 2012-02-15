@@ -205,3 +205,21 @@ macro(vtk_module_target _name)
     vtk_module_target_install(${_name})
   endif()
 endmacro()
+
+function(vtk_add_library)
+  set(${vtk-module}_LIBRARIES ${ARGV0})
+  vtk_module_impl()
+
+  add_library(${ARGN})
+
+  foreach(dep IN LISTS VTK_MODULE_${vtk-module}_DEPENDS)
+    target_link_libraries(${vtk-module} ${${dep}_LIBRARIES})
+  endforeach()
+
+  # Generate the export macro header for symbol visibility/Windows DLL declspec
+  include(GenerateExportHeader)
+  generate_export_header(${vtk-module} EXPORT_FILE_NAME ${vtk-module}Export.h)
+  add_compiler_export_flags(my_abi_flags)
+  set_property(TARGET ${vtk-module} APPEND
+    PROPERTY COMPILE_FLAGS "${VTK_ABI_CXX_FLAGS}")
+endfunction()
