@@ -56,7 +56,7 @@ macro(vtk_module_check_name _name)
 endmacro()
 
 macro(vtk_module_impl)
-  include(vtk-module.cmake) # Load module meta-data
+  include(module.cmake) # Load module meta-data
   set(${vtk-module}_INSTALL_RUNTIME_DIR ${VTK_INSTALL_RUNTIME_DIR})
   set(${vtk-module}_INSTALL_LIBRARY_DIR ${VTK_INSTALL_LIBRARY_DIR})
   set(${vtk-module}_INSTALL_ARCHIVE_DIR ${VTK_INSTALL_ARCHIVE_DIR})
@@ -132,7 +132,7 @@ macro(vtk_module_impl)
 endmacro()
 
 macro(vtk_module_test)
-  include(../vtk-module.cmake) # Load module meta-data
+  include(../module.cmake) # Load module meta-data
   set(${vtk-module-test}_LIBRARIES "")
   vtk_module_use(${VTK_MODULE_${vtk-module-test}_DEPENDS})
   foreach(dep IN LISTS VTK_MODULE_${vtk-module-test}_DEPENDS)
