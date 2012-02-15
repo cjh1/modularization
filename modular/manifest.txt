@@ -1517,8 +1517,8 @@ IO/vtkXYZMolReader.h:
 
 [IO/Image]
 
-modular/IO/Imaging/CMakeLists.txt:
-modular/IO/Imaging/module.cmake:
+modular/IO/Image/CMakeLists.txt:
+modular/IO/Image/module.cmake:
 
 IO/vtkAVIWriter.cxx:
 IO/vtkAVIWriter.h:
