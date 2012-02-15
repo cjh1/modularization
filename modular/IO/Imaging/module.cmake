@@ -14,6 +14,6 @@ vtk_module(vtkIOImage
     vtktiff
     vtkmetaio
     vtkoggtheora
-    kwsys
+    vtksys
     DICOMParser
   DEFAULT ON)

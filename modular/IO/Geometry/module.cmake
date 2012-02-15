@@ -6,7 +6,7 @@ vtk_module(vtkIOGeometry
     vtkCommonMisc
     vtkIOCore
     vtkzlib
-    kwsys
+    vtksys
   COMPILE_DEPENDS
     MaterialLibrary
   DEFAULT ON)
