@@ -6,6 +6,8 @@ set(VTK_CMAKE_DIR "${VTK_SOURCE_DIR}/CMake")
 set(CMAKE_MODULE_PATH ${VTK_CMAKE_DIR} ${CMAKE_MODULE_PATH})
 SET(VTK_ENCODESTRING_EXE vtkEncodeString)
 
+include(VTKModuleMacros)
+
 # Set a default build type if none was specified
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   message(STATUS "Setting build type to 'Debug' as none was specified.")
@@ -410,8 +412,6 @@ include(VTKParallelCMakeTests)
 set(VTK_INCLUDE_DIRS_BUILD_TREE ${VTK_BINARY_DIR} ${VTK_BINARY_DIR}/Utilities ${VTK_BINARY_DIR}/TPL)
 include_directories(${VTK_INCLUDE_DIRS_BUILD_TREE})
 
-include(vtkModular)
-
 # Add the option for build the Python wrapping to VTK.
 option(VTK_WRAP_PYTHON "Should VTK Python wrapping be built?" OFF)
 # FIXME: This variable should not be necessary once we are done
@@ -431,215 +431,7 @@ endif()
 
 #----------------------------------------------------------------------
 # Load the module DAG.
-set(VTK_MODULES_ALL)
-file(GLOB meta RELATIVE "${VTK_SOURCE_DIR}"
-   "${VTK_SOURCE_DIR}/*/*/module.cmake" # grouped modules
-  )
-message("About to assess all possible modules...")
-foreach(f ${meta})
-  #message("meta: ${meta}")
-  include(${VTK_SOURCE_DIR}/${f})
-  list(APPEND VTK_MODULES_ALL ${vtk-module})
-  get_filename_component(${vtk-module}_BASE ${f} PATH)
-  set(${vtk-module}_SOURCE_DIR ${VTK_SOURCE_DIR}/${${vtk-module}_BASE})
-  set(${vtk-module}_BINARY_DIR ${VTK_BINARY_DIR}/${${vtk-module}_BASE})
-  #message("${vtk-module}_SOURCE_DIR: ${${vtk-module}_SOURCE_DIR}")
-  if(BUILD_TESTING AND EXISTS ${${vtk-module}_SOURCE_DIR}/Testing)
-    list(APPEND VTK_MODULES_ALL ${vtk-module-test})
-    set(${vtk-module-test}_SOURCE_DIR ${${vtk-module}_SOURCE_DIR}/Testing)
-    set(${vtk-module-test}_BINARY_DIR ${${vtk-module}_BINARY_DIR}/Testing)
-    set(${vtk-module-test}_IS_TEST 1)
-    set(${vtk-module}_TESTED_BY ${vtk-module-test})
-  endif()
-endforeach()
-
-# Add the third party libraries
-set(vtk_tpl_modules vtkalglib vtkzlib vtksqlite vtkexpat vtklibxml2 vtknetcdf
-    vtkjpeg vtkpng vtktiff vtkmetaio vtkoggtheora vtkexodus2 TclTk Cosmo 
-    mrmpi octree utf8 VPIC vtkgl2ps vtkfreetype ftgl vtkhdf5 vtklibproj4 vtksqlite
-    verdict)
-# Some TPLs have multiple libraries, or different library names from the TPL
-# Provide a mapping here, may be better to make them into a real module.
-set(vtknetcdf_TPL_LIBRARIES vtkNetCDF vtkNetCDF_cxx)
-set(vtkexodus2_TPL_LIBRARIES "vtkexoIIc")
-set(ftgl_TPL_LIBRARIES "vtkftgl")
-
-foreach(tpl ${vtk_tpl_modules})
-  set(${tpl}_SOURCE_DIR ${VTK_SOURCE_DIR}/TPL/${tpl})
-  set(${tpl}_BINARY_DIR ${VTK_BINARY_DIR}/TPL/${tpl})
-  set(${tpl}_IS_TPL 1)
-  #message("${tpl}_SOURCE_DIR: ${${tpl}_SOURCE_DIR}")
-endforeach()
-
-set(VTK_METAIO_INCLUDES ${VTK_SOURCE_DIR}/TPL)
-# Add the utilities
-set(vtk_utils_modules kwsys vtkmetaio DICOMParser MaterialLibrary)
-
-set(kwsys_TPL_LIBRARIES "vtksys")
-set(MaterialLibrary_TPL_LIBRARIES "ProcessShader")
-set(DICOMParser_TPL_LIBRARIES "vtkDICOMParser")
-
-foreach(util ${vtk_utils_modules})
-  list(APPEND vtk_tpl_modules ${util})
-  set(${util}_SOURCE_DIR ${VTK_SOURCE_DIR}/Utilities/${util})
-  set(${util}_BINARY_DIR ${VTK_BINARY_DIR}/Utilities/${util})
-  set(${util}_IS_TPL 1)
-  #message("${tpl}_SOURCE_DIR: ${${tpl}_SOURCE_DIR}")
-endforeach()
-
-
-set(VTK_BUILD_ALL_MODULES_DEFAULT OFF)
-option(VTK_BUILD_ALL_MODULES "Request to build all modules"
-  ${VTK_BUILD_ALL_MODULES_DEFAULT})
-mark_as_advanced(VTK_BUILD_ALL_MODULES)
-
-foreach(vtk-module ${VTK_MODULES_ALL})
-  if(NOT ${vtk-module}_IS_TEST)
-    option(Module_${vtk-module} "Request building ${vtk-module}"
-      "${VTK_MODULE_${vtk-module}_DEFAULT}")
-    mark_as_advanced(Module_${vtk-module})
-  endif()
-endforeach()
-
-foreach(vtk-module ${VTK_MODULES_ALL})
-  if(Module_${vtk-module} OR VTK_BUILD_ALL_MODULES)
-    vtk_module_enable("${vtk-module}" "")
-  elseif(VTK_MODULE_${vtk-module}_REQUEST_BY)
-    vtk_module_enable("${vtk-module}" "${VTK_MODULE_${vtk-module}_REQUEST_BY}")
-  endif()
-endforeach()
-
-# Build final list of enabled modules.
-set(VTK_MODULES_ENABLED "")
-set(VTK_MODULES_DISABLED "")
-foreach(vtk-module ${VTK_MODULES_ALL})
-  if(${vtk-module}_ENABLED)
-    list(APPEND VTK_MODULES_ENABLED ${vtk-module})
-  else()
-    list(APPEND VTK_MODULES_DISABLED ${vtk-module})
-  endif()
-endforeach()
-list(SORT VTK_MODULES_ENABLED) # Deterministic order.
-list(SORT VTK_MODULES_DISABLED) # Deterministic order.
-
-message(STATUS "Enabled: ${VTK_MODULES_ENABLED}")
-message(STATUS "Disabled: ${VTK_MODULES_DISABLED}")
-
-# Order list to satisfy dependencies.
-include(CMake/TopologicalSort.cmake)
-topological_sort(VTK_MODULES_ENABLED VTK_MODULE_ _DEPENDS)
-
-# Report what will be built.
-foreach(vtk-module ${VTK_MODULES_ENABLED})
-  if(NOT ${vtk-module}_IS_TEST)
-    if(Module_${vtk-module})
-      set(_reason ", requested by Module_${vtk-module}")
-    elseif(VTK_BUILD_ALL_MODULES)
-      set(_reason ", requested by VTK_BUILD_ALL_MODULES")
-    else()
-      set(_reason ", needed by [${VTK_MODULE_${vtk-module}_NEEDED_BY}]")
-    endif()
-    message(STATUS "Enabled ${vtk-module}${_reason}.")
-  endif()
-endforeach()
-
-#-----------------------------------------------------------------------------
-# Write a Project.xml file to send the description of the submodules and
-# their dependencies up to CDash:
-
-set(main_project_name "VTKModular")
-set(VTK_GENERATE_PROJECT_XML ON)
-set(VTK_GENERATE_SUBPROJECTS_CMAKE ON)
-
-if(VTK_GENERATE_PROJECT_XML)
-  set(filename "${VTK_BINARY_DIR}/${main_project_name}.Project.xml")
-
-  set(xml "<?xml version='1.0' encoding='UTF-8'?>\n")
-  set(xml "${xml}<Project name='${main_project_name}'>\n")
-  foreach(module ${VTK_MODULES_ENABLED})
-    set(xml "${xml}  <SubProject name='${module}'>\n")
-    set(deps "")
-    foreach(dep ${VTK_MODULE_${module}_DEPENDS})
-      set(xml "${xml}    <Dependency name='${dep}'/>\n")
-    endforeach()
-    set(xml "${xml}  </SubProject>\n")
-  endforeach()
-  set(xml "${xml}</Project>\n")
-
-  # Always write out "${filename}.in":
-  file(WRITE ${filename}.in "${xml}")
-
-  # Use configure_file so "${filename}" only changes when its content changes:
-  configure_file(${filename}.in ${filename} COPYONLY)
-endif()
-
-#-----------------------------------------------------------------------------
-# Write the list of enabled modules out for ctest scripts to use as an
-# in-order subproject list:
-
-if(VTK_GENERATE_SUBPROJECTS_CMAKE)
-  set(filename "${VTK_BINARY_DIR}/${main_project_name}.SubProjects.cmake")
-
-  set(s "# Generated by CMake, do not edit!\n")
-  set(s "${s}set(vtk_subprojects\n")
-  foreach(vtk-module ${VTK_MODULES_ENABLED})
-    if(NOT ${vtk-module}_IS_TEST)
-      set(s "${s}  \"${vtk-module}\"\n")
-    endif()
-  endforeach()
-  set(s "${s})\n")
-
-  # Always write out "${filename}.in":
-  file(WRITE ${filename}.in "${s}")
-
-  # Use configure_file so "${filename}" only changes when its content changes:
- configure_file(${filename}.in ${filename} COPYONLY)
-endif()
-
-#-----------------------------------------------------------------------------
-if(NOT VTK_MODULES_ENABLED)
-  message(WARNING "No modules enabled!")
-  file(REMOVE "${VTK_BINARY_DIR}/VTKTargets.cmake")
-  return()
-endif()
-
-file(WRITE "${VTK_BINARY_DIR}/VTKTargets.cmake"
-  "# Generated by CMake, do not edit!")
-
-# Build all modules.
-foreach(vtk-module ${VTK_MODULES_ENABLED})
-  #message("vtk-module ${vtk-module}")
-  if(NOT ${vtk-module}_IS_TEST AND NOT ${vtk-module}_IS_TPL)
-    #message("Initializing variables for ${vtk-module}")
-    init_module_vars()
-  else()
-    # Append the target name(s) to the VTK_TPL_TARGETS global
-    if(DEFINED ${vtk-module}_TPL_LIBRARIES)
-      set_property(GLOBAL APPEND PROPERTY VTK_TPL_TARGETS ${${vtk-module}_TPL_LIBRARIES})
-    else()
-      set_property(GLOBAL APPEND PROPERTY VTK_TPL_TARGETS ${vtk-module})
-    endif()
-  endif()
-  if(NOT EXISTS ${${vtk-module}_SOURCE_DIR})
-    message("Module directory does not exist! '${${vtk-module}_SOURCE_DIR}'")
-  endif()
-  if(NOT DEFINED ${vtk-module}_SOURCE_DIR)
-    message(FATAL_ERROR "${vtk-module} has no defined source directory.")
-  endif()
-  message("${vtk-module}")
-  message("${${vtk-module}_SOURCE_DIR}")
-  add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
-
-  # These two variables are combined into VTK_INCLUDE_DIRS_CONFIG which is used
-  # to construct VTK_INCLUDE_DIRS in vtkConfig.cmake
-  list(APPEND VTK_INCLUDE_DIRS_SOURCE_TREE "${${vtk-module}_SOURCE_DIR}")
-  list(APPEND VTK_INCLUDE_DIRS_BUILD_TREE "${${vtk-module}_BINARY_DIR}")
-endforeach()
-foreach(vtk-module ${VTK_MODULES_ENABLED})
-  if(NOT ${vtk-module}_IS_TEST)
-    add_module_target()
-  endif()
-endforeach()
+include(VTKModuleTop)
 
 #-----------------------------------------------------------------------------
 # The commands in this directory are intended to be executed as
