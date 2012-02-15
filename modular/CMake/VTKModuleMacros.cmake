@@ -74,10 +74,11 @@ macro(vtk_module_impl)
     endif()
   endif()
 
-  if(EXISTS ${${vtk-module}_SOURCE_DIR}/include)
-    list(APPEND ${vtk-module}_INCLUDE_DIRS ${${vtk-module}_SOURCE_DIR}/include)
-    install(DIRECTORY include/ DESTINATION ${${vtk-module}_INSTALL_INCLUDE_DIR})
-  endif()
+  list(APPEND ${vtk-module}_INCLUDE_DIRS
+    ${${vtk-module}_BINARY_DIR}
+    ${${vtk-module}_SOURCE_DIR}
+    )
+  #install(DIRECTORY include/ DESTINATION ${${vtk-module}_INSTALL_INCLUDE_DIR})
 
   if(${vtk-module}_INCLUDE_DIRS)
     include_directories(${${vtk-module}_INCLUDE_DIRS})
