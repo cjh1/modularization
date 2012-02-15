@@ -3,12 +3,6 @@ get_filename_component(_VTKModuleMacros_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 set(_VTKModuleMacros_DEFAULT_LABEL "VTKModular")
 
 include(${_VTKModuleMacros_DIR}/VTKModuleAPI.cmake)
-include(${_VTKModuleMacros_DIR}/VTKModuleDoxygen.cmake)
-include(${_VTKModuleMacros_DIR}/VTKModuleHeaderTest.cmake)
-
-if(VTK_CPPCHECK_TEST)
-  include(${_VTKModuleMacros_DIR}/VTKModuleCPPCheckTest.cmake)
-endif()
 
 macro(vtk_module _name)
   vtk_module_check_name(${_name})
@@ -106,17 +100,6 @@ macro(vtk_module_impl)
     link_directories(${${vtk-module}_SYSTEM_LIBRARY_DIRS})
   endif()
 
-  if(${vtk-module}_THIRD_PARTY)
-    vtk_module_warnings_disable(C CXX)
-  else()
-    if(VTK_CPPCHECK_TEST)
-      vtk_module_cppcheck_test( ${vtk-module} )
-    endif()
-    if(EXISTS "${${vtk-module}_SOURCE_DIR}/include" AND BUILD_TESTING)
-      vtk_module_headertest( ${vtk-module} )
-    endif()
-  endif()
-
   if(EXISTS ${${vtk-module}_SOURCE_DIR}/src/CMakeLists.txt AND NOT ${vtk-module}_NO_SRC)
     set_property(GLOBAL APPEND PROPERTY VTKTargets_MODULES ${vtk-module})
     add_subdirectory(src)
@@ -139,7 +122,6 @@ macro(vtk_module_impl)
     ${${vtk-module}_BINARY_DIR}/CMakeFiles/${vtk-module}.cmake
     DESTINATION ${VTK_INSTALL_PACKAGE_DIR}/Modules
     )
-  vtk_module_doxygen( ${vtk-module} )   # module name
 endmacro()
 
 macro(vtk_module_test)
