@@ -47,6 +47,7 @@ Parallel/Testing/: <ignore>
 Imaging/Testing/: <ignore>
 Examples/: <ignore>
 GenericFiltering/README.html: <ignore>
+modular/CMake/vtkModular.cmake:<ignore>
 modular/manifest.txt: <ignore>
 modular/modularize.py: <ignore>
 modular/export_headers.py: <ignore>
@@ -2048,7 +2049,6 @@ modular/CMake/vtkObjectFactory.h.in:
 modular/CMake/GenerateExportHeader.cmake:
 modular/CMake/exportheader.cmake.in:
 modular/CMake/TopologicalSort.cmake:
-modular/CMake/vtkModular.cmake:
 modular/CMake/FindPostgreSQL.cmake:
 modular/CMake/vtkWrapHierarchy.cmake:
 modular/CMake/vtkWrapPython.cmake:
