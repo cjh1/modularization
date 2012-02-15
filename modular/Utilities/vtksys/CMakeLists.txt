@@ -1,3 +1,10 @@
+set(KWSYS_HEADER_ROOT ${CMAKE_CURRENT_BINARY_DIR})
+set(vtksys_INCLUDE_DIRS
+  ${KWSYS_HEADER_ROOT}
+  )
+set(vtksys_LIBRARIES vtksys)
+vtk_module_impl()
+
 #-----------------------------------------------------------------------------
 # Configure KWSys to be named "vtksys".
 SET(KWSYS_NAMESPACE vtksys)
@@ -12,7 +19,6 @@ SET(KWSYS_USE_FundamentalType 1)
 SET(KWSYS_USE_MD5 1)
 SET(KWSYS_USE_Glob 1)
 SET(KWSYS_USE_DateStamp 1)
-set(KWSYS_HEADER_ROOT ${CMAKE_CURRENT_BINARY_DIR})
 SET(KWSYS_PROPERTIES_CXX ${VTK_LIBRARY_PROPERTIES})
 SET(KWSYS_INSTALL_EXPORT_NAME ${VTK_INSTALL_EXPORT_NAME})
 
