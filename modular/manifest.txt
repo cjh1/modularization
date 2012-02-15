@@ -51,6 +51,22 @@ modular/manifest.txt: <ignore>
 modular/modularize.py: <ignore>
 modular/export_headers.py: <ignore>
 
+# Modified versions sit in modular/ThirdParty/*
+Utilities/vtk_exodusII.h: <ignore>
+Utilities/vtk_expat.h: <ignore>
+Utilities/vtk_freetype.h: <ignore>
+Utilities/vtk_gl2ps.h: <ignore>
+Utilities/vtk_hdf5.h: <ignore>
+Utilities/vtk_jpeg.h: <ignore>
+Utilities/vtk_libproj4.h: <ignore>
+Utilities/vtk_libxml2.h: <ignore>
+Utilities/vtk_netcdf.h: <ignore>
+Utilities/vtk_netcdfcpp.h: <ignore>
+Utilities/vtk_oggtheora.h: <ignore>
+Utilities/vtk_png.h: <ignore>
+Utilities/vtk_tiff.h: <ignore>
+Utilities/vtk_zlib.h: <ignore>
+
 GUISupport/Qt/Testing/: <ignore>
 GUISupport/CMakeLists.txt: <ignore>
 GUISupport/Qt/CMakeLists.txt: <ignore>
@@ -118,84 +134,118 @@ vtkGenerateVTKConfig.cmake:
 Utilities/LastConfigureStep/:
 modular/Utilities/LastConfigureStep/CMakeLists.txt:
 
-[ThirdParty/vtklibxml2]
+[ThirdParty/libxml2]
 Utilities/vtklibxml2/:
-modular/Utilities/vtklibxml2/CMakeLists.txt:
+modular/ThirdParty/libxml2/module.cmake:
+modular/ThirdParty/libxml2/vtk_libxml2.h:
+modular/ThirdParty/libxml2/CMakeLists.txt:
 
 [Utilities/DICOMParser]
 Utilities/DICOMParser/:
+modular/Utilities/DICOMParser/module.cmake:
 modular/Utilities/DICOMParser/CMakeLists.txt:
 
 [Utilities/EncodeString]
 Utilities/EncodeString/:
-modular/Utilities/EncodeString/CMakeLists.txt:
 modular/Utilities/EncodeString/module.cmake:
+modular/Utilities/EncodeString/CMakeLists.txt:
 
 [Utilities/ParseOGLExt]
 Utilities/ParseOGLExt/:
-modular/Utilities/ParseOGLExt/CMakeLists.txt:
-modular/Utilities/ParseOGLExt/ParseOGLExt.cxx:
 modular/Utilities/ParseOGLExt/module.cmake:
+modular/Utilities/ParseOGLExt/ParseOGLExt.cxx:
+modular/Utilities/ParseOGLExt/CMakeLists.txt:
 
-[Utilities/vtkmetaio]
+[Utilities/MetaIO]
 Utilities/vtkmetaio/:
-modular/Utilities/vtkmetaio/CMakeLists.txt:
+modular/Utilities/MetaIO/CMakeLists.txt:
+modular/Utilities/MetaIO/module.cmake:
 
-[ThirdParty/vtkoggtheora]
+[ThirdParty/oggtheora]
 Utilities/vtkoggtheora/:
-modular/Utilities/vtkoggtheora/CMakeLists.txt:
+modular/ThirdParty/oggtheora/module.cmake:
+modular/ThirdParty/oggtheora/vtk_oggtheora.h:
+modular/ThirdParty/oggtheora/CMakeLists.txt:
 
-[ThirdParty/vtkpng]
+[ThirdParty/png]
 Utilities/vtkpng/:
-modular/ThirdParty/vtkpng/CMakeLists.txt:
+modular/ThirdParty/png/module.cmake:
+modular/ThirdParty/png/vtk_png.h:
+modular/ThirdParty/png/CMakeLists.txt:
 
-[ThirdParty/vtktiff]
+[ThirdParty/tiff]
 Utilities/vtktiff/:
-modular/ThirdParty/vtktiff/CMakeLists.txt:
+modular/ThirdParty/tiff/module.cmake:
+modular/ThirdParty/tiff/vtk_tiff.h:
+modular/ThirdParty/tiff/CMakeLists.txt:
 
-[ThirdParty/vtknetcdf]
+[ThirdParty/netcdf]
 Utilities/vtknetcdf/:
-modular/ThirdParty/vtknetcdf/CMakeLists.txt:
+modular/ThirdParty/netcdf/module.cmake:
+modular/ThirdParty/netcdf/vtk_netcdf.h:
+modular/ThirdParty/netcdf/vtk_netcdfcpp.h:
+modular/ThirdParty/netcdf/CMakeLists.txt:
 
 modular/UtilitiesNetCFD.patch:<ignore>
 <patch>: UtilitiesNetCFD.patch
 
-[ThirdParty/vtklibproj4]
+[ThirdParty/libproj4]
 Utilities/vtklibproj4/:
+modular/ThirdParty/libproj4/module.cmake:
+modular/ThirdParty/libproj4/vtk_libproj4.h:
 
-[ThirdParty/vtkzlib]
+[ThirdParty/zlib]
 Utilities/vtkzlib/:
+modular/ThirdParty/zlib/module.cmake:
+modular/ThirdParty/zlib/vtk_zlib.h:
 
-[ThirdParty/vtkjpeg]
+[ThirdParty/jpeg]
 Utilities/vtkjpeg/:
+modular/ThirdParty/jpeg/module.cmake:
+modular/ThirdParty/jpeg/vtk_jpeg.h:
 
-[ThirdParty/vtkhdf5]
+[ThirdParty/hdf5]
 Utilities/vtkhdf5/:
+modular/ThirdParty/hdf5/module.cmake:
+modular/ThirdParty/hdf5/vtk_hdf5.h:
 
-[ThirdParty/vtkfreetype]
+[ThirdParty/freetype]
 Utilities/vtkfreetype/:
-modular/ThirdParty/vtkfreetype/CMakeLists.txt:
+modular/ThirdParty/freetype/module.cmake:
+modular/ThirdParty/freetype/vtk_freetype.h:
+modular/ThirdParty/freetype/CMakeLists.txt:
 
-[ThirdParty/vtksqlite]
+[ThirdParty/sqlite]
 Utilities/vtksqlite/:
+modular/ThirdParty/sqlite/module.cmake:
 
-[ThirdParty/vtkgl2ps]
+[ThirdParty/gl2ps]
 Utilities/vtkgl2ps/:
+modular/ThirdParty/gl2ps/module.cmake:
+modular/ThirdParty/gl2ps/vtk_gl2ps.h:
 
-[Utilities/kwsys]
+[Utilities/vtksys/KWSys]
 Utilities/kwsys/:
+
+[Utilities/vtksys]
+modular/Utilities/vtksys/module.cmake:
+modular/Utilities/vtksys/CMakeLists.txt:
 
 [ThirdParty/mrmpi]
 Utilities/mrmpi/:
+modular/ThirdParty/mrmpi/module.cmake:
 
 [ThirdParty/octree]
 Utilities/octree/:
+modular/ThirdParty/octree/module.cmake:
 
 [ThirdParty/utf8]
 Utilities/utf8/:
+modular/ThirdParty/utf8/module.cmake:
 
 [ThirdParty/verdict]
 Utilities/verdict/:
+modular/ThirdParty/verdict/module.cmake:
 
 [Utilities/vtkTclTest2Py]
 Utilities/vtkTclTest2Py/:
@@ -203,22 +253,29 @@ Utilities/vtkTclTest2Py/:
 [ThirdParty/TclTk]
 Utilities/TclTk/:
 
-[ThirdParty/vtkexpat]
+[ThirdParty/expat]
 Utilities/vtkexpat/:
+modular/ThirdParty/expat/module.cmake:
+modular/ThirdParty/expat/vtk_expat.h:
 
-[ThirdParty/vtkexodus2]
+[ThirdParty/exodusII]
 Utilities/vtkexodus2/:
-modular/ThirdParty/vtkexodus2/CMakeLists.txt:
+modular/ThirdParty/exodusII/module.cmake:
+modular/ThirdParty/exodusII/vtk_exodusII.h:
+modular/ThirdParty/exodusII/CMakeLists.txt:
 
-[ThirdParty/vtkalglib]
+[ThirdParty/alglib]
 Utilities/vtkalglib/:
+modular/ThirdParty/alglib/module.cmake:
 
 [ThirdParty/ftgl]
 Utilities/ftgl/:
+modular/ThirdParty/ftgl/module.cmake:
 modular/ThirdParty/ftgl/CMakeLists.txt:
 
 [ThirdParty/VPIC]
 Utilities/VPIC/:
+modular/ThirdParty/VPIC/module.cmake:
 
 [Utilities/Upgrading]
 Utilities/Upgrading/:
@@ -228,6 +285,7 @@ Utilities/Scripts/:
 
 [Utilities/MaterialLibrary]
 Utilities/MaterialLibrary/:
+modular/Utilities/MaterialLibrary/module.cmake:
 modular/Utilities/MaterialLibrary/CMakeLists.txt:
 
 [Utilities/Doxygen]
@@ -235,6 +293,7 @@ Utilities/Doxygen/:
 
 [ThirdParty/Cosmo]
 Utilities/Cosmo/:
+modular/ThirdParty/Cosmo/module.cmake:
 
 [Utilities/OutputWindowProcess]
 Utilities/OutputWindowProcess/:
@@ -245,8 +304,9 @@ Utilities/Release/:
 [Utilities/Rpm]
 Utilities/Rpm/:
 
-[Utilities/freerange]
+[ThirdParty/freerange]
 Utilities/freerange/:
+modular/ThirdParty/freerange/module.cmake:
 
 [Utilities/HashSource]
 Utilities/HashSource/:
@@ -259,24 +319,8 @@ Utilities/SetupForDevelopment.sh:
 Utilities/internal_stdio_core.h.in:
 Utilities/tcl2py.py:
 Utilities/vtkstd.h.in:
-Utilities/.gitattributes:
-
-[ThirdParty]
 Utilities/vtk2xml.py:
-Utilities/vtk_exodusII.h:
-Utilities/vtk_expat.h:
-Utilities/vtk_freetype.h:
-Utilities/vtk_gl2ps.h:
-Utilities/vtk_hdf5.h:
-Utilities/vtk_jpeg.h:
-Utilities/vtk_libproj4.h:
-Utilities/vtk_libxml2.h:
-Utilities/vtk_netcdf.h:
-Utilities/vtk_netcdfcpp.h:
-Utilities/vtk_oggtheora.h:
-Utilities/vtk_png.h:
-Utilities/vtk_tiff.h:
-Utilities/vtk_zlib.h:
+Utilities/.gitattributes:
 
 
 [Common/Core]
