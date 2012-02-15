@@ -6,10 +6,8 @@ if(WIN32)
   endif()
 endif()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}
-  ${CMAKE_CURRENT_BINARY_DIR}
-  ${VTK_BINARY_DIR}/Common/DataModel
-  ${VTK_BINARY_DIR}/Common/ExecutionModel
+include_directories(
+  ${VTK_SOURCE_DIR}/ThirdParty/utf8/source
   )
 
 SET(Kit_SRCS
