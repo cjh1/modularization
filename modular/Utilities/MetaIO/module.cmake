@@ -1,1 +1,1 @@
-vtk_module(vtkMetaIO)
+vtk_module(vtkUtilitiesMetaIO)
