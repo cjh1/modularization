@@ -62,23 +62,6 @@ macro(vtk_module_impl)
   set(${vtk-module}_INSTALL_ARCHIVE_DIR ${VTK_INSTALL_ARCHIVE_DIR})
   set(${vtk-module}_INSTALL_INCLUDE_DIR ${VTK_INSTALL_INCLUDE_DIR})
 
-  # Collect all sources and headers for IDE projects.
-  set(_srcs "")
-  if("${CMAKE_GENERATOR}" MATCHES "Xcode|Visual Studio|KDevelop"
-      OR CMAKE_EXTRA_GENERATOR)
-    # Add sources to the module target for easy editing in the IDE.
-    set(_include ${${vtk-module}_SOURCE_DIR}/include)
-    if(EXISTS ${_include})
-      set(_src ${${vtk-module}_SOURCE_DIR}/src)
-      file(GLOB_RECURSE _srcs ${_src}/*.cxx)
-      file(GLOB_RECURSE _hdrs ${_include}/*.h ${_include}/*.hxx)
-      list(APPEND _srcs ${_hdrs})
-    endif()
-  endif()
-
-  # Create a ${vtk-module}-all target to build the whole module.
-  add_custom_target(${vtk-module}-all ALL SOURCES ${_srcs})
-
   vtk_module_use(${VTK_MODULE_${vtk-module}_DEPENDS})
 
   if(NOT DEFINED ${vtk-module}_LIBRARIES)
@@ -156,9 +139,6 @@ endmacro()
 macro(vtk_module_target_label _target_name)
   if(vtk-module)
     set(_label ${vtk-module})
-    if(TARGET ${vtk-module}-all)
-      add_dependencies(${vtk-module}-all ${_target_name})
-    endif()
   else()
     set(_label ${_VTKModuleMacros_DEFAULT_LABEL})
   endif()
