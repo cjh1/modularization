@@ -188,6 +188,9 @@ macro(vtk_module_target _name)
 endmacro()
 
 function(vtk_add_library)
+  if(NOT "${ARGV0}" STREQUAL "${vtk-module}")
+    message(FATAL_ERROR "vtk_add_library must be invoked with module name")
+  endif()
   set(${vtk-module}_LIBRARIES ${ARGV0})
   vtk_module_impl()
 
