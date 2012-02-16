@@ -91,11 +91,6 @@ macro(vtk_module_impl)
     link_directories(${${vtk-module}_SYSTEM_LIBRARY_DIRS})
   endif()
 
-  if(EXISTS ${${vtk-module}_SOURCE_DIR}/src/CMakeLists.txt AND NOT ${vtk-module}_NO_SRC)
-    set_property(GLOBAL APPEND PROPERTY VTKTargets_MODULES ${vtk-module})
-    add_subdirectory(src)
-  endif()
-
   set(vtk-module-DEPENDS "${VTK_MODULE_${vtk-module}_DEPENDS}")
   set(vtk-module-LIBRARIES "${${vtk-module}_LIBRARIES}")
   set(vtk-module-INCLUDE_DIRS-build "${${vtk-module}_INCLUDE_DIRS}")
