@@ -1,1 +1,1 @@
-vtk_module(vtkUtilitiesDICOMParser)
+vtk_module(vtkDICOMParser)

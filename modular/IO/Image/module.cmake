@@ -15,5 +15,5 @@ vtk_module(vtkIOImage
     vtkMetaIO
     vtkoggtheora
     vtksys
-    vtkUtilitiesDICOMParser
+    vtkDICOMParser
   DEFAULT ON)
