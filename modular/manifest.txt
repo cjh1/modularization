@@ -53,22 +53,6 @@ modular/manifest.txt: <ignore>
 modular/modularize.py: <ignore>
 modular/export_headers.py: <ignore>
 
-# Modified versions sit in modular/ThirdParty/*
-Utilities/vtk_exodusII.h: <ignore>
-Utilities/vtk_expat.h: <ignore>
-Utilities/vtk_freetype.h: <ignore>
-Utilities/vtk_gl2ps.h: <ignore>
-Utilities/vtk_hdf5.h: <ignore>
-Utilities/vtk_jpeg.h: <ignore>
-Utilities/vtk_libproj4.h: <ignore>
-Utilities/vtk_libxml2.h: <ignore>
-Utilities/vtk_netcdf.h: <ignore>
-Utilities/vtk_netcdfcpp.h: <ignore>
-Utilities/vtk_oggtheora.h: <ignore>
-Utilities/vtk_png.h: <ignore>
-Utilities/vtk_tiff.h: <ignore>
-Utilities/vtk_zlib.h: <ignore>
-
 GUISupport/Qt/Testing/: <ignore>
 GUISupport/CMakeLists.txt: <ignore>
 GUISupport/Qt/CMakeLists.txt: <ignore>
@@ -138,10 +122,12 @@ modular/GenerateVTKConfig.patch:<ignore>
 Utilities/LastConfigureStep/:
 modular/Utilities/LastConfigureStep/CMakeLists.txt:
 
-[ThirdParty/libxml2]
+[ThirdParty/libxml2/vtklibxml2]
 Utilities/vtklibxml2/:
+
+[ThirdParty/libxml2]
+Utilities/vtk_libxml2.h:
 modular/ThirdParty/libxml2/module.cmake:
-modular/ThirdParty/libxml2/vtk_libxml2.h:
 modular/ThirdParty/libxml2/CMakeLists.txt:
 
 [Utilities/DICOMParser]
@@ -167,75 +153,97 @@ Utilities/vtkmetaio/:
 modular/Utilities/MetaIO/CMakeLists.txt:
 modular/Utilities/MetaIO/module.cmake:
 
-[ThirdParty/oggtheora]
+[ThirdParty/oggtheora/vtkoggtheora]
 Utilities/vtkoggtheora/:
+
+[ThirdParty/oggtheora]
+Utilities/vtk_oggtheora.h:
 modular/ThirdParty/oggtheora/module.cmake:
-modular/ThirdParty/oggtheora/vtk_oggtheora.h:
 modular/ThirdParty/oggtheora/CMakeLists.txt:
 
-[ThirdParty/png]
+[ThirdParty/png/vtkpng]
 Utilities/vtkpng/:
+
+[ThirdParty/png]
+Utilities/vtk_png.h:
 modular/ThirdParty/png/module.cmake:
-modular/ThirdParty/png/vtk_png.h:
 modular/ThirdParty/png/CMakeLists.txt:
 
-[ThirdParty/tiff]
+[ThirdParty/tiff/vtktiff]
 Utilities/vtktiff/:
+
+[ThirdParty/tiff]
+Utilities/vtk_tiff.h:
 modular/ThirdParty/tiff/module.cmake:
-modular/ThirdParty/tiff/vtk_tiff.h:
 modular/ThirdParty/tiff/CMakeLists.txt:
 
-[ThirdParty/netcdf]
+[ThirdParty/netcdf/vtknetcdf]
 Utilities/vtknetcdf/:
+
+[ThirdParty/netcdf]
+Utilities/vtk_netcdf.h:
+Utilities/vtk_netcdfcpp.h:
 modular/ThirdParty/netcdf/module.cmake:
-modular/ThirdParty/netcdf/vtk_netcdf.h:
-modular/ThirdParty/netcdf/vtk_netcdfcpp.h:
 modular/ThirdParty/netcdf/CMakeLists.txt:
 
 modular/UtilitiesNetCFD.patch:<ignore>
 <patch>: UtilitiesNetCFD.patch
 
-[ThirdParty/libproj4]
+[ThirdParty/libproj4/vtklibproj4]
 Utilities/vtklibproj4/:
+
+[ThirdParty/libproj4]
+Utilities/vtk_libproj4.h:
 modular/ThirdParty/libproj4/module.cmake:
-modular/ThirdParty/libproj4/vtk_libproj4.h:
+
+[ThirdParty/zlib/vtkzlib]
+Utilities/vtkzlib/:
 
 [ThirdParty/zlib]
-Utilities/vtkzlib/:
+Utilities/vtk_zlib.h:
 modular/ThirdParty/zlib/module.cmake:
-modular/ThirdParty/zlib/vtk_zlib.h:
+
+[ThirdParty/jpeg/vtkjpeg]
+Utilities/vtkjpeg/:
 
 [ThirdParty/jpeg]
-Utilities/vtkjpeg/:
+Utilities/vtk_jpeg.h:
 modular/ThirdParty/jpeg/module.cmake:
-modular/ThirdParty/jpeg/vtk_jpeg.h:
+
+[ThirdParty/hdf5/vtkhdf5]
+Utilities/vtkhdf5/:
 
 [ThirdParty/hdf5]
-Utilities/vtkhdf5/:
+Utilities/vtk_hdf5.h:
 modular/ThirdParty/hdf5/module.cmake:
-modular/ThirdParty/hdf5/vtk_hdf5.h:
+
+[ThirdParty/freetype/vtkfreetype]
+Utilities/vtkfreetype/:
 
 [ThirdParty/freetype]
-Utilities/vtkfreetype/:
+Utilities/vtk_freetype.h:
 modular/ThirdParty/freetype/module.cmake:
-modular/ThirdParty/freetype/vtk_freetype.h:
 modular/ThirdParty/freetype/CMakeLists.txt:
 
-[ThirdParty/sqlite]
+[ThirdParty/sqlite/vtksqlite]
 Utilities/vtksqlite/:
+
+[ThirdParty/sqlite]
 modular/ThirdParty/sqlite/module.cmake:
 
-[ThirdParty/gl2ps]
+[ThirdParty/gl2ps/vtkgl2ps]
 Utilities/vtkgl2ps/:
-modular/ThirdParty/gl2ps/module.cmake:
-modular/ThirdParty/gl2ps/vtk_gl2ps.h:
 
-[Utilities/vtksys/KWSys]
+[ThirdParty/gl2ps]
+Utilities/vtk_gl2ps.h:
+modular/ThirdParty/gl2ps/module.cmake:
+
+[Utilities/KWSys/vtksys]
 Utilities/kwsys/:
 
-[Utilities/vtksys]
-modular/Utilities/vtksys/module.cmake:
-modular/Utilities/vtksys/CMakeLists.txt:
+[Utilities/KWSys]
+modular/Utilities/KWSys/module.cmake:
+modular/Utilities/KWSys/CMakeLists.txt:
 
 [ThirdParty/mrmpi]
 Utilities/mrmpi/:
@@ -258,15 +266,19 @@ Utilities/vtkTclTest2Py/:
 [ThirdParty/TclTk]
 Utilities/TclTk/:
 
-[ThirdParty/expat]
+[ThirdParty/expat/vtkexpat]
 Utilities/vtkexpat/:
+
+[ThirdParty/expat]
+Utilities/vtk_expat.h:
 modular/ThirdParty/expat/module.cmake:
-modular/ThirdParty/expat/vtk_expat.h:
+
+[ThirdParty/exodusII/vtkexodusII]
+Utilities/vtkexodus2/:
 
 [ThirdParty/exodusII]
-Utilities/vtkexodus2/:
+Utilities/vtk_exodusII.h:
 modular/ThirdParty/exodusII/module.cmake:
-modular/ThirdParty/exodusII/vtk_exodusII.h:
 modular/ThirdParty/exodusII/CMakeLists.txt:
 
 [ThirdParty/alglib]
