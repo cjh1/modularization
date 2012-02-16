@@ -12,4 +12,4 @@ set(Kit_SRCS
   vtkFreeTypeLabelRenderStrategy.cxx
   )
 
-vtk_add_library(vtkRenderingLabel ${Kit_SRCS})
+vtk_module_library(vtkRenderingLabel ${Kit_SRCS})

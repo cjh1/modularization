@@ -6,6 +6,7 @@ Common/Testing/: <ignore>
 CMake/CMake2.4/: <ignore>
 CMake/vtk-forward.c.in: <ignore>
 CMake/vtkForwardingExecutable.cmake: <ignore>
+CMake/vtkTargetExportMacros.cmake: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
 Imaging/CMakeLists.txt: <ignore>
@@ -2113,7 +2114,6 @@ CMake/vtkMakeInstantiator.h.in:
 CMake/vtkRequireLargeFilesSupport.cxx:
 CMake/vtkSelectSharedLibraries.cmake:
 CMake/vtkSelectStreamsLibrary.cmake:
-CMake/vtkTargetExportMacros.cmake:
 CMake/vtkTclTkMacros.cmake:
 CMake/vtkTestBoolType.cxx:
 CMake/vtkTestBuiltins.cmake:

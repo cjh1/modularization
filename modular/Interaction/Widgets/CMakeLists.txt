@@ -148,4 +148,4 @@ set_source_files_properties(
   )
 
 
-vtk_add_library(vtkInteractionWidgets ${Kit_SRCS})
+vtk_module_library(vtkInteractionWidgets ${Kit_SRCS})

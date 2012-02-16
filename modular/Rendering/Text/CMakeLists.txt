@@ -12,4 +12,4 @@ set(Kit_SRCS
 include_directories(
   ${VTK_SOURCE_DIR}/Rendering/FreeType
   )
-vtk_add_library(vtkRenderingText ${Kit_SRCS})
+vtk_module_library(vtkRenderingText ${Kit_SRCS})

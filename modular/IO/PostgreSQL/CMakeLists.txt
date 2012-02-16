@@ -19,6 +19,6 @@ include_directories(
   ${PostgreSQL_INCLUDE_DIRS}
   )
 
-vtk_add_library(vtkIOPostgreSQL ${PostgreSQL_SRCS})
+vtk_module_library(vtkIOPostgreSQL ${PostgreSQL_SRCS})
 
 target_link_libraries(vtkIOPostgreSQL ${PostgreSQL_LIBRARY})

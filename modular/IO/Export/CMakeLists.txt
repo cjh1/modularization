@@ -22,4 +22,4 @@ SET(Kit_SRCS ${VTK_SOURCE_DIR}/ThirdParty/vtkgl2ps/gl2ps.c)
 ADD_DEFINITIONS(-DGL2PS_HAVE_ZLIB)
 ADD_DEFINITIONS(-DGL2PS_HAVE_LIBPNG)
 
-vtk_add_library(vtkIOExport ${Kit_SRCS})
+vtk_module_library(vtkIOExport ${Kit_SRCS})

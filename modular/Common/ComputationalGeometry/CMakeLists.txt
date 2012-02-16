@@ -47,4 +47,4 @@ include_directories(
   ${VTK_SOURCE_DIR}/Common/System
   )
 
-vtk_add_library(vtkCommonComputationalGeometry ${Kit_SRCS})
+vtk_module_library(vtkCommonComputationalGeometry ${Kit_SRCS})

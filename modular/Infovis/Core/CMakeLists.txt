@@ -41,4 +41,4 @@ include_directories(
   ${VTK_SOURCE_DIR}/Utilities
   )
 
-vtk_add_library(vtkInfovisCore ${Kit_SRCS})
+vtk_module_library(vtkInfovisCore ${Kit_SRCS})

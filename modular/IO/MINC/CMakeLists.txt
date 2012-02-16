@@ -10,7 +10,7 @@ set(Kit_SRCS
   vtkMNITransformWriter.cxx
   )
 
-vtk_add_library(vtkIOMINC ${Kit_SRCS})
+vtk_module_library(vtkIOMINC ${Kit_SRCS})
 
 #IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
 #  INSTALL(FILES

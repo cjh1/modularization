@@ -8,4 +8,4 @@ include_directories(
   ${vtkIOLSDyna_BINARY_DIR}/private
   )
 
-vtk_add_library(vtkIOParallelLSDyna ${Kit_SRCS})
+vtk_module_library(vtkIOParallelLSDyna ${Kit_SRCS})

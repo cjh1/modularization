@@ -13,4 +13,4 @@ set(Kit_SRCS
   face_times_italic.cxx
   )
 
-vtk_add_library(vtkRenderingFreeType ${Kit_SRCS})
+vtk_module_library(vtkRenderingFreeType ${Kit_SRCS})

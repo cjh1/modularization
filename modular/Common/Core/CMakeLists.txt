@@ -381,7 +381,7 @@ if(CMAKE_SYSTEM MATCHES "SunOS.*")
   set(KIT_LIBS ${KIT_LIBS} socket nsl)
 endif()
 
-vtk_add_library(vtkCommonCore ${Kit_SRCS})
+vtk_module_library(vtkCommonCore ${Kit_SRCS})
 
 target_link_libraries(vtkCommonCore ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(vtkCommonCore PROPERTIES LINK_INTERFACE_LIBRARIES "")

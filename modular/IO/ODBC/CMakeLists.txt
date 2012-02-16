@@ -17,6 +17,6 @@ include_directories(
   ${ODBC_INCLUDE_DIRECTORIES}
   )
 
-vtk_add_library(vtkIOODBC ${ODBC_SRCS})
+vtk_module_library(vtkIOODBC ${ODBC_SRCS})
 
 target_link_libraries(vtkIOODBC ${ODBC_LIBRARIES})

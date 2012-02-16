@@ -43,4 +43,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_add_library(vtkParallelCore ${Kit_SRCS})
+vtk_module_library(vtkParallelCore ${Kit_SRCS})

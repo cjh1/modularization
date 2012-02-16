@@ -245,7 +245,7 @@ configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.h.in
 configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.cxx.in
   ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.cxx)
 
-vtk_add_library(vtkRenderingOpenGL ${Kit_SRCS})
+vtk_module_library(vtkRenderingOpenGL ${Kit_SRCS})
 target_link_libraries(vtkRenderingOpenGL ${OPENGL_LIBRARIES})
 
 add_subdirectory(Testing/Cxx)

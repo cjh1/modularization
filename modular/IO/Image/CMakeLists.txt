@@ -44,7 +44,7 @@ include_directories(
   ${VTK_SOURCE_DIR}/Utilities
   )
 
-vtk_add_library(vtkIOImage ${Kit_SRCS})
+vtk_module_library(vtkIOImage ${Kit_SRCS})
 
 if(WIN32)
   target_link_libraries(vtkIOImage vfw32)

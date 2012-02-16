@@ -179,4 +179,4 @@ include_directories(
   ${VTK_BINARY_DIR}/Rendering/GLSL # For the GLSL headers...
   )
 
-vtk_add_library(vtkRenderingCore ${Kit_SRCS})
+vtk_module_library(vtkRenderingCore ${Kit_SRCS})

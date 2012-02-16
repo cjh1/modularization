@@ -59,4 +59,4 @@ include_directories(
   ${VTK_BINARY_DIR}/Common/Core
   )
 
-vtk_add_library(vtkIOGeometry ${Kit_SRCS})
+vtk_module_library(vtkIOGeometry ${Kit_SRCS})

@@ -61,4 +61,4 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   )
 
-vtk_add_library(vtkIOXML ${Kit_SRCS})
+vtk_module_library(vtkIOXML ${Kit_SRCS})
