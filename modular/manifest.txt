@@ -249,9 +249,8 @@ modular/Utilities/KWSys/CMakeLists.txt:
 Utilities/mrmpi/:
 modular/ThirdParty/mrmpi/module.cmake:
 
-[ThirdParty/octree]
+[Utilities/octree]
 Utilities/octree/:
-modular/ThirdParty/octree/module.cmake:
 
 [ThirdParty/utf8]
 Utilities/utf8/:
