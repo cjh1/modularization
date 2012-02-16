@@ -12,7 +12,7 @@ vtk_module(vtkIOImage
     vtkjpeg
     vtkpng
     vtktiff
-    vtkUtilitiesMetaIO
+    vtkMetaIO
     vtkoggtheora
     vtksys
     vtkUtilitiesDICOMParser

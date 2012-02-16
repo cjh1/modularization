@@ -1,1 +1,4 @@
-vtk_module(vtkUtilitiesMetaIO)
+vtk_module(vtkMetaIO
+  DEPENDS
+    vtkzlib
+  )
