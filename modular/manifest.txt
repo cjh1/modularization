@@ -195,6 +195,7 @@ Utilities/vtklibproj4/:
 [ThirdParty/libproj4]
 Utilities/vtk_libproj4.h:
 modular/ThirdParty/libproj4/module.cmake:
+modular/ThirdParty/libproj4/CMakeLists.txt:
 
 [ThirdParty/zlib/vtkzlib]
 Utilities/vtkzlib/:
@@ -202,6 +203,7 @@ Utilities/vtkzlib/:
 [ThirdParty/zlib]
 Utilities/vtk_zlib.h:
 modular/ThirdParty/zlib/module.cmake:
+modular/ThirdParty/zlib/CMakeLists.txt:
 
 [ThirdParty/jpeg/vtkjpeg]
 Utilities/vtkjpeg/:
@@ -209,6 +211,7 @@ Utilities/vtkjpeg/:
 [ThirdParty/jpeg]
 Utilities/vtk_jpeg.h:
 modular/ThirdParty/jpeg/module.cmake:
+modular/ThirdParty/jpeg/CMakeLists.txt:
 
 [ThirdParty/hdf5/vtkhdf5]
 Utilities/vtkhdf5/:
@@ -216,6 +219,7 @@ Utilities/vtkhdf5/:
 [ThirdParty/hdf5]
 Utilities/vtk_hdf5.h:
 modular/ThirdParty/hdf5/module.cmake:
+modular/ThirdParty/hdf5/CMakeLists.txt:
 
 [ThirdParty/freetype/vtkfreetype]
 Utilities/vtkfreetype/:
@@ -237,6 +241,7 @@ Utilities/vtkgl2ps/:
 [ThirdParty/gl2ps]
 Utilities/vtk_gl2ps.h:
 modular/ThirdParty/gl2ps/module.cmake:
+modular/ThirdParty/gl2ps/CMakeLists.txt:
 
 [Utilities/KWSys/vtksys]
 Utilities/kwsys/:
@@ -271,6 +276,7 @@ Utilities/vtkexpat/:
 [ThirdParty/expat]
 Utilities/vtk_expat.h:
 modular/ThirdParty/expat/module.cmake:
+modular/ThirdParty/expat/CMakeLists.txt:
 
 [ThirdParty/exodusII/vtkexodusII]
 Utilities/vtkexodus2/:

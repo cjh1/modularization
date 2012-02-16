@@ -34,7 +34,7 @@ if(NOT VTK_INSTALL_NO_DEVELOPMENT)
   set(KWSYS_INSTALL_COMPONENT_NAME_DEVELOPMENT Development)
 endif()
 
-add_subdirectory(KWSys)
+add_subdirectory(vtksys)
 if(NOT VTK_INSTALL_NO_LIBRARIES)
   set_property(GLOBAL APPEND PROPERTY VTK_TARGETS vtksys)
 endif(NOT VTK_INSTALL_NO_LIBRARIES)
