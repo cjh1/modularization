@@ -1,0 +1,21 @@
+diff --git a/Utilities/DICOMParser/CMakeLists.txt b/Utilities/DICOMParser/CMakeLists.txt
+index 4c6cf6c..9c7f40e 100644
+--- a/Utilities/DICOMParser/CMakeLists.txt
++++ b/Utilities/DICOMParser/CMakeLists.txt
+@@ -1,5 +1,8 @@
+ PROJECT(DICOMParser)
+ 
++set(vtkDICOMParser_LIBRARIES vtkDICOMParser)
++vtk_module_impl()
++
+ INCLUDE_DIRECTORIES(${DICOMParser_SOURCE_DIR})
+ INCLUDE_DIRECTORIES(${DICOMParser_BINARY_DIR})
+ 
+@@ -46,6 +49,6 @@ IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+   INSTALL(FILES
+     ${__install_files.h} ${__install_files.txx}
+     ${DICOMParser_BINARY_DIR}/DICOMCMakeConfig.h
+-    DESTINATION "${VTK_INSTALL_INCLUDE_DIR_CM24}"
++    DESTINATION ${VTK_INSTALL_INCLUDE_DIR}
+     COMPONENT Development)
+ ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)

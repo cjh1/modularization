@@ -137,7 +137,8 @@ modular/ThirdParty/libxml2/CMakeLists.txt:
 [Utilities/DICOMParser]
 Utilities/DICOMParser/:
 modular/Utilities/DICOMParser/module.cmake:
-modular/Utilities/DICOMParser/CMakeLists.txt:
+modular/UtilitiesDICOMParser.patch: <ignore>
+<patch>: UtilitiesDICOMParser.patch
 
 [Utilities/EncodeString]
 Utilities/EncodeString/:

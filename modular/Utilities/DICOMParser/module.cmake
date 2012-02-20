@@ -1,1 +1,4 @@
-vtk_module(vtkDICOMParser)
+vtk_module(vtkDICOMParser
+  DEPENDS
+    vtksys
+  )
