@@ -323,6 +323,8 @@ Utilities/Doxygen/:
 [ThirdParty/Cosmo]
 Utilities/Cosmo/:
 modular/ThirdParty/Cosmo/module.cmake:
+modular/ThirdPartyCosmo.patch: <ignore>
+<patch>: ThirdPartyCosmo.patch
 
 [Utilities/OutputWindowProcess]
 Utilities/OutputWindowProcess/:

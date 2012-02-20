@@ -1,1 +1,4 @@
-vtk_module(vtkCosmo)
+vtk_module(vtkCosmo
+  DEPENDS
+    vtkCommonCore
+  )
