@@ -152,7 +152,7 @@ modular/Utilities/ParseOGLExt/module.cmake:
 modular/Utilities/ParseOGLExt/ParseOGLExt.cxx:
 modular/Utilities/ParseOGLExt/CMakeLists.txt:
 
-[Utilities/MetaIO/src]
+[Utilities/MetaIO/vtkmetaio]
 Utilities/vtkmetaio/:
 
 [Utilities/MetaIO]
