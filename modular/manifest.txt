@@ -1,5 +1,7 @@
 [<ignore>]
 
+# TODO: Drop .NoDartCoverage files.
+
 vtkIncludeDirectories.cmake: <ignore>
 Common/CMakeLists.txt: <ignore>
 Common/Testing/: <ignore>
@@ -7,6 +9,7 @@ CMake/CMake2.4/: <ignore>
 CMake/vtk-forward.c.in: <ignore>
 CMake/vtkForwardingExecutable.cmake: <ignore>
 CMake/vtkTargetExportMacros.cmake: <ignore>
+CMake/vtkThirdParty.cmake: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
 Imaging/CMakeLists.txt: <ignore>
@@ -2062,6 +2065,7 @@ modular/CMake/VTKModuleAPI.cmake:
 modular/CMake/VTKModuleInfo.cmake.in:
 modular/CMake/VTKModuleMacros.cmake:
 modular/CMake/VTKModuleTop.cmake:
+modular/CMake/vtkThirdParty.cmake:
 
 modular/CMake/vtkObjectFactory.cxx.in:
 modular/CMake/vtkObjectFactory.h.in:
@@ -2156,7 +2160,6 @@ CMake/vtkTestTypes.cmake:
 CMake/vtkTestvfw32Capture.cxx:
 CMake/vtkTestvfw32.cxx:
 CMake/vtkTestVideoForWindows.cmake:
-CMake/vtkThirdParty.cmake:
 CMake/vtkUseX.cmake:
 CMake/VTKValgrindSuppressions.supp:
 CMake/VTKVersionMacros.cmake:

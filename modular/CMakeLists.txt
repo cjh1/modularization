@@ -115,7 +115,7 @@ set(VTK_INSTALL_PACKAGE_DIR_CM24 ${VTK_INSTALL_LIB_DIR_CM24})
 #-----------------------------------------------------------------------------
 # Load some macros.
 INCLUDE(vtkDependentOption)
-#INCLUDE(vtkThirdParty)
+INCLUDE(vtkThirdParty)
 
 #-----------------------------------------------------------------------------
 include(vtkCompilerExtras)
