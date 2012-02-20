@@ -1,1 +1,4 @@
-vtk_module(vtkpng)
+vtk_module(vtkpng
+  DEPENDS
+    vtkzlib
+  )
