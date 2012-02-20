@@ -45,7 +45,12 @@ macro(vtk_module _name)
     endif()
   endforeach()
   list(SORT VTK_MODULE_${vtk-module}_DEPENDS) # Deterministic order.
-  list(SORT VTK_MODULE_${vtk-module}_COMPILE_DEPENDS) # Deterministic order.
+  set(VTK_MODULE_${vtk-module}_LINK_DEPENDS
+    "${VTK_MODULE_${vtk-module}_DEPENDS}")
+  list(APPEND VTK_MODULE_${vtk-module}_DEPENDS
+    ${VTK_MODULE_${vtk-module}_COMPILE_DEPENDS})
+  unset(VTK_MODULE_${vtk-module}_COMPILE_DEPENDS)
+  list(SORT VTK_MODULE_${vtk-module}_DEPENDS) # Deterministic order.
   list(SORT VTK_MODULE_${vtk-module-test}_DEPENDS) # Deterministic order.
 endmacro()
 
@@ -66,7 +71,7 @@ macro(vtk_module_impl)
 
   if(NOT DEFINED ${vtk-module}_LIBRARIES)
     set(${vtk-module}_LIBRARIES "")
-    foreach(dep IN LISTS VTK_MODULE_${vtk-module}_DEPENDS)
+    foreach(dep IN LISTS VTK_MODULE_${vtk-module}_LINK_DEPENDS)
       list(APPEND ${vtk-module}_LIBRARIES "${${dep}_LIBRARIES}")
     endforeach()
     if(${vtk-module}_LIBRARIES)
@@ -208,7 +213,7 @@ function(vtk_module_library name)
   vtk_module_impl()
 
   vtk_add_library(${vtk-module} ${ARGN})
-  foreach(dep IN LISTS VTK_MODULE_${vtk-module}_DEPENDS)
+  foreach(dep IN LISTS VTK_MODULE_${vtk-module}_LINK_DEPENDS)
     target_link_libraries(${vtk-module} ${${dep}_LIBRARIES})
   endforeach()
 
