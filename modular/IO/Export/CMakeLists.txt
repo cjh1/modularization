@@ -18,7 +18,7 @@ set(Kit_SRCS
   )
 
 # FIXME need to work out what todo here
-SET(Kit_SRCS ${VTK_SOURCE_DIR}/ThirdParty/vtkgl2ps/gl2ps.c)
+SET(Kit_SRCS ${VTK_SOURCE_DIR}/ThirdParty/gl2ps/vtkgl2ps/gl2ps.c)
 ADD_DEFINITIONS(-DGL2PS_HAVE_ZLIB)
 ADD_DEFINITIONS(-DGL2PS_HAVE_LIBPNG)
 
