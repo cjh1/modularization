@@ -10,6 +10,7 @@ CMake/vtk-forward.c.in: <ignore>
 CMake/vtkForwardingExecutable.cmake: <ignore>
 CMake/vtkTargetExportMacros.cmake: <ignore>
 CMake/vtkThirdParty.cmake: <ignore>
+CMake/FindODBC.cmake: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
 Imaging/CMakeLists.txt: <ignore>
@@ -2076,6 +2077,7 @@ modular/CMake/FindPostgreSQL.cmake:
 modular/CMake/vtkWrapHierarchy.cmake:
 modular/CMake/vtkWrapPython.cmake:
 modular/CMake/vtkBuildPath.cmake:
+modular/CMake/FindODBC.cmake:
 CMake/CheckCXXSourceRuns.cmake:
 CMake/CMakeBackwardCompatibilityC.cmake:
 CMake/CMakeEmptyInputFile.in:
@@ -2098,7 +2100,6 @@ CMake/FindMatlabMex.cmake:
 CMake/FindMPEG2.cmake:
 CMake/FindMySQL.cmake:
 CMake/FindNVCtrlLib.cmake:
-CMake/FindODBC.cmake:
 CMake/FindOGGTHEORA.cmake:
 CMake/FindOSMesa.cmake:
 CMake/FindPOSTGRES.cmake:<ignore>
