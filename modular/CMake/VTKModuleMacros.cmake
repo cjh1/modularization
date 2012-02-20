@@ -212,6 +212,13 @@ function(vtk_module_library name)
     target_link_libraries(${vtk-module} ${${dep}_LIBRARIES})
   endforeach()
 
+  install(TARGETS ${vtk-module}
+    EXPORT ${VTK_INSTALL_EXPORT_NAME}
+    ARCHIVE DESTINATION ${VTK_INSTALL_ARCHIVE_DIR}
+    LIBRARY DESTINATION ${VTK_INSTALL_LIBRARY_DIR}
+    RUNTIME DESTINATION ${VTK_INSTALL_RUNTIME_DIR}
+    )
+
   # Generate the export macro header for symbol visibility/Windows DLL declspec
   include(GenerateExportHeader)
   generate_export_header(${vtk-module} EXPORT_FILE_NAME ${vtk-module}Export.h)
