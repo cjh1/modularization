@@ -337,6 +337,9 @@ modular/ThirdParty/freerange/module.cmake:
 [Utilities/HashSource]
 Utilities/HashSource/:
 modular/Utilities/HashSource/module.cmake:
+modular/UtilitiesHashSource.patch: <ignore>
+<patch>: UtilitiesHashSource.patch
+
 
 [Utilities]
 
