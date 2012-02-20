@@ -1,1 +1,5 @@
-vtk_module(vtktiff)
+vtk_module(vtktiff
+  DEPENDS
+    vtkjpeg
+    vtkzlib
+  )

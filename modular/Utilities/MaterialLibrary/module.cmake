@@ -1,1 +1,4 @@
-vtk_module(vtkUtilitiesMaterialLibrary)
+vtk_module(vtkUtilitiesMaterialLibrary
+  DEPENDS
+    vtksys
+  )

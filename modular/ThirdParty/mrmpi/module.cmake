@@ -1,1 +1,4 @@
-vtk_module(vtkmrmpi)
+vtk_module(vtkmrmpi
+  DEPENDS
+    vtksys
+  )

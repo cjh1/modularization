@@ -1,4 +1,5 @@
 vtk_module(vtkInteractionWidgets
   DEPENDS
-   vtkRenderingCore
+   vtkRenderingAnnotation
+   vtkRenderingText
   DEFAULT OFF)

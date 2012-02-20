@@ -8,5 +8,5 @@ vtk_module(vtkIOGeometry
     vtkzlib
     vtksys
   COMPILE_DEPENDS
-    MaterialLibrary
+    vtkUtilitiesMaterialLibrary
   DEFAULT ON)

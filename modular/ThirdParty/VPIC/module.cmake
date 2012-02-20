@@ -1,1 +1,5 @@
-vtk_module(vtkVPIC)
+vtk_module(vtkVPIC
+  DEPENDS
+    vtkCommonCore
+    vtksys
+  )

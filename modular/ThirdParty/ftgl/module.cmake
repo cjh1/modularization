@@ -1,1 +1,4 @@
-vtk_module(vtkftgl)
+vtk_module(vtkftgl
+  DEPENDS
+    vtkfreetype
+  )
