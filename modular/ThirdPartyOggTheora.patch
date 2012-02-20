@@ -1,0 +1,56 @@
+diff --git a/ThirdParty/oggtheora/vtkoggtheora/CMakeLists.txt b/ThirdParty/oggtheora/vtkoggtheora/CMakeLists.txt
+index e2897b7..bff8391 100644
+--- a/ThirdParty/oggtheora/vtkoggtheora/CMakeLists.txt
++++ b/ThirdParty/oggtheora/vtkoggtheora/CMakeLists.txt
+@@ -175,9 +175,9 @@ CONFIGURE_FILE(vtk_oggtheora_mangle.h
+ CONFIGURE_FILE(${VTKOGGTHEORA_SOURCE_DIR}/.NoDartCoverage
+   ${VTKOGGTHEORA_BINARY_DIR}/.NoDartCoverage COPYONLY)
+ 
+-INCLUDE_DIRECTORIES(BEFORE
+-  ${VTKOGGTHEORA_BINARY_DIR}/..
+-  )
++#INCLUDE_DIRECTORIES(BEFORE
++#  ${VTKOGGTHEORA_BINARY_DIR}/..
++#  )
+ 
+ SET(VTKOGGTHEORA_SRCS
+   # ogg sources
+diff --git a/ThirdParty/oggtheora/vtkoggtheora/libogg-1.1.4/include/ogg/os_types.h b/ThirdParty/oggtheora/vtkoggtheora/libogg-1.1.4/include/ogg/os_types.h
+index 8ac9c08..df187ef 100644
+--- a/ThirdParty/oggtheora/vtkoggtheora/libogg-1.1.4/include/ogg/os_types.h
++++ b/ThirdParty/oggtheora/vtkoggtheora/libogg-1.1.4/include/ogg/os_types.h
+@@ -18,7 +18,7 @@
+ #define _OS_TYPES_H
+ 
+ /* KITWARE_OGGTHEORA_CHANGE - Added to mangle function names */
+-#include "vtk_oggtheora_mangle.h"
++#include <vtkoggtheora/include/vtk_oggtheora_mangle.h>
+ 
+ /* make it easy on the folks that want to compile the libs with a
+    different malloc than stdlib */
+diff --git a/ThirdParty/oggtheora/vtkoggtheora/libtheora-1.1.1/config.h.in b/ThirdParty/oggtheora/vtkoggtheora/libtheora-1.1.1/config.h.in
+index 6b0e20d..466f071 100644
+--- a/ThirdParty/oggtheora/vtkoggtheora/libtheora-1.1.1/config.h.in
++++ b/ThirdParty/oggtheora/vtkoggtheora/libtheora-1.1.1/config.h.in
+@@ -5,7 +5,7 @@
+ #define THEORA_CONFIG_H
+ 
+ /* KITWARE_OGGTHEORA_CHANGE - Added to mangle function names */
+-#include "vtk_oggtheora_mangle.h"
++#include <vtkoggtheora/include/vtk_oggtheora_mangle.h>
+ 
+ /* Define to exclude floating point code from the build */
+ #cmakedefine THEORA_DISABLE_FLOAT
+diff --git a/ThirdParty/oggtheora/vtkoggtheora/libtheora-1.1.1/lib/bitpack.h b/ThirdParty/oggtheora/vtkoggtheora/libtheora-1.1.1/lib/bitpack.h
+index e95847f..55ddd90 100644
+--- a/ThirdParty/oggtheora/vtkoggtheora/libtheora-1.1.1/lib/bitpack.h
++++ b/ThirdParty/oggtheora/vtkoggtheora/libtheora-1.1.1/lib/bitpack.h
+@@ -17,7 +17,7 @@
+ #if !defined(_bitpack_H)
+ # define _bitpack_H (1)
+ /* KITWARE_OGGTHEORA_CHANGE - Added to mangle function names */
+-#include "vtk_oggtheora_mangle.h"
++#include <vtkoggtheora/include/vtk_oggtheora_mangle.h>
+ 
+ # include <limits.h>
+ 
