@@ -240,6 +240,7 @@ Utilities/vtksqlite/:
 
 [ThirdParty/sqlite]
 modular/ThirdParty/sqlite/module.cmake:
+modular/ThirdParty/sqlite/CMakeLists.txt:
 
 [ThirdParty/gl2ps/vtkgl2ps]
 Utilities/vtkgl2ps/:
