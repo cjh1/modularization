@@ -185,28 +185,6 @@ include(vtkTestExplicitInstantiation)
 # Test for atomics and other compiler intrinsics
 include(vtkTestBuiltins)
 
-# Setup clean configuration of vtkConfigure.h and vtkToolkits.h.
-MACRO(VTK_PREPARE_CMAKEDEFINE not invar outvar)
-  IF(${not} ${invar})
-    SET(${outvar} 1)
-  ELSE(${not} ${invar})
-    SET(${outvar})
-  ENDIF(${not} ${invar})
-ENDMACRO(VTK_PREPARE_CMAKEDEFINE)
-
-VTK_PREPARE_CMAKEDEFINE("" CMAKE_WORDS_BIGENDIAN VTK_WORDS_BIGENDIAN)
-VTK_PREPARE_CMAKEDEFINE("" CMAKE_USE_PTHREADS VTK_USE_PTHREADS)
-VTK_PREPARE_CMAKEDEFINE("" CMAKE_USE_SPROC VTK_USE_SPROC)
-VTK_PREPARE_CMAKEDEFINE("" CMAKE_HP_PTHREADS VTK_HP_PTHREADS)
-VTK_PREPARE_CMAKEDEFINE("" CMAKE_USE_WIN32_THREADS VTK_USE_WIN32_THREADS)
-VTK_PREPARE_CMAKEDEFINE("" CMAKE_NO_ANSI_STRING_STREAM VTK_NO_ANSI_STRING_STREAM)
-VTK_PREPARE_CMAKEDEFINE("" CMAKE_NO_STD_NAMESPACE VTK_NO_STD_NAMESPACE)
-VTK_PREPARE_CMAKEDEFINE(NOT CMAKE_ANSI_FOR_SCOPE VTK_NO_FOR_SCOPE)
-VTK_PREPARE_CMAKEDEFINE(NOT VTK_EXPLICIT_TEMPLATES
-                  VTK_NO_EXPLICIT_TEMPLATE_INSTANTIATION)
-VTK_PREPARE_CMAKEDEFINE(NOT VTK_COMPILER_HAS_FULL_SPECIALIZATION
-                        VTK_NO_FULL_TEMPLATE_SPECIALIZATION)
-
 #-----------------------------------------------------------------------------
 # Select a streams library.
 
@@ -325,8 +303,6 @@ IF(VTK_USE_RENDERING)
 
 ENDIF(VTK_USE_RENDERING)
 
-VTK_PREPARE_CMAKEDEFINE("" OPENGL_LIBRARY VTK_USE_OPENGL_LIBRARY)
-
 IF(VTK_USE_MPI)
   FIND_PACKAGE(MPI)
 ENDIF(VTK_USE_MPI)
@@ -407,24 +383,13 @@ ENDFOREACH(header)
 
 #-----------------------------------------------------------------------------
 # Configure files with settings for use by the build.
-# FIXME: Configure into Common/Core?
-CONFIGURE_FILE(${VTK_SOURCE_DIR}/Common/Core/vtkConfigure.h.in
-               ${VTK_BINARY_DIR}/Common/Core/vtkConfigure.h @ONLY IMMEDIATE)
 
 CONFIGURE_FILE(${VTK_SOURCE_DIR}/UseVTK.cmake.in
                ${VTK_BINARY_DIR}/UseVTK.cmake COPYONLY IMMEDIATE)
 
-# Configure into Common/Core?
-#CONFIGURE_FILE(${VTK_SOURCE_DIR}/vtkToolkits.h.in
-#               ${VTK_BINARY_DIR}/vtkToolkits.h @ONLY)
-
 # Include the sockets test.
 # FIXME: The test should be moved and rewritten.
 include(VTKParallelCMakeTests)
-
-# Add the VTK binary dir to the include path to pick up the vtkConfigure.h
-set(VTK_INCLUDE_DIRS_BUILD_TREE ${VTK_BINARY_DIR} ${VTK_BINARY_DIR}/Utilities ${VTK_BINARY_DIR}/TPL)
-include_directories(${VTK_INCLUDE_DIRS_BUILD_TREE})
 
 # Add the option for build the Python wrapping to VTK.
 option(VTK_WRAP_PYTHON "Should VTK Python wrapping be built?" OFF)
