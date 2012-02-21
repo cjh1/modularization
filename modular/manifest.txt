@@ -287,11 +287,15 @@ modular/ThirdParty/expat/CMakeLists.txt:
 
 [ThirdParty/exodusII/vtkexodusII]
 Utilities/vtkexodus2/:
+modular/ThirdPartyExodusII-1.patch: <ignore>
+<patch>: ThirdPartyExodusII-1.patch
 
 [ThirdParty/exodusII]
 Utilities/vtk_exodusII.h:
 modular/ThirdParty/exodusII/module.cmake:
 modular/ThirdParty/exodusII/CMakeLists.txt:
+modular/ThirdPartyExodusII-2.patch: <ignore>
+<patch>: ThirdPartyExodusII-2.patch
 
 [ThirdParty/alglib]
 Utilities/vtkalglib/:

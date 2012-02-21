@@ -1,0 +1,12 @@
+diff --git a/ThirdParty/exodusII/vtk_exodusII.h b/ThirdParty/exodusII/vtk_exodusII.h
+index 40b05bb..881caba 100644
+--- a/ThirdParty/exodusII/vtk_exodusII.h
++++ b/ThirdParty/exodusII/vtk_exodusII.h
+@@ -16,6 +16,6 @@
+ #define __vtk_exodusII_h
+ 
+ /* Use the exodusII library configured for VTK.  */
+-#include <vtkexodus2/include/exodusII.h>
++#include <vtkexodusII/include/exodusII.h>
+ 
+ #endif
