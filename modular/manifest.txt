@@ -300,6 +300,7 @@ modular/ThirdPartyExodusII-2.patch: <ignore>
 [ThirdParty/alglib]
 Utilities/vtkalglib/:
 modular/ThirdParty/alglib/module.cmake:
+modular/ThirdParty/alglib/CMakeLists.txt:
 
 [ThirdParty/ftgl]
 Utilities/ftgl/:
