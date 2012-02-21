@@ -53,6 +53,9 @@ def getModules():
 
 modules = getModules()
 
+# exclude non-VTK modules from export headers
+modules = [m for m in modules if not m.startswith(('ThirdParty','Utilities'))]
+
 for module in modules:
   moduleName = "vtk" + module.replace("/", "")
   exportName = moduleName.upper() + "_EXPORT"
