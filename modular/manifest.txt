@@ -199,6 +199,9 @@ modular/UtilitiesNetCFD.patch:<ignore>
 [ThirdParty/libproj4/vtklibproj4]
 Utilities/vtklibproj4/:
 
+modular/ThirdPartyLibProj4.patch:<ignore>
+<patch>: ThirdPartyLibProj4.patch
+
 [ThirdParty/libproj4]
 Utilities/vtk_libproj4.h.in:
 modular/ThirdParty/libproj4/module.cmake:

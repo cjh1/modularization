@@ -96,6 +96,10 @@ macro(vtk_module_impl)
     link_directories(${${vtk-module}_SYSTEM_LIBRARY_DIRS})
   endif()
 
+  if(${vtk-module}_THIRD_PARTY)
+    vtk_module_warnings_disable(C CXX)
+  endif()
+
   set(vtk-module-DEPENDS "${VTK_MODULE_${vtk-module}_DEPENDS}")
   set(vtk-module-LIBRARIES "${${vtk-module}_LIBRARIES}")
   set(vtk-module-INCLUDE_DIRS-build "${${vtk-module}_INCLUDE_DIRS}")

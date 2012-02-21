@@ -1,3 +1,4 @@
+set(vtklibxml2_THIRD_PARTY 1)
 set(vtklibxml2_LIBRARIES vtklibxml2)
 vtk_module_impl()
 configure_file(vtk_libxml2.h.in vtk_libxml2.h)

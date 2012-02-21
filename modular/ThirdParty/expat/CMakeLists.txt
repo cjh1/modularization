@@ -1,3 +1,4 @@
+set(vtkexpat_THIRD_PARTY 1)
 set(vtkexpat_LIBRARIES vtkexpat)
 vtk_module_impl()
 configure_file(vtk_expat.h.in vtk_expat.h)

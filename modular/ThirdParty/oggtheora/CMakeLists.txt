@@ -1,3 +1,4 @@
+set(vtkoggtheora_THIRD_PARTY 1)
 set(vtkoggtheora_LIBRARIES vtkoggtheora)
 vtk_module_impl()
 configure_file(vtk_oggtheora.h.in vtk_oggtheora.h)

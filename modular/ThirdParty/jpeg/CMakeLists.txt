@@ -1,3 +1,4 @@
+set(vtkjpeg_THIRD_PARTY 1)
 set(vtkjpeg_LIBRARIES vtkjpeg)
 vtk_module_impl()
 configure_file(vtk_jpeg.h.in vtk_jpeg.h)

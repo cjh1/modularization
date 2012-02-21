@@ -1,3 +1,4 @@
+set(vtkhdf5_THIRD_PARTY 1)
 set(vtkhdf5_LIBRARIES vtkhdf5)
 vtk_module_impl()
 configure_file(vtk_hdf5.h.in vtk_hdf5.h)

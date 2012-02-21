@@ -2,9 +2,10 @@ diff --git a/ThirdParty/alglib/CMakeLists.txt b/ThirdParty/alglib/CMakeLists.txt
 index 15b7ea1..145474e 100644
 --- a/ThirdParty/alglib/CMakeLists.txt
 +++ b/ThirdParty/alglib/CMakeLists.txt
-@@ -1,5 +1,8 @@
+@@ -1,5 +1,9 @@
  project( alglib )
  
++set(vtkalglib_THIRD_PARTY 1)
 +set(vtkalglib_LIBRARIES vtkalglib)
 +vtk_module_impl()
 +

@@ -2,10 +2,11 @@ diff --git a/ThirdParty/Cosmo/CMakeLists.txt b/ThirdParty/Cosmo/CMakeLists.txt
 index f0d2f86..bd76c8c 100644
 --- a/ThirdParty/Cosmo/CMakeLists.txt
 +++ b/ThirdParty/Cosmo/CMakeLists.txt
-@@ -1,6 +1,9 @@
+@@ -1,6 +1,10 @@
   
  project(Cosmo)
  
++set(vtkCosmo_THIRD_PARTY 1)
 +set(vtkCosmo_LIBRARIES Cosmo)
 +vtk_module_impl()
 +

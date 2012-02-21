@@ -1,3 +1,4 @@
+set(vtkpng_THIRD_PARTY 1)
 set(vtkpng_LIBRARIES vtkpng)
 vtk_module_impl()
 set(VTK_ZLIB_LIBRARIES ${vtkzlib_LIBRARIES})
