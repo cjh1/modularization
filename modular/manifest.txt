@@ -2923,7 +2923,8 @@ Graphics/vtkMatlabMexAdapter.h:
 
 
 [Filters/Modeling]
-
+modular/Filters/Modeling/module.cmake:
+modular/Filters/Modeling/CMakeLists.txt:
 Graphics/vtkRibbonFilter.cxx:
 Graphics/vtkRibbonFilter.h:
 Graphics/vtkRotationalExtrusionFilter.cxx:
@@ -3794,6 +3795,8 @@ Rendering/vtkInteractorStyleUser.cxx:
 Rendering/vtkInteractorStyleUser.h:
 
 [Rendering/Annotation]
+modular/Rendering/Annotation/module.cmake:
+modular/Rendering/Annotation/CMakeLists.txt:
 
 Hybrid/vtkAnnotatedCubeActor.cxx:
 Hybrid/vtkAnnotatedCubeActor.h:
@@ -4566,6 +4569,8 @@ Rendering/vtkXRenderWindowTclInteractor.h:
 Rendering/CheckglXGetProcAddressARB.cxx:
 
 [Rendering/Volume]
+modular/Rendering/Volume/module.cmake:
+modular/Rendering/Volume/CMakeLists.txt:
 
 VolumeRendering/vtkDirectionEncoder.cxx:
 VolumeRendering/vtkDirectionEncoder.h:
