@@ -1,3 +1,6 @@
+set(vtkMetaIO_INCLUDE_DIRS
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkmetaio # metaIOConfig.h
+  )
 set(vtkMetaIO_LIBRARIES vtkmetaio)
 vtk_module_impl()
 SET(METAIO_FOR_VTK 1)
