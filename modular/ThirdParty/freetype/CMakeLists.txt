@@ -1,4 +1,6 @@
 set(vtkfreetype_LIBRARIES vtkfreetype)
 set(vtkfreetype_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/vtkfreetype/include)
 vtk_module_impl()
+configure_file(vtk_freetype.h.in vtk_freetype.h)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_freetype.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
 add_subdirectory(vtkfreetype)

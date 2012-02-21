@@ -1,3 +1,5 @@
 set(vtkhdf5_LIBRARIES vtkhdf5)
 vtk_module_impl()
+configure_file(vtk_hdf5.h.in vtk_hdf5.h)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_hdf5.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
 add_subdirectory(vtkhdf5)

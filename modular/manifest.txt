@@ -130,7 +130,7 @@ modular/Utilities/LastConfigureStep/CMakeLists.txt:
 Utilities/vtklibxml2/:
 
 [ThirdParty/libxml2]
-Utilities/vtk_libxml2.h:
+Utilities/vtk_libxml2.h.in:
 modular/ThirdParty/libxml2/module.cmake:
 modular/ThirdParty/libxml2/CMakeLists.txt:
 
@@ -164,7 +164,7 @@ modular/Utilities/MetaIO/module.cmake:
 Utilities/vtkoggtheora/:
 
 [ThirdParty/oggtheora]
-Utilities/vtk_oggtheora.h:
+Utilities/vtk_oggtheora.h.in:
 modular/ThirdParty/oggtheora/module.cmake:
 modular/ThirdParty/oggtheora/CMakeLists.txt:
 
@@ -172,7 +172,7 @@ modular/ThirdParty/oggtheora/CMakeLists.txt:
 Utilities/vtkpng/:
 
 [ThirdParty/png]
-Utilities/vtk_png.h:
+Utilities/vtk_png.h.in:
 modular/ThirdParty/png/module.cmake:
 modular/ThirdParty/png/CMakeLists.txt:
 
@@ -180,7 +180,7 @@ modular/ThirdParty/png/CMakeLists.txt:
 Utilities/vtktiff/:
 
 [ThirdParty/tiff]
-Utilities/vtk_tiff.h:
+Utilities/vtk_tiff.h.in:
 modular/ThirdParty/tiff/module.cmake:
 modular/ThirdParty/tiff/CMakeLists.txt:
 
@@ -200,7 +200,7 @@ modular/UtilitiesNetCFD.patch:<ignore>
 Utilities/vtklibproj4/:
 
 [ThirdParty/libproj4]
-Utilities/vtk_libproj4.h:
+Utilities/vtk_libproj4.h.in:
 modular/ThirdParty/libproj4/module.cmake:
 modular/ThirdParty/libproj4/CMakeLists.txt:
 
@@ -208,7 +208,7 @@ modular/ThirdParty/libproj4/CMakeLists.txt:
 Utilities/vtkzlib/:
 
 [ThirdParty/zlib]
-Utilities/vtk_zlib.h:
+Utilities/vtk_zlib.h.in:
 modular/ThirdParty/zlib/module.cmake:
 modular/ThirdParty/zlib/CMakeLists.txt:
 
@@ -216,7 +216,7 @@ modular/ThirdParty/zlib/CMakeLists.txt:
 Utilities/vtkjpeg/:
 
 [ThirdParty/jpeg]
-Utilities/vtk_jpeg.h:
+Utilities/vtk_jpeg.h.in:
 modular/ThirdParty/jpeg/module.cmake:
 modular/ThirdParty/jpeg/CMakeLists.txt:
 
@@ -224,7 +224,7 @@ modular/ThirdParty/jpeg/CMakeLists.txt:
 Utilities/vtkhdf5/:
 
 [ThirdParty/hdf5]
-Utilities/vtk_hdf5.h:
+Utilities/vtk_hdf5.h.in:
 modular/ThirdParty/hdf5/module.cmake:
 modular/ThirdParty/hdf5/CMakeLists.txt:
 
@@ -232,7 +232,7 @@ modular/ThirdParty/hdf5/CMakeLists.txt:
 Utilities/vtkfreetype/:
 
 [ThirdParty/freetype]
-Utilities/vtk_freetype.h:
+Utilities/vtk_freetype.h.in:
 modular/ThirdParty/freetype/module.cmake:
 modular/ThirdParty/freetype/CMakeLists.txt:
 
@@ -247,7 +247,7 @@ modular/ThirdParty/sqlite/CMakeLists.txt:
 Utilities/vtkgl2ps/:
 
 [ThirdParty/gl2ps]
-Utilities/vtk_gl2ps.h:
+Utilities/vtk_gl2ps.h.in:
 modular/ThirdParty/gl2ps/module.cmake:
 modular/ThirdParty/gl2ps/CMakeLists.txt:
 
@@ -282,7 +282,7 @@ Utilities/TclTk/:
 Utilities/vtkexpat/:
 
 [ThirdParty/expat]
-Utilities/vtk_expat.h:
+Utilities/vtk_expat.h.in:
 modular/ThirdParty/expat/module.cmake:
 modular/ThirdParty/expat/CMakeLists.txt:
 

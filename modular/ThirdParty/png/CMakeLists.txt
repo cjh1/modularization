@@ -1,4 +1,6 @@
 set(vtkpng_LIBRARIES vtkpng)
 vtk_module_impl()
 set(VTK_ZLIB_LIBRARIES ${vtkzlib_LIBRARIES})
+configure_file(vtk_png.h.in vtk_png.h)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_png.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
 add_subdirectory(vtkpng)

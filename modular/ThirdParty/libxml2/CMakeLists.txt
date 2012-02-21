@@ -1,3 +1,5 @@
 set(vtklibxml2_LIBRARIES vtklibxml2)
 vtk_module_impl()
+configure_file(vtk_libxml2.h.in vtk_libxml2.h)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_libxml2.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
 add_subdirectory(vtklibxml2)
