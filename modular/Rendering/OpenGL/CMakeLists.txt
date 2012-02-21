@@ -152,8 +152,6 @@ set_source_files_properties(vtkOpenGLExtensionManager.cxx
 
 include_directories(
   ${OPENGL_INCLUDE_DIR}
-  ${CMAKE_CURRENT_SOURCE_DIR}
-  ${VTK_SOURCE_DIR}/Utilities
   )
 
 set(shader_files

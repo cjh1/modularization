@@ -57,8 +57,4 @@ set(Kit_SRCS
   vtkXMLWriter.cxx
   )
 
-include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}
-  )
-
 vtk_module_library(vtkIOXML ${Kit_SRCS})
