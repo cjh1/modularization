@@ -305,6 +305,7 @@ modular/ThirdParty/ftgl/CMakeLists.txt:
 [ThirdParty/VPIC]
 Utilities/VPIC/:
 modular/ThirdParty/VPIC/module.cmake:
+modular/ThirdParty/VPIC/CMakeLists.txt:
 
 [Utilities/Upgrading]
 Utilities/Upgrading/:
