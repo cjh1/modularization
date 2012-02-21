@@ -1,0 +1,14 @@
+diff --git a/ThirdParty/VPIC/CMakeLists.txt b/ThirdParty/VPIC/CMakeLists.txt
+index 4e2531f..38085e7 100644
+--- a/ThirdParty/VPIC/CMakeLists.txt
++++ b/ThirdParty/VPIC/CMakeLists.txt
+@@ -1,6 +1,9 @@
+  
+ project(VPIC)
+ 
++set(vtkVPIC_LIBRARIES VPIC)
++vtk_module_impl()
++
+ SET(VPIC_BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS})
+ 
+ CONFIGURE_FILE (${VPIC_SOURCE_DIR}/VPICDefinition.h.in

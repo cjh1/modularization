@@ -300,17 +300,20 @@ modular/ThirdPartyExodusII-2.patch: <ignore>
 [ThirdParty/alglib]
 Utilities/vtkalglib/:
 modular/ThirdParty/alglib/module.cmake:
-modular/ThirdParty/alglib/CMakeLists.txt:
+modular/ThirdPartyAlgLib.patch: <ignore>
+<patch>: ThirdPartyAlgLib.patch
 
 [ThirdParty/ftgl]
 Utilities/ftgl/:
 modular/ThirdParty/ftgl/module.cmake:
-modular/ThirdParty/ftgl/CMakeLists.txt:
+modular/ThirdPartyFTGL.patch: <ignore>
+<patch>: ThirdPartyFTGL.patch
 
 [ThirdParty/VPIC]
 Utilities/VPIC/:
 modular/ThirdParty/VPIC/module.cmake:
-modular/ThirdParty/VPIC/CMakeLists.txt:
+modular/ThirdPartyVPIC.patch: <ignore>
+<patch>: ThirdPartyVPIC.patch
 
 [Utilities/Upgrading]
 Utilities/Upgrading/:
