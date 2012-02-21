@@ -1,18 +1,13 @@
 PROJECT (VTKFTGL)
 
+set(vtkftgl_LIBRARIES vtkftgl)
+set(vtkftgl_INCLUDE_DIRS ${VTKFTGL_SOURCE_DIR}/src)
+vtk_module_impl()
+
 #
 # Dependency mask
 #
 INCLUDE_REGULAR_EXPRESSION(".*")
-
-#
-# Include path
-#
-INCLUDE_DIRECTORIES (
-  ${VTKFTGL_SOURCE_DIR}/src
-  ${VTKFTGL_BINARY_DIR}
-
-)
 
 #
 # Collect the required libs
