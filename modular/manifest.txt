@@ -150,7 +150,8 @@ modular/UtilitiesEncodeString.patch: <ignore>
 Utilities/ParseOGLExt/:
 modular/Utilities/ParseOGLExt/module.cmake:
 modular/Utilities/ParseOGLExt/ParseOGLExt.cxx:
-modular/Utilities/ParseOGLExt/CMakeLists.txt:
+modular/UtilitiesParseOGLExt.patch: <ignore>
+<patch>: UtilitiesParseOGLExt.patch
 
 [Utilities/MetaIO/vtkmetaio]
 Utilities/vtkmetaio/:
@@ -324,7 +325,8 @@ Utilities/Scripts/:
 [Utilities/MaterialLibrary]
 Utilities/MaterialLibrary/:
 modular/Utilities/MaterialLibrary/module.cmake:
-modular/Utilities/MaterialLibrary/CMakeLists.txt:
+modular/UtilitiesMaterialLibrary.patch: <ignore>
+<patch>: UtilitiesMaterialLibrary.patch
 
 [Utilities/Doxygen]
 Utilities/Doxygen/:
