@@ -166,8 +166,6 @@ Utilities/vtkoggtheora/:
 Utilities/vtk_oggtheora.h:
 modular/ThirdParty/oggtheora/module.cmake:
 modular/ThirdParty/oggtheora/CMakeLists.txt:
-modular/ThirdPartyOggTheora.patch: <ignore>
-<patch>: ThirdPartyOggTheora.patch
 
 [ThirdParty/png/vtkpng]
 Utilities/vtkpng/:
