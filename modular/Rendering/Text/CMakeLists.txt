@@ -9,7 +9,4 @@ set(Kit_SRCS
   vtkFreeTypeUtilities.cxx
   vtkFreeTypeTools.cxx
   )
-include_directories(
-  ${VTK_SOURCE_DIR}/Rendering/FreeType
-  )
 vtk_module_library(vtkRenderingText ${Kit_SRCS})
