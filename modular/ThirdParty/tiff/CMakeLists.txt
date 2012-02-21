@@ -1,3 +1,5 @@
 set(vtktiff_LIBRARIES vtktiff)
 vtk_module_impl()
+set(VTK_ZLIB_LIBRARIES ${vtkzlib_LIBRARIES})
+set(VTK_JPEG_LIBRARIES ${vtkjpeg_LIBRARIES})
 add_subdirectory(vtktiff)
