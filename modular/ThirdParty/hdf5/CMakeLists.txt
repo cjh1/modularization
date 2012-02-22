@@ -63,5 +63,5 @@ foreach(lib
     vtkhdf5
     vtkhdf5_hl
     )
-  vtk_module_target(${lib} NO_INSTALL)
+  vtk_target(${lib} NO_INSTALL)
 endforeach()

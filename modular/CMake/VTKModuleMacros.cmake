@@ -62,10 +62,6 @@ endmacro()
 
 macro(vtk_module_impl)
   include(module.cmake) # Load module meta-data
-  set(${vtk-module}_INSTALL_RUNTIME_DIR ${VTK_INSTALL_RUNTIME_DIR})
-  set(${vtk-module}_INSTALL_LIBRARY_DIR ${VTK_INSTALL_LIBRARY_DIR})
-  set(${vtk-module}_INSTALL_ARCHIVE_DIR ${VTK_INSTALL_ARCHIVE_DIR})
-  set(${vtk-module}_INSTALL_INCLUDE_DIR ${VTK_INSTALL_INCLUDE_DIR})
 
   vtk_module_use(${VTK_MODULE_${vtk-module}_DEPENDS})
 
@@ -141,7 +137,7 @@ macro(vtk_module_warnings_disable)
   endforeach()
 endmacro()
 
-macro(vtk_module_target_label _target_name)
+macro(vtk_target_label _target_name)
   if(vtk-module)
     set(_label ${vtk-module})
   else()
@@ -150,7 +146,7 @@ macro(vtk_module_target_label _target_name)
   set_property(TARGET ${_target_name} PROPERTY LABELS ${_label})
 endmacro()
 
-macro(vtk_library_name _name)
+macro(vtk_target_name _name)
   set_property(TARGET ${_name} PROPERTY VERSION 1)
   set_property(TARGET ${_name} PROPERTY SOVERSION 1)
   if("${_name}" MATCHES "^[Vv][Tt][Kk]")
@@ -162,22 +158,24 @@ macro(vtk_library_name _name)
   set_property(TARGET ${_name} PROPERTY OUTPUT_NAME ${_vtk}${_name}-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION})
 endmacro()
 
-macro(vtk_library_export _name)
+macro(vtk_target_export _name)
   if(NOT VTK_INSTALL_NO_LIBRARIES)
     set_property(GLOBAL APPEND PROPERTY VTK_TARGETS ${_name})
   endif()
 endmacro()
 
-macro(vtk_module_target_install _name)
-  install(TARGETS ${_name}
-    EXPORT  ${${vtk-module}-targets}
-    RUNTIME DESTINATION ${${vtk-module}_INSTALL_RUNTIME_DIR}
-    LIBRARY DESTINATION ${${vtk-module}_INSTALL_LIBRARY_DIR}
-    ARCHIVE DESTINATION ${${vtk-module}_INSTALL_ARCHIVE_DIR}
-    )
+macro(vtk_target_install _name)
+  if(NOT VTK_INSTALL_NO_LIBRARIES)
+    install(TARGETS ${_name}
+      EXPORT ${VTK_INSTALL_EXPORT_NAME}
+      RUNTIME DESTINATION ${VTK_INSTALL_RUNTIME_DIR} COMPONENT RuntimeLibraries
+      LIBRARY DESTINATION ${VTK_INSTALL_LIBRARY_DIR} COMPONENT RuntimeLibraries
+      ARCHIVE DESTINATION ${VTK_INSTALL_ARCHIVE_DIR} COMPONENT Development
+      )
+  endif()
 endmacro()
 
-macro(vtk_module_target _name)
+macro(vtk_target _name)
   set(_install 1)
   foreach(arg ${ARGN})
     if("${arg}" MATCHES "^(NO_INSTALL)$")
@@ -186,18 +184,17 @@ macro(vtk_module_target _name)
       message(FATAL_ERROR "Unknown argument [${arg}]")
     endif()
   endforeach()
-  vtk_library_name(${_name})
-  vtk_module_target_label(${_name})
-  vtk_library_export(${_name})
+  vtk_target_name(${_name})
+  vtk_target_label(${_name})
+  vtk_target_export(${_name})
   if(_install)
-    vtk_module_target_install(${_name})
+    vtk_target_install(${_name})
   endif()
 endmacro()
 
 function(vtk_add_library name)
   add_library(${name} ${ARGN})
-  vtk_library_name(${name})
-  vtk_library_export(${name})
+  vtk_target(${name})
 endfunction()
 
 function(vtk_add_executable name)
@@ -222,13 +219,6 @@ function(vtk_module_library name)
   foreach(dep IN LISTS VTK_MODULE_${vtk-module}_LINK_DEPENDS)
     target_link_libraries(${vtk-module} ${${dep}_LIBRARIES})
   endforeach()
-
-  install(TARGETS ${vtk-module}
-    EXPORT ${VTK_INSTALL_EXPORT_NAME}
-    ARCHIVE DESTINATION ${VTK_INSTALL_ARCHIVE_DIR}
-    LIBRARY DESTINATION ${VTK_INSTALL_LIBRARY_DIR}
-    RUNTIME DESTINATION ${VTK_INSTALL_RUNTIME_DIR}
-    )
 
   # Generate the export macro header for symbol visibility/Windows DLL declspec
   include(GenerateExportHeader)
