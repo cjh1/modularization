@@ -8,6 +8,7 @@ Common/Testing/: <ignore>
 CMake/CMake2.4/: <ignore>
 CMake/vtk-forward.c.in: <ignore>
 CMake/vtkForwardingExecutable.cmake: <ignore>
+CMake/vtkHDF5Library.cmake: <ignore>
 CMake/vtkTargetExportMacros.cmake: <ignore>
 CMake/vtkThirdParty.cmake: <ignore>
 CMake/FindODBC.cmake: <ignore>
@@ -2150,7 +2151,6 @@ CMake/vtkExportKit.cmake:
 CMake/vtkFFMPEGTestAvAlloc.cxx:
 CMake/vtkFFMPEGTestImgConvert.cxx:
 CMake/vtkFFMPEGTestURLFClose.cxx:
-CMake/vtkHDF5Library.cmake:
 CMake/vtkJavaDriver.java.in:
 CMake/vtkKit.cmake.in:
 CMake/vtkMakeInstantiator.cmake:
