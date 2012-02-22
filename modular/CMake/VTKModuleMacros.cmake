@@ -79,7 +79,6 @@ macro(vtk_module_impl)
     ${${vtk-module}_BINARY_DIR}
     ${${vtk-module}_SOURCE_DIR}
     )
-  #install(DIRECTORY include/ DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
 
   if(${vtk-module}_INCLUDE_DIRS)
     include_directories(${${vtk-module}_INCLUDE_DIRS})
@@ -235,4 +234,24 @@ function(vtk_module_library name)
   add_compiler_export_flags(my_abi_flags)
   set_property(TARGET ${vtk-module} APPEND
     PROPERTY COMPILE_FLAGS "${VTK_ABI_CXX_FLAGS}")
+
+  if(NOT VTK_INSTALL_NO_DEVELOPMENT)
+    set(_hdrs)
+    foreach(arg ${ARGN})
+      get_filename_component(src "${arg}" ABSOLUTE)
+      string(REGEX REPLACE "\\.cxx$" ".h" hdr "${src}")
+      if("${hdr}" MATCHES "\\.h$")
+        if(EXISTS "${hdr}")
+          list(APPEND _hdrs "${hdr}")
+        endif()
+      endif()
+    endforeach()
+    if(_hdrs)
+      list(REMOVE_DUPLICATES _hdrs)
+      install(FILES ${_hdrs}
+        DESTINATION ${VTK_INSTALL_INCLUDE_DIR}
+        COMPONENT Development
+        )
+    endif()
+  endif()
 endfunction()
