@@ -129,6 +129,8 @@ modular/Utilities/LastConfigureStep/CMakeLists.txt:
 
 [ThirdParty/libxml2/vtklibxml2]
 Utilities/vtklibxml2/:
+modular/ThirdParty-libxml2.patch: <ignore>
+<patch>: ThirdParty-libxml2.patch
 
 [ThirdParty/libxml2]
 Utilities/vtk_libxml2.h.in:
@@ -163,6 +165,8 @@ modular/Utilities/MetaIO/module.cmake:
 
 [ThirdParty/oggtheora/vtkoggtheora]
 Utilities/vtkoggtheora/:
+modular/ThirdParty-oggtheora.patch: <ignore>
+<patch>: ThirdParty-oggtheora.patch
 
 [ThirdParty/oggtheora]
 Utilities/vtk_oggtheora.h.in:
@@ -171,6 +175,8 @@ modular/ThirdParty/oggtheora/CMakeLists.txt:
 
 [ThirdParty/png/vtkpng]
 Utilities/vtkpng/:
+modular/ThirdParty-png.patch: <ignore>
+<patch>: ThirdParty-png.patch
 
 [ThirdParty/png]
 Utilities/vtk_png.h.in:
@@ -179,6 +185,8 @@ modular/ThirdParty/png/CMakeLists.txt:
 
 [ThirdParty/tiff/vtktiff]
 Utilities/vtktiff/:
+modular/ThirdParty-tiff.patch: <ignore>
+<patch>: ThirdParty-tiff.patch
 
 [ThirdParty/tiff]
 Utilities/vtk_tiff.h.in:
@@ -187,6 +195,8 @@ modular/ThirdParty/tiff/CMakeLists.txt:
 
 [ThirdParty/netcdf/vtknetcdf]
 Utilities/vtknetcdf/:
+modular/ThirdParty-netcdf.patch:<ignore>
+<patch>: ThirdParty-netcdf.patch
 
 [ThirdParty/netcdf]
 Utilities/vtk_netcdf.h:
@@ -194,14 +204,11 @@ Utilities/vtk_netcdfcpp.h:
 modular/ThirdParty/netcdf/module.cmake:
 modular/ThirdParty/netcdf/CMakeLists.txt:
 
-modular/UtilitiesNetCFD.patch:<ignore>
-<patch>: UtilitiesNetCFD.patch
-
 [ThirdParty/libproj4/vtklibproj4]
 Utilities/vtklibproj4/:
 
-modular/ThirdPartyLibProj4.patch:<ignore>
-<patch>: ThirdPartyLibProj4.patch
+modular/ThirdParty-libproj4.patch: <ignore>
+<patch>: ThirdParty-libproj4.patch
 
 [ThirdParty/libproj4]
 Utilities/vtk_libproj4.h.in:
@@ -210,6 +217,8 @@ modular/ThirdParty/libproj4/CMakeLists.txt:
 
 [ThirdParty/zlib/vtkzlib]
 Utilities/vtkzlib/:
+modular/ThirdParty-zlib.patch: <ignore>
+<patch>: ThirdParty-zlib.patch
 
 [ThirdParty/zlib]
 Utilities/vtk_zlib.h.in:
@@ -218,6 +227,8 @@ modular/ThirdParty/zlib/CMakeLists.txt:
 
 [ThirdParty/jpeg/vtkjpeg]
 Utilities/vtkjpeg/:
+modular/ThirdParty-jpeg.patch: <ignore>
+<patch>: ThirdParty-jpeg.patch
 
 [ThirdParty/jpeg]
 Utilities/vtk_jpeg.h.in:
@@ -234,6 +245,8 @@ modular/ThirdParty/hdf5/CMakeLists.txt:
 
 [ThirdParty/freetype/vtkfreetype]
 Utilities/vtkfreetype/:
+modular/ThirdParty-freetype.patch: <ignore>
+<patch>: ThirdParty-freetype.patch
 
 [ThirdParty/freetype]
 Utilities/vtk_freetype.h.in:
@@ -242,6 +255,8 @@ modular/ThirdParty/freetype/CMakeLists.txt:
 
 [ThirdParty/sqlite/vtksqlite]
 Utilities/vtksqlite/:
+modular/ThirdParty-sqlite.patch: <ignore>
+<patch>: ThirdParty-sqlite.patch
 
 [ThirdParty/sqlite]
 modular/ThirdParty/sqlite/module.cmake:
@@ -265,6 +280,8 @@ modular/Utilities/KWSys/CMakeLists.txt:
 [ThirdParty/mrmpi]
 Utilities/mrmpi/:
 modular/ThirdParty/mrmpi/module.cmake:
+modular/ThirdParty-mrmpi.patch: <ignore>
+<patch>: ThirdParty-mrmpi.patch
 
 [Utilities/octree]
 Utilities/octree/:
@@ -275,6 +292,8 @@ Utilities/utf8/:
 [ThirdParty/verdict]
 Utilities/verdict/:
 modular/ThirdParty/verdict/module.cmake:
+modular/ThirdParty-verdict.patch: <ignore>
+<patch>: ThirdParty-verdict.patch
 
 [Utilities/vtkTclTest2Py]
 Utilities/vtkTclTest2Py/:
@@ -285,6 +304,9 @@ Utilities/TclTk/:
 [ThirdParty/expat/vtkexpat]
 Utilities/vtkexpat/:
 
+modular/ThirdParty-expat.patch: <ignore>
+<patch>: ThirdParty-expat.patch
+
 [ThirdParty/expat]
 Utilities/vtk_expat.h.in:
 modular/ThirdParty/expat/module.cmake:
@@ -292,8 +314,8 @@ modular/ThirdParty/expat/CMakeLists.txt:
 
 [ThirdParty/exodusII/vtkexodusII]
 Utilities/vtkexodus2/:
-modular/ThirdPartyExodusII-1.patch: <ignore>
-<patch>: ThirdPartyExodusII-1.patch
+modular/ThirdParty-exodusII.patch: <ignore>
+<patch>: ThirdParty-exodusII.patch
 
 [ThirdParty/exodusII]
 Utilities/vtk_exodusII.h:
@@ -305,20 +327,20 @@ modular/ThirdPartyExodusII-2.patch: <ignore>
 [ThirdParty/alglib]
 Utilities/vtkalglib/:
 modular/ThirdParty/alglib/module.cmake:
-modular/ThirdPartyAlgLib.patch: <ignore>
-<patch>: ThirdPartyAlgLib.patch
+modular/ThirdParty-alglib.patch: <ignore>
+<patch>: ThirdParty-alglib.patch
 
 [ThirdParty/ftgl]
 Utilities/ftgl/:
 modular/ThirdParty/ftgl/module.cmake:
-modular/ThirdPartyFTGL.patch: <ignore>
-<patch>: ThirdPartyFTGL.patch
+modular/ThirdParty-ftgl.patch: <ignore>
+<patch>: ThirdParty-ftgl.patch
 
 [ThirdParty/VPIC]
 Utilities/VPIC/:
 modular/ThirdParty/VPIC/module.cmake:
-modular/ThirdPartyVPIC.patch: <ignore>
-<patch>: ThirdPartyVPIC.patch
+modular/ThirdParty-VPIC.patch: <ignore>
+<patch>: ThirdParty-VPIC.patch
 
 [Utilities/Upgrading]
 Utilities/Upgrading/:
@@ -338,8 +360,8 @@ Utilities/Doxygen/:
 [ThirdParty/Cosmo]
 Utilities/Cosmo/:
 modular/ThirdParty/Cosmo/module.cmake:
-modular/ThirdPartyCosmo.patch: <ignore>
-<patch>: ThirdPartyCosmo.patch
+modular/ThirdParty-Cosmo.patch: <ignore>
+<patch>: ThirdParty-Cosmo.patch
 
 [Utilities/OutputWindowProcess]
 Utilities/OutputWindowProcess/:
@@ -4832,6 +4854,9 @@ GUISupport/MFC/vtkMFCConfigure.h.in:
 GUISupport/MFC/VTKMFCSettings.cmake:
 GUISupport/MFC/vtkMFCWindow.cpp:
 GUISupport/MFC/vtkMFCWindow.h:
+
+modular/GUISupport-MFC.patch: <ignore>
+<patch>: GUISupport-MFC.patch
 
 [Infovis/Parallel]
 

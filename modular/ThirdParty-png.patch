@@ -1,0 +1,23 @@
+diff --git a/ThirdParty/png/vtkpng/CMakeLists.txt b/ThirdParty/png/vtkpng/CMakeLists.txt
+index 6869935..ca50c6d 100644
+--- a/ThirdParty/png/vtkpng/CMakeLists.txt
++++ b/ThirdParty/png/vtkpng/CMakeLists.txt
+@@ -32,18 +32,6 @@ IF(UNIX)
+   TARGET_LINK_LIBRARIES(vtkpng -lm)
+ ENDIF()
+ 
+-# Apply user-defined properties to the library target.
+-IF(VTK_LIBRARY_PROPERTIES)
+-  SET_TARGET_PROPERTIES(vtkpng PROPERTIES ${VTK_LIBRARY_PROPERTIES})
+-ENDIF(VTK_LIBRARY_PROPERTIES)
+-
+-IF(NOT VTK_INSTALL_NO_LIBRARIES)
+-  INSTALL(TARGETS vtkpng
+-    EXPORT ${VTK_INSTALL_EXPORT_NAME}
+-    RUNTIME DESTINATION ${VTK_INSTALL_BIN_DIR_CM24} COMPONENT RuntimeLibraries
+-    LIBRARY DESTINATION ${VTK_INSTALL_LIB_DIR_CM24} COMPONENT RuntimeLibraries
+-    ARCHIVE DESTINATION ${VTK_INSTALL_LIB_DIR_CM24} COMPONENT Development)
+-ENDIF(NOT VTK_INSTALL_NO_LIBRARIES)
+ IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+   INSTALL(FILES
+     ${VTKPNG_BINARY_DIR}/pngDllConfig.h

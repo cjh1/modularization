@@ -1,0 +1,18 @@
+diff --git a/ThirdParty/verdict/CMakeLists.txt b/ThirdParty/verdict/CMakeLists.txt
+index 9d2321c..d498ae1 100644
+--- a/ThirdParty/verdict/CMakeLists.txt
++++ b/ThirdParty/verdict/CMakeLists.txt
+@@ -154,13 +154,6 @@ IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+ 
+ ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+ 
+-install(TARGETS ${verdict_LIBRARY}
+-      EXPORT ${VTK_INSTALL_EXPORT_NAME}
+-      RUNTIME DESTINATION ${verdict_INSTALL_BIN_DIR} COMPONENT RuntimeLibraries # .exe, .dll
+-      LIBRARY DESTINATION ${verdict_INSTALL_LIB_DIR} COMPONENT RuntimeLibraries # .so, mod.dll
+-      ARCHIVE DESTINATION ${verdict_INSTALL_LIB_DIR} COMPONENT Development      # .a, .lib
+-)
+-
+ #
+ # Packing stuff
+ #
