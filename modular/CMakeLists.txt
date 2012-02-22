@@ -83,16 +83,6 @@ if(NOT VTK_INSTALL_EXPORT_NAME)
 endif()
 set(VTK_MODULES_DIR "${VTK_BINARY_DIR}/${VTK_INSTALL_PACKAGE_DIR}/Modules")
 
-# Append the library version information to the library target
-# properties.  A parent project may set its own properties and/or may
-# block this.
-if(NOT VTK_NO_LIBRARY_VERSION)
-  set(VTK_LIBRARY_PROPERTIES ${VTK_LIBRARY_PROPERTIES}
-    VERSION "${VTK_VERSION}"
-    SOVERSION "${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}"
-    )
-endif()
-
 # FIXME: Used by HashSource
 # the following lines are for cross compiling support
 # we may get here also from ParaView, in this case don't change the filename

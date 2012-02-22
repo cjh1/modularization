@@ -35,6 +35,4 @@ if(NOT VTK_INSTALL_NO_DEVELOPMENT)
 endif()
 
 add_subdirectory(vtksys)
-if(NOT VTK_INSTALL_NO_LIBRARIES)
-  set_property(GLOBAL APPEND PROPERTY VTK_TARGETS vtksys)
-endif(NOT VTK_INSTALL_NO_LIBRARIES)
+vtk_module_target(${KWSYS_NAMESPACE} NO_INSTALL)
