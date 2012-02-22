@@ -169,3 +169,73 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
   include("${${vtk-module}_SOURCE_DIR}/vtk-module-init.cmake" OPTIONAL)
   add_subdirectory("${${vtk-module}_SOURCE_DIR}" "${${vtk-module}_BINARY_DIR}")
 endforeach()
+
+#----------------------------------------------------------------------
+# Generate VTKConfig* files
+
+# Construct version numbers for VTKConfigVersion.cmake.
+SET(_VTK_VERSION_MAJOR ${VTK_MAJOR_VERSION})
+SET(_VTK_VERSION_MINOR ${VTK_MINOR_VERSION})
+SET(_VTK_VERSION_PATCH ${VTK_BUILD_VERSION})
+# We use odd minor numbers for development versions.
+# Use a date for the development patch level.
+if("${_VTK_VERSION_MINOR}" MATCHES "[13579]$")
+  include(${VTK_SOURCE_DIR}/Utilities/KWSys/vtksys/kwsysDateStamp.cmake)
+  set(_VTK_VERSION_PATCH
+    "${KWSYS_DATE_STAMP_YEAR}${KWSYS_DATE_STAMP_MONTH}${KWSYS_DATE_STAMP_DAY}"
+    )
+endif()
+
+# Create list of available modules and libraries.
+set(VTK_CONFIG_MODULES_ENABLED "")
+foreach(vtk-module ${VTK_MODULES_ENABLED})
+  if(NOT ${vtk-module}_IS_TEST)
+    list(APPEND VTK_CONFIG_MODULES_ENABLED ${vtk-module})
+  endif()
+endforeach()
+
+# Generate VTKConfig.cmake for the build tree.
+set(VTK_CONFIG_CODE "
+set(VTK_MODULES_DIR \"${VTK_MODULES_DIR}\")")
+set(VTK_CONFIG_CMAKE_DIR "${VTK_SOURCE_DIR}/CMake")
+set(VTK_CONFIG_TARGETS_CONDITION " AND NOT VTK_BINARY_DIR")
+set(VTK_CONFIG_TARGETS_FILE "${VTK_BINARY_DIR}/VTKTargets.cmake")
+set(VTK_CONFIG_MODULE_API_FILE "${VTK_SOURCE_DIR}/CMake/VTKModuleAPI.cmake")
+configure_file(CMake/VTKConfig.cmake.in VTKConfig.cmake @ONLY)
+
+# Generate VTKConfig.cmake for the install tree.
+set(VTK_CONFIG_CODE "
+# Compute the installation prefix from this VTKConfig.cmake file location.
+get_filename_component(VTK_INSTALL_PREFIX \"\${CMAKE_CURRENT_LIST_FILE}\" PATH)")
+# Construct the proper number of get_filename_component(... PATH)
+# calls to compute the installation prefix.
+string(REGEX REPLACE "/" ";" _count "${VTK_INSTALL_PACKAGE_DIR}")
+foreach(p ${_count})
+  set(VTK_CONFIG_CODE "${VTK_CONFIG_CODE}
+get_filename_component(VTK_INSTALL_PREFIX \"\${VTK_INSTALL_PREFIX}\" PATH)")
+endforeach(p)
+set(VTK_CONFIG_CODE "${VTK_CONFIG_CODE}
+set(VTK_MODULES_DIR \"\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}/Modules\")")
+set(VTK_CONFIG_CMAKE_DIR "\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}")
+set(VTK_CONFIG_TARGETS_CONDITION "")
+set(VTK_CONFIG_TARGETS_FILE "\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}/VTKTargets.cmake")
+set(VTK_CONFIG_MODULE_API_FILE "\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}/VTKModuleAPI.cmake")
+configure_file(CMake/VTKConfig.cmake.in CMakeFiles/VTKConfig.cmake @ONLY)
+
+configure_file(CMake/VTKConfigVersion.cmake.in VTKConfigVersion.cmake @ONLY)
+
+install(FILES ${VTK_BINARY_DIR}/CMakeFiles/VTKConfig.cmake
+              ${VTK_BINARY_DIR}/VTKConfigVersion.cmake
+              CMake/VTKModuleAPI.cmake
+              CMake/UseVTK.cmake
+  DESTINATION ${VTK_INSTALL_PACKAGE_DIR})
+get_property(VTK_TARGETS GLOBAL PROPERTY VTK_TARGETS)
+if(VTK_TARGETS)
+  install(EXPORT VTKTargets DESTINATION ${VTK_INSTALL_PACKAGE_DIR})
+else()
+  set(CMAKE_CONFIGURABLE_FILE_CONTENT "# No targets!")
+  configure_file(${CMAKE_ROOT}/Modules/CMakeConfigurableFile.in
+                 ${VTK_BINARY_DIR}/CMakeFiles/VTKTargets.cmake @ONLY)
+  install(FILES ${VTK_BINARY_DIR}/CMakeFiles/VTKTargets.cmake
+          DESTINATION ${VTK_INSTALL_PACKAGE_DIR})
+endif()

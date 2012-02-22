@@ -79,7 +79,7 @@ macro(vtk_module_impl)
     ${${vtk-module}_BINARY_DIR}
     ${${vtk-module}_SOURCE_DIR}
     )
-  #install(DIRECTORY include/ DESTINATION ${${vtk-module}_INSTALL_INCLUDE_DIR})
+  #install(DIRECTORY include/ DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
 
   if(${vtk-module}_INCLUDE_DIRS)
     include_directories(${${vtk-module}_INCLUDE_DIRS})
@@ -99,7 +99,7 @@ macro(vtk_module_impl)
   set(vtk-module-DEPENDS "${VTK_MODULE_${vtk-module}_DEPENDS}")
   set(vtk-module-LIBRARIES "${${vtk-module}_LIBRARIES}")
   set(vtk-module-INCLUDE_DIRS-build "${${vtk-module}_INCLUDE_DIRS}")
-  set(vtk-module-INCLUDE_DIRS-install "\${VTK_INSTALL_PREFIX}/${${vtk-module}_INSTALL_INCLUDE_DIR}")
+  set(vtk-module-INCLUDE_DIRS-install "\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_INCLUDE_DIR}")
   if(${vtk-module}_SYSTEM_INCLUDE_DIRS)
     list(APPEND vtk-module-INCLUDE_DIRS-build "${${vtk-module}_SYSTEM_INCLUDE_DIRS}")
     list(APPEND vtk-module-INCLUDE_DIRS-install "${${vtk-module}_SYSTEM_INCLUDE_DIRS}")

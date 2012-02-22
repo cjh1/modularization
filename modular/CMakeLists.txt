@@ -377,9 +377,6 @@ ENDFOREACH(header)
 #-----------------------------------------------------------------------------
 # Configure files with settings for use by the build.
 
-CONFIGURE_FILE(${VTK_SOURCE_DIR}/UseVTK.cmake.in
-               ${VTK_BINARY_DIR}/UseVTK.cmake COPYONLY IMMEDIATE)
-
 # Include the sockets test.
 # FIXME: The test should be moved and rewritten.
 include(VTKParallelCMakeTests)
