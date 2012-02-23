@@ -115,7 +115,6 @@ TextAnalysis/: <ignore>
 modular/CMakeLists.txt:
 Copyright.txt:
 README.html:
-TestingLogo.gif:
 vtkLogo.ico:
 vtkLogo.jpg:
 modular/CTestConfig.cmake:
