@@ -1,7 +1,4 @@
-set(vtklibproj4_THIRD_PARTY 1)
-set(vtklibproj4_LIBRARIES vtkproj4)
-set(vtklibproj4_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/vtklibproj4)
-vtk_module_impl()
-configure_file(vtk_libproj4.h.in vtk_libproj4.h)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_libproj4.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
-add_subdirectory(vtklibproj4)
+vtk_module_third_party(LIBPROJ4
+  LIBRARIES vtkproj4
+  INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/vtklibproj4
+  )

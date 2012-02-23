@@ -1,6 +1,1 @@
-set(vtkoggtheora_THIRD_PARTY 1)
-set(vtkoggtheora_LIBRARIES vtkoggtheora)
-vtk_module_impl()
-configure_file(vtk_oggtheora.h.in vtk_oggtheora.h)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_oggtheora.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
-add_subdirectory(vtkoggtheora)
+vtk_module_third_party(OGGTHEORA)

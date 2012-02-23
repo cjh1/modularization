@@ -1,8 +1,10 @@
-set(vtkhdf5_THIRD_PARTY 1)
-set(vtkhdf5_LIBRARIES vtkhdf5_hl vtkhdf5)
-vtk_module_impl()
-configure_file(vtk_hdf5.h.in vtk_hdf5.h)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_hdf5.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
+vtk_module_third_party(HDF5
+  LIBRARIES vtkhdf5_hl vtkhdf5
+  NO_ADD_SUBDIRECTORY
+  )
+if(VTK_USE_SYSTEM_HDF5)
+  return()
+endif()
 
 set(HDF5_EXTERNALLY_CONFIGURED ON)
 set(HDF5_EXTERNAL_LIB_PREFIX "vtk")

@@ -1,6 +1,1 @@
-set(vtkjpeg_THIRD_PARTY 1)
-set(vtkjpeg_LIBRARIES vtkjpeg)
-vtk_module_impl()
-configure_file(vtk_jpeg.h.in vtk_jpeg.h)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_jpeg.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
-add_subdirectory(vtkjpeg)
+vtk_module_third_party(JPEG)

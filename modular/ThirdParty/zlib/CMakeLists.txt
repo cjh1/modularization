@@ -1,6 +1,1 @@
-set(vtkzlib_THIRD_PARTY 1)
-set(vtkzlib_LIBRARIES vtkzlib)
-vtk_module_impl()
-configure_file(vtk_zlib.h.in vtk_zlib.h)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_zlib.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
-add_subdirectory(vtkzlib)
+vtk_module_third_party(ZLIB)

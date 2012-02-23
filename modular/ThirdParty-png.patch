@@ -2,6 +2,15 @@ diff --git a/ThirdParty/png/vtkpng/CMakeLists.txt b/ThirdParty/png/vtkpng/CMakeL
 index 6869935..ca50c6d 100644
 --- a/ThirdParty/png/vtkpng/CMakeLists.txt
 +++ b/ThirdParty/png/vtkpng/CMakeLists.txt
+@@ -25,7 +25,7 @@ CONFIGURE_FILE(${VTKPNG_SOURCE_DIR}/pngDllConfig.h.in
+ 
+ VTK_ADD_LIBRARY(vtkpng ${PNG_SRCS})
+ 
+-TARGET_LINK_LIBRARIES(vtkpng ${VTK_ZLIB_LIBRARIES})
++TARGET_LINK_LIBRARIES(vtkpng ${vtkzlib_LIBRARIES})
+ 
+ # link against the math library
+ IF(UNIX)
 @@ -32,18 +32,6 @@ IF(UNIX)
    TARGET_LINK_LIBRARIES(vtkpng -lm)
  ENDIF()

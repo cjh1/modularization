@@ -1,6 +1,1 @@
-set(vtkexpat_THIRD_PARTY 1)
-set(vtkexpat_LIBRARIES vtkexpat)
-vtk_module_impl()
-configure_file(vtk_expat.h.in vtk_expat.h)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vtk_expat.h DESTINATION ${VTK_INSTALL_INCLUDE_DIR})
-add_subdirectory(vtkexpat)
+vtk_module_third_party(EXPAT)

@@ -2,6 +2,15 @@ diff --git a/ThirdParty/tiff/vtktiff/CMakeLists.txt b/ThirdParty/tiff/vtktiff/CM
 index a241e12..4a4bb03 100644
 --- a/ThirdParty/tiff/vtktiff/CMakeLists.txt
 +++ b/ThirdParty/tiff/vtktiff/CMakeLists.txt
+@@ -110,7 +110,7 @@ CONFIGURE_FILE(${VTKTIFF_SOURCE_DIR}/tif_config.h.in
+   ${VTKTIFF_BINARY_DIR}/tif_config.h)
+ 
+ VTK_ADD_LIBRARY(vtktiff ${common_SRCS})
+-TARGET_LINK_LIBRARIES( vtktiff ${VTK_ZLIB_LIBRARIES} ${VTK_JPEG_LIBRARIES} )
++TARGET_LINK_LIBRARIES( vtktiff ${vtkzlib_LIBRARIES} ${vtkjpeg_LIBRARIES} )
+ 
+ # link against the math library
+ IF(UNIX)
 @@ -117,18 +117,6 @@ IF(UNIX)
    TARGET_LINK_LIBRARIES(vtktiff -lm)
  ENDIF()

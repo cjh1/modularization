@@ -12,6 +12,10 @@ CMake/vtkHDF5Library.cmake: <ignore>
 CMake/vtkTargetExportMacros.cmake: <ignore>
 CMake/vtkThirdParty.cmake: <ignore>
 CMake/FindODBC.cmake: <ignore>
+CMake/FindFREETYPE.cmake: <ignore>
+CMake/FindEXPAT.cmake: <ignore>
+CMake/FindHDF5.cmake: <ignore>
+CMake/FindLIBXML2.cmake: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
 Imaging/CMakeLists.txt: <ignore>
@@ -2131,14 +2135,10 @@ CMake/Find3DconnexionClient.cmake:
 CMake/FindApplicationServices.cmake:
 CMake/FindCg.cmake:
 CMake/FindDirectX.cmake:
-CMake/FindEXPAT.cmake:
 CMake/FindFFMPEG.cmake:
-CMake/FindFREETYPE.cmake:
 CMake/FindGL2PS.cmake:
-CMake/FindHDF5.cmake:
 CMake/FindIOKit.cmake:
 CMake/FindLIBPROJ4.cmake:
-CMake/FindLIBXML2.cmake:
 CMake/FindMangledMesa.cmake:
 CMake/FindMatlabMex.cmake:
 CMake/FindMPEG2.cmake:
