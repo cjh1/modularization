@@ -17,9 +17,11 @@ set(Kit_SRCS
   vtkGL2PSExporter.cxx
   )
 
-# FIXME need to work out what todo here
-SET(Kit_SRCS ${VTK_SOURCE_DIR}/ThirdParty/gl2ps/vtkgl2ps/gl2ps.c)
-ADD_DEFINITIONS(-DGL2PS_HAVE_ZLIB)
-ADD_DEFINITIONS(-DGL2PS_HAVE_LIBPNG)
+if(NOT VTK_USE_SYSTEM_GL2PS)
+  # TODO: Build vtkgl2ps library over in its module
+  list(APPEND Kit_SRCS ${VTK_SOURCE_DIR}/ThirdParty/gl2ps/vtkgl2ps/gl2ps.c)
+  add_definitions(-DGL2PS_HAVE_ZLIB)
+  add_definitions(-DGL2PS_HAVE_LIBPNG)
+endif()
 
 vtk_module_library(vtkIOExport ${Kit_SRCS})
