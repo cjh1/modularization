@@ -1,6 +1,6 @@
 [<ignore>]
 
-# TODO: Drop .NoDartCoverage files.
+modular/modular-notes.txt: <ignore>
 
 vtkIncludeDirectories.cmake: <ignore>
 Common/CMakeLists.txt: <ignore>

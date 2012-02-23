@@ -1,0 +1,64 @@
+- Enable USE_SYSTEM options
+
+# CMake 2.8.0:
+
+#ThirdParty/zlib/vtk_zlib.h.in:#cmakedefine VTK_USE_SYSTEM_ZLIB
+# FindZLIB
+#  ZLIB_INCLUDE_DIRS - where to find zlib.h, etc. # ZLIB_INCLUDE_DIR internally
+#  ZLIB_LIBRARIES    - List of libraries when using zlib.
+
+#ThirdParty/tiff/vtk_tiff.h.in:#cmakedefine VTK_USE_SYSTEM_TIFF
+# FindTIFF
+#  TIFF_INCLUDE_DIR, where to find tiff.h, etc.
+#  TIFF_LIBRARIES, libraries to link against to use TIFF.
+
+#ThirdParty/png/vtk_png.h.in:#cmakedefine VTK_USE_SYSTEM_PNG
+# FindPNG
+#  PNG_INCLUDE_DIR, where to find png.h, etc.
+#  PNG_LIBRARIES, the libraries to link against to use PNG.
+
+#ThirdParty/libxml2/vtk_libxml2.h.in:#cmakedefine VTK_USE_SYSTEM_LIBXML2
+# FindLibXml2
+#  LIBXML2_INCLUDE_DIR - The LibXml2 include directory
+#  LIBXML2_LIBRARIES - The libraries needed to use LibXml2
+
+#ThirdParty/jpeg/vtk_jpeg.h.in:#cmakedefine VTK_USE_SYSTEM_JPEG
+# FindJPEG
+#  JPEG_INCLUDE_DIR, where to find jpeglib.h, etc.
+#  JPEG_LIBRARIES, the libraries needed to use JPEG.
+
+#ThirdParty/expat/vtk_expat.h.in:#cmakedefine VTK_USE_SYSTEM_EXPAT
+# FindEXPAT
+#  EXPAT_INCLUDE_DIRS - where to find expat.h, etc. # EXPAT_INCLUDE_DIR internally
+#  EXPAT_LIBRARIES    - List of libraries when using expat.
+
+#ThirdParty/hdf5/vtk_hdf5.h.in:#cmakedefine VTK_USE_SYSTEM_HDF5
+# FindHDF5 (CMake 2.8.5 is first to look for hdf5-config.cmake)
+#  HDF5_INCLUDE_DIR - Location of the hdf5 includes (2.8.5 also provides HDF5_INCLUDE_DIRS)
+#  HDF5_LIBRARIES - Required libraries for all requested bindings
+# Drop VTK FindHDF5 or use wrapper to find hdf5-config.cmake
+
+#ThirdParty/freetype/vtk_freetype.h.in:#cmakedefine VTK_USE_SYSTEM_FREETYPE
+# FindFreetype
+#  FREETYPE_INCLUDE_DIRS, where to find headers. # always plural
+#  FREETYPE_LIBRARIES, the library to link against
+# Drop VTK FindFREETYPE
+
+#ThirdParty/gl2ps/vtk_gl2ps.h.in:#cmakedefine VTK_USE_SYSTEM_GL2PS
+# No find module in CMake
+# VTK FindGL2PS
+#  GL2PS_INCLUDE_DIR, where to find tiff.h, etc.
+#  GL2PS_LIBRARIES, libraries to link against to use GL2PS.
+
+#ThirdParty/libproj4/vtk_libproj4.h.in:#cmakedefine VTK_USE_SYSTEM_LIBPROJ4
+# No find module in CMake
+# VTK FindLIBPROJ4
+#  LIBPROJ4_INCLUDE_DIR to directories required for using libproj4
+#  LIBPROJ4_LIBRARIES   to libproj4 and any dependent libraries
+
+#ThirdParty/oggtheora/vtk_oggtheora.h.in:#cmakedefine VTK_USE_SYSTEM_OGGTHEORA
+# No find module in CMake
+# VTK FindOGGTHEORA
+#  OGGTHEORA_INCLUDE_DIR, where to find ogg/ogg.h and theora/theora.h
+#  OGGTHEORA_LIBRARIES, the libraries to link against to use Ogg/Theora.
+
