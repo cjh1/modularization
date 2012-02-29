@@ -1,8 +1,19 @@
-diff --git a/ThirdParty/verdict/CMakeLists.txt b/ThirdParty/verdict/CMakeLists.txt
-index 9d2321c..d498ae1 100644
---- a/ThirdParty/verdict/CMakeLists.txt
-+++ b/ThirdParty/verdict/CMakeLists.txt
-@@ -154,13 +154,6 @@ IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+diff --git a/Utilities/verdict/CMakeLists.txt b/Utilities/verdict/CMakeLists.txt
+index 9d2321c..ef05c4c 100644
+--- a/Utilities/verdict/CMakeLists.txt
++++ b/Utilities/verdict/CMakeLists.txt
+@@ -57,6 +57,10 @@ else ( VERDICT_MANGLE )
+   set( verdict_LIBRARY "verdict" )
+ endif ( VERDICT_MANGLE )
+ 
++set(vtkverdict_THIRD_PARTY 1)
++set(vtkverdict_LIBRARIES ${verdict_LIBRARY})
++vtk_module_impl()
++
+ # Setting the VERSION and SOVERSION of a library will include
+ # version information either in the library, or in the library
+ # name (depending on the platform). You may choose to exclude
+@@ -154,13 +158,6 @@ IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
  
  ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)
  

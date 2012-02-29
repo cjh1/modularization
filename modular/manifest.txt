@@ -3359,6 +3359,9 @@ Graphics/vtkDistancePolyDataFilter.h:
 
 [Filters/Verdict]
 
+modular/Filters/Verdict/CMakeLists.txt:
+modular/Filters/Verdict/module.cmake:
+
 Graphics/vtkMeshQuality.cxx:
 Graphics/vtkMeshQuality.h:
 
