@@ -3372,6 +3372,9 @@ Graphics/vtkMatrixMathFilter.h:
 
 [Filters/HyperOctree]
 
+modular/Filters/HyperOctree/CMakeLists.txt:
+modular/Filters/HyperOctree/module.cmake:
+
 Graphics/vtkClipHyperOctree.cxx:
 Graphics/vtkClipHyperOctree.h:
 Graphics/vtkHyperOctreeClipCutPointsGrabber.cxx:
