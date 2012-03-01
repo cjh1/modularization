@@ -122,6 +122,7 @@ UseVTK.cmake.in: <ignore>
 VTKConfig.cmake.in: <ignore>
 VTKConfigVersion.cmake.in: <ignore>
 vtkGenerateVTKConfig.cmake: <ignore>
+.hooks-config.bash:
 
 [Utilities/LastConfigureStep]
 Utilities/LastConfigureStep/:
