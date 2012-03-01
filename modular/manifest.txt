@@ -4851,6 +4851,10 @@ GUISupport/Qt/vtkQtView.cxx:
 GUISupport/Qt/vtkQtView.h:
 GUISupport/Qt/vtkTDxQtUnixDevices.cxx:
 GUISupport/Qt/vtkTDxQtUnixDevices.h:
+GUISupport/Qt/vtkQtDebugLeaksModel.cxx:
+GUISupport/Qt/vtkQtDebugLeaksModel.h:
+GUISupport/Qt/vtkQtDebugLeaksView.cxx:
+GUISupport/Qt/vtkQtDebugLeaksView.h:
 
 [GUISupport/MFC]
 
