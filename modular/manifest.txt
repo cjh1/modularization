@@ -163,6 +163,10 @@ Utilities/vtkmetaio/:
 modular/Utilities/MetaIO/CMakeLists.txt:
 modular/Utilities/MetaIO/module.cmake:
 
+[Utilities/Maintenance]
+Utilities/Maintenance/computeCodeCoverageLocally.sh:
+Utilities/Maintenance/computeCodeCoverageLocallyForOneTest.sh:
+
 [ThirdParty/oggtheora/vtkoggtheora]
 Utilities/vtkoggtheora/:
 modular/ThirdParty-oggtheora.patch: <ignore>
