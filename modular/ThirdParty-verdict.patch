@@ -1,7 +1,7 @@
-diff --git a/Utilities/verdict/CMakeLists.txt b/Utilities/verdict/CMakeLists.txt
+diff --git a/ThirdParty/verdict/CMakeLists.txt b/ThirdParty/verdict/CMakeLists.txt
 index 9d2321c..ef05c4c 100644
---- a/Utilities/verdict/CMakeLists.txt
-+++ b/Utilities/verdict/CMakeLists.txt
+--- a/ThirdParty/verdict/CMakeLists.txt
++++ b/ThirdParty/verdict/CMakeLists.txt
 @@ -57,6 +57,10 @@ else ( VERDICT_MANGLE )
    set( verdict_LIBRARY "verdict" )
  endif ( VERDICT_MANGLE )
