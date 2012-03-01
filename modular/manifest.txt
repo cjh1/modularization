@@ -667,7 +667,6 @@ Common/vtkMathConfigure.h.in:
 Common/vtkMath.cxx:
 Common/vtkMath.h:
 Common/vtkMathUtilities.h:
-Common/vtkVectorBase.h:
 Common/vtkVectorOperators.h:
 
 # For vtkDataArray
@@ -3078,9 +3077,6 @@ Graphics/vtkHierarchicalDataExtractLevel.cxx:
 Graphics/vtkHierarchicalDataExtractLevel.h:
 Graphics/vtkProbeSelectedLocations.cxx:
 Graphics/vtkProbeSelectedLocations.h:
-Filtering/vtkLinearExtractor.cxx:
-Filtering/vtkLinearExtractor.h:
-
 
 [Filters/Sources]
 
