@@ -439,8 +439,6 @@ Common/vtkBitArray.cxx:
 Common/vtkBitArray.h:
 Common/vtkBitArrayIterator.cxx:
 Common/vtkBitArrayIterator.h:
-Common/vtkBoundingBox.cxx:
-Common/vtkBoundingBox.h:
 Common/vtkBoxMuellerRandomSequence.cxx:
 Common/vtkBoxMuellerRandomSequence.h:
 Common/vtkBreakPoint.cxx:
@@ -1121,6 +1119,9 @@ Filtering/vtkLinearSelector.cxx:
 Filtering/vtkLinearSelector.h:
 Filtering/vtkMolecule.cxx:
 Filtering/vtkMolecule.h:
+
+Common/vtkBoundingBox.cxx:
+Common/vtkBoundingBox.h:
 
 modular/CommonDataModel.patch:<ignore>
 <patch>: CommonDataModel.patch
