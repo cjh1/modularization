@@ -1112,6 +1112,16 @@ Filtering/vtkMarchingCubesTriangleCases.h:
 Filtering/vtkMarchingSquaresLineCases.cxx:
 Filtering/vtkMarchingSquaresLineCases.h:
 
+# Chemistry datatypes, here for the moment
+Filtering/vtkAtom.cxx:
+Filtering/vtkAtom.h:
+Filtering/vtkBond.cxx:
+Filtering/vtkBond.h:
+Filtering/vtkLinearSelector.cxx:
+Filtering/vtkLinearSelector.h:
+Filtering/vtkMolecule.cxx:
+Filtering/vtkMolecule.h:
+
 modular/CommonDataModel.patch:<ignore>
 <patch>: CommonDataModel.patch
 
