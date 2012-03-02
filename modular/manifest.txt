@@ -5410,7 +5410,7 @@ Chemistry/vtkSimpleBondPerceiver.cxx:
 Chemistry/vtkSimpleBondPerceiver.h:
 
 
-[Chemistry/Testing/Cxx]
+[Chemistry/Core/Testing/Cxx]
 Chemistry/Testing/CMakeLists.txt:
 Chemistry/Testing/Cxx/CMakeLists.txt:
 Chemistry/Testing/Cxx/TestBallAndStick.cxx:
