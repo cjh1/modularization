@@ -269,8 +269,7 @@ configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.cxx.in
 
 vtk_module_library(vtkRenderingOpenGL ${Kit_SRCS})
 target_link_libraries(vtkRenderingOpenGL ${OPENGL_LIBRARIES})
+
 if(VTK_USE_X)
   target_link_libraries(vtkRenderingOpenGL ${X11_LIBRARIES} ${X11_Xt_LIB})
 endif()
-
-add_subdirectory(Testing/Cxx)
