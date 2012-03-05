@@ -1129,6 +1129,16 @@ Common/vtkBoundingBox.h:
 modular/CommonDataModel.patch:<ignore>
 <patch>: CommonDataModel.patch
 
+[Common/DataModel/Testing]
+
+modular/Common/DataModel/Testing/CMakeLists.txt:
+
+[Common/DataModel/Testing/Cxx]
+
+modular/Common/DataModel/Testing/Cxx/CMakeLists.txt:
+
+Common/Testing/Cxx/TestVector.cxx:
+
 [Common/ExecutionModel]
 
 modular/Common/ExecutionModel/CMakeLists.txt: 
