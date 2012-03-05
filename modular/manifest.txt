@@ -5418,6 +5418,8 @@ Chemistry/vtkProgrammableElectronicData.h:
 Chemistry/vtkSimpleBondPerceiver.cxx:
 Chemistry/vtkSimpleBondPerceiver.h:
 
+[Chemistry/Core/Testing]
+modular/Chemistry/Core/Testing/CMakeLists.txt:
 
 [Chemistry/Core/Testing/Cxx]
 Chemistry/Testing/CMakeLists.txt:
