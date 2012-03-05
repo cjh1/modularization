@@ -60,7 +60,8 @@ option(VTK_BUILD_ALL_MODULES "Request to build all modules" OFF)
 # Provide an option for each module.
 foreach(vtk-module ${VTK_MODULES_ALL})
   if(NOT ${vtk-module}_IS_TEST)
-    option(Module_${vtk-module} "Request building ${vtk-module}" OFF)
+    option(Module_${vtk-module} "Request building ${vtk-module}"
+      ${VTK_MODULE_${vtk-module}_DEFAULT})
     mark_as_advanced(Module_${vtk-module})
     if(VTK_MODULE_${vtk-module}_EXCLUDE_FROM_ALL)
       set(VTK_MODULE_${vtk-module}_IN_ALL 0)

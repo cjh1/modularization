@@ -37,7 +37,8 @@ macro(vtk_module _name)
       set(VTK_MODULE_${vtk-module}_DESCRIPTION "${arg}")
     elseif("${_doing}" MATCHES "^DEFAULT")
       #message(FATAL_ERROR "Invalid argument [DEFAULT]")
-      # Ignore for now.
+      # Actually respect it for now.
+      set(VTK_MODULE_${vtk-module}_DEFAULT "${arg}")
       set(_doing "")
     else()
       set(_doing "")
