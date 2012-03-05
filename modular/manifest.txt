@@ -4,7 +4,6 @@ modular/modular-notes.txt: <ignore>
 
 vtkIncludeDirectories.cmake: <ignore>
 Common/CMakeLists.txt: <ignore>
-Common/Testing/: <ignore>
 CMake/CMake2.4/: <ignore>
 CMake/vtk-forward.c.in: <ignore>
 CMake/vtkForwardingExecutable.cmake: <ignore>
@@ -110,6 +109,96 @@ Imaging/vtkImageThresholdConnectivity.h: <ignore>
 Filtering/vtkCellTreeLocator.cxx: <ignore>
 Filtering/vtkCellTreeLocator.h: <ignore>
 TextAnalysis/: <ignore>
+
+Common/Testing/CMakeLists.txt:<ignore>
+Common/Testing/CTestCustom.ctest.in:<ignore>
+Common/Testing/Cxx/CMakeLists.txt:<ignore>
+Common/Testing/Cxx/SystemInformation-cygcheck.sh:<ignore>
+Common/Testing/Cxx/SystemInformation.h.in:<ignore>
+Common/Testing/Cxx/TestAmoebaMinimizer.cxx:<ignore>
+Common/Testing/Cxx/TestArrayAPI.cxx:<ignore>
+Common/Testing/Cxx/TestArrayAPIConvenience.cxx:<ignore>
+Common/Testing/Cxx/TestArrayAPIDense.cxx:<ignore>
+Common/Testing/Cxx/TestArrayAPISparse.cxx:<ignore>
+Common/Testing/Cxx/TestArrayBool.cxx:<ignore>
+Common/Testing/Cxx/TestArrayCasting.cxx:<ignore>
+Common/Testing/Cxx/TestArrayExtents.cxx:<ignore>
+Common/Testing/Cxx/TestArrayInterpolationDense.cxx:<ignore>
+Common/Testing/Cxx/TestArrayLookup.cxx:<ignore>
+Common/Testing/Cxx/TestArrayNullValues.cxx:<ignore>
+Common/Testing/Cxx/TestArraySize.cxx:<ignore>
+Common/Testing/Cxx/TestArrayUserTypes.cxx:<ignore>
+Common/Testing/Cxx/TestArrayVariants.cxx:<ignore>
+Common/Testing/Cxx/TestBoundingBox.cxx:<ignore>
+Common/Testing/Cxx/TestConditionVariable.cxx:<ignore>
+Common/Testing/Cxx/TestCxxFeatures.cxx:<ignore>
+Common/Testing/Cxx/TestDataArray.cxx:<ignore>
+Common/Testing/Cxx/TestDataArrayComponentNames.cxx:<ignore>
+Common/Testing/Cxx/TestDirectory.cxx:<ignore>
+Common/Testing/Cxx/TestFastNumericConversion.cxx:<ignore>
+Common/Testing/Cxx/TestGarbageCollector.cxx:<ignore>
+Common/Testing/Cxx/TestInstantiator.cxx:<ignore>
+Common/Testing/Cxx/TestMath.cxx:<ignore>
+Common/Testing/Cxx/TestMatrix3x3.cxx:<ignore>
+Common/Testing/Cxx/TestMinimalStandardRandomSequence.cxx:<ignore>
+Common/Testing/Cxx/TestNew.cxx:<ignore>
+Common/Testing/Cxx/TestObjectFactory.cxx:<ignore>
+Common/Testing/Cxx/TestObservers.cxx:<ignore>
+Common/Testing/Cxx/TestPlane.cxx:<ignore>
+Common/Testing/Cxx/TestPolynomialSolversUnivariate.cxx:<ignore>
+Common/Testing/Cxx/TestSmartPointer.cxx:<ignore>
+Common/Testing/Cxx/TestSortDataArray.cxx:<ignore>
+Common/Testing/Cxx/TestSparseArrayValidation.cxx:<ignore>
+Common/Testing/Cxx/TestStructuredData.cxx:<ignore>
+Common/Testing/Cxx/TestSystemInformation.cxx:<ignore>
+Common/Testing/Cxx/TestUnicodeStringAPI.cxx:<ignore>
+Common/Testing/Cxx/TestUnicodeStringArrayAPI.cxx:<ignore>
+Common/Testing/Cxx/TestVariantComparison.cxx:<ignore>
+Common/Testing/Cxx/TestVectorOperators.cxx:<ignore>
+Common/Testing/Cxx/TestWeakPointer.cxx:<ignore>
+Common/Testing/Cxx/otherArrays.cxx:<ignore>
+Common/Testing/Cxx/otherByteSwap.cxx:<ignore>
+Common/Testing/Cxx/otherLookupTable.cxx:<ignore>
+Common/Testing/Cxx/otherLookupTableWithEnabling.cxx:<ignore>
+Common/Testing/Cxx/otherStringArray.cxx:<ignore>
+Common/Testing/Cxx/otherTimerLog.cxx:<ignore>
+Common/Testing/Cxx/vtkTestNewVar.cxx:<ignore>
+Common/Testing/Cxx/vtkTestNewVar.h:<ignore>
+Common/Testing/Cxx/vtkTestingColors.h:<ignore>
+Common/Testing/HeaderTesting.py:<ignore>
+Common/Testing/Install/CMakeLists.txt:<ignore>
+Common/Testing/Install/vit-forward.c.in:<ignore>
+Common/Testing/Install/vit.cxx:<ignore>
+Common/Testing/Python/CMakeLists.txt:<ignore>
+Common/Testing/Python/PythonSmoke.py:<ignore>
+Common/Testing/Python/TestArrayArguments.py:<ignore>
+Common/Testing/Python/TestExecuteMethodFinalizeCrash.py:<ignore>
+Common/Testing/Python/TestGhost.py:<ignore>
+Common/Testing/Python/TestIgnoreBTX.py:<ignore>
+Common/Testing/Python/TestMutable.py:<ignore>
+Common/Testing/Python/TestNumpySupport.py:<ignore>
+Common/Testing/Python/TestOperators.py:<ignore>
+Common/Testing/Python/TestStrings.py:<ignore>
+Common/Testing/Python/TestSubClass.py:<ignore>
+Common/Testing/Python/TestTemplates.py:<ignore>
+Common/Testing/Python/TestTerminationCrash.py:<ignore>
+Common/Testing/Python/TestVariant.py:<ignore>
+Common/Testing/Python/TestWeakref.py:<ignore>
+Common/Testing/Tcl/CMakeLists.txt:<ignore>
+Common/Testing/Tcl/FindString.tcl:<ignore>
+Common/Testing/Tcl/PrintSelfCheck.tcl:<ignore>
+Common/Testing/Tcl/TestAmoebaMinimizer.tcl:<ignore>
+Common/Testing/Tcl/TestArrays.tcl:<ignore>
+Common/Testing/Tcl/TestEmptyInput.tcl:<ignore>
+Common/Testing/Tcl/TestIgnoreBTX.tcl:<ignore>
+Common/Testing/Tcl/TestSetGet.tcl:<ignore>
+Common/Testing/Tcl/TestString.tcl:<ignore>
+Common/Testing/Tcl/otherInterp.tcl:<ignore>
+Common/Testing/Tcl/otherPrint.tcl:<ignore>
+Common/Testing/Tcl/prtImageTest.tcl:<ignore>
+Common/Testing/Tcl/rtImageTest.tcl:<ignore>
+Common/Testing/WindowsMangleList.py:<ignore>
+
 
 [.]
 modular/CMakeLists.txt:
@@ -5452,3 +5541,11 @@ Chemistry/Testing/Cxx/TestPeriodicTable.cxx:
 Chemistry/Testing/Cxx/TestProgrammableElectronicData.cxx:
 Chemistry/Testing/Cxx/TestSimpleBondPerceiver.cxx:
 Chemistry/Testing/Cxx/TestVDWSpheres.cxx:
+
+[Testing/Core]
+
+modular/Testing/Core/module.cmake:
+modular/Testing/Core/CMakeLists.txt:
+
+Common/Testing/Cxx/vtkTestUtilities.h:
+Common/Testing/Cxx/vtkTestDriver.h:

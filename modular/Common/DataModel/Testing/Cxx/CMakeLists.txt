@@ -16,6 +16,5 @@ REMOVE (TestsToRun ${vtk-module}CxxTests.cxx)
 # Add all the executables
 FOREACH (test ${TestsToRun})
   GET_FILENAME_COMPONENT(TName ${test} NAME_WE)
-  ADD_TEST(NAME ${TName} COMMAND ${CXX_TEST_PATH}/${vtk-module}CxxTests ${TName})
-  message("${TName} ${CXX_TEST_PATH}/${vtk-module}CxxTests ${TName}")
+  ADD_TEST(NAME ${TName} COMMAND ${vtk-module}CxxTests ${TName})
 ENDFOREACH (test)
