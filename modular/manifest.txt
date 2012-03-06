@@ -4119,8 +4119,6 @@ Rendering/vtkProp3DFollower.h:
 Rendering/vtkProperty.cxx:
 Rendering/vtkProperty.h:
 Rendering/vtkPythagoreanQuadruples.h:
-Rendering/vtkRenderState.cxx:
-Rendering/vtkRenderState.h:
 Rendering/vtkRenderWindow.cxx:
 Rendering/vtkRenderWindow.h:
 Rendering/vtkRenderWindowCollection.cxx:
@@ -4481,6 +4479,10 @@ Rendering/vtkUniformVariables.cxx:
 Rendering/vtkUniformVariables.h:
 Rendering/vtkVolumetricPass.cxx:
 Rendering/vtkVolumetricPass.h:
+
+# Renderstate is so tightly coupled to the render pass code.
+Rendering/vtkRenderState.cxx:
+Rendering/vtkRenderState.h:
 
 # Add the export header
 modular/RenderingOpenGL.patch:<ignore>

@@ -44,6 +44,7 @@ set(Kit_SRCS
   vtkPixelBufferObject.cxx
   vtkRenderPassCollection.cxx
   vtkRenderPass.cxx
+  vtkRenderState.cxx
   vtkSequencePass.cxx
   vtkShader2Collection.cxx
   vtkShader2.cxx
