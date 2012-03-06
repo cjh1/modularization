@@ -18,7 +18,6 @@ CMake/FindLIBXML2.cmake: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
 Imaging/CMakeLists.txt: <ignore>
-Filtering/Testing/:	<ignore>
 Filtering/vtkInformation.cxx:	<ignore>
 Infovis/TitanReadme.txt: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.eps: <ignore>
@@ -199,6 +198,50 @@ Common/Testing/Tcl/prtImageTest.tcl:<ignore>
 Common/Testing/Tcl/rtImageTest.tcl:<ignore>
 Common/Testing/WindowsMangleList.py:<ignore>
 
+Filtering/Testing/CMakeLists.txt:<ignore>
+Filtering/Testing/Cxx/CMakeLists.txt:<ignore>
+Filtering/Testing/Cxx/CellLocator2.cxx:<ignore>
+Filtering/Testing/Cxx/CellTreeLocator.cxx:<ignore>
+Filtering/Testing/Cxx/TestGenericCell.cxx:<ignore>
+Filtering/Testing/Cxx/TestGraph.cxx:<ignore>
+Filtering/Testing/Cxx/TestGraphWeightEuclideanDistanceFilter.cxx:<ignore>
+Filtering/Testing/Cxx/TestHigherOrderCell.cxx:<ignore>
+Filtering/Testing/Cxx/TestImageDataFindCell.cxx:<ignore>
+Filtering/Testing/Cxx/TestImageDataInterpolation.cxx:<ignore>
+Filtering/Testing/Cxx/TestImageDataToStructuredGrid.cxx:<ignore>
+Filtering/Testing/Cxx/TestImageIterator.cxx:<ignore>
+Filtering/Testing/Cxx/TestInterpolationDerivs.cxx:<ignore>
+Filtering/Testing/Cxx/TestInterpolationFunctions.cxx:<ignore>
+Filtering/Testing/Cxx/TestLinearSelector2D.cxx:<ignore>
+Filtering/Testing/Cxx/TestLinearSelector3D.cxx:<ignore>
+Filtering/Testing/Cxx/TestPointLocators.cxx:<ignore>
+Filtering/Testing/Cxx/TestPolyDataRemoveCell.cxx:<ignore>
+Filtering/Testing/Cxx/TestPolygon.cxx:<ignore>
+Filtering/Testing/Cxx/TestSelectionSubtract.cxx:<ignore>
+Filtering/Testing/Cxx/TestTreeBFSIterator.cxx:<ignore>
+Filtering/Testing/Cxx/TestTreeDFSIterator.cxx:<ignore>
+Filtering/Testing/Cxx/TestTriangle.cxx:<ignore>
+Filtering/Testing/Cxx/otherCellArray.cxx:<ignore>
+Filtering/Testing/Cxx/otherCellBoundaries.cxx:<ignore>
+Filtering/Testing/Cxx/otherCellPosition.cxx:<ignore>
+Filtering/Testing/Cxx/otherCellTypes.cxx:<ignore>
+Filtering/Testing/Cxx/otherColorTransferFunction.cxx:<ignore>
+Filtering/Testing/Cxx/otherEmptyCell.cxx:<ignore>
+Filtering/Testing/Cxx/otherFieldData.cxx:<ignore>
+Filtering/Testing/Cxx/otherRectilinearGrid.cxx:<ignore>
+Filtering/Testing/Cxx/otherStructuredGrid.cxx:<ignore>
+Filtering/Testing/Cxx/quadCellConsistency.cxx:<ignore>
+Filtering/Testing/Cxx/quadraticEvaluation.cxx:<ignore>
+Filtering/Testing/Python/CMakeLists.txt:<ignore>
+Filtering/Testing/Tcl/CMakeLists.txt:<ignore>
+Filtering/Testing/Tcl/CSpline.tcl:<ignore>
+Filtering/Testing/Tcl/ImplicitSum.tcl:<ignore>
+Filtering/Testing/Tcl/KSpline.tcl:<ignore>
+Filtering/Testing/Tcl/PerlinNoise.tcl:<ignore>
+Filtering/Testing/Tcl/SelectionLoop.tcl:<ignore>
+Filtering/Testing/Tcl/closedSplines.tcl:<ignore>
+Filtering/Testing/Tcl/otherDataSetAttributes.tcl:<ignore>
+Filtering/Testing/Tcl/squadViewer.tcl:<ignore>
 
 [.]
 modular/CMakeLists.txt:
@@ -1227,6 +1270,7 @@ modular/Common/DataModel/Testing/CMakeLists.txt:
 modular/Common/DataModel/Testing/Cxx/CMakeLists.txt:
 
 Common/Testing/Cxx/TestVector.cxx:
+Filtering/Testing/Cxx/TestAMRBox.cxx:
 
 [Common/ExecutionModel]
 
