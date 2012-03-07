@@ -200,46 +200,7 @@ Filtering/Testing/CMakeLists.txt:<ignore>
 Filtering/Testing/Cxx/CMakeLists.txt:<ignore>
 Filtering/Testing/Cxx/CellLocator2.cxx:<ignore>
 Filtering/Testing/Cxx/CellTreeLocator.cxx:<ignore>
-Filtering/Testing/Cxx/TestGenericCell.cxx:<ignore>
-Filtering/Testing/Cxx/TestGraph.cxx:<ignore>
-Filtering/Testing/Cxx/TestGraphWeightEuclideanDistanceFilter.cxx:<ignore>
-Filtering/Testing/Cxx/TestHigherOrderCell.cxx:<ignore>
-Filtering/Testing/Cxx/TestImageDataFindCell.cxx:<ignore>
-Filtering/Testing/Cxx/TestImageDataInterpolation.cxx:<ignore>
-Filtering/Testing/Cxx/TestImageDataToStructuredGrid.cxx:<ignore>
-Filtering/Testing/Cxx/TestImageIterator.cxx:<ignore>
-Filtering/Testing/Cxx/TestInterpolationDerivs.cxx:<ignore>
-Filtering/Testing/Cxx/TestInterpolationFunctions.cxx:<ignore>
-Filtering/Testing/Cxx/TestLinearSelector2D.cxx:<ignore>
-Filtering/Testing/Cxx/TestLinearSelector3D.cxx:<ignore>
-Filtering/Testing/Cxx/TestPointLocators.cxx:<ignore>
-Filtering/Testing/Cxx/TestPolyDataRemoveCell.cxx:<ignore>
-Filtering/Testing/Cxx/TestPolygon.cxx:<ignore>
-Filtering/Testing/Cxx/TestSelectionSubtract.cxx:<ignore>
-Filtering/Testing/Cxx/TestTreeBFSIterator.cxx:<ignore>
-Filtering/Testing/Cxx/TestTreeDFSIterator.cxx:<ignore>
-Filtering/Testing/Cxx/TestTriangle.cxx:<ignore>
-Filtering/Testing/Cxx/otherCellArray.cxx:<ignore>
-Filtering/Testing/Cxx/otherCellBoundaries.cxx:<ignore>
-Filtering/Testing/Cxx/otherCellPosition.cxx:<ignore>
-Filtering/Testing/Cxx/otherCellTypes.cxx:<ignore>
-Filtering/Testing/Cxx/otherColorTransferFunction.cxx:<ignore>
-Filtering/Testing/Cxx/otherEmptyCell.cxx:<ignore>
-Filtering/Testing/Cxx/otherFieldData.cxx:<ignore>
-Filtering/Testing/Cxx/otherRectilinearGrid.cxx:<ignore>
-Filtering/Testing/Cxx/otherStructuredGrid.cxx:<ignore>
-Filtering/Testing/Cxx/quadCellConsistency.cxx:<ignore>
-Filtering/Testing/Cxx/quadraticEvaluation.cxx:<ignore>
-Filtering/Testing/Python/CMakeLists.txt:<ignore>
 Filtering/Testing/Tcl/CMakeLists.txt:<ignore>
-Filtering/Testing/Tcl/CSpline.tcl:<ignore>
-Filtering/Testing/Tcl/ImplicitSum.tcl:<ignore>
-Filtering/Testing/Tcl/KSpline.tcl:<ignore>
-Filtering/Testing/Tcl/PerlinNoise.tcl:<ignore>
-Filtering/Testing/Tcl/SelectionLoop.tcl:<ignore>
-Filtering/Testing/Tcl/closedSplines.tcl:<ignore>
-Filtering/Testing/Tcl/otherDataSetAttributes.tcl:<ignore>
-Filtering/Testing/Tcl/squadViewer.tcl:<ignore>
 
 Rendering/Testing/CMakeLists.txt:<ignore>
 Rendering/Testing/Cxx/CMakeLists.txt:<ignore>
@@ -471,7 +432,7 @@ IO/Testing/Tcl/TestXYZMol.tcl:<ignore>
 IO/Testing/Tcl/caffeine.tcl:<ignore>
 IO/Testing/Tcl/dem.tcl:<ignore>
 
-
+Filtering/Testing/Python/CMakeLists.txt:<ignore>
 [.]
 modular/CMakeLists.txt:
 Copyright.txt:
@@ -1103,6 +1064,15 @@ Common/vtkParametricTorus.h:
 Filtering/vtkParametricSpline.cxx:
 Filtering/vtkParametricSpline.h:
 
+[Common/ComputationalGeometry/Testing/Tcl]
+
+modular/Common/ComputationalGeometry/Testing/Tcl/CMakeLists.txt:
+
+Filtering/Testing/Tcl/CSpline.tcl:
+Filtering/Testing/Tcl/KSpline.tcl:
+Filtering/Testing/Tcl/closedSplines.tcl:
+Filtering/Testing/Tcl/otherDataSetAttributes.tcl:
+
 [Common/DataModel]
 
 modular/Common/DataModel/CMakeLists.txt:
@@ -1481,9 +1451,6 @@ Filtering/vtkMolecule.h:
 Chemistry/vtkAbstractElectronicData.cxx:
 Chemistry/vtkAbstractElectronicData.h:
 
-Filtering/vtkLinearSelector.cxx:
-Filtering/vtkLinearSelector.h:
-
 Common/vtkBoundingBox.cxx:
 Common/vtkBoundingBox.h:
 
@@ -1496,6 +1463,44 @@ modular/Common/DataModel/Testing/Cxx/CMakeLists.txt:
 
 Common/Testing/Cxx/TestVector.cxx:
 Filtering/Testing/Cxx/TestAMRBox.cxx:
+Filtering/Testing/Cxx/TestGenericCell.cxx:
+Filtering/Testing/Cxx/TestGraph.cxx:
+Filtering/Testing/Cxx/TestHigherOrderCell.cxx:
+Filtering/Testing/Cxx/TestImageDataFindCell.cxx:
+Filtering/Testing/Cxx/TestImageDataInterpolation.cxx:
+Filtering/Testing/Cxx/TestImageIterator.cxx:
+Filtering/Testing/Cxx/TestInterpolationDerivs.cxx:
+Filtering/Testing/Cxx/TestInterpolationFunctions.cxx:
+Filtering/Testing/Cxx/TestLinearSelector2D.cxx:
+Filtering/Testing/Cxx/TestLinearSelector3D.cxx:
+Filtering/Testing/Cxx/TestPointLocators.cxx:
+Filtering/Testing/Cxx/TestPolyDataRemoveCell.cxx:
+Filtering/Testing/Cxx/TestPolygon.cxx:
+Filtering/Testing/Cxx/TestSelectionSubtract.cxx:
+Filtering/Testing/Cxx/TestTreeBFSIterator.cxx:
+Filtering/Testing/Cxx/TestTreeDFSIterator.cxx:
+Filtering/Testing/Cxx/TestTriangle.cxx:
+Filtering/Testing/Cxx/otherCellArray.cxx:
+Filtering/Testing/Cxx/otherCellBoundaries.cxx:
+Filtering/Testing/Cxx/otherCellPosition.cxx:
+Filtering/Testing/Cxx/otherCellTypes.cxx:
+Filtering/Testing/Cxx/otherColorTransferFunction.cxx:
+Filtering/Testing/Cxx/otherEmptyCell.cxx:
+Filtering/Testing/Cxx/otherFieldData.cxx:
+Filtering/Testing/Cxx/otherRectilinearGrid.cxx:
+Filtering/Testing/Cxx/otherStructuredGrid.cxx:
+Filtering/Testing/Cxx/quadCellConsistency.cxx:
+Filtering/Testing/Cxx/quadraticEvaluation.cxx:
+
+[Common/DataModel/Testing/Tcl]
+
+modular/Common/DataModel/Testing/Tcl/CMakeLists.txt:
+
+# Here for the moment
+Filtering/Testing/Tcl/ImplicitSum.tcl: 
+Filtering/Testing/Tcl/PerlinNoise.tcl:
+Filtering/Testing/Tcl/SelectionLoop.tcl:
+
 
 [Common/ExecutionModel]
 
@@ -1609,9 +1614,19 @@ Filtering/vtkDirectedGraphAlgorithm.cxx:
 Filtering/vtkDataObjectAlgorithm.h:
 Filtering/vtkTemporalDataSetAlgorithm.h:
 Filtering/vtkHierarchicalBoxDataSetAlgorithm.cxx:
+Filtering/vtkLinearSelector.cxx:
+Filtering/vtkLinearSelector.h:
+Filtering/vtkSelectionAlgorithm.cxx:
+Filtering/vtkSelectionAlgorithm.h:
 
 modular/CommonExecutionModel.patch:<ignore>
 <patch>: CommonExecutionModel.patch
+
+[Common/ExecutionModel/Testing/Cxx]
+
+modular/Common/ExecutionModel/Testing/Cxx/CMakeLists.txt:
+
+Filtering/Testing/Cxx/TestImageDataToStructuredGrid.cxx:
 
 [Common/Math]
 
@@ -3284,8 +3299,6 @@ Graphics/vtkGridSynchronizedTemplates3D.cxx:
 Graphics/vtkGridSynchronizedTemplates3D.h:
 Graphics/vtkRectilinearSynchronizedTemplates.cxx:
 Graphics/vtkRectilinearSynchronizedTemplates.h:
-Filtering/vtkSelectionAlgorithm.cxx:
-Filtering/vtkSelectionAlgorithm.h:
 Graphics/vtkStreamingTessellator.cxx:
 Graphics/vtkStreamingTessellator.h:
 Graphics/vtkStreamingTessellatorGenerator.py:
@@ -3538,6 +3551,12 @@ Graphics/vtkTexturedSphereSource.h:
 Graphics/vtkGraphToPolyData.cxx:
 Graphics/vtkGraphToPolyData.h:
 
+[Filters/Sources/Testing/Tcl]
+
+modular/Filters/Sources/Testing/Tcl/CMakeLists.txt:
+Filtering/Testing/Tcl/squadViewer.tcl:
+
+
 [Filters/General]
 
 modular/Filters/General/CMakeLists.txt:
@@ -3748,6 +3767,12 @@ Graphics/vtkBooleanOperationPolyDataFilter.cxx:
 Graphics/vtkBooleanOperationPolyDataFilter.h:
 Graphics/vtkDistancePolyDataFilter.cxx:
 Graphics/vtkDistancePolyDataFilter.h:
+
+[Filters/General/Testing/Cxx]
+
+modular/Filters/General/Testing/Cxx/CMakeLists.txt:
+
+Filtering/Testing/Cxx/TestGraphWeightEuclideanDistanceFilter.cxx:
 
 [Filters/Verdict]
 

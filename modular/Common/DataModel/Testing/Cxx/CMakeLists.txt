@@ -1,6 +1,32 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestVector.cxx
   TestAMRBox.cxx
+  TestGenericCell.cxx
+  TestGraph.cxx
+  TestHigherOrderCell.cxx
+  TestImageDataFindCell.cxx
+  TestImageDataInterpolation.cxx
+  TestImageIterator.cxx
+  TestInterpolationDerivs.cxx
+  TestInterpolationFunctions.cxx
+  TestPointLocators.cxx
+  TestPolyDataRemoveCell.cxx
+  TestPolygon.cxx
+  TestSelectionSubtract.cxx
+  TestTreeBFSIterator.cxx
+  TestTreeDFSIterator.cxx
+  TestTriangle.cxx
+  otherCellArray.cxx
+  otherCellBoundaries.cxx
+  otherCellPosition.cxx
+  otherCellTypes.cxx
+  otherColorTransferFunction.cxx
+  otherEmptyCell.cxx
+  otherFieldData.cxx
+  otherRectilinearGrid.cxx
+  otherStructuredGrid.cxx
+  quadCellConsistency.cxx
+  quadraticEvaluation.cxx
   EXTRA_INCLUDE vtkTestDriver.h
 )
 

@@ -80,6 +80,7 @@ endforeach()
 # Follow dependencies.
 macro(vtk_module_enable vtk-module _needed_by)
   if(NOT Module_${vtk-module})
+    # What is this doing?
     if(NOT ${vtk-module}_TESTED_BY OR
       NOT "x${_needed_by}" STREQUAL "x${${vtk-module}_TESTED_BY}")
       list(APPEND VTK_MODULE_${vtk-module}_NEEDED_BY ${_needed_by})
@@ -90,9 +91,10 @@ macro(vtk_module_enable vtk-module _needed_by)
     foreach(dep IN LISTS VTK_MODULE_${vtk-module}_DEPENDS)
       vtk_module_enable(${dep} ${vtk-module})
     endforeach()
-    if(${vtk-module}_TESTED_BY)
-      vtk_module_enable(${${vtk-module}_TESTED_BY} "")
-    endif()
+    
+    foreach(test IN LISTS ${vtk-module}_TESTED_BY)
+        vtk_module_enable(${test} "")
+    endforeach()
   endif()
 endmacro()
 
