@@ -35,11 +35,11 @@ endif()
 
 # Use the testing object factory, to reduce boilerplate code in tests.
 #include("${VTK_SOURCE_DIR}/Rendering/vtkTestingObjectFactory.cmake")
-vtk_add_test_executable(${vtk-module}CxxTests ${MyTests})
-target_link_libraries(${vtk-module}CxxTests
-                      vtkChemistry
-                      vtkRendering
-                      vtkVolumeRendering)
+#vtk_add_test_executable(${vtk-module}CxxTests ${MyTests})
+#target_link_libraries(${vtk-module}CxxTests
+#                      vtkChemistry
+#                      vtkRendering
+#                      vtkVolumeRendering)
 
 set(TestsToRun ${MyTests})
 list(REMOVE_ITEM TestsToRun ${vtk-module}CxxTests.cxx)
