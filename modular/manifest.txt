@@ -3848,6 +3848,12 @@ Rendering/vtkInteractorStyleUnicam.h:
 Rendering/vtkInteractorStyleUser.cxx:
 Rendering/vtkInteractorStyleUser.h:
 
+# Some changes needed to vtkRenderWindowInteractor.
+Rendering/vtkInteractorStyle.cxx:
+Rendering/vtkInteractorStyle.h:
+Rendering/vtkInteractorStyleSwitch.cxx:
+Rendering/vtkInteractorStyleSwitch.h:
+
 [Rendering/Annotation]
 modular/Rendering/Annotation/module.cmake:
 modular/Rendering/Annotation/CMakeLists.txt:
@@ -4061,10 +4067,6 @@ Rendering/vtkInteractorEventRecorder.cxx:
 Rendering/vtkInteractorEventRecorder.h:
 Rendering/vtkInteractorObserver.cxx:
 Rendering/vtkInteractorObserver.h:
-Rendering/vtkInteractorStyle.cxx:
-Rendering/vtkInteractorStyle.h:
-Rendering/vtkInteractorStyleSwitch.cxx:
-Rendering/vtkInteractorStyleSwitch.h:
 Rendering/vtkLight.cxx:
 Rendering/vtkLight.h:
 Rendering/vtkLightActor.cxx:
@@ -4484,6 +4486,16 @@ Rendering/vtkVolumetricPass.h:
 Rendering/vtkRenderState.cxx:
 Rendering/vtkRenderState.h:
 
+# The OpenGL module is an implementation module, only one RenderWindowInteractor
+# or RenderWindow override can win and the GL calls are also affected by the
+# windowing system.
+Rendering/vtkXOpenGLRenderWindow.cxx:
+Rendering/vtkXOpenGLRenderWindow.h:
+Rendering/vtkXRenderWindowInteractor.cxx:
+Rendering/vtkXRenderWindowInteractor.h:
+Rendering/CheckglXGetProcAddressARB.cxx:
+
+
 # Add the export header
 modular/RenderingOpenGL.patch:<ignore>
 <patch>: RenderingOpenGL.patch
@@ -4616,13 +4628,8 @@ Rendering/vtkXGPUInfoList.cxx:
 Rendering/vtkXGPUInfoList.h:
 Rendering/vtkXMesaRenderWindow.cxx:
 Rendering/vtkXMesaRenderWindow.h:
-Rendering/vtkXOpenGLRenderWindow.cxx:
-Rendering/vtkXOpenGLRenderWindow.h:
-Rendering/vtkXRenderWindowInteractor.cxx:
-Rendering/vtkXRenderWindowInteractor.h:
 Rendering/vtkXRenderWindowTclInteractor.cxx:
 Rendering/vtkXRenderWindowTclInteractor.h:
-Rendering/CheckglXGetProcAddressARB.cxx:
 
 [Rendering/Volume]
 modular/Rendering/Volume/module.cmake:

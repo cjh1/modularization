@@ -62,8 +62,6 @@ set(Kit_SRCS
   vtkImagingFactory.cxx
   vtkInteractorEventRecorder.cxx
   vtkInteractorObserver.cxx
-  vtkInteractorStyle.cxx
-  #vtkInteractorStyleSwitch.cxx
   vtkLightActor.cxx
   vtkLightCollection.cxx
   vtkLight.cxx
