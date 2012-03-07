@@ -433,6 +433,7 @@ IO/Testing/Tcl/caffeine.tcl:<ignore>
 IO/Testing/Tcl/dem.tcl:<ignore>
 
 Filtering/Testing/Python/CMakeLists.txt:<ignore>
+
 [.]
 modular/CMakeLists.txt:
 Copyright.txt:
@@ -1471,8 +1472,6 @@ Filtering/Testing/Cxx/TestImageDataInterpolation.cxx:
 Filtering/Testing/Cxx/TestImageIterator.cxx:
 Filtering/Testing/Cxx/TestInterpolationDerivs.cxx:
 Filtering/Testing/Cxx/TestInterpolationFunctions.cxx:
-Filtering/Testing/Cxx/TestLinearSelector2D.cxx:
-Filtering/Testing/Cxx/TestLinearSelector3D.cxx:
 Filtering/Testing/Cxx/TestPointLocators.cxx:
 Filtering/Testing/Cxx/TestPolyDataRemoveCell.cxx:
 Filtering/Testing/Cxx/TestPolygon.cxx:
@@ -1627,6 +1626,8 @@ modular/CommonExecutionModel.patch:<ignore>
 modular/Common/ExecutionModel/Testing/Cxx/CMakeLists.txt:
 
 Filtering/Testing/Cxx/TestImageDataToStructuredGrid.cxx:
+Filtering/Testing/Cxx/TestLinearSelector2D.cxx:
+Filtering/Testing/Cxx/TestLinearSelector3D.cxx:
 
 [Common/Math]
 
@@ -2536,7 +2537,6 @@ modular/CMake/vtkWrapPython.cmake:
 modular/CMake/vtkBuildPath.cmake:
 modular/CMake/FindODBC.cmake:
 CMake/CheckCXXSourceRuns.cmake:
-CMake/CMakeBackwardCompatibilityC.cmake:
 CMake/CMakeEmptyInputFile.in:
 CMake/CTestCustom.ctest.in:
 CMake/ExtractBoostVersion.cmake:
@@ -4577,8 +4577,6 @@ Rendering/vtkViewTheme.cxx:
 Rendering/vtkViewTheme.h:
 Rendering/vtkVisibilitySort.cxx:
 Rendering/vtkVisibilitySort.h:
-Rendering/vtkVisibleCellSelector.cxx:
-Rendering/vtkVisibleCellSelector.h:
 Rendering/vtkVolume.cxx:
 Rendering/vtkVolume.h:
 Rendering/vtkVolumeCollection.cxx:
@@ -4820,8 +4818,6 @@ Rendering/vtkGaussianBlurPass.h:
 Rendering/vtkGaussianBlurPassShader_fs.glsl:
 Rendering/vtkGenericOpenGLRenderWindow.cxx:
 Rendering/vtkGenericOpenGLRenderWindow.h:
-Rendering/vtkIdentColoredPainter.cxx:
-Rendering/vtkIdentColoredPainter.h:
 Rendering/vtkImageProcessingPass.cxx:
 Rendering/vtkImageProcessingPass.h:
 Rendering/vtkLightingHelper.cxx:

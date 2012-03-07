@@ -1,9 +1,9 @@
 diff --git a/ThirdParty/sqlite/vtksqlite/CMakeLists.txt b/ThirdParty/sqlite/vtksqlite/CMakeLists.txt
-index c16c5b3..c6c63e4 100644
+index 719f9ed..f273beb 100644
 --- a/ThirdParty/sqlite/vtksqlite/CMakeLists.txt
 +++ b/ThirdParty/sqlite/vtksqlite/CMakeLists.txt
 @@ -41,21 +41,9 @@ ELSE (WIN32)
-   ENDIF (UNIX AND HAVE_PTHREAD_H AND CMAKE_USE_PTHREADS)
+   ENDIF()
  ENDIF (WIN32)
  
 -IF(VTK_LIBRARY_PROPERTIES)
