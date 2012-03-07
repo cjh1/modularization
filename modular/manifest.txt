@@ -4220,6 +4220,9 @@ Widgets/vtkBrokenLineWidget.h:
 
 [Interaction/Style]
 
+modular/Interaction/Style/CMakeLists.txt:
+modular/Interaction/Style/module.cmake:
+
 Rendering/vtkInteractorStyleFlight.cxx:
 Rendering/vtkInteractorStyleFlight.h:
 Rendering/vtkInteractorStyleImage.cxx:
