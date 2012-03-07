@@ -27,6 +27,9 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   otherStructuredGrid.cxx
   quadCellConsistency.cxx
   quadraticEvaluation.cxx
+  TestBoundingBox.cxx
+  TestPlane.cxx
+  TestStructuredData.cxx
   EXTRA_INCLUDE vtkTestDriver.h
 )
 
