@@ -4645,6 +4645,9 @@ Rendering/vtkLODProp3D.h:
 Rendering/vtkShaderDeviceAdapter2.cxx:
 Rendering/vtkShaderDeviceAdapter2.h:
 
+Rendering/vtkInteractorStyleSwitchBase.cxx:
+Rendering/vtkInteractorStyleSwitchBase.h:
+
 modular/RenderingCore.patch:<ignore>
 <patch>: RenderingCore.patch
 
@@ -5828,6 +5831,44 @@ Chemistry/Testing/Cxx/TestPeriodicTable.cxx:
 Chemistry/Testing/Cxx/TestProgrammableElectronicData.cxx:
 Chemistry/Testing/Cxx/TestSimpleBondPerceiver.cxx:
 Chemistry/Testing/Cxx/TestVDWSpheres.cxx:
+
+[AMR/Core]
+AMR/CMakeLists.txt:<ignore>
+AMR/vtkAMRBaseParticlesReader.cxx:
+AMR/vtkAMRBaseParticlesReader.h:
+AMR/vtkAMRBaseReader.cxx:
+AMR/vtkAMRBaseReader.h:
+AMR/vtkAMRCutPlane.cxx:
+AMR/vtkAMRCutPlane.h:
+AMR/vtkAMRDataSetCache.cxx:
+AMR/vtkAMRDataSetCache.h:
+AMR/vtkAMREnzoParticlesReader.cxx:
+AMR/vtkAMREnzoParticlesReader.h:
+AMR/vtkAMREnzoReader.cxx:
+AMR/vtkAMREnzoReader.h:
+AMR/vtkAMREnzoReaderInternal.cxx:
+AMR/vtkAMREnzoReaderInternal.h:
+AMR/vtkAMRFlashParticlesReader.cxx:
+AMR/vtkAMRFlashParticlesReader.h:
+AMR/vtkAMRFlashReader.cxx:
+AMR/vtkAMRFlashReader.h:
+AMR/vtkAMRFlashReaderInternal.cxx:
+AMR/vtkAMRFlashReaderInternal.h:
+AMR/vtkAMRGaussianPulseSource.cxx:
+AMR/vtkAMRGaussianPulseSource.h:
+AMR/vtkAMRResampleFilter.cxx:
+AMR/vtkAMRResampleFilter.h:
+AMR/vtkAMRSliceFilter.cxx:
+AMR/vtkAMRSliceFilter.h:
+AMR/vtkAMRToMultiBlockFilter.cxx:
+AMR/vtkAMRToMultiBlockFilter.h:
+
+[AMR/Core/Testing/Cxx]
+
+AMR/Testing/CMakeLists.txt:<ignore>
+AMR/Testing/Cxx/CMakeLists.txt:
+AMR/Testing/Cxx/TestEnzoReader.cxx:
+AMR/Testing/Cxx/TestFlashReader.cxx:
 
 [Testing/Core]
 
