@@ -1453,6 +1453,22 @@ Chemistry/vtkAbstractElectronicData.h:
 Common/vtkBoundingBox.cxx:
 Common/vtkBoundingBox.h:
 
+# New AMR classes introduced recently
+Filtering/vtkNonOverlappingAMR.cxx:
+Filtering/vtkNonOverlappingAMR.h:
+Filtering/vtkNonOverlappingAMRAlgorithm.cxx:
+Filtering/vtkNonOverlappingAMRAlgorithm.h:
+Filtering/vtkOverlappingAMR.cxx:
+Filtering/vtkOverlappingAMR.h:
+Filtering/vtkOverlappingAMRAlgorithm.cxx:
+Filtering/vtkOverlappingAMRAlgorithm.h:
+Filtering/vtkUniformGridAMR.cxx:
+Filtering/vtkUniformGridAMR.h:
+Filtering/vtkUniformGridAMRAlgorithm.cxx:
+Filtering/vtkUniformGridAMRAlgorithm.h:
+Filtering/vtkUniformGridAMRDataIterator.cxx:
+Filtering/vtkUniformGridAMRDataIterator.h:
+
 modular/CommonDataModel.patch:<ignore>
 <patch>: CommonDataModel.patch
 
@@ -1488,6 +1504,8 @@ Filtering/Testing/Cxx/otherRectilinearGrid.cxx:
 Filtering/Testing/Cxx/otherStructuredGrid.cxx:
 Filtering/Testing/Cxx/quadCellConsistency.cxx:
 Filtering/Testing/Cxx/quadraticEvaluation.cxx:
+
+Filtering/Testing/Cxx/TestAMRBlanking.cxx:
 
 [Common/DataModel/Testing/Tcl]
 
@@ -1615,6 +1633,11 @@ Filtering/vtkLinearSelector.cxx:
 Filtering/vtkLinearSelector.h:
 Filtering/vtkSelectionAlgorithm.cxx:
 Filtering/vtkSelectionAlgorithm.h:
+
+Common/vtkExtentRCBPartitioner.cxx:
+Common/vtkExtentRCBPartitioner.h:
+Filtering/vtkUniformGridPartitioner.cxx:
+Filtering/vtkUniformGridPartitioner.h:
 
 modular/CommonExecutionModel.patch:<ignore>
 <patch>: CommonExecutionModel.patch
@@ -5196,6 +5219,9 @@ VolumeRendering/vtkVolumeTextureMapper3D_TwoDependentShadeFP.asm:
 VolumeRendering/vtkVolumeTextureMapper.cxx:
 VolumeRendering/vtkVolumeTextureMapper.h:
 
+VolumeRendering/vtkAMRVolumeMapper.cxx:
+VolumeRendering/vtkAMRVolumeMapper.h:
+
 [GUISupport/Qt]
 
 GUISupport/Qt/CTestCustom.ctest.in:
@@ -5862,6 +5888,15 @@ AMR/vtkAMRSliceFilter.cxx:
 AMR/vtkAMRSliceFilter.h:
 AMR/vtkAMRToMultiBlockFilter.cxx:
 AMR/vtkAMRToMultiBlockFilter.h:
+Graphics/vtkNonOverlappingAMRLevelIdScalars.cxx:
+Graphics/vtkNonOverlappingAMRLevelIdScalars.h:
+Graphics/vtkOverlappingAMRLevelIdScalars.cxx:
+Graphics/vtkOverlappingAMRLevelIdScalars.h:
+
+[AMR/Parallel]
+
+Parallel/vtkAMRUtilities.cxx:
+Parallel/vtkAMRUtilities.h:
 
 [AMR/Core/Testing/Cxx]
 
