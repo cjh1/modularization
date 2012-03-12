@@ -4672,7 +4672,7 @@ Rendering/vtkInteractorStyleSwitchBase.cxx:
 Rendering/vtkInteractorStyleSwitchBase.h:
 
 modular/RenderingCore.patch:<ignore>
-<patch>: RenderingCore.patch
+#<patch>: RenderingCore.patch
 
 [Rendering/FreeType]
 
