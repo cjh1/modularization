@@ -17,8 +17,7 @@ CMake/FindHDF5.cmake: <ignore>
 CMake/FindLIBXML2.cmake: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
-Imaging/CMakeLists.txt: <ignore>
-Filtering/vtkInformation.cxx:	<ignore>
+Imaging/CMakeLists.txt: <igno
 Infovis/TitanReadme.txt: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.eps: <ignore>
 Geovis/vtkGlobeSourceSphericalToCartesianFigure.ipe: <ignore>
@@ -64,7 +63,6 @@ GUISupport/Qt/CMakeLists.txt: <ignore>
 VolumeRendering/Testing/: <ignore>
 VolumeRendering/CMakeLists.txt: <ignore>
 # Deprecated, not moved forward
-GUISupport/Qt/Chart/: <ignore>
 modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/module.cmake: <ignore>
 
@@ -1828,8 +1826,6 @@ Hybrid/vtkExodusIIReaderVariableCheck.cxx:
 Hybrid/vtkExodusIIReaderVariableCheck.h:
 Hybrid/vtkExodusModel.cxx:
 Hybrid/vtkExodusModel.h:
-Hybrid/vtkExodusReader.cxx:<ignore>
-Hybrid/vtkExodusReader.h:<ignore>
 
 [IO/ParallelExodus]
 
@@ -1838,8 +1834,6 @@ modular/IO/ParallelExodus/module.cmake:
 
 Hybrid/vtkPExodusIIReader.cxx:
 Hybrid/vtkPExodusIIReader.h:
-Hybrid/vtkPExodusReader.cxx:<ignore>
-Hybrid/vtkPExodusReader.h:<ignore>
 
 
 [IO/Export]
@@ -3042,6 +3036,8 @@ Charts/vtkBrush.h:
 Charts/vtkBrush.cxx:
 Charts/vtkContext2D.h:
 Charts/vtkContext2D.cxx:
+Charts/vtkContext3D.h:
+Charts/vtkContext3D.cxx:
 Charts/vtkContextActor.h:
 Charts/vtkContextActor.cxx:
 Charts/vtkContextBufferId.h:
@@ -3050,6 +3046,8 @@ Charts/vtkContextClip.h:
 Charts/vtkContextClip.cxx:
 Charts/vtkContextDevice2D.h:
 Charts/vtkContextDevice2D.cxx:
+Charts/vtkContextDevice3D.h:
+Charts/vtkContextDevice3D.cxx:
 Charts/vtkContextItem.h:
 Charts/vtkContextItem.cxx:
 Charts/vtkContextMapper2D.h:
@@ -3070,6 +3068,8 @@ Charts/vtkOpenGLContextBufferId.cxx:
 Charts/vtkOpenGLContextDevice2D.h:
 Charts/vtkOpenGLContextDevice2D.cxx:
 Charts/vtkOpenGLContextDevice2DPrivate.h:
+Charts/vtkOpenGLContextDevice3D.h:
+Charts/vtkOpenGLContextDevice3D.cxx:
 Charts/vtkPen.h:
 Charts/vtkPen.cxx:
 Charts/vtkTooltipItem.h:
@@ -3100,6 +3100,8 @@ Charts/vtkChartPie.h:
 Charts/vtkChartPie.cxx:
 Charts/vtkChartXY.h:
 Charts/vtkChartXY.cxx:
+Charts/vtkChartXYZ.h:
+Charts/vtkChartXYZ.cxx:
 Charts/vtkColorLegend.h:
 Charts/vtkColorLegend.cxx:
 Charts/vtkColorSeries.h:
@@ -5233,16 +5235,8 @@ GUISupport/Qt/vtkQtAnnotationLayersModelAdapter.h:
 GUISupport/Qt/vtkQtAnnotationLayersModelAdapter.sip:
 GUISupport/Qt/vtkQtAnnotationView.cxx:
 GUISupport/Qt/vtkQtAnnotationView.h:
-GUISupport/Qt/vtkQtBarChartView.cxx:
-GUISupport/Qt/vtkQtBarChartView.h:
-GUISupport/Qt/vtkQtChartRepresentation.cxx:
-GUISupport/Qt/vtkQtChartRepresentation.h:
-GUISupport/Qt/vtkQtChartView.cxx:
-GUISupport/Qt/vtkQtChartView.h:
 GUISupport/Qt/vtkQtConnection.cxx:
 GUISupport/Qt/vtkQtConnection.h:
-GUISupport/Qt/vtkQtLineChartView.cxx:
-GUISupport/Qt/vtkQtLineChartView.h:
 GUISupport/Qt/vtkQtListView.cxx:
 GUISupport/Qt/vtkQtListView.h:
 GUISupport/Qt/vtkQtRecordView.cxx:
@@ -5254,10 +5248,6 @@ GUISupport/Qt/vtkQtSQLDatabase.cxx:
 GUISupport/Qt/vtkQtSQLDatabase.h:
 GUISupport/Qt/vtkQtSQLQuery.cxx:
 GUISupport/Qt/vtkQtSQLQuery.h:
-GUISupport/Qt/vtkQtStackedChartView.cxx:
-GUISupport/Qt/vtkQtStackedChartView.h:
-GUISupport/Qt/vtkQtStatisticalBoxChartView.cxx:
-GUISupport/Qt/vtkQtStatisticalBoxChartView.h:
 GUISupport/Qt/vtkQtTableModelAdapter.cxx:
 GUISupport/Qt/vtkQtTableModelAdapter.h:
 GUISupport/Qt/vtkQtTableModelAdapter.sip:
@@ -5522,8 +5512,6 @@ Parallel/vtkMPIController.cxx:
 Parallel/vtkMPIController.h:
 Parallel/vtkMPIEventLog.cxx:
 Parallel/vtkMPIEventLog.h:
-Parallel/vtkMPIGroup.cxx:
-Parallel/vtkMPIGroup.h:
 Parallel/vtkMPI.h:
 
 [Imaging/Core]
