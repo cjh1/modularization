@@ -1456,16 +1456,10 @@ Common/vtkBoundingBox.h:
 # New AMR classes introduced recently
 Filtering/vtkNonOverlappingAMR.cxx:
 Filtering/vtkNonOverlappingAMR.h:
-Filtering/vtkNonOverlappingAMRAlgorithm.cxx:
-Filtering/vtkNonOverlappingAMRAlgorithm.h:
 Filtering/vtkOverlappingAMR.cxx:
 Filtering/vtkOverlappingAMR.h:
-Filtering/vtkOverlappingAMRAlgorithm.cxx:
-Filtering/vtkOverlappingAMRAlgorithm.h:
 Filtering/vtkUniformGridAMR.cxx:
 Filtering/vtkUniformGridAMR.h:
-Filtering/vtkUniformGridAMRAlgorithm.cxx:
-Filtering/vtkUniformGridAMRAlgorithm.h:
 Filtering/vtkUniformGridAMRDataIterator.cxx:
 Filtering/vtkUniformGridAMRDataIterator.h:
 
@@ -3793,6 +3787,18 @@ Graphics/vtkBooleanOperationPolyDataFilter.h:
 Graphics/vtkDistancePolyDataFilter.cxx:
 Graphics/vtkDistancePolyDataFilter.h:
 
+# Needed by other classes in Filters/General
+Graphics/vtkNonOverlappingAMRLevelIdScalars.cxx:
+Graphics/vtkNonOverlappingAMRLevelIdScalars.h:
+Graphics/vtkOverlappingAMRLevelIdScalars.cxx:
+Graphics/vtkOverlappingAMRLevelIdScalars.h:
+Filtering/vtkNonOverlappingAMRAlgorithm.cxx:
+Filtering/vtkNonOverlappingAMRAlgorithm.h:
+Filtering/vtkOverlappingAMRAlgorithm.cxx:
+Filtering/vtkOverlappingAMRAlgorithm.h:
+Filtering/vtkUniformGridAMRAlgorithm.cxx:
+Filtering/vtkUniformGridAMRAlgorithm.h:
+
 [Filters/General/Testing/Cxx]
 
 modular/Filters/General/Testing/Cxx/CMakeLists.txt:
@@ -4276,10 +4282,6 @@ Rendering/vtkInteractorStyleUnicam.cxx:
 Rendering/vtkInteractorStyleUnicam.h:
 Rendering/vtkInteractorStyleUser.cxx:
 Rendering/vtkInteractorStyleUser.h:
-
-# Some changes needed to vtkRenderWindowInteractor.
-Rendering/vtkInteractorStyle.cxx:
-Rendering/vtkInteractorStyle.h:
 Rendering/vtkInteractorStyleSwitch.cxx:
 Rendering/vtkInteractorStyleSwitch.h:
 
@@ -4346,13 +4348,6 @@ Rendering/vtkCgShaderProgram.h:
 
 [Rendering/Cocoa]
 
-Rendering/vtkCocoaGLView.h:
-Rendering/vtkCocoaGLView.mm:
-Rendering/vtkCocoaMacOSXSDKCompatibility.h:
-Rendering/vtkCocoaRenderWindow.h:
-Rendering/vtkCocoaRenderWindow.mm:
-Rendering/vtkCocoaRenderWindowInteractor.h:
-Rendering/vtkCocoaRenderWindowInteractor.mm:
 Rendering/vtkCocoaTkUtilities.h:
 Rendering/vtkCocoaTkUtilities.mm:
 
@@ -4670,6 +4665,9 @@ Rendering/vtkShaderDeviceAdapter2.h:
 
 Rendering/vtkInteractorStyleSwitchBase.cxx:
 Rendering/vtkInteractorStyleSwitchBase.h:
+# Some changes needed to vtkRenderWindowInteractor.
+Rendering/vtkInteractorStyle.cxx:
+Rendering/vtkInteractorStyle.h:
 
 modular/RenderingCore.patch:<ignore>
 #<patch>: RenderingCore.patch
@@ -4923,6 +4921,14 @@ Rendering/vtkXRenderWindowInteractor.cxx:
 Rendering/vtkXRenderWindowInteractor.h:
 Rendering/CheckglXGetProcAddressARB.cxx:
 
+# The cocoa classes are best built here too.
+Rendering/vtkCocoaGLView.h:
+Rendering/vtkCocoaGLView.mm:
+Rendering/vtkCocoaMacOSXSDKCompatibility.h:
+Rendering/vtkCocoaRenderWindow.h:
+Rendering/vtkCocoaRenderWindow.mm:
+Rendering/vtkCocoaRenderWindowInteractor.h:
+Rendering/vtkCocoaRenderWindowInteractor.mm:
 
 # Add the export header
 modular/RenderingOpenGL.patch:<ignore>
@@ -5888,10 +5894,6 @@ AMR/vtkAMRSliceFilter.cxx:
 AMR/vtkAMRSliceFilter.h:
 AMR/vtkAMRToMultiBlockFilter.cxx:
 AMR/vtkAMRToMultiBlockFilter.h:
-Graphics/vtkNonOverlappingAMRLevelIdScalars.cxx:
-Graphics/vtkNonOverlappingAMRLevelIdScalars.h:
-Graphics/vtkOverlappingAMRLevelIdScalars.cxx:
-Graphics/vtkOverlappingAMRLevelIdScalars.h:
 
 [AMR/Parallel]
 

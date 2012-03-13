@@ -164,6 +164,10 @@ set(Kit_SRCS
   vtkPointPicker.cxx
   vtkRenderedAreaPicker.cxx
   vtkScenePicker.cxx
+
+  # Needed by vtkRenderWindowInteractor, for the default interactor.
+  vtkInteractorStyle.cxx
+  vtkInteractorStyleSwitchBase.cxx
   )
 
 vtk_module_library(vtkRenderingCore ${Kit_SRCS})
