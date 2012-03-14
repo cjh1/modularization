@@ -2,6 +2,10 @@
 # to allow for things to split up properly.
 option(VTK_USE_X "Use X for VTK render windows" OFF)
 
+if(APPLE)
+  option(VTK_USE_COCOA "Use Cocoa for VTK render windows" OFF)
+endif()
+
 set(Kit_SRCS
   vtkCameraPass.cxx
   vtkClearZPass.cxx
@@ -246,6 +250,20 @@ foreach(_override ${opengl_overrides})
   vtk_add_override(vtk${_override} vtkOpenGL${_override})
 endforeach()
 
+if(VTK_USE_COCOA)
+  # Add some custom overrides
+  list(APPEND vtk_module_overrides "vtkRenderWindowInteractor")
+  set(vtk_module_vtkRenderWindowInteractor_override "vtkCocoaRenderWindowInteractor")
+  list(APPEND vtk_module_overrides "vtkRenderWindow")
+  set(vtk_module_vtkRenderWindow_override "vtkCocoaRenderWindow")
+  list(APPEND Kit_SRCS
+    vtkCocoaRenderWindowInteractor.mm
+    vtkCocoaRenderWindow.mm
+    vtkCocoaGLView.mm
+    )
+  set_source_files_properties(vtkCocoaGLView WRAP_EXCLUDE)
+endif()
+
 # Now we iterate and create that class file...
 foreach(_class ${vtk_module_overrides})
   set(_override ${vtk_module_${_class}_override})
@@ -269,7 +287,9 @@ configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.cxx.in
 
 vtk_module_library(vtkRenderingOpenGL ${Kit_SRCS})
 target_link_libraries(vtkRenderingOpenGL ${OPENGL_LIBRARIES})
-
 if(VTK_USE_X)
   target_link_libraries(vtkRenderingOpenGL ${X11_LIBRARIES} ${X11_Xt_LIB})
+elseif(VTK_USE_COCOA)
+  target_link_libraries(vtkRenderingOpenGL "-framework Cocoa")
 endif()
+
