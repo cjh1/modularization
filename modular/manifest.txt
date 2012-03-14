@@ -3324,6 +3324,9 @@ Graphics/vtkImplicitPolyDataDistance.h:
 Graphics/vtkCenterOfMass.h:
 Graphics/vtkCenterOfMass.cxx:
 
+Common/vtkGhostArray.h:
+Common/vtkGhostArray.cxx:
+
 [Filters/Generic]
 
 GenericFiltering/vtkGenericClip.cxx:
@@ -3368,6 +3371,43 @@ Graphics/vtkUnstructuredGridGeometryFilter.cxx:
 Graphics/vtkUnstructuredGridGeometryFilter.h:
 Graphics/vtkDataSetSurfaceFilter.cxx:
 Graphics/vtkDataSetSurfaceFilter.h:
+
+Filtering/vtkAbstractGridConnectivity.cxx:
+Filtering/vtkAbstractGridConnectivity.h:
+Filtering/vtkDataSetGhostGenerator.cxx:
+Filtering/vtkDataSetGhostGenerator.h:
+Filtering/vtkRectilinearGridPartitioner.cxx:
+Filtering/vtkRectilinearGridPartitioner.h:
+Filtering/vtkStructuredGridConnectivity.cxx:
+Filtering/vtkStructuredGridConnectivity.h:
+Filtering/vtkStructuredGridGhostDataGenerator.cxx:
+Filtering/vtkStructuredGridGhostDataGenerator.h:
+Filtering/vtkStructuredGridPartitioner.cxx:
+Filtering/vtkStructuredGridPartitioner.h:
+Filtering/vtkStructuredNeighbor.cxx:
+Filtering/vtkStructuredNeighbor.h:
+Filtering/vtkUniformGridGhostDataGenerator.cxx:
+Filtering/vtkUniformGridGhostDataGenerator.h:
+
+[Filters/Geometry/Testing/Cxx]
+
+Common/Testing/Cxx/TestGhostArray.cxx:
+Filtering/Testing/Cxx/TestRectilinearGridPartitioner.cxx:
+Filtering/Testing/Cxx/TestStructuredGridConnectivity.cxx:
+Filtering/Testing/Cxx/TestStructuredGridGhostDataGenerator.cxx:
+Filtering/Testing/Cxx/TestStructuredGridPartitioner.cxx:
+Filtering/Testing/Cxx/TestUniformGridGhostDataGenerator.cxx:
+
+[Filters/ParallelGeometry]
+
+Parallel/vtkPDataSetGhostGenerator.cxx:
+Parallel/vtkPDataSetGhostGenerator.h:
+Parallel/vtkPStructuredGridConnectivity.cxx:
+Parallel/vtkPStructuredGridConnectivity.h:
+Parallel/vtkPStructuredGridGhostDataGenerator.cxx:
+Parallel/vtkPStructuredGridGhostDataGenerator.h:
+Parallel/vtkPUniformGridGhostDataGenerator.cxx:
+Parallel/vtkPUniformGridGhostDataGenerator.h:
 
 [Filters/Matlab]
 
@@ -4604,8 +4644,6 @@ Rendering/vtkImageMapper3D.cxx:
 Rendering/vtkImageMapper3D.h:
 Rendering/vtkImageProperty.cxx:
 Rendering/vtkImageProperty.h:
-Rendering/vtkImageResliceMapper.cxx:
-Rendering/vtkImageResliceMapper.h:
 Rendering/vtkImageSlice.cxx:
 Rendering/vtkImageSlice.h:
 Rendering/vtkImageSliceMapper.cxx:
