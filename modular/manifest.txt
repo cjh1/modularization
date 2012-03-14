@@ -309,7 +309,6 @@ Rendering/Testing/Tcl/CMakeLists.txt:<ignore>
 Rendering/Testing/Tcl/CamBlur.tcl:<ignore>
 Rendering/Testing/Tcl/ImageActor.tcl:<ignore>
 Rendering/Testing/Tcl/ImageActorStressed.tcl:<ignore>
-Rendering/Testing/Tcl/MesaText.tcl:<ignore>
 Rendering/Testing/Tcl/PickerWithLocator.tcl:<ignore>
 Rendering/Testing/Tcl/ScalarBar.tcl:<ignore>
 Rendering/Testing/Tcl/SurfacePickerWithTexture.tcl:<ignore>
@@ -2559,7 +2558,6 @@ CMake/FindFFMPEG.cmake:
 CMake/FindGL2PS.cmake:
 CMake/FindIOKit.cmake:
 CMake/FindLIBPROJ4.cmake:
-CMake/FindMangledMesa.cmake:
 CMake/FindMatlabMex.cmake:
 CMake/FindMPEG2.cmake:
 CMake/FindMySQL.cmake:
@@ -4939,47 +4937,6 @@ modular/RenderingOpenGL.patch:<ignore>
 [Rendering/OpenGL/Testing]
 modular/Rendering/OpenGL/Testing/:
 
-[Rendering/MESA]
-
-Rendering/vtkMesaActor.cxx:
-Rendering/vtkMesaActor.h:
-Rendering/vtkMesaCamera.cxx:
-Rendering/vtkMesaCamera.h:
-Rendering/vtkMesaClipPlanesPainter.cxx:
-Rendering/vtkMesaClipPlanesPainter.h:
-Rendering/vtkMesaCoincidentTopologyResolutionPainter.cxx:
-Rendering/vtkMesaCoincidentTopologyResolutionPainter.h:
-Rendering/vtkMesaDisplayListPainter.cxx:
-Rendering/vtkMesaDisplayListPainter.h:
-Rendering/vtkMesaFreeTypeTextMapper.cxx:
-Rendering/vtkMesaFreeTypeTextMapper.h:
-Rendering/vtkMesaImageMapper.cxx:
-Rendering/vtkMesaImageMapper.h:
-Rendering/vtkMesaLight.cxx:
-Rendering/vtkMesaLight.h:
-Rendering/vtkMesaLightingPainter.cxx:
-Rendering/vtkMesaLightingPainter.h:
-Rendering/vtkMesaPainterDeviceAdapter.cxx:
-Rendering/vtkMesaPainterDeviceAdapter.h:
-Rendering/vtkMesaPolyDataMapper.cxx:
-Rendering/vtkMesaPolyDataMapper.h:
-Rendering/vtkMesaPolyDataMapper2D.cxx:
-Rendering/vtkMesaPolyDataMapper2D.h:
-Rendering/vtkMesaProperty.cxx:
-Rendering/vtkMesaProperty.h:
-Rendering/vtkMesaRenderWindow.cxx:
-Rendering/vtkMesaRenderWindow.h:
-Rendering/vtkMesaRenderer.cxx:
-Rendering/vtkMesaRenderer.h:
-Rendering/vtkMesaRepresentationPainter.cxx:
-Rendering/vtkMesaRepresentationPainter.h:
-Rendering/vtkMesaScalarsToColorsPainter.cxx:
-Rendering/vtkMesaScalarsToColorsPainter.h:
-Rendering/vtkMesaTexture.cxx:
-Rendering/vtkMesaTexture.h:
-Rendering/vtkMesaImageSliceMapper.cxx:
-Rendering/vtkMesaImageSliceMapper.h:
-
 [Rendering/Text]
 
 modular/Rendering/Text/CMakeLists.txt:
@@ -5062,8 +5019,6 @@ Rendering/vtkWin32RenderWindowInteractor.h:
 
 Rendering/vtkXGPUInfoList.cxx:
 Rendering/vtkXGPUInfoList.h:
-Rendering/vtkXMesaRenderWindow.cxx:
-Rendering/vtkXMesaRenderWindow.h:
 Rendering/vtkXRenderWindowTclInteractor.cxx:
 Rendering/vtkXRenderWindowTclInteractor.h:
 
@@ -5136,12 +5091,6 @@ VolumeRendering/vtkHAVSVolumeMapper_k6BeginFP.asm:
 VolumeRendering/vtkHAVSVolumeMapper_k6EndFP.asm:
 VolumeRendering/vtkHAVSVolumeMapper_k6FP.asm:
 VolumeRendering/vtkHAVSVolumeMapper_kbufferVP.asm:
-VolumeRendering/vtkMesaProjectedTetrahedraMapper.cxx:
-VolumeRendering/vtkMesaProjectedTetrahedraMapper.h:
-VolumeRendering/vtkMesaRayCastImageDisplayHelper.cxx:
-VolumeRendering/vtkMesaRayCastImageDisplayHelper.h:
-VolumeRendering/vtkMesaVolumeTextureMapper2D.cxx:
-VolumeRendering/vtkMesaVolumeTextureMapper2D.h:
 VolumeRendering/vtkOpenGLGPUVolumeRayCastMapper.cxx:
 VolumeRendering/vtkOpenGLGPUVolumeRayCastMapper.h:
 VolumeRendering/vtkOpenGLHAVSVolumeMapper.cxx:
