@@ -4434,8 +4434,6 @@ Rendering/vtkDistanceToCamera.cxx:
 Rendering/vtkDistanceToCamera.h:
 Rendering/vtkDummyGPUInfoList.cxx:
 Rendering/vtkDummyGPUInfoList.h:
-Rendering/vtkDynamic2DLabelMapper.cxx:
-Rendering/vtkDynamic2DLabelMapper.h:
 Rendering/vtkFollower.cxx:
 Rendering/vtkFollower.h:
 Rendering/vtkFrustumCoverageCuller.cxx:
@@ -4470,8 +4468,6 @@ Rendering/vtkImageMapper3D.cxx:
 Rendering/vtkImageMapper3D.h:
 Rendering/vtkImageProperty.cxx:
 Rendering/vtkImageProperty.h:
-Rendering/vtkImageResliceMapper.cxx:
-Rendering/vtkImageResliceMapper.h:
 Rendering/vtkImageSlice.cxx:
 Rendering/vtkImageSlice.h:
 Rendering/vtkImageSliceCollection.cxx:
@@ -4480,10 +4476,6 @@ Rendering/vtkImageSliceMapper.cxx:
 Rendering/vtkImageSliceMapper.h:
 Rendering/vtkImageStack.cxx:
 Rendering/vtkImageStack.h:
-Rendering/vtkImageViewer.cxx:
-Rendering/vtkImageViewer.h:
-Rendering/vtkImageViewer2.cxx:
-Rendering/vtkImageViewer2.h:
 Rendering/vtkImagingFactory.cxx:<ignore>
 modular/Rendering/Core/vtkImagingFactory.cxx:
 Rendering/vtkImagingFactory.h:
@@ -4740,6 +4732,9 @@ Rendering/vtkLabeledTreeMapDataMapper.cxx:
 Rendering/vtkLabeledTreeMapDataMapper.h:
 Rendering/vtkFreeTypeLabelRenderStrategy.cxx:
 Rendering/vtkFreeTypeLabelRenderStrategy.h:
+
+Rendering/vtkDynamic2DLabelMapper.cxx:
+Rendering/vtkDynamic2DLabelMapper.h:
 
 
 [Rendering/LOD]
@@ -5753,6 +5748,13 @@ Filtering/vtkImageSincInterpolator.h:
 Filtering/vtkImageInterpolator.cxx:
 Filtering/vtkImageInterpolator.h:
 Filtering/vtkImageInterpolatorInternals.h:
+
+Rendering/vtkImageViewer.cxx:
+Rendering/vtkImageViewer.h:
+Rendering/vtkImageViewer2.cxx:
+Rendering/vtkImageViewer2.h:
+Rendering/vtkImageResliceMapper.cxx:
+Rendering/vtkImageResliceMapper.h:
 
 modular/ImagingCore.patch:<ignore>
 <patch>: ImagingCore.patch
