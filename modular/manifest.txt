@@ -4457,7 +4457,8 @@ Rendering/vtkGraphMapper.cxx:
 Rendering/vtkGraphMapper.h:
 Rendering/vtkGraphToGlyphs.cxx:
 Rendering/vtkGraphToGlyphs.h:
-Rendering/vtkGraphicsFactory.cxx:
+Rendering/vtkGraphicsFactory.cxx:<ignore>
+modular/Rendering/Core/vtkGraphicsFactory.cxx:
 Rendering/vtkGraphicsFactory.h:
 Rendering/vtkHardwareSelector.cxx:
 Rendering/vtkHardwareSelector.h:
@@ -4485,7 +4486,8 @@ Rendering/vtkImageViewer.cxx:
 Rendering/vtkImageViewer.h:
 Rendering/vtkImageViewer2.cxx:
 Rendering/vtkImageViewer2.h:
-Rendering/vtkImagingFactory.cxx:
+Rendering/vtkImagingFactory.cxx:<ignore>
+modular/Rendering/Core/vtkImagingFactory.cxx:
 Rendering/vtkImagingFactory.h:
 Rendering/vtkInteractorEventRecorder.cxx:
 Rendering/vtkInteractorEventRecorder.h:
