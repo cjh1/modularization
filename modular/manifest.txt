@@ -40,7 +40,6 @@ Views/CMakeLists.txt: <ignore>
 Widgets/CMakeLists.txt: <ignore>
 vtkBanner.gif: <ignore>
 vtkMacros.cmake: <ignore>
-Charts/Testing/: <ignore>
 GenericFiltering/Testing/: <ignore>
 Geovis/Testing/: <ignore>
 Graphics/Testing/: <ignore>
@@ -3043,6 +3042,9 @@ Geovis/vtkGeoView2D.cxx:
 
 [Rendering/Context2D]
 
+modular/Rendering/Context2D/module.cmake:
+modular/Rendering/Context2D/CMakeLists.txt:
+
 Charts/vtkAbstractContextBufferId.h:
 Charts/vtkAbstractContextBufferId.cxx:
 Charts/vtkAbstractContextItem.h:
@@ -3096,8 +3098,13 @@ Charts/vtkContextKeyEvent.h:
 
 [Views/Context2D]
 
+modular/Views/Context2D/module.cmake:
+modular/Views/Context2D/CMakeLists.txt:
+
 Charts/vtkContextView.h:
 Charts/vtkContextView.cxx:
+Charts/vtkContextInteractorStyle.cxx:
+Charts/vtkContextInteractorStyle.h:
 
 [Charts/Core]
 
@@ -3158,8 +3165,6 @@ Charts/vtkPlotStacked.cxx:
 Charts/vtkScalarsToColorsItem.h:
 Charts/vtkScalarsToColorsItem.cxx:
 
-Charts/vtkContextInteractorStyle.cxx:
-Charts/vtkContextInteractorStyle.h:
 Charts/vtkAxisExtended.cxx:
 Charts/vtkAxisExtended.h:
 Charts/vtkChartMatrix.cxx:
@@ -3169,6 +3174,54 @@ Charts/vtkScatterPlotMatrix.h:
 Charts/vtkPiecewisePointHandleItem.cxx:
 Charts/vtkPiecewisePointHandleItem.h:
 
+modular/Charts/Core/module.cmake:
+modular/Charts/Core/CMakeLists.txt:
+
+[Charts/Core/Testing/Cxx]
+
+modular/Charts/Core/Testing/Cxx/CMakeLists.txt:
+
+Charts/Testing/Cxx/TestBarGraph.cxx:
+Charts/Testing/Cxx/TestBarGraphHorizontal.cxx:
+Charts/Testing/Cxx/TestChartMatrix.cxx:
+Charts/Testing/Cxx/TestChartXYZ.cxx:
+Charts/Testing/Cxx/TestChartsOn3D.cxx:
+Charts/Testing/Cxx/TestColorTransferFunction.cxx:
+Charts/Testing/Cxx/TestContext.cxx:
+Charts/Testing/Cxx/TestContextImage.cxx:
+Charts/Testing/Cxx/TestContextScene.cxx:
+Charts/Testing/Cxx/TestContextUnicode.cxx:
+Charts/Testing/Cxx/TestControlPointsHandleItem.cxx:
+Charts/Testing/Cxx/TestControlPointsItem.cxx:
+Charts/Testing/Cxx/TestControlPointsItemEvents.cxx:
+Charts/Testing/Cxx/TestDiagram.cxx:
+Charts/Testing/Cxx/TestFreeTypeRender.cxx:
+Charts/Testing/Cxx/TestGLSL.cxx:
+Charts/Testing/Cxx/TestHistogram2D.cxx:
+Charts/Testing/Cxx/TestLegendHiddenPlots.cxx:
+Charts/Testing/Cxx/TestLinePlot.cxx:
+Charts/Testing/Cxx/TestLinePlot2.cxx:
+Charts/Testing/Cxx/TestLinePlotAxisFonts.cxx:
+Charts/Testing/Cxx/TestLinePlotInteraction.cxx:
+Charts/Testing/Cxx/TestMultipleChartRenderers.cxx:
+Charts/Testing/Cxx/TestMultipleRenderers.cxx:
+Charts/Testing/Cxx/TestMultipleScalarsToColors.cxx:
+Charts/Testing/Cxx/TestParallelCoordinates.cxx:
+Charts/Testing/Cxx/TestPieChart.cxx:
+Charts/Testing/Cxx/TestPlotMatrix.cxx:
+Charts/Testing/Cxx/TestQtContextUnicode.cxx:
+Charts/Testing/Cxx/TestQtDiagram.cxx:
+Charts/Testing/Cxx/TestScalarsToColors.cxx:
+Charts/Testing/Cxx/TestScatterPlot.cxx:
+Charts/Testing/Cxx/TestScatterPlotMatrix.cxx:
+Charts/Testing/Cxx/TestScatterPlotMatrixVehicles.cxx:
+Charts/Testing/Cxx/TestScatterPlotMatrixVisible.cxx:
+Charts/Testing/Cxx/TestScientificPlot.cxx:
+Charts/Testing/Cxx/TestStackedBarGraph.cxx:
+Charts/Testing/Cxx/TestStackedPlot.cxx:
+Charts/Testing/Cxx/CMakeLists.txt:<ignore>
+Charts/Testing/Python/:<ignore>
+Charts/Testing/CMakeLists.txt:<ignore>
 
 [Filters/Core]
 
@@ -5782,6 +5835,7 @@ modular/ImagingCore.patch:<ignore>
 [Chemistry/Core]
 modular/Chemistry/Core/module.cmake:
 modular/Chemistry/Core/CMakeLists.txt:
+modular/Chemistry/Core/vtkChemistryConfigure.h.in:
 
 Chemistry/CMakeLists.txt:<ignore>
 Chemistry/vtkBODRData/COPYING:
@@ -5792,7 +5846,7 @@ Chemistry/vtkBlueObeliskDataParser.cxx:
 Chemistry/vtkBlueObeliskDataParser.h:
 Chemistry/vtkCMLMoleculeReader.cxx:
 Chemistry/vtkCMLMoleculeReader.h:
-Chemistry/vtkChemistryConfigure.h.in:
+Chemistry/vtkChemistryConfigure.h.in:<ignore>
 Chemistry/vtkMoleculeAlgorithm.cxx:
 Chemistry/vtkMoleculeAlgorithm.h:
 Chemistry/vtkMoleculeMapper.cxx:
@@ -5891,10 +5945,14 @@ Rendering/Testing/Cxx/vtkRegressionTestImage.h:
 
 [Testing/Rendering]
 
+modular/Testing/Rendering/module.cmake:
+modular/Testing/Rendering/CMakeLists.txt:
+modular/Testing/Rendering/vtkTestingObjectFactory.cmake:
+
 Rendering/vtkTesting.cxx:
 Rendering/vtkTesting.h:
 Rendering/vtkTestingInteractor.cxx:
 Rendering/vtkTestingInteractor.h:
-Rendering/vtkTestingObjectFactory.cmake:
+Rendering/vtkTestingObjectFactory.cmake:<ignore>
 Rendering/vtkTestingObjectFactory.cxx:
 Rendering/vtkTestingObjectFactory.h:
