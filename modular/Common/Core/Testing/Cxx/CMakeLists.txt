@@ -4,7 +4,7 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestArrayAPIDense.cxx
   TestArrayAPISparse.cxx
   TestArrayBool.cxx
-  TestArrayCasting.cxx
+#  TestArrayCasting.cxx
   TestArrayExtents.cxx
   TestArrayInterpolationDense.cxx
   TestArrayLookup.cxx
@@ -13,14 +13,14 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestArrayUserTypes.cxx
   TestArrayVariants.cxx
   TestConditionVariable.cxx
-  TestCxxFeatures.cxx
+#  TestCxxFeatures.cxx
   TestDataArray.cxx
   TestDataArrayComponentNames.cxx 
   TestGarbageCollector.cxx
-  TestInstantiator.cxx
+#  TestInstantiator.cxx
   TestMath.cxx
   TestMinimalStandardRandomSequence.cxx
-  TestNew.cxx
+#  TestNew.cxx
   TestObjectFactory.cxx
   TestObservers.cxx
   TestSmartPointer.cxx
@@ -36,7 +36,7 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   otherLookupTable.cxx
   otherLookupTableWithEnabling.cxx
   otherStringArray.cxx
-  vtkTestNewVar.cxx
+#  vtkTestNewVar.cxx
   
   EXTRA_INCLUDE vtkTestDriver.h
 )
