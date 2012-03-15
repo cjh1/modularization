@@ -2930,6 +2930,8 @@ Views/vtkViewUpdater.h:
 Views/vtkViewUpdater.cxx:
 Views/vtkRenderView.h:
 Views/vtkRenderView.cxx:
+Rendering/vtkViewTheme.cxx:
+Rendering/vtkViewTheme.h:
 
 [Views/Infovis]
 
@@ -3091,8 +3093,6 @@ Charts/vtkTooltipItem.h:
 Charts/vtkTooltipItem.cxx:
 Charts/vtkContextKeyEvent.cxx:
 Charts/vtkContextKeyEvent.h:
-Charts/vtkPiecewisePointHandleItem.cxx:
-Charts/vtkPiecewisePointHandleItem.h:
 
 [Views/Context2D]
 
@@ -3166,6 +3166,8 @@ Charts/vtkChartMatrix.cxx:
 Charts/vtkChartMatrix.h:
 Charts/vtkScatterPlotMatrix.cxx:
 Charts/vtkScatterPlotMatrix.h:
+Charts/vtkPiecewisePointHandleItem.cxx:
+Charts/vtkPiecewisePointHandleItem.h:
 
 
 [Filters/Core]
@@ -4365,14 +4367,10 @@ Hybrid/vtkXYPlotActor.cxx:
 Hybrid/vtkXYPlotActor.h:
 Hybrid/vtkPolarAxesActor.cxx:
 Hybrid/vtkPolarAxesActor.h:
-
-[Rendering/Carbon]
-
-Rendering/vtkCarbonRenderWindow.cxx:
-Rendering/vtkCarbonRenderWindow.h:
-Rendering/vtkCarbonRenderWindowInteractor.cxx:
-Rendering/vtkCarbonRenderWindowInteractor.h:
-
+Rendering/vtkParallelCoordinatesActor.cxx:
+Rendering/vtkParallelCoordinatesActor.h:
+Rendering/vtkParallelCoordinatesInteractorStyle.cxx:
+Rendering/vtkParallelCoordinatesInteractorStyle.h:
 
 [Rendering/Cg]
 
@@ -4382,13 +4380,6 @@ Rendering/vtkCgShaderDeviceAdapter.cxx:
 Rendering/vtkCgShaderDeviceAdapter.h:
 Rendering/vtkCgShaderProgram.cxx:
 Rendering/vtkCgShaderProgram.h:
-
-
-[Rendering/Cocoa]
-
-Rendering/vtkCocoaTkUtilities.h:
-Rendering/vtkCocoaTkUtilities.mm:
-
 
 [Rendering/Core]
 
@@ -4550,12 +4541,6 @@ Rendering/vtkPainterDeviceAdapter.cxx:
 Rendering/vtkPainterDeviceAdapter.h:
 Rendering/vtkPainterPolyDataMapper.cxx:
 Rendering/vtkPainterPolyDataMapper.h:
-Rendering/vtkParallelCoordinatesActor.cxx:
-Rendering/vtkParallelCoordinatesActor.h:
-Rendering/vtkParallelCoordinatesInteractorStyle.cxx:
-Rendering/vtkParallelCoordinatesInteractorStyle.h:
-Rendering/vtkPointSetToLabelHierarchy.cxx:
-Rendering/vtkPointSetToLabelHierarchy.h:
 Rendering/vtkPointsPainter.cxx:
 Rendering/vtkPointsPainter.h:
 Rendering/vtkPolyDataMapper.cxx:
@@ -4607,19 +4592,8 @@ Rendering/vtkStandardPolyDataPainter.cxx:
 Rendering/vtkStandardPolyDataPainter.h:
 Rendering/vtkStringToImage.cxx:
 Rendering/vtkStringToImage.h:
-Rendering/vtkSurfaceLICDefaultPainter.cxx:
-Rendering/vtkSurfaceLICDefaultPainter.h:
-Rendering/vtkSurfaceLICPainter.cxx:
-Rendering/vtkSurfaceLICPainter.h:
 Rendering/vtkTStripsPainter.cxx:
 Rendering/vtkTStripsPainter.h:
-Rendering/vtkTesting.cxx:
-Rendering/vtkTesting.h:
-Rendering/vtkTestingInteractor.cxx:
-Rendering/vtkTestingInteractor.h:
-Rendering/vtkTestingObjectFactory.cmake:
-Rendering/vtkTestingObjectFactory.cxx:
-Rendering/vtkTestingObjectFactory.h:
 Rendering/vtkTexture.cxx:
 Rendering/vtkTexture.h:
 Rendering/vtkTexturedActor2D.cxx:
@@ -4628,8 +4602,6 @@ Rendering/vtkTransformInterpolator.cxx:
 Rendering/vtkTransformInterpolator.h:
 Rendering/vtkTupleInterpolator.cxx:
 Rendering/vtkTupleInterpolator.h:
-Rendering/vtkViewTheme.cxx:
-Rendering/vtkViewTheme.h:
 Rendering/vtkVisibilitySort.cxx:
 Rendering/vtkVisibilitySort.h:
 Rendering/vtkVolume.cxx:
@@ -4773,7 +4745,8 @@ Rendering/vtkFreeTypeLabelRenderStrategy.h:
 
 Rendering/vtkDynamic2DLabelMapper.cxx:
 Rendering/vtkDynamic2DLabelMapper.h:
-
+Rendering/vtkPointSetToLabelHierarchy.cxx:
+Rendering/vtkPointSetToLabelHierarchy.h:
 
 [Rendering/LOD]
 
@@ -4945,6 +4918,12 @@ Rendering/vtkVolumetricPass.h:
 Rendering/vtkRenderState.cxx:
 Rendering/vtkRenderState.h:
 
+# These are very tightly coupled with OpenGL - new interface classes needed.
+Rendering/vtkSurfaceLICDefaultPainter.cxx:
+Rendering/vtkSurfaceLICDefaultPainter.h:
+Rendering/vtkSurfaceLICPainter.cxx:
+Rendering/vtkSurfaceLICPainter.h:
+
 # The OpenGL module is an implementation module, only one RenderWindowInteractor
 # or RenderWindow override can win and the GL calls are also affected by the
 # windowing system.
@@ -4953,6 +4932,10 @@ Rendering/vtkXOpenGLRenderWindow.h:
 Rendering/vtkXRenderWindowInteractor.cxx:
 Rendering/vtkXRenderWindowInteractor.h:
 Rendering/CheckglXGetProcAddressARB.cxx:
+Rendering/vtkXGPUInfoList.cxx:
+Rendering/vtkXGPUInfoList.h:
+Rendering/vtkXRenderWindowTclInteractor.cxx:
+Rendering/vtkXRenderWindowTclInteractor.h:
 
 # The cocoa classes are best built here too.
 Rendering/vtkCocoaGLView.h:
@@ -4962,6 +4945,33 @@ Rendering/vtkCocoaRenderWindow.h:
 Rendering/vtkCocoaRenderWindow.mm:
 Rendering/vtkCocoaRenderWindowInteractor.h:
 Rendering/vtkCocoaRenderWindowInteractor.mm:
+Rendering/vtkCocoaTkUtilities.h:
+Rendering/vtkCocoaTkUtilities.mm:
+
+# Carbon for the old school Mac windows.
+Rendering/vtkCarbonRenderWindow.cxx:
+Rendering/vtkCarbonRenderWindow.h:
+Rendering/vtkCarbonRenderWindowInteractor.cxx:
+Rendering/vtkCarbonRenderWindowInteractor.h:
+
+# Windows render window overloads.
+Rendering/vtkWin32OpenGLRenderWindow.cxx:
+Rendering/vtkWin32OpenGLRenderWindow.h:
+Rendering/vtkWin32RenderWindowInteractor.cxx:
+Rendering/vtkWin32RenderWindowInteractor.h:
+
+# The TDx stuff is very tightly coupled to the OS specific interactors/windows.
+Rendering/vtkTDxConfigure.h.in:
+Rendering/vtkTDxDevice.cxx:
+Rendering/vtkTDxDevice.h:
+Rendering/vtkTDxInteractorStyleGeo.cxx:
+Rendering/vtkTDxInteractorStyleGeo.h:
+Rendering/vtkTDxMacDevice.cxx:
+Rendering/vtkTDxMacDevice.h:
+Rendering/vtkTDxUnixDevice.cxx:
+Rendering/vtkTDxUnixDevice.h:
+Rendering/vtkTDxWinDevice.cxx:
+Rendering/vtkTDxWinDevice.h:
 
 # Add the export header
 modular/RenderingOpenGL.patch:<ignore>
@@ -4997,8 +5007,6 @@ Rendering/vtkFreeTypeUtilities.h:
 modular/RenderingText.patch:<ignore>
 <patch>: RenderingText.patch
 
-
-
 [Rendering/Qt]
 
 Rendering/vtkQImageToImageSource.cxx:
@@ -5023,37 +5031,11 @@ Rendering/vtkTkRenderWidget.h:
 Rendering/vtkTkRenderWidgetPython.cxx:
 Rendering/vtkTkWidgetsInit.cxx:
 
-[Rendering/TDx]
-
-modular/Rendering/TDx/CMakeLists.txt:
-modular/Rendering/TDx/module.cmake:
-
-Rendering/vtkTDxConfigure.h.in:
-Rendering/vtkTDxDevice.cxx:
-Rendering/vtkTDxDevice.h:
-Rendering/vtkTDxInteractorStyleGeo.cxx:
-Rendering/vtkTDxInteractorStyleGeo.h:
-Rendering/vtkTDxMacDevice.cxx:
-Rendering/vtkTDxMacDevice.h:
-Rendering/vtkTDxUnixDevice.cxx:
-Rendering/vtkTDxUnixDevice.h:
-Rendering/vtkTDxWinDevice.cxx:
-Rendering/vtkTDxWinDevice.h:
-
-
-[Rendering/Win32]
-
-Rendering/vtkWin32OpenGLRenderWindow.cxx:
-Rendering/vtkWin32OpenGLRenderWindow.h:
-Rendering/vtkWin32RenderWindowInteractor.cxx:
-Rendering/vtkWin32RenderWindowInteractor.h:
-
-[Rendering/X]
-
-Rendering/vtkXGPUInfoList.cxx:
-Rendering/vtkXGPUInfoList.h:
-Rendering/vtkXRenderWindowTclInteractor.cxx:
-Rendering/vtkXRenderWindowTclInteractor.h:
+#[Rendering/TDx]
+# It would be good to revisit this, but it is very tightly coupled to the OS
+# specific interactors, and would take some redesign to decouple.
+modular/Rendering/TDx/CMakeLists.txt:<ignore>
+modular/Rendering/TDx/module.cmake:<ignore>
 
 [Rendering/Volume]
 modular/Rendering/Volume/module.cmake:
@@ -5906,3 +5888,13 @@ modular/Testing/Core/CMakeLists.txt:
 Common/Testing/Cxx/vtkTestUtilities.h:
 Common/Testing/Cxx/vtkTestDriver.h:
 Rendering/Testing/Cxx/vtkRegressionTestImage.h:
+
+[Testing/Rendering]
+
+Rendering/vtkTesting.cxx:
+Rendering/vtkTesting.h:
+Rendering/vtkTestingInteractor.cxx:
+Rendering/vtkTestingInteractor.h:
+Rendering/vtkTestingObjectFactory.cmake:
+Rendering/vtkTestingObjectFactory.cxx:
+Rendering/vtkTestingObjectFactory.h:

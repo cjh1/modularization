@@ -1,3 +1,7 @@
 add_executable(OpenGLTest test.cxx)
 
-target_link_libraries(OpenGLTest vtkRenderingOpenGL)
+include_directories(
+  ${VTK_SOURCE_DIR}/Interaction/Style
+  ${VTK_BINARY_DIR}/Interaction/Style)
+
+target_link_libraries(OpenGLTest vtkRenderingOpenGL vtkInteractionStyle)

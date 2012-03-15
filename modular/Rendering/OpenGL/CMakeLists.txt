@@ -17,7 +17,6 @@ set(Kit_SRCS
   vtkFrameBufferObject.cxx
   vtkGaussianBlurPass.cxx
   vtkGenericOpenGLRenderWindow.cxx
-  #vtkIdentColoredPainter.cxx
   vtkImageProcessingPass.cxx
   vtkLightingHelper.cxx
   vtkLightsPass.cxx
