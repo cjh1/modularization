@@ -27,7 +27,6 @@ set(Kit_SRCS
   vtkDiscretizableColorTransferFunction.cxx
   vtkDisplayListPainter.cxx
   vtkDistanceToCamera.cxx
-  vtkDummyGPUInfoList.cxx
   vtkFollower.cxx
   vtkFrustumCoverageCuller.cxx
   vtkGenericRenderWindowInteractor.cxx

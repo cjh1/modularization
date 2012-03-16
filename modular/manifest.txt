@@ -4447,8 +4447,6 @@ Rendering/vtkDisplayListPainter.cxx:
 Rendering/vtkDisplayListPainter.h:
 Rendering/vtkDistanceToCamera.cxx:
 Rendering/vtkDistanceToCamera.h:
-Rendering/vtkDummyGPUInfoList.cxx:
-Rendering/vtkDummyGPUInfoList.h:
 Rendering/vtkFollower.cxx:
 Rendering/vtkFollower.h:
 Rendering/vtkFrustumCoverageCuller.cxx:
@@ -4956,6 +4954,10 @@ Rendering/vtkTDxUnixDevice.cxx:
 Rendering/vtkTDxUnixDevice.h:
 Rendering/vtkTDxWinDevice.cxx:
 Rendering/vtkTDxWinDevice.h:
+
+# The default GPU info list if nothing else is available.
+Rendering/vtkDummyGPUInfoList.cxx:
+Rendering/vtkDummyGPUInfoList.h:
 
 # Add the export header
 modular/RenderingOpenGL.patch:<ignore>
