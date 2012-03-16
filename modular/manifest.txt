@@ -4827,7 +4827,7 @@ Rendering/vtkDepthPeelingPass.cxx:
 Rendering/vtkDepthPeelingPass.h:
 Rendering/vtkDepthPeeling_fs.glsl:
 Rendering/vtkDirectXGPUInfoList.cxx:
-Rendering/vtkDirectXGPUInfoList.h::
+Rendering/vtkDirectXGPUInfoList.h:
 Rendering/vtkFrameBufferObject.cxx:
 Rendering/vtkFrameBufferObject.h:
 Rendering/vtkGaussianBlurPass.cxx:
