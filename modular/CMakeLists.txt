@@ -359,38 +359,6 @@ IF(VTK_USE_MPI)
 ENDIF(VTK_USE_MPI)
 
 #-----------------------------------------------------------------------------
-# Create STL header wrappers to block warnings in the STL headers.
-FOREACH(header
-  algorithm
-  deque
-  exception
-  functional
-  iterator
-  limits
-  list
-  map
-  memory
-  new
-  numeric
-  queue
-  set
-  stack
-  stdexcept
-  string
-  utility
-  vector
-  )
-  SET(VTK_STL_HEADER "${header}")
-  CONFIGURE_FILE(${VTK_SOURCE_DIR}/Utilities/vtkstd.h.in
-                 ${VTK_BINARY_DIR}/vtkstd/${header} @ONLY IMMEDIATE)
-  IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
-    INSTALL(FILES ${VTK_BINARY_DIR}/vtkstd/${header}
-      DESTINATION ${VTK_INSTALL_INCLUDE_DIR_CM24}/vtkstd
-      COMPONENT Development)
-  ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)
-ENDFOREACH(header)
-
-#-----------------------------------------------------------------------------
 # Configure files with settings for use by the build.
 
 # Include the sockets test.
