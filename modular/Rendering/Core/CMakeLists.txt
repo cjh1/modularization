@@ -97,9 +97,6 @@ set(Kit_SRCS
   vtkShaderProgram.cxx # vtkXMLShaderProgram
   vtkStandardPolyDataPainter.cxx
   vtkStringToImage.cxx
-  #vtkTesting.cxx - vtkPNGWriter
-  #vtkTestingInteractor.cxx
-  #vtkTestingObjectFactory.cxx - vtkTestDriver.h
   vtkTexture.cxx
   vtkTexturedActor2D.cxx
   vtkTransformCoordinateSystems.cxx
