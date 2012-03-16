@@ -549,6 +549,7 @@ Utilities/.gitattributes:
 [Common/Core]
 modular/Common/Core/CMakeLists.txt:
 modular/Common/Core/module.cmake:
+modular/Common/Core/vtkOStreamWrapper.h:
 vtkToolkits.h.in:
 vtkConfigure.h.in:
 Common/vtkPythonCommand.cxx:
@@ -719,7 +720,7 @@ Common/vtkObject.h:
 Common/vtkOldStyleCallbackCommand.cxx:
 Common/vtkOldStyleCallbackCommand.h:
 Common/vtkOStreamWrapper.cxx:
-Common/vtkOStreamWrapper.h:
+Common/vtkOStreamWrapper.h:<ignore>
 Common/vtkOStrStreamWrapper.cxx:
 Common/vtkOStrStreamWrapper.h:
 Common/vtkOutputWindow.cxx:
@@ -2430,8 +2431,9 @@ Wrapping/Python/vtk/:
 
 modular/Wrapping/PythonCore/CMakeLists.txt:
 modular/Wrapping/PythonCore/module.cmake:
+modular/Wrapping/PythonCore/vtkPython.h:
 
-Wrapping/Python/vtkPython.h:
+Wrapping/Python/vtkPython.h:<ignore>
 Wrapping/Python/PyVTKClass.cxx:
 Wrapping/Python/PyVTKClass.h:
 Wrapping/Python/PyVTKMutableObject.cxx:
@@ -2465,6 +2467,7 @@ modular/CMake/vtkThirdParty.cmake:
 modular/CMake/UseVTK.cmake:
 modular/CMake/VTKConfig.cmake.in:
 modular/CMake/VTKConfigVersion.cmake.in:
+modular/CMake/vtkWrapping.cmake:
 
 modular/CMake/vtkObjectFactory.cxx.in:
 modular/CMake/vtkObjectFactory.h.in:

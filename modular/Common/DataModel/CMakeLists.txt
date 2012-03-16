@@ -202,10 +202,12 @@ set_source_files_properties(
   )
 
 set_source_files_properties(
-  vtkAMRBox.cxx
-  vtkExecutionScheduler.cxx
-  vtkExecutionSchedulerManager.cxx
-  vtkFilteringInformationKeyManager.cxx
+  vtkAMRBox
+  vtkAtom
+  vtkBond
+  vtkBoundingBox
+  vtkMarchingSquaresLineCases
+  vtkMarchingCubesTriangleCases
   WRAP_EXCLUDE
   )
 
