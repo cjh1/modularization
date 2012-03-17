@@ -376,9 +376,16 @@ if(VTK_WRAP_PYTHON)
   set(VTK_WRAP_PYTHON_EXE vtkWrapPython)
   set(VTK_WRAP_PYTHON_INIT_EXE vtkWrapPythonInit)
   set(VTK_WRAP_HIERARCHY_EXE vtkWrapHierarchy)
+  set(VTK_PYTHON_EXE vtkpython)
   # Force the PythonCore module to on if wrapping is on
   set(Module_vtkWrappingPythonCore ON CACHE BOOL "Core Python wrapping library"
     FORCE)
+  # Remove the __init__.py file - it is accumulated as modules are added.
+  file(REMOVE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/__init__.py")
+  file(GLOB py_utils Wrapping/Python/vtk/test/*)
+  file(COPY ${py_utils} DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/test)
+  file(GLOB py_utils Wrapping/Python/vtk/util/*)
+  file(COPY ${py_utils} DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/util)
   add_subdirectory(Wrapping)
 endif()
 

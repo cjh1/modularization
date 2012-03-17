@@ -1408,6 +1408,7 @@ Common/Testing/Cxx/TestBoundingBox.cxx:
 Common/Testing/Cxx/TestPlane.cxx:
 Common/Testing/Cxx/TestStructuredData.cxx:
 
+Filtering/Testing/Cxx/TestAMRIterator.cxx:
 Filtering/Testing/Cxx/TestAMRBlanking.cxx:
 
 [Common/DataModel/Testing/Tcl]
