@@ -815,7 +815,6 @@ Common/vtkMathConfigure.h.in:
 Common/vtkMath.cxx:
 Common/vtkMath.h:
 Common/vtkMathUtilities.h:
-Common/vtkVectorOperators.h:
 
 # For vtkDataArray
 Common/vtkLookupTable.cxx:
@@ -844,7 +843,6 @@ Common/vtkPoints2D.cxx:
 Common/vtkPoints2D.h:
 Common/vtkPoints.cxx:
 Common/vtkPoints.h:
-Common/vtkTuple.h:
 
 modular/CommonCore.patch: <ignore>
 <patch>: CommonCore.patch
@@ -883,7 +881,6 @@ Common/Testing/Cxx/TestSparseArrayValidation.cxx:
 Common/Testing/Cxx/TestUnicodeStringAPI.cxx:
 Common/Testing/Cxx/TestUnicodeStringArrayAPI.cxx:
 Common/Testing/Cxx/TestVariantComparison.cxx:
-Common/Testing/Cxx/TestVectorOperators.cxx:
 Common/Testing/Cxx/TestWeakPointer.cxx:
 Common/Testing/Cxx/otherArrays.cxx:
 Common/Testing/Cxx/otherByteSwap.cxx:
@@ -908,7 +905,6 @@ Common/Testing/Python/TestNumpySupport.py:
 Common/Testing/Python/TestOperators.py:
 Common/Testing/Python/TestStrings.py:
 Common/Testing/Python/TestSubClass.py:
-Common/Testing/Python/TestTemplates.py:
 Common/Testing/Python/TestTerminationCrash.py:
 Common/Testing/Python/TestVariant.py:
 Common/Testing/Python/TestWeakref.py:
@@ -1003,7 +999,9 @@ Common/vtkStructuredVisibilityConstraint.cxx:
 Common/vtkStructuredVisibilityConstraint.h:
 Common/vtkTensor.cxx:
 Common/vtkTensor.h:
+Common/vtkTuple.h:
 Common/vtkVector.h:
+Common/vtkVectorOperators.h:
 Common/vtkXMLDataElement.cxx:
 Common/vtkXMLDataElement.h:
 Filtering/vtkAbstractCellLocator.cxx:
@@ -1407,9 +1405,16 @@ Filtering/Testing/Cxx/quadraticEvaluation.cxx:
 Common/Testing/Cxx/TestBoundingBox.cxx:
 Common/Testing/Cxx/TestPlane.cxx:
 Common/Testing/Cxx/TestStructuredData.cxx:
+Common/Testing/Cxx/TestVectorOperators.cxx:
 
 Filtering/Testing/Cxx/TestAMRIterator.cxx:
 Filtering/Testing/Cxx/TestAMRBlanking.cxx:
+
+[Common/DataModel/Testing/Python]
+
+modular/Common/DataModel/Testing/Python/CMakeLists.txt:
+
+Common/Testing/Python/TestTemplates.py:
 
 [Common/DataModel/Testing/Tcl]
 

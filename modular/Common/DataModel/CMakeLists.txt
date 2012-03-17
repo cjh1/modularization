@@ -177,6 +177,12 @@ set(Kit_SRCS
   vtkMolecule.cxx
   vtkAbstractElectronicData.cxx
 
+  # Header only classes
+  vtkTuple.h
+  vtkVector.h
+  vtkColor.h
+  vtkRect.h
+
   # New classes for AMR
   vtkNonOverlappingAMR.cxx
   vtkOverlappingAMR.cxx
@@ -208,7 +214,19 @@ set_source_files_properties(
   vtkBoundingBox
   vtkMarchingSquaresLineCases
   vtkMarchingCubesTriangleCases
+  vtkTuple
+  vtkVector
+  vtkColor
+  vtkRect
   WRAP_EXCLUDE
+  )
+
+set_source_files_properties(
+  vtkColor.h
+  vtkRect.h
+  vtkVector.h
+  vtkTuple.h
+  PROPERTIES WRAP_SPECIAL 1
   )
 
 vtk_module_library(vtkCommonDataModel ${Kit_SRCS})

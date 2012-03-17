@@ -10,7 +10,6 @@ if(VTK_PYTHON_EXE)
     TestOperators
     TestStrings
     TestSubClass
-    TestTemplates
     TestTerminationCrash
     TestVariant
     TestWeakref
