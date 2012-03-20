@@ -53,6 +53,7 @@ Examples/: <ignore>
 GenericFiltering/README.html: <ignore>
 modular/CMake/vtkModular.cmake:<ignore>
 modular/manifest.txt: <ignore>
+modular/testing.txt: <ignore>
 modular/modularize.py: <ignore>
 modular/export_headers.py: <ignore>
 
