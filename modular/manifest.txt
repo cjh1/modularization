@@ -2410,6 +2410,9 @@ Wrapping/vtkWrapText.h:
 
 Wrapping/Python/vtkPythonConfigure.h.in:
 
+modular/Wrapping.patch:<ignore>
+<patch>: Wrapping.patch
+
 [Wrapping/Python]
 
 Wrapping/Python/CMakeLists.txt: <ignore>
@@ -2461,7 +2464,36 @@ Wrapping/CMakeLists.txt: <ignore>
 Wrapping/Python/.cvsignore: <ignore>
 
 Wrapping/Java/: <ignore>
-Wrapping/Tcl/: <ignore>
+
+
+[Wrapping/Tcl]
+
+Wrapping/Tcl/CMakeLists.txt:
+Wrapping/Tcl/pkgIndex.tcl.in:
+Wrapping/Tcl/README:
+Wrapping/Tcl/resources/:<ignore>
+Wrapping/Tcl/vtk/:<ignore>
+Wrapping/Tcl/vtkbase/:<ignore>
+Wrapping/Tcl/vtkcommon/:<ignore>
+Wrapping/Tcl/vtkDetermineTkResources.cmake:
+Wrapping/Tcl/vtkfiltering/:<ignore>
+Wrapping/Tcl/vtkgeovis/:<ignore>
+Wrapping/Tcl/vtkgraphics/:<ignore>
+Wrapping/Tcl/vtkhybrid/:<ignore>
+Wrapping/Tcl/vtkimaging/:<ignore>
+Wrapping/Tcl/vtkinfovis/:<ignore>
+Wrapping/Tcl/vtkinteraction/:<ignore>
+Wrapping/Tcl/vtkio/:<ignore>
+Wrapping/Tcl/vtkparallel/:<ignore>
+Wrapping/Tcl/vtkParaTkAppInit.cxx:
+Wrapping/Tcl/vtkrendering/:<ignore>
+Wrapping/Tcl/vtktcl.c:
+Wrapping/Tcl/vtktesting/:<ignore>
+Wrapping/Tcl/vtkTkAppInitConfigure.h.in:
+Wrapping/Tcl/vtkTkAppInit.cxx:
+Wrapping/Tcl/vtkviews/:<ignore>
+Wrapping/Tcl/vtkvolumerendering/:<ignore>
+Wrapping/Tcl/vtkwidgets/:<ignore>
 
 [CMake]
 

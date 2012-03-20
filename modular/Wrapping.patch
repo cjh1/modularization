@@ -1,0 +1,13 @@
+diff --git a/Wrapping/vtkWrapPythonInit.c b/Wrapping/vtkWrapPythonInit.c
+index b5c6677..7b9f402 100644
+--- a/Wrapping/vtkWrapPythonInit.c
++++ b/Wrapping/vtkWrapPythonInit.c
+@@ -121,7 +121,7 @@ int main(int argc,char *argv[])
+   fclose(file);
+ 
+   /* extra object for the Common module */
+-  if (strcmp(libName, "vtkCommonPython") == 0)
++  if (strcmp(libName, "vtkCommonCorePython") == 0)
+     {
+     /* the PyVTKMutableObject */
+     files[numFiles] = strdup("mutable");
