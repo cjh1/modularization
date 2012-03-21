@@ -4664,8 +4664,6 @@ Rendering/vtkShaderProgram.cxx:
 Rendering/vtkShaderProgram.h:
 Rendering/vtkStandardPolyDataPainter.cxx:
 Rendering/vtkStandardPolyDataPainter.h:
-Rendering/vtkStringToImage.cxx:
-Rendering/vtkStringToImage.h:
 Rendering/vtkTStripsPainter.cxx:
 Rendering/vtkTStripsPainter.h:
 Rendering/vtkTexture.cxx:
@@ -5181,6 +5179,8 @@ Rendering/vtkFreeTypeTools.cxx:
 Rendering/vtkFreeTypeTools.h:
 Rendering/vtkFreeTypeUtilities.cxx:
 Rendering/vtkFreeTypeUtilities.h:
+Rendering/vtkStringToImage.cxx:
+Rendering/vtkStringToImage.h:
 
 modular/RenderingText.patch:<ignore>
 <patch>: RenderingText.patch
