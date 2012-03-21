@@ -55,6 +55,7 @@ modular/CMake/vtkModular.cmake:<ignore>
 modular/manifest.txt: <ignore>
 modular/testing.txt: <ignore>
 modular/modularize.py: <ignore>
+modular/modularizeCxxTests.lisp:<ignore>
 modular/export_headers.py: <ignore>
 
 GUISupport/Qt/Testing/: <ignore>
