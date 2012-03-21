@@ -64,8 +64,7 @@
              (format s "~a" item))))))
 
 ;; ---------------------------------------------------------extract-module-name
-;; (defparameter VTK_MODULE (ppcre:create-scanner "\\s*vtk_module\\s*\\(\\s*(.*)\\s*"))
-(defparameter VTK_MODULE (ppcre:create-scanner "\\s*(vtk|titan)_module\\s*\\(\\s*(.*)\\s*"))
+(defparameter VTK_MODULE (ppcre:create-scanner "\\s*(vtk|titan)_module\\s*\\(\\s*(\\w*)\\s*"))
 
 (defun vtk-module? (str)
   "Check if vtk_module( pattern is found"
@@ -79,7 +78,7 @@
     second))
 
 ;; ----------------------------------------------------------------------------
-(defparameter VTK-ROOT "/home/nikhil/modules/titan/Titan/")
+(defparameter VTK-ROOT "/home/nikhil/modules/vtk-modular/vtkmodular/")
 (defparameter MODULE-FILE-PATTERN "module.cmake")
 
 (defun gather-files-recursively(root-path pattern)
@@ -168,124 +167,124 @@ the relative path
 
 (make-vtk-module-map MODULE-NAMES-LIST MODULE-HEADERS-LIST)
 
-;; -------------------------------------------------------extract-titan-headers
-(defparameter TITAN-LIB-ROOT "/home/nikhil/modules/titan/Titan/Libraries/")
-(defparameter TITAN-LIB-CMakeLists.txt (gather-files-recursively TITAN-LIB-ROOT "CMakeLists.txt"))
-(defparameter TITAN-LIB-DIRS
-  (mapcar #'(lambda (x)
-              (namestring (extract-relative-path TITAN-LIB-ROOT x)))
-          TITAN-LIB-CMAKELISTS.TXT))
-(defparameter CXX-PATTERN "*.cxx")
-(defparameter TITAN-LIB-HEADER-FILES-LIST (gather-files-from-list TITAN-LIB-CMakeLists.txt
-                                                                  HEADER-PATTERN
-                                                                  #'namestring))
-(defparameter TITAN-LIB-CXX-FILES-LIST (gather-files-from-list TITAN-LIB-CMakeLists.txt
-                                                               CXX-PATTERN
-                                                               #'namestring))
+;; ;; -------------------------------------------------------extract-titan-headers
+;; (defparameter TITAN-LIB-ROOT "/home/nikhil/modules/titan/Titan/Libraries/")
+;; (defparameter TITAN-LIB-CMakeLists.txt (gather-files-recursively TITAN-LIB-ROOT "CMakeLists.txt"))
+;; (defparameter TITAN-LIB-DIRS
+;;   (mapcar #'(lambda (x)
+;;               (namestring (extract-relative-path TITAN-LIB-ROOT x)))
+;;           TITAN-LIB-CMAKELISTS.TXT))
+;; (defparameter CXX-PATTERN "*.cxx")
+;; (defparameter TITAN-LIB-HEADER-FILES-LIST (gather-files-from-list TITAN-LIB-CMakeLists.txt
+;;                                                                   HEADER-PATTERN
+;;                                                                   #'namestring))
+;; (defparameter TITAN-LIB-CXX-FILES-LIST (gather-files-from-list TITAN-LIB-CMakeLists.txt
+;;                                                                CXX-PATTERN
+;;                                                                #'namestring))
 
 
-;; -------------------------------------------------------------------headers-per-dir
-(defparameter VTK_INCLUDE (ppcre:create-scanner
-                           "(//)*.*#\\s*include\\s*[<\"](vtk.*)[>\"]"))
+;; ;; -------------------------------------------------------------------headers-per-dir
+;; (defparameter VTK_INCLUDE (ppcre:create-scanner
+;;                            "(//)*.*#\\s*include\\s*[<\"](vtk.*)[>\"]"))
 
-(defun get-include (str)
-  " Given a string get the included file from #include <file.h>"
-  (register-groups-bind (first second) (VTK_INCLUDE str :sharedp t)
-    (progn
-      (if (not first)
-        second
-        nil))))
+;; (defun get-include (str)
+;;   " Given a string get the included file from #include <file.h>"
+;;   (register-groups-bind (first second) (VTK_INCLUDE str :sharedp t)
+;;     (progn
+;;       (if (not first)
+;;         second
+;;         nil))))
 
-(defun extract-includes-from-file (file)
-  (let ((collection nil))
-    (with-open-file (stream file)
-      (loop
-         for line = (read-line stream nil 'foo)
-         until (eq line 'foo)
-         do (progn
-              (let ((value (get-include line)))
-              (when value
-                (push value collection))))))
-    (reverse collection)))
+;; (defun extract-includes-from-file (file)
+;;   (let ((collection nil))
+;;     (with-open-file (stream file)
+;;       (loop
+;;          for line = (read-line stream nil 'foo)
+;;          until (eq line 'foo)
+;;          do (progn
+;;               (let ((value (get-include line)))
+;;               (when value
+;;                 (push value collection))))))
+;;     (reverse collection)))
 
-(defun extract-includes-from-file-list(file-list)
-  (mapcar #'extract-includes-from-file file-list))
+;; (defun extract-includes-from-file-list(file-list)
+;;   (mapcar #'extract-includes-from-file file-list))
 
-(defun extract-includes-from-list-of-file-list(list-of-file-list)
-  (mapcar #'extract-includes-from-file-list list-of-file-list))
+;; (defun extract-includes-from-list-of-file-list(list-of-file-list)
+;;   (mapcar #'extract-includes-from-file-list list-of-file-list))
 
-(defun extract-nonduplicate-headers (list-of-list-of-headers)
-  (mapcar #'(lambda (x)
-              (remove-duplicates (reduce #'append x) :test #'string=))
-          list-of-list-of-headers))
+;; (defun extract-nonduplicate-headers (list-of-list-of-headers)
+;;   (mapcar #'(lambda (x)
+;;               (remove-duplicates (reduce #'append x) :test #'string=))
+;;           list-of-list-of-headers))
 
-(defparameter TITAN-LIB-CXX-INCLUDES-PER-DIR
-  (extract-nonduplicate-headers
-   (extract-includes-from-list-of-file-list TITAN-LIB-CXX-FILES-LIST)))
+;; (defparameter TITAN-LIB-CXX-INCLUDES-PER-DIR
+;;   (extract-nonduplicate-headers
+;;    (extract-includes-from-list-of-file-list TITAN-LIB-CXX-FILES-LIST)))
 
-(defparameter TITAN-LIB-HEADER-INCLUDES-PER-DIR
-  (extract-nonduplicate-headers
-   (extract-includes-from-list-of-file-list TITAN-LIB-HEADER-FILES-LIST)))
+;; (defparameter TITAN-LIB-HEADER-INCLUDES-PER-DIR
+;;   (extract-nonduplicate-headers
+;;    (extract-includes-from-list-of-file-list TITAN-LIB-HEADER-FILES-LIST)))
 
-(defparameter TITAN-LIB-INCLUDES-PER-DIR
-  (mapcar #'remove-duplicates
-          (mapcar #'append
-                  TITAN-LIB-CXX-INCLUDES-PER-DIR
-                  TITAN-LIB-HEADER-INCLUDES-PER-DIR)
-          :test #'string=))
+;; (defparameter TITAN-LIB-INCLUDES-PER-DIR
+;;   (mapcar #'remove-duplicates
+;;           (mapcar #'append
+;;                   TITAN-LIB-CXX-INCLUDES-PER-DIR
+;;                   TITAN-LIB-HEADER-INCLUDES-PER-DIR)
+;;           :test #'string=))
 
-(defun extract-modules (list-of-lists)
-  (mapcar #'(lambda (x)
-              (remove-duplicates (sort x #'string<) :test #'string=))
-          (mapcar #'(lambda (x)
-                      (mapcar #'vtk-get-module x))
-                  list-of-lists)))
+;; (defun extract-modules (list-of-lists)
+;;   (mapcar #'(lambda (x)
+;;               (remove-duplicates (sort x #'string<) :test #'string=))
+;;           (mapcar #'(lambda (x)
+;;                       (mapcar #'vtk-get-module x))
+;;                   list-of-lists)))
 
-(defun extract-headers-no-modules (list-of-lists)
-  (mapcar #'(lambda (x)
-              (remove-duplicates (sort x #'string<) :test #'string=))
-          (mapcar #'(lambda (x)
-                      (mapcar #'(lambda (y)
-                                  (let ((val (vtk-get-module y)))
-                                    (if val
-                                        nil
-                                        y)))
-                              x))
-                  list-of-lists)))
+;; (defun extract-headers-no-modules (list-of-lists)
+;;   (mapcar #'(lambda (x)
+;;               (remove-duplicates (sort x #'string<) :test #'string=))
+;;           (mapcar #'(lambda (x)
+;;                       (mapcar #'(lambda (y)
+;;                                   (let ((val (vtk-get-module y)))
+;;                                     (if val
+;;                                         nil
+;;                                         y)))
+;;                               x))
+;;                   list-of-lists)))
 
-(defparameter TITAN-VTK-MODULES
-  (extract-modules TITAN-LIB-INCLUDES-PER-DIR))
+;; (defparameter TITAN-VTK-MODULES
+;;   (extract-modules TITAN-LIB-INCLUDES-PER-DIR))
 
-(defparameter TITAN-VTK-LEFTOVERS
-  (extract-headers-no-modules TITAN-LIB-INCLUDES-PER-DIR))
+;; (defparameter TITAN-VTK-LEFTOVERS
+;;   (extract-headers-no-modules TITAN-LIB-INCLUDES-PER-DIR))
 
 
-;; (mapcar #'(lambda (file) (with-open-file (stream file)
-;;                            (loop
-;;                               for line = (read-line stream nil 'foo)
-;;                               until (eq line 'foo)
-;;                               do (format t "~a~%" line)))) (first TITAN-LIB-CXX-FILES-LIST))
+;; ;; (mapcar #'(lambda (file) (with-open-file (stream file)
+;; ;;                            (loop
+;; ;;                               for line = (read-line stream nil 'foo)
+;; ;;                               until (eq line 'foo)
+;; ;;                               do (format t "~a~%" line)))) (first TITAN-LIB-CXX-FILES-LIST))
 
-(defparameter *titan-module-list* 
-  (mapcar #'(lambda (x y z) (list :directory x :modules y :leftover z)) 
-          TITAN-LIB-DIRS 
-          TITAN-VTK-MODULES
-          TITAN-VTK-LEFTOVERS))
+;; (defparameter *titan-module-list* 
+;;   (mapcar #'(lambda (x y z) (list :directory x :modules y :leftover z)) 
+;;           TITAN-LIB-DIRS 
+;;           TITAN-VTK-MODULES
+;;           TITAN-VTK-LEFTOVERS))
 
-(defparameter *titan-print-list* 
-  (mapcar #'(lambda (x y z) (list x y z))
-          TITAN-LIB-DIRS 
-          TITAN-VTK-MODULES
-          TITAN-VTK-LEFTOVERS))
+;; (defparameter *titan-print-list* 
+;;   (mapcar #'(lambda (x y z) (list x y z))
+;;           TITAN-LIB-DIRS 
+;;           TITAN-VTK-MODULES
+;;           TITAN-VTK-LEFTOVERS))
 
-(defun dump-into(file)
-  (let ((*print-pretty* nil))
-    (with-open-file (stream file
-                            :direction :output
-                            :if-exists :supersede )
-      (dolist (cd *titan-print-list*)
-        (format stream "~:_~{~s~^:~}~%" cd)))))
+;; (defun dump-into(file)
+;;   (let ((*print-pretty* nil))
+;;     (with-open-file (stream file
+;;                             :direction :output
+;;                             :if-exists :supersede )
+;;       (dolist (cd *titan-print-list*)
+;;         (format stream "~:_~{~s~^:~}~%" cd)))))
 
-(defun dump(lst)
-  (dolist (cd lst)
-    (format t "~{~a:~10t~a~%~}~%" cd)))
+;; (defun dump(lst)
+;;   (dolist (cd lst)
+;;     (format t "~{~a:~10t~a~%~}~%" cd)))
