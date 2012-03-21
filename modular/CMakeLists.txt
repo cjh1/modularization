@@ -386,6 +386,10 @@ if(VTK_WRAP_PYTHON)
   file(GLOB py_utils Wrapping/Python/vtk/util/*)
   file(COPY ${py_utils} DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/util)
   add_subdirectory(Wrapping)
+else()
+  # if wrapping is not on then force PythonCore module to be off
+  set(Module_vtkWrappingPythonCore OFF CACHE BOOL "Core Python wrapping library"
+    FORCE)
 endif()
 
 # Now for Tcl wrapping.
