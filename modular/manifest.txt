@@ -2368,9 +2368,6 @@ Parallel/vtkPLSDynaReader.h:
 
 [Wrapping]
 
-Common/vtkJavaAwt.h:
-Common/vtkJavaUtil.cxx:
-Common/vtkJavaUtil.h:
 Common/vtkTcl.h:
 Common/vtkTclUtil.cxx:
 Common/vtkTclUtil.h:
@@ -2465,9 +2462,6 @@ Wrapping/Python/vtkPythonUtil.h:
 Wrapping/CMakeLists.txt: <ignore>
 Wrapping/Python/.cvsignore: <ignore>
 
-Wrapping/Java/: <ignore>
-
-
 [Wrapping/Tcl]
 
 Wrapping/Tcl/CMakeLists.txt:
@@ -2496,6 +2490,58 @@ Wrapping/Tcl/vtkTkAppInit.cxx:
 Wrapping/Tcl/vtkviews/:<ignore>
 Wrapping/Tcl/vtkvolumerendering/:<ignore>
 Wrapping/Tcl/vtkwidgets/:<ignore>
+
+[Wrapping/JavaCore]
+modular/Wrapping/JavaCore/module.cmake:
+modular/Wrapping/JavaCore/CMakeLists.txt:
+
+Common/vtkJavaAwt.h:
+Common/vtkJavaUtil.cxx:
+Common/vtkJavaUtil.h:
+
+[Wrapping/Java]
+
+modular/Wrapping/Java/CMakeLists.txt:
+
+Wrapping/Java/.cvsignore:<ignore>
+Wrapping/Java/CMakeLists.txt:<ignore>
+Wrapping/Java/FastInfoset.jar:
+Wrapping/Java/Regression.png:
+Wrapping/Java/VTKJava.cxx:
+Wrapping/Java/vtkBuildAllDriver.java.in:
+
+[Wrapping/Java/vtk]
+
+Wrapping/Java/vtk/.cvsignore:<ignore>
+Wrapping/Java/vtk/AxesActor.java:
+Wrapping/Java/vtk/CellType.java:
+Wrapping/Java/vtk/vtkCanvas.java:
+Wrapping/Java/vtk/vtkJavaGarbageCollector.java:
+Wrapping/Java/vtk/vtkJavaMemoryManager.java:
+Wrapping/Java/vtk/vtkJavaMemoryManagerImpl.java:
+Wrapping/Java/vtk/vtkJavaTesting.java:
+Wrapping/Java/vtk/vtkNativeLibrary.java:
+Wrapping/Java/vtk/vtkPanel.java:
+Wrapping/Java/vtk/vtkReferenceInformation.java:
+Wrapping/Java/vtk/vtkRenderWindowPanel.java:
+Wrapping/Java/vtk/vtkSettings.java.in:
+
+[Wrapping/Java/vtk/sample]
+
+Wrapping/Java/vtk/sample/Demo.java:
+Wrapping/Java/vtk/sample/ImagePlaneWidget.java:
+Wrapping/Java/vtk/sample/InternalFrames.java:
+Wrapping/Java/vtk/sample/ReleaseVtkPanel.java:
+Wrapping/Java/vtk/sample/SimpleVTK.java:
+Wrapping/Java/vtk/sample/VTKCanvas.java:
+
+[Wrapping/Java/vtk/test]
+
+Wrapping/Java/vtk/test/ConcurrencyGC.java:
+Wrapping/Java/vtk/test/JavaDelete.java:
+Wrapping/Java/vtk/test/JavaGCAndDelete.java:
+Wrapping/Java/vtk/test/ManualGC.java:
+Wrapping/Java/vtk/test/Regression.java:
 
 [CMake]
 
@@ -2607,6 +2653,9 @@ CMake/vtkWrapPython.sip.in:
 CMake/vtkWrapTcl.cmake:
 Parallel/VTKParallelCMakeTests.cmake:
 CMake/FindEigen2.cmake:
+
+modular/CMake/vtkJavaWrapping.cmake:
+modular/CMake/vtkWrapJava.cmake:
 
 [Deprecated]
 
