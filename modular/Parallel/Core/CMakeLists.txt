@@ -35,6 +35,9 @@ set_source_files_properties(
 
 set_source_files_properties(
   vtkMultiProcessStream
+  vtkCommunicator
+  vtkMultiProcessController
+  vtkProcess
   ABSTRACT
   )
 
