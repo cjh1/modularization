@@ -30,6 +30,7 @@ set(Kit_SRCS
 
 set_source_files_properties(
   vtkMultiProcessStream
+  vtkSocketCommunicatorHash
   WRAP_EXCLUDE
   )
 
