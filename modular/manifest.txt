@@ -1376,7 +1376,6 @@ modular/CommonDataModel.patch:<ignore>
 
 modular/Common/DataModel/Testing/Cxx/CMakeLists.txt:
 
-Common/Testing/Cxx/TestVector.cxx:
 Filtering/Testing/Cxx/TestAMRBox.cxx:
 Filtering/Testing/Cxx/TestGenericCell.cxx:
 Filtering/Testing/Cxx/TestGraph.cxx:
@@ -1407,6 +1406,7 @@ Filtering/Testing/Cxx/quadraticEvaluation.cxx:
 Common/Testing/Cxx/TestBoundingBox.cxx:
 Common/Testing/Cxx/TestPlane.cxx:
 Common/Testing/Cxx/TestStructuredData.cxx:
+Common/Testing/Cxx/TestVector.cxx:
 Common/Testing/Cxx/TestVectorOperators.cxx:
 
 Filtering/Testing/Cxx/TestAMRIterator.cxx:
@@ -5011,7 +5011,6 @@ modular/RenderingOpenGL.patch:<ignore>
 modular/Rendering/OpenGL/Testing/Cxx/CMakeLists.txt:
 
 Rendering/Testing/Cxx/LoadOpenGLExtension.cxx:
-Rendering/Testing/Cxx/otherCoordinate.cxx:
 Rendering/Testing/Cxx/RenderNonFinite.cxx:
 Rendering/Testing/Cxx/SurfacePlusEdges.cxx:
 Rendering/Testing/Cxx/TestActorLightingFlag.cxx:
@@ -5024,6 +5023,7 @@ Rendering/Testing/Cxx/TestFBO.cxx:
 Rendering/Testing/Cxx/TestFBOImplementation.cxx:
 Rendering/Testing/Cxx/TestFBOInclude.h.in:
 Rendering/Testing/Cxx/TestFollowerPicking.cxx:
+Rendering/Testing/Cxx/TestGPUInfo.cxx:
 Rendering/Testing/Cxx/TestGaussianBlurPass.cxx:
 Rendering/Testing/Cxx/TestGenericVertexAttributesGLSLAlphaBlending.cxx:
 Rendering/Testing/Cxx/TestGenericVertexAttributesGLSLCxx.cxx:
@@ -5033,7 +5033,6 @@ Rendering/Testing/Cxx/TestGlyph3DMapper.cxx:
 Rendering/Testing/Cxx/TestGlyph3DMapperMasking.cxx:
 Rendering/Testing/Cxx/TestGlyph3DMapperOrientationArray.cxx:
 Rendering/Testing/Cxx/TestGlyph3DMapperPicking.cxx:
-Rendering/Testing/Cxx/TestGPUInfo.cxx:
 Rendering/Testing/Cxx/TestGradientBackground.cxx:
 Rendering/Testing/Cxx/TestHomogeneousTransformOfActor.cxx:
 Rendering/Testing/Cxx/TestImageResliceMapperAlpha.cxx:
@@ -5051,28 +5050,28 @@ Rendering/Testing/Cxx/TestImageSliceMapperOrient2D.cxx:
 Rendering/Testing/Cxx/TestImageSliceMapperOrient3D.cxx:
 Rendering/Testing/Cxx/TestImageStack.cxx:
 Rendering/Testing/Cxx/TestInteractorTimers.cxx:
+Rendering/Testing/Cxx/TestLODActor.cxx:
 Rendering/Testing/Cxx/TestLabelPlacementMapper2D.cxx:
 Rendering/Testing/Cxx/TestLabelPlacementMapperCoincidentPoints.cxx:
 Rendering/Testing/Cxx/TestLabelPlacementMapper.cxx:
+Rendering/Testing/Cxx/TestLabelPlacer.cxx:
 Rendering/Testing/Cxx/TestLabelPlacer2D.cxx:
 Rendering/Testing/Cxx/TestLabelPlacerCoincidentPoints.cxx:
-Rendering/Testing/Cxx/TestLabelPlacer.cxx:
 Rendering/Testing/Cxx/TestLightActor.cxx:
-Rendering/Testing/Cxx/TestLODActor.cxx:
 Rendering/Testing/Cxx/TestManyActors.cxx:
 Rendering/Testing/Cxx/TestMultiTexturing.cxx:
 Rendering/Testing/Cxx/TestMultiTexturingGLSL.cxx:
 Rendering/Testing/Cxx/TestMultiTexturingTransform.cxx:
+Rendering/Testing/Cxx/TestOSConeCxx.cxx:
 Rendering/Testing/Cxx/TestOffAxisStereo.cxx:
 Rendering/Testing/Cxx/TestOpacity.cxx:
 Rendering/Testing/Cxx/TestOpenGLPolyDataMapper.cxx:
 Rendering/Testing/Cxx/TestOrderedTriangulator.cxx:
-Rendering/Testing/Cxx/TestOSConeCxx.cxx:
 Rendering/Testing/Cxx/TestPOVExporter.cxx:
 Rendering/Testing/Cxx/TestPriorityStreaming.cxx:
 Rendering/Testing/Cxx/TestQtImages.cxx:
-Rendering/Testing/Cxx/TestQtLabeler.cxx:
 Rendering/Testing/Cxx/TestQtLabelSizeCalculator.cxx:
+Rendering/Testing/Cxx/TestQtLabeler.cxx:
 Rendering/Testing/Cxx/TestResetCameraVerticalAspectRatio.cxx:
 Rendering/Testing/Cxx/TestResetCameraVerticalAspectRatioParallel.cxx:
 Rendering/Testing/Cxx/TestScalarBar.cxx:
@@ -5083,14 +5082,18 @@ Rendering/Testing/Cxx/TestSobelGradientMagnitudePass.cxx:
 Rendering/Testing/Cxx/TestSurfaceLIC.cxx:
 Rendering/Testing/Cxx/TestSurfaceLIC.h:
 Rendering/Testing/Cxx/TestTDx.cxx:
+Rendering/Testing/Cxx/TestTStripsColorsTCoords.cxx:
+Rendering/Testing/Cxx/TestTStripsNormalsColorsTCoords.cxx:
+Rendering/Testing/Cxx/TestTStripsNormalsTCoords.cxx:
+Rendering/Testing/Cxx/TestTStripsTCoords.cxx:
 Rendering/Testing/Cxx/TestTextActor3DAlphaBlending.cxx:
 Rendering/Testing/Cxx/TestTextActor3DDepthPeeling.cxx:
 Rendering/Testing/Cxx/TestTextActorAlphaBlending.cxx:
 Rendering/Testing/Cxx/TestTextActorDepthPeeling.cxx:
-Rendering/Testing/Cxx/TestTexturedBackground.cxx:
 Rendering/Testing/Cxx/TestTextureRGBA.cxx:
 Rendering/Testing/Cxx/TestTextureRGBADepthPeeling.cxx:
 Rendering/Testing/Cxx/TestTextureSize.cxx:
+Rendering/Testing/Cxx/TestTexturedBackground.cxx:
 Rendering/Testing/Cxx/TestTilingCxx.cxx:
 Rendering/Testing/Cxx/TestTransformCoordinateUseDouble.cxx:
 Rendering/Testing/Cxx/TestTranslucentImageActorAlphaBlending.cxx:
@@ -5100,14 +5103,11 @@ Rendering/Testing/Cxx/TestTranslucentLUTDepthPeeling.cxx:
 Rendering/Testing/Cxx/TestTranslucentLUTDepthPeelingPass.cxx:
 Rendering/Testing/Cxx/TestTranslucentLUTTextureAlphaBlending.cxx:
 Rendering/Testing/Cxx/TestTranslucentLUTTextureDepthPeeling.cxx:
-Rendering/Testing/Cxx/TestTStripsColorsTCoords.cxx:
-Rendering/Testing/Cxx/TestTStripsNormalsColorsTCoords.cxx:
-Rendering/Testing/Cxx/TestTStripsNormalsTCoords.cxx:
-Rendering/Testing/Cxx/TestTStripsTCoords.cxx:
 Rendering/Testing/Cxx/TestWin32OpenGLRenderWindow.cxx:
-Rendering/Testing/Cxx/TimeRenderer2.cxx:
 Rendering/Testing/Cxx/TimeRenderer.cxx:
+Rendering/Testing/Cxx/TimeRenderer2.cxx:
 Rendering/Testing/Cxx/VTKBenchMark.cxx:
+Rendering/Testing/Cxx/otherCoordinate.cxx:
 
 [Rendering/Text]
 
