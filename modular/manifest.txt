@@ -3119,6 +3119,10 @@ Charts/vtkTooltipItem.cxx:
 Charts/vtkContextKeyEvent.cxx:
 Charts/vtkContextKeyEvent.h:
 
+modular/RenderingContext2D.patch: <ignore>
+<patch>:RenderingContext2D.patch
+
+
 [Views/Context2D]
 
 modular/Views/Context2D/module.cmake:
