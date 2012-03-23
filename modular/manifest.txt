@@ -42,8 +42,10 @@ vtkBanner.gif: <ignore>
 vtkMacros.cmake: <ignore>
 GenericFiltering/Testing/: <ignore>
 Geovis/Testing/: <ignore>
-Graphics/Testing/: <ignore>
-Hybrid/Testing/: <ignore>
+Graphics/Testing/CMakeLists.txt:<ignore>
+Graphics/Testing/Tcl/:<ignore>
+Graphics/Testing/Python/:<ignore>
+
 Infovis/Testing/: <ignore>
 Widgets/Testing/: <ignore>
 Views/Testing/: <ignore>
@@ -255,6 +257,31 @@ IO/Testing/Tcl/TestXMLUnstructuredGridIO.tcl:<ignore>
 IO/Testing/Tcl/TestXYZMol.tcl:<ignore>
 IO/Testing/Tcl/caffeine.tcl:<ignore>
 IO/Testing/Tcl/dem.tcl:<ignore>
+
+Graphics/Testing/Cxx/CMakeLists.txt:<ignore>
+Graphics/Testing/Cxx/FrustumClip.cxx:<ignore>
+Graphics/Testing/Cxx/Mace.cxx:<ignore>
+Graphics/Testing/Cxx/TemporalStatistics.cxx:<ignore>
+Graphics/Testing/Cxx/TestActor2DTextures.cxx:<ignore>
+Graphics/Testing/Cxx/TestBareScalarsToColors.cxx:<ignore>
+Graphics/Testing/Cxx/RGrid.cxx:<ignore>
+Graphics/Testing/Cxx/TestHierarchicalBoxPipeline.cxx:<ignore>
+Graphics/Testing/Cxx/TestIncrementalOctreePointLocator.cxx:<ignore>
+Graphics/Testing/Cxx/TestMapVectorsAsRGBColors.cxx:<ignore>
+Graphics/Testing/Cxx/TestMapVectorsToColors.cxx:<ignore>
+Graphics/Testing/Cxx/TestMatlabEngineFilter.cxx:<ignore>
+Graphics/Testing/Cxx/TestMatlabEngineInterface.cxx:<ignore>
+Graphics/Testing/Cxx/TestNamedComponents.cxx:<ignore>
+Graphics/Testing/Cxx/TestRCalculatorFilter.cxx:<ignore>
+Graphics/Testing/Cxx/TestRInterface.cxx:<ignore>
+Graphics/Testing/Cxx/TestRRandomTableSource.cxx:<ignore>
+Graphics/Testing/Cxx/TestReebGraph.cxx:<ignore>
+Graphics/Testing/Cxx/TestTessellator.cxx:<ignore>
+Graphics/Testing/Cxx/UnstructuredGridCellGradients.cxx:<ignore>
+Graphics/Testing/Cxx/UnstructuredGridFastGradients.cxx:<ignore>
+Graphics/Testing/Cxx/UnstructuredGridGradients.cxx:<ignore>
+Graphics/Testing/Cxx/expCos.cxx:<ignore>
+
 
 Filtering/Testing/Python/CMakeLists.txt:<ignore>
 
@@ -855,7 +882,7 @@ Common/Testing/Cxx/TestArrayAPIConvenience.cxx:
 Common/Testing/Cxx/TestArrayAPIDense.cxx:
 Common/Testing/Cxx/TestArrayAPISparse.cxx:
 Common/Testing/Cxx/TestArrayBool.cxx:
-Common/Testing/Cxx/TestArrayCasting.cxx:
+Common/Testing/Cxx/TestArrayCasting.cxx:<ignore>
 Common/Testing/Cxx/TestArrayExtents.cxx:
 Common/Testing/Cxx/TestArrayInterpolationDense.cxx:
 Common/Testing/Cxx/TestArrayLookup.cxx:
@@ -864,11 +891,11 @@ Common/Testing/Cxx/TestArraySize.cxx:
 Common/Testing/Cxx/TestArrayUserTypes.cxx:
 Common/Testing/Cxx/TestArrayVariants.cxx:
 Common/Testing/Cxx/TestConditionVariable.cxx:
-Common/Testing/Cxx/TestCxxFeatures.cxx:
+Common/Testing/Cxx/TestCxxFeatures.cxx:<ignore>
 Common/Testing/Cxx/TestDataArray.cxx:
 Common/Testing/Cxx/TestDataArrayComponentNames.cxx:
 Common/Testing/Cxx/TestGarbageCollector.cxx:
-Common/Testing/Cxx/TestInstantiator.cxx:
+Common/Testing/Cxx/TestInstantiator.cxx:<ignore>
 Common/Testing/Cxx/TestMath.cxx:
 Common/Testing/Cxx/TestMinimalStandardRandomSequence.cxx:
 Common/Testing/Cxx/TestNew.cxx:
@@ -886,11 +913,11 @@ Common/Testing/Cxx/TestVariantComparison.cxx:
 Common/Testing/Cxx/TestWeakPointer.cxx:
 Common/Testing/Cxx/otherArrays.cxx:
 Common/Testing/Cxx/otherByteSwap.cxx:
-Common/Testing/Cxx/otherLookupTable.cxx:
-Common/Testing/Cxx/otherLookupTableWithEnabling.cxx:
 Common/Testing/Cxx/otherStringArray.cxx:
 Common/Testing/Cxx/vtkTestNewVar.cxx:
 Common/Testing/Cxx/vtkTestNewVar.h:
+# This file is a duplicate and should be deleted in new repo
+Graphics/Testing/Cxx/TestSortDataArray.cxx:<ignore>
 
 [Common/Core/Testing/Python]
 
@@ -1411,6 +1438,13 @@ Common/Testing/Cxx/TestVectorOperators.cxx:
 
 Filtering/Testing/Cxx/TestAMRIterator.cxx:
 Filtering/Testing/Cxx/TestAMRBlanking.cxx:
+
+Graphics/Testing/Cxx/CellLocator.cxx:
+Graphics/Testing/Cxx/PointLocator.cxx:
+Graphics/Testing/Cxx/TestMeanValueCoordinatesInterpolation1.cxx:
+Graphics/Testing/Cxx/TestMeanValueCoordinatesInterpolation2.cxx:
+Graphics/Testing/Cxx/TestPolyhedron0.cxx:
+Graphics/Testing/Cxx/TestPolyhedron1.cxx:
 
 [Common/DataModel/Testing/Python]
 
@@ -3356,6 +3390,20 @@ Graphics/vtkCenterOfMass.cxx:
 Common/vtkGhostArray.h:
 Common/vtkGhostArray.cxx:
 
+[Filters/Core/Testing/Cxx]
+
+Common/Testing/Cxx/TestGhostArray.cxx:
+Graphics/Testing/Cxx/TestAppendPolyData.cxx:
+Graphics/Testing/Cxx/TestAppendSelection.cxx:
+Graphics/Testing/Cxx/TestArrayCalculator.cxx:
+Graphics/Testing/Cxx/TestAssignAttribute.cxx:
+Graphics/Testing/Cxx/TestCellDataToPointData.cxx:
+Graphics/Testing/Cxx/TestCenterOfMass.cxx:
+Graphics/Testing/Cxx/TestDecimatePolylineFilter.cxx:
+Graphics/Testing/Cxx/TestDelaunay2D.cxx:
+Graphics/Testing/Cxx/TestGlyph3D.cxx:
+Graphics/Testing/Cxx/TestImplicitPolyDataDistance.cxx:
+
 [Filters/Generic]
 
 GenericFiltering/vtkGenericClip.cxx:
@@ -3420,12 +3468,14 @@ Filtering/vtkUniformGridGhostDataGenerator.h:
 
 [Filters/Geometry/Testing/Cxx]
 
-Common/Testing/Cxx/TestGhostArray.cxx:
 Filtering/Testing/Cxx/TestRectilinearGridPartitioner.cxx:
 Filtering/Testing/Cxx/TestStructuredGridConnectivity.cxx:
 Filtering/Testing/Cxx/TestStructuredGridGhostDataGenerator.cxx:
 Filtering/Testing/Cxx/TestStructuredGridPartitioner.cxx:
 Filtering/Testing/Cxx/TestUniformGridGhostDataGenerator.cxx:
+
+Graphics/Testing/Cxx/TestExtractSurfaceNonLinearSubdivision.cxx:
+Graphics/Testing/Cxx/TestUnstructuredGridGeometryFilter.cxx:
 
 [Filters/ParallelGeometry]
 
@@ -3496,6 +3546,13 @@ Graphics/vtkGraphGeodesicPath.h:
 Graphics/vtkQuadRotationalExtrusionFilter.cxx:
 Graphics/vtkQuadRotationalExtrusionFilter.h:
 
+[Filters/Modeling/Testing/Cxx]
+
+Graphics/Testing/Cxx/TestPolyDataPointSampler.cxx:
+Graphics/Testing/Cxx/TestQuadRotationalExtrusion.cxx:
+Graphics/Testing/Cxx/TestQuadRotationalExtrusionMultiBlock.cxx:
+Graphics/Testing/Cxx/TestRotationalExtrusion.cxx:
+Graphics/Testing/Cxx/TestSelectEnclosedPoints.cxx:
 
 [Filters/Programmable]
 
@@ -3569,6 +3626,12 @@ Graphics/vtkHierarchicalDataExtractLevel.h:
 Graphics/vtkProbeSelectedLocations.cxx:
 Graphics/vtkProbeSelectedLocations.h:
 
+[Filters/Extraction/Testing/Cxx]
+
+Graphics/Testing/Cxx/TestConvertSelection.cxx:
+Graphics/Testing/Cxx/TestExtractSelection.cxx:
+Graphics/Testing/Cxx/TestExtraction.cxx:
+
 [Filters/Sources]
 
 modular/Filters/Sources/CMakeLists.txt:
@@ -3636,6 +3699,11 @@ Graphics/vtkTexturedSphereSource.cxx:
 Graphics/vtkTexturedSphereSource.h:
 Graphics/vtkGraphToPolyData.cxx:
 Graphics/vtkGraphToPolyData.h:
+
+[Filters/Sources/Testing/Cxx]
+
+Graphics/Testing/Cxx/TestLineSource.cxx:
+Graphics/Testing/Cxx/TestTessellatedBoxSource.cxx:
 
 [Filters/Sources/Testing/Tcl]
 
@@ -3872,6 +3940,26 @@ modular/Filters/General/Testing/Cxx/CMakeLists.txt:
 
 Filtering/Testing/Cxx/TestGraphWeightEuclideanDistanceFilter.cxx:
 
+Graphics/Testing/Cxx/BoxClipPolyData.cxx:
+Graphics/Testing/Cxx/BoxClipTetrahedra.cxx:
+Graphics/Testing/Cxx/BoxClipTriangulate.cxx:
+Graphics/Testing/Cxx/BoxClipTriangulateAndInterpolate.cxx:
+Graphics/Testing/Cxx/TestBSPTree.cxx:
+Graphics/Testing/Cxx/TestBooleanOperationPolyDataFilter.cxx:
+Graphics/Testing/Cxx/TestBooleanOperationPolyDataFilter2.cxx:
+Graphics/Testing/Cxx/TestDensifyPolyData.cxx:
+Graphics/Testing/Cxx/TestDistancePolyDataFilter.cxx:
+Graphics/Testing/Cxx/TestGradientAndVorticity.cxx:
+Graphics/Testing/Cxx/TestIconGlyphFilterGravity.cxx:
+Graphics/Testing/Cxx/TestImageDataToPointSet.cxx:
+Graphics/Testing/Cxx/TestIntersectionPolyDataFilter.cxx:
+Graphics/Testing/Cxx/TestMultiBlock.cxx:
+Graphics/Testing/Cxx/TestQuadraturePoints.cxx:
+Graphics/Testing/Cxx/TestRectilinearGridToPointSet.cxx:
+Graphics/Testing/Cxx/TestReflectionFilter.cxx:
+Graphics/Testing/Cxx/TestUncertaintyTubeFilter.cxx:
+Graphics/Testing/Cxx/TestYoungsMaterialInterface.cxx:
+
 [Filters/Verdict]
 
 modular/Filters/Verdict/CMakeLists.txt:
@@ -3884,6 +3972,11 @@ Graphics/vtkCellQuality.cxx:
 Graphics/vtkCellQuality.h:
 Graphics/vtkMatrixMathFilter.cxx:
 Graphics/vtkMatrixMathFilter.h:
+
+
+[Filters/Verdict/Testing/Cxx]
+
+Graphics/Testing/Cxx/MeshQuality.cxx:
 
 [Filters/HyperOctree]
 
@@ -3911,6 +4004,14 @@ Graphics/vtkHyperOctreeSurfaceFilter.h:
 Graphics/vtkHyperOctreeToUniformGridFilter.cxx:
 Graphics/vtkHyperOctreeToUniformGridFilter.h:
 
+[Filters/HyperOctree/Testing/Cxx]
+
+Graphics/Testing/Cxx/TestClipHyperOctree.cxx:
+Graphics/Testing/Cxx/TestHyperOctreeContourFilter.cxx:
+Graphics/Testing/Cxx/TestHyperOctreeCutter.cxx:
+Graphics/Testing/Cxx/TestHyperOctreeDual.cxx:
+Graphics/Testing/Cxx/TestHyperOctreeSurfaceFilter.cxx:
+Graphics/Testing/Cxx/TestHyperOctreeToUniformGrid.cxx:
 
 [Filters/ReebGraph]
 
