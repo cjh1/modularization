@@ -183,6 +183,7 @@ the relative path
 ;; =============================================================================
 (defparameter VTK-OLD-ROOT "/home/nikhil/modules/vtk/VTK/")
 (defparameter VTK-OLD-TESTING/CXX (gather-files-recursively VTK-OLD-ROOT "/Testing/Cxx/*.cxx"))
+(defparameter VTK-OLD-TESTING/H (gather-files-recursively VTK-OLD-ROOT "/Testing/Cxx/*.h"))
 (defparameter VTK-OLD-FILES
   (mapcar #'(lambda (x)
               (namestring (extract-relative-path VTK-OLD-ROOT x)))
