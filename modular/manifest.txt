@@ -110,9 +110,6 @@ TextAnalysis/: <ignore>
 Common/Testing/CMakeLists.txt:<ignore>
 Common/Testing/CTestCustom.ctest.in:<ignore>
 Common/Testing/Cxx/CMakeLists.txt:<ignore>
-Common/Testing/Cxx/SystemInformation-cygcheck.sh:<ignore>
-Common/Testing/Cxx/SystemInformation.h.in:<ignore>
-Common/Testing/Cxx/TestSystemInformation.cxx:<ignore>
 Common/Testing/Install/CMakeLists.txt:<ignore>
 Common/Testing/Install/vit-forward.c.in:<ignore>
 Common/Testing/Install/vit.cxx:<ignore>
@@ -880,6 +877,9 @@ Common/Testing/Cxx/TestObservers.cxx:
 Common/Testing/Cxx/TestSmartPointer.cxx:
 Common/Testing/Cxx/TestSortDataArray.cxx:
 Common/Testing/Cxx/TestSparseArrayValidation.cxx:
+Common/Testing/Cxx/SystemInformation-cygcheck.sh:<ignore>
+Common/Testing/Cxx/SystemInformation.h.in:<ignore>
+Common/Testing/Cxx/TestSystemInformation.cxx:<ignore>
 Common/Testing/Cxx/TestUnicodeStringAPI.cxx:
 Common/Testing/Cxx/TestUnicodeStringArrayAPI.cxx:
 Common/Testing/Cxx/TestVariantComparison.cxx:
