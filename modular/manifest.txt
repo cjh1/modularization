@@ -3248,8 +3248,18 @@ Charts/Testing/Cxx/TestScientificPlot.cxx:
 Charts/Testing/Cxx/TestStackedBarGraph.cxx:
 Charts/Testing/Cxx/TestStackedPlot.cxx:
 Charts/Testing/Cxx/CMakeLists.txt:<ignore>
-Charts/Testing/Python/:<ignore>
 Charts/Testing/CMakeLists.txt:<ignore>
+
+[Charts/Core/Testing/Cxx]
+
+modular/Charts/Core/Testing/Python/CMakeLists.txt:
+Charts/Testing/Python/CMakeLists.txt:<ignore>
+Charts/Testing/Python/TestBarGraph.py:
+Charts/Testing/Python/TestLinePlot.py:
+Charts/Testing/Python/TestLinePlotColors.py:
+Charts/Testing/Python/TestParallelCoordinatesColors.py:
+Charts/Testing/Python/TestScatterPlotColors.py:
+Charts/Testing/Python/TestStackedPlot.py:
 
 [Filters/Core]
 
