@@ -38,8 +38,6 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
     set(TMP_INCLUDE ${TMP_INCLUDE} -I "${quote}${INCLUDE_DIR}${quote}")
   endforeach()
 
-  # be bold and parse all files, not just indicated ones
-  set(IGNORE_WRAP_EXCLUDE ON)
   # list of all files to wrap
   set(VTK_WRAPPER_INIT_DATA)
   # list of used files
@@ -64,7 +62,6 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
 
       # compute the input filename
       if(TMP_FILEPATH)
-        message("WARNING: Full path - shouldn't be!!!")
         set(TMP_INPUT ${TMP_FILEPATH}/${TMP_FILENAME}.h)
       else()
         # This should be the case, and we use the module path.
