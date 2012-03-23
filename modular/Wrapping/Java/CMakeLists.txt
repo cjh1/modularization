@@ -267,9 +267,9 @@ IF(JAVA_COMPILE)
         SET(JAVA_TESTS ${JAVA_TESTS} ${VTK_BINARY_DIR}/Wrapping/Java/vtk/test/${jfile}.class)
       ENDFOREACH(jfile)
       
-      # Since vtkTesting is within vtkRendering we need blockers
-      IF(VTK_USE_RENDERING AND VTK_USE_DISPLAY)
-
+      # Since vtkTesting is within vtkTestingRendering we need blockers
+      #IF(VTK_MODULE_vtkTestingRendering_ENABLED)
+        
         # If JAVA_DATAMODEL_FLAG is set, pass it as first argument. Otherwise, it's empty.
         # For example, use "-d64" to force 64-bit java jvm.
         #
@@ -278,7 +278,7 @@ IF(JAVA_COMPILE)
           vtk.test.Regression -D ${VTK_DATA_ROOT}
           -V Baseline/Graphics/Cone.png 
           -T ${VTK_BINARY_DIR}/Testing/Temporary)
-      ENDIF(VTK_USE_RENDERING AND VTK_USE_DISPLAY)
+      #ENDIF()
       
       ADD_TEST(JavaGCRegression ${JAVA_RUNTIME} ${VTK_TEST_JAVA_DATAMODEL_FLAG} 
           -classpath ${VTK_JAR_PATH}/vtk.jar${SEPARATOR}${VTK_BINARY_DIR}/Wrapping/Java
