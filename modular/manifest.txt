@@ -4699,6 +4699,11 @@ Rendering/vtkInteractorStyle.h:
 modular/RenderingCore.patch:<ignore>
 #<patch>: RenderingCore.patch
 
+[Rendering/Core/Testing/Cxx]
+
+Common/Testing/Cxx/otherLookupTable.cxx:<ignore>
+Common/Testing/Cxx/otherLookupTableWithEnabling.cxx:<ignore>
+
 [Rendering/FreeType]
 
 modular/Rendering/FreeType/CMakeLists.txt:

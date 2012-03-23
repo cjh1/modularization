@@ -33,10 +33,6 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestWeakPointer.cxx
   otherArrays.cxx
   otherByteSwap.cxx
-  # These two need vtkLookupTableWithEnabling/vtkLogLookupTable - move
-  # them to RenderingCore or somewhere out there.
-  #otherLookupTable.cxx
-  #otherLookupTableWithEnabling.cxx
   otherStringArray.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
