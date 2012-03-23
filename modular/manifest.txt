@@ -910,6 +910,7 @@ Common/Testing/Python/TestSubClass.py:
 Common/Testing/Python/TestTerminationCrash.py:
 Common/Testing/Python/TestVariant.py:
 Common/Testing/Python/TestWeakref.py:
+Common/Testing/Python/TestCommand.py:
 
 [Common/Core/Testing/Tcl]
 
