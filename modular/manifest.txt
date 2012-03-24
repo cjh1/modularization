@@ -3434,7 +3434,7 @@ Charts/Testing/Cxx/TestStackedPlot.cxx:
 Charts/Testing/Cxx/CMakeLists.txt:<ignore>
 Charts/Testing/CMakeLists.txt:<ignore>
 
-[Charts/Core/Testing/Cxx]
+[Charts/Core/Testing/Python]
 
 modular/Charts/Core/Testing/Python/CMakeLists.txt:
 Charts/Testing/Python/CMakeLists.txt:<ignore>
