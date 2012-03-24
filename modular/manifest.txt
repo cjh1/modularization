@@ -985,6 +985,7 @@ Common/Testing/Python/TestSubClass.py:
 Common/Testing/Python/TestTerminationCrash.py:
 Common/Testing/Python/TestVariant.py:
 Common/Testing/Python/TestWeakref.py:
+Common/Testing/Python/TestCommand.py:
 
 [Common/Core/Testing/Tcl]
 
@@ -2508,9 +2509,6 @@ Parallel/vtkPLSDynaReader.h:
 
 [Wrapping]
 
-Common/vtkJavaAwt.h:
-Common/vtkJavaUtil.cxx:
-Common/vtkJavaUtil.h:
 Common/vtkTcl.h:
 Common/vtkTclUtil.cxx:
 Common/vtkTclUtil.h:
@@ -2605,9 +2603,6 @@ Wrapping/Python/vtkPythonUtil.h:
 Wrapping/CMakeLists.txt: <ignore>
 Wrapping/Python/.cvsignore: <ignore>
 
-Wrapping/Java/: <ignore>
-
-
 [Wrapping/Tcl]
 
 Wrapping/Tcl/CMakeLists.txt:
@@ -2636,6 +2631,58 @@ Wrapping/Tcl/vtkTkAppInit.cxx:
 Wrapping/Tcl/vtkviews/:<ignore>
 Wrapping/Tcl/vtkvolumerendering/:<ignore>
 Wrapping/Tcl/vtkwidgets/:<ignore>
+
+[Wrapping/JavaCore]
+modular/Wrapping/JavaCore/module.cmake:
+modular/Wrapping/JavaCore/CMakeLists.txt:
+
+Common/vtkJavaAwt.h:
+Common/vtkJavaUtil.cxx:
+Common/vtkJavaUtil.h:
+
+[Wrapping/Java]
+
+modular/Wrapping/Java/CMakeLists.txt:
+
+Wrapping/Java/.cvsignore:<ignore>
+Wrapping/Java/CMakeLists.txt:<ignore>
+Wrapping/Java/FastInfoset.jar:
+Wrapping/Java/Regression.png:
+Wrapping/Java/VTKJava.cxx:
+Wrapping/Java/vtkBuildAllDriver.java.in:
+
+[Wrapping/Java/vtk]
+
+Wrapping/Java/vtk/.cvsignore:<ignore>
+Wrapping/Java/vtk/AxesActor.java:
+Wrapping/Java/vtk/CellType.java:
+Wrapping/Java/vtk/vtkCanvas.java:
+Wrapping/Java/vtk/vtkJavaGarbageCollector.java:
+Wrapping/Java/vtk/vtkJavaMemoryManager.java:
+Wrapping/Java/vtk/vtkJavaMemoryManagerImpl.java:
+Wrapping/Java/vtk/vtkJavaTesting.java:
+Wrapping/Java/vtk/vtkNativeLibrary.java:
+Wrapping/Java/vtk/vtkPanel.java:
+Wrapping/Java/vtk/vtkReferenceInformation.java:
+Wrapping/Java/vtk/vtkRenderWindowPanel.java:
+Wrapping/Java/vtk/vtkSettings.java.in:
+
+[Wrapping/Java/vtk/sample]
+
+Wrapping/Java/vtk/sample/Demo.java:
+Wrapping/Java/vtk/sample/ImagePlaneWidget.java:
+Wrapping/Java/vtk/sample/InternalFrames.java:
+Wrapping/Java/vtk/sample/ReleaseVtkPanel.java:
+Wrapping/Java/vtk/sample/SimpleVTK.java:
+Wrapping/Java/vtk/sample/VTKCanvas.java:
+
+[Wrapping/Java/vtk/test]
+
+Wrapping/Java/vtk/test/ConcurrencyGC.java:
+Wrapping/Java/vtk/test/JavaDelete.java:
+Wrapping/Java/vtk/test/JavaGCAndDelete.java:
+Wrapping/Java/vtk/test/ManualGC.java:
+Wrapping/Java/vtk/test/Regression.java:
 
 [CMake]
 
@@ -2747,6 +2794,9 @@ CMake/vtkWrapPython.sip.in:
 CMake/vtkWrapTcl.cmake:
 Parallel/VTKParallelCMakeTests.cmake:
 CMake/FindEigen2.cmake:
+
+modular/CMake/vtkJavaWrapping.cmake:
+modular/CMake/vtkWrapJava.cmake:
 
 [Deprecated]
 
@@ -3254,6 +3304,10 @@ Charts/vtkTooltipItem.cxx:
 Charts/vtkContextKeyEvent.cxx:
 Charts/vtkContextKeyEvent.h:
 
+modular/RenderingContext2D.patch: <ignore>
+<patch>:RenderingContext2D.patch
+
+
 [Views/Context2D]
 
 modular/Views/Context2D/module.cmake:
@@ -3378,8 +3432,18 @@ Charts/Testing/Cxx/TestScientificPlot.cxx:
 Charts/Testing/Cxx/TestStackedBarGraph.cxx:
 Charts/Testing/Cxx/TestStackedPlot.cxx:
 Charts/Testing/Cxx/CMakeLists.txt:<ignore>
-Charts/Testing/Python/:<ignore>
 Charts/Testing/CMakeLists.txt:<ignore>
+
+[Charts/Core/Testing/Cxx]
+
+modular/Charts/Core/Testing/Python/CMakeLists.txt:
+Charts/Testing/Python/CMakeLists.txt:<ignore>
+Charts/Testing/Python/TestBarGraph.py:
+Charts/Testing/Python/TestLinePlot.py:
+Charts/Testing/Python/TestLinePlotColors.py:
+Charts/Testing/Python/TestParallelCoordinatesColors.py:
+Charts/Testing/Python/TestScatterPlotColors.py:
+Charts/Testing/Python/TestStackedPlot.py:
 
 [Filters/Core]
 
@@ -4992,8 +5056,6 @@ Rendering/vtkShaderProgram.cxx:
 Rendering/vtkShaderProgram.h:
 Rendering/vtkStandardPolyDataPainter.cxx:
 Rendering/vtkStandardPolyDataPainter.h:
-Rendering/vtkStringToImage.cxx:
-Rendering/vtkStringToImage.h:
 Rendering/vtkTStripsPainter.cxx:
 Rendering/vtkTStripsPainter.h:
 Rendering/vtkTexture.cxx:
@@ -5514,6 +5576,8 @@ Rendering/vtkFreeTypeTools.cxx:
 Rendering/vtkFreeTypeTools.h:
 Rendering/vtkFreeTypeUtilities.cxx:
 Rendering/vtkFreeTypeUtilities.h:
+Rendering/vtkStringToImage.cxx:
+Rendering/vtkStringToImage.h:
 
 modular/RenderingText.patch:<ignore>
 <patch>: RenderingText.patch

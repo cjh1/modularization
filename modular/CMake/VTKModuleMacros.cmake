@@ -8,6 +8,10 @@ if(VTK_WRAP_PYTHON)
   include(vtkWrapping)
 endif()
 
+if(VTK_WRAP_JAVA)
+  include(vtkJavaWrapping)
+endif()
+
 macro(vtk_module _name)
   vtk_module_check_name(${_name})
   set(vtk-module ${_name})
@@ -254,6 +258,10 @@ function(vtk_module_library name)
     vtk_add_python_wrapping(${vtk-module})
   endif()
 
+  if(VTK_WRAP_JAVA AND NOT VTK_MODULE_${vtk-module}_EXCLUDE_FROM_WRAPPING)
+    vtk_add_java_wrapping(${vtk-module})
+  endif()
+
   if(NOT VTK_INSTALL_NO_DEVELOPMENT)
     set(_hdrs)
     foreach(arg ${ARGN})
@@ -356,4 +364,6 @@ macro(vtk_add_test_module _lang)
   list(APPEND ${vtk-module}_TESTED_BY ${_test_module_name})
   set(${_test_module_name}_TESTS_FOR ${vtk-module})
   set(VTK_MODULE_${_test_module_name}_DECLARED 1)
+  # Exclude test modules from wrapping
+  set(VTK_MODULE_${_test_module_name}_EXCLUDE_FROM_WRAPPING 1)
 endmacro()

@@ -367,6 +367,10 @@ include(VTKParallelCMakeTests)
 
 # Add the option for build the Python wrapping to VTK.
 option(VTK_WRAP_PYTHON "Should VTK Python wrapping be built?" OFF)
+
+# Add the option for build the Python wrapping to VTK.
+option(VTK_WRAP_JAVA "Should VTK Java wrapping be built?" OFF)
+
 # FIXME: This variable should not be necessary once we are done
 set(VTK_IGNORE_BTX ON CACHE BOOL "VTK modular always ignores BTX" FORCE)
 
@@ -385,11 +389,24 @@ if(VTK_WRAP_PYTHON)
   file(COPY ${py_utils} DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/test)
   file(GLOB py_utils Wrapping/Python/vtk/util/*)
   file(COPY ${py_utils} DESTINATION ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/util)
-  add_subdirectory(Wrapping)
 else()
   # if wrapping is not on then force PythonCore module to be off
   set(Module_vtkWrappingPythonCore OFF CACHE BOOL "Core Python wrapping library"
     FORCE)
+endif()
+
+if(VTK_WRAP_JAVA)
+  set(VTK_WRAP_JAVA3_INIT_DIR "${VTK_SOURCE_DIR}/Wrapping")
+  # Wrapping executables.
+  set(VTK_WRAP_JAVA_EXE  vtkWrapJava)
+  set(VTK_PARSE_JAVA_EXE vtkParseJava)
+  set(Module_vtkWrappingJavaCore ON CACHE BOOL "Core Java wrapping library"
+    FORCE)
+
+  # Java package location.
+  set(VTK_JAVA_JAR ${LIBRARY_OUTPUT_PATH}/vtk.jar)
+  set(VTK_JAVA_HOME ${VTK_BINARY_DIR}/java/vtk)
+  file(MAKE_DIRECTORY ${VTK_JAVA_HOME})
 endif()
 
 # Now for Tcl wrapping.
@@ -404,11 +421,17 @@ endif()
 
 if(VTK_WRAP_PYTHON OR VTK_WRAP_TCL OR VTK_WRAP_JAVA)
   set(VTK_WRAP_HIERARCHY_EXE vtkWrapHierarchy)
+  add_subdirectory(Wrapping)
 endif()
 
 #----------------------------------------------------------------------
 # Load the module DAG.
 include(VTKModuleTop)
+
+if(VTK_WRAP_JAVA)
+  add_subdirectory(Wrapping/Java)
+endif()
+
 
 #-----------------------------------------------------------------------------
 # The commands in this directory are intended to be executed as
