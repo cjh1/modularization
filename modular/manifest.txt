@@ -3613,8 +3613,10 @@ Common/vtkGhostArray.cxx:
 
 [Filters/Core/Testing/Cxx]
 
+modular/Filters/Core/Testing/Cxx/CMakeLists.txt:
+
 Common/Testing/Cxx/TestGhostArray.cxx:
-Graphics/Testing/Cxx/TestAppendPolyData.cxx:
+Graphics/Testing/Cxx/TestAppendPolyData.cxx:<ignore>
 Graphics/Testing/Cxx/TestAppendSelection.cxx:
 Graphics/Testing/Cxx/TestArrayCalculator.cxx:
 Graphics/Testing/Cxx/TestAssignAttribute.cxx:
