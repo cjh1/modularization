@@ -230,7 +230,7 @@ foreach(file ${shader_files})
     ARGS ${res} ${src} ${file_we} --build-header VTKRENDERINGOPENGL_EXPORT vtkRenderingOpenGLExport.h
     )
   list(APPEND Kit_SRCS ${res})
-  set_source_files_properties(${res} WRAP_EXCLUDE)
+  set_source_files_properties(${file_we} WRAP_EXCLUDE)
 endforeach()
 
 # Now we need to generate the object factory for this module. Create a list of

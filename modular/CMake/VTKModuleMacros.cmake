@@ -4,13 +4,7 @@ set(_VTKModuleMacros_DEFAULT_LABEL "VTKModular")
 
 include(${_VTKModuleMacros_DIR}/VTKModuleAPI.cmake)
 include(GenerateExportHeader)
-if(VTK_WRAP_PYTHON)
-  include(vtkWrapping)
-endif()
-
-if(VTK_WRAP_JAVA)
-  include(vtkJavaWrapping)
-endif()
+include(vtkWrapping)
 
 macro(vtk_module _name)
   vtk_module_check_name(${_name})
@@ -254,14 +248,10 @@ function(vtk_module_library name)
   set_property(TARGET ${vtk-module} APPEND
     PROPERTY COMPILE_FLAGS "${VTK_ABI_CXX_FLAGS}")
 
-  if(VTK_WRAP_PYTHON AND NOT VTK_MODULE_${vtk-module}_EXCLUDE_FROM_WRAPPING)
-    vtk_add_python_wrapping(${vtk-module})
-  endif()
+  # Add the module to the list of wrapped modules if necessary
+  vtk_add_wrapping(${vtk-module})
 
-  if(VTK_WRAP_JAVA AND NOT VTK_MODULE_${vtk-module}_EXCLUDE_FROM_WRAPPING)
-    vtk_add_java_wrapping(${vtk-module})
-  endif()
-
+  # Figure out which headers to install.
   if(NOT VTK_INSTALL_NO_DEVELOPMENT)
     set(_hdrs)
     foreach(arg ${ARGN})
@@ -286,8 +276,6 @@ endfunction()
 macro(vtk_module_third_party _pkg)
   string(TOLOWER "${_pkg}" _lower)
   string(TOUPPER "${_pkg}" _upper)
-
-  message("Processing TPL: ${_pkg}")
 
   set(_includes "")
   set(_libs "")

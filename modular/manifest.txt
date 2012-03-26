@@ -2544,7 +2544,8 @@ Wrapping/vtkWrapJava.c:
 Wrapping/vtkWrapPython.c:
 Wrapping/vtkWrapPythonInit.c:
 Wrapping/vtkWrapTcl.c:
-Wrapping/vtkWrapTclInit.c:
+Wrapping/vtkWrapTclInit.c:<ignore>
+modular/Wrapping/vtkWrapTclInit.c:
 Wrapping/vtkWrapText.c:
 Wrapping/vtkWrapText.h:
 
@@ -2605,12 +2606,12 @@ Wrapping/Python/.cvsignore: <ignore>
 
 [Wrapping/Tcl]
 
-Wrapping/Tcl/CMakeLists.txt:
-Wrapping/Tcl/pkgIndex.tcl.in:
+Wrapping/Tcl/CMakeLists.txt:<ignore>
+modular/Wrapping/Tcl/CMakeLists.txt:
+modular/Wrapping/Tcl/pkgIndex.tcl.in:
+Wrapping/Tcl/pkgIndex.tcl.in:<ignore>
 Wrapping/Tcl/README:
 Wrapping/Tcl/resources/:<ignore>
-Wrapping/Tcl/vtk/:<ignore>
-Wrapping/Tcl/vtkbase/:<ignore>
 Wrapping/Tcl/vtkcommon/:<ignore>
 Wrapping/Tcl/vtkDetermineTkResources.cmake:
 Wrapping/Tcl/vtkfiltering/:<ignore>
@@ -2625,12 +2626,22 @@ Wrapping/Tcl/vtkparallel/:<ignore>
 Wrapping/Tcl/vtkParaTkAppInit.cxx:
 Wrapping/Tcl/vtkrendering/:<ignore>
 Wrapping/Tcl/vtktcl.c:
-Wrapping/Tcl/vtktesting/:<ignore>
 Wrapping/Tcl/vtkTkAppInitConfigure.h.in:
-Wrapping/Tcl/vtkTkAppInit.cxx:
+Wrapping/Tcl/vtkTkAppInit.cxx:<ignore>
+modular/Wrapping/Tcl/vtkTkAppInit.cxx:
 Wrapping/Tcl/vtkviews/:<ignore>
 Wrapping/Tcl/vtkvolumerendering/:<ignore>
 Wrapping/Tcl/vtkwidgets/:<ignore>
+modular/Wrapping/Tcl/vtkmodule.tcl.in:
+
+[Wrapping/Tcl/vtk]
+Wrapping/Tcl/vtk/:
+
+[Wrapping/Tcl/vtkbase]
+Wrapping/Tcl/vtkbase/:
+
+[Wrapping/Tcl/vtktesting]
+Wrapping/Tcl/vtktesting/:
 
 [Wrapping/JavaCore]
 modular/Wrapping/JavaCore/module.cmake:
@@ -2695,6 +2706,8 @@ modular/CMake/UseVTK.cmake:
 modular/CMake/VTKConfig.cmake.in:
 modular/CMake/VTKConfigVersion.cmake.in:
 modular/CMake/vtkWrapping.cmake:
+modular/CMake/vtkTclWrapping.cmake:
+modular/CMake/vtkPythonWrapping.cmake:
 
 modular/CMake/vtkObjectFactory.cxx.in:
 modular/CMake/vtkObjectFactory.h.in:
@@ -2788,7 +2801,7 @@ CMake/VTKVersionMacros.cmake:
 CMake/vtkWrapHierarchy.cmake: <ignore>
 CMake/vtkWrapJava.cmake:
 CMake/vtkWrapperInit.data.in:
-CMake/vtkWrapPython.cmake:
+CMake/vtkWrapPython.cmake:<ignore>
 CMake/vtkWrapPythonSIP.cmake:
 CMake/vtkWrapPython.sip.in:
 CMake/vtkWrapTcl.cmake:

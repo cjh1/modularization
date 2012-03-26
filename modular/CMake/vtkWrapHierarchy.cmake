@@ -16,8 +16,6 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
     set(quote "")
   endif()
 
-  message("module: ${vtk-module} source ${${vtk-module}_SOURCE_DIR}")
-
   # all the compiler "-D" args
   get_directory_property(TMP_DEF_LIST
     DIRECTORY ${${vtk-module}_SOURCE_DIR}
@@ -47,7 +45,9 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
   foreach(FILE ${SOURCES})
 
     # should we wrap the file?
-    get_source_file_property(TMP_WRAP_EXCLUDE ${FILE} WRAP_EXCLUDE)
+    get_property(TMP_WRAP_EXCLUDE
+      SOURCE ${FILE}
+      PROPERTY WRAP_EXCLUDE)
     get_source_file_property(TMP_WRAP_SPECIAL ${FILE} WRAP_SPECIAL)
     get_source_file_property(TMP_ABSTRACT ${FILE} ABSTRACT)
 
@@ -113,7 +113,7 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
     if(NOT "${vtk-module}" STREQUAL "${dep}")
       if(NOT VTK_MODULE_${dep}_EXCLUDE_FROM_WRAPPING)
         list(APPEND OTHER_HIERARCHY_FILES
-              "${quote}${${dep}_BINARY_DIR}/${dep}Hierarchy.txt${quote}")
+          "${quote}${${dep}_BINARY_DIR}/${dep}Hierarchy.txt${quote}")
         list(APPEND OTHER_HIERARCHY_TARGETS ${dep})
       endif()
     endif()
@@ -126,19 +126,18 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
     # module's library is built, then the hierarchy file is also built).
     add_custom_command(
       TARGET ${vtk-module} POST_BUILD
-
       COMMAND ${VTK_WRAP_HIERARCHY_EXE}
-      ${TMP_DEFINITIONS}
-      ${TMP_INCLUDE}
-      "-o" "${quote}${OUTPUT_DIR}/${vtk-module}Hierarchy.txt${quote}"
-      "${quote}${OUTPUT_DIR}/${TARGET}.data${quote}"
-      ${OTHER_HIERARCHY_FILES}
+        ${TMP_DEFINITIONS}
+        ${TMP_INCLUDE}
+        "-o" "${quote}${OUTPUT_DIR}/${vtk-module}Hierarchy.txt${quote}"
+        "${quote}${OUTPUT_DIR}/${TARGET}.data${quote}"
+        ${OTHER_HIERARCHY_FILES}
 
       COMMAND ${CMAKE_COMMAND}
-      "-E" "touch" "${quote}${OUTPUT_DIR}/${TARGET}.target${quote}"
+        "-E" "touch" "${quote}${OUTPUT_DIR}/${TARGET}.target${quote}"
 
       COMMENT "For ${vtk-module} - updating ${vtk-module}Hierarchy.txt"
-      ${verbatim}
+        ${verbatim}
       )
 
     # Force the above custom command to execute if hierarchy tool changes
@@ -185,7 +184,7 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
       )
     # Set target-level dependencies so that everything builds in the
     # correct order, particularly the libraries.
-    add_dependencies(vtk${vtk-module} vtkWrapHierarchy ${OTHER_HIERARCHY_TARGETS})
+    add_dependencies(${vtk-module} vtkWrapHierarchy ${OTHER_HIERARCHY_TARGETS})
   endif()
 
 endmacro()
