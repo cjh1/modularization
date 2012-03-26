@@ -3691,11 +3691,13 @@ Filtering/vtkUniformGridGhostDataGenerator.h:
 
 [Filters/Geometry/Testing/Cxx]
 
-Filtering/Testing/Cxx/TestRectilinearGridPartitioner.cxx:
-Filtering/Testing/Cxx/TestStructuredGridConnectivity.cxx:
-Filtering/Testing/Cxx/TestStructuredGridGhostDataGenerator.cxx:
-Filtering/Testing/Cxx/TestStructuredGridPartitioner.cxx:
-Filtering/Testing/Cxx/TestUniformGridGhostDataGenerator.cxx:
+modular/Filters/Geometry/Testing/Cxx/CMakeLists.txt:
+
+Filtering/Testing/Cxx/TestRectilinearGridPartitioner.cxx:<ignore>
+Filtering/Testing/Cxx/TestStructuredGridConnectivity.cxx:<ignore>
+Filtering/Testing/Cxx/TestStructuredGridGhostDataGenerator.cxx:<ignore>
+Filtering/Testing/Cxx/TestStructuredGridPartitioner.cxx:<ignore>
+Filtering/Testing/Cxx/TestUniformGridGhostDataGenerator.cxx:<ignore>
 
 Graphics/Testing/Cxx/TestExtractSurfaceNonLinearSubdivision.cxx:
 Graphics/Testing/Cxx/TestUnstructuredGridGeometryFilter.cxx:
