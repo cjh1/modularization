@@ -3851,6 +3851,8 @@ Graphics/vtkProbeSelectedLocations.h:
 
 [Filters/Extraction/Testing/Cxx]
 
+modular/Filters/Extraction/Testing/Cxx/CMakeLists.txt:
+
 Graphics/Testing/Cxx/TestConvertSelection.cxx:
 Graphics/Testing/Cxx/TestExtractSelection.cxx:
 Graphics/Testing/Cxx/TestExtraction.cxx:
