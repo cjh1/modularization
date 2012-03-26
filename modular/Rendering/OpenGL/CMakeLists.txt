@@ -252,12 +252,18 @@ set(opengl_overrides
   LightingPainter
   PainterDeviceAdapter
   Property
-  PolyDataMapper
   Renderer
   RepresentationPainter
   ScalarsToColorsPainter
   Texture
+  # Some from the vtkImagingFactory class
+  ImageMapper
+  PolyDataMapper2D
   )
+
+# Some that do not follow the naming scheme...
+list(APPEND vtk_module_overrides "vtkPolyDataMapper")
+set(vtk_module_vtkPolyDataMapper_override "vtkPainterPolyDataMapper")
 
 # FIXME: Not sure that this is the best way to handle X...
 if(VTK_USE_X)
