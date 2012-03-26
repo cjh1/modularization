@@ -1843,6 +1843,8 @@ IO/vtkArrayDataWriter.h:
 
 [IO/Core/Testing/Cxx]
 
+modular/IO/Core/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/TestArrayDataWriter.cxx:
 IO/Testing/Cxx/TestArrayDenormalized.cxx:
 IO/Testing/Cxx/TestArraySerialization.cxx:
@@ -1913,6 +1915,8 @@ Rendering/vtkVRMLExporter.cxx:
 Rendering/vtkVRMLExporter.h:
 
 [IO/Export/Testing/Cxx]
+
+modular/IO/Export/Testing/Cxx/CMakeLists.txt:
 
 Hybrid/Testing/Cxx/X3DTest.cxx:
 
@@ -2025,6 +2029,7 @@ IO/vtkXYZMolReader.cxx:
 IO/vtkXYZMolReader.h:
 
 [IO/Geometry/Testing/Cxx]
+
 modular/IO/Geometry/Testing/Cxx/CMakeLists.txt:
 
 IO/Testing/Cxx/TestProStarReader.cxx:
@@ -2113,6 +2118,7 @@ IO/vtkPostScriptWriter.h:
 [IO/Image/Testing/Cxx]
 
 modular/IO/Image/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/TestAVIWriter.cxx:
 
 IO/Testing/Cxx/TestFFMPEGWriter.cxx:
@@ -2136,6 +2142,9 @@ Hybrid/vtkVRMLImporter.cxx:
 Hybrid/vtkVRMLImporter.h:
 
 [IO/Import/Testing/Cxx]
+
+modular/IO/Import/Testing/Cxx/CMakeLists.txt:
+
 Hybrid/Testing/Cxx/TestVRMLNormals.cxx:
 
 [IO/SQL]
@@ -2174,6 +2183,8 @@ Infovis/vtkSQLGraphReader.cxx:
 
 [IO/SQL/Testing/Cxx]
 
+modular/IO/SQL/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/TestSQLiteTableReadWrite.cxx:
 
 [IO/MySQL]
@@ -2192,6 +2203,9 @@ IO/vtkTableToMySQLWriter.cxx:
 IO/vtkTableToMySQLWriter.h:
 
 [IO/MySQL/Testing/Cxx]
+
+modular/IO/MySQL/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/TestMySQLTableReadWrite.cxx:
 
 [IO/PostgreSQL]
@@ -2211,6 +2225,8 @@ IO/vtkTableToPostgreSQLWriter.h:
 
 [IO/PostgreSQL/Testing/Cxx]
 
+modular/IO/PostgreSQL/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/TestPostgreSQLTableReadWrite.cxx:
 
 [IO/ODBC]
@@ -2225,6 +2241,9 @@ IO/vtkODBCQuery.cxx:
 IO/vtkODBCQuery.h:
 
 [IO/ODBC/Testing/Cxx]
+
+modular/IO/ODBC/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/TestODBCDatabase.cxx:
 
 [IO/MINC]
@@ -2300,6 +2319,8 @@ modular/IONetCDF.patch:<ignore>
 
 [IO/NetCDF/Testing/Cxx]
 
+modular/IO/NetCDF/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/SLACParticleReader.cxx:
 IO/Testing/Cxx/SLACReaderLinear.cxx:
 IO/Testing/Cxx/SLACReaderQuadratic.cxx:
@@ -2320,6 +2341,8 @@ IO/vtkPLYWriter.cxx:
 IO/vtkPLYWriter.h:
 
 [IO/PLY/Testing/Cxx]
+
+modular/IO/PLY/Testing/Cxx/CMakeLists.txt:
 
 IO/Testing/Cxx/TestPLYReader.cxx:
 
@@ -2460,6 +2483,9 @@ modular/IOXML.patch: <ignore>
 <patch>: IOXML.patch
 
 [IO/XML/Testing/Cxx]
+
+modular/IO/XML/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/TestDataObjectXMLIO.cxx:
 IO/Testing/Cxx/TestXML.cxx:
 
@@ -2478,6 +2504,9 @@ IO/vtkLSDynaSummaryParser.cxx:
 IO/vtkLSDynaSummaryParser.h:
 
 [IO/LSDyna/Testing/Cxx]
+
+modular/IO/LSDyna/Testing/Cxx/CMakeLists.txt:
+
 IO/Testing/Cxx/TestLSDynaReader.cxx:
 IO/Testing/Cxx/TestLSDynaReaderSPH.cxx:
 
@@ -2896,6 +2925,9 @@ Infovis/vtkGraphAnnotationLayersFilter.cxx:
 Infovis/vtkGraphAnnotationLayersFilter.h:
 
 [Infovis/Core/Testing/Cxx]
+
+modular/Infovis/Core/Testing/Cxx/CMakeLists.txt:
+
 Infovis/Testing/Cxx/ArraySparseArrayToTable.cxx:
 Infovis/Testing/Cxx/ArrayTableToSparseArray.cxx:
 Infovis/Testing/Cxx/ArrayToTable.cxx:
@@ -3007,6 +3039,9 @@ Infovis/vtkTreeRingToPolyData.h:
 Infovis/vtkTreeRingToPolyData.cxx:
 
 [Infovis/Layout/Testing/Cxx]
+
+modular/Infovis/Layout/Testing/Cxx/CMakeLists.txt:
+
 Infovis/Testing/Cxx/TestAssignCoordinates.cxx:
 Infovis/Testing/Cxx/TestChacoGraphReader.cxx:
 Infovis/Testing/Cxx/TestCirclePackLayoutStrategy.cxx:
@@ -3047,6 +3082,9 @@ Infovis/vtkBoostSplitTableField.h:
 Infovis/vtkBoostSplitTableField.cxx:
 
 [Infovis/BoostGraphAlgorithms/Testing/Cxx]
+
+modular/Infovis/BoostGraphAlgorithms/Testing/Cxx/CMakeLists.txt:
+
 Infovis/Testing/Cxx/BoostArrayLogWeighting.cxx:
 Infovis/Testing/Cxx/BoostArrayRandomSparseArraySource.cxx:
 Infovis/Testing/Cxx/TestBoostAdapter.cxx:
@@ -3083,6 +3121,8 @@ Infovis/vtkXMLTreeReader.h:
 Infovis/vtkXMLTreeReader.cxx:
 
 [IO/Infovis/Testing/Cxx]
+
+modular/IO/Infovis/Testing/Cxx/CMakeLists.txt:
 
 Infovis/Testing/Cxx/TestTulipReader.cxx:
 Infovis/Testing/Cxx/TestTulipReaderClusters.cxx:
@@ -3444,6 +3484,7 @@ Charts/Testing/CMakeLists.txt:<ignore>
 [Charts/Core/Testing/Python]
 
 modular/Charts/Core/Testing/Python/CMakeLists.txt:
+
 Charts/Testing/Python/CMakeLists.txt:<ignore>
 Charts/Testing/Python/TestBarGraph.py:
 Charts/Testing/Python/TestLinePlot.py:
@@ -3773,6 +3814,8 @@ Graphics/vtkQuadRotationalExtrusionFilter.h:
 
 [Filters/Modeling/Testing/Cxx]
 
+modular/Filters/Modeling/Testing/Cxx/CMakeLists.txt:
+
 Graphics/Testing/Cxx/TestPolyDataPointSampler.cxx:
 Graphics/Testing/Cxx/TestQuadRotationalExtrusion.cxx:
 Graphics/Testing/Cxx/TestQuadRotationalExtrusionMultiBlock.cxx:
@@ -3928,6 +3971,8 @@ Graphics/vtkGraphToPolyData.cxx:
 Graphics/vtkGraphToPolyData.h:
 
 [Filters/Sources/Testing/Cxx]
+
+modular/Filters/Sources/Testing/Cxx/CMakeLists.txt:
 
 Graphics/Testing/Cxx/TestLineSource.cxx:
 Graphics/Testing/Cxx/TestTessellatedBoxSource.cxx:
@@ -4203,6 +4248,7 @@ Graphics/vtkMatrixMathFilter.h:
 
 [Filters/Verdict/Testing/Cxx]
 
+modular/Filters/Verdict/Testing/Cxx/CMakeLists.txt:
 Graphics/Testing/Cxx/MeshQuality.cxx:
 
 [Filters/HyperOctree]
@@ -4232,6 +4278,8 @@ Graphics/vtkHyperOctreeToUniformGridFilter.cxx:
 Graphics/vtkHyperOctreeToUniformGridFilter.h:
 
 [Filters/HyperOctree/Testing/Cxx]
+
+modular/Filters/HyperOctree/Testing/Cxx/CMakeLists.txt:
 
 Graphics/Testing/Cxx/TestClipHyperOctree.cxx:
 Graphics/Testing/Cxx/TestHyperOctreeContourFilter.cxx:
@@ -4371,6 +4419,9 @@ Infovis/vtkStreamingStatistics.h:
 Infovis/vtkStreamingStatistics.cxx:
 
 [Filters/Statistics/Testing/Cxx]
+
+modular/Filters/Statistics/Testing/Cxx/CMakeLists.txt:
+
 Infovis/Testing/Cxx/TestMultiCorrelativeStatistics.cxx:
 Infovis/Testing/Cxx/TestOrderStatistics.cxx:
 
@@ -4656,6 +4707,9 @@ Widgets/vtkBrokenLineWidget.cxx:
 Widgets/vtkBrokenLineWidget.h:
 
 [Interaction/Widgets/Testing/Cxx]
+
+modular/Interaction/Widgets/Testing/Cxx/CMakeLists.txt:
+
 Widgets/Testing/Cxx/BoxWidget.cxx:
 Widgets/Testing/Cxx/BoxWidget2.cxx:
 Widgets/Testing/Cxx/ImagePlaneWidget.cxx:
@@ -4836,6 +4890,9 @@ Rendering/vtkParallelCoordinatesInteractorStyle.cxx:
 Rendering/vtkParallelCoordinatesInteractorStyle.h:
 
 [Rendering/Annotation/Testing/Cxx]
+
+modular/Rendering/Annotation/Testing/Cxx/CMakeLists.txt:
+
 Hybrid/Testing/Cxx/TestAxisActor3D.cxx:
 Hybrid/Testing/Cxx/TestBarChartActor.cxx:
 Hybrid/Testing/Cxx/TestCubeAxes2DMode.cxx:
@@ -5154,6 +5211,8 @@ modular/RenderingCore.patch:<ignore>
 #<patch>: RenderingCore.patch
 
 [Rendering/Core/Testing/Cxx]
+
+modular/Rendering/Core/Testing/Cxx/CMakeLists.txt:
 
 Common/Testing/Cxx/otherLookupTable.cxx:<ignore>
 Common/Testing/Cxx/otherLookupTableWithEnabling.cxx:<ignore>
@@ -5786,6 +5845,8 @@ VolumeRendering/vtkAMRVolumeMapper.h:
 
 [Rendering/Volume/Testing/Cxx]
 
+modular/Rendering/Volume/Testing/Cxx/CMakeLists.txt:
+
 VolumeRendering/Testing/Cxx/ExerciseUnstructuredGridRayCastMapper.cxx:
 VolumeRendering/Testing/Cxx/ExerciseUnstructuredGridRayCastMapper.h:
 VolumeRendering/Testing/Cxx/HomogeneousRayIntegration.cxx:
@@ -6411,6 +6472,8 @@ modular/ImagingCore.patch:<ignore>
 
 [Imaging/Core/Testing/Cxx]
 
+modular/Imaging/Core/Testing/Cxx/CMakeLists.txt:
+
 Hybrid/Testing/Cxx/TestImageStencilData.cxx:
 Imaging/Testing/Cxx/FastSplatter.cxx:
 Imaging/Testing/Cxx/ImageAccumulate.cxx:
@@ -6463,6 +6526,7 @@ Chemistry/vtkSimpleBondPerceiver.h:
 
 [Chemistry/Core/Testing/Cxx]
 modular/Chemistry/Core/Testing/Cxx/CMakeLists.txt:
+
 Chemistry/Testing/CMakeLists.txt:<ignore>
 Chemistry/Testing/Cxx/CMakeLists.txt:<ignore>
 Chemistry/Testing/Cxx/TestBallAndStick.cxx:
