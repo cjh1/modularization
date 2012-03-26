@@ -4330,7 +4330,9 @@ Hybrid/vtkBSplineTransform.h:
 
 [Filters/Hybrid/Testing/Cxx]
 
-Hybrid/Testing/Cxx/TestBSplineWarp.cxx:
+modular/Filters/Hybrid/Testing/Cxx/CMakeLists.txt:
+
+Hybrid/Testing/Cxx/TestBSplineWarp.cxx:<ignore>
 Hybrid/Testing/Cxx/TestPolyDataSilhouette.cxx:
 
 [Filters/Statistics]
