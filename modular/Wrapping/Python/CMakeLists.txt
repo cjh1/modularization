@@ -56,6 +56,7 @@ endif()
 set(VTKPYTHON_LINK_LIBS
   ${VTK_PYTHON_LIBRARIES}
   vtksys
+  vtkCommonCore
   )
 
 set(vtkpython_pyc_depends
