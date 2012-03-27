@@ -229,14 +229,6 @@ Hybrid/Testing/Temporary/LastTest.log:<ignore>
 
 IO/Testing/CMakeLists.txt:<ignore>
 IO/Testing/Cxx/CMakeLists.txt:<ignore>
-IO/Testing/Cxx/DatabaseSchemaWith2Tables.cxx:<ignore>
-IO/Testing/Cxx/TestDataObjectIO.cxx:<ignore>
-IO/Testing/Cxx/TestHyperOctreeIO.cxx:<ignore>
-IO/Testing/Cxx/TestMySQLDatabase.cxx:<ignore>
-IO/Testing/Cxx/TestPostgreSQLDatabase.cxx:<ignore>
-IO/Testing/Cxx/TestSQLDatabaseSchema.cxx:<ignore>
-IO/Testing/Cxx/TestSQLiteDatabase.cxx:<ignore>
-
 IO/Testing/Cxx/TestXMLCInterface.c:<ignore>
 IO/Testing/Cxx/vtkFortran.h:<ignore>
 IO/Testing/Python/CMakeLists.txt:<ignore>
@@ -275,6 +267,8 @@ IO/Testing/Tcl/TestXMLUnstructuredGridIO.tcl:<ignore>
 IO/Testing/Tcl/TestXYZMol.tcl:<ignore>
 IO/Testing/Tcl/caffeine.tcl:<ignore>
 IO/Testing/Tcl/dem.tcl:<ignore>
+IO/Testing/Cxx/TestDataObjectIO.cxx:<ignore>
+IO/Testing/Cxx/TestHyperOctreeIO.cxx:<ignore>
 
 Imaging/Testing/CMakeLists.txt:<ignore>
 Imaging/Testing/Cxx/CMakeLists.txt:<ignore>
@@ -6550,3 +6544,38 @@ Rendering/vtkTestingInteractor.h:<ignore>
 Rendering/vtkTestingObjectFactory.cmake:<ignore>
 Rendering/vtkTestingObjectFactory.cxx:
 Rendering/vtkTestingObjectFactory.h:
+
+[Testing/IOSQL]
+
+modular/Testing/IOSQL/module.cmake:
+modular/Testing/IOSQL/CMakeLists.txt:
+modular/Testing/IOSQL/DatabaseSchemaWith2Tables.h:
+modular/TestingIOSQL.patch:<ignore>
+
+IO/Testing/Cxx/DatabaseSchemaWith2Tables.cxx:
+<patch>: TestingIOSQL.patch
+
+[IO/MySQL/Testing/Cxx]
+
+modular/IO/MySQL/Testing/Cxx/CMakeLists.txt:
+modular/IOMySQL.patch:<ignore>
+
+IO/Testing/Cxx/TestMySQLDatabase.cxx:
+<patch>: IOMySQL.patch
+
+[IO/PostgreSQL/Testing/Cxx]
+
+modular/IO/PostgreSQL/Testing/Cxx/CMakeLists.txt:
+modular/IOPostgreSQL.patch:<ignore>
+
+IO/Testing/Cxx/TestPostgreSQLDatabase.cxx:
+<patch>: IOPostgreSQL.patch
+
+[IO/SQL/Testing/Cxx]
+
+modular/IO/SQL/Testing/Cxx/CMakeLists.txt:
+modular/IOSQL.patch:<ignore>
+
+IO/Testing/Cxx/TestSQLDatabaseSchema.cxx:
+IO/Testing/Cxx/TestSQLiteDatabase.cxx:
+<patch>: IOSQL.patch
