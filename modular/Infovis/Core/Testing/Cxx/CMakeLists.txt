@@ -1,4 +1,23 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  ArraySparseArrayToTable.cxx
+  ArrayTableToSparseArray.cxx
+  ArrayToTable.cxx
+  ArrayTransposeMatrix.cxx
+  # TestArrayNorm.cxx             # todo (unsatisfied deps)
+  TestCollapseVerticesByArray.cxx
+  # TestConvexHull2D.cxx          # todo (unsatisfied deps)
+  TestDataObjectToTable.cxx
+  TestExtractSelectedGraph.cxx
+  TestGraphAlgorithms.cxx
+  TestMergeGraphs.cxx
+  TestMergeTables.cxx
+  TestRandomGraphSource.cxx
+  TestRemoveIsolatedVertices.cxx
+  TestStreamGraph.cxx
+  TestStringToNumeric.cxx
+  TestTableToArray.cxx
+  TestThresholdTable.cxx
+  # TestTimePoint.cxx             # deprecated dep
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

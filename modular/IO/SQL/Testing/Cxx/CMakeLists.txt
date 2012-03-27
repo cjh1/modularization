@@ -1,7 +1,7 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestSQLDatabaseSchema.cxx
   TestSQLiteDatabase.cxx
-
+  TestSQLiteTableReadWrite.cxx
   EXTRA_INCLUDE vtkTestDriver.h
 )
 

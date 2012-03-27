@@ -1,4 +1,9 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  TestPolyDataPointSampler.cxx
+  TestQuadRotationalExtrusion.cxx
+  TestQuadRotationalExtrusionMultiBlock.cxx
+  TestRotationalExtrusion.cxx
+  TestSelectEnclosedPoints.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

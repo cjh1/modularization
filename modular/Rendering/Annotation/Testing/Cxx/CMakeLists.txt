@@ -1,4 +1,22 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  # TestAxisActor3D.cxx # todo (may not be in vtk in the first place)
+  TestBarChartActor.cxx
+  TestCubeAxes2DMode.cxx
+  # TestCubeAxes3.cxx             # todo (unsatistfied deps)
+  # TestCubeAxesWithGridLines.cxx # todo (unsatistfied deps)
+  # TestCubeAxesWithXInnerGrids.cxx # todo (unsatistfied deps)
+  # TestCubeAxesWithXInnerPolys.cxx # todo (unsatistfied deps)
+  # TestCubeAxesWithXLines.cxx    # todo (unsatistfied deps)
+  # TestCubeAxesWithYInnerGrids.cxx # todo (unsatistfied deps)
+  # TestCubeAxesWithYInnerPolys.cxx # todo (unsatistfied deps)
+  # TestCubeAxesWithYLines.cxx      # todo (unsatistfied deps)
+  # TestCubeAxesWithZInnerGrids.cxx # todo (unsatistfied deps)
+  # TestCubeAxesWithZInnerPolys.cxx # todo (unsatistfied deps)
+  # TestCubeAxesWithZLines.cxx # todo (unsatistfied deps)
+  TestLegendBoxActor.cxx
+  TestLegendScaleActor.cxx
+  TestPieChartActor.cxx
+  TestSpiderPlotActor.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

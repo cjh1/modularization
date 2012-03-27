@@ -1,4 +1,41 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  # Volume rendering in not in yet
+  # ExerciseUnstructuredGridRayCastMapper.cxx
+  # HomogeneousRayIntegration.cxx
+  # LinearRayIntegration.cxx
+  # PartialPreIntegration.cxx
+  # PreIntegrationIncremental.cxx
+  # PreIntegrationNonIncremental.cxx
+  # ProjectedTetrahedraZoomIn.cxx
+  # TestFinalColorWindowLevel.cxx
+  # TestFixedPointRayCastLightComponents.cxx
+  # TestGPURayCastAdditive.cxx
+  # TestGPURayCastCompositeBinaryMask.cxx
+  # TestGPURayCastCompositeMask.cxx
+  # TestGPURayCastCompositeMaskBlend.cxx
+  # TestGPURayCastCompositeShadeMask.cxx
+  # TestGPURayCastCompositeToMIP.cxx
+  # TestGPURayCastCropping.cxx
+  # TestGPURayCastDataTypesMIP.cxx
+  # TestGPURayCastDataTypesMinIP.cxx
+  # TestGPURayCastFourComponentsComposite.cxx
+  # TestGPURayCastFourComponentsCompositeStreaming.cxx
+  # TestGPURayCastFourComponentsMIP.cxx
+  # TestGPURayCastFourComponentsMinIP.cxx
+  # TestGPURayCastMIPBinaryMask.cxx
+  # TestGPURayCastMIPToComposite.cxx
+  # TestGPURayCastNearestDataTypesMIP.cxx
+  # TestGPURayCastPerspectiveParallel.cxx
+  # TestHAVSVolumeMapper.cxx
+  # TestMinIntensityRendering.cxx
+  # TestProjectedHexahedra.cxx
+  # TestProjectedTetrahedra.cxx
+  # TestProp3DFollower.cxx
+  # TestSmartVolumeMapper.cxx
+  # TestSmartVolumeMapperWindowLevel.cxx
+  # TestTM3DLightComponents.cxx
+  # ZsweepConcavities.cxx
+  # volProt.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

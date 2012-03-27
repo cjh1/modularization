@@ -1,4 +1,6 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  TestMultiCorrelativeStatistics.cxx
+  TestOrderStatistics.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

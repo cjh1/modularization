@@ -1,4 +1,8 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  TestArrayDataWriter.cxx
+  TestArrayDenormalized.cxx
+  TestArraySerialization.cxx
+  TestCompress.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

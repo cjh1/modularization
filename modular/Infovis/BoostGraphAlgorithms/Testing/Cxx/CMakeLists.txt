@@ -1,4 +1,12 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  BoostArrayLogWeighting.cxx
+  BoostArrayRandomSparseArraySource.cxx
+  TestBoostAdapter.cxx
+  TestBoostAlgorithms.cxx
+  TestBoostBetweennessClustering.cxx
+  TestBoostBrandesCentrality.cxx
+  TestBoostExtractLargestComponent.cxx
+  TestBoostSplitTableField.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

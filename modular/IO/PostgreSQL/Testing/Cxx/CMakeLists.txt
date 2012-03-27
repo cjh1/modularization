@@ -1,6 +1,7 @@
 if(VTK_PSQL_TEST_URL)
   create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
     TestPostgreSQLDatabase
+    TestPostgreSQLTableReadWrite.cxx
     EXTRA_INCLUDE vtkTestDriver.h
   )
 

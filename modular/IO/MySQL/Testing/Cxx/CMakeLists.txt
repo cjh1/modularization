@@ -1,6 +1,7 @@
 if(VTK_MYSQL_TEST_URL)
   create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
     TestMySQLDatabase
+    TestMySQLTableReadWrite.cxx
     EXTRA_INCLUDE vtkTestDriver.h
   )
 

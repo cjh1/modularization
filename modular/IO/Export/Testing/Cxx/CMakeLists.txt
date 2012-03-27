@@ -1,5 +1,5 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
-
+  X3DTest.cxx
   EXTRA_INCLUDE vtkTestDriver.h
 )
 

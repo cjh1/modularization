@@ -1,5 +1,5 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
-
+  MeshQuality.cxx
   EXTRA_INCLUDE vtkTestDriver.h
 )
 

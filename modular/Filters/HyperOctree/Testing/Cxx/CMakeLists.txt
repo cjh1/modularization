@@ -1,4 +1,10 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  TestClipHyperOctree.cxx
+  TestHyperOctreeContourFilter.cxx
+  TestHyperOctreeCutter.cxx
+  TestHyperOctreeDual.cxx
+  TestHyperOctreeSurfaceFilter.cxx
+  TestHyperOctreeToUniformGrid.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

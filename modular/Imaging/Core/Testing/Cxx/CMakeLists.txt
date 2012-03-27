@@ -1,4 +1,17 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  TestImageStencilData.cxx
+  # FastSplatter.cxx # todo (unsatistfied deps)
+  ImageAccumulate.cxx
+  # ImageAutoRange.cxx # todo (unsatistfied deps)
+  ImageBSplineCoefficients.cxx
+  # ImageHistogram.cxx # todo (unsatistfied deps)
+  # ImageHistogramStatistics.cxx # todo (unsatistfied deps)
+  # ImageResize.cxx # todo (unsatistfied deps)
+  # ImageResize3D.cxx # todo (unsatistfied deps)
+  # ImageResizeCropping.cxx # todo (unsatistfied deps)
+  ImageWeightedSum.cxx
+  # ImportExport.cxx # todo (unsatistfied deps)
+  TestUpdateExtentReset.cxx
 
   EXTRA_INCLUDE vtkTestDriver.h
 )

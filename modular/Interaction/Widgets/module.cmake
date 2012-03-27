@@ -5,4 +5,8 @@ vtk_module(vtkInteractionWidgets
    vtkRenderingVolume
    vtkFiltersModeling
    vtkFiltersHybrid
+  TEST_DEPENDS
+    vtkRenderingCore
+    vtkTestingRendering
+    vtkInteractionStyle
   DEFAULT OFF)

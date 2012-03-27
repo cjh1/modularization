@@ -1,4 +1,10 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+  SLACParticleReader.cxx
+  SLACReaderLinear.cxx
+  SLACReaderQuadratic.cxx
+  TestMPASReader.cxx
+  # TestNetCDFCAMReader.cxx # todo
+  # TestNetCDFPOPReader.cxx # todo
 
   EXTRA_INCLUDE vtkTestDriver.h
 )
