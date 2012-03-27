@@ -3085,12 +3085,12 @@ Infovis/vtkBoostSplitTableField.cxx:
 
 modular/Infovis/BoostGraphAlgorithms/Testing/Cxx/CMakeLists.txt:
 
-Infovis/Testing/Cxx/BoostArrayLogWeighting.cxx:
+Infovis/Testing/Cxx/BoostArrayLogWeighting.cxx:<ignore>
 Infovis/Testing/Cxx/BoostArrayRandomSparseArraySource.cxx:
 Infovis/Testing/Cxx/TestBoostAdapter.cxx:
 Infovis/Testing/Cxx/TestBoostAlgorithms.cxx:
 Infovis/Testing/Cxx/TestBoostBetweennessClustering.cxx:
-Infovis/Testing/Cxx/TestBoostBrandesCentrality.cxx:
+Infovis/Testing/Cxx/TestBoostBrandesCentrality.cxx:<ignore>
 Infovis/Testing/Cxx/TestBoostExtractLargestComponent.cxx:
 Infovis/Testing/Cxx/TestBoostSplitTableField.cxx:
 

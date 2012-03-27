@@ -1,10 +1,10 @@
 create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
-  BoostArrayLogWeighting.cxx
+  # BoostArrayLogWeighting.cxx    # todo (unsatisfied deps)
   BoostArrayRandomSparseArraySource.cxx
   TestBoostAdapter.cxx
   TestBoostAlgorithms.cxx
   TestBoostBetweennessClustering.cxx
-  TestBoostBrandesCentrality.cxx
+  # TestBoostBrandesCentrality.cxx # todo (unsatisfied deps)
   TestBoostExtractLargestComponent.cxx
   TestBoostSplitTableField.cxx
 
