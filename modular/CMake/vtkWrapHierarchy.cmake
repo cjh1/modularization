@@ -68,10 +68,9 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
         set(TMP_INPUT ${${vtk-module}_SOURCE_DIR}/${TMP_FILENAME}.h)
       endif()
 
-      # Adapted, but shouldn't these just be excluded? It seemed to work.
+      # Exclude huge generated headers that aren't relevant to wrappers.
       if(NOT "${TMP_FILENAME}" STREQUAL "vtkgl" AND
-         NOT "${TMP_FILENAME}" STREQUAL "vtkOpenGLState" AND
-         NOT "${TMP_FILENAME}" STREQUAL "vtkInformation")
+         NOT "${TMP_FILENAME}" STREQUAL "vtkOpenGLState")
 
         # add to the INPUT_FILES
         list(APPEND INPUT_FILES ${TMP_INPUT})
@@ -113,7 +112,7 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
     if(NOT "${vtk-module}" STREQUAL "${dep}")
       if(NOT VTK_MODULE_${dep}_EXCLUDE_FROM_WRAPPING)
         list(APPEND OTHER_HIERARCHY_FILES
-          "${quote}${${dep}_BINARY_DIR}/${dep}Hierarchy.txt${quote}")
+		"${quote}${${dep}_BINARY_DIR}/${dep}Hierarchy.txt${quote}")
         list(APPEND OTHER_HIERARCHY_TARGETS ${dep})
       endif()
     endif()
@@ -175,7 +174,7 @@ macro(VTK_WRAP_HIERARCHY TARGET OUTPUT_DIR SOURCES)
       COMMAND ${VTK_WRAP_HIERARCHY_EXE}
       ${TMP_DEFINITIONS}
       ${TMP_INCLUDE}
-      "-o" "${quote}${OUTPUT_DIR}/vtk${vtk-module}Hierarchy.txt${quote}"
+      "-o" "${quote}${OUTPUT_DIR}/${vtk-module}Hierarchy.txt${quote}"
       "${quote}${OUTPUT_DIR}/${TARGET}.data${quote}"
       ${OTHER_HIERARCHY_FILES}
 
