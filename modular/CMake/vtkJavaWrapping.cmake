@@ -21,6 +21,7 @@ if(VTK_WRAP_JAVA)
   
   include_directories(
     ${JAVA_INCLUDE_PATH}
+    ${JAVA_INCLUDE_PATH2}
     )
 endif()
 

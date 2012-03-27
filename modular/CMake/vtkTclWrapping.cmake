@@ -13,7 +13,7 @@ function(vtk_add_tcl_wrapping module_name)
   include_directories(
     ${VTK_SOURCE_DIR}/Wrapping
     ${VTK_BINARY_DIR}/Wrapping
-    ${TCL_INCLUDE_DIRS})
+    ${TCL_INCLUDE_PATH})
 
   get_target_property(module_srcs ${module_name} SOURCES)
 
