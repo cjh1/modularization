@@ -5293,6 +5293,9 @@ Rendering/vtkPointSetToLabelHierarchy.h:
 
 [Rendering/LOD]
 
+modular/Rendering/LOD/CMakeLists.txt:
+modular/Rendering/LOD/module.cmake:
+
 Rendering/vtkLODActor.cxx:
 Rendering/vtkLODActor.h:
 Rendering/vtkQuadricLODActor.cxx:
