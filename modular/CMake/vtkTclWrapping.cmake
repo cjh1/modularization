@@ -5,7 +5,7 @@ if(VTK_WRAP_TCL)
   include(vtkWrapHierarchy)
 endif()
 
-function(vtk_add_tcl_wrapping module_name)
+function(vtk_add_tcl_wrapping module_name module_srcs)
   if(NOT VTK_WRAP_TCL_INIT_EXE)
     message(FATAL_ERROR "VTK must be built with Tcl wrapping turned on.")
   endif()
@@ -14,8 +14,6 @@ function(vtk_add_tcl_wrapping module_name)
     ${VTK_SOURCE_DIR}/Wrapping
     ${VTK_BINARY_DIR}/Wrapping
     ${TCL_INCLUDE_PATH})
-
-  get_target_property(module_srcs ${module_name} SOURCES)
 
   # FIXME: These must be here for now, should be fixed in the wrap hierarchy stuff
   set(KIT_HIERARCHY_FILE ${CMAKE_CURRENT_BINARY_DIR}/${module_name}Hierarchy.txt)

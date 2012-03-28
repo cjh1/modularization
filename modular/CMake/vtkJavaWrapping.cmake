@@ -25,9 +25,8 @@ if(VTK_WRAP_JAVA)
     )
 endif()
 
-function(vtk_add_java_wrapping module_name)
+function(vtk_add_java_wrapping module_name module_srcs)
 
-  get_target_property(module_srcs ${module_name} SOURCES)
   string(REGEX REPLACE "^vtk" "" wrap_name "${module_name}")
   # FIXME: These must be here for now, should be fixed in the wrap hierarchy stuff
   set(KIT_HIERARCHY_FILE ${CMAKE_CURRENT_BINARY_DIR}/${module_name}Hierarchy.txt)
