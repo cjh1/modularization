@@ -1,4 +1,6 @@
 vtk_module(vtkRenderingOpenGL
+  IMPLEMENTS
+    vtkRenderingCore
   DEPENDS
     vtkCommonCore
     vtkCommonDataModel
@@ -6,7 +8,6 @@ vtk_module(vtkRenderingOpenGL
     vtkCommonTransforms
     vtkCommonSystem
     vtkFiltersCore
-    vtkRenderingCore
     vtkIOXML
     vtkIOImage # For vtkImageExport
     vtkImagingCore # For vtkSampleFunction

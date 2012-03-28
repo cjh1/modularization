@@ -22,24 +22,6 @@
 
 vtkStandardNewMacro(@vtk-module@ObjectFactory)
 
-// Registration of the module overrides for shared linking.
-class @vtk-module@Register
-{
-public:
-  @vtk-module@Register()
-    {
-    vtkObjectFactory::RegisterFactory(Factory.GetPointer());
-    }
-  ~@vtk-module@Register()
-    {
-    vtkObjectFactory::UnRegisterFactory(Factory.GetPointer());
-    }
-private:
-  vtkNew<@vtk-module@ObjectFactory> Factory;
-};
-
-static @vtk-module@Register my@vtk-module@Register;
-
 // Now create the functions to create overrides with.
 @_vtk_override_creates@
 

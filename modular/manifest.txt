@@ -611,6 +611,7 @@ Utilities/.gitattributes:
 
 [Common/Core]
 
+modular/Common/Core/vtkAutoInit.h:
 modular/Common/Core/vtkToolkits.h.in:
 modular/Common/Core/vtkConfigure.h.in:
 modular/Common/Core/CMakeLists.txt:
@@ -5324,6 +5325,7 @@ Rendering/vtkQuadricLODActor.h:
 
 modular/Rendering/OpenGL/CMakeLists.txt:
 modular/Rendering/OpenGL/module.cmake:
+modular/Rendering/OpenGL/vtkRenderingOpenGL_AutoInit.cxx:
 
 modular/Rendering/OpenGL/vtkRenderingOpenGLConfigure.h.in:
 

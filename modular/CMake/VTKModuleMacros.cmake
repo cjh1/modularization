@@ -16,11 +16,12 @@ macro(vtk_module _name)
   set(VTK_MODULE_${vtk-module}_DEPENDS "")
   set(VTK_MODULE_${vtk-module}_COMPILE_DEPENDS "")
   set(VTK_MODULE_${vtk-module-test}_DEPENDS "${vtk-module}")
+  set(VTK_MODULE_${vtk-module}_IMPLEMENTS "")
   set(VTK_MODULE_${vtk-module}_DESCRIPTION "description")
   set(VTK_MODULE_${vtk-module}_EXCLUDE_FROM_ALL 0)
   set(VTK_MODULE_${vtk-module}_EXCLUDE_FROM_WRAPPING 0)
   foreach(arg ${ARGN})
-    if("${arg}" MATCHES "^((|COMPILE_|TEST_|)DEPENDS|DESCRIPTION|DEFAULT)$")
+    if("${arg}" MATCHES "^((|COMPILE_|TEST_|)DEPENDS|DESCRIPTION|IMPLEMENTS|DEFAULT)$")
       set(_doing "${arg}")
     elseif("${arg}" MATCHES "^EXCLUDE_FROM_ALL$")
       set(_doing "")
@@ -41,6 +42,9 @@ macro(vtk_module _name)
     elseif("${_doing}" MATCHES "^DESCRIPTION$")
       set(_doing "")
       set(VTK_MODULE_${vtk-module}_DESCRIPTION "${arg}")
+    elseif("${_doing}" MATCHES "^IMPLEMENTS$")
+      list(APPEND VTK_MODULE_${vtk-module}_DEPENDS "${arg}")
+      list(APPEND VTK_MODULE_${vtk-module}_IMPLEMENTS "${arg}")
     elseif("${_doing}" MATCHES "^DEFAULT")
       #message(FATAL_ERROR "Invalid argument [DEFAULT]")
       # Actually respect it for now.
@@ -59,6 +63,7 @@ macro(vtk_module _name)
   unset(VTK_MODULE_${vtk-module}_COMPILE_DEPENDS)
   list(SORT VTK_MODULE_${vtk-module}_DEPENDS) # Deterministic order.
   list(SORT VTK_MODULE_${vtk-module-test}_DEPENDS) # Deterministic order.
+  list(SORT VTK_MODULE_${vtk-module}_IMPLEMENTS) # Deterministic order.
 endmacro()
 
 macro(vtk_module_check_name _name)
@@ -112,6 +117,9 @@ macro(vtk_module_impl)
   foreach(opt ${${vtk-module}_EXPORT_OPTIONS})
     set(_code "${_code}set(${opt} \"${${opt}}\")\n")
   endforeach()
+  if(VTK_MODULE_${vtk-module}_IMPLEMENTS)
+    set(_code "${_code}set(${vtk-module}_IMPLEMENTS \"${VTK_MODULE_${vtk-module}_IMPLEMENTS}\")\n")
+  endif()
   set(vtk-module-EXPORT_CODE-build "${_code}${${vtk-module}_EXPORT_CODE_BUILD}")
   set(vtk-module-EXPORT_CODE-install "${_code}${${vtk-module}_EXPORT_CODE_INSTALL}")
 
@@ -141,6 +149,10 @@ macro(vtk_module_test)
     set(vtk_module_test_called 1) # Run once in a given scope.
     include(../../module.cmake) # Load module meta-data
     vtk_module_config(${vtk-module-test}-Cxx ${VTK_MODULE_${vtk-module-test}-Cxx_DEPENDS})
+    if(${vtk-module-test}-Cxx_DEFINITIONS)
+      set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS
+        ${${vtk-module-test}-Cxx_DEFINITIONS})
+    endif()
     if(${vtk-module-test}-Cxx_INCLUDE_DIRS)
       include_directories(${${vtk-module-test}-Cxx_INCLUDE_DIRS})
     endif()
@@ -268,6 +280,14 @@ function(vtk_module_library name)
   endforeach()
 
   # Generate the export macro header for symbol visibility/Windows DLL declspec
+  if(${vtk-module}_EXPORT_CODE)
+    set(${vtk-module}_EXPORT_CODE "${${vtk-module}_EXPORT_CODE}\n\n")
+  endif()
+  set(${vtk-module}_EXPORT_CODE
+    "${${vtk-module}_EXPORT_CODE}#if defined(${vtk-module}_AUTOINIT)
+# include \"vtkAutoInit.h\"
+VTK_AUTOINIT(${vtk-module})
+#endif")
   generate_export_header(${vtk-module} EXPORT_FILE_NAME ${vtk-module}Module.h)
   add_compiler_export_flags(my_abi_flags)
   set_property(TARGET ${vtk-module} APPEND
