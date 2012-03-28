@@ -210,7 +210,28 @@ macro(vtk_target _name)
 endmacro()
 
 function(vtk_add_library name)
-  add_library(${name} ${ARGN})
+  # compute and add header files to the target if they exist
+  set(${vtk-module}_HEADERS)
+  foreach(FILE ${ARGN})
+    get_filename_component(TMP_FILENAME ${FILE} EXT)
+    if(NOT "${EXT}" STREQUAL ".h")
+      # what is the filename without the extension
+      get_filename_component(TMP_FILENAME ${FILE} NAME_WE)
+      # the input file might be full path so handle that
+      get_filename_component(TMP_FILEPATH ${FILE} PATH)
+      # compute the input filename
+      if(TMP_FILEPATH)
+        set(TMP_INPUT ${TMP_FILEPATH}/${TMP_FILENAME}.h)
+      else()
+        set(TMP_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/${TMP_FILENAME}.h)
+      endif()
+      if(EXISTS "${TMP_INPUT}")
+        list(APPEND ${vtk-module}_HEADERS "${TMP_INPUT}")
+      endif()
+    endif()
+  endforeach()
+  # add the library with the additional headers
+  add_library(${name} ${ARGN} ${${vtk-module}_HEADERS})
   vtk_target(${name})
 endfunction()
 
@@ -249,7 +270,7 @@ function(vtk_module_library name)
     PROPERTY COMPILE_FLAGS "${VTK_ABI_CXX_FLAGS}")
 
   # Add the module to the list of wrapped modules if necessary
-  vtk_add_wrapping(${vtk-module})
+  vtk_add_wrapping(${vtk-module} "${ARGN}")
 
   # Figure out which headers to install.
   if(NOT VTK_INSTALL_NO_DEVELOPMENT)
@@ -263,6 +284,7 @@ function(vtk_module_library name)
         endif()
       endif()
     endforeach()
+    list(APPEND _hdrs "${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}Export.h")
     if(_hdrs)
       list(REMOVE_DUPLICATES _hdrs)
       install(FILES ${_hdrs}

@@ -17,7 +17,7 @@ include(vtkWrapHierarchy)
 
 # This is the main function, always called from the vtk_module_library function
 # when a new module library is added.
-function(vtk_add_wrapping module_name)
+function(vtk_add_wrapping module_name module_srcs)
   if(NOT VTK_MODULE_${module_name}_EXCLUDE_FROM_WRAPPING)
     set(_wrap_module FALSE)
     if(VTK_WRAP_PYTHON)
@@ -43,7 +43,6 @@ function(vtk_add_wrapping module_name)
         ${${vtk-module}_SOURCE_DIR}
         )
     
-      get_target_property(module_srcs ${module_name} SOURCES)
       vtk_wrap_hierarchy(${module_name}Hierarchy ${CMAKE_CURRENT_BINARY_DIR}
         "${module_srcs}")
 
