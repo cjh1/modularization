@@ -6,4 +6,5 @@ vtk_module(vtkRenderingAnnotation
     vtkRenderingCore
     vtkTestingRendering
     vtkInteractionStyle
+    vtkRenderingLOD
   DEFAULT OFF)

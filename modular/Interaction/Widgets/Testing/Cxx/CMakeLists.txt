@@ -3,7 +3,7 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   BoxWidget2.cxx
   # ImagePlaneWidget.cxx # todo (unsatisfied deps)
   # ScaledBoxWidget2.cxx # may not have been included in original
-  # TerrainPolylineEditor.cxx # todo (unsatisfied deps)
+  TerrainPolylineEditor.cxx # todo (unsatisfied deps)
   TestAffineWidget.cxx
   TestAngleWidget2D.cxx
   TestAngleWidget3D.cxx
@@ -16,24 +16,24 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestCameraWidget.cxx
   TestCaptionWidget.cxx
   TestCellCentersPointPlacer.cxx
-  # TestCenteredSliderWidget2D.cxx # todo (unsatisfied deps)
+  TestCenteredSliderWidget2D.cxx # todo (unsatisfied deps)
   TestCheckerboardWidget.cxx
   TestConstrainedHandleWidget.cxx
   TestContourWidget2.cxx
-  # TestDijkstraGraphGeodesicPath.cxx # todo (unsatistfied deps)
+  TestDijkstraGraphGeodesicPath.cxx # todo (unsatistfied deps)
   TestDijkstraImageGeodesicPath.cxx
   TestDistanceWidget.cxx
   TestDistanceWidget3D.cxx
   TestFixedSizeHandleRepresentation3D.cxx
   TestFocalPlaneContour.cxx
-  # TestHandleWidget.cxx # todo (unsatistfied deps)
+  TestHandleWidget.cxx # todo (unsatistfied deps)
   TestHandleWidget2D.cxx
   # TestImageActorContourWidget.cxx # todo(unsatistfied deps)
   TestImageTracerWidget.cxx
-  # TestImplicitPlaneWidget.cxx # todo (unsatistfied deps)
-  # TestImplicitPlaneWidget2.cxx # todo (unsatistfied deps)
-  # TestImplicitPlaneWidget2LockNormalToCamera.cxx # todo (unsatistfied deps)
-  # TestImplicitPlaneWidget2b.cxx # todo (unsatistfied deps)
+  TestImplicitPlaneWidget.cxx # todo (unsatistfied deps)
+  TestImplicitPlaneWidget2.cxx # todo (unsatistfied deps)
+  TestImplicitPlaneWidget2LockNormalToCamera.cxx # todo (unsatistfied deps)
+  TestImplicitPlaneWidget2b.cxx # todo (unsatistfied deps)
   TestLineWidget.cxx
   TestLineWidget2.cxx
   TestLogoWidget.cxx
@@ -48,9 +48,9 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestPointHandleRepresentation3D.cxx
   TestPointWidget.cxx
   TestPolyPlane.cxx
-  # TestPolygonalHandleRepresentations.cxx #todo (unsatistfied deps)
-  # TestPolygonalRepresentationHandleWidget.cxx # todo (unsatistfied deps)
-  # TestPolygonalSurfaceConstrainedDistanceWidget.cxx # todo (unsatistfied deps)
+  TestPolygonalHandleRepresentations.cxx #todo (unsatistfied deps)
+  TestPolygonalRepresentationHandleWidget.cxx # todo (unsatistfied deps)
+  TestPolygonalSurfaceConstrainedDistanceWidget.cxx # todo (unsatistfied deps)
   TestProgrammaticPlacement.cxx
   TestRectilinearWipeWidget.cxx
   # TestResliceCursorWidget2.cxx # todo (unsatistfied deps)
@@ -59,11 +59,11 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestSeedWidget.cxx
   TestSeedWidget2.cxx
   TestSeedWidgetNonUniformRepresentations.cxx
-  # TestSliderWidget.cxx # todo (unsatistfied deps)
-  # TestSliderWidget2D.cxx #todo (unsatistfied deps)
-  # TestSphereHandleWidget.cxx # todo (unsatistfied deps)
+  TestSliderWidget.cxx # todo (unsatistfied deps)
+  TestSliderWidget2D.cxx #todo (unsatistfied deps)
+  TestSphereHandleWidget.cxx # todo (unsatistfied deps)
   # TestSplineWidget.cxx # todo (unsatistfied deps)
-  # TestSurfaceConstrainedHandleWidget.cxx # todo (unsatistfied deps)
+  TestSurfaceConstrainedHandleWidget.cxx # todo (unsatistfied deps)
   TestTensorProbeWidget.cxx
   TestTextWidget.cxx
   vtkAngleRepresentation2DTest1.cxx

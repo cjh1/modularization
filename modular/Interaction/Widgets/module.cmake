@@ -9,4 +9,6 @@ vtk_module(vtkInteractionWidgets
     vtkRenderingCore
     vtkTestingRendering
     vtkInteractionStyle
+    vtkFiltersModeling
+    vtkRenderingLOD
   DEFAULT OFF)
