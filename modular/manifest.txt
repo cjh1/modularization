@@ -3667,6 +3667,9 @@ Graphics/Testing/Cxx/TestImplicitPolyDataDistance.cxx:
 
 [Filters/Generic]
 
+modular/Filters/Generic/CMakeLists.txt:
+modular/Filters/Generic/module.cmake:
+
 GenericFiltering/vtkGenericClip.cxx:
 GenericFiltering/vtkGenericClip.h:
 GenericFiltering/vtkGenericContourFilter.cxx:
