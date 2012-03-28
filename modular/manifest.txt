@@ -2595,6 +2595,9 @@ modular/Wrapping/Python/vtkPythonAppInit.cxx:
 Wrapping/Python/vtkpython.rc:
 Wrapping/Python/vtkpython.cxx.in:
 
+modular/WrappingPython.patch:<ignore>
+<patch>: WrappingPython.patch
+
 [Wrapping/Python/vtk]
 
 Wrapping/Python/vtk/:

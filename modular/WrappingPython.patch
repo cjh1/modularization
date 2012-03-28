@@ -1,0 +1,29 @@
+diff --git a/Wrapping/Python/vtkPythonAppInit.cxx b/Wrapping/Python/vtkPythonAppInit.cxx
+index cd64455..eb4d80b 100644
+--- a/Wrapping/Python/vtkPythonAppInit.cxx
++++ b/Wrapping/Python/vtkPythonAppInit.cxx
+@@ -24,12 +24,6 @@
+ #include "vtkVersion.h"
+ #include "Wrapping/Python/vtkPythonAppInitConfigure.h"
+ 
+-#if defined(CMAKE_INTDIR)
+-# define VTK_PYTHON_LIBRARY_DIR VTK_PYTHON_LIBRARY_DIR_BUILD "/" CMAKE_INTDIR
+-#else
+-# define VTK_PYTHON_LIBRARY_DIR VTK_PYTHON_LIBRARY_DIR_BUILD
+-#endif
+-
+ #include <sys/stat.h>
+ 
+ #include <string>
+diff --git a/Wrapping/Python/vtkPythonAppInitConfigure.h.in b/Wrapping/Python/vtkPythonAppInitConfigure.h.in
+index 96aaa25..198db75 100644
+--- a/Wrapping/Python/vtkPythonAppInitConfigure.h.in
++++ b/Wrapping/Python/vtkPythonAppInitConfigure.h.in
+@@ -1,6 +1,6 @@
+ #ifndef __vtkPythonAppInitConfigure_h
+ #define __vtkPythonAppInitConfigure_h
+ 
+-#define VTK_PYTHON_LIBRARY_DIR_BUILD "@LIBRARY_OUTPUT_PATH@"
++#define VTK_PYTHON_LIBRARY_DIR "@LIBRARY_OUTPUT_PATH@"
+ 
+ #endif
