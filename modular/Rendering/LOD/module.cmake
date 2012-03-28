@@ -1,6 +1,6 @@
 vtk_module(vtkRenderingLOD
   DEPENDS
-	vtkRenderingCore
-	vtkTestingRendering
-	vtkFiltersCore
+  vtkRenderingCore
+  vtkTestingRendering
+  vtkFiltersModeling
   DEFAULT ON)
