@@ -3576,8 +3576,6 @@ Graphics/vtkMergeFields.cxx:
 Graphics/vtkMergeFields.h:
 Graphics/vtkMergeFilter.cxx:
 Graphics/vtkMergeFilter.h:
-Graphics/vtkOutlineFilter.cxx:
-Graphics/vtkOutlineFilter.h:
 Graphics/vtkPointDataToCellData.cxx:
 Graphics/vtkPointDataToCellData.h:
 Graphics/vtkPolyDataConnectivityFilter.cxx:
@@ -3811,6 +3809,8 @@ Graphics/vtkGraphGeodesicPath.cxx:
 Graphics/vtkGraphGeodesicPath.h:
 Graphics/vtkQuadRotationalExtrusionFilter.cxx:
 Graphics/vtkQuadRotationalExtrusionFilter.h:
+Graphics/vtkOutlineFilter.cxx:
+Graphics/vtkOutlineFilter.h:
 
 [Filters/Modeling/Testing/Cxx]
 
