@@ -91,7 +91,7 @@ if(VTK_USE_TK)
 endif(VTK_USE_TK)
 
 # Setup install location for vtk tcl scripts.
-set(VTK_TCL_INSTALL_DIR ${VTK_INSTALL_TCL_DIR}/tcl)
+set(VTK_TCL_INSTALL_DIR ${VTK_INSTALL_LIBRARY_DIR}/tcl)
 
 if(VTK_INSTALL_RUNTIME AND VTK_BUILD_FORWARDING_EXECUTABLES)
   install(TARGETS vtk
@@ -219,7 +219,7 @@ configure_file(${VTK_SOURCE_DIR}/Wrapping/Tcl/pkgIndex.tcl.in
 IF(VTK_INSTALL_RUNTIME)
   INSTALL(FILES
     ${VTK_BINARY_DIR}/Wrapping/Tcl/Install/Hide/pkgIndex.tcl
-    DESTINATION ${VTK_INSTALL_TCL_DIR_CM24}
+    DESTINATION ${VTK_INSTALL_TCL_DIR}
     COMPONENT RuntimeLibraries)
 ENDIF()
 
