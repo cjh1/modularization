@@ -3095,7 +3095,7 @@ Infovis/Testing/Cxx/TestBoostBetweennessClustering.cxx:
 Infovis/Testing/Cxx/TestBoostBrandesCentrality.cxx:<ignore>
 Infovis/Testing/Cxx/TestBoostExtractLargestComponent.cxx:
 Infovis/Testing/Cxx/TestBoostSplitTableField.cxx:
-
+ 
 [IO/Infovis]
 
 modular/IO/Infovis/CMakeLists.txt:
@@ -3132,6 +3132,9 @@ Infovis/Testing/Cxx/TestTulipReaderProperties.cxx:
 
 
 [Infovis/NeedAHome]
+
+modular/Infovis/NeedAHome/CMakeLists.txt:
+modular/Infovis/NeedAHome/module.cmake:
 
 Infovis/vtkComputeHistogram2DOutliers.h:
 Infovis/vtkComputeHistogram2DOutliers.cxx:
@@ -3182,14 +3185,13 @@ Views/vtkRenderViewBase.h:
 Views/vtkRenderViewBase.cxx:
 Views/vtkView.h:
 Views/vtkView.cxx:
-Views/vtkViewUpdater.h:
-Views/vtkViewUpdater.cxx:
-Views/vtkRenderView.h:
-Views/vtkRenderView.cxx:
 Rendering/vtkViewTheme.cxx:
 Rendering/vtkViewTheme.h:
 
 [Views/Infovis]
+
+modular/Views/Infovis/CMakeLists.txt:
+modular/Views/Infovis/module.cmake:
 
 Infovis/vtkApplyColors.h:
 Infovis/vtkApplyColors.cxx:
@@ -3231,6 +3233,10 @@ Views/vtkTreeMapView.h:
 Views/vtkTreeMapView.cxx:
 Views/vtkTreeRingView.h:
 Views/vtkTreeRingView.cxx:
+Views/vtkViewUpdater.h:
+Views/vtkViewUpdater.cxx:
+Views/vtkRenderView.h:
+Views/vtkRenderView.cxx:
 
 [Geovis/Core]
 
@@ -3816,6 +3822,8 @@ Graphics/vtkQuadRotationalExtrusionFilter.cxx:
 Graphics/vtkQuadRotationalExtrusionFilter.h:
 Graphics/vtkOutlineFilter.cxx:
 Graphics/vtkOutlineFilter.h:
+Graphics/vtkSectorSource.cxx:
+Graphics/vtkSectorSource.h:
 
 [Filters/Modeling/Testing/Cxx]
 
@@ -3958,8 +3966,6 @@ Graphics/vtkRectangularButtonSource.cxx:
 Graphics/vtkRectangularButtonSource.h:
 Graphics/vtkRegularPolygonSource.cxx:
 Graphics/vtkRegularPolygonSource.h:
-Graphics/vtkSectorSource.cxx:
-Graphics/vtkSectorSource.h:
 Graphics/vtkSelectionSource.cxx:
 Graphics/vtkSelectionSource.h:
 Graphics/vtkSphereSource.cxx:
@@ -4846,6 +4852,8 @@ Rendering/vtkInteractorStyleUser.cxx:
 Rendering/vtkInteractorStyleUser.h:
 Rendering/vtkInteractorStyleSwitch.cxx:
 Rendering/vtkInteractorStyleSwitch.h:
+Rendering/vtkParallelCoordinatesInteractorStyle.cxx:
+Rendering/vtkParallelCoordinatesInteractorStyle.h:
 
 [Rendering/Annotation]
 modular/Rendering/Annotation/module.cmake:
@@ -4891,8 +4899,6 @@ Hybrid/vtkPolarAxesActor.cxx:
 Hybrid/vtkPolarAxesActor.h:
 Rendering/vtkParallelCoordinatesActor.cxx:
 Rendering/vtkParallelCoordinatesActor.h:
-Rendering/vtkParallelCoordinatesInteractorStyle.cxx:
-Rendering/vtkParallelCoordinatesInteractorStyle.h:
 
 [Rendering/Annotation/Testing/Cxx]
 
