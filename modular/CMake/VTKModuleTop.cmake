@@ -190,6 +190,8 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
   
   if(NOT ${_module}_IS_TEST)
     init_module_vars()
+  else()
+    set(vtk-module ${${_module}_TESTS_FOR})
   endif()
   
   include("${${_module}_SOURCE_DIR}/vtk-module-init.cmake" OPTIONAL)
