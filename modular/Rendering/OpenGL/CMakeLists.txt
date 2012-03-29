@@ -368,7 +368,7 @@ if(VTK_USE_X)
 else()
   set(define_use_x 0)
 endif()
-set(EXPORT_CODE "#define VTK_USE_X ${define_use_x}")
+set(vtkRenderingOpenGL_EXPORT_CODE "#define VTK_USE_X ${define_use_x}")
 
 vtk_module_library(vtkRenderingOpenGL ${Kit_SRCS})
 target_link_libraries(vtkRenderingOpenGL ${OPENGL_LIBRARIES} ${extra_libs})

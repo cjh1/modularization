@@ -51,6 +51,7 @@
 # called somelib_export.h containing the macros SOMELIB_EXPORT, SOMELIB_NO_EXPORT,
 # SOMELIB_DEPRECATED, SOMELIB_DEPRECATED_EXPORT and SOMELIB_DEPRECATED_NO_EXPORT.
 # The resulting file should be installed with other headers in the library.
+# Set variable <LIBRARY_TARGET>_EXPORT_CODE to specify custom content.
 #
 # The BASE_NAME argument can be used to override the file name and the names
 # used for the macros
@@ -312,6 +313,11 @@ macro(_DO_GENERATE_EXPORT_HEADER TARGET_LIBRARY)
   endif()
   if(_GEH_STATIC_DEFINE)
     set(STATIC_DEFINE ${_GEH_PREFIX_NAME}${_GEH_STATIC_DEFINE})
+  endif()
+  if(DEFINED ${TARGET_LIBRARY}_EXPORT_CODE)
+    set(EXPORT_CODE "${${TARGET_LIBRARY}_EXPORT_CODE}")
+  else()
+    set(EXPORT_CODE "")
   endif()
 
   if(_GEH_DEFINE_NO_DEPRECATED)
