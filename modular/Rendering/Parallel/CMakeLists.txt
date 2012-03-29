@@ -1,4 +1,4 @@
-include (FindMPI)
+find_package(MPI)
 include_directories(${MPI_INCLUDE_PATH})
 
 set(Kit_SRCS
@@ -17,4 +17,10 @@ set(Kit_SRCS
   vtkSynchronizedRenderWindows.cxx
   vtkTreeCompositer.cxx
   )
+
+set_source_files_properties(
+  vtkParallelRenderManager
+  ABSTRACT
+  )
+
 vtk_module_library(vtkRenderingParallel ${Kit_SRCS})
