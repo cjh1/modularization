@@ -132,7 +132,7 @@ endmacro()
 
 macro(vtk_module_test)
   include(../../module.cmake) # Load module meta-data
-  set(_test_name ${vtk-module}-Cxx)
+  set(_test_name ${vtk-module}-Test-Cxx)
   set(${_test_name}_LIBRARIES "")
   vtk_module_use(${VTK_MODULE_${_test_name}_DEPENDS})
 
