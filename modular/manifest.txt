@@ -6638,7 +6638,6 @@ modular/Testing/Core/CMakeLists.txt:
 
 Common/Testing/Cxx/vtkTestUtilities.h:
 Common/Testing/Cxx/vtkTestDriver.h:
-Rendering/Testing/Cxx/vtkRegressionTestImage.h:
 Common/Testing/Cxx/vtkTestingColors.h:
 Common/Testing/HeaderTesting.py:
 
@@ -6648,7 +6647,7 @@ modular/Testing/Rendering/module.cmake:
 modular/Testing/Rendering/CMakeLists.txt:
 modular/Testing/Rendering/vtkTestingObjectFactory.cmake:
 modular/Testing/Rendering/vtkTestingInteractor.h:
-
+Rendering/Testing/Cxx/vtkRegressionTestImage.h:
 Rendering/vtkTesting.cxx:
 Rendering/vtkTesting.h:
 Rendering/vtkTestingInteractor.cxx:

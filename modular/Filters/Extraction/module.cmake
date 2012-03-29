@@ -11,4 +11,5 @@ vtk_module(vtkFiltersExtraction
   TEST_DEPENDS
     vtkRenderingCore
     vtkTestingRendering
+    vtkInteractionStyle
   DEFAULT ON)
