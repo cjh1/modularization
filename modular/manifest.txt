@@ -610,11 +610,15 @@ Utilities/.gitattributes:
 
 
 [Common/Core]
+
+modular/Common/Core/vtkToolkits.h.in:
+modular/Common/Core/vtkConfigure.h.in:
 modular/Common/Core/CMakeLists.txt:
 modular/Common/Core/module.cmake:
 modular/Common/Core/vtkOStreamWrapper.h:
-vtkToolkits.h.in:
-vtkConfigure.h.in:
+
+vtkToolkits.h.in:<ignore>
+vtkConfigure.h.in:<ignore>
 Common/vtkPythonCommand.cxx:
 Common/vtkPythonCommand.h:
 Common/CaseFolding.txt:
@@ -5321,6 +5325,8 @@ Rendering/vtkQuadricLODActor.h:
 modular/Rendering/OpenGL/CMakeLists.txt:
 modular/Rendering/OpenGL/module.cmake:
 
+modular/Rendering/OpenGL/vtkRenderingOpenGLConfigure.h.in:
+
 Rendering/vtkOpenGL.h:
 Rendering/vtkOpenGLActor.cxx:
 Rendering/vtkOpenGLActor.h:
@@ -5903,6 +5909,9 @@ VolumeRendering/Testing/Cxx/ZsweepConcavities.cxx:<ignore>
 VolumeRendering/Testing/Cxx/volProt.cxx:<ignore>
 
 [GUISupport/Qt]
+
+modular/GUISupport/Qt/CMakeLists.txt:<ignore>
+modular/GUISupport/Qt/module.cmake:<ignore>
 
 GUISupport/Qt/CTestCustom.ctest.in:
 GUISupport/Qt/PluginInstall.cmake.in:
