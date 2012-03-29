@@ -7,4 +7,5 @@ vtk_module(vtkIOSQL
     vtksys
   TEST_DEPENDS
     vtkTestingIOSQL
+    vtkTestingCore
   DEFAULT ON)

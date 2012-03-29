@@ -10,5 +10,6 @@ vtk_module(vtkFiltersSources
     vtkFiltersGeneral
   TEST_DEPENDS
     vtkTestingCore
+    vtkRenderingCore
     vtkIOXML
   DEFAULT ON)

@@ -16,4 +16,6 @@ vtk_module(vtkRenderingCore
     vtkIOImage
     vtkIOXML
     #vtkInteractionSelection
+  TEST_DEPENDS
+    vtkTestingCore
   DEFAULT ON)

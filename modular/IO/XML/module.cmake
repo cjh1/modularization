@@ -12,5 +12,6 @@ vtk_module(vtkIOXML
     vtkTestingCore
     vtkImagingCore
     vtkFiltersSources
+    vtkInfovisCore
     vtkFiltersCore
   DEFAULT ON)

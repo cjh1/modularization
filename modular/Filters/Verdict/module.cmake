@@ -4,4 +4,5 @@ vtk_module(vtkFiltersVerdict
     vtkverdict
   TEST_DEPENDS
     vtkIOGeometry
+    vtkTestingCore
   DEFAULT ON)
