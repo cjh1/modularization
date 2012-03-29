@@ -6144,8 +6144,8 @@ Parallel/vtkXMLPMultiBlockDataWriter.h:
 
 [IO/ParallelMPI]
 
-modular/IO/Parallel/CMakeLists.txt:
-modular/IO/Parallel/module.cmake:
+modular/IO/ParallelMPI/CMakeLists.txt:
+modular/IO/ParallelMPI/module.cmake:
 
 Parallel/vtkMPIImageReader.cxx:
 Parallel/vtkMPIImageReader.h:
