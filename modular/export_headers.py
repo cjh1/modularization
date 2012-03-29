@@ -59,6 +59,6 @@ modules = [m for m in modules if not m.startswith(('ThirdParty','Utilities'))]
 for module in modules:
   moduleName = "vtk" + module.replace("/", "")
   exportName = moduleName.upper() + "_EXPORT"
-  searchReplace(module, searchText, exportName, moduleName + "Export.h")
+  searchReplace(module, searchText, exportName, moduleName + "Module.h")
 
 #searchReplace("Common/Core", searchText, replaceText)

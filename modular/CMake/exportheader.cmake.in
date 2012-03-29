@@ -32,4 +32,6 @@
 # define @NO_DEPRECATED_MACRO_NAME@
 #endif
 
+@EXPORT_CODE@
+
 #endif

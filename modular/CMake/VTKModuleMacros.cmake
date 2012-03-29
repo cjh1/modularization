@@ -264,7 +264,7 @@ function(vtk_module_library name)
   endforeach()
 
   # Generate the export macro header for symbol visibility/Windows DLL declspec
-  generate_export_header(${vtk-module} EXPORT_FILE_NAME ${vtk-module}Export.h)
+  generate_export_header(${vtk-module} EXPORT_FILE_NAME ${vtk-module}Module.h)
   add_compiler_export_flags(my_abi_flags)
   set_property(TARGET ${vtk-module} APPEND
     PROPERTY COMPILE_FLAGS "${VTK_ABI_CXX_FLAGS}")
@@ -284,7 +284,7 @@ function(vtk_module_library name)
         endif()
       endif()
     endforeach()
-    list(APPEND _hdrs "${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}Export.h")
+    list(APPEND _hdrs "${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}Module.h")
     if(_hdrs)
       list(REMOVE_DUPLICATES _hdrs)
       install(FILES ${_hdrs}

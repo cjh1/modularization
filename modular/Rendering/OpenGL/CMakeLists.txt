@@ -362,6 +362,14 @@ configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.h.in
 configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.cxx.in
   ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.cxx)
 
+# Set up some of the module specific preprocessor definitions.
+if(VTK_USE_X)
+  set(define_use_x 1)
+else()
+  set(define_use_x 0)
+endif()
+set(EXPORT_CODE "#define VTK_USE_X ${define_use_x}")
+
 vtk_module_library(vtkRenderingOpenGL ${Kit_SRCS})
 target_link_libraries(vtkRenderingOpenGL ${OPENGL_LIBRARIES} ${extra_libs})
 if(VTK_USE_X)
