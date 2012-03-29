@@ -6108,8 +6108,10 @@ Parallel/vtkPYoungsMaterialInterface.cxx:
 Parallel/vtkPYoungsMaterialInterface.h:
 
 
-
 [IO/Parallel]
+
+modular/IO/Parallel/CMakeLists.txt:
+modular/IO/Parallel/module.cmake:
 
 Parallel/vtkEnSightWriter.cxx:
 Parallel/vtkEnSightWriter.h:
@@ -6141,6 +6143,9 @@ Parallel/vtkXMLPMultiBlockDataWriter.cxx:
 Parallel/vtkXMLPMultiBlockDataWriter.h:
 
 [IO/ParallelMPI]
+
+modular/IO/Parallel/CMakeLists.txt:
+modular/IO/Parallel/module.cmake:
 
 Parallel/vtkMPIImageReader.cxx:
 Parallel/vtkMPIImageReader.h:
