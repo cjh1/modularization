@@ -5849,7 +5849,6 @@ VolumeRendering/vtkVolumeRayCastSpaceLeapingImageFilter.cxx:
 VolumeRendering/vtkVolumeRayCastSpaceLeapingImageFilter.h:
 VolumeRendering/vtkVolumeRenderingFactory.cxx:
 VolumeRendering/vtkVolumeRenderingFactory.h:
-VolumeRendering/vtkVolumeRenderingToolkit.h.in:
 VolumeRendering/vtkVolumeTextureMapper2D.cxx:
 VolumeRendering/vtkVolumeTextureMapper2D.h:
 VolumeRendering/vtkVolumeTextureMapper3D.cxx:

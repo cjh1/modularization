@@ -133,8 +133,4 @@ foreach(file ${shader_files})
   set_source_files_properties(${file_we} WRAP_EXCLUDE)
 endforeach()
 
-# This configured file is here for "future use", and should probably be removed
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/vtkVolumeRenderingToolkit.h.in
-  ${CMAKE_CURRENT_BINARY_DIR}/vtkVolumeRenderingToolkit.h @ONLY)
-
 vtk_module_library(vtkRenderingVolume ${Kit_SRCS})

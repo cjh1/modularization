@@ -1,4 +1,4 @@
-include (FindMPI)
+find_package(MPI)
 include_directories(${MPI_INCLUDE_PATH})
 
 set(Kit_SRCS
@@ -9,12 +9,12 @@ set(Kit_SRCS
   )
 
 set_source_files_properties(
-  vtkMPI.h
+  vtkMPI
   HEADER_FILE_ONLY
   )
 
 set_source_files_properties(
-  vtkMPI.h
+  vtkMPI
   WRAP_EXCLUDE
   )
 
