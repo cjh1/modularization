@@ -6016,6 +6016,9 @@ Parallel/vtkPBGLVertexColoring.h:
 
 [Filters/Parallel]
 
+modular/Filters/Parallel/CMakeLists.txt:
+modular/Filters/Parallel/module.cmake:
+
 Parallel/vtkBlockDistribution.h:
 Parallel/vtkCollectGraph.cxx:
 Parallel/vtkCollectGraph.h:
@@ -6144,6 +6147,9 @@ Parallel/vtkMPIImageReader.h:
 
 [Rendering/Parallel]
 
+modular/Rendering/Parallel/CMakeLists.txt:
+modular/Rendering/Parallel/module.cmake:
+
 Parallel/vtkClientServerCompositePass.cxx:
 Parallel/vtkClientServerCompositePass.h:
 Parallel/vtkClientServerSynchronizedRenderers.cxx:
@@ -6206,6 +6212,9 @@ modular/ParallelCore.patch:<ignore>
 <patch>: ParallelCore.patch
 
 [Parallel/MPI]
+
+modular/Parallel/MPI/CMakeLists.txt:
+modular/Parallel/MPI/module.cmake:
 
 Parallel/vtkMPICommunicator.cxx:
 Parallel/vtkMPICommunicator.h:
