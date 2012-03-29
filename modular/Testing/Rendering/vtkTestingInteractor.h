@@ -24,7 +24,7 @@
 #ifndef __vtkTestingInteractor_h
 #define __vtkTestingInteractor_h
 
-#include "vtkTestingRenderingExport.h" // For export macro
+#include "vtkTestingRenderingModule.h" // For export macro
 #include "vtkRenderWindowInteractor.h"
 #include "vtkObjectFactoryCollection.h"
 

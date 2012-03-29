@@ -7,7 +7,7 @@ index 661afc1..df96c15 100644
  #include "vtkCommand.h"
  #include "vtkStdString.h"
 -
-+#include "vtkWrappingJavaCoreExport.h"
++#include "vtkWrappingJavaCoreModule.h"
  
  extern JNIEXPORT jlong vtkJavaGetId(JNIEnv *env,jobject obj);
  

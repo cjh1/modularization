@@ -6,7 +6,7 @@ index 4487926..6e96356 100644
       PURPOSE.  See the above copyright notice for more information.
 
  =========================================================================*/
-+#include "vtkCommonMiscExport.h" // For export macro
++#include "vtkCommonMiscModule.h" // For export macro
  #include "vtkHeap.h"
  #include "vtkObjectFactory.h"
 

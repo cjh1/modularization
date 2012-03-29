@@ -5,7 +5,7 @@ include(vtkWrapPython)
 include(GenerateExportHeader)
 generate_export_header(vtkCommonCorePythonD
   EXPORT_MACRO_NAME VTK_COMMON_PYTHON_EXPORT
-  EXPORT_FILE_NAME vtkCommonCorePythonExport.h)
+  EXPORT_FILE_NAME vtkCommonCorePythonModule.h)
 
 set(PythonCore_SRCS
   vtkPythonArgs.cxx

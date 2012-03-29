@@ -127,7 +127,7 @@ foreach(file ${shader_files})
     OUTPUT ${res} ${resh}
     DEPENDS ${src} vtkEncodeString
     COMMAND vtkEncodeString
-    ARGS ${res} ${src} ${file_we} --build-header VTKRENDERINGVOLUME_EXPORT vtkRenderingVolumeExport.h
+    ARGS ${res} ${src} ${file_we} --build-header VTKRENDERINGVOLUME_EXPORT vtkRenderingVolumeModule.h
     )
   list(APPEND Kit_SRCS ${res})
   set_source_files_properties(${file_we} WRAP_EXCLUDE)

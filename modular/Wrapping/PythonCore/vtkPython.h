@@ -15,8 +15,8 @@
 #ifndef __vtkPython_h
 #define __vtkPython_h
 
-#include "vtkWrappingPythonCoreExport.h" // For export macro
-#include "vtkCommonCorePythonExport.h"
+#include "vtkWrappingPythonCoreModule.h" // For export macro
+#include "vtkCommonCorePythonModule.h"
 #include "vtkPythonConfigure.h"
 #include "vtkABI.h"
 
