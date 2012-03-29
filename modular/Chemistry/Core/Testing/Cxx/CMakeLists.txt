@@ -25,7 +25,7 @@ endif()
 
 # Use the testing object factory, to reduce boilerplate code in tests.
 include("${VTK_SOURCE_DIR}/Testing/Rendering/vtkTestingObjectFactory.cmake")
-vtk_add_test_executable(${vtk-module}CxxTests ${Tests})
+vtk_module_test_executable(${vtk-module}CxxTests ${Tests})
 
 set(TestsToRun ${Tests})
 remove(TestsToRun CxxTests.cxx)

@@ -26,7 +26,7 @@ foreach(f ${meta})
   set(${vtk-module}_BINARY_DIR ${VTK_BINARY_DIR}/${${vtk-module}_BASE})
   if(BUILD_TESTING)
     # Only add tests for languages that are wrapped.
-    foreach(_lang Cxx ${_test_languages})
+    foreach(_lang ${_test_languages})
       if(EXISTS ${${vtk-module}_SOURCE_DIR}/Testing/${_lang}/CMakeLists.txt)
         vtk_add_test_module(${_lang})
       endif()
@@ -190,8 +190,6 @@ foreach(vtk-module ${VTK_MODULES_ENABLED})
   
   if(NOT ${_module}_IS_TEST)
     init_module_vars()
-  else()
-    vtk_module_test(${_module})
   endif()
   
   include("${${_module}_SOURCE_DIR}/vtk-module-init.cmake" OPTIONAL)

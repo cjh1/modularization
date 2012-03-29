@@ -4,7 +4,7 @@ if(VTK_ODBC_TEST_DSN)
     EXTRA_INCLUDE vtkTestDriver.h
     )
 
-  vtk_add_test_executable(${vtk-module}CxxTests ${Tests})
+  vtk_module_test_executable(${vtk-module}CxxTests ${Tests})
 
   set(TestsToRun ${Tests})
   list(REMOVE_ITEM TestsToRun ${vtk-module}CxxTests.cxx)

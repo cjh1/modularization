@@ -145,7 +145,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/TestFBOInclude.h.in
 # This is used by TestFBO. Using a separate processes makes is possible to
 # avoid issues to OpenGL implementations segfaulting etc. from affecting the
 # test.
-vtk_add_test_executable(TestFBOImplementation
+vtk_module_test_executable(TestFBOImplementation
   TestFBOImplementation.cxx)
 target_link_libraries(TestFBOImplementation
   vtkRenderingOpenGL ${OPENGL_gl_LIBRARY})
@@ -154,7 +154,7 @@ if(VTK_OPENGL_HAS_OSMESA AND OSMESA_LIBRARY)
   target_link_libraries(TestFBOImplementation ${OSMESA_LIBRARY})
 endif()
 
-vtk_add_test_executable(${vtk-module}CxxTests ${Tests})
+vtk_module_test_executable(${vtk-module}CxxTests ${Tests})
 
 if(VTK_OPENGL_HAS_OSMESA AND OSMESA_LIBRARY)
   TARGET_LINK_LIBRARIES(${vtk-module}CxxTests ${OSMESA_LIBRARY})

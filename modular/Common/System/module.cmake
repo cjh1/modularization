@@ -1,5 +1,7 @@
 vtk_module(vtkCommonSystem
   DEPENDS
     vtkCommonCore
-    vtksys
+    vtksys 
+  TEST_DEPENDS
+   vtkTestingCore
   DEFAULT ON)
