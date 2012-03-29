@@ -1,7 +1,5 @@
-if(VTK_USE_MPI)
-  include (FindMPI)
-  include_directories(${MPI_INCLUDE_PATH})
-endif()
+include (FindMPI)
+include_directories(${MPI_INCLUDE_PATH})
 
 set(Kit_SRCS
   vtkCollectGraph.cxx

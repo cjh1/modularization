@@ -255,7 +255,6 @@ SET(VTK_HAS_EXODUS 1)
 #-----------------------------------------------------------------------------
 # Provide a few configuration options.
 OPTION(BUILD_EXAMPLES "Build VTK examples." OFF)
-OPTION(VTK_USE_MPI "Use Message Passing Interface (MPI) library for parallel support." OFF)
 
 IF(VTK_USE_MPI)
   FIND_PACKAGE(MPI)
