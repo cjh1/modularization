@@ -9,6 +9,7 @@ vtk_module(vtkIOXML
     vtkexpat
     vtksys
   TEST_DEPENDS
+    vtkTestingCore
     vtkImagingCore
     vtkFiltersSources
     vtkFiltersCore

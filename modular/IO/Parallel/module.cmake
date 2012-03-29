@@ -6,4 +6,6 @@ vtk_module(vtkIOParallel
   vtkIONetCDF
   vtkexodusII
   vtkVPIC
+  TEST_DEPENDS
+  vtkTestingCore
   DEFAULT ON)

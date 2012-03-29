@@ -5,4 +5,6 @@ vtk_module(vtkIOCore
     vtkCommonMisc
     vtkzlib
     vtksys
+  TEST_DEPENDS
+   vtkTestingCore
   DEFAULT ON)

@@ -9,5 +9,6 @@ vtk_module(vtkFiltersSources
     vtkFiltersCore
     vtkFiltersGeneral
   TEST_DEPENDS
+    vtkTestingCore
     vtkIOXML
   DEFAULT ON)

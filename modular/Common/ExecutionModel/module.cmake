@@ -7,6 +7,7 @@ vtk_module(vtkCommonExecutionModel
   COMPILE_DEPENDS
     vtkCommonMisc
   TEST_DEPENDS
+    vtkTestingCore
     vtkIOCore
     vtkIOGeometry
     vtkFiltersExtraction

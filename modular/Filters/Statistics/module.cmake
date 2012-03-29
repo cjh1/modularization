@@ -7,4 +7,6 @@ vtk_module(vtkFiltersStatistics
     vtkCommonTransforms
     vtkCommonMisc
     vtkalglib
+   TEST_DEPENDS
+    vtkTestingCore
   DEFAULT ON)
