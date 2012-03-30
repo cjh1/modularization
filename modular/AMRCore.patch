@@ -1,0 +1,78 @@
+diff --git a/AMR/Core/vtkAMREnzoParticlesReader.cxx b/AMR/Core/vtkAMREnzoParticlesReader.cxx
+index f588aab..3512f2d 100644
+--- a/AMR/Core/vtkAMREnzoParticlesReader.cxx
++++ b/AMR/Core/vtkAMREnzoParticlesReader.cxx
+@@ -27,7 +27,7 @@
+ #include "vtksys/SystemTools.hxx"
+ 
+ #define H5_USE_16_API
+-#include <hdf5.h>      // for the HDF data loading engine
++#include "vtk_hdf5.h"      // for the HDF data loading engine
+ 
+ #include "vtkAMREnzoReaderInternal.h"
+ 
+diff --git a/AMR/Core/vtkAMREnzoReader.cxx b/AMR/Core/vtkAMREnzoReader.cxx
+index 2f26eee..f8931f9 100644
+--- a/AMR/Core/vtkAMREnzoReader.cxx
++++ b/AMR/Core/vtkAMREnzoReader.cxx
+@@ -37,7 +37,7 @@
+ #include "vtkUnsignedShortArray.h"
+ 
+ #define H5_USE_16_API
+-#include <hdf5.h>
++#include "vtk_hdf5.h"
+ 
+ #include <sstream>
+ #include <vector>
+diff --git a/AMR/Core/vtkAMREnzoReaderInternal.cxx b/AMR/Core/vtkAMREnzoReaderInternal.cxx
+index e2e4bde..86b233c 100644
+--- a/AMR/Core/vtkAMREnzoReaderInternal.cxx
++++ b/AMR/Core/vtkAMREnzoReaderInternal.cxx
+@@ -15,7 +15,7 @@
+ #include "vtkAMREnzoReaderInternal.h"
+ 
+ #define H5_USE_16_API
+-#include <hdf5.h>        // for the HDF5 library
++#include "vtk_hdf5.h"        // for the HDF5 library
+ 
+ #include "vtksys/SystemTools.hxx"
+ #include "vtkCellData.h"
+diff --git a/AMR/Core/vtkAMRFlashParticlesReader.cxx b/AMR/Core/vtkAMRFlashParticlesReader.cxx
+index 1f9b72f..da78c5f 100644
+--- a/AMR/Core/vtkAMRFlashParticlesReader.cxx
++++ b/AMR/Core/vtkAMRFlashParticlesReader.cxx
+@@ -25,7 +25,7 @@
+ #include "vtkAMRFlashReaderInternal.h"
+ 
+ #define H5_USE_16_API
+-#include <hdf5.h>      // for the HDF data loading engine
++#include "vtk_hdf5.h"      // for the HDF data loading engine
+ 
+ #include <vector>
+ #include <cassert>
+diff --git a/AMR/Core/vtkAMRFlashReader.cxx b/AMR/Core/vtkAMRFlashReader.cxx
+index af5b47a..7d2b5a6 100644
+--- a/AMR/Core/vtkAMRFlashReader.cxx
++++ b/AMR/Core/vtkAMRFlashReader.cxx
+@@ -37,7 +37,7 @@
+ #include <map>
+ 
+ #define H5_USE_16_API
+-#include <hdf5.h>
++#include "vtk_hdf5.h"
+ 
+ #include "vtkAMRFlashReaderInternal.h"
+ 
+diff --git a/AMR/Core/vtkAMRFlashReaderInternal.h b/AMR/Core/vtkAMRFlashReaderInternal.h
+index 61d2736..b2746fd 100644
+--- a/AMR/Core/vtkAMRFlashReaderInternal.h
++++ b/AMR/Core/vtkAMRFlashReaderInternal.h
+@@ -39,7 +39,7 @@
+ #include "vtkByteSwap.h"
+ 
+ #define H5_USE_16_API
+-#include <hdf5.h>
++#include "vtk_hdf5.h"
+ 
+ //==============================================================================
+ //            I N T E R N A L   F L A S H     R E A D E R

@@ -6592,6 +6592,7 @@ Chemistry/Testing/Cxx/TestVDWSpheres.cxx:
 
 modular/AMR/Core/CMakeLists.txt:
 modular/AMR/Core/module.cmake: 
+modular/AMRCore.patch:<ignore>
 
 AMR/CMakeLists.txt:<ignore>
 AMR/vtkAMRBaseParticlesReader.cxx:
@@ -6625,6 +6626,7 @@ AMR/vtkAMRToMultiBlockFilter.h:
 Parallel/vtkAMRUtilities.cxx:
 Parallel/vtkAMRUtilities.h:
 
+<patch>:AMRCore.patch
 
 #[AMR/Parallel]
 
