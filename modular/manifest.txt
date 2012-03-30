@@ -924,7 +924,7 @@ Common/Testing/Cxx/TestArrayAPIConvenience.cxx:
 Common/Testing/Cxx/TestArrayAPIDense.cxx:
 Common/Testing/Cxx/TestArrayAPISparse.cxx:
 Common/Testing/Cxx/TestArrayBool.cxx:
-Common/Testing/Cxx/TestArrayCasting.cxx:<ignore>
+Common/Testing/Cxx/TestArrayCasting.cxx:
 Common/Testing/Cxx/TestArrayExtents.cxx:
 Common/Testing/Cxx/TestArrayInterpolationDense.cxx:
 Common/Testing/Cxx/TestArrayLookup.cxx:
@@ -933,11 +933,11 @@ Common/Testing/Cxx/TestArraySize.cxx:
 Common/Testing/Cxx/TestArrayUserTypes.cxx:
 Common/Testing/Cxx/TestArrayVariants.cxx:
 Common/Testing/Cxx/TestConditionVariable.cxx:
-Common/Testing/Cxx/TestCxxFeatures.cxx:<ignore>
+Common/Testing/Cxx/TestCxxFeatures.cxx:
 Common/Testing/Cxx/TestDataArray.cxx:
 Common/Testing/Cxx/TestDataArrayComponentNames.cxx:
 Common/Testing/Cxx/TestGarbageCollector.cxx:
-Common/Testing/Cxx/TestInstantiator.cxx:<ignore>
+Common/Testing/Cxx/TestInstantiator.cxx:
 Common/Testing/Cxx/TestMath.cxx:
 Common/Testing/Cxx/TestMinimalStandardRandomSequence.cxx:
 Common/Testing/Cxx/TestNew.cxx:
@@ -946,9 +946,9 @@ Common/Testing/Cxx/TestObservers.cxx:
 Common/Testing/Cxx/TestSmartPointer.cxx:
 Common/Testing/Cxx/TestSortDataArray.cxx:
 Common/Testing/Cxx/TestSparseArrayValidation.cxx:
-Common/Testing/Cxx/SystemInformation-cygcheck.sh:<ignore>
-Common/Testing/Cxx/SystemInformation.h.in:<ignore>
-Common/Testing/Cxx/TestSystemInformation.cxx:<ignore>
+Common/Testing/Cxx/SystemInformation-cygcheck.sh:
+Common/Testing/Cxx/SystemInformation.h.in:
+Common/Testing/Cxx/TestSystemInformation.cxx:
 Common/Testing/Cxx/TestUnicodeStringAPI.cxx:
 Common/Testing/Cxx/TestUnicodeStringArrayAPI.cxx:
 Common/Testing/Cxx/TestVariantComparison.cxx:
@@ -959,7 +959,7 @@ Common/Testing/Cxx/otherStringArray.cxx:
 Common/Testing/Cxx/vtkTestNewVar.cxx:
 Common/Testing/Cxx/vtkTestNewVar.h:
 # This file is a duplicate and should be deleted in new repo
-Graphics/Testing/Cxx/TestSortDataArray.cxx:<ignore>
+Graphics/Testing/Cxx/TestSortDataArray.cxx:
 
 Infovis/Testing/Cxx/TestVariant.cxx:
 Infovis/Testing/Cxx/TestVariantArray.cxx:
@@ -2125,11 +2125,11 @@ modular/IO/Image/Testing/Cxx/CMakeLists.txt:
 
 IO/Testing/Cxx/TestAVIWriter.cxx:
 
-IO/Testing/Cxx/TestFFMPEGWriter.cxx:<ignore>
-IO/Testing/Cxx/TestImageReader2Factory.cxx:<ignore>
+IO/Testing/Cxx/TestFFMPEGWriter.cxx:
+IO/Testing/Cxx/TestImageReader2Factory.cxx:
 IO/Testing/Cxx/TestMetaIO.cxx:
-IO/Testing/Cxx/TestMovieWriter.cxx:<ignore>
-IO/Testing/Cxx/TestOggTheoraWriter.cxx:<ignore>
+IO/Testing/Cxx/TestMovieWriter.cxx:
+IO/Testing/Cxx/TestOggTheoraWriter.cxx:
 
 [IO/Import]
 
@@ -2329,8 +2329,8 @@ IO/Testing/Cxx/SLACParticleReader.cxx:
 IO/Testing/Cxx/SLACReaderLinear.cxx:
 IO/Testing/Cxx/SLACReaderQuadratic.cxx:
 IO/Testing/Cxx/TestMPASReader.cxx:
-IO/Testing/Cxx/TestNetCDFCAMReader.cxx:<ignore>
-IO/Testing/Cxx/TestNetCDFPOPReader.cxx:<ignore>
+IO/Testing/Cxx/TestNetCDFCAMReader.cxx:
+IO/Testing/Cxx/TestNetCDFPOPReader.cxx:
 
 [IO/PLY]
 
@@ -2941,7 +2941,7 @@ Infovis/Testing/Cxx/ArraySparseArrayToTable.cxx:
 Infovis/Testing/Cxx/ArrayTableToSparseArray.cxx:
 Infovis/Testing/Cxx/ArrayToTable.cxx:
 Infovis/Testing/Cxx/ArrayTransposeMatrix.cxx:
-Infovis/Testing/Cxx/TestArrayNorm.cxx:<ignore>
+Infovis/Testing/Cxx/TestArrayNorm.cxx:
 Infovis/Testing/Cxx/TestCollapseVerticesByArray.cxx:
 Infovis/Testing/Cxx/TestConvexHull2D.cxx:
 Infovis/Testing/Cxx/TestDataObjectToTable.cxx:
@@ -2955,7 +2955,7 @@ Infovis/Testing/Cxx/TestStreamGraph.cxx:
 Infovis/Testing/Cxx/TestStringToNumeric.cxx:
 Infovis/Testing/Cxx/TestTableToArray.cxx:
 Infovis/Testing/Cxx/TestThresholdTable.cxx:
-Infovis/Testing/Cxx/TestTimePoint.cxx:<ignore>
+Infovis/Testing/Cxx/TestTimePoint.cxx:
 
 [Infovis/Layout]
 
@@ -3051,10 +3051,10 @@ Infovis/vtkTreeRingToPolyData.cxx:
 
 modular/Infovis/Layout/Testing/Cxx/CMakeLists.txt:
 
-Infovis/Testing/Cxx/TestAssignCoordinates.cxx:<ignore>
-Infovis/Testing/Cxx/TestChacoGraphReader.cxx:<ignore>
+Infovis/Testing/Cxx/TestAssignCoordinates.cxx:
+Infovis/Testing/Cxx/TestChacoGraphReader.cxx:
 Infovis/Testing/Cxx/TestCirclePackLayoutStrategy.cxx:
-Infovis/Testing/Cxx/TestCosmicTreeLayoutStrategy.cxx:<ignore>
+Infovis/Testing/Cxx/TestCosmicTreeLayoutStrategy.cxx:
 Infovis/Testing/Cxx/TestGraphLayoutStrategy.cxx:
 Infovis/Testing/Cxx/TestTreeMapLayoutStrategy.cxx:
 
@@ -3094,12 +3094,12 @@ Infovis/vtkBoostSplitTableField.cxx:
 
 modular/Infovis/BoostGraphAlgorithms/Testing/Cxx/CMakeLists.txt:
 
-Infovis/Testing/Cxx/BoostArrayLogWeighting.cxx:<ignore>
+Infovis/Testing/Cxx/BoostArrayLogWeighting.cxx:
 Infovis/Testing/Cxx/BoostArrayRandomSparseArraySource.cxx:
 Infovis/Testing/Cxx/TestBoostAdapter.cxx:
 Infovis/Testing/Cxx/TestBoostAlgorithms.cxx:
 Infovis/Testing/Cxx/TestBoostBetweennessClustering.cxx:
-Infovis/Testing/Cxx/TestBoostBrandesCentrality.cxx:<ignore>
+Infovis/Testing/Cxx/TestBoostBrandesCentrality.cxx:
 Infovis/Testing/Cxx/TestBoostExtractLargestComponent.cxx:
 Infovis/Testing/Cxx/TestBoostSplitTableField.cxx:
  
@@ -3133,8 +3133,8 @@ Infovis/vtkXMLTreeReader.cxx:
 
 modular/IO/Infovis/Testing/Cxx/CMakeLists.txt:
 
-Infovis/Testing/Cxx/TestTulipReader.cxx:<ignore>
-Infovis/Testing/Cxx/TestTulipReaderClusters.cxx:<ignore>
+Infovis/Testing/Cxx/TestTulipReader.cxx:
+Infovis/Testing/Cxx/TestTulipReaderClusters.cxx:
 Infovis/Testing/Cxx/TestTulipReaderProperties.cxx:
 
 
@@ -3676,7 +3676,7 @@ Common/vtkGhostArray.cxx:
 modular/Filters/Core/Testing/Cxx/CMakeLists.txt:
 
 Common/Testing/Cxx/TestGhostArray.cxx:
-Graphics/Testing/Cxx/TestAppendPolyData.cxx:<ignore>
+Graphics/Testing/Cxx/TestAppendPolyData.cxx:
 Graphics/Testing/Cxx/TestAppendSelection.cxx:
 Graphics/Testing/Cxx/TestArrayCalculator.cxx:
 Graphics/Testing/Cxx/TestAssignAttribute.cxx:
@@ -3756,11 +3756,11 @@ Filtering/vtkUniformGridGhostDataGenerator.h:
 
 modular/Filters/Geometry/Testing/Cxx/CMakeLists.txt:
 
-Filtering/Testing/Cxx/TestRectilinearGridPartitioner.cxx:<ignore>
-Filtering/Testing/Cxx/TestStructuredGridConnectivity.cxx:<ignore>
-Filtering/Testing/Cxx/TestStructuredGridGhostDataGenerator.cxx:<ignore>
-Filtering/Testing/Cxx/TestStructuredGridPartitioner.cxx:<ignore>
-Filtering/Testing/Cxx/TestUniformGridGhostDataGenerator.cxx:<ignore>
+Filtering/Testing/Cxx/TestRectilinearGridPartitioner.cxx:
+Filtering/Testing/Cxx/TestStructuredGridConnectivity.cxx:
+Filtering/Testing/Cxx/TestStructuredGridGhostDataGenerator.cxx:
+Filtering/Testing/Cxx/TestStructuredGridPartitioner.cxx:
+Filtering/Testing/Cxx/TestUniformGridGhostDataGenerator.cxx:
 
 Graphics/Testing/Cxx/TestExtractSurfaceNonLinearSubdivision.cxx:
 Graphics/Testing/Cxx/TestUnstructuredGridGeometryFilter.cxx:
@@ -4249,7 +4249,7 @@ Graphics/Testing/Cxx/TestGradientAndVorticity.cxx:
 Graphics/Testing/Cxx/TestIconGlyphFilterGravity.cxx:
 Graphics/Testing/Cxx/TestImageDataToPointSet.cxx:
 Graphics/Testing/Cxx/TestIntersectionPolyDataFilter.cxx:
-Graphics/Testing/Cxx/TestMultiBlock.cxx:<ignore>
+Graphics/Testing/Cxx/TestMultiBlock.cxx:
 Graphics/Testing/Cxx/TestQuadraturePoints.cxx:
 Graphics/Testing/Cxx/TestRectilinearGridToPointSet.cxx:
 Graphics/Testing/Cxx/TestReflectionFilter.cxx:
@@ -4407,7 +4407,7 @@ Hybrid/vtkBSplineTransform.h:
 
 modular/Filters/Hybrid/Testing/Cxx/CMakeLists.txt:
 
-Hybrid/Testing/Cxx/TestBSplineWarp.cxx:<ignore>
+Hybrid/Testing/Cxx/TestBSplineWarp.cxx:
 Hybrid/Testing/Cxx/TestPolyDataSilhouette.cxx:
 
 [Filters/Statistics]
@@ -4739,8 +4739,8 @@ modular/Interaction/Widgets/Testing/Cxx/CMakeLists.txt:
 
 Widgets/Testing/Cxx/BoxWidget.cxx:
 Widgets/Testing/Cxx/BoxWidget2.cxx:
-Widgets/Testing/Cxx/ImagePlaneWidget.cxx:<ignore>
-Widgets/Testing/Cxx/ScaledBoxWidget2.cxx:<ignore>
+Widgets/Testing/Cxx/ImagePlaneWidget.cxx:
+Widgets/Testing/Cxx/ScaledBoxWidget2.cxx:
 Widgets/Testing/Cxx/TerrainPolylineEditor.cxx:
 Widgets/Testing/Cxx/TestAffineWidget.cxx:
 Widgets/Testing/Cxx/TestAngleWidget2D.cxx:
@@ -4749,8 +4749,8 @@ Widgets/Testing/Cxx/TestAxesTransformWidget.cxx:
 Widgets/Testing/Cxx/TestBalloonWidget.cxx:
 Widgets/Testing/Cxx/TestBiDimensionalWidget.cxx:
 Widgets/Testing/Cxx/TestBorderWidget.cxx:
-Widgets/Testing/Cxx/TestBrokenLineWidget.cxx:<ignore>
-Widgets/Testing/Cxx/TestButtonWidget.cxx:<ignore>
+Widgets/Testing/Cxx/TestBrokenLineWidget.cxx:
+Widgets/Testing/Cxx/TestButtonWidget.cxx:
 Widgets/Testing/Cxx/TestCameraWidget.cxx:
 Widgets/Testing/Cxx/TestCaptionWidget.cxx:
 Widgets/Testing/Cxx/TestCellCentersPointPlacer.cxx:
@@ -4766,7 +4766,7 @@ Widgets/Testing/Cxx/TestFixedSizeHandleRepresentation3D.cxx:
 Widgets/Testing/Cxx/TestFocalPlaneContour.cxx:
 Widgets/Testing/Cxx/TestHandleWidget.cxx:
 Widgets/Testing/Cxx/TestHandleWidget2D.cxx:
-Widgets/Testing/Cxx/TestImageActorContourWidget.cxx:<ignore>
+Widgets/Testing/Cxx/TestImageActorContourWidget.cxx:
 Widgets/Testing/Cxx/TestImageTracerWidget.cxx:
 Widgets/Testing/Cxx/TestImplicitPlaneWidget.cxx:
 Widgets/Testing/Cxx/TestImplicitPlaneWidget2.cxx:
@@ -4779,7 +4779,7 @@ Widgets/Testing/Cxx/TestLogoWidgetAlphaBlending.cxx:
 Widgets/Testing/Cxx/TestLogoWidgetDepthPeeling.cxx:
 Widgets/Testing/Cxx/TestOrientationMarkerWidget.cxx:
 Widgets/Testing/Cxx/TestOrientedGlyphContour.cxx:
-Widgets/Testing/Cxx/TestOrthoPlanes.cxx:<ignore>
+Widgets/Testing/Cxx/TestOrthoPlanes.cxx:
 Widgets/Testing/Cxx/TestParallelopipedWidget.cxx:
 Widgets/Testing/Cxx/TestPlaneWidget.cxx:
 Widgets/Testing/Cxx/TestPlaybackWidget.cxx:
@@ -4791,8 +4791,8 @@ Widgets/Testing/Cxx/TestPolygonalRepresentationHandleWidget.cxx:
 Widgets/Testing/Cxx/TestPolygonalSurfaceConstrainedDistanceWidget.cxx:
 Widgets/Testing/Cxx/TestProgrammaticPlacement.cxx:
 Widgets/Testing/Cxx/TestRectilinearWipeWidget.cxx:
-Widgets/Testing/Cxx/TestResliceCursorWidget2.cxx:<ignore>
-Widgets/Testing/Cxx/TestResliceCursorWidget3.cxx:<ignore>
+Widgets/Testing/Cxx/TestResliceCursorWidget2.cxx:
+Widgets/Testing/Cxx/TestResliceCursorWidget3.cxx:
 Widgets/Testing/Cxx/TestScalarBarWidget.cxx:
 Widgets/Testing/Cxx/TestSeedWidget.cxx:
 Widgets/Testing/Cxx/TestSeedWidget2.cxx:
@@ -4800,7 +4800,7 @@ Widgets/Testing/Cxx/TestSeedWidgetNonUniformRepresentations.cxx:
 Widgets/Testing/Cxx/TestSliderWidget.cxx:
 Widgets/Testing/Cxx/TestSliderWidget2D.cxx:
 Widgets/Testing/Cxx/TestSphereHandleWidget.cxx:
-Widgets/Testing/Cxx/TestSplineWidget.cxx:<ignore>
+Widgets/Testing/Cxx/TestSplineWidget.cxx:
 Widgets/Testing/Cxx/TestSurfaceConstrainedHandleWidget.cxx:
 Widgets/Testing/Cxx/TestTensorProbeWidget.cxx:
 Widgets/Testing/Cxx/TestTextWidget.cxx:
@@ -4815,19 +4815,19 @@ Widgets/Testing/Cxx/vtkBiDimensionalWidgetTest1.cxx:
 Widgets/Testing/Cxx/vtkBorderWidgetTest1.cxx:
 Widgets/Testing/Cxx/vtkCaptionRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkCaptionWidgetTest1.cxx:
-Widgets/Testing/Cxx/vtkConstrainedPointHandleRepresentationTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkConstrainedPointHandleRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkHoverWidgetTest1.cxx:
-Widgets/Testing/Cxx/vtkImplicitPlaneRepresentationTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkImplicitPlaneWidget2Test1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkImplicitPlaneRepresentationTest1.cxx:
+Widgets/Testing/Cxx/vtkImplicitPlaneWidget2Test1.cxx:
 Widgets/Testing/Cxx/vtkLineRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkLineWidget2Test1.cxx:
-Widgets/Testing/Cxx/vtkOrientedPolygonalHandleRepresentation3DTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkPointHandleRepresentation2DTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkPointHandleRepresentation3DTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkPolygonalHandleRepresentation3DTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkOrientedPolygonalHandleRepresentation3DTest1.cxx:
+Widgets/Testing/Cxx/vtkPointHandleRepresentation2DTest1.cxx:
+Widgets/Testing/Cxx/vtkPointHandleRepresentation3DTest1.cxx:
+Widgets/Testing/Cxx/vtkPolygonalHandleRepresentation3DTest1.cxx:
 Widgets/Testing/Cxx/vtkSeedRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkSeedWidgetTest1.cxx:
-Widgets/Testing/Cxx/vtkSphereHandleRepresentationTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkSphereHandleRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkSplineRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkSplineWidget2Test1.cxx:
 Widgets/Testing/Cxx/vtkTextRepresentationTest1.cxx:
@@ -4920,7 +4920,7 @@ Rendering/vtkParallelCoordinatesActor.h:
 
 modular/Rendering/Annotation/Testing/Cxx/CMakeLists.txt:
 
-Hybrid/Testing/Cxx/TestAxisActor3D.cxx:<ignore>
+Hybrid/Testing/Cxx/TestAxisActor3D.cxx:
 Hybrid/Testing/Cxx/TestBarChartActor.cxx:
 Hybrid/Testing/Cxx/TestCubeAxes2DMode.cxx:
 Hybrid/Testing/Cxx/TestCubeAxes3.cxx:
@@ -5242,8 +5242,8 @@ modular/RenderingCore.patch:<ignore>
 
 modular/Rendering/Core/Testing/Cxx/CMakeLists.txt:
 
-Common/Testing/Cxx/otherLookupTable.cxx:<ignore>
-Common/Testing/Cxx/otherLookupTableWithEnabling.cxx:<ignore>
+Common/Testing/Cxx/otherLookupTable.cxx:
+Common/Testing/Cxx/otherLookupTableWithEnabling.cxx:
 
 [Rendering/FreeType]
 
@@ -6528,17 +6528,17 @@ modular/ImagingCore.patch:<ignore>
 modular/Imaging/Core/Testing/Cxx/CMakeLists.txt:
 
 Hybrid/Testing/Cxx/TestImageStencilData.cxx:
-Imaging/Testing/Cxx/FastSplatter.cxx: <ignore>
+Imaging/Testing/Cxx/FastSplatter.cxx:
 Imaging/Testing/Cxx/ImageAccumulate.cxx:
-Imaging/Testing/Cxx/ImageAutoRange.cxx:<ignore>
+Imaging/Testing/Cxx/ImageAutoRange.cxx:
 Imaging/Testing/Cxx/ImageBSplineCoefficients.cxx:
-Imaging/Testing/Cxx/ImageHistogram.cxx:<ignore>
-Imaging/Testing/Cxx/ImageHistogramStatistics.cxx:<ignore>
-Imaging/Testing/Cxx/ImageResize.cxx:<ignore>
-Imaging/Testing/Cxx/ImageResize3D.cxx:<ignore>
-Imaging/Testing/Cxx/ImageResizeCropping.cxx:<ignore>
+Imaging/Testing/Cxx/ImageHistogram.cxx:
+Imaging/Testing/Cxx/ImageHistogramStatistics.cxx:
+Imaging/Testing/Cxx/ImageResize.cxx:
+Imaging/Testing/Cxx/ImageResize3D.cxx:
+Imaging/Testing/Cxx/ImageResizeCropping.cxx:
 Imaging/Testing/Cxx/ImageWeightedSum.cxx:
-Imaging/Testing/Cxx/ImportExport.cxx:<ignore>
+Imaging/Testing/Cxx/ImportExport.cxx:
 Imaging/Testing/Cxx/TestUpdateExtentReset.cxx:
 
 [Chemistry/Core]
