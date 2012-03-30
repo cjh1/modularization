@@ -53,8 +53,8 @@ SET(Kit_SRCS
   vtkUnstructuredGridAlgorithm.cxx
   vtkSelectionAlgorithm.cxx
   vtkLinearSelector.cxx
-
   vtkExtentRCBPartitioner.cxx
+  vtkUniformGridPartitioner.cxx
   )
 
 set_source_files_properties(

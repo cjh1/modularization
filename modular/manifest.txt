@@ -6617,11 +6617,11 @@ AMR/vtkAMRSliceFilter.cxx:
 AMR/vtkAMRSliceFilter.h:
 AMR/vtkAMRToMultiBlockFilter.cxx:
 AMR/vtkAMRToMultiBlockFilter.h:
-
-[AMR/Parallel]
-
 Parallel/vtkAMRUtilities.cxx:
 Parallel/vtkAMRUtilities.h:
+
+
+#[AMR/Parallel]
 
 [AMR/Core/Testing/Cxx]
 
