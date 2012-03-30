@@ -2671,6 +2671,9 @@ Wrapping/Tcl/vtk/:
 [Wrapping/Tcl/vtkbase]
 Wrapping/Tcl/vtkbase/:
 
+modular/WrappingTclvtkbase.patch:<ignore>
+<patch>: WrappingTclvtkbase.patch
+
 [Wrapping/Tcl/vtktesting]
 Wrapping/Tcl/vtktesting/:
 

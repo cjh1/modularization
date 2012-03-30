@@ -60,7 +60,7 @@ function(vtk_add_tcl_wrapping module_name module_srcs)
     set(tcl_module "vtkViewsContextIID")
   endif()
   vtk_wrap_tcl3(${tcl_module}TCL Tcl_SRCS "${module_srcs}" "")
-  add_library(${tcl_module}TCL ${Tcl_SRCS} ${extra_srcs})
+  vtk_add_library(${tcl_module}TCL ${Tcl_SRCS} ${extra_srcs})
   target_link_libraries(${tcl_module}TCL ${module_name}
     ${extra_links} ${VTK_TCL_LIBRARIES})
 endfunction()
