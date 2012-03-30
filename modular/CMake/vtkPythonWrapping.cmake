@@ -39,7 +39,7 @@ function(vtk_add_python_wrapping module_name module_srcs)
   endforeach()
 
   vtk_wrap_python3(${module_name}Python Python_SRCS "${module_srcs}")
-  add_library(${module_name}PythonD ${Python_SRCS} ${extra_srcs})
+  vtk_add_library(${module_name}PythonD ${Python_SRCS} ${extra_srcs})
   target_link_libraries(${module_name}PythonD ${module_name}
     vtkWrappingPythonCore ${extra_links} ${VTK_PYTHON_LIBRARIES})
   python_add_module(${module_name}Python ${module_name}PythonInit.cxx)
