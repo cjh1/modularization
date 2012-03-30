@@ -6,4 +6,7 @@ vtk_module(vtkAMRCore
     vtkFiltersGeneral
     vtkhdf5
     vtkIOXML
+  TEST_DEPENDS
+    vtkTestingCore
+    vtkTestingRendering
   DEFAULT OFF)
