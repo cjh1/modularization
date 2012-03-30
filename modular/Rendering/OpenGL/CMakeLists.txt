@@ -103,6 +103,7 @@ set_source_files_properties(
   vtkTextureUnitManager
   vtkgl
   vtkRenderingOpenGLObjectFactory
+  vtkRenderingOpenGL_AutoInit
   WRAP_EXCLUDE
   )
 
