@@ -5,6 +5,7 @@ import fileinput, glob, string, sys, os, re, fnmatch
 # Build up a list of all export macros to replace.
 
 pattern = re.compile("VTK_[A-Z]*_EXPORT")
+pattern2 = re.compile("VTK_GENERIC_FILTERING_EXPORT")
 searchText = "VTK_COMMON_EXPORT"
 replaceText = "VTKCOMMONCORE_EXPORT"
 
@@ -21,9 +22,14 @@ def searchReplace(path, search, replace, headerName):
 
         for index, line in enumerate(lines):
           lineNumber = pattern.search(line)
-          if lineNumber >= 0 and line.find("VTK_INFORMATION_EXPORT") < 0:
+	  lineNumberF = pattern2.search(line)
+	  if (lineNumber >= 0 and line.find("VTK_INFORMATION_EXPORT") < 0):
             #print "Found a line to replace: " + line
             line = pattern.sub(replace, line)
+            lines[index] = line.rstrip() + "\n"
+            exportUpdated = True
+	  elif (lineNumberF >= 0 and line.find("VTK_INFORMATION_EXPORT") < 0):
+            line = pattern2.sub(replace, line)
             lines[index] = line.rstrip() + "\n"
             exportUpdated = True
 
@@ -53,12 +59,15 @@ def getModules():
 
 modules = getModules()
 
+print modules
+
 # exclude non-VTK modules from export headers
 modules = [m for m in modules if not m.startswith(('ThirdParty','Utilities'))]
 
 for module in modules:
   moduleName = "vtk" + module.replace("/", "")
   exportName = moduleName.upper() + "_EXPORT"
+  print moduleName + " " + exportName
   searchReplace(module, searchText, exportName, moduleName + "Module.h")
 
 #searchReplace("Common/Core", searchText, replaceText)
