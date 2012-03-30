@@ -70,7 +70,13 @@ endmacro()
 macro(vtk_module_impl)
   include(module.cmake) # Load module meta-data
 
-  vtk_module_use(${VTK_MODULE_${vtk-module}_DEPENDS})
+  vtk_module_config(_dep ${VTK_MODULE_${vtk-module}_DEPENDS})
+  if(_dep_INCLUDE_DIRS)
+    include_directories(${_dep_INCLUDE_DIRS})
+  endif()
+  if(_dep_LIBRARY_DIRS)
+    link_directories(${_dep_LIBRARY_DIRS})
+  endif()
 
   if(NOT DEFINED ${vtk-module}_LIBRARIES)
     set(${vtk-module}_LIBRARIES "")
@@ -134,13 +140,13 @@ macro(vtk_module_test)
   if(NOT vtk_module_test_called)
     set(vtk_module_test_called 1) # Run once in a given scope.
     include(../../module.cmake) # Load module meta-data
-    set(${vtk-module-test}-Cxx_LIBRARIES "")
-    vtk_module_use(${VTK_MODULE_${vtk-module-test}-Cxx_DEPENDS})
-
-    foreach(dep IN LISTS VTK_MODULE_${vtk-module-test}-Cxx_DEPENDS)
-      list(APPEND ${vtk-module-test}-Cxx_LIBRARIES "${${dep}_LIBRARIES}")
-    endforeach()
-    list(REMOVE_DUPLICATES ${vtk-module-test}-Cxx_LIBRARIES)
+    vtk_module_config(${vtk-module-test}-Cxx ${VTK_MODULE_${vtk-module-test}-Cxx_DEPENDS})
+    if(${vtk-module-test}-Cxx_INCLUDE_DIRS)
+      include_directories(${${vtk-module-test}-Cxx_INCLUDE_DIRS})
+    endif()
+    if(${vtk-module-test}-Cxx_LIBRARY_DIRS)
+      link_directories(${${vtk-module-test}-Cxx_LIBRARY_DIRS})
+    endif()
   endif()
 endmacro()
 

@@ -3,22 +3,6 @@
 #-----------------------------------------------------------------------------
 # Private helper macros.
 
-macro(_vtk_module_use_recurse mod)
-  if(NOT ${dep}_USED)
-    set(${mod}_USED 1)
-    vtk_module_load("${mod}")
-    foreach(dep IN LISTS ${mod}_DEPENDS)
-      _vtk_module_use_recurse(${dep})
-    endforeach()
-    if(${mod}_INCLUDE_DIRS)
-      include_directories(${${mod}_INCLUDE_DIRS})
-    endif()
-    if(${mod}_LIBRARY_DIRS)
-      link_directories(${${mod}_LIBRARY_DIRS})
-    endif()
-  endif()
-endmacro()
-
 macro(_vtk_module_config_recurse ns mod)
   if(NOT _${ns}_${dep}_USED)
     set(_${ns}_${mod}_USED 1)
@@ -70,15 +54,5 @@ macro(vtk_module_config ns)
     if(${v})
       list(REMOVE_DUPLICATES ${v})
     endif()
-  endforeach()
-endmacro()
-
-# vtk_module_use([modules...])
-#
-# Adds include directories and link directories for the given modules and
-# their dependencies.
-macro(vtk_module_use)
-  foreach(mod ${ARGN})
-    _vtk_module_use_recurse("${mod}")
   endforeach()
 endmacro()
