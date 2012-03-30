@@ -3247,6 +3247,9 @@ Views/vtkRenderView.cxx:
 
 [Geovis/Core]
 
+modular/Geovis/Core/module.cmake:
+modular/Geovis/Core/CMakeLists.txt:
+
 Geovis/vtkCompassRepresentation.h:
 Geovis/vtkCompassRepresentation.cxx:
 Geovis/vtkCompassWidget.h:
@@ -3299,11 +3302,14 @@ Geovis/vtkGeoTreeNodeCache.h:
 Geovis/vtkGeoTreeNodeCache.cxx:
 Geovis/vtkGlobeSource.h:
 Geovis/vtkGlobeSource.cxx:
+Geovis/vtkGeoAlignedImageRepresentation.h:
+Geovis/vtkGeoAlignedImageRepresentation.cxx:
 
 [Views/Geovis]
 
-Geovis/vtkGeoAlignedImageRepresentation.h:
-Geovis/vtkGeoAlignedImageRepresentation.cxx:
+modular/Views/Geovis/module.cmake:
+modular/Views/Geovis/CMakeLists.txt:
+
 Geovis/vtkGeoView.h:
 Geovis/vtkGeoView.cxx:
 Geovis/vtkGeoView2D.h:
