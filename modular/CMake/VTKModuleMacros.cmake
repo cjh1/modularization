@@ -219,28 +219,7 @@ macro(vtk_target _name)
 endmacro()
 
 function(vtk_add_library name)
-  # compute and add header files to the target if they exist
-  set(${vtk-module}_HEADERS)
-  foreach(FILE ${ARGN})
-    get_filename_component(TMP_FILENAME ${FILE} EXT)
-    if(NOT "${EXT}" STREQUAL ".h")
-      # what is the filename without the extension
-      get_filename_component(TMP_FILENAME ${FILE} NAME_WE)
-      # the input file might be full path so handle that
-      get_filename_component(TMP_FILEPATH ${FILE} PATH)
-      # compute the input filename
-      if(TMP_FILEPATH)
-        set(TMP_INPUT ${TMP_FILEPATH}/${TMP_FILENAME}.h)
-      else()
-        set(TMP_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/${TMP_FILENAME}.h)
-      endif()
-      if(EXISTS "${TMP_INPUT}")
-        list(APPEND ${vtk-module}_HEADERS "${TMP_INPUT}")
-      endif()
-    endif()
-  endforeach()
-  # add the library with the additional headers
-  add_library(${name} ${ARGN} ${${vtk-module}_HEADERS})
+  add_library(${name} ${ARGN} ${headers})
   vtk_target(${name})
 endfunction()
 
@@ -269,7 +248,21 @@ function(vtk_module_library name)
   set(${vtk-module}_LIBRARIES ${vtk-module})
   vtk_module_impl()
 
-  vtk_add_library(${vtk-module} ${ARGN})
+  # Collect header files matching sources.
+  set(_hdrs "")
+  foreach(arg ${ARGN})
+    get_filename_component(src "${arg}" ABSOLUTE)
+    string(REGEX REPLACE "\\.cxx$" ".h" hdr "${src}")
+    if("${hdr}" MATCHES "\\.h$")
+      if(EXISTS "${hdr}")
+        list(APPEND _hdrs "${hdr}")
+      endif()
+    endif()
+  endforeach()
+  list(APPEND _hdrs "${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}Module.h")
+  list(REMOVE_DUPLICATES _hdrs)
+
+  vtk_add_library(${vtk-module} ${ARGN} ${_hdrs})
   foreach(dep IN LISTS VTK_MODULE_${vtk-module}_LINK_DEPENDS)
     target_link_libraries(${vtk-module} ${${dep}_LIBRARIES})
   endforeach()
@@ -284,25 +277,11 @@ function(vtk_module_library name)
   vtk_add_wrapping(${vtk-module} "${ARGN}")
 
   # Figure out which headers to install.
-  if(NOT VTK_INSTALL_NO_DEVELOPMENT)
-    set(_hdrs)
-    foreach(arg ${ARGN})
-      get_filename_component(src "${arg}" ABSOLUTE)
-      string(REGEX REPLACE "\\.cxx$" ".h" hdr "${src}")
-      if("${hdr}" MATCHES "\\.h$")
-        if(EXISTS "${hdr}")
-          list(APPEND _hdrs "${hdr}")
-        endif()
-      endif()
-    endforeach()
-    list(APPEND _hdrs "${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}Module.h")
-    if(_hdrs)
-      list(REMOVE_DUPLICATES _hdrs)
-      install(FILES ${_hdrs}
-        DESTINATION ${VTK_INSTALL_INCLUDE_DIR}
-        COMPONENT Development
-        )
-    endif()
+  if(NOT VTK_INSTALL_NO_DEVELOPMENT AND _hdrs)
+    install(FILES ${_hdrs}
+      DESTINATION ${VTK_INSTALL_INCLUDE_DIR}
+      COMPONENT Development
+      )
   endif()
 endfunction()
 
