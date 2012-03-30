@@ -10,7 +10,7 @@ vtk_module(vtkFiltersGeneral
     vtkCommonComputationalGeometry
     vtkFiltersCore
   TEST_DEPENDS
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkRenderingAnnotation
     vtkTestingRendering
   DEFAULT ON)
