@@ -22,4 +22,7 @@ set_source_files_properties(
 add_definitions("-DMPICH_IGNORE_CXX_SEEK")
 
 vtk_module_library(vtkParallelMPI ${Kit_SRCS})
-target_link_libraries(vtkParallelMPI ${MPI_LIBRARY} ${MPI_EXTRA_LIBRARY})
+target_link_libraries(vtkParallelMPI ${MPI_LIBRARY})
+if(MPI_EXTRA_LIBRARY)
+  target_link_libraries(vtkParallelMPI ${MPI_EXTRA_LIBRARY})
+endif()
