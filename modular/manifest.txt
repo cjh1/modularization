@@ -57,6 +57,7 @@ Widgets/Testing/Tcl/: <ignore>
 Widgets/Testing/Python/: <ignore>
 Views/Testing/: <ignore>
 Parallel/Testing/: <ignore>
+VolumeRendering/vtkVolumeRenderingToolkit.h.in:<ignore>
 
 Examples/: <ignore>
 GenericFiltering/README.html: <ignore>
@@ -6588,6 +6589,10 @@ Chemistry/Testing/Cxx/TestSimpleBondPerceiver.cxx:
 Chemistry/Testing/Cxx/TestVDWSpheres.cxx:
 
 [AMR/Core]
+
+modular/AMR/Core/CMakeLists.txt:
+modular/AMR/Core/module.cmake: 
+
 AMR/CMakeLists.txt:<ignore>
 AMR/vtkAMRBaseParticlesReader.cxx:
 AMR/vtkAMRBaseParticlesReader.h:
