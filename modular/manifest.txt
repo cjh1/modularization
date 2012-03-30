@@ -3767,6 +3767,9 @@ Graphics/Testing/Cxx/TestUnstructuredGridGeometryFilter.cxx:
 
 [Filters/ParallelGeometry]
 
+modular/Filters/ParallelGeometry/module.cmake:
+modular/Filters/ParallelGeometry/CMakeLists.txt:
+
 Parallel/vtkPDataSetGhostGenerator.cxx:
 Parallel/vtkPDataSetGhostGenerator.h:
 Parallel/vtkPStructuredGridConnectivity.cxx:
@@ -3849,6 +3852,9 @@ Graphics/Testing/Cxx/TestRotationalExtrusion.cxx:
 Graphics/Testing/Cxx/TestSelectEnclosedPoints.cxx:
 
 [Filters/Programmable]
+
+modular/Filters/Programmable/module.cmake:
+modular/Filters/Programmable/CMakeLists.txt:
 
 Graphics/vtkProgrammableAttributeDataFilter.cxx:
 Graphics/vtkProgrammableAttributeDataFilter.h:
@@ -4313,6 +4319,9 @@ Graphics/Testing/Cxx/TestHyperOctreeSurfaceFilter.cxx:
 Graphics/Testing/Cxx/TestHyperOctreeToUniformGrid.cxx:
 
 [Filters/ReebGraph]
+
+modular/Filters/ReebGraph/module.cmake:
+modular/Filters/ReebGraph/CMakeLists.txt:
 
 Graphics/vtkReebGraphSimplificationFilter.cxx:
 Graphics/vtkReebGraphSimplificationFilter.h:
