@@ -6637,7 +6637,8 @@ Parallel/vtkAMRUtilities.h:
 [AMR/Core/Testing/Cxx]
 
 AMR/Testing/CMakeLists.txt:<ignore>
-AMR/Testing/Cxx/CMakeLists.txt:
+AMR/Testing/Cxx/CMakeLists.txt:<ignore>
+modular/AMR/Testing/Cxx/CMakeLists.txt:
 AMR/Testing/Cxx/TestEnzoReader.cxx:
 AMR/Testing/Cxx/TestFlashReader.cxx:
 
