@@ -4,4 +4,6 @@ vtk_module(vtkRenderingVolume
     vtkRenderingOpenGL
   TEST_DEPENDS
     vtkTestingCore
+    vtkTestingRendering
+    vtkRenderingText
   )
