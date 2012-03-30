@@ -12,9 +12,12 @@
      PURPOSE.  See the above copyright notice for more information.
 
 =========================================================================*/
+
+#include "vtkTestingIOSQLModule.h"
+
 class vtkSQLDatabaseSchema;
 
-class  DatabaseSchemaWith2Tables
+class VTKTESTINGIOSQL_EXPORT DatabaseSchemaWith2Tables
 {
   public:
     DatabaseSchemaWith2Tables();
