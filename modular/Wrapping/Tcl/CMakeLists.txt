@@ -95,9 +95,6 @@ if(VTK_USE_TK)
   target_link_libraries(vtk ${VTK_TK_LIBRARIES})
 endif(VTK_USE_TK)
 
-# Setup install location for vtk tcl scripts.
-set(VTK_TCL_INSTALL_DIR ${VTK_INSTALL_LIBRARY_DIR}/tcl)
-
 if(VTK_INSTALL_RUNTIME AND VTK_BUILD_FORWARDING_EXECUTABLES)
   install(TARGETS vtk
     EXPORT ${VTK_INSTALL_EXPORT_NAME}
@@ -161,12 +158,12 @@ ENDIF (VTK_USE_PARALLEL)
 
 if(NOT VTK_INSTALL_NO_DOCUMENTATION)
   install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/README"
-    DESTINATION ${VTK_TCL_INSTALL_DIR}
+    DESTINATION ${VTK_INSTALL_TCL_DIR}
     COMPONENT RuntimeLibraries)
 endif()
 if(NOT VTK_INSTALL_NO_DEVELOPMENT)
   install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/vtktcl.c"
-    DESTINATION ${VTK_TCL_INSTALL_DIR}
+    DESTINATION ${VTK_INSTALL_TCL_DIR}
     COMPONENT Development)
 endif()
 
@@ -195,6 +192,14 @@ configure_file(vtkbase/vtkbase.tcl.in
   "${VTK_TCL_HOME}/vtkbase/vtkbase.tcl" @ONLY IMMEDIATE)
 configure_file(vtk/vtk.tcl.in
   "${VTK_TCL_HOME}/vtk/vtk.tcl" @ONLY IMMEDIATE)
+if(NOT VTK_INSTALL_NO_RUNTIME)
+  install(FILES ${VTK_TCL_HOME}/vtk/vtk.tcl
+    DESTINATION ${VTK_INSTALL_TCL_DIR}/vtk
+    COMPONENT RuntimeLibraries)
+  install(FILES ${VTK_TCL_HOME}/vtkbase/vtkbase.tcl
+    DESTINATION ${VTK_INSTALL_TCL_DIR}/vtkbase
+    COMPONENT RuntimeLibraries)
+endif()
 
 # We must write out a file for each wrapped module to load the SO.
 foreach(module ${VTK_TCL_WRAPPED})
@@ -208,20 +213,26 @@ foreach(module ${VTK_TCL_WRAPPED})
   endif()
   configure_file(vtkmodule.tcl.in
     "${VTK_TCL_HOME}/${module_lc}/${module_lc}.tcl" @ONLY IMMEDIATE)
+  if(NOT VTK_INSTALL_NO_RUNTIME)
+    install(FILES
+      "${VTK_TCL_HOME}/${module_lc}/${module_lc}.tcl"
+      DESTINATION ${VTK_INSTALL_TCL_DIR}/${module_lc}
+      COMPONENT RuntimeLibraries)
+  endif()
 endforeach()
 
 # Configure the Tcl package index file for the install tree.
-SET(VTK_TCL_SCRIPT_DIR "[file dirname [info script]]/tcl")
+SET(VTK_TCL_SCRIPT_DIR "[file dirname [info script]]")
 IF(UNIX)
-  SET(VTK_TCL_LIBRARY_DIR "[file dirname [info script]]")
+  SET(VTK_TCL_LIBRARY_DIR "[file dirname [file dirname [file dirname [info script]]]]")
 ELSE(UNIX)
   SET(VTK_TCL_LIBRARY_DIR
-      "[file join [file dirname [file dirname [file dirname [info script]]]] bin]")
+      "[file join [file dirname [file dirname [file dirname [file dirname [info script]]]]] bin]")
 ENDIF(UNIX)
 configure_file(${VTK_SOURCE_DIR}/Wrapping/Tcl/pkgIndex.tcl.in
                ${VTK_BINARY_DIR}/Wrapping/Tcl/Install/Hide/pkgIndex.tcl
                @ONLY IMMEDIATE)
-IF(VTK_INSTALL_RUNTIME)
+IF(NOT VTK_INSTALL_NO_RUNTIME)
   INSTALL(FILES
     ${VTK_BINARY_DIR}/Wrapping/Tcl/Install/Hide/pkgIndex.tcl
     DESTINATION ${VTK_INSTALL_TCL_DIR}

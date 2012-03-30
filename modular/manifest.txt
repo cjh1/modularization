@@ -2666,16 +2666,23 @@ modular/Wrapping/Tcl/vtkmodule.tcl.in:
 Wrapping/Tcl/resources/:
 
 [Wrapping/Tcl/vtk]
-Wrapping/Tcl/vtk/:
+Wrapping/Tcl/vtk/vtk.tcl.in:
+Wrapping/Tcl/vtk/CMakeLists.txt:<ignore>
 
 [Wrapping/Tcl/vtkbase]
-Wrapping/Tcl/vtkbase/:
+Wrapping/Tcl/vtkbase/vtkbase.tcl.in:
+Wrapping/Tcl/vtkbase/CMakeLists.txt:<ignore>
 
 modular/WrappingTclvtkbase.patch:<ignore>
 <patch>: WrappingTclvtkbase.patch
 
 [Wrapping/Tcl/vtktesting]
-Wrapping/Tcl/vtktesting/:
+Wrapping/Tcl/vtktesting/vtktesting.tcl.in:
+Wrapping/Tcl/vtktesting/CMakeLists.txt:<ignore>
+Wrapping/Tcl/vtktesting/backdrop.tcl:
+Wrapping/Tcl/vtktesting/colors.tcl:
+Wrapping/Tcl/vtktesting/grab.tcl.in:
+Wrapping/Tcl/vtktesting/mccases.tcl:
 
 [Wrapping/JavaCore]
 modular/Wrapping/JavaCore/module.cmake:
