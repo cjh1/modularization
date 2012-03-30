@@ -1,6 +1,7 @@
 # FIXME: This should probably be fixed, vtkgl generation needs some refinement
 # to allow for things to split up properly.
-option(VTK_USE_X "Use X for VTK render windows" ON)
+
+set(VTK_USE_X_DEFAULT OFF)
 
 if(APPLE)
   option(VTK_USE_COCOA "Use Cocoa for VTK render windows" ON)
@@ -8,7 +9,11 @@ if(APPLE)
   if(VTK_USE_COCOA AND VTK_USE_CARBON)
     message(FATAL_ERROR "You can't enable Carbon and Cocoa - you must choose one.")
   endif()
+elseif(UNIX)
+  set(VTK_USE_X_DEFAULT ON)
 endif()
+
+option(VTK_USE_X "Use X for VTK render windows" ${VTK_USE_X_DEFAULT})
 
 # FIXME: The TDx support needs some refactoring before we can build it in a
 # modular fashion, for now it must remain an option on vtkRenderingOpenGL.
