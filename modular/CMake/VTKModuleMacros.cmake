@@ -131,15 +131,17 @@ macro(vtk_module_impl)
 endmacro()
 
 macro(vtk_module_test)
-  include(../../module.cmake) # Load module meta-data
-  set(_test_name ${vtk-module}-Test-Cxx)
-  set(${_test_name}_LIBRARIES "")
-  vtk_module_use(${VTK_MODULE_${_test_name}_DEPENDS})
+  if(NOT vtk_module_test_called)
+    set(vtk_module_test_called 1) # Run once in a given scope.
+    include(../../module.cmake) # Load module meta-data
+    set(${vtk-module-test}-Cxx_LIBRARIES "")
+    vtk_module_use(${VTK_MODULE_${vtk-module-test}-Cxx_DEPENDS})
 
-  foreach(dep IN LISTS VTK_MODULE_${_test_name}_DEPENDS)
-    list(APPEND ${_test_name}_LIBRARIES "${${dep}_LIBRARIES}")
-  endforeach()
-  list(REMOVE_DUPLICATES ${_test_name}_LIBRARIES)
+    foreach(dep IN LISTS VTK_MODULE_${vtk-module-test}-Cxx_DEPENDS)
+      list(APPEND ${vtk-module-test}-Cxx_LIBRARIES "${${dep}_LIBRARIES}")
+    endforeach()
+    list(REMOVE_DUPLICATES ${vtk-module-test}-Cxx_LIBRARIES)
+  endif()
 endmacro()
 
 macro(vtk_module_warnings_disable)
@@ -247,10 +249,7 @@ function(vtk_add_executable name)
 endfunction()
 
 macro(vtk_module_test_executable test_exe_name)
-  if(NOT vtk_module_test_called)
-    set(vtk_module_test_called 1)
-    vtk_module_test()
-  endif()
+  vtk_module_test()
   # No forwarding or export for test executables.
   add_executable(${test_exe_name} ${ARGN})
   target_link_libraries(${test_exe_name} ${${vtk-module-test}-Cxx_LIBRARIES})
