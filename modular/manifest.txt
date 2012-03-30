@@ -5710,8 +5710,11 @@ modular/Rendering/TDx/CMakeLists.txt:<ignore>
 modular/Rendering/TDx/module.cmake:<ignore>
 
 [Rendering/Volume]
+
 modular/Rendering/Volume/module.cmake:
 modular/Rendering/Volume/CMakeLists.txt:
+modular/RenderingVolume.patch:<ignore>
+<patch>: RenderingVolume.patch
 
 VolumeRendering/vtkDirectionEncoder.cxx:
 VolumeRendering/vtkDirectionEncoder.h:
