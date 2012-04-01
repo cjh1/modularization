@@ -3455,6 +3455,8 @@ Charts/vtkPiecewisePointHandleItem.h:
 
 modular/Charts/Core/module.cmake:
 modular/Charts/Core/CMakeLists.txt:
+modular/ChartsCore.patch: <ignore>
+<patch>: ChartsCore.patch
 
 [Charts/Core/Testing/Cxx]
 
