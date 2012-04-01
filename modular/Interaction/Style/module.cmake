@@ -1,5 +1,4 @@
 vtk_module(vtkInteractionStyle
-  DEPENDS
-  vtkRenderingCore
-  # TEST_DEPENDS
+  IMPLEMENTS
+    vtkRenderingCore
   DEFAULT ON)

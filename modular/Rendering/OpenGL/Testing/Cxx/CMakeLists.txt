@@ -131,7 +131,7 @@ if(VTK_USE_GLSL_SHADERS)
   endif()
 endif()
 
-CREATE_TEST_SOURCELIST(Tests ${vtk-module}CxxTests.cxx
+create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   ${RenderingTests};${RenderingTestsWithArguments}
   EXTRA_INCLUDE vtkTestDriver.h
   )
@@ -157,55 +157,56 @@ endif()
 vtk_module_test_executable(${vtk-module}CxxTests ${Tests})
 
 if(VTK_OPENGL_HAS_OSMESA AND OSMESA_LIBRARY)
-  TARGET_LINK_LIBRARIES(${vtk-module}CxxTests ${OSMESA_LIBRARY})
+  target_link_libraries(${vtk-module}CxxTests ${OSMESA_LIBRARY})
 endif()
 
 set(TestsToRun ${Tests})
-remove(TestsToRun CxxTests.cxx)
+remove(TestsToRun ${vtk-module}CxxTests.cxx)
 
-#
 # Add all the executables
 foreach(test ${RenderingTests})
   get_filename_component(TName ${test} NAME_WE)
-  add_test(NAME RenderingOpenGL-${TName}
+  add_test(NAME ${vtk-module}Cxx-${TName}
     COMMAND ${vtk-module}CxxTests ${TName}
       -T ${VTK_BINARY_DIR}/Testing/Temporary
     )
 endforeach()
 
 foreach(test ${RenderingTestsWithArguments})
-  GET_FILENAME_COMPONENT(TName ${test} NAME_WE)
+  get_filename_component(TName ${test} NAME_WE)
   if(VTK_DATA_ROOT)
-    add_test(NAME RenderingOpenGL-${TName}
+    add_test(NAME ${vtk-module}Cxx-${TName}
       COMMAND ${vtk-module}CxxTests ${TName}
         -D ${VTK_DATA_ROOT}
         -T ${VTK_BINARY_DIR}/Testing/Temporary
         -V Baseline/Rendering/${TName}.png)
   else()
-    add_test(NAME RenderingOpenGL-${TName}
+    add_test(NAME ${vtk-module}Cxx-${TName}
       COMMAND ${vtk-module}CxxTests ${TName}
         -T ${VTK_BINARY_DIR}/Testing/Temporary
       )
   endif()
 endforeach()
 
-#
 # Add other odd tests or executables
-#
-FOREACH (exe
-    TimeRenderer
-    TimeRenderer2
-    VTKBenchMark
-    )
-  ADD_EXECUTABLE(${exe} ${exe}.cxx)
-  TARGET_LINK_LIBRARIES(${exe} vtkRenderingOpenGL vtkIOCore ${OPENGL_gl_LIBRARY})
-  IF (APPLE)
-    TARGET_LINK_LIBRARIES(${exe} "-framework GLUT")
-  ENDIF (APPLE)
-  IF (VTK_OPENGL_HAS_OSMESA AND OSMESA_LIBRARY)
-    TARGET_LINK_LIBRARIES(${exe} ${OSMESA_LIBRARY})
-  ENDIF (VTK_OPENGL_HAS_OSMESA AND OSMESA_LIBRARY)
-ENDFOREACH (exe)
+foreach(exe
+  TimeRenderer
+  TimeRenderer2
+  VTKBenchMark
+  )
+  add_executable(${exe} ${exe}.cxx)
+  target_link_libraries(${exe}
+    vtkRenderingOpenGL
+    vtkInteractionStyle
+    vtkIOCore
+    ${OPENGL_gl_LIBRARY})
+  if(APPLE)
+    target_link_libraries(${exe} "-framework GLUT")
+  endif()
+  if(VTK_OPENGL_HAS_OSMESA AND OSMESA_LIBRARY)
+    target_link_libraries(${exe} ${OSMESA_LIBRARY})
+  endif()
+endforeach()
 
 IF(VTK_USE_GLSL_SHADERS AND VTK_USE_DISPLAY)
   set_tests_properties(TestGenericVertexAttributesGLSLDepthPeelingPass PROPERTIES FAIL_REGULAR_EXPRESSION "ERROR:.*vtkOpenGLProperty.*Couldn't build the shader program. At this point , it can be an error in a shader or a driver bug.")
