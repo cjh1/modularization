@@ -67,7 +67,6 @@ modular/modularize.py: <ignore>
 modular/modularizeCxxTests.lisp:<ignore>
 modular/export_headers.py: <ignore>
 
-GUISupport/Qt/Testing/: <ignore>
 GUISupport/CMakeLists.txt: <ignore>
 GUISupport/Qt/CMakeLists.txt: <ignore>
 VolumeRendering/CMakeLists.txt: <ignore>
@@ -6010,6 +6009,32 @@ GUISupport/Qt/vtkQtDebugLeaksModel.cxx:
 GUISupport/Qt/vtkQtDebugLeaksModel.h:
 GUISupport/Qt/vtkQtDebugLeaksView.cxx:
 GUISupport/Qt/vtkQtDebugLeaksView.h:
+
+modular/GUISupportQt.patch: <ignore>
+<patch>: GUISupportQt.patch
+
+[GUISupport/Qt/Testing/Cxx]
+
+GUISupport/Qt/Testing/Cxx/CMakeLists.txt:<ignore>
+
+GUISupport/Qt/Testing/Cxx/QTestApp.cxx:
+GUISupport/Qt/Testing/Cxx/QTestApp.h:
+GUISupport/Qt/Testing/Cxx/TestQtDebugLeaksView.cxx:
+GUISupport/Qt/Testing/Cxx/TestQtInitialization.cxx:
+GUISupport/Qt/Testing/Cxx/TestQtSQLDatabase.cxx:
+GUISupport/Qt/Testing/Cxx/TestQtTableModelAdapter.cxx:
+GUISupport/Qt/Testing/Cxx/TestQtTreeModelAdapter.cxx:
+GUISupport/Qt/Testing/Cxx/TestVtkQtTableView.cxx:
+
+[GUISupport/Qt/Testing/Python]
+
+GUISupport/Qt/Testing/Python/CMakeLists.txt:<ignore>
+
+GUISupport/Qt/Testing/Python/TestConnection.py:
+GUISupport/Qt/Testing/Python/TestQVTKWidget2.py:
+GUISupport/Qt/Testing/Python/TestQVTKWidget.py:
+GUISupport/Qt/Testing/Python/TestTimeUtility.py:
+GUISupport/Qt/Testing/Python/TestvtkQtTableView.py:
 
 [GUISupport/MFC]
 

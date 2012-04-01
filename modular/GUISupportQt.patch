@@ -1,0 +1,12 @@
+diff --git a/GUISupport/Qt/QVTKWidget.cxx b/GUISupport/Qt/QVTKWidget.cxx
+index 0803d3b..a41e299 100644
+--- a/GUISupport/Qt/QVTKWidget.cxx
++++ b/GUISupport/Qt/QVTKWidget.cxx
+@@ -43,6 +43,7 @@
+ #include "qpainter.h"
+ #include "qsignalmapper.h"
+ #include "qtimer.h"
++#include "vtkRenderingOpenGLModule.h"
+ #if defined(Q_WS_X11)
+ #include "qx11info_x11.h"
+ #endif
