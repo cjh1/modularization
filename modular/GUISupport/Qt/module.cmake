@@ -4,6 +4,9 @@ vtk_module(vtkGUISupportQt
     vtkCommonDataModel
     vtkCommonExecutionModel
     vtkCommonMath
-    vtkRenderingCore
+    vtkRenderingOpenGL
+    vtkInteractionStyle
     vtkImagingCore
+    vtkIOSQL
+  EXCLUDE_FROM_WRAPPING
   DEFAULT ON)

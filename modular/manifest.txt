@@ -5932,8 +5932,8 @@ VolumeRendering/Testing/Cxx/volProt.cxx:
 
 [GUISupport/Qt]
 
-modular/GUISupport/Qt/CMakeLists.txt:<ignore>
-modular/GUISupport/Qt/module.cmake:<ignore>
+modular/GUISupport/Qt/CMakeLists.txt:
+modular/GUISupport/Qt/module.cmake:
 
 GUISupport/Qt/CTestCustom.ctest.in:
 GUISupport/Qt/PluginInstall.cmake.in:

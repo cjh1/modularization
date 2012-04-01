@@ -44,6 +44,11 @@ if(VTK_USE_X AND VTK_USE_TDX)
     )
 endif()
 
+if(VTK_USE_X)
+  find_package(X11 REQUIRED)
+  include_directories(${X11_INCLUDE_DIR})
+endif()
+
 set(QVTKNonMocHeaders
   QVTKWin32Header.h
   vtkEventQtSlotConnect.h
@@ -105,11 +110,14 @@ IF(VTK_USE_VIEWS)
 ENDIF(VTK_USE_VIEWS)
 
 # import Qt4 build settings
+set(QT_USE_QTSQL 1)
 set(QT_USE_QTNETWORK 1)
 find_package(Qt4 REQUIRED)
 include(${QT_USE_FILE})
 
 qt4_wrap_cpp(QVTKLibMocSrcs ${QVTKMocHeaders})
+
+vtk_module_impl()
 
 vtk_add_library(QVTK ${QVTKLibSrcs} ${QVTKLibMocSrcs})
 # Add target specific compile flags for ABI setttings
@@ -127,7 +135,9 @@ TARGET_LINK_LIBRARIES(QVTK
   vtkRenderingOpenGL
   vtkFiltersCore
   vtkImagingCore
-  vtkCommonCore)
+  vtkCommonCore
+  vtkInteractionStyle
+  vtkIOSQL)
 
 # add extra dependencies if necessary
 IF(VTK_USE_VIEWS)
@@ -380,23 +390,23 @@ IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
   INSTALL(FILES
     ${QVTKMocHeaders}
     ${QVTKNonMocHeaders}
-    DESTINATION ${VTK_INSTALL_INCLUDE_DIR_CM24}
+    DESTINATION ${VTK_INSTALL_INCLUDE_DIR}
     COMPONENT Development
     )
 
   INSTALL(FILES
     "${VTK_BINARY_DIR}/VTKConfigQt.cmake"
-    DESTINATION ${VTK_INSTALL_PACKAGE_DIR_CM24}
+    DESTINATION ${VTK_INSTALL_PACKAGE_DIR}
     COMPONENT Development
     )
-ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+ENDIF()
 
 IF(NOT VTK_INSTALL_NO_LIBRARIES)
   INSTALL(TARGETS QVTK
     EXPORT ${VTK_INSTALL_EXPORT_NAME}
-    RUNTIME DESTINATION ${VTK_INSTALL_BIN_DIR_CM24} COMPONENT RuntimeLibraries
-    LIBRARY DESTINATION ${VTK_INSTALL_LIB_DIR_CM24} COMPONENT RuntimeLibraries
-    ARCHIVE DESTINATION ${VTK_INSTALL_LIB_DIR_CM24} COMPONENT Development)
+    RUNTIME DESTINATION ${VTK_INSTALL_RUNTIME_DIR} COMPONENT RuntimeLibraries
+    LIBRARY DESTINATION ${VTK_INSTALL_LIBRARY_DIR} COMPONENT RuntimeLibraries
+    ARCHIVE DESTINATION ${VTK_INSTALL_LIBRARY_DIR} COMPONENT Development)
 ENDIF(NOT VTK_INSTALL_NO_LIBRARIES)
 
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/CTestCustom.ctest.in"
