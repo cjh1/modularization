@@ -84,7 +84,6 @@ set(Kit_SRCS
   vtkGLSLShader.cxx
   vtkGLSLShaderProgram.cxx
   ${CMAKE_CURRENT_BINARY_DIR}/vtkRenderingOpenGLObjectFactory.cxx
-  vtkRenderingOpenGL_AutoInit.cxx
   )
 
 set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/vtkgl.cxx
@@ -108,7 +107,6 @@ set_source_files_properties(
   vtkTextureUnitManager
   vtkgl
   vtkRenderingOpenGLObjectFactory
-  vtkRenderingOpenGL_AutoInit
   WRAP_EXCLUDE
   )
 
