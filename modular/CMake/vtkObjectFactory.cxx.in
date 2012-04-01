@@ -15,7 +15,6 @@
 
 #include "@vtk-module@ObjectFactory.h"
 #include "vtkVersion.h"
-#include "vtkNew.h"
 
 // Include all of the classes we want to create overrides for.
 @_vtk_override_includes@
