@@ -12,11 +12,7 @@ set(QVTKLibSrcs
   vtkQtAbstractModelAdapter.cxx
   vtkQtAnnotationLayersModelAdapter.cxx
   vtkQtDebugLeaksModel.cxx
-  vtkQtDebugLeaksView.cxx
-  vtkQtSQLDatabase.cxx
-  vtkQtSQLQuery.cxx
   vtkQtTableModelAdapter.cxx
-  vtkQtTimePointUtility.cxx
   vtkQtTreeModelAdapter.cxx
   )
 
@@ -30,7 +26,6 @@ set(QVTKMocHeaders
   vtkQtAbstractModelAdapter.h
   vtkQtAnnotationLayersModelAdapter.h
   vtkQtDebugLeaksModel.h
-  vtkQtDebugLeaksView.h
   vtkQtTableModelAdapter.h
   vtkQtTreeModelAdapter.h
   )
@@ -55,106 +50,30 @@ set(QVTKNonMocHeaders
   QVTKInteractor.h
   )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
-# add additional files if the user will allow Qt's OpenGL support
-set(QT_USE_QTOPENGL 1)
-set(QVTKMocHeaders ${QVTKMocHeaders}
-  QVTKGraphicsItem.h
-  QVTKWidget2.h
-  )
-set(QVTKLibSrcs ${QVTKLibSrcs}
-  QVTKGraphicsItem.cxx
-  QVTKWidget2.cxx
-  )
-
-# add additional files depending on infovis and/or views
-IF(VTK_USE_VIEWS)
-  SET(QVTKLibSrcs ${QVTKLibSrcs}
-    vtkQtAnnotationView.cxx
-    vtkQtListView.cxx
-    vtkQtRecordView.cxx
-    vtkQtTableRepresentation.cxx
-    vtkQtTableView.cxx
-    vtkQtTreeView.cxx
-    vtkQtView.cxx
-    )
-  SET_SOURCE_FILES_PROPERTIES(vtkQtView.cxx ABSTRACT )
-  SET(QVTKMocHeaders ${QVTKMocHeaders}
-    vtkQtAnnotationView.h
-    vtkQtListView.h
-    vtkQtRecordView.h
-    vtkQtTableView.h
-    vtkQtTreeView.h
-    vtkQtView.h
-    )
-  SET(QVTKNonMocHeaders ${QVTKNonMocHeaders}
-    vtkQtTableRepresentation.h
-    )
-
-  # Rich-text view requires Qt >= 4.5.0
-  # Rich-text depends on Qt Webkit which is not portable on Unix (AIX & HP-UX)
-  IF(QT_QTWEBKIT_FOUND)
-    OPTION(VTK_QT_USE_WEBKIT "Option to use QT Webkit" ON)
-    MARK_AS_ADVANCED(VTK_QT_USE_WEBKIT)
-    IF( VTK_QT_USE_WEBKIT )
-      QT4_WRAP_UI(UI_FILES vtkQtRichTextView.ui)
-      SET(QVTKLibSrcs ${QVTKLibSrcs} ${UI_FILES} vtkQtRichTextView.cxx)
-      SET(QVTKMocHeaders ${QVTKMocHeaders} vtkQtRichTextView.h)
-      IF(QT_PHONON_FOUND AND APPLE)
-        SET(QT_USE_PHONON 1)
-      ENDIF(QT_PHONON_FOUND AND APPLE)
-      SET(QT_USE_QTWEBKIT 1)
-    ENDIF( VTK_QT_USE_WEBKIT )
-  ENDIF(QT_QTWEBKIT_FOUND)
-ENDIF(VTK_USE_VIEWS)
-
 # import Qt4 build settings
-set(QT_USE_QTSQL 1)
 set(QT_USE_QTNETWORK 1)
 find_package(Qt4 REQUIRED)
 include(${QT_USE_FILE})
 
 qt4_wrap_cpp(QVTKLibMocSrcs ${QVTKMocHeaders})
 
-vtk_module_impl()
+vtk_module_library(${vtk-module} ${QVTKLibSrcs} ${QVTKLibMocSrcs})
 
-vtk_add_library(QVTK ${QVTKLibSrcs} ${QVTKLibMocSrcs})
-# Add target specific compile flags for ABI setttings
-if(VTK_ABI_CXX_FLAGS)
-  set_property(TARGET QVTK APPEND PROPERTY COMPILE_FLAGS "${VTK_ABI_CXX_FLAGS}")
-endif()
-
-# Apply user-defined properties to the library target.
-if(VTK_LIBRARY_PROPERTIES)
-  set_target_properties(QVTK PROPERTIES ${VTK_LIBRARY_PROPERTIES})
-endif()
-
-TARGET_LINK_LIBRARIES(QVTK
+TARGET_LINK_LIBRARIES(${vtk-module}
   ${QT_LIBRARIES}
-  vtkRenderingOpenGL
-  vtkFiltersCore
-  vtkImagingCore
-  vtkCommonCore
-  vtkInteractionStyle
-  vtkIOSQL)
-
-# add extra dependencies if necessary
-IF(VTK_USE_VIEWS)
-  TARGET_LINK_LIBRARIES(QVTK vtkViews)
-ENDIF(VTK_USE_VIEWS)
+  )
 
 IF(VTK_USE_QVTK_QTOPENGL)
-  TARGET_LINK_LIBRARIES(QVTK ${OPENGL_gl_LIBRARY})
+  TARGET_LINK_LIBRARIES(${vtk-module} ${OPENGL_gl_LIBRARY})
 ENDIF(VTK_USE_QVTK_QTOPENGL)
 
 IF(VTK_USE_X)
-  TARGET_LINK_LIBRARIES(QVTK ${X11_LIBRARIES})
+  TARGET_LINK_LIBRARIES(${vtk-module} ${X11_LIBRARIES})
 ENDIF()
 
 IF(APPLE)
   IF(VTK_USE_CARBON)
-    TARGET_LINK_LIBRARIES( QVTK "-framework Carbon" )
+    TARGET_LINK_LIBRARIES(${vtk-module} "-framework Carbon" )
   ENDIF(VTK_USE_CARBON)
 ENDIF(APPLE)
 
@@ -380,7 +299,7 @@ IF(BUILD_SHARED_LIBS)
     CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/PluginInstall.cmake.in
                    ${CMAKE_CURRENT_BINARY_DIR}/PluginInstall.cmake
                    @ONLY IMMEDIATE)
-    SET_TARGET_PROPERTIES(QVTK PROPERTIES POST_INSTALL_SCRIPT
+    SET_TARGET_PROPERTIES(${vtk-module} PROPERTIES POST_INSTALL_SCRIPT
       ${CMAKE_CURRENT_BINARY_DIR}/PluginInstall.cmake
       )
   ENDIF(NOT VTK_INSTALL_NO_QT_PLUGIN)

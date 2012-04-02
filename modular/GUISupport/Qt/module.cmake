@@ -1,12 +1,13 @@
 vtk_module(vtkGUISupportQt
+  GROUPS
+    Qt
   DEPENDS
-    vtkCommonCore
     vtkCommonDataModel
     vtkCommonExecutionModel
-    vtkCommonMath
     vtkRenderingOpenGL
     vtkInteractionStyle
     vtkImagingCore
-    vtkIOSQL
+  TEST_DEPENDS
+    vtkTestingCore
   EXCLUDE_FROM_WRAPPING
-  DEFAULT ON)
+  )

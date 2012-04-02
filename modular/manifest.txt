@@ -5981,8 +5981,6 @@ GUISupport/Qt/vtkQtConnection.h:
 GUISupport/Qt/vtkQtTableModelAdapter.cxx:
 GUISupport/Qt/vtkQtTableModelAdapter.h:
 GUISupport/Qt/vtkQtTableModelAdapter.sip:
-GUISupport/Qt/vtkQtTimePointUtility.cxx:
-GUISupport/Qt/vtkQtTimePointUtility.h:
 GUISupport/Qt/vtkQtTreeModelAdapter.cxx:
 GUISupport/Qt/vtkQtTreeModelAdapter.h:
 GUISupport/Qt/vtkQtTreeModelAdapter.sip:
@@ -5996,16 +5994,27 @@ modular/GUISupportQt.patch: <ignore>
 
 [GUISupport/QtSQL]
 
+modular/GUISupport/QtSQL/CMakeLists.txt:
+modular/GUISupport/QtSQL/module.cmake:
+
 GUISupport/Qt/vtkQtSQLDatabase.cxx:
 GUISupport/Qt/vtkQtSQLDatabase.h:
 GUISupport/Qt/vtkQtSQLQuery.cxx:
 GUISupport/Qt/vtkQtSQLQuery.h:
+GUISupport/Qt/vtkQtTimePointUtility.cxx:
+GUISupport/Qt/vtkQtTimePointUtility.h:
+
+modular/QtSQL.patch: <ignore>
+<patch>: QtSQL.patch
 
 [GUISupport/QtSQL/Testing/Cxx]
 
 GUISupport/Qt/Testing/Cxx/TestQtSQLDatabase.cxx:
 
 [Views/Qt]
+
+modular/Views/Qt/CMakeLists.txt:
+modular/Views/Qt/module.cmake:
 
 GUISupport/Qt/vtkQtAnnotationView.cxx:
 GUISupport/Qt/vtkQtAnnotationView.h:
@@ -6031,6 +6040,9 @@ GUISupport/Qt/Testing/Cxx/TestVtkQtTableView.cxx:
 
 [GUISupport/QtOpenGL]
 
+modular/GUISupport/QtOpenGL/CMakeLists.txt:
+modular/GUISupport/QtOpenGL/module.cmake:
+
 GUISupport/Qt/QVTKGraphicsItem.cxx:
 GUISupport/Qt/QVTKGraphicsItem.h:
 GUISupport/Qt/QVTKGraphicsItem.sip:
@@ -6039,6 +6051,9 @@ GUISupport/Qt/QVTKWidget2.h:
 GUISupport/Qt/QVTKWidget2.sip:
 
 [GUISupport/QtWebkit]
+
+modular/GUISupport/QtWebkit/CMakeLists.txt:
+modular/GUISupport/QtWebkit/module.cmake:
 
 GUISupport/Qt/vtkQtRichTextView.cxx:
 GUISupport/Qt/vtkQtRichTextView.h:

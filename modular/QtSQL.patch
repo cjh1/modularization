@@ -1,0 +1,61 @@
+diff --git a/GUISupport/QtSQL/vtkQtSQLDatabase.h b/GUISupport/QtSQL/vtkQtSQLDatabase.h
+index 2c59fce..655c863 100644
+--- a/GUISupport/QtSQL/vtkQtSQLDatabase.h
++++ b/GUISupport/QtSQL/vtkQtSQLDatabase.h
+@@ -29,7 +29,7 @@
+ #include <qglobal.h>
+ #if (QT_EDITION & QT_MODULE_SQL)
+ 
+-#include "QVTKWin32Header.h"
++#include "vtkGUISupportQtSQLModule.h"
+ #include "vtkSQLDatabase.h"
+ 
+ #include <QtSql/QSqlDatabase>
+@@ -37,7 +37,7 @@
+ class vtkSQLQuery;
+ class vtkStringArray;
+ 
+-class QVTK_EXPORT vtkQtSQLDatabase : public vtkSQLDatabase
++class VTKGUISUPPORTQTSQL_EXPORT vtkQtSQLDatabase : public vtkSQLDatabase
+ {
+ public:
+   static vtkQtSQLDatabase* New();
+diff --git a/GUISupport/QtSQL/vtkQtSQLQuery.h b/GUISupport/QtSQL/vtkQtSQLQuery.h
+index 22bbf21..e557f94 100644
+--- a/GUISupport/QtSQL/vtkQtSQLQuery.h
++++ b/GUISupport/QtSQL/vtkQtSQLQuery.h
+@@ -29,14 +29,14 @@
+ #include <qglobal.h>
+ #if (QT_EDITION & QT_MODULE_SQL)
+ 
+-#include "QVTKWin32Header.h"
++#include "vtkGUISupportQtSQLModule.h"
+ #include "vtkSQLQuery.h"
+ #include "vtkType.h"
+ 
+ class vtkVariant;
+ class vtkQtSQLQueryInternals;
+ 
+-class QVTK_EXPORT vtkQtSQLQuery : public vtkSQLQuery
++class VTKGUISUPPORTQTSQL_EXPORT vtkQtSQLQuery : public vtkSQLQuery
+ {
+ public:
+   static vtkQtSQLQuery* New();
+diff --git a/GUISupport/QtSQL/vtkQtTimePointUtility.h b/GUISupport/QtSQL/vtkQtTimePointUtility.h
+index fab0596..26863bc 100644
+--- a/GUISupport/QtSQL/vtkQtTimePointUtility.h
++++ b/GUISupport/QtSQL/vtkQtTimePointUtility.h
+@@ -25,11 +25,11 @@
+ #ifndef __vtkQtTimePointUtility_h
+ #define __vtkQtTimePointUtility_h
+ 
+-#include "QVTKWin32Header.h"
++#include "vtkGUISupportQtSQLModule.h"
+ #include "vtkObject.h"
+ #include <QDateTime>
+ 
+-class QVTK_EXPORT vtkQtTimePointUtility : public vtkObject
++class VTKGUISUPPORTQTSQL_EXPORT vtkQtTimePointUtility : public vtkObject
+ {
+ public:
+   vtkTypeMacro(vtkQtTimePointUtility,vtkObject);
