@@ -37,6 +37,9 @@ endforeach()
 unset(vtk-module)
 unset(vtk-module-test)
 
+# Now include the module group logic.
+include(vtkGroups)
+
 # Validate the module DAG.
 macro(vtk_module_check vtk-module _needed_by stack)
   if(NOT VTK_MODULE_${vtk-module}_DECLARED)

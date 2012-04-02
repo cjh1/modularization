@@ -2732,6 +2732,7 @@ modular/CMake/VTKModuleAPI.cmake:
 modular/CMake/VTKModuleInfo.cmake.in:
 modular/CMake/VTKModuleMacros.cmake:
 modular/CMake/VTKModuleTop.cmake:
+modular/CMake/vtkGroups.cmake:
 modular/CMake/vtkThirdParty.cmake:
 modular/CMake/UseVTK.cmake:
 modular/CMake/VTKConfig.cmake.in:

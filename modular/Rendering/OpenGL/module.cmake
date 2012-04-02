@@ -1,4 +1,6 @@
 vtk_module(vtkRenderingOpenGL
+  GROUPS
+    Rendering
   IMPLEMENTS
     vtkRenderingCore
   DEPENDS
