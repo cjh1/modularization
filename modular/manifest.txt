@@ -3458,7 +3458,6 @@ Charts/vtkPiecewisePointHandleItem.h:
 
 modular/Charts/Core/module.cmake:
 modular/Charts/Core/CMakeLists.txt:
-modular/ChartsCore.patch: <ignore>
 
 [Charts/Core/Testing/Cxx]
 
@@ -3504,6 +3503,9 @@ Charts/Testing/Cxx/TestStackedBarGraph.cxx:
 Charts/Testing/Cxx/TestStackedPlot.cxx:
 Charts/Testing/Cxx/CMakeLists.txt:<ignore>
 Charts/Testing/CMakeLists.txt:<ignore>
+<patch>: ChartsCore.patch
+
+modular/ChartsCore.patch: <ignore>
 <patch>: ChartsCore.patch
 
 [Charts/Core/Testing/Python]
@@ -5347,7 +5349,6 @@ Rendering/vtkQuadricLODActor.h:
 
 modular/Rendering/OpenGL/CMakeLists.txt:
 modular/Rendering/OpenGL/module.cmake:
-# modular/Rendering/OpenGL/vtkRenderingOpenGL_AutoInit.cxx:<ignore>
 
 modular/Rendering/OpenGL/vtkRenderingOpenGLConfigure.h.in:
 
@@ -5716,6 +5717,10 @@ Rendering/vtkQtStringToImage.h:
 Rendering/vtkQtTreeRingLabelMapper.cxx:
 Rendering/vtkQtTreeRingLabelMapper.h:
 
+[Rendering/Qt/Testing/Cxx]
+
+GUISupport/Qt/Testing/Cxx/TestQtInitialization.cxx:
+
 [Rendering/Tk]
 
 Rendering/vtkTkImageViewerWidget.cxx:
@@ -5947,9 +5952,6 @@ GUISupport/Qt/QFilterTreeProxyModel.cxx:
 GUISupport/Qt/QFilterTreeProxyModel.h:
 GUISupport/Qt/QVTKApplication.cxx:
 GUISupport/Qt/QVTKApplication.h:
-GUISupport/Qt/QVTKGraphicsItem.cxx:
-GUISupport/Qt/QVTKGraphicsItem.h:
-GUISupport/Qt/QVTKGraphicsItem.sip:
 GUISupport/Qt/QVTKInteractorAdapter.cxx:
 GUISupport/Qt/QVTKInteractorAdapter.h:
 GUISupport/Qt/QVTKInteractorAdapter.sip:
@@ -5959,9 +5961,6 @@ GUISupport/Qt/QVTKInteractorInternal.h:
 GUISupport/Qt/QVTKInteractor.sip:
 GUISupport/Qt/QVTKPaintEngine.cxx:
 GUISupport/Qt/QVTKPaintEngine.h:
-GUISupport/Qt/QVTKWidget2.cxx:
-GUISupport/Qt/QVTKWidget2.h:
-GUISupport/Qt/QVTKWidget2.sip:
 GUISupport/Qt/QVTKWidget.cxx:
 GUISupport/Qt/QVTKWidget.h:
 GUISupport/Qt/QVTKWidget.sip:
@@ -5977,60 +5976,83 @@ GUISupport/Qt/vtkQtAbstractModelAdapter.sip:
 GUISupport/Qt/vtkQtAnnotationLayersModelAdapter.cxx:
 GUISupport/Qt/vtkQtAnnotationLayersModelAdapter.h:
 GUISupport/Qt/vtkQtAnnotationLayersModelAdapter.sip:
-GUISupport/Qt/vtkQtAnnotationView.cxx:
-GUISupport/Qt/vtkQtAnnotationView.h:
 GUISupport/Qt/vtkQtConnection.cxx:
 GUISupport/Qt/vtkQtConnection.h:
-GUISupport/Qt/vtkQtListView.cxx:
-GUISupport/Qt/vtkQtListView.h:
-GUISupport/Qt/vtkQtRecordView.cxx:
-GUISupport/Qt/vtkQtRecordView.h:
-GUISupport/Qt/vtkQtRichTextView.cxx:
-GUISupport/Qt/vtkQtRichTextView.h:
-GUISupport/Qt/vtkQtRichTextView.ui:
-GUISupport/Qt/vtkQtSQLDatabase.cxx:
-GUISupport/Qt/vtkQtSQLDatabase.h:
-GUISupport/Qt/vtkQtSQLQuery.cxx:
-GUISupport/Qt/vtkQtSQLQuery.h:
 GUISupport/Qt/vtkQtTableModelAdapter.cxx:
 GUISupport/Qt/vtkQtTableModelAdapter.h:
 GUISupport/Qt/vtkQtTableModelAdapter.sip:
-GUISupport/Qt/vtkQtTableRepresentation.cxx:
-GUISupport/Qt/vtkQtTableRepresentation.h:
-GUISupport/Qt/vtkQtTableView.cxx:
-GUISupport/Qt/vtkQtTableView.h:
 GUISupport/Qt/vtkQtTimePointUtility.cxx:
 GUISupport/Qt/vtkQtTimePointUtility.h:
 GUISupport/Qt/vtkQtTreeModelAdapter.cxx:
 GUISupport/Qt/vtkQtTreeModelAdapter.h:
 GUISupport/Qt/vtkQtTreeModelAdapter.sip:
-GUISupport/Qt/vtkQtTreeView.cxx:
-GUISupport/Qt/vtkQtTreeView.h:
-GUISupport/Qt/vtkQtView.cxx:
-GUISupport/Qt/vtkQtView.h:
 GUISupport/Qt/vtkTDxQtUnixDevices.cxx:
 GUISupport/Qt/vtkTDxQtUnixDevices.h:
 GUISupport/Qt/vtkQtDebugLeaksModel.cxx:
 GUISupport/Qt/vtkQtDebugLeaksModel.h:
-GUISupport/Qt/vtkQtDebugLeaksView.cxx:
-GUISupport/Qt/vtkQtDebugLeaksView.h:
 
 modular/GUISupportQt.patch: <ignore>
 <patch>: GUISupportQt.patch
 
+[GUISupport/QtSQL]
+
+GUISupport/Qt/vtkQtSQLDatabase.cxx:
+GUISupport/Qt/vtkQtSQLDatabase.h:
+GUISupport/Qt/vtkQtSQLQuery.cxx:
+GUISupport/Qt/vtkQtSQLQuery.h:
+
+[GUISupport/QtSQL/Testing/Cxx]
+
+GUISupport/Qt/Testing/Cxx/TestQtSQLDatabase.cxx:
+
+[Views/Qt]
+
+GUISupport/Qt/vtkQtAnnotationView.cxx:
+GUISupport/Qt/vtkQtAnnotationView.h:
+GUISupport/Qt/vtkQtListView.cxx:
+GUISupport/Qt/vtkQtListView.h:
+GUISupport/Qt/vtkQtRecordView.cxx:
+GUISupport/Qt/vtkQtRecordView.h:
+GUISupport/Qt/vtkQtTableView.cxx:
+GUISupport/Qt/vtkQtTableView.h:
+GUISupport/Qt/vtkQtTreeView.cxx:
+GUISupport/Qt/vtkQtTreeView.h:
+GUISupport/Qt/vtkQtView.cxx:
+GUISupport/Qt/vtkQtView.h:
+GUISupport/Qt/vtkQtDebugLeaksView.cxx:
+GUISupport/Qt/vtkQtDebugLeaksView.h:
+GUISupport/Qt/vtkQtTableRepresentation.cxx:
+GUISupport/Qt/vtkQtTableRepresentation.h:
+
+[Views/Qt/Testing/Cxx]
+
+GUISupport/Qt/Testing/Cxx/TestQtDebugLeaksView.cxx:
+GUISupport/Qt/Testing/Cxx/TestVtkQtTableView.cxx:
+
+[GUISupport/QtOpenGL]
+
+GUISupport/Qt/QVTKGraphicsItem.cxx:
+GUISupport/Qt/QVTKGraphicsItem.h:
+GUISupport/Qt/QVTKGraphicsItem.sip:
+GUISupport/Qt/QVTKWidget2.cxx:
+GUISupport/Qt/QVTKWidget2.h:
+GUISupport/Qt/QVTKWidget2.sip:
+
+[GUISupport/QtWebkit]
+
+GUISupport/Qt/vtkQtRichTextView.cxx:
+GUISupport/Qt/vtkQtRichTextView.h:
+GUISupport/Qt/vtkQtRichTextView.ui:
+
 [GUISupport/Qt/Testing/Cxx]
 
 GUISupport/Qt/Testing/Cxx/CMakeLists.txt:<ignore>
-modular/GUISupport/Qt/Testing/Cxx/CMakeLists.txt:<ignore>
+modular/GUISupport/Qt/Testing/Cxx/CMakeLists.txt:
 
 GUISupport/Qt/Testing/Cxx/QTestApp.cxx:
 GUISupport/Qt/Testing/Cxx/QTestApp.h:
-GUISupport/Qt/Testing/Cxx/TestQtDebugLeaksView.cxx:
-GUISupport/Qt/Testing/Cxx/TestQtInitialization.cxx:
-GUISupport/Qt/Testing/Cxx/TestQtSQLDatabase.cxx:
 GUISupport/Qt/Testing/Cxx/TestQtTableModelAdapter.cxx:
 GUISupport/Qt/Testing/Cxx/TestQtTreeModelAdapter.cxx:
-GUISupport/Qt/Testing/Cxx/TestVtkQtTableView.cxx:
 
 [GUISupport/Qt/Testing/Python]
 
