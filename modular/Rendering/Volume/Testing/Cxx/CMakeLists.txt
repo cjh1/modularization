@@ -1,4 +1,4 @@
-create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
+set(MyTests
   HomogeneousRayIntegration.cxx
   LinearRayIntegration.cxx
   PartialPreIntegration.cxx
@@ -34,9 +34,10 @@ create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
   TestTM3DLightComponents.cxx
   ZsweepConcavities.cxx
   volProt.cxx
-
-  EXTRA_INCLUDE vtkTestDriver.h
 )
+
+# Use the testing object factory, to reduce boilerplate code in tests.
+include("${VTK_SOURCE_DIR}/Testing/Rendering/vtkTestingObjectFactory.cmake")
 
 vtk_module_test_executable(${vtk-module}CxxTests ${Tests}
   ExerciseUnstructuredGridRayCastMapper.cxx )

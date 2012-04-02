@@ -14,5 +14,5 @@ list(REMOVE_ITEM TestsToRun ${vtk-module}CxxTests.cxx)
 # Add all the executables
 foreach (test ${TestsToRun})
   get_filename_component(TName ${test} NAME_WE)
-  add_test(NAME ${TName} COMMAND ${vtk-module}CxxTests ${TName})
+  add_test(NAME ${vtk-module}Cxx-${TName} COMMAND ${vtk-module}CxxTests ${TName})
 endforeach()
