@@ -2944,6 +2944,12 @@ Infovis/vtkConvexHull2D.cxx:
 Infovis/vtkConvexHull2D.h:
 Infovis/vtkGraphAnnotationLayersFilter.cxx:
 Infovis/vtkGraphAnnotationLayersFilter.h:
+Infovis/vtkDotProductSimilarity.h:
+Infovis/vtkDotProductSimilarity.cxx:
+Infovis/vtkRemoveHiddenData.h:
+Infovis/vtkRemoveHiddenData.cxx:
+Infovis/vtkTransferAttributes.h:
+Infovis/vtkTransferAttributes.cxx:
 
 [Infovis/Core/Testing/Cxx]
 
@@ -3148,46 +3154,6 @@ modular/IO/Infovis/Testing/Cxx/CMakeLists.txt:
 Infovis/Testing/Cxx/TestTulipReader.cxx:
 Infovis/Testing/Cxx/TestTulipReaderClusters.cxx:
 Infovis/Testing/Cxx/TestTulipReaderProperties.cxx:
-
-
-[Infovis/NeedAHome]
-
-modular/Infovis/NeedAHome/CMakeLists.txt:
-modular/Infovis/NeedAHome/module.cmake:
-
-Infovis/vtkComputeHistogram2DOutliers.h:
-Infovis/vtkComputeHistogram2DOutliers.cxx:
-Infovis/vtkDiagonalMatrixSource.h:
-Infovis/vtkDiagonalMatrixSource.cxx:
-Infovis/vtkDotProductSimilarity.h:
-Infovis/vtkDotProductSimilarity.cxx:
-Infovis/vtkExtractArray.h:
-Infovis/vtkExtractArray.cxx:
-Infovis/vtkExtractHistogram2D.h:
-Infovis/vtkExtractHistogram2D.cxx:
-Infovis/vtkMatricizeArray.h:
-Infovis/vtkMatricizeArray.cxx:
-Infovis/vtkNormalizeMatrixVectors.h:
-Infovis/vtkNormalizeMatrixVectors.cxx:
-Infovis/vtkPComputeHistogram2DOutliers.h:
-Infovis/vtkPComputeHistogram2DOutliers.cxx:
-Infovis/vtkPBivariateLinearTableThreshold.h:
-Infovis/vtkPBivariateLinearTableThreshold.cxx:
-Infovis/vtkPExtractHistogram2D.h:
-Infovis/vtkPExtractHistogram2D.cxx:
-Infovis/vtkPPairwiseExtractHistogram2D.h:
-Infovis/vtkPPairwiseExtractHistogram2D.cxx:
-Infovis/vtkPairwiseExtractHistogram2D.h:
-Infovis/vtkPairwiseExtractHistogram2D.cxx:
-Infovis/vtkPassArrays.h:
-Infovis/vtkPassArrays.cxx:
-Infovis/vtkRemoveHiddenData.h:
-Infovis/vtkRemoveHiddenData.cxx:
-Infovis/vtkSplitColumnComponents.h:
-Infovis/vtkSplitColumnComponents.cxx:
-Infovis/vtkTransferAttributes.h:
-Infovis/vtkTransferAttributes.cxx:
-
 
 [Views/Core]
 
@@ -4015,6 +3981,9 @@ Graphics/vtkTexturedSphereSource.cxx:
 Graphics/vtkTexturedSphereSource.h:
 Graphics/vtkGraphToPolyData.cxx:
 Graphics/vtkGraphToPolyData.h:
+Infovis/vtkDiagonalMatrixSource.h:
+Infovis/vtkDiagonalMatrixSource.cxx:
+
 
 [Filters/Sources/Testing/Cxx]
 
@@ -4251,6 +4220,18 @@ Filtering/vtkOverlappingAMRAlgorithm.cxx:
 Filtering/vtkOverlappingAMRAlgorithm.h:
 Filtering/vtkUniformGridAMRAlgorithm.cxx:
 Filtering/vtkUniformGridAMRAlgorithm.h:
+
+Infovis/vtkExtractArray.h:
+Infovis/vtkExtractArray.cxx:
+Infovis/vtkMatricizeArray.h:
+Infovis/vtkMatricizeArray.cxx:
+Infovis/vtkNormalizeMatrixVectors.h:
+Infovis/vtkNormalizeMatrixVectors.cxx:
+Infovis/vtkPassArrays.h:
+Infovis/vtkPassArrays.cxx:
+Infovis/vtkSplitColumnComponents.h:
+Infovis/vtkSplitColumnComponents.cxx:
+
 
 [Filters/General/Testing/Cxx]
 
@@ -4508,6 +4489,8 @@ Infovis/vtkPOrderStatistics.h:
 Infovis/vtkPOrderStatistics.cxx:
 Infovis/vtkPPCAStatistics.h:
 Infovis/vtkPPCAStatistics.cxx:
+Infovis/vtkPBivariateLinearTableThreshold.h:
+Infovis/vtkPBivariateLinearTableThreshold.cxx:
 
 
 [Interaction/Widgets]
@@ -6797,3 +6780,28 @@ modular/IOSQL.patch:<ignore>
 IO/Testing/Cxx/TestSQLDatabaseSchema.cxx:
 IO/Testing/Cxx/TestSQLiteDatabase.cxx:
 <patch>: IOSQL.patch
+
+
+[Filters/Imaging]
+
+modular/Filters/Imaging/module.cmake:
+modular/Filters/Imaging/CMakeLists.txt:
+
+Infovis/vtkComputeHistogram2DOutliers.h:
+Infovis/vtkComputeHistogram2DOutliers.cxx:
+Infovis/vtkExtractHistogram2D.h:
+Infovis/vtkExtractHistogram2D.cxx:
+Infovis/vtkPairwiseExtractHistogram2D.h:
+Infovis/vtkPairwiseExtractHistogram2D.cxx:
+
+[Filters/ParallelImaging]
+
+modular/Filters/ParallelImaging/module.cmake:
+modular/Filters/ParallelImaging/CMakeLists.txt:
+
+Infovis/vtkPComputeHistogram2DOutliers.h:
+Infovis/vtkPComputeHistogram2DOutliers.cxx:
+Infovis/vtkPExtractHistogram2D.h:
+Infovis/vtkPExtractHistogram2D.cxx:
+Infovis/vtkPPairwiseExtractHistogram2D.h:
+Infovis/vtkPPairwiseExtractHistogram2D.cxx:

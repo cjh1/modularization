@@ -115,6 +115,14 @@ set(Kit_SRCS
   vtkOverlappingAMRAlgorithm.cxx
   vtkNonOverlappingAMRAlgorithm.cxx
   vtkOverlappingAMRLevelIdScalars.cxx
+  vtkExtractArray.cxx
+  
+  vtkMatricizeArray.cxx
+  vtkExtractArray.cxx
+  vtkNormalizeMatrixVectors.cxx
+  vtkPassArrays.cxx
+  vtkSplitColumnComponents.cxx
+
   )
 
 set_source_files_properties(

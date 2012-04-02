@@ -1,9 +1,10 @@
 vtk_module(vtkViewsInfovis
   DEPENDS
-    vtkInfovisNeedAHome
     vtkViewsCore
     vtkRenderingLabel
     vtkInfovisLayout
+    vtkInfovisCore
     vtkInteractionStyle
     vtkFiltersModeling
+    vtkFiltersImaging
   DEFAULT OFF)

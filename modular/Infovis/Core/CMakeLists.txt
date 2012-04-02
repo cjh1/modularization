@@ -34,6 +34,7 @@ set(Kit_SRCS
   vtkTreeFieldAggregator.cxx
   vtkTreeLevelsFilter.cxx
   vtkVertexDegree.cxx
+  vtkRemoveHiddenData.cxx
   )
 
 vtk_module_library(vtkInfovisCore ${Kit_SRCS})

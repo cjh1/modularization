@@ -30,6 +30,7 @@ set(Kit_SRCS
   vtkTextSource.cxx
   vtkTexturedSphereSource.cxx
   vtkGraphToPolyData.cxx
+  vtkDiagonalMatrixSource.cxx
   )
 
 set_source_files_properties(
