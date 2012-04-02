@@ -3457,7 +3457,6 @@ Charts/vtkPiecewisePointHandleItem.h:
 modular/Charts/Core/module.cmake:
 modular/Charts/Core/CMakeLists.txt:
 modular/ChartsCore.patch: <ignore>
-<patch>: ChartsCore.patch
 
 [Charts/Core/Testing/Cxx]
 
@@ -3503,6 +3502,7 @@ Charts/Testing/Cxx/TestStackedBarGraph.cxx:
 Charts/Testing/Cxx/TestStackedPlot.cxx:
 Charts/Testing/Cxx/CMakeLists.txt:<ignore>
 Charts/Testing/CMakeLists.txt:<ignore>
+<patch>: ChartsCore.patch
 
 [Charts/Core/Testing/Python]
 
@@ -5345,7 +5345,7 @@ Rendering/vtkQuadricLODActor.h:
 
 modular/Rendering/OpenGL/CMakeLists.txt:
 modular/Rendering/OpenGL/module.cmake:
-modular/Rendering/OpenGL/vtkRenderingOpenGL_AutoInit.cxx:
+# modular/Rendering/OpenGL/vtkRenderingOpenGL_AutoInit.cxx:<ignore>
 
 modular/Rendering/OpenGL/vtkRenderingOpenGLConfigure.h.in:
 
@@ -6019,6 +6019,7 @@ modular/GUISupportQt.patch: <ignore>
 [GUISupport/Qt/Testing/Cxx]
 
 GUISupport/Qt/Testing/Cxx/CMakeLists.txt:<ignore>
+modular/GUISupport/Qt/Testing/Cxx/CMakeLists.txt:<ignore>
 
 GUISupport/Qt/Testing/Cxx/QTestApp.cxx:
 GUISupport/Qt/Testing/Cxx/QTestApp.h:
