@@ -17,13 +17,6 @@ set(vtkCommonCore_EXPORT_OPTIONS
 
 #-----------------------------------------------------------------------------
 
-if(WIN32)
-  if(NOT VTK_USE_X)
-    set(VTK_OWP_ENCODED_C vtkWin32OutputWindowProcessEncoded.c)
-    set_source_files_properties(${VTK_OWP_ENCODED_C} PROPERTIES WRAP_EXCLUDE 1)
-  endif()
-endif()
-
 include_directories(
   ${VTK_SOURCE_DIR}/ThirdParty/utf8/source
   )
@@ -163,11 +156,13 @@ if(HAVE_VTK_SIZEOF__INT64)
 endif()
 
 if(WIN32)
+  # TODO: VTK_USE_X was once tested here but is now in another module
   list(APPEND Kit_SRCS
     vtkWin32OutputWindow.cxx
     vtkWin32OutputWindowProcessEncoded.c
     vtkWin32ProcessOutputWindow.cxx
     )
+  set_property(SOURCE vtkWin32OutputWindowProcessEncoded.c PROPERTY WRAP_EXCLUDE 1)
 endif()
 
 # Generate data for folding Unicode strings
@@ -439,16 +434,6 @@ set_source_files_properties(
 # Activate code in "vtkVariant.cxx".  See the comment in the source.
 set_source_files_properties(vtkVariant.cxx PROPERTIES
   COMPILE_FLAGS -DVTK_VARIANT_IMPL)
-
-if(WIN32)
-  if(NOT VTK_USE_X)
-    list(APPEND Kit_SRCS vtkWin32OutputWindow.cxx
-      vtkWin32ProcessOutputWindow.cxx)
-    set(Kit_EXTRA_SRCS ${Kit_EXTRA_SRCS} vtkWin32OutputWindowProcessEncoded.c)
-    set_source_files_properties(vtkWin32OutputWindowProcessEncoded.c
-      PROPERTIES WRAP_EXCLUDE 1)
-  endif()
-endif()
 
 # Need nsl to resolve gethostbyname on SunOS-5.8
 # and socket also
