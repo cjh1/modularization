@@ -786,7 +786,6 @@ Common/vtkTimePointUtility.cxx:
 Common/vtkTimePointUtility.h:
 Common/vtkTimeStamp.cxx:
 Common/vtkTimeStamp.h:
-Common/vtkTryDowncast.h:
 Common/vtkTypedArray.cxx.in:
 Common/vtkTypedArray.h:
 Common/vtkTypedArray.h.in:
@@ -813,7 +812,6 @@ Common/vtkUnsignedShortArray.cxx:
 Common/vtkUnsignedShortArray.h:
 Common/vtkVariantArray.cxx:
 Common/vtkVariantArray.h:
-Common/vtkVariantBoostSerialization.h:
 Common/vtkVariantCast.h:
 Common/vtkVariantCreate.h:
 Common/vtkVariant.cxx:
@@ -923,7 +921,6 @@ Graphics/Testing/Cxx/TestSortDataArray.cxx:
 
 Infovis/Testing/Cxx/TestVariant.cxx:
 Infovis/Testing/Cxx/TestVariantArray.cxx:
-Infovis/Testing/Cxx/TestVariantSerialization.cxx:
 
 [Common/Core/Testing/Python]
 
@@ -3173,6 +3170,21 @@ Infovis/Testing/Cxx/TestBoostBrandesCentrality.cxx:
 Infovis/Testing/Cxx/TestBoostExtractLargestComponent.cxx:
 Infovis/Testing/Cxx/TestBoostSplitTableField.cxx:
 
+
+[Infovis/Boost]
+
+modular/Infovis/Boost/module.cmake:
+modular/Infovis/Boost/CMakeLists.txt:
+
+Common/vtkTryDowncast.h:
+Common/vtkVariantBoostSerialization.h:
+
+[Infovis/Boost/Testing/Cxx]
+
+modular/Infovis/Boost/Testing/Cxx/CMakeLists.txt:
+
+Infovis/Testing/Cxx/TestVariantSerialization.cxx:
+ 
 [IO/Infovis]
 
 modular/IO/Infovis/CMakeLists.txt:

@@ -1,3 +1,5 @@
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
 
 SET(Kit_SRCS
   vtkApplyColors.cxx
