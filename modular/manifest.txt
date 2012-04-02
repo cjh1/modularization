@@ -2640,7 +2640,6 @@ modular/Wrapping/Tcl/CMakeLists.txt:
 modular/Wrapping/Tcl/pkgIndex.tcl.in:
 Wrapping/Tcl/pkgIndex.tcl.in:<ignore>
 Wrapping/Tcl/README:
-Wrapping/Tcl/resources/:<ignore>
 Wrapping/Tcl/vtkcommon/:<ignore>
 Wrapping/Tcl/vtkDetermineTkResources.cmake:
 Wrapping/Tcl/vtkfiltering/:<ignore>
@@ -2662,6 +2661,9 @@ Wrapping/Tcl/vtkviews/:<ignore>
 Wrapping/Tcl/vtkvolumerendering/:<ignore>
 Wrapping/Tcl/vtkwidgets/:<ignore>
 modular/Wrapping/Tcl/vtkmodule.tcl.in:
+
+[Wrapping/Tcl/resources]
+Wrapping/Tcl/resources/:
 
 [Wrapping/Tcl/vtk]
 Wrapping/Tcl/vtk/:
