@@ -40,6 +40,10 @@ function(vtk_add_python_wrapping module_name module_srcs)
 
   vtk_wrap_python3(${module_name}Python Python_SRCS "${module_srcs}")
   vtk_add_library(${module_name}PythonD ${Python_SRCS} ${extra_srcs})
+  if(VTK_MODULE_${module_name}_IMPLEMENTS)
+    set_property(TARGET ${module_name}PythonD PROPERTY COMPILE_DEFINITIONS
+      "${module_name}_AUTOINIT=(${module_name},)")
+  endif()
   target_link_libraries(${module_name}PythonD ${module_name}
     vtkWrappingPythonCore ${extra_links} ${VTK_PYTHON_LIBRARIES})
   python_add_module(${module_name}Python ${module_name}PythonInit.cxx)
