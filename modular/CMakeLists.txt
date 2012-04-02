@@ -32,8 +32,13 @@ if(NOT CMAKE_LIBRARY_OUTPUT_DIRECTORY)
   endif()
 endif()
 if(NOT CMAKE_ARCHIVE_OUTPUT_DIRECTORY)
-  set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${VTK_BINARY_DIR}/lib)
+  set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${VTK_BINARY_DIR}/lib"
+    CACHE PATH "Archive output directory")
 endif()
+mark_as_advanced(CMAKE_RUNTIME_OUTPUT_DIRECTORY
+  CMAKE_LIBRARY_OUTPUT_DIRECTORY
+  CMAKE_ARCHIVE_OUTPUT_DIRECTORY
+  )
 
 # FIXME: LIBRARY_OUTPUT_PATH and EXECUTABLE_OUTPUT_PATH useage is scattered about VTK.
 # when we can patch everything they should simply be replaced with CMAKE_<blah>_OUTPUT_DIRECTORY variables.
@@ -168,6 +173,7 @@ FIND_PATH(VTK_DATA_ROOT VTKData.readme
   $ENV{VTK_DATA_ROOT}
   DOC "The repository for data used for testing.  To obtain from git: \"git clone git://vtk.org/VTKData.git\""
   )
+mark_as_advanced(VTK_DATA_ROOT)
 
 #-----------------------------------------------------------------------------
 # Configure the default VTK_LARGE_DATA_ROOT for the location of VTKLargeData.
@@ -183,6 +189,7 @@ FIND_PATH(VTK_LARGE_DATA_ROOT VTKLargeData.readme
   $ENV{VTK_LARGE_DATA_ROOT}
   DOC "The repository for large data used for testing.  To obtain from git: \"git clone git://vtk.org/VTKLargeData.git\""
   )
+mark_as_advanced(VTK_LARGE_DATA_ROOT)
 
 #-----------------------------------------------------------------------------
 # Platform configuration tests.
@@ -316,10 +323,12 @@ option(VTK_WRAP_PYTHON "Should VTK Python wrapping be built?" OFF)
 option(VTK_WRAP_JAVA "Should VTK Java wrapping be built?" OFF)
 
 # FIXME: This variable should not be necessary once we are done
-set(VTK_IGNORE_BTX ON CACHE BOOL "VTK modular always ignores BTX" FORCE)
+set(VTK_IGNORE_BTX ON CACHE INTERNAL "VTK modular always ignores BTX")
 
 find_file(VTK_WRAP_HINTS hints ${VTK_SOURCE_DIR}/Wrapping
   NO_CMAKE_FIND_ROOT_PATH)
+mark_as_advanced(VTK_WRAP_HINTS)
+
 if(VTK_WRAP_PYTHON)
   set(VTK_WRAP_PYTHON_EXE vtkWrapPython)
   set(VTK_WRAP_PYTHON_INIT_EXE vtkWrapPythonInit)
