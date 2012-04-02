@@ -44,23 +44,6 @@ function(vtk_add_python_wrapping module_name module_srcs)
     vtkWrappingPythonCore ${extra_links} ${VTK_PYTHON_LIBRARIES})
   python_add_module(${module_name}Python ${module_name}PythonInit.cxx)
   if(PYTHON_ENABLE_MODULE_${module_name}Python)
-    set(VTK_PYTHON_MODULES ${VTK_PYTHON_MODULES} ${module_name}
-      CACHE INTERNAL "Python modules for VTK")
     target_link_libraries(${module_name}Python ${module_name}PythonD)
-    # Then write the Python code to import the module
-    file(WRITE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/${kit_name}.py"
-      "from ${module_name}Python import *\n")
-    if(NOT EXISTS "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/__init__.py")
-      file(WRITE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/__init__.py"
-        "import os\nimport sys\n\nfrom ${vtk-module}Python import *\n")
-    else()
-      file(APPEND "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/__init__.py"
-        "from ${vtk-module}Python import *\n")
-    endif()
-    if(${vtk-module} STREQUAL "vtkCommonCore")
-      # vtkVariant has a special helper that is imported for it.
-      file(APPEND "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vtk/__init__.py"
-        "from util.vtkVariant import *\n")
-    endif()
   endif()
 endfunction()

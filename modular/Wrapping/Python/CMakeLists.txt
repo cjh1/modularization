@@ -1,7 +1,7 @@
 # this file is used directly from VTK/CMakeLists.txt, not from VTK/Wrapping/CMakeLists.txt
 include_directories(${VTK_BINARY_DIR} ${VTK_BINARY_DIR}/Utilities)
 
-get_property(python_modules GLOBAL PROPERTY VTK_PYTHON_WRAPPED)
+get_property(VTK_PYTHON_MODULES GLOBAL PROPERTY VTK_PYTHON_WRAPPED)
 
 #-----------------------
 # for the vtkpython executable
@@ -167,27 +167,13 @@ IF(PYTHON_EXECUTABLE)
 
 # Wrapping/Python/vtk/*.py
   SET(VTK_PYTHON_FILES
-    vtk/__helper
-    vtk/__init__
-    vtk/common
-    vtk/charts
-    vtk/filtering
-    vtk/genericfiltering
-    vtk/geovis
-    vtk/graphics
-    vtk/hybrid
-    vtk/imaging
-    vtk/io
-    vtk/infovis
-    vtk/textanalysis
-    vtk/parallel
-    vtk/rendering
-    vtk/required
-    vtk/views
-    vtk/volumerendering
-    vtk/widgets
-    vtk/qvtk
     )
+  SET(VTK_PYTHON_IMPORT_ALL "")
+  FOREACH(module ${VTK_PYTHON_MODULES})
+    SET(VTK_PYTHON_IMPORT_ALL "${VTK_PYTHON_IMPORT_ALL}from ${module} import *\n")
+    CONFIGURE_FILE(vtk/module.py.in vtk/${module}.py @ONLY IMMEDIATE)
+  ENDFOREACH()
+  CONFIGURE_FILE(vtk/__init__.py.in vtk/__init__.py @ONLY IMMEDIATE)
 
 # vtk.util package
   SET(VTK_PYTHON_FILES
@@ -275,22 +261,6 @@ IF(PYTHON_EXECUTABLE)
                          COMMENT "source copy")
     ENDFOREACH(file)
   ENDIF (NOT "${VTK_BINARY_DIR}" MATCHES "^${VTK_SOURCE_DIR}$")
-
-  # handle the different configuration types (each will have identical files)
-  SET(VTK_PYTHON_CONFIGURATION_TYPES ${CMAKE_CONFIGURATION_TYPES})
-  IF(VTK_PYTHON_CONFIGURATION_TYPES)
-    FOREACH(config ${VTK_PYTHON_CONFIGURATION_TYPES})
-      FOREACH(file ${VTK_PYTHON_FILES})
-        SET(src "${VTK_SOURCE_DIR}/Wrapping/Python/${file}.py")
-        SET(tgt "${VTK_BINARY_DIR}/Wrapping/Python/${config}/${file}.py")
-        ADD_CUSTOM_COMMAND(DEPENDS ${src}
-                           COMMAND ${CMAKE_COMMAND}
-                           ARGS -E copy ${src} ${tgt}
-                           OUTPUT ${tgt}
-                           COMMENT "source copy")
-      ENDFOREACH(file)
-    ENDFOREACH(config)
-  ENDIF(VTK_PYTHON_CONFIGURATION_TYPES)
 
   # Byte compile the Python files.
   CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/compile_all_vtk.py.in
@@ -397,6 +367,23 @@ IF(PYTHON_EXECUTABLE)
             )
   ENDIF(NOT VTK_INSTALL_NO_PYTHON)
 ENDIF(PYTHON_EXECUTABLE)
+
+# Create the setup.py file.
+IF(CMAKE_CONFIGURATION_TYPES)
+  # The build has multiple configuration types.  If CMAKE_BUILD_TYPE
+  # is set use it as the default BUILD_TYPE for setup.py to install.
+  SET(VTK_PYTHON_HAS_CONFIG_TYPES 1)
+  IF(CMAKE_BUILD_TYPE)
+    SET(VTK_PYTHON_BUILD_TYPE "\"${CMAKE_BUILD_TYPE}\"")
+  ELSE(CMAKE_BUILD_TYPE)
+    SET(VTK_PYTHON_BUILD_TYPE "[]")
+  ENDIF(CMAKE_BUILD_TYPE)
+ELSE(CMAKE_CONFIGURATION_TYPES)
+  # The build has one configuration type.  The build type does not
+  # affect installation.
+  SET(VTK_PYTHON_HAS_CONFIG_TYPES 0)
+  SET(VTK_PYTHON_BUILD_TYPE "[]")
+ENDIF(CMAKE_CONFIGURATION_TYPES)
 
 CONFIGURE_FILE(${VTK_SOURCE_DIR}/Wrapping/Python/setup.py.in
                ${VTK_BINARY_DIR}/Wrapping/Python/setup.py @ONLY IMMEDIATE)

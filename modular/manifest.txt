@@ -2590,7 +2590,8 @@ Wrapping/Python/PythonInstall.cmake.in:
 Wrapping/Python/README.txt:
 Wrapping/Python/README_WRAP.txt:
 Wrapping/Python/setup_install_paths.py:
-Wrapping/Python/setup.py.in:
+Wrapping/Python/setup.py.in:<ignore>
+modular/Wrapping/Python/setup.py.in:
 
 Wrapping/Python/vtkParaPythonAppInit.cxx:
 Wrapping/Python/vtkPythonAppInitConfigure.h.in:
@@ -2604,7 +2605,52 @@ modular/WrappingPython.patch:<ignore>
 
 [Wrapping/Python/vtk]
 
-Wrapping/Python/vtk/:
+modular/Wrapping/Python/vtk/__init__.py.in:
+modular/Wrapping/Python/vtk/module.py.in:
+
+Wrapping/Python/vtk/.cvsignore:<ignore>
+Wrapping/Python/vtk/charts.py:<ignore>
+Wrapping/Python/vtk/chemistry.py:<ignore>
+Wrapping/Python/vtk/common.py:<ignore>
+Wrapping/Python/vtk/filtering.py:<ignore>
+Wrapping/Python/vtk/genericfiltering.py:<ignore>
+Wrapping/Python/vtk/geovis.py:<ignore>
+Wrapping/Python/vtk/graphics.py:<ignore>
+Wrapping/Python/vtk/__helper.py:<ignore>
+Wrapping/Python/vtk/hybrid.py:<ignore>
+Wrapping/Python/vtk/imaging.py:<ignore>
+Wrapping/Python/vtk/infovis.py:<ignore>
+Wrapping/Python/vtk/__init__.py:<ignore>
+Wrapping/Python/vtk/io.py:<ignore>
+Wrapping/Python/vtk/parallel.py:<ignore>
+Wrapping/Python/vtk/qvtk.py:<ignore>
+Wrapping/Python/vtk/rendering.py:<ignore>
+Wrapping/Python/vtk/required.py:<ignore>
+Wrapping/Python/vtk/textanalysis.py:<ignore>
+Wrapping/Python/vtk/views.py:<ignore>
+Wrapping/Python/vtk/volumerendering.py:<ignore>
+Wrapping/Python/vtk/widgets.py:<ignore>
+
+[Wrapping/Python/vtk/qt]
+Wrapping/Python/vtk/qt/:
+
+[Wrapping/Python/vtk/tk]
+Wrapping/Python/vtk/tk/:
+
+[Wrapping/Python/vtk/wx]
+Wrapping/Python/vtk/wx/:
+
+[Wrapping/Python/vtk/gtk]
+Wrapping/Python/vtk/gtk/:
+
+[Wrapping/Python/vtk/qt4]
+Wrapping/Python/vtk/qt4/:
+
+[Wrapping/Python/vtk/test]
+Wrapping/Python/vtk/test/:
+
+[Wrapping/Python/vtk/util]
+Wrapping/Python/vtk/util/:
 
 [Wrapping/PythonCore]
 
