@@ -1,17 +1,11 @@
-create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
-  TestVariantSerialization
+find_package(Boost REQUIRED 
+  COMPONENTS serialization 
+  )
+include_directories(${Boost_INCLUDE_DIRS})
 
-  EXTRA_INCLUDE vtkTestDriver.h
-)
-
-vtk_module_test_executable(${vtk-module}CxxTests ${Tests}
+vtk_module_test_executable(TestVariantSerialization TestVariantSerialization.cxx
   )
 
-set(TestsToRun ${Tests})
-list(REMOVE_ITEM TestsToRun ${vtk-module}CxxTests.cxx)
+target_link_libraries(TestVariantSerialization ${Boost_SERIALIZATION_LIBRARY})
 
-# Add all the executables
-foreach(test ${TestsToRun})
-  get_filename_component(TName ${test} NAME_WE)
-  add_test(NAME ${vtk-module}-${TName} COMMAND ${vtk-module}CxxTests ${TName})
-endforeach()
+add_test(NAME ${vtk-module}-TestVariantSerialization COMMAND TestVariantSerialization)
