@@ -40,8 +40,8 @@ Views/CMakeLists.txt: <ignore>
 Widgets/CMakeLists.txt: <ignore>
 vtkBanner.gif: <ignore>
 vtkMacros.cmake: <ignore>
-GenericFiltering/Testing/: <ignore>
-Geovis/Testing/: <ignore>
+GenericFiltering/Testing/Tcl/:<ignore>
+
 Graphics/Testing/CMakeLists.txt:<ignore>
 Graphics/Testing/Tcl/:<ignore>
 Graphics/Testing/Python/:<ignore>
@@ -55,8 +55,8 @@ VolumeRendering/Testing/Tcl/: <ignore>
 VolumeRendering/Testing/Python/: <ignore>
 Widgets/Testing/Tcl/: <ignore>
 Widgets/Testing/Python/: <ignore>
-Views/Testing/: <ignore>
-Parallel/Testing/: <ignore>
+Parallel/Testing/Python/:<ignore>
+Parallel/Testing/Tcl/:<ignore>
 
 Examples/: <ignore>
 GenericFiltering/README.html: <ignore>
@@ -66,6 +66,13 @@ modular/testing.txt: <ignore>
 modular/modularize.py: <ignore>
 modular/modularizeCxxTests.lisp:<ignore>
 modular/export_headers.py: <ignore>
+
+GenericFiltering/Testing/CMakeLists.txt:<ignore>
+GenericFiltering/Testing/Cxx/CMakeLists.txt:<ignore>
+
+Geovis/Testing/CMakeLists.txt:<ignore>
+Geovis/Testing/Cxx/CMakeLists.txt:<ignore>
+Geovis/Testing/Tcl/CMakeLists.txt:<ignore>
 
 GUISupport/CMakeLists.txt: <ignore>
 GUISupport/Qt/CMakeLists.txt: <ignore>
@@ -128,7 +135,7 @@ Common/Testing/Tcl/CMakeLists.txt:<ignore>
 
 Filtering/Testing/CMakeLists.txt:<ignore>
 Filtering/Testing/Cxx/CMakeLists.txt:<ignore>
-Filtering/Testing/Cxx/CellLocator2.cxx:<ignore>
+
 Filtering/Testing/Cxx/CellTreeLocator.cxx:<ignore>
 Filtering/Testing/Tcl/CMakeLists.txt:<ignore>
 
@@ -189,39 +196,22 @@ Rendering/Testing/Tcl/volTM2DCropRegions.tcl:<ignore>
 Rendering/Testing/Tcl/volTM2DRotateClip.tcl:<ignore>
 
 Graphics/Testing/Cxx/CMakeLists.txt:<ignore>
-Graphics/Testing/Cxx/FrustumClip.cxx:<ignore>
-Graphics/Testing/Cxx/Mace.cxx:<ignore>
-Graphics/Testing/Cxx/TemporalStatistics.cxx:<ignore>
-Graphics/Testing/Cxx/TestActor2DTextures.cxx:<ignore>
-Graphics/Testing/Cxx/TestBareScalarsToColors.cxx:<ignore>
-Graphics/Testing/Cxx/RGrid.cxx:<ignore>
-Graphics/Testing/Cxx/TestHierarchicalBoxPipeline.cxx:<ignore>
-Graphics/Testing/Cxx/TestIncrementalOctreePointLocator.cxx:<ignore>
-Graphics/Testing/Cxx/TestMapVectorsAsRGBColors.cxx:<ignore>
-Graphics/Testing/Cxx/TestMapVectorsToColors.cxx:<ignore>
-Graphics/Testing/Cxx/TestMatlabEngineFilter.cxx:<ignore>
-Graphics/Testing/Cxx/TestMatlabEngineInterface.cxx:<ignore>
-Graphics/Testing/Cxx/TestNamedComponents.cxx:<ignore>
+
 Graphics/Testing/Cxx/TestRCalculatorFilter.cxx:<ignore>
 Graphics/Testing/Cxx/TestRInterface.cxx:<ignore>
 Graphics/Testing/Cxx/TestRRandomTableSource.cxx:<ignore>
-Graphics/Testing/Cxx/TestReebGraph.cxx:<ignore>
-Graphics/Testing/Cxx/TestTessellator.cxx:<ignore>
-Graphics/Testing/Cxx/UnstructuredGridCellGradients.cxx:<ignore>
-Graphics/Testing/Cxx/UnstructuredGridFastGradients.cxx:<ignore>
-Graphics/Testing/Cxx/UnstructuredGridGradients.cxx:<ignore>
 Graphics/Testing/Cxx/expCos.cxx:<ignore>
 
 Hybrid/Testing/CMakeLists.txt:<ignore>
 Hybrid/Testing/Cxx/CMakeLists.txt:<ignore>
-Hybrid/Testing/Cxx/TestExodusImplicitArrays.cxx:<ignore>
+
 Hybrid/Testing/Cxx/TestImageDataLIC2D.cxx:<ignore>
 Hybrid/Testing/Cxx/TestImageDataLIC2D.h:<ignore>
 Hybrid/Testing/Cxx/TestStructuredGridLIC2DSlice.h:<ignore>
 Hybrid/Testing/Cxx/TestStructuredGridLIC2DXSlice.cxx:<ignore>
 Hybrid/Testing/Cxx/TestStructuredGridLIC2DYSlice.cxx:<ignore>
 Hybrid/Testing/Cxx/TestStructuredGridLIC2DZSlice.cxx:<ignore>
-Hybrid/Testing/Cxx/TestTDxGeo.cxx:<ignore>
+
 Hybrid/Testing/Temporary/CTestCostData.txt:<ignore>
 Hybrid/Testing/Temporary/LastTest.log:<ignore>
 
@@ -265,53 +255,25 @@ IO/Testing/Tcl/TestXMLUnstructuredGridIO.tcl:<ignore>
 IO/Testing/Tcl/TestXYZMol.tcl:<ignore>
 IO/Testing/Tcl/caffeine.tcl:<ignore>
 IO/Testing/Tcl/dem.tcl:<ignore>
-IO/Testing/Cxx/TestDataObjectIO.cxx:<ignore>
-IO/Testing/Cxx/TestHyperOctreeIO.cxx:<ignore>
 
 Imaging/Testing/CMakeLists.txt:<ignore>
 Imaging/Testing/Cxx/CMakeLists.txt:<ignore>
 
 Infovis/Testing/CMakeLists.txt:<ignore>
 Infovis/Testing/Cxx/CMakeLists.txt:<ignore>
-Infovis/Testing/Cxx/ArrayAPIDenseCoordinates.cxx:<ignore>
-Infovis/Testing/Cxx/ArrayDiagonalMatrixSource.cxx:<ignore>
-Infovis/Testing/Cxx/ArrayDotProductSimilarity.cxx:<ignore>
-Infovis/Testing/Cxx/ArrayExtractFactoredArray.cxx:<ignore>
-Infovis/Testing/Cxx/ArrayMatricizeArray.cxx:<ignore>
-Infovis/Testing/Cxx/ArrayNormalizeMatrixVectors.cxx:<ignore>
-Infovis/Testing/Cxx/TestArcEdges.cxx:<ignore>
-Infovis/Testing/Cxx/TestContingencyStatistics.cxx:<ignore>
-Infovis/Testing/Cxx/TestCorrelativeStatistics.cxx:<ignore>
-Infovis/Testing/Cxx/TestDIMACSGraphReader.cxx:<ignore>
-Infovis/Testing/Cxx/TestDelimitedTextReader.cxx:<ignore>
-Infovis/Testing/Cxx/TestDescriptiveStatistics.cxx:<ignore>
-Infovis/Testing/Cxx/TestFixedWidthTextReader.cxx:<ignore>
-Infovis/Testing/Cxx/TestGraph.cxx:<ignore>
-Infovis/Testing/Cxx/TestGraphAttributes.cxx:<ignore>
-Infovis/Testing/Cxx/TestGraphHierarchicalBundle.cxx:<ignore>
-Infovis/Testing/Cxx/TestGroupLeafVertices.cxx:<ignore>
-Infovis/Testing/Cxx/TestISIReader.cxx:<ignore>
+Infovis/Testing/Cxx/TestGraphHierarchicalBundle.cxx:<ignore> # deprecated
 Infovis/Testing/Cxx/TestKCoreDecomposition.cxx:<ignore>
 Infovis/Testing/Cxx/TestKCoreLayout.cxx:<ignore>
-Infovis/Testing/Cxx/TestKMeansStatistics.cxx:<ignore>
-Infovis/Testing/Cxx/TestKdTreeBoxSelection.cxx:<ignore>
-Infovis/Testing/Cxx/TestPBGLAlgorithms.cxx:<ignore>
-Infovis/Testing/Cxx/TestPCAStatistics.cxx:<ignore>
-Infovis/Testing/Cxx/TestPassArrays.cxx:<ignore>
-Infovis/Testing/Cxx/TestPassThrough.cxx:<ignore>
-Infovis/Testing/Cxx/TestPruneTreeFilter.cxx:<ignore>
-Infovis/Testing/Cxx/TestRISReader.cxx:<ignore>
-Infovis/Testing/Cxx/TestRandomPContingencyStatisticsMPI.cxx:<ignore>
-Infovis/Testing/Cxx/TestRandomPKMeansStatisticsMPI.cxx:<ignore>
-Infovis/Testing/Cxx/TestRandomPMomentStatisticsMPI.cxx:<ignore>
-Infovis/Testing/Cxx/TestRandomPOrderStatisticsMPI.cxx:<ignore>
-Infovis/Testing/Cxx/TestRealDataPDescriptiveStatisticsMPI.cxx:<ignore>
-Infovis/Testing/Cxx/TestSQLGraphReader.cxx:<ignore>
-Infovis/Testing/Cxx/TestSimple3DCirclesStrategy.cxx:<ignore>
-Infovis/Testing/Cxx/TestStringToCategory.cxx:<ignore>
-Infovis/Testing/Cxx/TestTable.cxx:<ignore>
-Infovis/Testing/Cxx/TestTableSplitColumnComponents.cxx:<ignore>
-Infovis/Testing/Cxx/TestTableToGraph.cxx:<ignore>
+
+Parallel/Testing/CMakeLists.txt:<ignore>
+Parallel/Testing/Cxx/CMakeLists.txt:<ignore>
+
+Parallel/Testing/Cxx/TestSockets.py:<ignore>
+Parallel/Testing/Cxx/ThreadedCommunicator.cxx:<ignore>
+
+Views/Testing/CMakeLists.txt:<ignore>
+Views/Testing/Cxx/CMakeLists.txt:<ignore>
+Views/Testing/Tcl/CMakeLists.txt:<ignore>
 
 VolumeRendering/Testing/CMakeLists.txt:<ignore>
 VolumeRendering/Testing/Cxx/CMakeLists.txt:<ignore>
@@ -1449,6 +1411,7 @@ modular/CommonDataModel.patch:<ignore>
 
 modular/Common/DataModel/Testing/Cxx/CMakeLists.txt:
 
+Filtering/Testing/Cxx/CellLocator2.cxx:
 Filtering/Testing/Cxx/TestAMRBox.cxx:
 Filtering/Testing/Cxx/TestGenericCell.cxx:
 Filtering/Testing/Cxx/TestGraph.cxx:
@@ -1491,6 +1454,12 @@ Graphics/Testing/Cxx/TestMeanValueCoordinatesInterpolation1.cxx:
 Graphics/Testing/Cxx/TestMeanValueCoordinatesInterpolation2.cxx:
 Graphics/Testing/Cxx/TestPolyhedron0.cxx:
 Graphics/Testing/Cxx/TestPolyhedron1.cxx:
+
+GenericFiltering/Testing/Cxx/TestSmoothErrorMetric.cxx:
+
+Infovis/Testing/Cxx/TestGraph.cxx:
+Infovis/Testing/Cxx/TestGraphAttributes.cxx:
+Infovis/Testing/Cxx/TestTable.cxx:
 
 [Common/DataModel/Testing/Python]
 
@@ -1870,6 +1839,10 @@ Hybrid/vtkExodusIIReaderVariableCheck.h:
 Hybrid/vtkExodusModel.cxx:
 Hybrid/vtkExodusModel.h:
 
+[IO/Exodus/Testing/Cxx]
+
+Hybrid/Testing/Cxx/TestExodusImplicitArrays.cxx:
+
 [IO/ParallelExodus]
 
 modular/IO/ParallelExodus/CMakeLists.txt:
@@ -2038,6 +2011,11 @@ modular/IO/Geometry/Testing/Cxx/CMakeLists.txt:
 IO/Testing/Cxx/TestProStarReader.cxx:
 IO/Testing/Cxx/TestSimplePointsReaderWriter.cxx:
 IO/Testing/Cxx/TestTecplotReader.cxx:
+Graphics/Testing/Cxx/TestIncrementalOctreePointLocator.cxx:
+Graphics/Testing/Cxx/UnstructuredGridCellGradients.cxx:
+Graphics/Testing/Cxx/UnstructuredGridFastGradients.cxx:
+Graphics/Testing/Cxx/UnstructuredGridGradients.cxx:
+IO/Testing/Cxx/TestDataObjectIO.cxx:
 
 [IO/Image]
 
@@ -2500,6 +2478,7 @@ modular/IOXML.patch: <ignore>
 modular/IO/XML/Testing/Cxx/CMakeLists.txt:
 
 IO/Testing/Cxx/TestDataObjectXMLIO.cxx:
+IO/Testing/Cxx/TestHyperOctreeIO.cxx:
 IO/Testing/Cxx/TestXML.cxx:
 
 [IO/LSDyna]
@@ -2542,6 +2521,8 @@ modular/IO/ParallelLSDyna/module.cmake:
 Parallel/vtkPLSDynaReader.cxx:
 Parallel/vtkPLSDynaReader.h:
 
+[IO/ParallelLSDyna/Testing/Cxx]
+Parallel/Testing/Cxx/PLSDynaReader.cxx:
 
 [Wrapping]
 
@@ -3030,6 +3011,9 @@ Infovis/Testing/Cxx/TestStringToNumeric.cxx:
 Infovis/Testing/Cxx/TestTableToArray.cxx:
 Infovis/Testing/Cxx/TestThresholdTable.cxx:
 Infovis/Testing/Cxx/TestTimePoint.cxx:
+Infovis/Testing/Cxx/TestStringToCategory.cxx:
+Infovis/Testing/Cxx/TestTableToGraph.cxx:
+
 
 [Infovis/Layout]
 
@@ -3131,6 +3115,11 @@ Infovis/Testing/Cxx/TestCirclePackLayoutStrategy.cxx:
 Infovis/Testing/Cxx/TestCosmicTreeLayoutStrategy.cxx:
 Infovis/Testing/Cxx/TestGraphLayoutStrategy.cxx:
 Infovis/Testing/Cxx/TestTreeMapLayoutStrategy.cxx:
+Infovis/Testing/Cxx/TestArcEdges.cxx:
+Infovis/Testing/Cxx/TestGroupLeafVertices.cxx:
+Infovis/Testing/Cxx/TestKdTreeBoxSelection.cxx:
+Infovis/Testing/Cxx/TestPruneTreeFilter.cxx:
+Infovis/Testing/Cxx/TestSimple3DCirclesStrategy.cxx:
 
 
 [Infovis/BoostGraphAlgorithms]
@@ -3176,7 +3165,7 @@ Infovis/Testing/Cxx/TestBoostBetweennessClustering.cxx:
 Infovis/Testing/Cxx/TestBoostBrandesCentrality.cxx:
 Infovis/Testing/Cxx/TestBoostExtractLargestComponent.cxx:
 Infovis/Testing/Cxx/TestBoostSplitTableField.cxx:
- 
+
 [IO/Infovis]
 
 modular/IO/Infovis/CMakeLists.txt:
@@ -3210,6 +3199,60 @@ modular/IO/Infovis/Testing/Cxx/CMakeLists.txt:
 Infovis/Testing/Cxx/TestTulipReader.cxx:
 Infovis/Testing/Cxx/TestTulipReaderClusters.cxx:
 Infovis/Testing/Cxx/TestTulipReaderProperties.cxx:
+Infovis/Testing/Cxx/TestDIMACSGraphReader.cxx:
+Infovis/Testing/Cxx/TestDelimitedTextReader.cxx:
+Infovis/Testing/Cxx/TestFixedWidthTextReader.cxx:
+Infovis/Testing/Cxx/TestISIReader.cxx:
+Infovis/Testing/Cxx/TestRISReader.cxx:
+
+[Infovis/NeedAHome]
+
+modular/Infovis/NeedAHome/CMakeLists.txt:
+modular/Infovis/NeedAHome/module.cmake:
+
+Infovis/vtkComputeHistogram2DOutliers.h:
+Infovis/vtkComputeHistogram2DOutliers.cxx:
+Infovis/vtkDiagonalMatrixSource.h:
+Infovis/vtkDiagonalMatrixSource.cxx:
+Infovis/vtkDotProductSimilarity.h:
+Infovis/vtkDotProductSimilarity.cxx:
+Infovis/vtkExtractArray.h:
+Infovis/vtkExtractArray.cxx:
+Infovis/vtkExtractHistogram2D.h:
+Infovis/vtkExtractHistogram2D.cxx:
+Infovis/vtkMatricizeArray.h:
+Infovis/vtkMatricizeArray.cxx:
+Infovis/vtkNormalizeMatrixVectors.h:
+Infovis/vtkNormalizeMatrixVectors.cxx:
+Infovis/vtkPComputeHistogram2DOutliers.h:
+Infovis/vtkPComputeHistogram2DOutliers.cxx:
+Infovis/vtkPBivariateLinearTableThreshold.h:
+Infovis/vtkPBivariateLinearTableThreshold.cxx:
+Infovis/vtkPExtractHistogram2D.h:
+Infovis/vtkPExtractHistogram2D.cxx:
+Infovis/vtkPPairwiseExtractHistogram2D.h:
+Infovis/vtkPPairwiseExtractHistogram2D.cxx:
+Infovis/vtkPairwiseExtractHistogram2D.h:
+Infovis/vtkPairwiseExtractHistogram2D.cxx:
+Infovis/vtkPassArrays.h:
+Infovis/vtkPassArrays.cxx:
+Infovis/vtkRemoveHiddenData.h:
+Infovis/vtkRemoveHiddenData.cxx:
+Infovis/vtkSplitColumnComponents.h:
+Infovis/vtkSplitColumnComponents.cxx:
+Infovis/vtkTransferAttributes.h:
+Infovis/vtkTransferAttributes.cxx:
+
+[Infovis/NeedAHome/Testing/Cxx]
+
+Infovis/Testing/Cxx/ArrayAPIDenseCoordinates.cxx:
+Infovis/Testing/Cxx/ArrayDiagonalMatrixSource.cxx:
+Infovis/Testing/Cxx/ArrayDotProductSimilarity.cxx:
+Infovis/Testing/Cxx/ArrayExtractFactoredArray.cxx:
+Infovis/Testing/Cxx/ArrayMatricizeArray.cxx:
+Infovis/Testing/Cxx/ArrayNormalizeMatrixVectors.cxx:
+Infovis/Testing/Cxx/TestTableSplitColumnComponents.cxx:
+Infovis/Testing/Cxx/TestPassArrays.cxx:
 
 [Views/Core]
 
@@ -3279,6 +3322,26 @@ Views/vtkViewUpdater.cxx:
 Views/vtkRenderView.h:
 Views/vtkRenderView.cxx:
 
+[Views/Infovis/Testing/Cxx]
+
+# modular/Views/Infovis/Testing/Cxx/CMakeLists.txt:
+
+Views/Testing/Cxx/TestCoincidentGraphLayoutView.cxx:
+Views/Testing/Cxx/TestConeLayoutStrategy.cxx:
+Views/Testing/Cxx/TestGraphLayoutView.cxx:
+Views/Testing/Cxx/TestGraphLayoutViewWithUnicode.cxx:
+Views/Testing/Cxx/TestHierarchicalGraphView.cxx:
+Views/Testing/Cxx/TestIcicleView.cxx:
+Views/Testing/Cxx/TestIconGlyphFilter.cxx:
+Views/Testing/Cxx/TestInteractorStyleTreeMapHover.cxx:
+Views/Testing/Cxx/TestNetworkViews.cxx:
+Views/Testing/Cxx/TestQtLabelStrategy.cxx:
+Views/Testing/Cxx/TestQtTreeRingLabeler.cxx:
+Views/Testing/Cxx/TestRenderView.cxx:
+Views/Testing/Cxx/TestSpanTreeLayoutStrategy.cxx:
+Views/Testing/Cxx/TestTreeMapView.cxx:
+Views/Testing/Cxx/TestTreeRingView.cxx:
+
 [Geovis/Core]
 
 modular/Geovis/Core/module.cmake:
@@ -3339,6 +3402,17 @@ Geovis/vtkGlobeSource.cxx:
 Geovis/vtkGeoAlignedImageRepresentation.h:
 Geovis/vtkGeoAlignedImageRepresentation.cxx:
 
+[Geovis/Core/Testing/Cxx]
+
+# modular/Geovis/Core/Testing/Cxx/CMakeLists.txt:
+
+Geovis/Testing/Cxx/TestCoincidentGeoGraphRepresentation2D.cxx:
+Geovis/Testing/Cxx/TestGeoAssignCoordinates.cxx:
+Geovis/Testing/Cxx/TestGeoGraticule.cxx:
+Geovis/Testing/Cxx/TestGeoProjection.cxx:
+Geovis/Testing/Cxx/TestGlobeSource.cxx:
+Geovis/Testing/Cxx/TestLabeledGeoView2D.cxx:
+
 [Views/Geovis]
 
 modular/Views/Geovis/module.cmake:
@@ -3349,6 +3423,13 @@ Geovis/vtkGeoView.cxx:
 Geovis/vtkGeoView2D.h:
 Geovis/vtkGeoView2D.cxx:
 
+[Views/Geovis/Testing/Cxx]
+
+# modular/Views/Geovis/Testing/Cxx/CMakeLists.txt:
+
+Geovis/Testing/Cxx/TestGeoView.cxx:
+Geovis/Testing/Cxx/TestGeoView2D.cxx:
+Geovis/Testing/Cxx/TestGeoView2DPopulation.cxx:
 
 [Rendering/Context2D]
 
@@ -3724,6 +3805,7 @@ Graphics/Testing/Cxx/TestDecimatePolylineFilter.cxx:
 Graphics/Testing/Cxx/TestDelaunay2D.cxx:
 Graphics/Testing/Cxx/TestGlyph3D.cxx:
 Graphics/Testing/Cxx/TestImplicitPolyDataDistance.cxx:
+Graphics/Testing/Cxx/TestNamedComponents.cxx:
 
 [Filters/Generic]
 
@@ -3748,6 +3830,47 @@ GenericFiltering/vtkGenericProbeFilter.cxx:
 GenericFiltering/vtkGenericProbeFilter.h:
 GenericFiltering/vtkGenericStreamTracer.cxx:
 GenericFiltering/vtkGenericStreamTracer.h:
+
+[Filters/Generic/Testing/Cxx]
+
+# modular/Filters/Generic/Testing/Cxx/CMakeLists.txt:
+
+GenericFiltering/Testing/Cxx/TestGenericClip.cxx:
+GenericFiltering/Testing/Cxx/TestGenericContourFilter.cxx:
+GenericFiltering/Testing/Cxx/TestGenericCutter.cxx:
+GenericFiltering/Testing/Cxx/TestGenericDataSetTessellator.cxx:
+GenericFiltering/Testing/Cxx/TestGenericGeometryFilter.cxx:
+GenericFiltering/Testing/Cxx/TestGenericGlyph3DFilter.cxx:
+GenericFiltering/Testing/Cxx/TestGenericProbeFilter.cxx:
+GenericFiltering/Testing/Cxx/TestGenericStreamTracer.cxx:
+GenericFiltering/Testing/Cxx/otherCreation.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeAttribute.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeAttribute.h:
+GenericFiltering/Testing/Cxx/vtkBridgeCell.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeCell.h:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIterator.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIterator.h:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorOnCellBoundaries.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorOnCellBoundaries.h:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorOnCellList.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorOnCellList.h:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorOnDataSet.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorOnDataSet.h:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorOne.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorOne.h:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorStrategy.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeCellIteratorStrategy.h:
+GenericFiltering/Testing/Cxx/vtkBridgeDataSet.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgeDataSet.h:
+GenericFiltering/Testing/Cxx/vtkBridgeExport.h:
+GenericFiltering/Testing/Cxx/vtkBridgePointIterator.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgePointIterator.h:
+GenericFiltering/Testing/Cxx/vtkBridgePointIteratorOnCell.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgePointIteratorOnCell.h:
+GenericFiltering/Testing/Cxx/vtkBridgePointIteratorOnDataSet.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgePointIteratorOnDataSet.h:
+GenericFiltering/Testing/Cxx/vtkBridgePointIteratorOne.cxx:
+GenericFiltering/Testing/Cxx/vtkBridgePointIteratorOne.h:
 
 [Filters/Geometry]
 
@@ -3803,20 +3926,6 @@ Filtering/Testing/Cxx/TestUniformGridGhostDataGenerator.cxx:
 Graphics/Testing/Cxx/TestExtractSurfaceNonLinearSubdivision.cxx:
 Graphics/Testing/Cxx/TestUnstructuredGridGeometryFilter.cxx:
 
-[Filters/ParallelGeometry]
-
-modular/Filters/ParallelGeometry/module.cmake:
-modular/Filters/ParallelGeometry/CMakeLists.txt:
-
-Parallel/vtkPDataSetGhostGenerator.cxx:
-Parallel/vtkPDataSetGhostGenerator.h:
-Parallel/vtkPStructuredGridConnectivity.cxx:
-Parallel/vtkPStructuredGridConnectivity.h:
-Parallel/vtkPStructuredGridGhostDataGenerator.cxx:
-Parallel/vtkPStructuredGridGhostDataGenerator.h:
-Parallel/vtkPUniformGridGhostDataGenerator.cxx:
-Parallel/vtkPUniformGridGhostDataGenerator.h:
-
 [Filters/Matlab]
 
 Graphics/vtkMatlabEngineFilter.cxx:
@@ -3825,6 +3934,10 @@ Graphics/vtkMatlabEngineInterface.cxx:
 Graphics/vtkMatlabEngineInterface.h:
 Graphics/vtkMatlabMexAdapter.cxx:
 Graphics/vtkMatlabMexAdapter.h:
+
+[Filters/Matlab/Testing/Cxx]
+Graphics/Testing/Cxx/TestMatlabEngineFilter.cxx:
+Graphics/Testing/Cxx/TestMatlabEngineInterface.cxx:
 
 
 [Filters/Modeling]
@@ -4299,7 +4412,8 @@ Graphics/Testing/Cxx/BoxClipPolyData.cxx:
 Graphics/Testing/Cxx/BoxClipTetrahedra.cxx:
 Graphics/Testing/Cxx/BoxClipTriangulate.cxx:
 Graphics/Testing/Cxx/BoxClipTriangulateAndInterpolate.cxx:
-Graphics/Testing/Cxx/TestBSPTree.cxx:<ignore>
+Graphics/Testing/Cxx/TemporalStatistics.cxx:
+Graphics/Testing/Cxx/TestBSPTree.cxx:
 Graphics/Testing/Cxx/TestBooleanOperationPolyDataFilter.cxx:
 Graphics/Testing/Cxx/TestBooleanOperationPolyDataFilter2.cxx:
 Graphics/Testing/Cxx/TestDensifyPolyData.cxx:
@@ -4314,6 +4428,8 @@ Graphics/Testing/Cxx/TestRectilinearGridToPointSet.cxx:
 Graphics/Testing/Cxx/TestReflectionFilter.cxx:
 Graphics/Testing/Cxx/TestUncertaintyTubeFilter.cxx:
 Graphics/Testing/Cxx/TestYoungsMaterialInterface.cxx:
+Graphics/Testing/Cxx/TestTessellator.cxx:
+Infovis/Testing/Cxx/TestPassThrough.cxx:
 
 [Filters/Verdict]
 
@@ -4387,6 +4503,9 @@ Graphics/vtkReebGraphVolumeSkeletonFilter.h:
 Graphics/vtkUnstructuredGridToReebGraphFilter.cxx:
 Graphics/vtkUnstructuredGridToReebGraphFilter.h:
 
+[Filters/ReebGraph/Testing/Cxx]
+
+Graphics/Testing/Cxx/TestReebGraph.cxx:
 
 [Filters/Texture]
 
@@ -4471,6 +4590,7 @@ modular/Filters/Hybrid/Testing/Cxx/CMakeLists.txt:
 
 Hybrid/Testing/Cxx/TestBSplineWarp.cxx:
 Hybrid/Testing/Cxx/TestPolyDataSilhouette.cxx:
+Parallel/Testing/Cxx/TestTemporalCacheSimple.cxx:
 
 [Filters/Statistics]
 
@@ -4513,6 +4633,11 @@ modular/Filters/Statistics/Testing/Cxx/CMakeLists.txt:
 
 Infovis/Testing/Cxx/TestMultiCorrelativeStatistics.cxx:
 Infovis/Testing/Cxx/TestOrderStatistics.cxx:
+Infovis/Testing/Cxx/TestContingencyStatistics.cxx:
+Infovis/Testing/Cxx/TestCorrelativeStatistics.cxx:
+Infovis/Testing/Cxx/TestDescriptiveStatistics.cxx:
+Infovis/Testing/Cxx/TestKMeansStatistics.cxx:
+Infovis/Testing/Cxx/TestPCAStatistics.cxx:
 
 [Filters/StatisticsGnuR]
 
@@ -4548,6 +4673,13 @@ Infovis/vtkPPCAStatistics.cxx:
 Infovis/vtkPBivariateLinearTableThreshold.h:
 Infovis/vtkPBivariateLinearTableThreshold.cxx:
 
+[Filters/ParallelStatistics/Testing/Cxx]
+
+Infovis/Testing/Cxx/TestRandomPContingencyStatisticsMPI.cxx:
+Infovis/Testing/Cxx/TestRandomPKMeansStatisticsMPI.cxx:
+Infovis/Testing/Cxx/TestRandomPMomentStatisticsMPI.cxx:
+Infovis/Testing/Cxx/TestRandomPOrderStatisticsMPI.cxx:
+Infovis/Testing/Cxx/TestRealDataPDescriptiveStatisticsMPI.cxx:
 
 [Interaction/Widgets]
 
@@ -5308,6 +5440,16 @@ modular/Rendering/Core/Testing/Cxx/CMakeLists.txt:
 
 Common/Testing/Cxx/otherLookupTable.cxx:
 Common/Testing/Cxx/otherLookupTableWithEnabling.cxx:
+Graphics/Testing/Cxx/TestActor2DTextures.cxx:
+GenericFiltering/Testing/Cxx/TestViewDependentErrorMetric.cxx:
+Graphics/Testing/Cxx/FrustumClip.cxx:
+Graphics/Testing/Cxx/Mace.cxx:
+Graphics/Testing/Cxx/TestBareScalarsToColors.cxx:
+Graphics/Testing/Cxx/RGrid.cxx:
+Graphics/Testing/Cxx/TestHierarchicalBoxPipeline.cxx:
+Graphics/Testing/Cxx/TestMapVectorsAsRGBColors.cxx:
+Graphics/Testing/Cxx/TestMapVectorsToColors.cxx:
+Hybrid/Testing/Cxx/TestTDxGeo.cxx:
 
 [Rendering/FreeType]
 
@@ -6173,6 +6315,21 @@ Parallel/vtkPBGLShortestPaths.h:
 Parallel/vtkPBGLVertexColoring.cxx:
 Parallel/vtkPBGLVertexColoring.h:
 
+[Infovis/Parallel/Testing/Cxx]
+
+Parallel/Testing/Cxx/PBGLNamedVertexGraph.cxx:
+Parallel/Testing/Cxx/PBGLRandomGraph.cxx:
+Parallel/Testing/Cxx/TestPBGLCollapseGraph.cxx:
+Parallel/Testing/Cxx/TestPBGLCollectGraph.cxx:
+Parallel/Testing/Cxx/TestPBGLEdgesPedigrees.cxx:
+Parallel/Testing/Cxx/TestPBGLGraphSQLReader.cxx:
+Parallel/Testing/Cxx/TestPBGLGraphSQLReaderFile.cxx:
+Parallel/Testing/Cxx/TestPBGLPedigrees.cxx:
+Parallel/Testing/Cxx/TestPBGLPipeline.cxx:
+Parallel/Testing/Cxx/TestPRMATGraphSource.cxx:
+Parallel/Testing/Cxx/TestPRandomGraphSource.cxx:
+Infovis/Testing/Cxx/TestPBGLAlgorithms.cxx:
+
 [Filters/Parallel]
 
 modular/Filters/Parallel/CMakeLists.txt:
@@ -6266,6 +6423,35 @@ Parallel/vtkTransmitUnstructuredGridPiece.h:
 Parallel/vtkPYoungsMaterialInterface.cxx:
 Parallel/vtkPYoungsMaterialInterface.h:
 
+[Filters/Parallel/Testing/Cxx]
+Parallel/Testing/Cxx/DistributedData.cxx:
+Parallel/Testing/Cxx/DistributedDataRenderPass.cxx:
+Parallel/Testing/Cxx/TestPStream.cxx:
+Parallel/Testing/Cxx/TestTemporalCacheTemporal.cxx:
+Parallel/Testing/Cxx/TestTemporalFractal.cxx:
+Parallel/Testing/Cxx/TransmitImageData.cxx:
+Parallel/Testing/Cxx/TransmitImageDataRenderPass.cxx:
+Parallel/Testing/Cxx/TransmitRectilinearGrid.cxx:
+Parallel/Testing/Cxx/TransmitStructuredGrid.cxx:
+
+[Filters/ParallelGeometry]
+
+modular/Filters/ParallelGeometry/module.cmake:
+modular/Filters/ParallelGeometry/CMakeLists.txt:
+
+Parallel/vtkPDataSetGhostGenerator.cxx:
+Parallel/vtkPDataSetGhostGenerator.h:
+Parallel/vtkPStructuredGridConnectivity.cxx:
+Parallel/vtkPStructuredGridConnectivity.h:
+Parallel/vtkPStructuredGridGhostDataGenerator.cxx:
+Parallel/vtkPStructuredGridGhostDataGenerator.h:
+Parallel/vtkPUniformGridGhostDataGenerator.cxx:
+Parallel/vtkPUniformGridGhostDataGenerator.h:
+
+[Filters/ParallelGeometry/Testing/Cxx]
+Parallel/Testing/Cxx/TestPStructuredGridConnectivity.cxx:
+Parallel/Testing/Cxx/TestPStructuredGridGhostDataGenerator.cxx:
+Parallel/Testing/Cxx/TestPUniformGridGhostDataGenerator.cxx:
 
 [IO/Parallel]
 
@@ -6300,6 +6486,13 @@ Parallel/vtkXMLPHierarchicalBoxDataWriter.cxx:
 Parallel/vtkXMLPHierarchicalBoxDataWriter.h:
 Parallel/vtkXMLPMultiBlockDataWriter.cxx:
 Parallel/vtkXMLPMultiBlockDataWriter.h:
+
+[IO/Parallel/Testing/Cxx]
+Parallel/Testing/Cxx/PSLACReaderLinear.cxx:
+Parallel/Testing/Cxx/PSLACReaderQuadratic.cxx:
+Parallel/Testing/Cxx/ParallelIso.cxx:
+Parallel/Testing/Cxx/TestMultiBlockExodusWrite.cxx:
+Parallel/Testing/Cxx/TestWindBladeReader.cxx:
 
 [IO/ParallelMPI]
 
@@ -6342,6 +6535,16 @@ Parallel/vtkSynchronizedRenderWindows.h:
 Parallel/vtkTreeCompositer.cxx:
 Parallel/vtkTreeCompositer.h:
 
+[Rendering/Parallel/Testing/Cxx]
+
+Parallel/Testing/Cxx/PrmMagnify.cxx:
+Parallel/Testing/Cxx/TestClientServerRendering.cxx:
+Parallel/Testing/Cxx/TestDistributedDataCompositeZPass.cxx:
+Parallel/Testing/Cxx/TestPCompositeZPass.cxx:
+Parallel/Testing/Cxx/TestPShadowMapPass.cxx:
+Parallel/Testing/Cxx/TestParallelRendering.cxx:
+
+
 [Parallel/Core]
 
 modular/Parallel/Core/CMakeLists.txt:
@@ -6375,6 +6578,13 @@ Parallel/vtkSubGroup.h:
 modular/ParallelCore.patch:<ignore>
 <patch>: ParallelCore.patch
 
+[Parallel/Core/Testing/Cxx]
+Parallel/Testing/Cxx/DummyController.cxx:
+Parallel/Testing/Cxx/ExerciseMultiProcessController.cxx:
+Parallel/Testing/Cxx/ExerciseMultiProcessController.h:
+Parallel/Testing/Cxx/SocketClient.cxx:
+Parallel/Testing/Cxx/SocketServer.cxx:
+
 [Parallel/MPI]
 
 modular/Parallel/MPI/CMakeLists.txt:
@@ -6387,6 +6597,14 @@ Parallel/vtkMPIController.h:
 Parallel/vtkMPIEventLog.cxx:
 Parallel/vtkMPIEventLog.h:
 Parallel/vtkMPI.h:
+
+[Parallel/MPI/Testing/Cxx]
+
+Parallel/Testing/Cxx/GenericCommunicator.cxx:
+Parallel/Testing/Cxx/MPIController.cxx:
+Parallel/Testing/Cxx/TestDistributedDataShadowMapPass.cxx:
+Parallel/Testing/Cxx/TestNonBlockingCommunication.cxx:
+Parallel/Testing/Cxx/TestProcess.cxx:
 
 [Imaging/Core]
 
@@ -6779,6 +6997,7 @@ AMR/Testing/Cxx/CMakeLists.txt:<ignore>
 modular/AMR/Core/Testing/Cxx/CMakeLists.txt:
 AMR/Testing/Cxx/TestEnzoReader.cxx:
 AMR/Testing/Cxx/TestFlashReader.cxx:
+Parallel/Testing/Cxx/TestAMRUtilities.cxx:
 
 [Testing/Core]
 
@@ -6838,6 +7057,7 @@ modular/IOSQL.patch:<ignore>
 
 IO/Testing/Cxx/TestSQLDatabaseSchema.cxx:
 IO/Testing/Cxx/TestSQLiteDatabase.cxx:
+Infovis/Testing/Cxx/TestSQLGraphReader.cxx:
 <patch>: IOSQL.patch
 
 
