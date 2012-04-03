@@ -66,12 +66,10 @@ macro(vtk_module_config ns)
 
   list(SORT _${ns}_AUTOINIT) # Deterministic order.
   foreach(mod ${_${ns}_AUTOINIT})
-    set(_reg "")
     list(SORT _${ns}_AUTOINIT_${mod}) # Deterministic order.
-    foreach(mod ${_${ns}_AUTOINIT_${mod}})
-      set(_reg "(${mod},${_reg})")
-    endforeach()
-    list(APPEND ${ns}_DEFINITIONS "${mod}_AUTOINIT=${_reg}")
+    list(LENGTH _${ns}_AUTOINIT_${mod} _ailen)
+    string(REPLACE ";" "," _ai "${_ailen}(${_${ns}_AUTOINIT_${mod}})")
+    list(APPEND ${ns}_DEFINITIONS "${mod}_AUTOINIT=${_ai}")
     unset(_${ns}_AUTOINIT_${mod})
   endforeach()
   unset(_${ns}_AUTOINIT)
