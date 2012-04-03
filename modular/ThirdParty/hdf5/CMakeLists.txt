@@ -1,6 +1,7 @@
 vtk_module_third_party(HDF5
   LIBRARIES vtkhdf5_hl vtkhdf5
   INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/vtkhdf5
+    ${CMAKE_CURRENT_SOURCE_DIR}/vtkhdf5/hl/src
   NO_ADD_SUBDIRECTORY
   )
 if(VTK_USE_SYSTEM_HDF5)

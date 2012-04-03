@@ -32,3 +32,42 @@ index bbcedfe..c2dce89 100644
  IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
    INSTALL(FILES
      ${VTKNETCDF_BINARY_DIR}/ncconfig.h
+diff --git a/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt b/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt
+index 8f585f2..8643c35 100644
+--- a/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt
++++ b/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt
+@@ -340,7 +340,7 @@ IF (NETCDF_ENABLE_NETCDF4)
+   if (VTK_USE_SYSTEM_HDF5)
+      TARGET_LINK_LIBRARIES(vtkNetCDF ${HDF5_hdf5_LIBRARY} ${HDF5_hdf5_hl_LIBRARY})
+   else()
+-     TARGET_LINK_LIBRARIES(vtkNetCDF ${VTK_HDF5_LIBRARIES})
++     TARGET_LINK_LIBRARIES(vtkNetCDF ${vtkhdf5_LIBRARIES})
+   endif()
+ ENDIF (NETCDF_ENABLE_NETCDF4)
+ 
+diff --git a/ThirdParty/netcdf/vtknetcdf/libsrc4/error4.c b/ThirdParty/netcdf/vtknetcdf/libsrc4/error4.c
+index 4ed3a47..9b7b141 100644
+--- a/ThirdParty/netcdf/vtknetcdf/libsrc4/error4.c
++++ b/ThirdParty/netcdf/vtknetcdf/libsrc4/error4.c
+@@ -18,7 +18,7 @@ $Id: error4.c,v 1.4 2010/06/01 17:48:55 ed Exp $
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include "assert.h"
+-#include <hdf5.h>
++#include <vtk_hdf5.h>
+ 
+ /* This contents of this file get skipped if LOGGING is not defined
+  * during compile. */
+diff --git a/ThirdParty/netcdf/vtknetcdf/libsrc4/nc4internal.h b/ThirdParty/netcdf/vtknetcdf/libsrc4/nc4internal.h
+index afcaa0b..c453b73 100644
+--- a/ThirdParty/netcdf/vtknetcdf/libsrc4/nc4internal.h
++++ b/ThirdParty/netcdf/vtknetcdf/libsrc4/nc4internal.h
+@@ -18,7 +18,7 @@
+ #include <ctype.h>
+ #include <stdarg.h>
+ #include <string.h>
+-#include <hdf5.h>
++#include <vtk_hdf5.h>
+ #include <ncdimscale.h>
+ #include <nc_logging.h>
+

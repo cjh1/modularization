@@ -1,1 +1,4 @@
-vtk_module(vtknetcdf EXCLUDE_FROM_WRAPPING)
+vtk_module(vtknetcdf
+   DEPENDS
+    vtkhdf5
+   EXCLUDE_FROM_WRAPPING)
