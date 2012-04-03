@@ -3013,7 +3013,7 @@ Infovis/Testing/Cxx/TestThresholdTable.cxx:
 Infovis/Testing/Cxx/TestTimePoint.cxx:
 Infovis/Testing/Cxx/TestStringToCategory.cxx:
 Infovis/Testing/Cxx/TestTableToGraph.cxx:
-
+Infovis/Testing/Cxx/ArrayDotProductSimilarity.cxx:
 
 [Infovis/Layout]
 
@@ -3204,55 +3204,6 @@ Infovis/Testing/Cxx/TestDelimitedTextReader.cxx:
 Infovis/Testing/Cxx/TestFixedWidthTextReader.cxx:
 Infovis/Testing/Cxx/TestISIReader.cxx:
 Infovis/Testing/Cxx/TestRISReader.cxx:
-
-[Infovis/NeedAHome]
-
-modular/Infovis/NeedAHome/CMakeLists.txt:
-modular/Infovis/NeedAHome/module.cmake:
-
-Infovis/vtkComputeHistogram2DOutliers.h:
-Infovis/vtkComputeHistogram2DOutliers.cxx:
-Infovis/vtkDiagonalMatrixSource.h:
-Infovis/vtkDiagonalMatrixSource.cxx:
-Infovis/vtkDotProductSimilarity.h:
-Infovis/vtkDotProductSimilarity.cxx:
-Infovis/vtkExtractArray.h:
-Infovis/vtkExtractArray.cxx:
-Infovis/vtkExtractHistogram2D.h:
-Infovis/vtkExtractHistogram2D.cxx:
-Infovis/vtkMatricizeArray.h:
-Infovis/vtkMatricizeArray.cxx:
-Infovis/vtkNormalizeMatrixVectors.h:
-Infovis/vtkNormalizeMatrixVectors.cxx:
-Infovis/vtkPComputeHistogram2DOutliers.h:
-Infovis/vtkPComputeHistogram2DOutliers.cxx:
-Infovis/vtkPBivariateLinearTableThreshold.h:
-Infovis/vtkPBivariateLinearTableThreshold.cxx:
-Infovis/vtkPExtractHistogram2D.h:
-Infovis/vtkPExtractHistogram2D.cxx:
-Infovis/vtkPPairwiseExtractHistogram2D.h:
-Infovis/vtkPPairwiseExtractHistogram2D.cxx:
-Infovis/vtkPairwiseExtractHistogram2D.h:
-Infovis/vtkPairwiseExtractHistogram2D.cxx:
-Infovis/vtkPassArrays.h:
-Infovis/vtkPassArrays.cxx:
-Infovis/vtkRemoveHiddenData.h:
-Infovis/vtkRemoveHiddenData.cxx:
-Infovis/vtkSplitColumnComponents.h:
-Infovis/vtkSplitColumnComponents.cxx:
-Infovis/vtkTransferAttributes.h:
-Infovis/vtkTransferAttributes.cxx:
-
-[Infovis/NeedAHome/Testing/Cxx]
-
-Infovis/Testing/Cxx/ArrayAPIDenseCoordinates.cxx:
-Infovis/Testing/Cxx/ArrayDiagonalMatrixSource.cxx:
-Infovis/Testing/Cxx/ArrayDotProductSimilarity.cxx:
-Infovis/Testing/Cxx/ArrayExtractFactoredArray.cxx:
-Infovis/Testing/Cxx/ArrayMatricizeArray.cxx:
-Infovis/Testing/Cxx/ArrayNormalizeMatrixVectors.cxx:
-Infovis/Testing/Cxx/TestTableSplitColumnComponents.cxx:
-Infovis/Testing/Cxx/TestPassArrays.cxx:
 
 [Views/Core]
 
@@ -4160,6 +4111,8 @@ modular/Filters/Sources/Testing/Cxx/CMakeLists.txt:
 
 Graphics/Testing/Cxx/TestLineSource.cxx:
 Graphics/Testing/Cxx/TestTessellatedBoxSource.cxx:
+Infovis/Testing/Cxx/ArrayAPIDenseCoordinates.cxx:
+Infovis/Testing/Cxx/ArrayDiagonalMatrixSource.cxx:
 
 [Filters/Sources/Testing/Tcl]
 
@@ -4430,6 +4383,11 @@ Graphics/Testing/Cxx/TestUncertaintyTubeFilter.cxx:
 Graphics/Testing/Cxx/TestYoungsMaterialInterface.cxx:
 Graphics/Testing/Cxx/TestTessellator.cxx:
 Infovis/Testing/Cxx/TestPassThrough.cxx:
+Infovis/Testing/Cxx/ArrayExtractFactoredArray.cxx:
+Infovis/Testing/Cxx/ArrayMatricizeArray.cxx:
+Infovis/Testing/Cxx/ArrayNormalizeMatrixVectors.cxx:
+Infovis/Testing/Cxx/TestTableSplitColumnComponents.cxx:
+Infovis/Testing/Cxx/TestPassArrays.cxx:
 
 [Filters/Verdict]
 
