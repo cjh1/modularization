@@ -290,7 +290,10 @@ function(vtk_module_library name)
     set(${vtk-module}_EXPORT_CODE "${${vtk-module}_EXPORT_CODE}\n\n")
   endif()
   set(${vtk-module}_EXPORT_CODE
-    "${${vtk-module}_EXPORT_CODE}#if defined(${vtk-module}_AUTOINIT)
+    "${${vtk-module}_EXPORT_CODE}#if defined(${vtk-module}_INCLUDE)
+# include ${vtk-module}_INCLUDE
+#endif
+#if defined(${vtk-module}_AUTOINIT)
 # include \"vtkAutoInit.h\"
 VTK_AUTOINIT(${vtk-module})
 #endif")

@@ -67,9 +67,23 @@ macro(vtk_module_config ns)
   list(SORT _${ns}_AUTOINIT) # Deterministic order.
   foreach(mod ${_${ns}_AUTOINIT})
     list(SORT _${ns}_AUTOINIT_${mod}) # Deterministic order.
-    list(LENGTH _${ns}_AUTOINIT_${mod} _ailen)
-    string(REPLACE ";" "," _ai "${_ailen}(${_${ns}_AUTOINIT_${mod}})")
-    list(APPEND ${ns}_DEFINITIONS "${mod}_AUTOINIT=${_ai}")
+    list(LENGTH _${ns}_AUTOINIT_${mod} _ai_len)
+    string(REPLACE ";" "," _ai "${_ai_len}(${_${ns}_AUTOINIT_${mod}})")
+    if(${_ai_len} GREATER 1 AND "${CMAKE_GENERATOR}" MATCHES "Visual Studio")
+      # VS IDE project files cannot handle a comma (,) in a
+      # preprocessor definition value outside a quoted string.
+      # Generate a header file to do the definition and define
+      # ${mod}_INCLUDE to tell ${mod}Module.h to include it.
+      # Name the file after its content to guarantee uniqueness.
+      string(REPLACE ";" "_" _inc
+        "${CMAKE_BINARY_DIR}/CMakeFiles/${mod}_AUTOINIT_${_${ns}_AUTOINIT_${mod}}.h")
+      set(CMAKE_CONFIGURABLE_FILE_CONTENT "#define ${mod}_AUTOINIT ${_ai}")
+      configure_file(${CMAKE_ROOT}/Modules/CMakeConfigurableFile.in ${_inc})
+      list(APPEND ${ns}_DEFINITIONS "${mod}_INCLUDE=\"${_inc}\"")
+    else()
+      # Directly define ${mod}_AUTOINIT.
+      list(APPEND ${ns}_DEFINITIONS "${mod}_AUTOINIT=${_ai}")
+    endif()
     unset(_${ns}_AUTOINIT_${mod})
   endforeach()
   unset(_${ns}_AUTOINIT)
