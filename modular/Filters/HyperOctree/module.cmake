@@ -3,6 +3,6 @@ vtk_module(vtkFiltersHyperOctree
     vtkCommonExecutionModel
     vtkFiltersGeneral
   TEST_DEPENDS
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
-  DEFAULT ON)
+  )

@@ -8,4 +8,5 @@ vtk_module(vtkIOExport
     vtkgl2ps
   TEST_DEPENDS
     vtkTestingRendering
-  DEFAULT ON)
+    vtkRenderingOpenGL
+  )

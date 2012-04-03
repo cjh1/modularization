@@ -9,7 +9,7 @@ vtk_module(vtkFiltersExtraction
     vtkFiltersCore
     vtkFiltersGeneral
   TEST_DEPENDS
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
     vtkInteractionStyle
   DEFAULT ON)

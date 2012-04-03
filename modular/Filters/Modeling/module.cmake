@@ -3,6 +3,6 @@ vtk_module(vtkFiltersModeling
     vtkFiltersGeneral
     vtkFiltersSources
   TEST_DEPENDS
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
   )

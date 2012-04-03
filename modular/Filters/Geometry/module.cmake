@@ -6,6 +6,6 @@ vtk_module(vtkFiltersGeometry
     vtkFiltersCore
   TEST_DEPENDS
     vtkIOXML
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
   DEFAULT ON)

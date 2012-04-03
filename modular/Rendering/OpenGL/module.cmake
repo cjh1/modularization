@@ -11,6 +11,8 @@ vtk_module(vtkRenderingOpenGL
     vtkCommonSystem
     vtkFiltersCore
     vtkIOXML
+    # These are likely to be removed soon - split Rendering/OpenGL further.
+    vtkRenderingText # For vtkTextMapper
     vtkIOImage # For vtkImageExport
     vtkImagingCore # For vtkSampleFunction
   COMPILE_DEPENDS

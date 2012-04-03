@@ -9,6 +9,5 @@ vtk_module(vtkFiltersHybrid
     vtkUtilitiesEncodeString
   TEST_DEPENDS
     vtkImagingCore
-    vtkRenderingCore
     vtkTestingRendering
-  DEFAULT ON)
+  )

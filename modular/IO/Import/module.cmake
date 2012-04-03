@@ -3,6 +3,6 @@ vtk_module(vtkIOImport
     vtkCommonCore
     vtkRenderingCore
   TEST_DEPENDS
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
   DEFAULT ON)

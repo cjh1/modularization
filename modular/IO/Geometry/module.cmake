@@ -11,6 +11,6 @@ vtk_module(vtkIOGeometry
     vtkUtilitiesMaterialLibrary
   TEST_DEPENDS
     vtkFiltersGeometry
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
-  DEFAULT ON)
+  )

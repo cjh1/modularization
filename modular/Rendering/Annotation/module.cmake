@@ -3,7 +3,7 @@ vtk_module(vtkRenderingAnnotation
     vtkRenderingText
     vtkImagingCore
   TEST_DEPENDS
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
     vtkInteractionStyle
     vtkRenderingLOD

@@ -42,7 +42,7 @@ set(Kit_SRCS
   vtkOpenGLCoincidentTopologyResolutionPainter.cxx
   vtkOpenGLDisplayListPainter.cxx
   vtkOpenGLExtensionManager.cxx
-  #vtkOpenGLFreeTypeTextMapper.cxx
+  vtkOpenGLFreeTypeTextMapper.cxx
   vtkOpenGLGlyph3DMapper.cxx
   vtkOpenGLHardwareSupport.cxx
   vtkOpenGLImageMapper.cxx
@@ -268,6 +268,8 @@ set(opengl_overrides
 # Some that do not follow the naming scheme...
 list(APPEND vtk_module_overrides "vtkPolyDataMapper")
 set(vtk_module_vtkPolyDataMapper_override "vtkPainterPolyDataMapper")
+list(APPEND vtk_module_overrides "vtkTextMapper")
+set(vtk_module_vtkTextMapper_override "vtkOpenGLFreeTypeTextMapper")
 
 # FIXME: Not sure that this is the best way to handle X...
 if(VTK_USE_X)

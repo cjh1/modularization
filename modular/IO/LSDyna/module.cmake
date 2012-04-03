@@ -6,6 +6,6 @@ vtk_module(vtkIOLSDyna
   COMPILE_DEPENDS
     vtkCommonCore
   TEST_DEPENDS
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
-  DEFAULT ON)
+  )

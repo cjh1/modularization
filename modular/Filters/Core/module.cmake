@@ -8,11 +8,9 @@ vtk_module(vtkFiltersCore
     vtkCommonTransforms
     vtkCommonMath
   TEST_DEPENDS
-    vtkCommonCore
-    vtkCommonDataModel
     vtkTestingRendering
     vtkIOXML
     vtkImagingCore
     vtkFiltersGeneral
-    vtkRenderingCore
+    vtkRenderingOpenGL
   DEFAULT ON)

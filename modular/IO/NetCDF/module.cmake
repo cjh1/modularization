@@ -8,9 +8,7 @@ vtk_module(vtkIONetCDF
   COMPILE_DEPENDS
     vtknetcdf
   TEST_DEPENDS
-    vtkCommonCore
-    vtkCommonDataModel
     vtkCommonExecutionModel
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
-  DEFAULT ON)
+  )
