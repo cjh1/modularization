@@ -45,7 +45,7 @@ index 492e99a..d7ef8f5 100644
  #include "vtkTable.h"
  #include "vtkVariant.h"
  #include "vtkVariantArray.h"
-+#include "DatabaseSchemaWith2Tables.cxx"
++#include "DatabaseSchemaWith2Tables.h"
  
  #include <vector>
  
