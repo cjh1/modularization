@@ -1,4 +1,3 @@
-
 find_package(PostgreSQL REQUIRED)
 
 set(PostgreSQL_SRCS
@@ -6,11 +5,12 @@ set(PostgreSQL_SRCS
   vtkPostgreSQLQuery.cxx
   vtkPostgreSQLToTableReader.cxx
   vtkTableToPostgreSQLWriter.cxx
+  vtkIOPostgreSQL_AutoInit.cxx
   )
 
-include_directories(
-  ${PostgreSQL_INCLUDE_DIRS}
-  )
+set_source_files_properties(vtkIOPostgreSQL_AutoInit WRAP_EXCLUDE)
+
+include_directories(${PostgreSQL_INCLUDE_DIRS})
 
 vtk_module_library(vtkIOPostgreSQL ${PostgreSQL_SRCS})
 

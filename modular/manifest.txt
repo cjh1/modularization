@@ -2205,6 +2205,11 @@ IO/vtkMySQLToTableReader.h:
 IO/vtkTableToMySQLWriter.cxx:
 IO/vtkTableToMySQLWriter.h:
 
+modular/IO/MySQL/vtkIOMySQL_AutoInit.cxx:
+
+modular/IOMySQL2.patch:<ignore>
+<patch>: IOMySQL2.patch
+
 [IO/MySQL/Testing/Cxx]
 
 modular/IO/MySQL/Testing/Cxx/CMakeLists.txt:
@@ -2225,6 +2230,11 @@ IO/vtkPostgreSQLToTableReader.cxx:
 IO/vtkPostgreSQLToTableReader.h:
 IO/vtkTableToPostgreSQLWriter.cxx:
 IO/vtkTableToPostgreSQLWriter.h:
+
+modular/IO/PostgreSQL/vtkIOPostgreSQL_AutoInit.cxx:
+
+modular/IOPostgreSQL2.patch:<ignore>
+<patch>: IOPostgreSQL2.patch
 
 [IO/PostgreSQL/Testing/Cxx]
 
@@ -5338,6 +5348,9 @@ Rendering/fonts/uagdo8a.pfb:
 Rendering/fonts/uagk8a.pfb:
 Rendering/fonts/uagko8a.pfb:
 Rendering/fonts/vtkEmbeddedFonts.h:
+
+modular/RenderingFreetype.patch:<ignore>
+<patch>: RenderingFreetype.patch
 
 [Rendering/Label]
 

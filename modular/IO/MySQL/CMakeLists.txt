@@ -1,4 +1,3 @@
-
 find_package(MySQL REQUIRED)
 
 set(MySQL_SRCS
@@ -6,11 +5,12 @@ set(MySQL_SRCS
   vtkMySQLQuery.cxx
   vtkMySQLToTableReader.cxx
   vtkTableToMySQLWriter.cxx
+  vtkIOMySQL_AutoInit.cxx
   )
 
-include_directories(
-  ${MYSQL_INCLUDE_DIRECTORIES}
-  )
+set_source_files_properties(vtkIOMySQL_AutoInit WRAP_EXCLUDE)
+
+include_directories(${MYSQL_INCLUDE_DIRECTORIES})
 
 vtk_module_library(vtkIOMySQL ${MySQL_SRCS})
 
