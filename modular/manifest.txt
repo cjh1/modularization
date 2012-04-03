@@ -4100,8 +4100,6 @@ Graphics/vtkProgrammableDataObjectSource.cxx:
 Graphics/vtkProgrammableDataObjectSource.h:
 Graphics/vtkProgrammableSource.cxx:
 Graphics/vtkProgrammableSource.h:
-Graphics/vtkRRandomTableSource.cxx:
-Graphics/vtkRRandomTableSource.h:
 Graphics/vtkRectangularButtonSource.cxx:
 Graphics/vtkRectangularButtonSource.h:
 Graphics/vtkRegularPolygonSource.cxx:
@@ -4573,6 +4571,7 @@ Parallel/Testing/Cxx/TestTemporalCacheSimple.cxx:
 
 modular/Filters/Statistics/CMakeLists.txt:
 modular/Filters/Statistics/module.cmake:
+modular/FiltersStatistics.patch:<ignore>
 
 Infovis/vtkBivariateLinearTableThreshold.h:
 Infovis/vtkBivariateLinearTableThreshold.cxx:
@@ -4604,6 +4603,8 @@ Infovis/vtkStrahlerMetric.cxx:
 Infovis/vtkStreamingStatistics.h:
 Infovis/vtkStreamingStatistics.cxx:
 
+<patch>:FiltersStatistics.patch
+
 [Filters/Statistics/Testing/Cxx]
 
 modular/Filters/Statistics/Testing/Cxx/CMakeLists.txt:
@@ -4618,8 +4619,17 @@ Infovis/Testing/Cxx/TestPCAStatistics.cxx:
 
 [Filters/StatisticsGnuR]
 
-#modular/Filters/StatisticsGnuR/CMakeLists.txt:
-#modular/Filters/StatisticsGnuR/module.cmake:
+modular/Filters/StatisticsGnuR/CMakeLists.txt:
+modular/Filters/StatisticsGnuR/module.cmake:
+modular/Filters/StatisticsGnuR/vtkFiltersStatisticsGnuRConfigure.h.in:
+modular/Filters/StatisticsGnuR/vtkContingencyStatisticsGnuR.cxx:
+modular/Filters/StatisticsGnuR/vtkContingencyStatisticsGnuR.h:
+modular/Filters/StatisticsGnuR/vtkCorrelativeStatisticsGnuR.cxx:
+modular/Filters/StatisticsGnuR/vtkCorrelativeStatisticsGnuR.h:
+modular/Filters/StatisticsGnuR/vtkDescriptiveStatisticsGnuR.cxx:
+modular/Filters/StatisticsGnuR/vtkDescriptiveStatisticsGnuR.h:
+modular/Filters/StatisticsGnuR/vtkPCAStatisticsGnuR.cxx:
+modular/Filters/StatisticsGnuR/vtkPCAStatisticsGnuR.h:
 
 Graphics/vtkRAdapter.cxx:
 Graphics/vtkRAdapter.h:
@@ -4627,6 +4637,8 @@ Graphics/vtkRCalculatorFilter.cxx:
 Graphics/vtkRCalculatorFilter.h:
 Graphics/vtkRInterface.cxx:
 Graphics/vtkRInterface.h:
+Graphics/vtkRRandomTableSource.cxx:
+Graphics/vtkRRandomTableSource.h:
 
 [Filters/ParallelStatistics]
 

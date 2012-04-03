@@ -1,0 +1,561 @@
+diff --git a/Filters/Statistics/vtkContingencyStatistics.cxx b/Filters/Statistics/vtkContingencyStatistics.cxx
+index 682a46a..c2d0976 100644
+--- a/Filters/Statistics/vtkContingencyStatistics.cxx
++++ b/Filters/Statistics/vtkContingencyStatistics.cxx
+@@ -29,9 +29,6 @@ PURPOSE.  See the above copyright notice for more information.
+ #include "vtkInformationVector.h"
+ #include "vtkMultiBlockDataSet.h"
+ #include "vtkObjectFactory.h"
+-#ifdef VTK_USE_GNU_R
+-#include <vtkRInterface.h>
+-#endif // VTK_USE_GNU_R
+ #include "vtkStringArray.h"
+ #include "vtkStdString.h"
+ #include "vtkTable.h"
+@@ -651,6 +648,37 @@ void vtkContingencyStatistics::Assess( vtkTable* inData,
+ }
+ 
+ // ----------------------------------------------------------------------
++void vtkContingencyStatistics::CalculatePValues( vtkTable* testTab )
++{
++  vtkIdTypeArray* dimCol = vtkIdTypeArray::SafeDownCast(testTab->GetColumn(0));
++
++  // Test columns must be created first
++  vtkDoubleArray* testChi2Col = vtkDoubleArray::New(); // Chi square p-value
++  vtkDoubleArray* testChi2yCol = vtkDoubleArray::New(); // Chi square with Yates correction p-value
++
++  // Fill this column
++  vtkIdType n = dimCol->GetNumberOfTuples();
++  testChi2Col->SetNumberOfTuples( n );
++  testChi2yCol->SetNumberOfTuples( n );
++  for ( vtkIdType r = 0; r < n; ++ r )
++    {
++    testChi2Col->SetTuple1( r, -1 );
++    testChi2yCol->SetTuple1( r, -1 );
++    }
++
++  // Now add the column of invalid values to the output table
++  testTab->AddColumn( testChi2Col );
++  testTab->AddColumn( testChi2yCol );
++
++  testChi2Col->SetName( "P" );
++  testChi2yCol->SetName( "P Yates" );
++
++  // Clean up
++  testChi2Col->Delete();
++  testChi2yCol->Delete();
++}
++
++// ----------------------------------------------------------------------
+ void vtkContingencyStatistics::Test( vtkTable* inData,
+                                      vtkMultiBlockDataSet* inMeta,
+                                      vtkTable* outMeta )
+@@ -899,82 +927,7 @@ void vtkContingencyStatistics::Test( vtkTable* inData,
+   testTab->AddColumn( chi2yCol );
+ 
+   // Last phase: compute the p-values or assign invalid value if they cannot be computed
+-  vtkDoubleArray* testChi2Col = 0;
+-  vtkDoubleArray* testChi2yCol = 0;
+-  bool calculatedP = false;
+-
+-  // If available, use R to obtain the p-values for the Chi square distribution with required DOFs
+-#ifdef VTK_USE_GNU_R
+-  // Prepare VTK - R interface
+-  vtkRInterface* ri = vtkRInterface::New();
+-
+-  // Use the calculated DOFs and Chi square statistics as inputs to the Chi square function
+-  ri->AssignVTKDataArrayToRVariable( dimCol, "d" );
+-  ri->AssignVTKDataArrayToRVariable( chi2Col, "chi2" );
+-  ri->AssignVTKDataArrayToRVariable( chi2yCol, "chi2y" );
+-
+-  // Now prepare R script and calculate the p-values (in a single R script evaluation for efficiency)
+-  vtksys_ios::ostringstream rs;
+-  rs << "p<-c();"
+-     << "py<-c();"
+-     << "for(i in 1:"
+-     << dimCol->GetNumberOfTuples()
+-     << "){"
+-     << "p<-c(p,1-pchisq(chi2[i],d[i]));"
+-     << "py<-c(py,1-pchisq(chi2y[i],d[i]))"
+-     << "}";
+-  ri->EvalRscript( rs.str().c_str() );
+-
+-  // Retrieve the p-values
+-  testChi2Col = vtkDoubleArray::SafeDownCast( ri->AssignRVariableToVTKDataArray( "p" ) );
+-  testChi2yCol = vtkDoubleArray::SafeDownCast( ri->AssignRVariableToVTKDataArray( "py" ) );
+-  if ( ! testChi2Col || ! testChi2yCol
+-       || testChi2Col->GetNumberOfTuples() != dimCol->GetNumberOfTuples()
+-       || testChi2yCol->GetNumberOfTuples() != dimCol->GetNumberOfTuples() )
+-    {
+-    vtkWarningMacro( "Something went wrong with the R calculations. Reported p-values will be invalid." );
+-    }
+-  else
+-    {
+-    // Test values have been calculated by R: the test column can be added to the output table
+-    testTab->AddColumn( testChi2Col );
+-    testTab->AddColumn( testChi2yCol );
+-    calculatedP = true;
+-    }
+-
+-  // Clean up
+-  ri->Delete();
+-#endif // VTK_USE_GNU_R
+-
+-  // Use the invalid value of -1 for p-values if R is absent or there was an R error
+-  if ( ! calculatedP )
+-    {
+-    // Test columns must be created first
+-    testChi2Col = vtkDoubleArray::New(); // Chi square p-value
+-    testChi2yCol = vtkDoubleArray::New(); // Chi square with Yates correction p-value
+-
+-    // Fill this column
+-    vtkIdType n = dimCol->GetNumberOfTuples();
+-    testChi2Col->SetNumberOfTuples( n );
+-    testChi2yCol->SetNumberOfTuples( n );
+-    for ( vtkIdType r = 0; r < n; ++ r )
+-      {
+-      testChi2Col->SetTuple1( r, -1 );
+-      testChi2yCol->SetTuple1( r, -1 );
+-      }
+-
+-    // Now add the column of invalid values to the output table
+-    testTab->AddColumn( testChi2Col );
+-    testTab->AddColumn( testChi2yCol );
+-
+-    // Clean up
+-    testChi2Col->Delete();
+-    testChi2yCol->Delete();
+-    }
+-
+-  // The test column name can only be set after the column has been obtained from R
+-  testChi2Col->SetName( "P" );
+-  testChi2yCol->SetName( "P Yates" );
++  this->CalculatePValues(testTab);
+ 
+   // Finally set output table to test table
+   outMeta->ShallowCopy( testTab );
+diff --git a/Filters/Statistics/vtkContingencyStatistics.h b/Filters/Statistics/vtkContingencyStatistics.h
+index dfd1b67..7414b48 100644
+--- a/Filters/Statistics/vtkContingencyStatistics.h
++++ b/Filters/Statistics/vtkContingencyStatistics.h
+@@ -46,6 +46,8 @@ class vtkMultiBlockDataSet;
+ class vtkStringArray;
+ class vtkTable;
+ class vtkVariant;
++class vtkIdTypeArray;
++class vtkDoubleArray;
+ 
+ class VTK_INFOVIS_EXPORT vtkContingencyStatistics : public vtkStatisticsAlgorithm
+ {
+@@ -85,6 +87,11 @@ protected:
+   virtual void Assess( vtkTable*,
+                        vtkMultiBlockDataSet*,
+                        vtkTable* );
++//BTX
++  // Description:
++  // Calculate p-value. This will overridden using the object factory with an
++  // R implementation if R is present.
++  virtual void CalculatePValues(vtkTable*);
+ 
+ //BTX  
+   // Description:
+diff --git a/Filters/Statistics/vtkCorrelativeStatistics.cxx b/Filters/Statistics/vtkCorrelativeStatistics.cxx
+index 36d0466..4b02c82 100644
+--- a/Filters/Statistics/vtkCorrelativeStatistics.cxx
++++ b/Filters/Statistics/vtkCorrelativeStatistics.cxx
+@@ -31,9 +31,6 @@
+ #include "vtkMath.h"
+ #include "vtkMultiBlockDataSet.h"
+ #include "vtkObjectFactory.h"
+-#ifdef VTK_USE_GNU_R
+-#include <vtkRInterface.h>
+-#endif // VTK_USE_GNU_R
+ #include "vtkStringArray.h"
+ #include "vtkStdString.h"
+ #include "vtkTable.h"
+@@ -477,6 +474,22 @@ void vtkCorrelativeStatistics::Derive( vtkMultiBlockDataSet* inMeta )
+ }
+ 
+ // ----------------------------------------------------------------------
++vtkDoubleArray* vtkCorrelativeStatistics::CalculatePValues(vtkDoubleArray* statCol)
++{
++  vtkDoubleArray* testCol = vtkDoubleArray::New();
++
++  // Fill this column
++  vtkIdType n = statCol->GetNumberOfTuples();
++  testCol->SetNumberOfTuples( n );
++  for ( vtkIdType r = 0; r < n; ++ r )
++    {
++    testCol->SetTuple1( r, -1 );
++    }
++
++  return testCol;
++}
++
++// ----------------------------------------------------------------------
+ void vtkCorrelativeStatistics::Test( vtkTable* inData,
+                                      vtkMultiBlockDataSet* inMeta,
+                                      vtkTable* outMeta )
+@@ -746,60 +759,16 @@ void vtkCorrelativeStatistics::Test( vtkTable* inData,
+   outMeta->AddColumn( statCol );
+ 
+   // Last phase: compute the p-values or assign invalid value if they cannot be computed
+-  vtkDoubleArray* testCol = 0;
+-  bool calculatedP = false;
+-
+   // If available, use R to obtain the p-values for the Chi square distribution with 2 DOFs
+-#ifdef VTK_USE_GNU_R
+-  // Prepare VTK - R interface
+-  vtkRInterface* ri = vtkRInterface::New();
+-
+-  // Use the calculated Jarque-Bera-Srivastava statistics as input to the Chi square function
+-  ri->AssignVTKDataArrayToRVariable( statCol, "jbs" );
+-
+-  // Calculate the p-values (p+1=3 degrees of freedom)
+-  ri->EvalRscript( "p=1-pchisq(jbs,3)" );
+-
+-  // Retrieve the p-values
+-  testCol = vtkDoubleArray::SafeDownCast( ri->AssignRVariableToVTKDataArray( "p" ) );
+-  if ( ! testCol || testCol->GetNumberOfTuples() != statCol->GetNumberOfTuples() )
+-    {
+-    vtkWarningMacro( "Something went wrong with the R calculations. Reported p-values will be invalid." );
+-    }
+-  else
+-    {
+-    // Test values have been calculated by R: the test column can be added to the output table
+-    outMeta->AddColumn( testCol );
+-    calculatedP = true;
+-    }
+-
+-  // Clean up
+-  ri->Delete();
+-#endif // VTK_USE_GNU_R
+-
+-  // Use the invalid value of -1 for p-values if R is absent or there was an R error
+-  if ( ! calculatedP )
+-    {
+-    // A column must be created first
+-    testCol = vtkDoubleArray::New();
++  vtkDoubleArray* testCol = this->CalculatePValues(statCol);
+ 
+-    // Fill this column
+-    vtkIdType n = statCol->GetNumberOfTuples();
+-    testCol->SetNumberOfTuples( n );
+-    for ( vtkIdType r = 0; r < n; ++ r )
+-      {
+-      testCol->SetTuple1( r, -1 );
+-      }
+-
+-    // Now add the column of invalid values to the output table
+-    outMeta->AddColumn( testCol );
++  // The test column name
++  testCol->SetName( "P" );
+ 
+-    // Clean up
+-    testCol->Delete();
+-    }
++  // Now add the column of invalid values to the output table
++  outMeta->AddColumn( testCol );
+ 
+-  // The test column name can only be set after the column has been obtained from R
+-  testCol->SetName( "P" );
++  testCol->Delete();
+ 
+   // Clean up
+   nameColX->Delete();
+diff --git a/Filters/Statistics/vtkCorrelativeStatistics.h b/Filters/Statistics/vtkCorrelativeStatistics.h
+index 16d6174..8408eab 100644
+--- a/Filters/Statistics/vtkCorrelativeStatistics.h
++++ b/Filters/Statistics/vtkCorrelativeStatistics.h
+@@ -47,6 +47,7 @@ class vtkMultiBlockDataSet;
+ class vtkStringArray;
+ class vtkTable;
+ class vtkVariant;
++class vtkDoubleArray;
+ 
+ class VTK_INFOVIS_EXPORT vtkCorrelativeStatistics : public vtkStatisticsAlgorithm
+ {
+@@ -87,7 +88,12 @@ protected:
+                        vtkTable* outData ) 
+   { this->Superclass::Assess( inData, inMeta, outData, 2 ); }
+ 
+-//BTX  
++//BTX
++  // Description:
++  // Calculate p-value. This will overridden using the object factory with an
++  // R implementation if R is present.
++  virtual vtkDoubleArray* CalculatePValues(vtkDoubleArray*);
++
+   // Description:
+   // Provide the appropriate assessment functor.
+   virtual void SelectAssessFunctor( vtkTable* outData, 
+diff --git a/Filters/Statistics/vtkDescriptiveStatistics.cxx b/Filters/Statistics/vtkDescriptiveStatistics.cxx
+index 58f6df9..9a4f7cf 100644
+--- a/Filters/Statistics/vtkDescriptiveStatistics.cxx
++++ b/Filters/Statistics/vtkDescriptiveStatistics.cxx
+@@ -30,9 +30,6 @@
+ #include "vtkMath.h"
+ #include "vtkMultiBlockDataSet.h"
+ #include "vtkObjectFactory.h"
+-#ifdef VTK_USE_GNU_R
+-#include <vtkRInterface.h>
+-#endif // VTK_USE_GNU_R
+ #include "vtkStringArray.h"
+ #include "vtkStdString.h"
+ #include "vtkTable.h"
+@@ -471,6 +468,24 @@ void vtkDescriptiveStatistics::Derive( vtkMultiBlockDataSet* inMeta )
+ }
+ 
+ // ----------------------------------------------------------------------
++// Use the invalid value of -1 for p-values if R is absent
++vtkDoubleArray* vtkDescriptiveStatistics::CalculatePValues(vtkDoubleArray *statCol)
++{
++  // A column must be created first
++  vtkDoubleArray* testCol = vtkDoubleArray::New();
++
++  // Fill this column
++  vtkIdType n = statCol->GetNumberOfTuples();
++  testCol->SetNumberOfTuples( n );
++  for ( vtkIdType r = 0; r < n; ++ r )
++    {
++    testCol->SetTuple1( r, -1 );
++    }
++
++  return testCol;
++}
++
++// ----------------------------------------------------------------------
+ void vtkDescriptiveStatistics::Test( vtkTable* inData,
+                                      vtkMultiBlockDataSet* inMeta,
+                                      vtkTable* outMeta )
+@@ -571,61 +586,17 @@ void vtkDescriptiveStatistics::Test( vtkTable* inData,
+   outMeta->AddColumn( statCol );
+ 
+   // Last phase: compute the p-values or assign invalid value if they cannot be computed
+-  vtkDoubleArray* testCol = 0;
+-  bool calculatedP = false;
+-
+   // If available, use R to obtain the p-values for the Chi square distribution with 2 DOFs
+-#ifdef VTK_USE_GNU_R
+-  // Prepare VTK - R interface
+-  vtkRInterface* ri = vtkRInterface::New();
+-
+-  // Use the calculated Jarque-Bera statistics as input to the Chi square function
+-  ri->AssignVTKDataArrayToRVariable( statCol, "jb" );
+-
+-  // Calculate the p-values (p+1=2 degrees of freedom)
+-  ri->EvalRscript( "p=1-pchisq(jb,2)" );
+-
+-  // Retrieve the p-values
+-  testCol = vtkDoubleArray::SafeDownCast( ri->AssignRVariableToVTKDataArray( "p" ) );
+-  if ( ! testCol || testCol->GetNumberOfTuples() != statCol->GetNumberOfTuples() )
+-    {
+-    vtkWarningMacro( "Something went wrong with the R calculations. Reported p-values will be invalid." );
+-    }
+-  else
+-    {
+-    // Test values have been calculated by R: the test column can be added to the output table
+-    outMeta->AddColumn( testCol );
+-    calculatedP = true;
+-    }
+-
+-  // Clean up
+-  ri->Delete();
+-#endif // VTK_USE_GNU_R
+-
+-  // Use the invalid value of -1 for p-values if R is absent or there was an R error
+-  if ( ! calculatedP )
+-    {
+-    // A column must be created first
+-    testCol = vtkDoubleArray::New();
+-
+-    // Fill this column
+-    vtkIdType n = statCol->GetNumberOfTuples();
+-    testCol->SetNumberOfTuples( n );
+-    for ( vtkIdType r = 0; r < n; ++ r )
+-      {
+-      testCol->SetTuple1( r, -1 );
+-      }
+-
+-    // Now add the column of invalid values to the output table
+-    outMeta->AddColumn( testCol );
+-
+-    // Clean up
+-    testCol->Delete();
+-    }
++  vtkDoubleArray* testCol = this->CalculatePValues( statCol );
+ 
+   // The test column name can only be set after the column has been obtained from R
+   testCol->SetName( "P" );
+ 
++  // Now add the column of invalid values to the output table
++  outMeta->AddColumn( testCol );
++
++  testCol->Delete();
++
+   // Clean up
+   nameCol->Delete();
+   statCol->Delete();
+diff --git a/Filters/Statistics/vtkDescriptiveStatistics.h b/Filters/Statistics/vtkDescriptiveStatistics.h
+index 15dcb48..2b048e6 100644
+--- a/Filters/Statistics/vtkDescriptiveStatistics.h
++++ b/Filters/Statistics/vtkDescriptiveStatistics.h
+@@ -52,6 +52,7 @@ class vtkMultiBlockDataSet;
+ class vtkStringArray;
+ class vtkTable;
+ class vtkVariant;
++class vtkDoubleArray;
+ 
+ class VTK_INFOVIS_EXPORT vtkDescriptiveStatistics : public vtkStatisticsAlgorithm
+ {
+@@ -125,7 +126,12 @@ protected:
+                        vtkTable* outData ) 
+   { this->Superclass::Assess( inData, inMeta, outData, 1 ); }
+ 
+-//BTX  
++//BTX
++  // Description:
++  // Calculate p-value. This will overridden using the object factory with an
++  // R implementation if R is present.
++  virtual vtkDoubleArray* CalculatePValues(vtkDoubleArray*);
++
+   // Description:
+   // Provide the appropriate assessment functor.
+   virtual void SelectAssessFunctor( vtkTable* outData, 
+diff --git a/Filters/Statistics/vtkPCAStatistics.cxx b/Filters/Statistics/vtkPCAStatistics.cxx
+index 612964d..d9563d6 100644
+--- a/Filters/Statistics/vtkPCAStatistics.cxx
++++ b/Filters/Statistics/vtkPCAStatistics.cxx
+@@ -6,9 +6,6 @@
+ #include "vtkMultiBlockDataSet.h"
+ #include "vtkMultiCorrelativeStatisticsAssessFunctor.h"
+ #include "vtkObjectFactory.h"
+-#ifdef VTK_USE_GNU_R
+-#include <vtkRInterface.h>
+-#endif // VTK_USE_GNU_R
+ #include "vtkSmartPointer.h"
+ #include "vtkStringArray.h"
+ #include "vtkTable.h"
+@@ -772,6 +769,23 @@ void vtkPCAStatistics::Derive( vtkMultiBlockDataSet* inMeta )
+     row->Delete();
+     }
+ }
++// Use the invalid value of -1 for p-values if R is absent
++vtkDoubleArray* vtkPCAStatistics::CalculatePValues( vtkIdTypeArray* vtkNotUsed( dimCol ),
++                                                    vtkDoubleArray* statCol )
++{
++  // A column must be created first
++  vtkDoubleArray* testCol = vtkDoubleArray::New();
++
++  // Fill this column
++  vtkIdType n = statCol->GetNumberOfTuples();
++  testCol->SetNumberOfTuples( n );
++  for ( vtkIdType r = 0; r < n; ++ r )
++    {
++    testCol->SetTuple1( r, -1 );
++    }
++
++  return testCol;
++}
+ 
+ // ----------------------------------------------------------------------
+ void vtkPCAStatistics::Test( vtkTable* inData,
+@@ -946,69 +960,14 @@ void vtkPCAStatistics::Test( vtkTable* inData,
+   outMeta->AddColumn( dimCol );
+ 
+   // Last phase: compute the p-values or assign invalid value if they cannot be computed
+-  vtkDoubleArray* testCol = 0;
+-  bool calculatedP = false;
+-
+-  // If available, use R to obtain the p-values for the Chi square distribution with 2 DOFs
+-#ifdef VTK_USE_GNU_R
+-  // Prepare VTK - R interface
+-  vtkRInterface* ri = vtkRInterface::New();
+-
+-  // Use the calculated Jarque-Bera-Srivastava statistics as input to the Chi square function
+-  ri->AssignVTKDataArrayToRVariable( statCol, "jbs" );
+-  ri->AssignVTKDataArrayToRVariable( dimCol, "d" );
+-
+-  // Calculate the p-values (p+1 degrees of freedom)
+-  // Now prepare R script and calculate the p-values (in a single R script evaluation for efficiency)
+-  vtksys_ios::ostringstream rs;
+-  rs << "p<-c();"
+-     << "for(i in 1:"
+-     << dimCol->GetNumberOfTuples()
+-     << "){"
+-     << "p<-c(p,1-pchisq(jbs[i],d[i]));"
+-     << "}";
+-  ri->EvalRscript( rs.str().c_str() );
+-
+-  // Retrieve the p-values
+-  testCol = vtkDoubleArray::SafeDownCast( ri->AssignRVariableToVTKDataArray( "p" ) );
+-  if ( ! testCol || testCol->GetNumberOfTuples() != statCol->GetNumberOfTuples() )
+-    {
+-    vtkWarningMacro( "Something went wrong with the R calculations. Reported p-values will be invalid." );
+-    }
+-  else
+-    {
+-    // Test values have been calculated by R: the test column can be added to the output table
+-    outMeta->AddColumn( testCol );
+-    calculatedP = true;
+-    }
+-
+-  // Clean up
+-  ri->Delete();
+-#endif // VTK_USE_GNU_R
+-
+-  // Use the invalid value of -1 for p-values if R is absent or there was an R error
+-  if ( ! calculatedP )
+-    {
+-    // A column must be created first
+-    testCol = vtkDoubleArray::New();
+-
+-    // Fill this column
+-    vtkIdType n = statCol->GetNumberOfTuples();
+-    testCol->SetNumberOfTuples( n );
+-    for ( vtkIdType r = 0; r < n; ++ r )
+-      {
+-      testCol->SetTuple1( r, -1 );
+-      }
+-
+-    // Now add the column of invalid values to the output table
+-    outMeta->AddColumn( testCol );
+-
+-    // Clean up
+-    testCol->Delete();
+-    }
++  vtkDoubleArray* testCol = this->CalculatePValues( dimCol, statCol );
+ 
+   // The test column name can only be set after the column has been obtained from R
+   testCol->SetName( "P" );
++  // Now add the column of invalid values to the output table
++  outMeta->AddColumn( testCol );
++  // Clean up
++  testCol->Delete();
+ 
+   // Clean up
+   blockCol->Delete();
+diff --git a/Filters/Statistics/vtkPCAStatistics.h b/Filters/Statistics/vtkPCAStatistics.h
+index a2b03cb..9df8c22 100644
+--- a/Filters/Statistics/vtkPCAStatistics.h
++++ b/Filters/Statistics/vtkPCAStatistics.h
+@@ -47,6 +47,7 @@ PURPOSE.  See the above copyright notice for more information.
+ #include "vtkMultiCorrelativeStatistics.h"
+ 
+ class vtkDoubleArray;
++class vtkIdTypeArray;
+ 
+ class VTK_INFOVIS_EXPORT vtkPCAStatistics : public vtkMultiCorrelativeStatistics
+ {
+@@ -232,6 +233,11 @@ protected:
+   virtual void Assess( vtkTable*, 
+                        vtkMultiBlockDataSet*, 
+                        vtkTable* );
++  //BTX
++  // Description:
++  // Calculate p-value. This will overridden using the object factory with an
++  // R implementation if R is present.
++  virtual vtkDoubleArray* CalculatePValues(vtkIdTypeArray*, vtkDoubleArray*);
+ 
+   //BTX  
+   // Description:
