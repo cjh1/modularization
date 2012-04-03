@@ -5858,6 +5858,9 @@ modular/RenderingText.patch:<ignore>
 
 [Rendering/Qt]
 
+modular/Rendering/Qt/CMakeLists.txt:
+modular/Rendering/Qt/module.cmake:
+
 Rendering/vtkQImageToImageSource.cxx:
 Rendering/vtkQImageToImageSource.h:
 Rendering/vtkQtInitialization.cxx:
