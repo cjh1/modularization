@@ -58,7 +58,6 @@ Widgets/Testing/Python/: <ignore>
 Parallel/Testing/Python/:<ignore>
 Parallel/Testing/Tcl/:<ignore>
 
-Examples/: <ignore>
 GenericFiltering/README.html: <ignore>
 modular/CMake/vtkModular.cmake:<ignore>
 modular/manifest.txt: <ignore>
@@ -1738,7 +1737,13 @@ Hybrid/vtkLandmarkTransform.cxx:
 Hybrid/vtkLandmarkTransform.h:
 
 
+[Examples]
+
+# The examples tree is being preserved in its entirety, but not built right now.
+Examples/:
+
 [Examples/Statistics]
+
 modular/Examples/Statistics/CMakeLists.txt:
 modular/Examples/Statistics/ExampleDescriptiveStatistics.cxx:
 modular/Examples/Statistics/ExampleKMeansStatistics.cxx:
