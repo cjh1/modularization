@@ -15,7 +15,7 @@ CMake/FindHDF5.cmake: <ignore>
 CMake/FindLIBXML2.cmake: <ignore>
 Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
-Imaging/CMakeLists.txt: <igno
+Imaging/CMakeLists.txt: <ignore>
 Infovis/TitanReadme.txt: <ignore>
 # For now - this list will shrink as we map all of the files
 CMakeLists.txt: <ignore>
