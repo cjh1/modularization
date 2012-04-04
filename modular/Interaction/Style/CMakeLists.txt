@@ -27,7 +27,7 @@ set_source_files_properties(
   )
 
 # Now to generate our object factory.
-list(APPEND vtk_module_overrides "vtkInteractorStyleSwitchBase")
+set(vtk_module_overrides "vtkInteractorStyleSwitchBase")
 set(vtk_module_vtkInteractorStyleSwitchBase_override "vtkInteractorStyleSwitch")
 
 # Now we iterate and create that class file...
