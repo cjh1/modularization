@@ -65,6 +65,7 @@ if(NOT VTK_MODULES_REQUESTED)
 endif()
 
 # Load requested modules and their dependencies into variables:
+#  VTK_DEFINITIONS     = Preprocessor definitions
 #  VTK_LIBRARIES       = Libraries to link
 #  VTK_INCLUDE_DIRS    = Header file search path
 #  VTK_LIBRARY_DIRS    = Library search path (for outside dependencies)
