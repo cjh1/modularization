@@ -5,8 +5,6 @@ modular/modular-notes.txt: <ignore>
 vtkIncludeDirectories.cmake: <ignore>
 Common/CMakeLists.txt: <ignore>
 CMake/CMake2.4/: <ignore>
-CMake/vtk-forward.c.in: <ignore>
-CMake/vtkForwardingExecutable.cmake: <ignore>
 CMake/vtkHDF5Library.cmake: <ignore>
 CMake/vtkTargetExportMacros.cmake: <ignore>
 CMake/vtkThirdParty.cmake: <ignore>
@@ -19,9 +17,6 @@ Filtering/CMakeLists.txt:	<ignore>
 Parallel/CMakeLists.txt: <ignore>
 Imaging/CMakeLists.txt: <igno
 Infovis/TitanReadme.txt: <ignore>
-Geovis/vtkGlobeSourceSphericalToCartesianFigure.eps: <ignore>
-Geovis/vtkGlobeSourceSphericalToCartesianFigure.ipe: <ignore>
-Geovis/vtkGlobeSourceSphericalToCartesianFigure.png: <ignore>
 # For now - this list will shrink as we map all of the files
 CMakeLists.txt: <ignore>
 CTestConfig.cmake: <ignore>
@@ -125,12 +120,8 @@ TextAnalysis/: <ignore>
 Common/Testing/CMakeLists.txt:<ignore>
 Common/Testing/CTestCustom.ctest.in:<ignore>
 Common/Testing/Cxx/CMakeLists.txt:<ignore>
-Common/Testing/Install/CMakeLists.txt:<ignore>
-Common/Testing/Install/vit-forward.c.in:<ignore>
-Common/Testing/Install/vit.cxx:<ignore>
 Common/Testing/Tcl/prtImageTest.tcl:<ignore>
 Common/Testing/Tcl/rtImageTest.tcl:<ignore>
-Common/Testing/WindowsMangleList.py:<ignore>
 Common/Testing/Python/CMakeLists.txt:<ignore>
 Common/Testing/Tcl/CMakeLists.txt:<ignore>
 
@@ -919,7 +910,7 @@ Common/Testing/Cxx/otherStringArray.cxx:
 Common/Testing/Cxx/vtkTestNewVar.cxx:
 Common/Testing/Cxx/vtkTestNewVar.h:
 # This file is a duplicate and should be deleted in new repo
-Graphics/Testing/Cxx/TestSortDataArray.cxx:
+Graphics/Testing/Cxx/TestSortDataArray.cxx: <ignore>
 
 Infovis/Testing/Cxx/TestVariant.cxx:
 Infovis/Testing/Cxx/TestVariantArray.cxx:
@@ -2892,6 +2883,8 @@ CMake/vtkWrapPython.cmake:<ignore>
 CMake/vtkWrapPythonSIP.cmake:
 CMake/vtkWrapPython.sip.in:
 CMake/vtkWrapTcl.cmake:
+CMake/vtk-forward.c.in:
+CMake/vtkForwardingExecutable.cmake:
 Parallel/VTKParallelCMakeTests.cmake:
 CMake/FindEigen2.cmake:
 
@@ -3370,6 +3363,9 @@ Geovis/vtkGeoTreeNode.cxx:
 Geovis/vtkGeoTreeNodeCache.h:
 Geovis/vtkGeoTreeNodeCache.cxx:
 Geovis/vtkGlobeSource.h:
+Geovis/vtkGlobeSourceSphericalToCartesianFigure.eps:
+Geovis/vtkGlobeSourceSphericalToCartesianFigure.ipe:
+Geovis/vtkGlobeSourceSphericalToCartesianFigure.png:
 Geovis/vtkGlobeSource.cxx:
 Geovis/vtkGeoAlignedImageRepresentation.h:
 Geovis/vtkGeoAlignedImageRepresentation.cxx:
@@ -7054,6 +7050,11 @@ AMR/Testing/Cxx/TestEnzoReader.cxx:
 AMR/Testing/Cxx/TestFlashReader.cxx:
 Parallel/Testing/Cxx/TestAMRUtilities.cxx:
 
+[Testing/Install/VIT]
+Common/Testing/Install/CMakeLists.txt:
+Common/Testing/Install/vit-forward.c.in:
+Common/Testing/Install/vit.cxx:
+
 [Testing/Core]
 
 modular/Testing/Core/module.cmake:
@@ -7063,6 +7064,7 @@ Common/Testing/Cxx/vtkTestUtilities.h:
 Common/Testing/Cxx/vtkTestDriver.h:
 Common/Testing/Cxx/vtkTestingColors.h:
 Common/Testing/HeaderTesting.py:
+Common/Testing/WindowsMangleList.py:
 
 [Testing/Rendering]
 
