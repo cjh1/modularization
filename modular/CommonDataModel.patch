@@ -1,11 +1,11 @@
-diff --git a/Common/DataModel/vtkImageIterator.cxx b/Common/DataModel/vtkImageIt
+diff --git a/Common/DataModel/vtkImageIterator.cxx b/Common/DataModel/vtkImageIterator.cxx
 index 1147b85..42dc306 100644
 --- a/Common/DataModel/vtkImageIterator.cxx
 +++ b/Common/DataModel/vtkImageIterator.cxx
 @@ -17,24 +17,24 @@
-
+ 
  #ifndef VTK_NO_EXPLICIT_TEMPLATE_INSTANTIATION
-
+ 
 -template class VTK_FILTERING_EXPORT vtkImageIterator<signed char>;
 -template class VTK_FILTERING_EXPORT vtkImageIterator<char>;
 -template class VTK_FILTERING_EXPORT vtkImageIterator<int>;
@@ -40,6 +40,52 @@ index 1147b85..42dc306 100644
 +template class VTKCOMMONDATAMODEL_EXPORT vtkImageIterator<__int64>;
 +template class VTKCOMMONDATAMODEL_EXPORT vtkImageIterator<unsigned __int64>;
  #endif
-
+ 
  #endif
-
+diff --git a/Common/DataModel/vtkDataObjectTypes.cxx b/Common/DataModel/vtkDataObjectTypes.cxx
+index a791074..7196b87 100644
+--- a/Common/DataModel/vtkDataObjectTypes.cxx
++++ b/Common/DataModel/vtkDataObjectTypes.cxx
+@@ -48,13 +48,8 @@ PURPOSE.  See the above copyright notice for more information.
+ #include  "vtkUniformGrid.h"
+ #include  "vtkUnstructuredGrid.h"
+ 
+-#ifdef VTK_USE_N_WAY_ARRAYS
+ #include  "vtkArrayData.h"
+-#endif
+-
+-#ifdef VTK_USE_CHEMISTRY
+ #include  "vtkMolecule.h"
+-#endif
+ 
+ vtkStandardNewMacro(vtkDataObjectTypes);
+ 
+@@ -94,9 +89,7 @@ static const char* vtkDataObjectTypesStrings[] = {
+   "vtkUniformGridAMR",
+   "vtkNonOverlappingAMR",
+   "vtkOverlappingAMR",
+-#ifdef VTK_USE_CHEMISTRY
+   "vtkMolecule",
+-#endif
+   NULL
+ };
+ 
+@@ -264,18 +257,14 @@ vtkDataObject* vtkDataObjectTypes::NewDataObject(const char* type)
+     {
+     return vtkReebGraph::New();
+     }
+-#ifdef VTK_USE_CHEMISTRY
+   else if(strcmp(type, "vtkMolecule") == 0)
+     {
+     return vtkMolecule::New();
+     }
+-#endif
+-#ifdef VTK_USE_N_WAY_ARRAYS
+   else if(strcmp(type, "vtkArrayData") == 0)
+     {
+     return vtkArrayData::New();
+     }
+-#endif
+   else if(vtkObject* obj = vtkInstantiator::CreateInstance(type))
+     {
+     vtkDataObject* data = vtkDataObject::SafeDownCast(obj);

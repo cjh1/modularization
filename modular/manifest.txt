@@ -1403,8 +1403,6 @@ Filtering/vtkUniformGridAMRDataIterator.h:
 
 modular/CommonDataModel.patch:<ignore>
 <patch>: CommonDataModel.patch
-modular/CommonDataModel2.patch:<ignore>
-<patch>: CommonDataModel2.patch
 
 [Common/DataModel/Testing/Cxx]
 
@@ -7056,6 +7054,9 @@ Filtering/vtkImageInterpolator.cxx:
 Filtering/vtkImageInterpolator.h:
 Filtering/vtkImageInterpolatorInternals.h:
 
+modular/ImagingCore.patch:<ignore>
+<patch>: ImagingCore.patch
+
 [Imaging/Color]
 
 modular/Imaging/Color/CMakeLists.txt:
@@ -7276,9 +7277,6 @@ Imaging/vtkImageSeedConnectivity.h:
 Imaging/vtkImageSkeleton2D.cxx:
 Imaging/vtkImageSkeleton2D.h:
 
-
-modular/ImagingCore.patch:<ignore>
-<patch>: ImagingCore.patch
 
 [Rendering/Image]
 
