@@ -102,8 +102,8 @@ Filtering/vtkCellTreeLocator.h: <ignore>
 Common/Testing/CMakeLists.txt:<ignore>
 Common/Testing/CTestCustom.ctest.in:<ignore>
 Common/Testing/Cxx/CMakeLists.txt:<ignore>
-Common/Testing/Tcl/prtImageTest.tcl:<ignore>
-Common/Testing/Tcl/rtImageTest.tcl:<ignore>
+Common/Testing/Tcl/prtImageTest.tcl:<ignore> # ?
+Common/Testing/Tcl/rtImageTest.tcl:<ignore> # ?
 Common/Testing/Python/CMakeLists.txt:<ignore>
 Common/Testing/Tcl/CMakeLists.txt:<ignore>
 
@@ -150,100 +150,26 @@ IO/Testing/Python/CMakeLists.txt:<ignore>
 IO/Testing/Tcl/CMakeLists.txt:<ignore>
 
 GenericFiltering/Testing/Tcl/CMakeLists.txt:<ignore>
+
 Geovis/Testing/Tcl/CMakeLists.txt:<ignore>
+
 Graphics/Testing/Tcl/CMakeLists.txt:<ignore>
-Graphics/Testing/Tcl/AutomaticPlaneGeneration.tcl:<ignore>
-Graphics/Testing/Tcl/Canny.tcl:<ignore>
-Graphics/Testing/Tcl/Disk.tcl:<ignore>
-Graphics/Testing/Tcl/LineIntersectQuadraticCells.tcl:<ignore>
-Graphics/Testing/Tcl/blankGrid.tcl:<ignore>
-Graphics/Testing/Tcl/capCow.tcl:<ignore>
-Graphics/Testing/Tcl/capSphere.tcl:<ignore>
-Graphics/Testing/Tcl/cowHair.tcl:<ignore>
-Graphics/Testing/Tcl/cowHair2.tcl:<ignore>
-Graphics/Testing/Tcl/createBFont.tcl:<ignore>
-Graphics/Testing/Tcl/cursor2D.tcl:<ignore>
-Graphics/Testing/Tcl/cursor3D.tcl:<ignore>
-Graphics/Testing/Tcl/cutLoop.tcl:<ignore>
-Graphics/Testing/Tcl/cylMap.tcl:<ignore>
-Graphics/Testing/Tcl/cylindrical.tcl:<ignore>
-Graphics/Testing/Tcl/dataSetSurfaceFilter.tcl:<ignore>
-Graphics/Testing/Tcl/deciFranFace.tcl:<ignore>
-Graphics/Testing/Tcl/deciPlane.tcl:<ignore>
-Graphics/Testing/Tcl/dicer.tcl:<ignore>
-Graphics/Testing/Tcl/dispPlot.tcl:<ignore>
-Graphics/Testing/Tcl/edgePoints.tcl:<ignore>
-Graphics/Testing/Tcl/eleState.tcl:<ignore>
-Graphics/Testing/Tcl/extrudeCopyCD.tcl:<ignore>
-Graphics/Testing/Tcl/genHead.tcl:<ignore>
-Graphics/Testing/Tcl/geomFilter.tcl:<ignore>
-Graphics/Testing/Tcl/glyph2D.tcl:<ignore>
-Graphics/Testing/Tcl/headBone.tcl:<ignore>
-Graphics/Testing/Tcl/hull.tcl:<ignore>
-Graphics/Testing/Tcl/iceCream.tcl:<ignore>
-Graphics/Testing/Tcl/imageMCAll.tcl:<ignore>
-Graphics/Testing/Tcl/mcubes.tcl:<ignore>
-Graphics/Testing/Tcl/mergeFilter.tcl:<ignore>
-Graphics/Testing/Tcl/motor.tcl:<ignore>
-Graphics/Testing/Tcl/multipleComponentContour.tcl:<ignore>
-Graphics/Testing/Tcl/multipleIso.tcl:<ignore>
-Graphics/Testing/Tcl/nacaBinary.tcl:<ignore>
-Graphics/Testing/Tcl/officeStreamPoints.tcl:<ignore>
-Graphics/Testing/Tcl/polyConn.tcl:<ignore>
-Graphics/Testing/Tcl/probe.tcl:<ignore>
-Graphics/Testing/Tcl/probeComb.tcl:<ignore>
-Graphics/Testing/Tcl/quadricCut.tcl:<ignore>
-Graphics/Testing/Tcl/rectGrid.tcl:<ignore>
-Graphics/Testing/Tcl/recursiveDC.tcl:<ignore>
-Graphics/Testing/Tcl/reverseNormals.tcl:<ignore>
-Graphics/Testing/Tcl/scalarColors.tcl:<ignore>
-Graphics/Testing/Tcl/scalarConn.tcl:<ignore>
-Graphics/Testing/Tcl/schwarz.tcl:<ignore>
-Graphics/Testing/Tcl/shepards.tcl:<ignore>
-Graphics/Testing/Tcl/skinOrder.tcl:<ignore>
-Graphics/Testing/Tcl/smoothCyl.tcl:<ignore>
-Graphics/Testing/Tcl/smoothCyl2.tcl:<ignore>
-Graphics/Testing/Tcl/smoothMeshOnMesh.tcl:<ignore>
-Graphics/Testing/Tcl/socbal.tcl:<ignore>
-Graphics/Testing/Tcl/spatialRepAll.tcl:<ignore>
-Graphics/Testing/Tcl/spherical.tcl:<ignore>
-Graphics/Testing/Tcl/splitVectors.tcl:<ignore>
-Graphics/Testing/Tcl/stereoDresdenMace.tcl:<ignore>
-Graphics/Testing/Tcl/stripF.tcl:<ignore>
-Graphics/Testing/Tcl/subDivideTetra.tcl:<ignore>
-Graphics/Testing/Tcl/subPixelPositionMin.tcl:<ignore>
-Graphics/Testing/Tcl/subdividePointData.tcl:<ignore>
-Graphics/Testing/Tcl/sync3dAll.tcl:<ignore>
-Graphics/Testing/Tcl/teapotHulls.tcl:<ignore>
-Graphics/Testing/Tcl/testHexaPenta.tcl:<ignore>
-Graphics/Testing/Tcl/testReflect.tcl:<ignore>
-Graphics/Testing/Tcl/textureThreshold.tcl:<ignore>
-Graphics/Testing/Tcl/triangularTCoords.tcl:<ignore>
-Graphics/Testing/Tcl/triangularTexture.tcl:<ignore>
 
 Hybrid/Testing/Tcl/CMakeLists.txt:<ignore>
-Hybrid/Testing/Tcl/MassProperties.tcl:<ignore>
-Hybrid/Testing/Tcl/TestICPTransform.tcl:<ignore>
-Hybrid/Testing/Tcl/bore.tcl:<ignore>
-Hybrid/Testing/Tcl/camera.tcl:<ignore>
-Hybrid/Testing/Tcl/clipHex.tcl:<ignore>
-Hybrid/Testing/Tcl/clipPyramid.tcl:<ignore>
-Hybrid/Testing/Tcl/clipTet.tcl:<ignore>
-Hybrid/Testing/Tcl/clipWedge.tcl:<ignore>
-Hybrid/Testing/Tcl/earth.tcl:<ignore>
 
 Imaging/Testing/Tcl/CMakeLists.txt:<ignore>
 Imaging/Testing/Tcl/TestImageThresholdConnectivity.tcl:<ignore>
-Imaging/Testing/Tcl/WindowLevelInterface.tcl:<ignore>
+Imaging/Testing/Tcl/WindowLevelInterface.tcl:<ignore> # unused
 
 Infovis/Testing/Tcl/CMakeLists.txt:<ignore>
 
 Parallel/Testing/Tcl/CMakeLists.txt:<ignore>
-Parallel/Testing/Tcl/TestBranchExtentTranslator.tcl:<ignore>
-Parallel/Testing/Tcl/TestExtractVOI.tcl:<ignore>
+Parallel/Testing/Tcl/TestBranchExtentTranslator.tcl:<ignore> # unused
 
 VolumeRendering/Testing/Tcl/CMakeLists.txt:<ignore>
+
 Widgets/Testing/Tcl/CMakeLists.txt:<ignore>
+
 Imaging/Testing/CMakeLists.txt:<ignore>
 Imaging/Testing/Cxx/CMakeLists.txt:<ignore>
 
@@ -1477,6 +1403,12 @@ Filtering/Testing/Tcl/otherDataSetAttributes.tcl:
 Graphics/Testing/Tcl/TestConvexPointSet.tcl:
 Graphics/Testing/Tcl/TestQuadricClustering.tcl:
 Graphics/Testing/Tcl/TestStructuredGrid.tcl:
+Graphics/Testing/Tcl/LineIntersectQuadraticCells.tcl:
+Graphics/Testing/Tcl/headBone.tcl:
+Graphics/Testing/Tcl/quadricCut.tcl:
+Graphics/Testing/Tcl/scalarColors.tcl:
+Graphics/Testing/Tcl/scalarConn.tcl:
+Hybrid/Testing/Tcl/TestICPTransform.tcl:
 
 [Common/ExecutionModel]
 
@@ -1741,6 +1673,8 @@ Graphics/Testing/Tcl/MatrixToTransform.tcl:
 Graphics/Testing/Tcl/SliceOrder.tcl:
 Hybrid/Testing/Tcl/TestThinPlateWarp.tcl:
 Hybrid/Testing/Tcl/TestThinPlateWarp3D.tcl:
+Graphics/Testing/Tcl/cylindrical.tcl:
+Graphics/Testing/Tcl/spherical.tcl:
 
 
 [Examples]
@@ -2045,6 +1979,8 @@ IO/Testing/Tcl/TestPolygonWriters.tcl:
 IO/Testing/Tcl/TestSimplePointsReader.tcl:
 IO/Testing/Tcl/TestXYZMol.tcl:
 IO/Testing/Tcl/caffeine.tcl:
+Graphics/Testing/Tcl/motor.tcl:
+Graphics/Testing/Tcl/testHexaPenta.tcl:
 
 [IO/Image]
 
@@ -2353,6 +2289,7 @@ Graphics/Testing/Tcl/EnSightOfficeBin.tcl:
 Graphics/Testing/Tcl/EnSightRectGridASCII.tcl:
 Graphics/Testing/Tcl/EnSightRectGridBin.tcl:
 Graphics/Testing/Tcl/EnSightSelectArrays.tcl:
+Graphics/Testing/Tcl/nacaBinary.tcl:
 
 [IO/NetCDF]
 
@@ -3893,6 +3830,26 @@ Graphics/Testing/Tcl/fieldToUGrid.tcl:
 Graphics/Testing/Tcl/financialField.tcl:
 Hybrid/Testing/Tcl/financialField2.tcl:
 Hybrid/Testing/Tcl/financialField3.tcl:
+Graphics/Testing/Tcl/capCow.tcl:
+Graphics/Testing/Tcl/capSphere.tcl:
+Graphics/Testing/Tcl/createBFont.tcl:
+Graphics/Testing/Tcl/cutLoop.tcl:
+Graphics/Testing/Tcl/deciFranFace.tcl:
+Graphics/Testing/Tcl/deciPlane.tcl:
+Graphics/Testing/Tcl/dispPlot.tcl:
+Graphics/Testing/Tcl/hull.tcl:
+Graphics/Testing/Tcl/mergeFilter.tcl:
+Graphics/Testing/Tcl/multipleComponentContour.tcl:
+Graphics/Testing/Tcl/multipleIso.tcl:
+Graphics/Testing/Tcl/polyConn.tcl:
+Graphics/Testing/Tcl/probe.tcl:
+Graphics/Testing/Tcl/probeComb.tcl:
+Graphics/Testing/Tcl/reverseNormals.tcl:
+Graphics/Testing/Tcl/skinOrder.tcl:
+Graphics/Testing/Tcl/smoothMeshOnMesh.tcl:
+Graphics/Testing/Tcl/stripF.tcl:
+Graphics/Testing/Tcl/teapotHulls.tcl:
+Hybrid/Testing/Tcl/MassProperties.tcl:
 
 [Filters/Core/Testing/Python]
 Graphics/Testing/Python/TestTensorGlyph.py:
@@ -4022,6 +3979,12 @@ Filtering/Testing/Cxx/TestUniformGridGhostDataGenerator.cxx:
 Graphics/Testing/Cxx/TestExtractSurfaceNonLinearSubdivision.cxx:
 Graphics/Testing/Cxx/TestUnstructuredGridGeometryFilter.cxx:
 
+[Filters/Geometry/Testing/Tcl]
+Graphics/Testing/Tcl/dataSetSurfaceFilter.tcl:
+Graphics/Testing/Tcl/geomFilter.tcl:
+Graphics/Testing/Tcl/officeStreamPoints.tcl:
+Graphics/Testing/Tcl/rectGrid.tcl:
+
 [Filters/Matlab]
 
 Graphics/vtkMatlabEngineFilter.cxx:
@@ -4114,6 +4077,15 @@ Graphics/Testing/Tcl/TestSpherePuzzle.tcl:
 Graphics/Testing/Tcl/TestSpherePuzzleArrows.tcl:
 Graphics/Testing/Tcl/contour2DAll.tcl:
 Graphics/Testing/Tcl/contour3DAll.tcl:
+Graphics/Testing/Tcl/eleState.tcl:
+Graphics/Testing/Tcl/extrudeCopyCD.tcl:
+Graphics/Testing/Tcl/schwarz.tcl:
+Graphics/Testing/Tcl/smoothCyl.tcl:
+Graphics/Testing/Tcl/smoothCyl2.tcl:
+Graphics/Testing/Tcl/subDivideTetra.tcl:
+Graphics/Testing/Tcl/subdividePointData.tcl:
+Graphics/Testing/Tcl/sync3dAll.tcl:
+Hybrid/Testing/Tcl/camera.tcl:
 
 [Filters/Programmable]
 
@@ -4297,6 +4269,8 @@ Graphics/Testing/Tcl/TestParametricFunctions.tcl:
 Graphics/Testing/Tcl/TestPlatonicSolids.tcl:
 Graphics/Testing/Tcl/TestRegularPolygonSource.tcl:
 Graphics/Testing/Tcl/coneResolution.tcl:
+Graphics/Testing/Tcl/Disk.tcl:
+Graphics/Testing/Tcl/glyph2D.tcl:
 
 
 [Filters/General]
@@ -4594,6 +4568,23 @@ Graphics/Testing/Tcl/streamTracer.tcl:
 Graphics/Testing/Tcl/testDataSetTriangleFilter.tcl:
 Graphics/Testing/Tcl/testDataSetTriangleFilter2.tcl:
 Graphics/Testing/Tcl/warplens.tcl:
+Graphics/Testing/Tcl/Canny.tcl:
+Graphics/Testing/Tcl/blankGrid.tcl:
+Graphics/Testing/Tcl/cursor2D.tcl:
+Graphics/Testing/Tcl/cursor3D.tcl:
+Graphics/Testing/Tcl/dicer.tcl:
+Graphics/Testing/Tcl/edgePoints.tcl:
+Graphics/Testing/Tcl/genHead.tcl:
+Graphics/Testing/Tcl/mcubes.tcl:
+Graphics/Testing/Tcl/recursiveDC.tcl:
+Graphics/Testing/Tcl/spatialRepAll.tcl:
+Graphics/Testing/Tcl/splitVectors.tcl:
+Graphics/Testing/Tcl/subPixelPositionMin.tcl:
+Graphics/Testing/Tcl/testReflect.tcl:
+Hybrid/Testing/Tcl/clipHex.tcl:
+Hybrid/Testing/Tcl/clipPyramid.tcl:
+Hybrid/Testing/Tcl/clipTet.tcl:
+Hybrid/Testing/Tcl/clipWedge.tcl:
 
 [Filters/Verdict]
 
@@ -4694,6 +4685,13 @@ Graphics/vtkTransformTextureCoords.h:
 Graphics/vtkTriangularTCoords.cxx:
 Graphics/vtkTriangularTCoords.h:
 
+[Filters/Texture/Testing/Tcl]
+Graphics/Testing/Tcl/AutomaticPlaneGeneration.tcl:
+Graphics/Testing/Tcl/cylMap.tcl:
+Graphics/Testing/Tcl/socbal.tcl:
+Graphics/Testing/Tcl/textureThreshold.tcl:
+Graphics/Testing/Tcl/triangularTCoords.tcl:
+
 [Filters/Hybrid]
 
 modular/Filters/Hybrid/CMakeLists.txt:
@@ -4778,6 +4776,7 @@ Hybrid/Testing/Tcl/depthSort.tcl:
 Hybrid/Testing/Tcl/imageToPolyData.tcl:
 Hybrid/Testing/Tcl/largeImageOffset.tcl:
 Hybrid/Testing/Tcl/largeImageParallel.tcl:
+Hybrid/Testing/Tcl/earth.tcl:
 
 [Filters/Statistics]
 
@@ -5371,6 +5370,7 @@ Hybrid/Testing/Tcl/xyPlot.tcl:
 Hybrid/Testing/Tcl/xyPlot2.tcl:
 Hybrid/Testing/Tcl/xyPlot3.tcl:
 Hybrid/Testing/Tcl/xyPlot4.tcl:
+Hybrid/Testing/Tcl/bore.tcl:
 
 [Rendering/Cg]
 
@@ -5712,6 +5712,9 @@ Rendering/Testing/Tcl/pickCells.tcl:
 Rendering/Testing/Tcl/propAssembly.tcl:
 Rendering/Testing/Tcl/rendererSource.tcl:
 Rendering/Testing/Tcl/rotations.tcl:
+Graphics/Testing/Tcl/cowHair.tcl:
+Graphics/Testing/Tcl/cowHair2.tcl:
+Graphics/Testing/Tcl/stereoDresdenMace.tcl:
 
 [Rendering/Core/Testing/Python]
 Graphics/Testing/Python/cameraWarpedCone.py:
@@ -7233,6 +7236,11 @@ Imaging/vtkBooleanTexture.h:
 Imaging/vtkTriangularTexture.cxx:
 Imaging/vtkTriangularTexture.h:
 
+[Imaging/Hybrid/Testing/Tcl]
+Graphics/Testing/Tcl/iceCream.tcl:
+Graphics/Testing/Tcl/shepards.tcl:
+Graphics/Testing/Tcl/triangularTexture.tcl:
+
 [Imaging/Stencil]
 
 modular/Imaging/Stencil/CMakeLists.txt:
@@ -7296,6 +7304,10 @@ Rendering/vtkImageResliceMapper.cxx:
 Rendering/vtkImageResliceMapper.h:
 
 [Imaging/Core/Testing/Tcl]
+Graphics/Testing/Tcl/imageMCAll.tcl:
+Parallel/Testing/Tcl/TestExtractVOI.tcl:
+
+# The following may need to be distributed based on new Imaging modules
 Imaging/Testing/Tcl/ContinuousClose2D.tcl:
 Imaging/Testing/Tcl/IdealHighPass.tcl:
 Imaging/Testing/Tcl/LaplacianEdgeEnhance.tcl:
