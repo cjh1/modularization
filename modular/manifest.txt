@@ -112,9 +112,6 @@ Imaging/vtkImageThresholdConnectivity.h: <ignore>
 Filtering/vtkCellTreeLocator.cxx: <ignore>
 Filtering/vtkCellTreeLocator.h: <ignore>
 
-# This will not be carried forward into VTK 6.
-TextAnalysis/: <ignore>
-
 # Common/Testing
 Common/Testing/CMakeLists.txt:<ignore>
 Common/Testing/CTestCustom.ctest.in:<ignore>
@@ -2716,7 +2713,6 @@ Wrapping/Python/vtk/parallel.py:<ignore>
 Wrapping/Python/vtk/qvtk.py:<ignore>
 Wrapping/Python/vtk/rendering.py:<ignore>
 Wrapping/Python/vtk/required.py:<ignore>
-Wrapping/Python/vtk/textanalysis.py:<ignore>
 Wrapping/Python/vtk/views.py:<ignore>
 Wrapping/Python/vtk/volumerendering.py:<ignore>
 Wrapping/Python/vtk/widgets.py:<ignore>
@@ -6890,6 +6886,9 @@ Parallel/vtkSubCommunicator.cxx:
 Parallel/vtkSubCommunicator.h:
 Parallel/vtkSubGroup.cxx:
 Parallel/vtkSubGroup.h:
+Parallel/vtkFieldDataSerializer.cxx:
+Parallel/vtkFieldDataSerializer.h:
+
 
 modular/ParallelCore.patch:<ignore>
 <patch>: ParallelCore.patch
@@ -6900,6 +6899,7 @@ Parallel/Testing/Cxx/ExerciseMultiProcessController.cxx:
 Parallel/Testing/Cxx/ExerciseMultiProcessController.h:
 Parallel/Testing/Cxx/SocketClient.cxx:
 Parallel/Testing/Cxx/SocketServer.cxx:
+Parallel/Testing/Cxx/TestFieldDataSerialization.cxx:
 
 [Parallel/Core/Testing/Tcl]
 Parallel/Testing/Tcl/TestPolyDataPieces.tcl:
