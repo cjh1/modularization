@@ -41,6 +41,7 @@ set(Kit_SRCS
   vtkTreeMapToPolyData.cxx
   vtkTreeOrbitLayoutStrategy.cxx
   vtkTreeRingToPolyData.cxx
+  vtkKCoreLayout.cxx
   )
 
 set_source_files_properties(

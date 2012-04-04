@@ -71,8 +71,6 @@ Imaging/vtkImageSlabReslice.cxx: <ignore>
 Imaging/vtkImageSlabReslice.h: <ignore>
 Infovis/vtkKCoreDecomposition.cxx: <ignore>
 Infovis/vtkKCoreDecomposition.h: <ignore>
-Infovis/vtkKCoreLayout.cxx: <ignore>
-Infovis/vtkKCoreLayout.h: <ignore>
 Rendering/vtkResliceCursorActor.cxx: <ignore>
 Rendering/vtkResliceCursorActor.h: <ignore>
 Rendering/vtkResliceCursorPicker.cxx: <ignore>
@@ -3131,6 +3129,9 @@ Infovis/vtkTreeOrbitLayoutStrategy.h:
 Infovis/vtkTreeOrbitLayoutStrategy.cxx:
 Infovis/vtkTreeRingToPolyData.h:
 Infovis/vtkTreeRingToPolyData.cxx:
+Infovis/vtkKCoreLayout.cxx: 
+Infovis/vtkKCoreLayout.h: 
+
 
 [Infovis/Layout/Testing/Cxx]
 
