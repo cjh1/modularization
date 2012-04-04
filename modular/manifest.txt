@@ -6726,6 +6726,9 @@ Imaging/vtkImageLuminance.h:
 
 [Imaging/Fourier]
 
+modular/Imaging/Fourier/CMakeLists.txt:
+modular/Imaging/Fourier/module.cmake:
+
 Imaging/vtkImageFlip.cxx:
 Imaging/vtkImageFlip.h:
 Imaging/vtkImageFFT.cxx:
@@ -6896,6 +6899,9 @@ Imaging/vtkROIStencilSource.cxx:
 Imaging/vtkROIStencilSource.h:
 
 [Imaging/Morphological]
+
+modular/Imaging/Morphological/CMakeLists.txt:
+modular/Imaging/Morphological/module.cmake:
 
 Imaging/vtkImageConnector.cxx:
 Imaging/vtkImageConnector.h:
