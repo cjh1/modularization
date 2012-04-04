@@ -38,20 +38,6 @@ vtkMacros.cmake: <ignore>
 
 Graphics/Testing/CMakeLists.txt:<ignore>
 
-Graphics/Testing/Python/:<ignore>
-
-Hybrid/Testing/Python/: <ignore>
-
-Imaging/Testing/Python/: <ignore>
-
-Infovis/Testing/Python/: <ignore>
-
-VolumeRendering/Testing/Python/: <ignore>
-
-Widgets/Testing/Python/: <ignore>
-Parallel/Testing/Python/:<ignore>
-
-
 GenericFiltering/README.html: <ignore>
 modular/CMake/vtkModular.cmake:<ignore>
 modular/manifest.txt: <ignore>
@@ -284,6 +270,15 @@ Widgets/Testing/CMakeLists.txt:<ignore>
 Widgets/Testing/Cxx/CMakeLists.txt::<ignore>
 
 Filtering/Testing/Python/CMakeLists.txt:<ignore>
+Graphics/Testing/Python/CMakeLists.txt:<ignore>
+Hybrid/Testing/Python/CMakeLists.txt:<ignore>
+Imaging/Testing/Python/CMakeLists.txt:<ignore>
+Imaging/Testing/Python/TestNumericArrayImageData.py:<ignore> # unused
+Infovis/Testing/Python/CMakeLists.txt:<ignore>
+Parallel/Testing/Python/CMakeLists.txt:<ignore>
+VolumeRendering/Testing/Python/CMakeLists.txt:<ignore>
+Widgets/Testing/Python/CMakeLists.txt:<ignore>
+
 
 [.]
 modular/CMakeLists.txt:
@@ -3901,6 +3896,15 @@ Graphics/Testing/Tcl/financialField.tcl:
 Hybrid/Testing/Tcl/financialField2.tcl:
 Hybrid/Testing/Tcl/financialField3.tcl:
 
+[Filters/Core/Testing/Python]
+Graphics/Testing/Python/TestTensorGlyph.py:
+Graphics/Testing/Python/tubeComb.py:
+Graphics/Testing/Python/glyphComb.py:
+Graphics/Testing/Python/streamComb.py:
+Graphics/Testing/Python/streamSurface.py:
+Graphics/Testing/Python/streamSurface2.py:
+Graphics/Testing/Python/TestTextureGlyph.py:
+
 [Filters/Generic]
 
 modular/Filters/Generic/CMakeLists.txt:
@@ -4612,6 +4616,9 @@ Graphics/vtkMatrixMathFilter.h:
 modular/Filters/Verdict/Testing/Cxx/CMakeLists.txt:
 Graphics/Testing/Cxx/MeshQuality.cxx:
 
+[Filters/Verdict/Testing/Python]
+Graphics/Testing/Python/meshQuality.py:
+
 [Filters/HyperOctree]
 
 modular/Filters/HyperOctree/CMakeLists.txt:
@@ -4823,6 +4830,9 @@ Infovis/Testing/Cxx/TestCorrelativeStatistics.cxx:
 Infovis/Testing/Cxx/TestDescriptiveStatistics.cxx:
 Infovis/Testing/Cxx/TestKMeansStatistics.cxx:
 Infovis/Testing/Cxx/TestPCAStatistics.cxx:
+
+[Filters/Statistics/Testing/Python]
+Infovis/Testing/Python/kMeansDistanceCalculator.py:
 
 [Filters/StatisticsGnuR]
 
@@ -5231,6 +5241,9 @@ Widgets/Testing/Tcl/TestCameraWidget.tcl:
 Widgets/Testing/Tcl/TestInteractorEventRecorder.tcl:
 Widgets/Testing/Tcl/TestSphereWidget.tcl:
 Widgets/Testing/Tcl/TestTextWidget.tcl:
+
+[Interaction/Widgets/Testing/Python]
+Widgets/Testing/Python/TestImagePlaneWidget.py:
 
 [Interaction/Style]
 
@@ -5701,6 +5714,9 @@ Rendering/Testing/Tcl/pickCells.tcl:
 Rendering/Testing/Tcl/propAssembly.tcl:
 Rendering/Testing/Tcl/rendererSource.tcl:
 Rendering/Testing/Tcl/rotations.tcl:
+
+[Rendering/Core/Testing/Python]
+Graphics/Testing/Python/cameraWarpedCone.py:
 
 [Rendering/FreeType]
 
