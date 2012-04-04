@@ -11,6 +11,7 @@ set(Kit_SRCS
   vtkSocketController.cxx
   vtkSubCommunicator.cxx
   vtkSubGroup.cxx
+  vtkFieldDataSerializer.cxx
   )
 
 # Generate "vtkSocketCommunicatorHash.h".
