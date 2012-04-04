@@ -20,7 +20,6 @@ Infovis/TitanReadme.txt: <ignore>
 # For now - this list will shrink as we map all of the files
 CMakeLists.txt: <ignore>
 CTestConfig.cmake: <ignore>
-.gitattributes: <ignore>
 Testing.txt: <ignore>
 Charts/CMakeLists.txt: <ignore>
 GenericFiltering/CMakeLists.txt: <ignore>
@@ -287,6 +286,10 @@ VTKConfig.cmake.in: <ignore>
 VTKConfigVersion.cmake.in: <ignore>
 vtkGenerateVTKConfig.cmake: <ignore>
 .hooks-config.bash:
+.gitattributes:
+
+modular/GitAttributes.patch: <ignore>
+<patch>: GitAttributes.patch
 
 [Utilities/LastConfigureStep]
 Utilities/LastConfigureStep/:

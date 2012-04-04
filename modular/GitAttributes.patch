@@ -1,0 +1,12 @@
+diff --git a/.gitattributes b/.gitattributes
+index 21d8064..5e4651b 100644
+--- a/.gitattributes
++++ b/.gitattributes
+@@ -14,4 +14,4 @@ pre-commit       crlf=input
+ *.txt            whitespace=tab-in-indent,-blank-at-eol
+ *.cmake          whitespace=tab-in-indent,-blank-at-eol
+ 
+-/Utilities/vtksqlite/vtk_sqlite3.c hooks.MaxObjectKiB=4096
++/ThirdParty/sqlite/vtksqlite/vtk_sqlite3.c hooks.MaxObjectKiB=4096
+-- 
+1.7.8.3
