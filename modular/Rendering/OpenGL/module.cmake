@@ -15,7 +15,6 @@ vtk_module(vtkRenderingOpenGL
     vtkRenderingText # For vtkTextMapper
     vtkIOImage # For vtkImageExport
     vtkImagingHybrid # For vtkSampleFunction
-    vtkImagingSources
   COMPILE_DEPENDS
     vtkParseOGLExt
     vtkUtilitiesEncodeString
