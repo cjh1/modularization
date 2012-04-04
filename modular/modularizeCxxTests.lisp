@@ -184,26 +184,11 @@ the relative path
 (defparameter VTK-OLD-ROOT "/home/nikhil/modules/vtk/VTK/")
 (defparameter VTK-OLD-TESTING/CXX (gather-files-recursively VTK-OLD-ROOT "/Testing/Cxx/*.cxx"))
 (defparameter VTK-OLD-TESTING/H (gather-files-recursively VTK-OLD-ROOT "/Testing/Cxx/*.h"))
+
 (defparameter VTK-OLD-FILES
   (mapcar #'(lambda (x)
               (namestring (extract-relative-path VTK-OLD-ROOT x)))
           VTK-OLD-TESTING/CXX))
-
-;; ;; -------------------------------------------------------extract-titan-headers
-;; (defparameter TITAN-LIB-ROOT "/home/nikhil/modules/titan/Titan/Libraries/")
-;; (defparameter TITAN-LIB-CMakeLists.txt (gather-files-recursively TITAN-LIB-ROOT "CMakeLists.txt"))
-;; (defparameter TITAN-LIB-DIRS
-;;   (mapcar #'(lambda (x)
-;;               (namestring (extract-relative-path TITAN-LIB-ROOT x)))
-;;           TITAN-LIB-CMAKELISTS.TXT))
-;; (defparameter CXX-PATTERN "*.cxx")
-;; (defparameter TITAN-LIB-HEADER-FILES-LIST (gather-files-from-list TITAN-LIB-CMakeLists.txt
-;;                                                                   HEADER-PATTERN
-;;                                                                   #'namestring))
-;; (defparameter TITAN-LIB-CXX-FILES-LIST (gather-files-from-list TITAN-LIB-CMakeLists.txt
-;;                                                                CXX-PATTERN
-;;                                                                #'namestring))
-
 
 ;; -------------------------------------------------------------headers-per-file
 (defparameter VTK_INCLUDE (ppcre:create-scanner
@@ -235,29 +220,6 @@ the relative path
 (defparameter VTK-INCLUDES-PER-TEST (extract-includes-from-file-list
                                      VTK-OLD-TESTING/CXX))
 
-;; (defun extract-includes-from-list-of-file-list(list-of-file-list)
-;;   (mapcar #'extract-includes-from-file-list list-of-file-list))
-
-;; (defun extract-nonduplicate-headers (list-of-list-of-headers)
-;;   (mapcar #'(lambda (x)
-;;               (remove-duplicates (reduce #'append x) :test #'string=))
-;;           list-of-list-of-headers))
-
-;; (defparameter TITAN-LIB-CXX-INCLUDES-PER-DIR
-;;   (extract-nonduplicate-headers
-;;    (extract-includes-from-list-of-file-list TITAN-LIB-CXX-FILES-LIST)))
-
-;; (defparameter TITAN-LIB-HEADER-INCLUDES-PER-DIR
-;;   (extract-nonduplicate-headers
-;;    (extract-includes-from-list-of-file-list TITAN-LIB-HEADER-FILES-LIST)))
-
-;; (defparameter TITAN-LIB-INCLUDES-PER-DIR
-;;   (mapcar #'remove-duplicates
-;;           (mapcar #'append
-;;                   TITAN-LIB-CXX-INCLUDES-PER-DIR
-;;                   TITAN-LIB-HEADER-INCLUDES-PER-DIR)
-;;           :test #'string=))
-
 (defun extract-modules (list-of-lists)
   (mapcar #'(lambda (x)
               (remove-duplicates (sort x #'string<) :test #'string=))
@@ -278,18 +240,6 @@ the relative path
                   list-of-lists)))
 (defparameter VTK-TEST-MODULES (extract-modules VTK-INCLUDES-PER-TEST))
 (defparameter VTK-TEST-LEFTOVERS (extract-headers-no-modules VTK-INCLUDES-PER-TEST))
-;; (defparameter TITAN-VTK-MODULES
-;;   (extract-modules TITAN-LIB-INCLUDES-PER-DIR))
-
-;; (defparameter TITAN-VTK-LEFTOVERS
-;;   (extract-headers-no-modules TITAN-LIB-INCLUDES-PER-DIR))
-
-
-;; (mapcar #'(lambda (file) (with-open-file (stream file)
-;;                            (loop
-;;                               for line = (read-line stream nil 'foo)
-;;                               until (eq line 'foo)
-;;                               do (format t "~a~%" line)))) (first TITAN-LIB-CXX-FILES-LIST))
 
 (defparameter *vtk-cxx-tests-module-list* 
   (mapcar #'(lambda (x y z) (list :file x :modules y :module "" :leftover z)) 
@@ -303,7 +253,7 @@ the relative path
           VTK-TEST-MODULES
           VTK-TEST-LEFTOVERS))
 
-(defun dump-into(file)
+(defun dump-cxx-into(file)
   (let ((*print-pretty* nil))
     (with-open-file (stream file
                             :direction :output
@@ -314,3 +264,96 @@ the relative path
 (defun dump(lst)
   (dolist (cd lst)
     (format t "~{~a:~10t~a~%~}~%" cd)))
+
+;; --------------------------------------------------------------------------tcl
+(defparameter VTK-OLD-TESTING/TCL (gather-files-recursively VTK-OLD-ROOT "/Testing/Tcl/*.tcl"))
+
+(defparameter VTK-TCL-INCLUDE (ppcre:create-scanner
+                           "(#)*.*(vtk\\w*)"))
+
+(defparameter VTK-OLD-TCL-FILES
+  (mapcar #'(lambda (x)
+              (namestring (extract-relative-path VTK-OLD-ROOT x)))
+          VTK-OLD-TESTING/TCL))
+
+(defun get-vtk-tcl-include (str)
+  " Given a string get the included file from #include <file.h>"
+  (register-groups-bind (first second) (VTK-TCL-INCLUDE str :sharedp t)
+    (progn
+      (if (not first)
+        second
+        nil))))
+
+(defun extract-includes-from-tcl-file (file)
+  (let ((collection nil))
+    (with-open-file (stream file :direction :input)
+      (loop
+         for line = (read-line stream nil 'foo)
+         until (eq line 'foo)
+         do (progn
+              (let ((value (get-vtk-tcl-include line)))
+              (when value
+                (push value collection))))))
+    (reverse collection)))
+
+(defun extract-includes-from-tcl-file-list(file-list)
+  (mapcar #'extract-includes-from-tcl-file file-list))
+
+(defparameter VTK-INCLUDES-PER-TCL-TEST (extract-includes-from-tcl-file-list
+                                         VTK-OLD-TESTING/TCL))
+
+(defun strcat.h (list)
+  (mapcar (lambda (x)
+            (concatenate 'string x ".h"))
+          list))
+
+(defun extract-modules-tcl (list-of-lists)
+  (mapcar #'(lambda (x)
+              (remove-duplicates (sort x #'string<) :test #'string=))
+          (mapcar #'(lambda (x)
+                      (mapcar #'vtk-get-module (strcat.h x)))
+                  list-of-lists)))
+
+(defun extract-includes-no-modules-tcl (list-of-lists)
+  (mapcar #'(lambda (x)
+              (remove-duplicates (sort x #'string<) :test #'string=))
+          (mapcar #'(lambda (x)
+                      (mapcar #'(lambda (y)
+                                  (let ((val (vtk-get-module (concatenate 'string y
+                                                                          ".h"))))
+                                    (if val
+                                        nil
+                                        y)))
+                              x))
+                  list-of-lists)))
+
+(defparameter VTK-TCL-TEST-MODULES (extract-modules-tcl VTK-INCLUDES-PER-TCL-TEST))
+(defparameter VTK-TCL-TEST-LEFTOVERS (extract-includes-no-modules-tcl VTK-INCLUDES-PER-TCL-TEST))
+
+(defparameter *vtk-tcl-tests-module-list* 
+  (mapcar #'(lambda (x y z) (list :file x :modules y :module "" :leftover z)) 
+          VTK-OLD-TCL-FILES
+          VTK-TCL-TEST-MODULES
+          VTK-TCL-TEST-LEFTOVERS))
+
+(defparameter *vtk-tcl-tests-print-list* 
+  (mapcar #'(lambda (x y z) (list x y "" z))
+          VTK-OLD-TCL-FILES
+          VTK-TCL-TEST-MODULES
+          VTK-TCL-TEST-LEFTOVERS))
+
+(defun dump-tcl-into(file)
+  (let ((*print-pretty* nil))
+    (with-open-file (stream file
+                            :direction :output
+                            :if-exists :supersede )
+      (dolist (cd *vtk-tcl-tests-print-list*)
+        (format stream "~:_~{~s~^:~}~%" cd)))))
+
+
+
+
+
+
+
+
