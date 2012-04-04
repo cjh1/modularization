@@ -1,7 +1,7 @@
 vtk_module(vtkRenderingAnnotation
   DEPENDS
     vtkRenderingText
-    vtkImagingCore
+    vtkImagingColor
   TEST_DEPENDS
     vtkRenderingOpenGL
     vtkTestingRendering

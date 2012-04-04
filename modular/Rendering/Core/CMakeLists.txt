@@ -43,10 +43,8 @@ set(Kit_SRCS
   vtkImageMapper3D.cxx
   vtkImageMapper.cxx
   vtkImageProperty.cxx
-  vtkImageSliceCollection.cxx
   vtkImageSlice.cxx
   vtkImageSliceMapper.cxx
-  vtkImageStack.cxx
   vtkImagingFactory.cxx
   vtkInteractorEventRecorder.cxx
   vtkInteractorObserver.cxx

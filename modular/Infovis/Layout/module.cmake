@@ -2,7 +2,7 @@ vtk_module(vtkInfovisLayout
   DEPENDS
     vtkCommonCore
     vtkCommonExecutionModel
-    vtkImagingCore
+    vtkImagingHybrid
     vtkFiltersModeling
     vtkInfovisCore
   TEST_DEPENDS

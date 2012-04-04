@@ -14,7 +14,7 @@ vtk_module(vtkRenderingOpenGL
     # These are likely to be removed soon - split Rendering/OpenGL further.
     vtkRenderingText # For vtkTextMapper
     vtkIOImage # For vtkImageExport
-    vtkImagingCore # For vtkSampleFunction
+    vtkImagingHybrid # For vtkSampleFunction
   COMPILE_DEPENDS
     vtkParseOGLExt
     vtkUtilitiesEncodeString
@@ -24,4 +24,6 @@ vtk_module(vtkRenderingOpenGL
     vtkTestingRendering
     vtkIOExport
     vtkRenderingLOD
+    vtkImagingGeneral
+    vtkImagingSources
   DEFAULT ON)

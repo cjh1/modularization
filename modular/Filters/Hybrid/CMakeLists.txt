@@ -13,7 +13,7 @@ set(Kit_SRCS
   vtkImplicitModeller.cxx
   vtkPCAAnalysisFilter.cxx
   vtkPolyDataSilhouette.cxx
-  vtkPolyDataToImageStencil.cxx
+  #vtkPolyDataToImageStencil.cxx
   vtkProcrustesAlignmentFilter.cxx
   vtkProjectedTerrainPath.cxx
   vtkRenderLargeImage.cxx

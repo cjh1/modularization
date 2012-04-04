@@ -5,9 +5,11 @@ vtk_module(vtkInteractionWidgets
     vtkRenderingVolume
     vtkFiltersModeling
     vtkFiltersHybrid
+    vtkImagingGeneral
   TEST_DEPENDS
     vtkTestingRendering
     vtkInteractionStyle
     vtkFiltersModeling
     vtkRenderingLOD
+    vtkImagingStencil
   )

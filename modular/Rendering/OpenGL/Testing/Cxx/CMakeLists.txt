@@ -198,6 +198,8 @@ foreach(exe
   target_link_libraries(${exe}
     vtkRenderingOpenGL
     vtkInteractionStyle
+    vtkImagingSources
+    vtkImagingGeneral
     vtkIOCore
     ${OPENGL_gl_LIBRARY})
   if(APPLE)

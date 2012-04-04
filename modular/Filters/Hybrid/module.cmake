@@ -2,7 +2,7 @@ vtk_module(vtkFiltersHybrid
   DEPENDS
     vtkCommonDataModel
     vtkCommonExecutionModel
-    vtkImagingCore
+    vtkImagingSources
     vtkRenderingOpenGL
     vtkFiltersGeneral
   COMPILE_DEPENDS

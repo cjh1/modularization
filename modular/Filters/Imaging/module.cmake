@@ -1,7 +1,8 @@
 vtk_module(vtkFiltersImaging
   DEPENDS
     vtkCommonCore
-    vtkImagingCore
+    vtkImagingSources
+    vtkImagingGeneral
     vtkFiltersStatistics
   TEST_DEPENDS
   DEFAULT ON)

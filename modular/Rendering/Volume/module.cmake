@@ -6,4 +6,6 @@ vtk_module(vtkRenderingVolume
     vtkTestingCore
     vtkTestingRendering
     vtkRenderingText
+    vtkImagingSources
+    vtkImagingGeneral
   )

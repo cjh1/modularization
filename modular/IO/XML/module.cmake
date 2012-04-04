@@ -10,7 +10,7 @@ vtk_module(vtkIOXML
     vtksys
   TEST_DEPENDS
     vtkTestingCore
-    vtkImagingCore
+    vtkImagingSources
     vtkFiltersSources
     vtkInfovisCore
     vtkFiltersCore
