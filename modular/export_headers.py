@@ -3,17 +3,21 @@
 import fileinput, glob, string, sys, os, re, fnmatch
 
 # Build up a list of all export macros to replace.
+patterns =  [ re.compile("VTK_[A-Z]*_EXPORT"),
+              re.compile("VTK_GENERIC_FILTERING_EXPORT"),
+              re.compile("QVTK_EXPORT") ]
 
-pattern = re.compile("VTK_[A-Z]*_EXPORT")
-pattern2 = re.compile("VTK_GENERIC_FILTERING_EXPORT")
-searchText = "VTK_COMMON_EXPORT"
-replaceText = "VTKCOMMONCORE_EXPORT"
+excludes = [ "GUISupport/Qt/QVTKWin32Header.h",
+             "Common/Core/vtkWin32Header.h",
+             "Common/Core/vtkSystemIncludes.h",
+             "Common/Core/vtkABI.h"]
 
-def searchReplace(path, search, replace, headerName):
+def searchReplace(path, replace, headerName):
   files = glob.glob(path + "/*.h*")
   if files is not []:
     for file in files:
-      if os.path.isfile(file) and file != "Common/Core/vtkWin32Header.h" and file != "Common/Core/vtkSystemIncludes.h" and file != "Common/Core/vtkABI.h":
+
+      if os.path.isfile(file) and (file not in excludes):
         firstInclude = True
         lines = []
         exportUpdated = False
@@ -21,17 +25,13 @@ def searchReplace(path, search, replace, headerName):
             lines = fp.readlines()
 
         for index, line in enumerate(lines):
-          lineNumber = pattern.search(line)
-	  lineNumberF = pattern2.search(line)
-	  if (lineNumber >= 0 and line.find("VTK_INFORMATION_EXPORT") < 0):
-            #print "Found a line to replace: " + line
-            line = pattern.sub(replace, line)
-            lines[index] = line.rstrip() + "\n"
-            exportUpdated = True
-	  elif (lineNumberF >= 0 and line.find("VTK_INFORMATION_EXPORT") < 0):
-            line = pattern2.sub(replace, line)
-            lines[index] = line.rstrip() + "\n"
-            exportUpdated = True
+          for pattern in patterns:
+            lineNumber = pattern.search(line)
+            if (lineNumber >= 0 and line.find("VTK_INFORMATION_EXPORT") < 0):
+              line = pattern.sub(replace, line)
+              lines[index] = line.rstrip() + "\n"
+              exportUpdated = True
+              break
 
         if exportUpdated:
           includeLine = "#include \"" + headerName + "\" // For export macro\n"
@@ -68,6 +68,6 @@ for module in modules:
   moduleName = "vtk" + module.replace("/", "")
   exportName = moduleName.upper() + "_EXPORT"
   print moduleName + " " + exportName
-  searchReplace(module, searchText, exportName, moduleName + "Module.h")
+  searchReplace(module, exportName, moduleName + "Module.h")
 
 #searchReplace("Common/Core", searchText, replaceText)
