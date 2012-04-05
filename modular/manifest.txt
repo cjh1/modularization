@@ -6387,12 +6387,7 @@ VolumeRendering/Testing/Cxx/ZsweepConcavities.cxx:
 VolumeRendering/Testing/Cxx/volProt.cxx:
 
 [Rendering/Volume/Testing/Tcl]
-Rendering/Testing/Tcl/TestBunykRayCastFunction.tcl:
-Rendering/Testing/Tcl/volRCClipPlanes.tcl:
-Rendering/Testing/Tcl/volRCCropRegions.tcl:
-Rendering/Testing/Tcl/volRCRotateClip.tcl:
-Rendering/Testing/Tcl/volTM2DCropRegions.tcl:
-Rendering/Testing/Tcl/volTM2DRotateClip.tcl:
+
 VolumeRendering/Testing/Tcl/TestBunykRayCastFunction.tcl:
 VolumeRendering/Testing/Tcl/TestFixedPointRayCasterLinear.tcl:
 VolumeRendering/Testing/Tcl/TestFixedPointRayCasterLinearCropped.tcl:

@@ -18,5 +18,5 @@ vtk_module(vtkIOImage
     vtkDICOMParser
   TEST_DEPENDS
     vtkTestingCore
-    vtkImagingCore
+    vtkImagingSources
   DEFAULT ON)
