@@ -5622,6 +5622,9 @@ Rendering/vtkInteractorStyleSwitchBase.h:
 Rendering/vtkInteractorStyle.cxx:
 Rendering/vtkInteractorStyle.h:
 
+Rendering/vtkStringToImage.cxx:
+Rendering/vtkStringToImage.h:
+
 modular/RenderingCore.patch:<ignore>
 #<patch>: RenderingCore.patch
 
@@ -5690,14 +5693,41 @@ Rendering/Testing/Python/TestMapperLUT.py:
 modular/Rendering/FreeType/CMakeLists.txt:
 modular/Rendering/FreeType/module.cmake:
 
-#Rendering/vtkFreeTypeLabelRenderStrategy.cxx:
-#Rendering/vtkFreeTypeLabelRenderStrategy.h:
-#Rendering/vtkFreeTypeStringToImage.cxx:
-#Rendering/vtkFreeTypeStringToImage.h:
-#Rendering/vtkFreeTypeTools.cxx:
-#Rendering/vtkFreeTypeTools.h:
-#Rendering/vtkFreeTypeUtilities.cxx:
-#Rendering/vtkFreeTypeUtilities.h:
+Rendering/vtkFreeTypeStringToImage.cxx:
+Rendering/vtkFreeTypeStringToImage.h:
+Rendering/vtkFreeTypeTools.cxx:
+Rendering/vtkFreeTypeTools.h:
+Rendering/vtkFreeTypeUtilities.cxx:
+Rendering/vtkFreeTypeUtilities.h:
+Rendering/vtkTextActor.cxx:
+Rendering/vtkTextActor.h:
+Rendering/vtkTextActor3D.cxx:
+Rendering/vtkTextActor3D.h:
+
+modular/Rendering/Text/CMakeLists.txt:<ignore>
+modular/Rendering/Text/module.cmake:<ignore>
+
+Rendering/vtkScaledTextActor.cxx:
+Rendering/vtkScaledTextActor.h:
+Rendering/vtkTextMapper.cxx:
+Rendering/vtkTextMapper.h:
+Rendering/vtkTextProperty.cxx:
+Rendering/vtkTextProperty.h:
+Hybrid/vtkVectorText.cxx:
+Hybrid/vtkVectorText.h:
+
+modular/RenderingText.patch:<ignore>
+#<patch>: RenderingText.patch
+
+[Rendering/FreeType/Testing/Tcl]
+
+Hybrid/Testing/Tcl/OverlayTextOnImage.tcl:
+Hybrid/Testing/Tcl/text.tcl:
+Rendering/Testing/Tcl/TestTextActor3D.tcl:
+Rendering/Testing/Tcl/multiLineText.tcl:
+
+[Rendering/FreeType/fonts]
+
 Rendering/fonts/bin2c.tcl:
 Rendering/fonts/c0419bt_.pfb:
 Rendering/fonts/c0582bt_.pfb:
@@ -5726,7 +5756,7 @@ Rendering/fonts/uagko8a.pfb:
 Rendering/fonts/vtkEmbeddedFonts.h:
 
 modular/RenderingFreetype.patch:<ignore>
-<patch>: RenderingFreetype.patch
+#<patch>: RenderingFreetype.patch
 
 [Rendering/Label]
 
@@ -6113,41 +6143,6 @@ Rendering/Testing/Cxx/otherCoordinate.cxx:
 Rendering/Testing/Tcl/TestFreetypeTextMapper.tcl:
 Rendering/Testing/Tcl/TestFreetypeTextMapperBigger.tcl:
 Rendering/Testing/Tcl/TestFreetypeTextOverlay.tcl:
-
-[Rendering/Text]
-
-modular/Rendering/Text/CMakeLists.txt:
-modular/Rendering/Text/module.cmake:
-
-Rendering/vtkScaledTextActor.cxx:
-Rendering/vtkScaledTextActor.h:
-Rendering/vtkTextActor.cxx:
-Rendering/vtkTextActor.h:
-Rendering/vtkTextActor3D.cxx:
-Rendering/vtkTextActor3D.h:
-Rendering/vtkTextMapper.cxx:
-Rendering/vtkTextMapper.h:
-Rendering/vtkTextProperty.cxx:
-Rendering/vtkTextProperty.h:
-Hybrid/vtkVectorText.cxx:
-Hybrid/vtkVectorText.h:
-Rendering/vtkFreeTypeStringToImage.cxx:
-Rendering/vtkFreeTypeStringToImage.h:
-Rendering/vtkFreeTypeTools.cxx:
-Rendering/vtkFreeTypeTools.h:
-Rendering/vtkFreeTypeUtilities.cxx:
-Rendering/vtkFreeTypeUtilities.h:
-Rendering/vtkStringToImage.cxx:
-Rendering/vtkStringToImage.h:
-
-modular/RenderingText.patch:<ignore>
-<patch>: RenderingText.patch
-
-[Rendering/Text/Testing/Tcl]
-Hybrid/Testing/Tcl/OverlayTextOnImage.tcl:
-Hybrid/Testing/Tcl/text.tcl:
-Rendering/Testing/Tcl/TestTextActor3D.tcl:
-Rendering/Testing/Tcl/multiLineText.tcl:
 
 [Rendering/Qt]
 

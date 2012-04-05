@@ -1,16 +1,44 @@
-set(Kit_SRCS
-  face_arial_bold.cxx
-  face_arial_bold_italic.cxx
-  face_arial.cxx
-  face_arial_italic.cxx
-  face_courier_bold.cxx
-  face_courier_bold_italic.cxx
-  face_courier.cxx
-  face_courier_italic.cxx
-  face_times_bold.cxx
-  face_times_bold_italic.cxx
-  face_times.cxx
-  face_times_italic.cxx
+set(Module_SRCS
+  vtkFreeTypeStringToImage.cxx
+  vtkFreeTypeUtilities.cxx
+  vtkFreeTypeTools.cxx
+  vtkTextActor3D.cxx
+  vtkTextActor.cxx
+  vtkScaledTextActor.cxx
+  vtkTextMapper.cxx
+  vtkTextProperty.cxx
+  vtkVectorText.cxx
+
+  fonts/face_arial_bold.cxx
+  fonts/face_arial_bold_italic.cxx
+  fonts/face_arial.cxx
+  fonts/face_arial_italic.cxx
+  fonts/face_courier_bold.cxx
+  fonts/face_courier_bold_italic.cxx
+  fonts/face_courier.cxx
+  fonts/face_courier_italic.cxx
+  fonts/face_times_bold.cxx
+  fonts/face_times_bold_italic.cxx
+  fonts/face_times.cxx
+  fonts/face_times_italic.cxx
   )
 
-vtk_module_library(vtkRenderingFreeType ${Kit_SRCS})
+set_source_files_properties(
+  vtkFreeTypeTools
+  vtkFreeTypeUtilities
+  fonts/face_arial_bold
+  fonts/face_arial_bold_italic
+  fonts/face_arial
+  fonts/face_arial_italic
+  fonts/face_courier_bold
+  fonts/face_courier_bold_italic
+  fonts/face_courier
+  fonts/face_courier_italic
+  fonts/face_times_bold
+  fonts/face_times_bold_italic
+  fonts/face_times
+  fonts/face_times_italic
+  WRAP_EXCLUDE
+  )
+
+vtk_module_library(${vtk-module} ${Module_SRCS})

@@ -133,6 +133,8 @@ set(Kit_SRCS
   vtkTDxInteractorStyle.cxx
   vtkTDxInteractorStyleCamera.cxx
   vtkTDxInteractorStyleSettings.cxx
+
+  vtkStringToImage.cxx
   )
 
 set_source_files_properties(
@@ -160,6 +162,7 @@ set_source_files_properties(
   vtkTDxInteractorStyle
   vtkViewport
   vtkVisibilitySort
+  vtkStringToImage
   ABSTRACT
   )
 
