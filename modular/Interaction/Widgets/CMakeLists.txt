@@ -121,6 +121,14 @@ SET(Kit_SRCS
   vtkWidgetRepresentation.cxx
   vtkWidgetSet.cxx
   vtkXYPlotWidget.cxx
+  vtkResliceCursorLineRepresentation.cxx
+  vtkResliceCursorRepresentation.cxx
+  vtkResliceCursorThickLineRepresentation.cxx
+  vtkResliceCursorWidget.cxx
+  vtkResliceCursorActor.cxx
+  vtkResliceCursorPicker.cxx
+  vtkResliceCursor.cxx 
+  vtkResliceCursorPolyDataAlgorithm.cxx 
   )
 
 set_source_files_properties(

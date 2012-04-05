@@ -25,6 +25,7 @@ set(Module_SRCS
   vtkImageSpatialAlgorithm.cxx
   vtkImageVariance3D.cxx
   vtkSimpleImageFilterExample.cxx
+  vtkImageSlabReslice.cxx
   )
 
 vtk_module_library(${vtk-module} ${Module_SRCS})

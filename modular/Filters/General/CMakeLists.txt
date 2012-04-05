@@ -122,7 +122,7 @@ set(Kit_SRCS
   vtkNormalizeMatrixVectors.cxx
   vtkPassArrays.cxx
   vtkSplitColumnComponents.cxx
-
+  vtkCellTreeLocator.cxx
   )
 
 set_source_files_properties(

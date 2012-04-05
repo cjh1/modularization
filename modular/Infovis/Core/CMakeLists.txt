@@ -35,6 +35,7 @@ set(Kit_SRCS
   vtkTreeLevelsFilter.cxx
   vtkVertexDegree.cxx
   vtkRemoveHiddenData.cxx
+  vtkKCoreDecomposition.cxx
   )
 
 vtk_module_library(vtkInfovisCore ${Kit_SRCS})

@@ -61,40 +61,12 @@ modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/module.cmake: <ignore>
 
 # Find these classes a home - deferring until I get there (or get some help)
-Graphics/vtkResliceCursor.cxx: <ignore>
-Graphics/vtkResliceCursor.h: <ignore>
-Graphics/vtkResliceCursorPolyDataAlgorithm.cxx: <ignore>
-Graphics/vtkResliceCursorPolyDataAlgorithm.h: <ignore>
 Imaging/vtkImageSlab.cxx: <ignore>
 Imaging/vtkImageSlab.h: <ignore>
-Imaging/vtkImageSlabReslice.cxx: <ignore>
-Imaging/vtkImageSlabReslice.h: <ignore>
-Infovis/vtkKCoreDecomposition.cxx: <ignore>
-Infovis/vtkKCoreDecomposition.h: <ignore>
-Rendering/vtkResliceCursorActor.cxx: <ignore>
-Rendering/vtkResliceCursorActor.h: <ignore>
-Rendering/vtkResliceCursorPicker.cxx: <ignore>
-Rendering/vtkResliceCursorPicker.h: <ignore>
-Widgets/vtkResliceCursorLineRepresentation.cxx: <ignore>
-Widgets/vtkResliceCursorLineRepresentation.h: <ignore>
-Widgets/vtkResliceCursorRepresentation.cxx: <ignore>
-Widgets/vtkResliceCursorRepresentation.h: <ignore>
-Widgets/vtkResliceCursorThickLineRepresentation.cxx: <ignore>
-Widgets/vtkResliceCursorThickLineRepresentation.h: <ignore>
-Widgets/vtkResliceCursorWidget.cxx: <ignore>
-Widgets/vtkResliceCursorWidget.h: <ignore>
-Widgets/vtkResliceImageViewer.cxx: <ignore>
-Widgets/vtkResliceImageViewer.h: <ignore>
-Widgets/vtkResliceImageViewerMeasurements.cxx: <ignore>
-Widgets/vtkResliceImageViewerMeasurements.h: <ignore>
 Parallel/vtkPNetCDFPOPReader.cxx: <ignore>
 Parallel/vtkPNetCDFPOPReader.h: <ignore>
 Parallel/vtkPMaskPoints.cxx: <ignore>
 Parallel/vtkPMaskPoints.h: <ignore>
-Imaging/vtkImageThresholdConnectivity.cxx: <ignore>
-Imaging/vtkImageThresholdConnectivity.h: <ignore>
-Filtering/vtkCellTreeLocator.cxx: <ignore>
-Filtering/vtkCellTreeLocator.h: <ignore>
 
 # Common/Testing
 Common/Testing/CMakeLists.txt:<ignore>
@@ -3012,6 +2984,9 @@ Infovis/vtkRemoveHiddenData.h:
 Infovis/vtkRemoveHiddenData.cxx:
 Infovis/vtkTransferAttributes.h:
 Infovis/vtkTransferAttributes.cxx:
+Infovis/vtkKCoreDecomposition.cxx:
+Infovis/vtkKCoreDecomposition.h:
+
 
 [Infovis/Core/Testing/Cxx]
 
@@ -4508,6 +4483,8 @@ Infovis/vtkPassArrays.cxx:
 Infovis/vtkSplitColumnComponents.h:
 Infovis/vtkSplitColumnComponents.cxx:
 
+Filtering/vtkCellTreeLocator.cxx:
+Filtering/vtkCellTreeLocator.h:
 
 [Filters/General/Testing/Cxx]
 
@@ -5132,6 +5109,25 @@ Widgets/vtkCellCentersPointPlacer.cxx:
 Widgets/vtkCellCentersPointPlacer.h:
 Widgets/vtkBrokenLineWidget.cxx:
 Widgets/vtkBrokenLineWidget.h:
+
+Widgets/vtkResliceCursorLineRepresentation.cxx:
+Widgets/vtkResliceCursorLineRepresentation.h:
+Widgets/vtkResliceCursorRepresentation.cxx:
+Widgets/vtkResliceCursorRepresentation.h:
+Widgets/vtkResliceCursorThickLineRepresentation.cxx:
+Widgets/vtkResliceCursorThickLineRepresentation.h:
+Widgets/vtkResliceCursorWidget.cxx:
+Widgets/vtkResliceCursorWidget.h:
+
+Rendering/vtkResliceCursorActor.cxx:
+Rendering/vtkResliceCursorActor.h:
+Rendering/vtkResliceCursorPicker.cxx:
+Rendering/vtkResliceCursorPicker.h:
+Graphics/vtkResliceCursor.cxx:
+Graphics/vtkResliceCursor.h:
+Graphics/vtkResliceCursorPolyDataAlgorithm.cxx:
+Graphics/vtkResliceCursorPolyDataAlgorithm.h:
+
 
 [Interaction/Widgets/Testing/Cxx]
 
@@ -7058,6 +7054,9 @@ Filtering/vtkImageInterpolator.cxx:
 Filtering/vtkImageInterpolator.h:
 Filtering/vtkImageInterpolatorInternals.h:
 
+Imaging/vtkImageThresholdConnectivity.cxx:
+Imaging/vtkImageThresholdConnectivity.h:
+
 modular/ImagingCore.patch:<ignore>
 <patch>: ImagingCore.patch
 
@@ -7156,6 +7155,8 @@ Imaging/vtkImageSpatialAlgorithm.cxx:
 Imaging/vtkImageSpatialAlgorithm.h:
 Imaging/vtkImageVariance3D.cxx:
 Imaging/vtkImageVariance3D.h:
+Imaging/vtkImageSlabReslice.cxx:
+Imaging/vtkImageSlabReslice.h:
 
 [Imaging/Math]
 
@@ -7303,6 +7304,10 @@ Rendering/vtkImageViewer2.h:
 # has a dependency on Imaging/Core
 Rendering/vtkImageResliceMapper.cxx:
 Rendering/vtkImageResliceMapper.h:
+Widgets/vtkResliceImageViewer.cxx:
+Widgets/vtkResliceImageViewer.h:
+Widgets/vtkResliceImageViewerMeasurements.cxx:
+Widgets/vtkResliceImageViewerMeasurements.h:
 
 [Imaging/Core/Testing/Tcl]
 Graphics/Testing/Tcl/imageMCAll.tcl:

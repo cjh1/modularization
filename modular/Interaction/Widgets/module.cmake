@@ -6,6 +6,7 @@ vtk_module(vtkInteractionWidgets
     vtkFiltersModeling
     vtkFiltersHybrid
     vtkImagingGeneral
+    vtkInteractionStyle
   TEST_DEPENDS
     vtkTestingRendering
     vtkInteractionStyle

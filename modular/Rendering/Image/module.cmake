@@ -4,4 +4,5 @@ vtk_module(vtkRenderingImage
     vtkRenderingFreeType
     vtkImagingColor
     vtkInteractionStyle
+    vtkInteractionWidgets
   )
