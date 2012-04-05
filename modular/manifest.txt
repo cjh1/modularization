@@ -63,8 +63,6 @@ modular/Common/ImplicitFunctions/module.cmake: <ignore>
 # Find these classes a home - deferring until I get there (or get some help)
 Imaging/vtkImageSlab.cxx: <ignore>
 Imaging/vtkImageSlab.h: <ignore>
-Parallel/vtkPMaskPoints.cxx: <ignore>
-Parallel/vtkPMaskPoints.h: <ignore>
 
 # Common/Testing
 Common/Testing/CMakeLists.txt:<ignore>
@@ -4860,6 +4858,7 @@ Infovis/vtkPPCAStatistics.cxx:
 Infovis/vtkPBivariateLinearTableThreshold.h:
 Infovis/vtkPBivariateLinearTableThreshold.cxx:
 
+
 [Filters/ParallelStatistics/Testing/Cxx]
 
 Infovis/Testing/Cxx/TestRandomPContingencyStatisticsMPI.cxx:
@@ -6742,6 +6741,8 @@ Parallel/vtkTransmitUnstructuredGridPiece.cxx:
 Parallel/vtkTransmitUnstructuredGridPiece.h:
 Parallel/vtkPYoungsMaterialInterface.cxx:
 Parallel/vtkPYoungsMaterialInterface.h:
+Parallel/vtkPMaskPoints.cxx:
+Parallel/vtkPMaskPoints.h:
 
 [Filters/Parallel/Testing/Cxx]
 Parallel/Testing/Cxx/DistributedData.cxx:
