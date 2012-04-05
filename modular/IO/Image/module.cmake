@@ -19,4 +19,5 @@ vtk_module(vtkIOImage
   TEST_DEPENDS
     vtkTestingCore
     vtkImagingCore
+    vtkImagingSources
   DEFAULT ON)
