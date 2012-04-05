@@ -2,7 +2,7 @@ vtk_module(vtkRenderingQt
   GROUPS
     Qt
   DEPENDS
-    vtkRenderingText
+  #vtkRenderingText
     vtkRenderingLabel
     vtkGUISupportQt
     vtkFiltersTexture

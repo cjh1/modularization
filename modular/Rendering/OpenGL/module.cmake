@@ -12,14 +12,13 @@ vtk_module(vtkRenderingOpenGL
     vtkFiltersCore
     vtkIOXML
     # These are likely to be removed soon - split Rendering/OpenGL further.
-    vtkRenderingText # For vtkTextMapper
+    vtkRenderingFreeType # For vtkTextMapper
     vtkIOImage # For vtkImageExport
     vtkImagingHybrid # For vtkSampleFunction
   COMPILE_DEPENDS
     vtkParseOGLExt
     vtkUtilitiesEncodeString
   TEST_DEPENDS
-    vtkRenderingText
     vtkInteractionStyle
     vtkTestingRendering
     vtkIOExport

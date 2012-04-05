@@ -1,7 +1,7 @@
 vtk_module(vtkInteractionWidgets
   DEPENDS
     vtkRenderingAnnotation
-    vtkRenderingText
+    vtkRenderingFreeType
     vtkRenderingVolume
     vtkFiltersModeling
     vtkFiltersHybrid

@@ -5,5 +5,5 @@ vtk_module(vtkRenderingContext2D
     vtkCommonTransforms
     vtkRenderingCore
     vtkRenderingOpenGL
-    vtkRenderingText
+    vtkRenderingFreeType
   DEFAULT ON)

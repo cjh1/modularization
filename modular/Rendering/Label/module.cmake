@@ -1,5 +1,5 @@
 vtk_module(vtkRenderingLabel
   DEPENDS
     vtkRenderingCore
-    vtkRenderingText
+    vtkRenderingFreeType
   DEFAULT OFF)

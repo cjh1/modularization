@@ -2,7 +2,7 @@ vtk_module(vtkIOExport
   DEPENDS
     vtkCommonCore
     vtkRenderingCore
-    vtkRenderingText
+    vtkRenderingFreeType
     vtkImagingCore
     vtkIOCore
     vtkgl2ps

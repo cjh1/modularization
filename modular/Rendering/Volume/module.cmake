@@ -5,7 +5,7 @@ vtk_module(vtkRenderingVolume
   TEST_DEPENDS
     vtkTestingCore
     vtkTestingRendering
-    vtkRenderingText
+    vtkRenderingFreeType
     vtkImagingSources
     vtkImagingGeneral
   )

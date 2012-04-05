@@ -12,7 +12,7 @@ vtk_module(vtkFiltersSources
     vtkTestingCore
     vtkTestingRendering
     vtkRenderingCore
-    vtkRenderingText
+    vtkRenderingFreeType
     vtkFiltersModeling
     vtkIOXML
   DEFAULT ON)
