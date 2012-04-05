@@ -1,5 +1,5 @@
 diff --git a/Rendering/Text/vtkFreeTypeTools.cxx b/Rendering/Text/vtkFreeTypeTools.cxx
-index f6c9610..61e0a03 100644
+index 7de4220..6704aa1 100644
 --- a/Rendering/Text/vtkFreeTypeTools.cxx
 +++ b/Rendering/Text/vtkFreeTypeTools.cxx
 @@ -29,7 +29,7 @@
@@ -9,10 +9,10 @@ index f6c9610..61e0a03 100644
 -#include "fonts/vtkEmbeddedFonts.h"
 +#include "vtkEmbeddedFonts.h"
  
- #ifdef FTGL_USE_NAMESPACE
- using namespace ftgl;
+ #include <stdint.h>
+ 
 diff --git a/Rendering/Text/vtkFreeTypeUtilities.cxx b/Rendering/Text/vtkFreeTypeUtilities.cxx
-index 967b90a..3d2d13f 100644
+index 6060136..a519611 100644
 --- a/Rendering/Text/vtkFreeTypeUtilities.cxx
 +++ b/Rendering/Text/vtkFreeTypeUtilities.cxx
 @@ -28,7 +28,7 @@
@@ -23,4 +23,4 @@ index 967b90a..3d2d13f 100644
 +#include "vtkEmbeddedFonts.h"
  
  #include <sys/stat.h>
- 
+ #include <stdint.h>
