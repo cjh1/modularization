@@ -63,8 +63,6 @@ modular/Common/ImplicitFunctions/module.cmake: <ignore>
 # Find these classes a home - deferring until I get there (or get some help)
 Imaging/vtkImageSlab.cxx: <ignore>
 Imaging/vtkImageSlab.h: <ignore>
-Parallel/vtkPNetCDFPOPReader.cxx: <ignore>
-Parallel/vtkPNetCDFPOPReader.h: <ignore>
 Parallel/vtkPMaskPoints.cxx: <ignore>
 Parallel/vtkPMaskPoints.h: <ignore>
 
@@ -2303,6 +2301,14 @@ IO/Testing/Tcl/NetCDFCFSetOutputType.tcl:
 IO/Testing/Tcl/NetCDFCFSphericalCoords.tcl:
 IO/Testing/Tcl/NetCDFCFUnstructured.tcl:
 IO/Testing/Tcl/NetCDFReader.tcl:
+
+[IO/ParallelNetCDF]
+
+modular/IO/ParallelNetCDF/CMakeLists.txt:
+modular/IO/ParallelNetCDF/module.cmake:
+
+Parallel/vtkPNetCDFPOPReader.cxx:
+Parallel/vtkPNetCDFPOPReader.h:
 
 [IO/PLY]
 
