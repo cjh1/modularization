@@ -6557,14 +6557,17 @@ GUISupport/Qt/Testing/Python/TestvtkQtTableView.py:
 
 [GUISupport/MFC]
 
-GUISupport/MFC/CMakeLists.txt:
+modular/GUISupport/MFC/CMakeLists.txt:
+modular/GUISupport/MFC/module.cmake:
+
+GUISupport/MFC/CMakeLists.txt:<ignore>
 GUISupport/MFC/vtkMFCConfigure.h.in:
 GUISupport/MFC/VTKMFCSettings.cmake:
 GUISupport/MFC/vtkMFCWindow.cpp:
 GUISupport/MFC/vtkMFCWindow.h:
 
-modular/GUISupport-MFC.patch: <ignore>
-<patch>: GUISupport-MFC.patch
+modular/GUISupportMFC.patch:<ignore>
+<patch>:GUISupportMFC.patch
 
 [Infovis/Parallel]
 
