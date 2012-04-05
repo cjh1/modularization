@@ -3547,10 +3547,10 @@ Charts/Testing/Cxx/TestStackedBarGraph.cxx:
 Charts/Testing/Cxx/TestStackedPlot.cxx:
 Charts/Testing/Cxx/CMakeLists.txt:<ignore>
 Charts/Testing/CMakeLists.txt:<ignore>
-<patch>: ChartsCore.patch
+#<patch>: ChartsCore.patch
 
 modular/ChartsCore.patch: <ignore>
-<patch>: ChartsCore.patch
+#<patch>: ChartsCore.patch
 
 [Charts/Core/Testing/Python]
 
