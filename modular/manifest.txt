@@ -48,14 +48,12 @@ modular/export_headers.py: <ignore>
 
 GenericFiltering/Testing/CMakeLists.txt:<ignore>
 GenericFiltering/Testing/Cxx/CMakeLists.txt:<ignore>
-
 Geovis/Testing/CMakeLists.txt:<ignore>
 Geovis/Testing/Cxx/CMakeLists.txt:<ignore>
-
-
 GUISupport/CMakeLists.txt: <ignore>
 GUISupport/Qt/CMakeLists.txt: <ignore>
 VolumeRendering/CMakeLists.txt: <ignore>
+
 # Deprecated, not moved forward
 modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/module.cmake: <ignore>
@@ -64,108 +62,59 @@ modular/Common/ImplicitFunctions/module.cmake: <ignore>
 Imaging/vtkImageSlab.cxx: <ignore>
 Imaging/vtkImageSlab.h: <ignore>
 
+# These should probably be deleted in VTK
+Infovis/Testing/Cxx/TestGraphHierarchicalBundle.cxx:<ignore> # dependency in deprecated
+Parallel/Testing/Tcl/TestBranchExtentTranslator.tcl:<ignore> # delete
+Parallel/Testing/Cxx/ThreadedCommunicator.cxx:<ignore> # delete
+
 # Common/Testing
 Common/Testing/CMakeLists.txt:<ignore>
 Common/Testing/CTestCustom.ctest.in:<ignore>
 Common/Testing/Cxx/CMakeLists.txt:<ignore>
-Common/Testing/Tcl/prtImageTest.tcl:<ignore> # ?
-Common/Testing/Tcl/rtImageTest.tcl:<ignore> # ?
 Common/Testing/Python/CMakeLists.txt:<ignore>
 Common/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Filtering/Testing/CMakeLists.txt:<ignore>
 Filtering/Testing/Cxx/CMakeLists.txt:<ignore>
-
-Filtering/Testing/Cxx/CellTreeLocator.cxx:<ignore>
 Filtering/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Rendering/Testing/CMakeLists.txt:<ignore>
 Rendering/Testing/Cxx/CMakeLists.txt:<ignore>
 Rendering/Testing/Python/CMakeLists.txt:<ignore>
-Rendering/Testing/Python/TestGL2PSExporter.py:<ignore>
-Rendering/Testing/Python/TestMapperLUT.py:<ignore>
-Rendering/Testing/Python/TestTkRenderWidget.py:<ignore>
-Rendering/Testing/Python/TestTkRenderWindowInteractor.py:<ignore>
 Rendering/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Graphics/Testing/Cxx/CMakeLists.txt:<ignore>
-
-Graphics/Testing/Cxx/TestRCalculatorFilter.cxx:<ignore>
-Graphics/Testing/Cxx/TestRInterface.cxx:<ignore>
-Graphics/Testing/Cxx/TestRRandomTableSource.cxx:<ignore>
-Graphics/Testing/Cxx/expCos.cxx:<ignore>
-
 Hybrid/Testing/CMakeLists.txt:<ignore>
 Hybrid/Testing/Cxx/CMakeLists.txt:<ignore>
-
-Hybrid/Testing/Cxx/TestImageDataLIC2D.cxx:<ignore>
-Hybrid/Testing/Cxx/TestImageDataLIC2D.h:<ignore>
-Hybrid/Testing/Cxx/TestStructuredGridLIC2DSlice.h:<ignore>
-Hybrid/Testing/Cxx/TestStructuredGridLIC2DXSlice.cxx:<ignore>
-Hybrid/Testing/Cxx/TestStructuredGridLIC2DYSlice.cxx:<ignore>
-Hybrid/Testing/Cxx/TestStructuredGridLIC2DZSlice.cxx:<ignore>
-
 Hybrid/Testing/Temporary/CTestCostData.txt:<ignore>
 Hybrid/Testing/Temporary/LastTest.log:<ignore>
-
 IO/Testing/CMakeLists.txt:<ignore>
 IO/Testing/Cxx/CMakeLists.txt:<ignore>
-IO/Testing/Cxx/TestXMLCInterface.c:<ignore>
-IO/Testing/Cxx/vtkFortran.h:<ignore>
 IO/Testing/Python/CMakeLists.txt:<ignore>
 IO/Testing/Tcl/CMakeLists.txt:<ignore>
-
 GenericFiltering/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Geovis/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Graphics/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Hybrid/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Imaging/Testing/Tcl/CMakeLists.txt:<ignore>
-Imaging/Testing/Tcl/TestImageThresholdConnectivity.tcl:<ignore>
-Imaging/Testing/Tcl/WindowLevelInterface.tcl:<ignore> # unused
-
 Infovis/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Parallel/Testing/Tcl/CMakeLists.txt:<ignore>
-Parallel/Testing/Tcl/TestBranchExtentTranslator.tcl:<ignore> # unused
-
 VolumeRendering/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Widgets/Testing/Tcl/CMakeLists.txt:<ignore>
-
 Imaging/Testing/CMakeLists.txt:<ignore>
 Imaging/Testing/Cxx/CMakeLists.txt:<ignore>
-
 Infovis/Testing/CMakeLists.txt:<ignore>
 Infovis/Testing/Cxx/CMakeLists.txt:<ignore>
-Infovis/Testing/Cxx/TestGraphHierarchicalBundle.cxx:<ignore> # deprecated
-Infovis/Testing/Cxx/TestKCoreDecomposition.cxx:<ignore>
-Infovis/Testing/Cxx/TestKCoreLayout.cxx:<ignore>
-
 Parallel/Testing/CMakeLists.txt:<ignore>
 Parallel/Testing/Cxx/CMakeLists.txt:<ignore>
-
-Parallel/Testing/Cxx/TestSockets.py:<ignore>
-Parallel/Testing/Cxx/ThreadedCommunicator.cxx:<ignore>
-
 Views/Testing/CMakeLists.txt:<ignore>
 Views/Testing/Cxx/CMakeLists.txt:<ignore>
 Views/Testing/Tcl/CMakeLists.txt:<ignore>
-
 VolumeRendering/Testing/CMakeLists.txt:<ignore>
 VolumeRendering/Testing/Cxx/CMakeLists.txt:<ignore>
-
 Widgets/Testing/CMakeLists.txt:<ignore>
 Widgets/Testing/Cxx/CMakeLists.txt::<ignore>
-
 Filtering/Testing/Python/CMakeLists.txt:<ignore>
 Graphics/Testing/Python/CMakeLists.txt:<ignore>
 Hybrid/Testing/Python/CMakeLists.txt:<ignore>
 Imaging/Testing/Python/CMakeLists.txt:<ignore>
-Imaging/Testing/Python/TestNumericArrayImageData.py:<ignore> # unused
 Infovis/Testing/Python/CMakeLists.txt:<ignore>
 Parallel/Testing/Python/CMakeLists.txt:<ignore>
 VolumeRendering/Testing/Python/CMakeLists.txt:<ignore>
@@ -1355,6 +1304,7 @@ Infovis/Testing/Cxx/TestTable.cxx:
 modular/Common/DataModel/Testing/Python/CMakeLists.txt:
 
 Common/Testing/Python/TestTemplates.py:
+Imaging/Testing/Python/TestNumericArrayImageData.py:
 
 [Common/DataModel/Testing/Tcl]
 
@@ -1734,6 +1684,7 @@ IO/Testing/Cxx/TestArrayDataWriter.cxx:
 IO/Testing/Cxx/TestArrayDenormalized.cxx:
 IO/Testing/Cxx/TestArraySerialization.cxx:
 IO/Testing/Cxx/TestCompress.cxx:
+IO/Testing/Cxx/vtkFortran.h:
 
 [IO/Core/Testing/Tcl]
 IO/Testing/Tcl/TestGlobFileNames.tcl:
@@ -1813,6 +1764,8 @@ modular/IO/Export/Testing/Cxx/CMakeLists.txt:
 
 Hybrid/Testing/Cxx/X3DTest.cxx:
 
+[IO/Export/Testing/Python]
+Rendering/Testing/Python/TestGL2PSExporter.py:
 
 [IO/Geometry]
 
@@ -2472,6 +2425,7 @@ modular/IO/XML/Testing/Cxx/CMakeLists.txt:
 IO/Testing/Cxx/TestDataObjectXMLIO.cxx:
 IO/Testing/Cxx/TestHyperOctreeIO.cxx:
 IO/Testing/Cxx/TestXML.cxx:
+IO/Testing/Cxx/TestXMLCInterface.c:
 
 [IO/XML/Testing/Tcl]
 IO/Testing/Tcl/TestEmptyXML.tcl:
@@ -3018,6 +2972,7 @@ Infovis/Testing/Cxx/TestTimePoint.cxx:
 Infovis/Testing/Cxx/TestStringToCategory.cxx:
 Infovis/Testing/Cxx/TestTableToGraph.cxx:
 Infovis/Testing/Cxx/ArrayDotProductSimilarity.cxx:
+Infovis/Testing/Cxx/TestKCoreDecomposition.cxx:
 
 [Infovis/Layout]
 
@@ -3127,7 +3082,7 @@ Infovis/Testing/Cxx/TestGroupLeafVertices.cxx:
 Infovis/Testing/Cxx/TestKdTreeBoxSelection.cxx:
 Infovis/Testing/Cxx/TestPruneTreeFilter.cxx:
 Infovis/Testing/Cxx/TestSimple3DCirclesStrategy.cxx:
-
+Infovis/Testing/Cxx/TestKCoreLayout.cxx:
 
 [Infovis/BoostGraphAlgorithms]
 
@@ -4523,6 +4478,8 @@ Infovis/Testing/Cxx/ArrayMatricizeArray.cxx:
 Infovis/Testing/Cxx/ArrayNormalizeMatrixVectors.cxx:
 Infovis/Testing/Cxx/TestTableSplitColumnComponents.cxx:
 Infovis/Testing/Cxx/TestPassArrays.cxx:
+Filtering/Testing/Cxx/CellTreeLocator.cxx:
+Graphics/Testing/Cxx/expCos.cxx:
 
 [Filters/General/Testing/Tcl]
 Graphics/Testing/Tcl/OBBCylinder.tcl:
@@ -4736,6 +4693,12 @@ modular/Filters/Hybrid/Testing/Cxx/CMakeLists.txt:
 Hybrid/Testing/Cxx/TestBSplineWarp.cxx:
 Hybrid/Testing/Cxx/TestPolyDataSilhouette.cxx:
 Parallel/Testing/Cxx/TestTemporalCacheSimple.cxx:
+Hybrid/Testing/Cxx/TestImageDataLIC2D.cxx:
+Hybrid/Testing/Cxx/TestImageDataLIC2D.h:
+Hybrid/Testing/Cxx/TestStructuredGridLIC2DSlice.h:
+Hybrid/Testing/Cxx/TestStructuredGridLIC2DXSlice.cxx:
+Hybrid/Testing/Cxx/TestStructuredGridLIC2DYSlice.cxx:
+Hybrid/Testing/Cxx/TestStructuredGridLIC2DZSlice.cxx:
 
 [Filters/Hybrid/Testing/Tcl]
 Hybrid/Testing/Tcl/3DMorph.tcl:
@@ -4835,6 +4798,11 @@ Graphics/vtkRInterface.cxx:
 Graphics/vtkRInterface.h:
 Graphics/vtkRRandomTableSource.cxx:
 Graphics/vtkRRandomTableSource.h:
+
+[Filters/StatisticsGnuR/Testing/Cxx]
+Graphics/Testing/Cxx/TestRCalculatorFilter.cxx:
+Graphics/Testing/Cxx/TestRInterface.cxx:
+Graphics/Testing/Cxx/TestRRandomTableSource.cxx:
 
 [Filters/ParallelStatistics]
 
@@ -5720,6 +5688,7 @@ Graphics/Testing/Tcl/stereoDresdenMace.tcl:
 
 [Rendering/Core/Testing/Python]
 Graphics/Testing/Python/cameraWarpedCone.py:
+Rendering/Testing/Python/TestMapperLUT.py:
 
 [Rendering/FreeType]
 
@@ -6221,6 +6190,10 @@ Rendering/vtkTkWidgetsInit.cxx:
 # specific interactors, and would take some redesign to decouple.
 modular/Rendering/TDx/CMakeLists.txt:<ignore>
 modular/Rendering/TDx/module.cmake:<ignore>
+
+[Rendering/Tk/Testing/Python]
+Rendering/Testing/Python/TestTkRenderWidget.py:
+Rendering/Testing/Python/TestTkRenderWindowInteractor.py:
 
 [Rendering/Volume]
 
@@ -6921,6 +6894,7 @@ Parallel/Testing/Cxx/ExerciseMultiProcessController.h:
 Parallel/Testing/Cxx/SocketClient.cxx:
 Parallel/Testing/Cxx/SocketServer.cxx:
 Parallel/Testing/Cxx/TestFieldDataSerialization.cxx:
+Parallel/Testing/Cxx/TestSockets.py:
 
 [Parallel/Core/Testing/Tcl]
 Parallel/Testing/Tcl/TestPolyDataPieces.tcl:
@@ -6966,6 +6940,10 @@ Imaging/Testing/Cxx/ImageResizeCropping.cxx:
 Imaging/Testing/Cxx/ImageWeightedSum.cxx:
 Imaging/Testing/Cxx/ImportExport.cxx:
 Imaging/Testing/Cxx/TestUpdateExtentReset.cxx:
+
+[Imaging/Core/Testing/Tcl]
+Imaging/Testing/Tcl/TestImageThresholdConnectivity.tcl:
+Imaging/Testing/Tcl/WindowLevelInterface.tcl:
 
 [Imaging/Core]
 
@@ -7550,6 +7528,8 @@ Rendering/vtkTestingInteractor.h:<ignore>
 Rendering/vtkTestingObjectFactory.cmake:<ignore>
 Rendering/vtkTestingObjectFactory.cxx:
 Rendering/vtkTestingObjectFactory.h:
+Common/Testing/Tcl/prtImageTest.tcl:
+Common/Testing/Tcl/rtImageTest.tcl:
 
 [Testing/IOSQL]
 
