@@ -58,10 +58,6 @@ VolumeRendering/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/module.cmake: <ignore>
 
-# Find these classes a home - deferring until I get there (or get some help)
-Imaging/vtkImageSlab.cxx: <ignore>
-Imaging/vtkImageSlab.h: <ignore>
-
 # These should probably be deleted in VTK
 Infovis/Testing/Cxx/TestGraphHierarchicalBundle.cxx:<ignore> # dependency in deprecated
 Parallel/Testing/Tcl/TestBranchExtentTranslator.tcl:<ignore> # delete
@@ -3547,7 +3543,6 @@ Charts/Testing/Cxx/TestStackedBarGraph.cxx:
 Charts/Testing/Cxx/TestStackedPlot.cxx:
 Charts/Testing/Cxx/CMakeLists.txt:<ignore>
 Charts/Testing/CMakeLists.txt:<ignore>
-#<patch>: ChartsCore.patch
 
 modular/ChartsCore.patch: <ignore>
 #<patch>: ChartsCore.patch
@@ -7039,9 +7034,6 @@ Filtering/vtkImageInterpolator.cxx:
 Filtering/vtkImageInterpolator.h:
 Filtering/vtkImageInterpolatorInternals.h:
 
-Imaging/vtkImageThresholdConnectivity.cxx:
-Imaging/vtkImageThresholdConnectivity.h:
-
 modular/ImagingCore.patch:<ignore>
 <patch>: ImagingCore.patch
 
@@ -7140,6 +7132,8 @@ Imaging/vtkImageSpatialAlgorithm.cxx:
 Imaging/vtkImageSpatialAlgorithm.h:
 Imaging/vtkImageVariance3D.cxx:
 Imaging/vtkImageVariance3D.h:
+Imaging/vtkImageSlab.cxx:
+Imaging/vtkImageSlab.h:
 Imaging/vtkImageSlabReslice.cxx:
 Imaging/vtkImageSlabReslice.h:
 
@@ -7271,7 +7265,8 @@ Imaging/vtkImageSeedConnectivity.cxx:
 Imaging/vtkImageSeedConnectivity.h:
 Imaging/vtkImageSkeleton2D.cxx:
 Imaging/vtkImageSkeleton2D.h:
-
+Imaging/vtkImageThresholdConnectivity.cxx:
+Imaging/vtkImageThresholdConnectivity.h:
 
 [Rendering/Image]
 

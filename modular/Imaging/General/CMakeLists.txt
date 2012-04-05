@@ -25,6 +25,7 @@ set(Module_SRCS
   vtkImageSpatialAlgorithm.cxx
   vtkImageVariance3D.cxx
   vtkSimpleImageFilterExample.cxx
+  vtkImageSlab.cxx
   vtkImageSlabReslice.cxx
   )
 

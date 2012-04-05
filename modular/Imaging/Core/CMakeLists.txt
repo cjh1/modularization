@@ -42,7 +42,6 @@ set(Kit_SRCS
   vtkImageInterpolator.cxx
 
   vtkImageStencilSource.cxx # Needed by vtkImageStencilData
-  vtkImageThresholdConnectivity.cxx
   )
 
 SET_SOURCE_FILES_PROPERTIES(

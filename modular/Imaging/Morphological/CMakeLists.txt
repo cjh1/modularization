@@ -8,6 +8,7 @@ set(Module_SRCS
   vtkImageOpenClose3D.cxx
   vtkImageSeedConnectivity.cxx
   vtkImageSkeleton2D.cxx
+  vtkImageThresholdConnectivity.cxx
   )
 
 vtk_module_library(${vtk-module} ${Module_SRCS})
