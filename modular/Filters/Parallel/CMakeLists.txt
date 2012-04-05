@@ -45,6 +45,7 @@ set(Kit_SRCS
   vtkTransmitStructuredGridPiece.cxx
   vtkTransmitUnstructuredGridPiece.cxx
   vtkPYoungsMaterialInterface.cxx
+  vtkPMaskPoints.cxx
   )
 set_source_files_properties(
   vtkBlockDistribution.h
