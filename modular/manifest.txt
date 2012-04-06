@@ -58,10 +58,6 @@ VolumeRendering/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/module.cmake: <ignore>
 
-# These should probably be deleted in VTK
-Parallel/Testing/Tcl/TestBranchExtentTranslator.tcl:<ignore> # delete
-Parallel/Testing/Cxx/ThreadedCommunicator.cxx:<ignore> # delete
-
 # Common/Testing
 Common/Testing/CMakeLists.txt:<ignore>
 Common/Testing/CTestCustom.ctest.in:<ignore>
