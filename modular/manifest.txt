@@ -5108,6 +5108,14 @@ Graphics/vtkResliceCursorPolyDataAlgorithm.h:
 
 modular/Interaction/Widgets/Testing/Cxx/CMakeLists.txt:
 
+# Have not been building for over a year - will be removed from VTK. af7d4795 - Jan 2011
+Widgets/Testing/Cxx/TestAxesTransformWidget.cxx:<ignore>
+Widgets/Testing/Cxx/TestCaptionWidget.cxx:<ignore>
+Widgets/Testing/Cxx/vtkImplicitPlaneRepresentationTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkSplineRepresentationTest1.cxx:<ignore>
+# This one 671f830 in September 2010.
+Widgets/Testing/Cxx/TestOrientedGlyphContour.cxx:<ignore>
+
 Widgets/Testing/Cxx/BoxWidget.cxx:
 Widgets/Testing/Cxx/BoxWidget2.cxx:
 Widgets/Testing/Cxx/ImagePlaneWidget.cxx:
@@ -5116,14 +5124,12 @@ Widgets/Testing/Cxx/TerrainPolylineEditor.cxx:
 Widgets/Testing/Cxx/TestAffineWidget.cxx:
 Widgets/Testing/Cxx/TestAngleWidget2D.cxx:
 Widgets/Testing/Cxx/TestAngleWidget3D.cxx:
-Widgets/Testing/Cxx/TestAxesTransformWidget.cxx:
 Widgets/Testing/Cxx/TestBalloonWidget.cxx:
 Widgets/Testing/Cxx/TestBiDimensionalWidget.cxx:
 Widgets/Testing/Cxx/TestBorderWidget.cxx:
 Widgets/Testing/Cxx/TestBrokenLineWidget.cxx:
 Widgets/Testing/Cxx/TestButtonWidget.cxx:
 Widgets/Testing/Cxx/TestCameraWidget.cxx:
-Widgets/Testing/Cxx/TestCaptionWidget.cxx:
 Widgets/Testing/Cxx/TestCellCentersPointPlacer.cxx:
 Widgets/Testing/Cxx/TestCenteredSliderWidget2D.cxx:
 Widgets/Testing/Cxx/TestCheckerboardWidget.cxx:
@@ -5149,7 +5155,6 @@ Widgets/Testing/Cxx/TestLogoWidget.cxx:
 Widgets/Testing/Cxx/TestLogoWidgetAlphaBlending.cxx:
 Widgets/Testing/Cxx/TestLogoWidgetDepthPeeling.cxx:
 Widgets/Testing/Cxx/TestOrientationMarkerWidget.cxx:
-Widgets/Testing/Cxx/TestOrientedGlyphContour.cxx:
 Widgets/Testing/Cxx/TestOrthoPlanes.cxx:
 Widgets/Testing/Cxx/TestParallelopipedWidget.cxx:
 Widgets/Testing/Cxx/TestPlaneWidget.cxx:
@@ -5188,7 +5193,6 @@ Widgets/Testing/Cxx/vtkCaptionRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkCaptionWidgetTest1.cxx:
 Widgets/Testing/Cxx/vtkConstrainedPointHandleRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkHoverWidgetTest1.cxx:
-Widgets/Testing/Cxx/vtkImplicitPlaneRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkImplicitPlaneWidget2Test1.cxx:
 Widgets/Testing/Cxx/vtkLineRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkLineWidget2Test1.cxx:
@@ -5199,7 +5203,6 @@ Widgets/Testing/Cxx/vtkPolygonalHandleRepresentation3DTest1.cxx:
 Widgets/Testing/Cxx/vtkSeedRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkSeedWidgetTest1.cxx:
 Widgets/Testing/Cxx/vtkSphereHandleRepresentationTest1.cxx:
-Widgets/Testing/Cxx/vtkSplineRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkSplineWidget2Test1.cxx:
 Widgets/Testing/Cxx/vtkTextRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkTextWidgetTest1.cxx:

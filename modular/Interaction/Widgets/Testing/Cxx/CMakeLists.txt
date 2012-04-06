@@ -3,18 +3,16 @@ set(MyTests
   BoxWidget2.cxx
   # ImagePlaneWidget.cxx # todo (unsatisfied deps)
   # ScaledBoxWidget2.cxx # may not have been included in original
-  TerrainPolylineEditor.cxx # todo (unsatisfied deps)
+  TerrainPolylineEditor.cxx
   TestAffineWidget.cxx
   TestAngleWidget2D.cxx
   TestAngleWidget3D.cxx
-  TestAxesTransformWidget.cxx
   TestBalloonWidget.cxx
   TestBiDimensionalWidget.cxx
   TestBorderWidget.cxx
   # TestBrokenLineWidget.cxx # todo (unsatisfied deps)
   # TestButtonWidget.cxx # todo (unsatistfied deps)
   TestCameraWidget.cxx
-  TestCaptionWidget.cxx
   TestCellCentersPointPlacer.cxx
   TestCenteredSliderWidget2D.cxx # todo (unsatisfied deps)
   TestCheckerboardWidget.cxx
@@ -40,7 +38,6 @@ set(MyTests
   TestLogoWidgetAlphaBlending.cxx
   TestLogoWidgetDepthPeeling.cxx
   TestOrientationMarkerWidget.cxx
-  TestOrientedGlyphContour.cxx
   # TestOrthoPlanes.cxx # todo (unsatistfied deps)
   TestParallelopipedWidget.cxx
   TestPlaneWidget.cxx
@@ -78,7 +75,6 @@ set(MyTests
   vtkCaptionWidgetTest1.cxx
   # vtkConstrainedPointHandleRepresentationTest1.cxx # fixme
   vtkHoverWidgetTest1.cxx
-  # vtkImplicitPlaneRepresentationTest1.cxx # fixme
   # vtkImplicitPlaneWidget2Test1.cxx # todo (unsatistfied deps)
   vtkLineRepresentationTest1.cxx
   vtkLineWidget2Test1.cxx
@@ -89,7 +85,6 @@ set(MyTests
   vtkSeedRepresentationTest1.cxx
   vtkSeedWidgetTest1.cxx
   # vtkSphereHandleRepresentationTest1.cxx # fixme
-  vtkSplineRepresentationTest1.cxx
   vtkSplineWidget2Test1.cxx
   vtkTextRepresentationTest1.cxx
   vtkTextWidgetTest1.cxx
@@ -101,7 +96,18 @@ include("${VTK_SOURCE_DIR}/Testing/Rendering/vtkTestingObjectFactory.cmake")
 vtk_module_test_executable(${vtk-module}CxxTests ${Tests})
 
 set(TestsToRun ${Tests})
-list(REMOVE_ITEM TestsToRun ${vtk-module}CxxTests.cxx)
+list(REMOVE_ITEM TestsToRun CxxTests.cxx)
+list(REMOVE_ITEM TestsToRun TerrainPolylineEditor.cxx)
+
+if(VTK_DATA_ROOT)
+  add_test(NAME ${vtk-module}Cxx-TerrainPolylineEditor
+    COMMAND ${vtk-module}CxxTests TerrainPolylineEditor
+      -ProjectionMode 2
+      -HeightOffset 100
+      -D ${VTK_DATA_ROOT}
+      -T ${VTK_BINARY_DIR}/Testing/Temporary
+      -V Baseline/Widgets/TerrainPolylineEditor.png)
+endif()
 
 # Add all the executables
 foreach(test ${TestsToRun})
