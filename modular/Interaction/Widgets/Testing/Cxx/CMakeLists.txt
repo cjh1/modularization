@@ -2,7 +2,6 @@ set(MyTests
   BoxWidget.cxx
   BoxWidget2.cxx
   # ImagePlaneWidget.cxx # todo (unsatisfied deps)
-  # ScaledBoxWidget2.cxx # may not have been included in original
   TerrainPolylineEditor.cxx
   TestAffineWidget.cxx
   TestAngleWidget2D.cxx
@@ -14,24 +13,24 @@ set(MyTests
   # TestButtonWidget.cxx # todo (unsatistfied deps)
   TestCameraWidget.cxx
   TestCellCentersPointPlacer.cxx
-  TestCenteredSliderWidget2D.cxx # todo (unsatisfied deps)
+  TestCenteredSliderWidget2D.cxx
   TestCheckerboardWidget.cxx
   TestConstrainedHandleWidget.cxx
   TestContourWidget2.cxx
-  TestDijkstraGraphGeodesicPath.cxx # todo (unsatistfied deps)
+  TestDijkstraGraphGeodesicPath.cxx
   TestDijkstraImageGeodesicPath.cxx
   TestDistanceWidget.cxx
   TestDistanceWidget3D.cxx
   TestFixedSizeHandleRepresentation3D.cxx
   TestFocalPlaneContour.cxx
-  TestHandleWidget.cxx # todo (unsatistfied deps)
+  TestHandleWidget.cxx
   TestHandleWidget2D.cxx
   # TestImageActorContourWidget.cxx # todo(unsatistfied deps)
   TestImageTracerWidget.cxx
-  TestImplicitPlaneWidget.cxx # todo (unsatistfied deps)
-  TestImplicitPlaneWidget2.cxx # todo (unsatistfied deps)
-  TestImplicitPlaneWidget2LockNormalToCamera.cxx # todo (unsatistfied deps)
-  TestImplicitPlaneWidget2b.cxx # todo (unsatistfied deps)
+  TestImplicitPlaneWidget.cxx
+  TestImplicitPlaneWidget2.cxx
+  TestImplicitPlaneWidget2LockNormalToCamera.cxx
+  TestImplicitPlaneWidget2b.cxx
   TestLineWidget.cxx
   TestLineWidget2.cxx
   TestLogoWidget.cxx
@@ -45,9 +44,9 @@ set(MyTests
   TestPointHandleRepresentation3D.cxx
   TestPointWidget.cxx
   TestPolyPlane.cxx
-  TestPolygonalHandleRepresentations.cxx #todo (unsatistfied deps)
-  TestPolygonalRepresentationHandleWidget.cxx # todo (unsatistfied deps)
-  TestPolygonalSurfaceConstrainedDistanceWidget.cxx # todo (unsatistfied deps)
+  TestPolygonalHandleRepresentations.cxx
+  TestPolygonalRepresentationHandleWidget.cxx
+  TestPolygonalSurfaceConstrainedDistanceWidget.cxx
   TestProgrammaticPlacement.cxx
   TestRectilinearWipeWidget.cxx
   # TestResliceCursorWidget2.cxx # todo (unsatistfied deps)
@@ -56,11 +55,11 @@ set(MyTests
   TestSeedWidget.cxx
   TestSeedWidget2.cxx
   TestSeedWidgetNonUniformRepresentations.cxx
-  TestSliderWidget.cxx # todo (unsatistfied deps)
-  TestSliderWidget2D.cxx #todo (unsatistfied deps)
-  TestSphereHandleWidget.cxx # todo (unsatistfied deps)
+  TestSliderWidget.cxx
+  TestSliderWidget2D.cxx
+  TestSphereHandleWidget.cxx
   # TestSplineWidget.cxx # todo (unsatistfied deps)
-  TestSurfaceConstrainedHandleWidget.cxx # todo (unsatistfied deps)
+  TestSurfaceConstrainedHandleWidget.cxx
   TestTensorProbeWidget.cxx
   TestTextWidget.cxx
   vtkAngleRepresentation2DTest1.cxx
@@ -73,18 +72,11 @@ set(MyTests
   vtkBorderWidgetTest1.cxx
   vtkCaptionRepresentationTest1.cxx
   vtkCaptionWidgetTest1.cxx
-  # vtkConstrainedPointHandleRepresentationTest1.cxx # fixme
   vtkHoverWidgetTest1.cxx
-  # vtkImplicitPlaneWidget2Test1.cxx # todo (unsatistfied deps)
   vtkLineRepresentationTest1.cxx
   vtkLineWidget2Test1.cxx
-  # vtkOrientedPolygonalHandleRepresentation3DTest1.cxx # fixme
-  # vtkPointHandleRepresentation2DTest1.cxx  # fixme
-  # vtkPointHandleRepresentation3DTest1.cxx # fixme
-  # vtkPolygonalHandleRepresentation3DTest1.cxx # fixme
   vtkSeedRepresentationTest1.cxx
   vtkSeedWidgetTest1.cxx
-  # vtkSphereHandleRepresentationTest1.cxx # fixme
   vtkSplineWidget2Test1.cxx
   vtkTextRepresentationTest1.cxx
   vtkTextWidgetTest1.cxx

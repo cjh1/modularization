@@ -5116,10 +5116,21 @@ Widgets/Testing/Cxx/vtkSplineRepresentationTest1.cxx:<ignore>
 # This one 671f830 in September 2010.
 Widgets/Testing/Cxx/TestOrientedGlyphContour.cxx:<ignore>
 
+# Tests that are not being built in VTK master. Commit 1f489a8 disabled this in July 2011.
+Widgets/Testing/Cxx/ScaledBoxWidget2.cxx:<ignore>
+
+# Commit 14349aa1 Aug 2010 added these disabled with comment about segfaulting.
+Widgets/Testing/Cxx/vtkPointHandleRepresentation2DTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkPointHandleRepresentation3DTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkConstrainedPointHandleRepresentationTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkPolygonalHandleRepresentation3DTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkSphereHandleRepresentationTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkOrientedPolygonalHandleRepresentation3DTest1.cxx:<ignore>
+
+# These appear to be building in master.
 Widgets/Testing/Cxx/BoxWidget.cxx:
 Widgets/Testing/Cxx/BoxWidget2.cxx:
 Widgets/Testing/Cxx/ImagePlaneWidget.cxx:
-Widgets/Testing/Cxx/ScaledBoxWidget2.cxx:
 Widgets/Testing/Cxx/TerrainPolylineEditor.cxx:
 Widgets/Testing/Cxx/TestAffineWidget.cxx:
 Widgets/Testing/Cxx/TestAngleWidget2D.cxx:
@@ -5191,18 +5202,12 @@ Widgets/Testing/Cxx/vtkBiDimensionalWidgetTest1.cxx:
 Widgets/Testing/Cxx/vtkBorderWidgetTest1.cxx:
 Widgets/Testing/Cxx/vtkCaptionRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkCaptionWidgetTest1.cxx:
-Widgets/Testing/Cxx/vtkConstrainedPointHandleRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkHoverWidgetTest1.cxx:
 Widgets/Testing/Cxx/vtkImplicitPlaneWidget2Test1.cxx:
 Widgets/Testing/Cxx/vtkLineRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkLineWidget2Test1.cxx:
-Widgets/Testing/Cxx/vtkOrientedPolygonalHandleRepresentation3DTest1.cxx:
-Widgets/Testing/Cxx/vtkPointHandleRepresentation2DTest1.cxx:
-Widgets/Testing/Cxx/vtkPointHandleRepresentation3DTest1.cxx:
-Widgets/Testing/Cxx/vtkPolygonalHandleRepresentation3DTest1.cxx:
 Widgets/Testing/Cxx/vtkSeedRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkSeedWidgetTest1.cxx:
-Widgets/Testing/Cxx/vtkSphereHandleRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkSplineWidget2Test1.cxx:
 Widgets/Testing/Cxx/vtkTextRepresentationTest1.cxx:
 Widgets/Testing/Cxx/vtkTextWidgetTest1.cxx:
