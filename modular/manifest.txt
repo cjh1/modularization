@@ -59,7 +59,6 @@ modular/Common/ImplicitFunctions/CMakeLists.txt: <ignore>
 modular/Common/ImplicitFunctions/module.cmake: <ignore>
 
 # These should probably be deleted in VTK
-Infovis/Testing/Cxx/TestGraphHierarchicalBundle.cxx:<ignore> # dependency in deprecated
 Parallel/Testing/Tcl/TestBranchExtentTranslator.tcl:<ignore> # delete
 Parallel/Testing/Cxx/ThreadedCommunicator.cxx:<ignore> # delete
 
@@ -2858,7 +2857,7 @@ Infovis/vtkStringToTimePoint.h:
 Infovis/vtkStringToTimePoint.cxx:
 Infovis/vtkTimePointToString.h:
 Infovis/vtkTimePointToString.cxx:
-
+Infovis/Testing/Cxx/TestGraphHierarchicalBundle.cxx:
 
 [Infovis/Core]
 
