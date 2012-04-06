@@ -1241,7 +1241,7 @@ modular/Common/DataModel/Testing/Cxx/CMakeLists.txt:
 Filtering/Testing/Cxx/CellLocator2.cxx:
 Filtering/Testing/Cxx/TestAMRBox.cxx:
 Filtering/Testing/Cxx/TestGenericCell.cxx:
-Filtering/Testing/Cxx/TestGraph.cxx:
+Filtering/Testing/Cxx/TestGraph2.cxx:
 Filtering/Testing/Cxx/TestHigherOrderCell.cxx:
 Filtering/Testing/Cxx/TestImageDataFindCell.cxx:
 Filtering/Testing/Cxx/TestImageDataInterpolation.cxx:
