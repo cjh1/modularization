@@ -750,8 +750,6 @@ Common/Testing/Cxx/otherByteSwap.cxx:
 Common/Testing/Cxx/otherStringArray.cxx:
 Common/Testing/Cxx/vtkTestNewVar.cxx:
 Common/Testing/Cxx/vtkTestNewVar.h:
-# This file is a duplicate and should be deleted in new repo
-Graphics/Testing/Cxx/TestSortDataArray.cxx: <ignore>
 
 Infovis/Testing/Cxx/TestVariant.cxx:
 Infovis/Testing/Cxx/TestVariantArray.cxx:
