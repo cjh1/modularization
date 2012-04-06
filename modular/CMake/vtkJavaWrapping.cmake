@@ -36,6 +36,10 @@ function(vtk_add_java_wrapping module_name module_srcs)
   add_library(vtk${wrap_name}Java SHARED ${ModuleJava_SRCS} ${Kit_JAVA_EXTRA_SRCS})
   # Force JavaClasses to build in the right order by adding a depenency.
   add_dependencies(vtk${wrap_name}JavaJavaClasses vtk${wrap_name}Java)
+  if(VTK_MODULE_${module_name}_IMPLEMENTS)
+    set_property(TARGET ${module_name}Java PROPERTY COMPILE_DEFINITIONS
+      "${module_name}_AUTOINIT=1(${module_name})")
+  endif()
 
   target_link_libraries(vtk${wrap_name}Java ${module_name} vtkWrappingJavaCore)
   include_directories(${vtkWrappingJavaCore_SOURCE_DIR} 
