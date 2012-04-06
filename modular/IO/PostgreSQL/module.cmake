@@ -4,5 +4,6 @@ vtk_module(vtkIOPostgreSQL
   IMPLEMENTS
     vtkIOSQL
   TEST_DEPENDS
+    vtkTestingCore
     vtkTestingIOSQL
   DEFAULT OFF)

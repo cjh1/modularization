@@ -1,4 +1,4 @@
-if(VTK_PSQL_TEST_URL)
+if(VTK_MYSQL_TEST_URL)
   create_test_sourcelist(Tests ${vtk-module}CxxTests.cxx
     TestPostgreSQLDatabase
     TestPostgreSQLTableReadWrite.cxx
@@ -10,17 +10,19 @@ if(VTK_PSQL_TEST_URL)
   set(TestsToRun ${Tests})
   list(REMOVE_ITEM TestsToRun ${vtk-module}CxxTests.cxx)
 
-  # Add all the executables
-  foreach(test ${TestsToRun})
-    get_filename_component(TName ${test} NAME_WE)
-    if(VTK_DATA_ROOT)
-      add_test(NAME ${vtk-module}Cxx-${TName}
-              COMMAND ${vtk-module}CxxTests ${TName}
-                                            -D ${VTK_DATA_ROOT}
-                                            -T ${VTK_BINARY_DIR}/Testing/Temporary
-                                            -V Baseline/${vtk-module}/${TName}.png)
+  add_test(NAME ${vtk-module}Cxx-TestPostgreSQLDatabase
+           COMMAND ${vtk-module}CxxTests TestPostgreSQLDatabase)  
+
+  if(VTK_DATA_ROOT)
+    if(WIN32)
+      add_test(NAME ${vtk-module}Cxx-TestPostgreSQLTableReadWrite
+               COMMAND ${vtk-module}CxxTests TestPostgreSQLTableReadWrite 
+                       ${VTK_DATA_ROOT}/Baseline/IO/simple_table_win.vtk)
     else()
-      add_test(NAME ${vtk-module}Cxx-${TName} COMMAND ${vtk-module}CxxTests ${TName})
+      add_test(NAME ${vtk-module}Cxx-TestPostgreSQLTableReadWrite
+               COMMAND ${vtk-module}CxxTests TestPostgreSQLTableReadWrite
+                       ${VTK_DATA_ROOT}/Baseline/IO/simple_table.vtk)
     endif()
-  endforeach()
+  endif()
+
 endif()
