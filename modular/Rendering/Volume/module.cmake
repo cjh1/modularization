@@ -8,4 +8,5 @@ vtk_module(vtkRenderingVolume
     vtkRenderingFreeType
     vtkImagingSources
     vtkImagingGeneral
+    vtkInteractionStyle
   )
