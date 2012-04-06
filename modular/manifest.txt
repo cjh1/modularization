@@ -1703,6 +1703,9 @@ Hybrid/vtkExodusIIReaderVariableCheck.h:
 Hybrid/vtkExodusModel.cxx:
 Hybrid/vtkExodusModel.h:
 
+modular/IOExodus.patch:<ignore>
+<patch>:IOExodus.patch
+
 [IO/Exodus/Testing/Cxx]
 
 Hybrid/Testing/Cxx/TestExodusImplicitArrays.cxx:
