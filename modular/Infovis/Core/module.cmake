@@ -7,7 +7,7 @@ vtk_module(vtkInfovisCore
     vtkFiltersExtraction
   TEST_DEPENDS
     vtkInfovisLayout
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
     vtkIOInfovis
-  DEFAULT ON)
+  )
