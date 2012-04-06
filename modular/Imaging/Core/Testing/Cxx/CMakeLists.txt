@@ -49,7 +49,7 @@ foreach(test ${TestsToRun})
       COMMAND ${vtk-module}CxxTests ${TName}
         -D ${VTK_DATA_ROOT}
         -T ${VTK_BINARY_DIR}/Testing/Temporary
-        -V Baseline/Infovis/${TName}.png)
+        -V Baseline/Imaging/${TName}.png)
   else()
     add_test(NAME ${vtk-module}Cxx-${TName}
       COMMAND ${vtk-module}CxxTests ${TName})
