@@ -5,7 +5,7 @@ vtk_module(vtkIOPLY
     vtkCommonExecutionModel
     vtkIOGeometry
   TEST_DEPENDS
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkIOImage
     vtkTestingRendering
   DEFAULT ON)
