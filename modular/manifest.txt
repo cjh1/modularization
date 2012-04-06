@@ -2752,6 +2752,10 @@ modular/CMake/vtkWrapHierarchy.cmake:
 modular/CMake/vtkWrapPython.cmake:
 modular/CMake/vtkBuildPath.cmake:
 modular/CMake/FindODBC.cmake:
+
+modular/CMake/FindMPI.cmake:
+modular/CMake/FindPackageHandleStandardArgs.cmake:
+
 CMake/CheckCXXSourceRuns.cmake:
 CMake/CMakeEmptyInputFile.in:
 CMake/CTestCustom.ctest.in:
