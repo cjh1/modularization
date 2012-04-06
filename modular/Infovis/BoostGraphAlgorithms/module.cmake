@@ -4,7 +4,7 @@ vtk_module(vtkInfovisBoostGraphAlgorithms
     vtkCommonExecutionModel
   TEST_DEPENDS
     # vtkViewsInfovis
-    vtkRenderingCore
+    vtkRenderingOpenGL
     vtkTestingRendering
     vtkIOInfovis
   DEFAULT OFF)
