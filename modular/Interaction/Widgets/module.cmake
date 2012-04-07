@@ -1,4 +1,7 @@
 vtk_module(vtkInteractionWidgets
+  GROUPS
+    Rendering
+    StandAlone
   DEPENDS
     vtkRenderingAnnotation
     vtkRenderingFreeType

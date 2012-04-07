@@ -1,4 +1,7 @@
 vtk_module(vtkRenderingContext2D
+  GROUPS
+    Rendering
+    StandAlone
   DEPENDS
     vtkCommonDataModel
     vtkCommonMath
@@ -6,4 +9,4 @@ vtk_module(vtkRenderingContext2D
     vtkRenderingCore
     vtkRenderingOpenGL
     vtkRenderingFreeType
-  DEFAULT ON)
+  )

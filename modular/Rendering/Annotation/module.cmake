@@ -1,4 +1,7 @@
 vtk_module(vtkRenderingAnnotation
+  GROUPS
+    Rendering
+    StandAlone
   DEPENDS
     vtkRenderingFreeType
     vtkImagingColor
@@ -7,4 +10,4 @@ vtk_module(vtkRenderingAnnotation
     vtkTestingRendering
     vtkInteractionStyle
     vtkRenderingLOD
-  DEFAULT OFF)
+  )

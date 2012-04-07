@@ -1,5 +1,4 @@
-
-SET(Kit_SRCS
+set(Module_SRCS
   vtk3DWidget.cxx
   vtkAbstractPolygonalHandleRepresentation3D.cxx
   vtkAbstractWidget.cxx
@@ -155,5 +154,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-
-vtk_module_library(vtkInteractionWidgets ${Kit_SRCS})
+vtk_module_library(vtkInteractionWidgets ${Module_SRCS})

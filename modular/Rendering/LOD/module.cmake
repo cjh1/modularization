@@ -1,5 +1,7 @@
 vtk_module(vtkRenderingLOD
+  GROUPS
+    StandAlone
   DEPENDS
-  vtkRenderingCore
-  vtkFiltersModeling
-  DEFAULT ON)
+    vtkRenderingCore
+    vtkFiltersModeling
+  )

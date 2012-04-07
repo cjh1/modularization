@@ -1,6 +1,7 @@
 vtk_module(vtkRenderingCore
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonDataModel
     vtkCommonExecutionModel
     vtkCommonMath
@@ -8,14 +9,12 @@ vtk_module(vtkRenderingCore
     vtkCommonSystem
     vtkCommonTransforms
     vtkCommonComputationalGeometry
-    vtkFiltersCore
     vtkFiltersSources
     vtkFiltersGeneral
     vtkFiltersGeometry
     vtkFiltersExtraction
     vtkIOImage
     vtkIOXML
-    #vtkInteractionSelection
   TEST_DEPENDS
     vtkTestingCore
-  DEFAULT ON)
+  )

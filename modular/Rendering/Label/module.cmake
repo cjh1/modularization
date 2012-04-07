@@ -1,5 +1,7 @@
 vtk_module(vtkRenderingLabel
+  GROUPS
+    Rendering
+    StandAlone
   DEPENDS
-    vtkRenderingCore
     vtkRenderingFreeType
-  DEFAULT OFF)
+  )

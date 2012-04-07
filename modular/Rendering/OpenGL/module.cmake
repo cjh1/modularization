@@ -1,6 +1,7 @@
 vtk_module(vtkRenderingOpenGL
   GROUPS
     Rendering
+    StandAlone
   IMPLEMENTS
     vtkRenderingCore
   DEPENDS
@@ -25,4 +26,4 @@ vtk_module(vtkRenderingOpenGL
     vtkRenderingLOD
     vtkImagingGeneral
     vtkImagingSources
-  DEFAULT ON)
+  )

@@ -1,5 +1,4 @@
-set(Kit_SRCS
-  #vtkInteractorStyle.cxx # Moved to RenderingCore for render window int
+set(Module_SRCS
   vtkInteractorStyleFlight.cxx
   vtkInteractorStyleImage.cxx
   vtkInteractorStyleJoystickActor.cxx
@@ -51,4 +50,4 @@ configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.h.in
 configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.cxx.in
   ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.cxx)
 
-vtk_module_library(vtkInteractionStyle ${Kit_SRCS})
+vtk_module_library(vtkInteractionStyle ${Module_SRCS})
