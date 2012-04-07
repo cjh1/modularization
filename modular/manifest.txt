@@ -788,8 +788,8 @@ Common/Testing/Tcl/TestString.tcl:
 Common/Testing/Tcl/otherInterp.tcl:
 Common/Testing/Tcl/otherPrint.tcl:
 
-modular/CommonCore.patch: <ignore>
-<patch>: CommonCore.patch
+modular/CommonCoreTcl.patch: <ignore>
+<patch>: CommonCoreTcl.patch
 
 [Common/ComputationalGeometry]
 
@@ -6715,6 +6715,9 @@ Parallel/vtkPYoungsMaterialInterface.cxx:
 Parallel/vtkPYoungsMaterialInterface.h:
 Parallel/vtkPMaskPoints.cxx:
 Parallel/vtkPMaskPoints.h:
+
+modular/FiltersParallel.patch: <ignore>
+<patch>: FiltersParallel.patch
 
 [Filters/Parallel/Testing/Cxx]
 Parallel/Testing/Cxx/DistributedData.cxx:

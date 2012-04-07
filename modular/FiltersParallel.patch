@@ -1,0 +1,13 @@
+diff --git a/Filters/Parallel/vtkBlockDistribution.h b/Filters/Parallel/vtkBlockDistribution.h
+index 199669c..3377aaf 100644
+--- a/Filters/Parallel/vtkBlockDistribution.h
++++ b/Filters/Parallel/vtkBlockDistribution.h
+@@ -25,7 +25,7 @@
+ #ifndef __vtkBlockDistribution_h
+ #define __vtkBlockDistribution_h
+ 
+-class VTK_PARALLEL_EXPORT vtkBlockDistribution
++class vtkBlockDistribution
+ {
+ public:
+   // Description:
