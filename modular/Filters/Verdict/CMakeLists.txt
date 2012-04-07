@@ -1,7 +1,7 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkCellQuality.cxx
   vtkMatrixMathFilter.cxx
   vtkMeshQuality.cxx
-)
+  )
 
-vtk_module_library(vtkFiltersVerdict ${Kit_SRCS})
+vtk_module_library(vtkFiltersVerdict ${Module_SRCS})

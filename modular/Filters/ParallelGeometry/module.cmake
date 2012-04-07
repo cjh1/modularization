@@ -1,7 +1,7 @@
 vtk_module(vtkFiltersParallelGeometry
+  GROUPS
+    MPI
   DEPENDS
-  vtkCommonExecutionModel
-  vtkFiltersGeometry
-  vtkParallelCore
-  vtkParallelMPI
-  DEFAULT ON)
+    vtkFiltersGeometry
+    vtkParallelMPI
+  )

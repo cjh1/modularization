@@ -1,4 +1,3 @@
-set(QT_USE_QTOPENGL 1)
 set(MocHeaders ${QVTKMocHeaders}
   QVTKGraphicsItem.h
   QVTKWidget2.h
@@ -9,7 +8,8 @@ set(LibSrcs ${QVTKLibSrcs}
   )
 
 # import Qt4 build settings
-find_package(Qt4 REQUIRED)
+set(QT_USE_QTOPENGL 1)
+find_package(Qt4 REQUIRED QUIET)
 include(${QT_USE_FILE})
 
 qt4_wrap_cpp(LibMocSrcs ${MocHeaders})

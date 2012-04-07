@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkCompositeDataGeometryFilter.cxx
   vtkGeometryFilter.cxx
   vtkHierarchicalDataSetGeometryFilter.cxx
@@ -31,4 +31,4 @@ set_source_files_properties(
   WRAP_EXCLUDE
   )
 
-vtk_module_library(vtkFiltersGeometry ${Kit_SRCS})
+vtk_module_library(vtkFiltersGeometry ${Module_SRCS})

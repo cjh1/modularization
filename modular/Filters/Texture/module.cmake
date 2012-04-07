@@ -1,5 +1,6 @@
 vtk_module(vtkFiltersTexture
+  GROUPS
+    StandAlone
   DEPENDS
-  vtkCommonExecutionModel
-  vtkFiltersGeneral
-  DEFAULT ON)
+    vtkFiltersGeneral
+  )

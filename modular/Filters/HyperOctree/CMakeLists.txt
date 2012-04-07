@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkClipHyperOctree.cxx
   vtkHyperOctreeClipCutPointsGrabber.cxx
   vtkHyperOctreeContourFilter.cxx
@@ -11,4 +11,4 @@ set(Kit_SRCS
   vtkHyperOctreeToUniformGridFilter.cxx
   )
 
-vtk_module_library(vtkFiltersHyperOctree ${Kit_SRCS})
+vtk_module_library(vtkFiltersHyperOctree ${Module_SRCS})

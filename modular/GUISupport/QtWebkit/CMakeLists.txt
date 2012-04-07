@@ -1,4 +1,4 @@
-find_package(Qt4 REQUIRED QtCore QtGui QtWebKit)
+find_package(Qt4 REQUIRED QtCore QtGui QtWebKit QUIET)
 
 # Rich-text view requires Qt >= 4.5.0
 # Rich-text depends on Qt Webkit which is not portable on Unix (AIX & HP-UX)
@@ -18,6 +18,4 @@ qt4_wrap_cpp(LibMocSrcs ${MocHeaders})
 
 vtk_module_library(${vtk-module} ${LibSrcs} ${LibMocSrcs})
 
-target_link_libraries(${vtk-module}
-  ${QT_LIBRARIES}
-  )
+target_link_libraries(${vtk-module} ${QT_LIBRARIES})

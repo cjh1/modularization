@@ -19,7 +19,7 @@ set(MocHeaders
 
 # import Qt4 build settings
 set(QT_USE_QTNETWORK 1)
-find_package(Qt4 REQUIRED)
+find_package(Qt4 REQUIRED QUIET)
 include(${QT_USE_FILE})
 
 qt4_wrap_cpp(LibMocSrcs ${MocHeaders})

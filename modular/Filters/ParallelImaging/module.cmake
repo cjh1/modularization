@@ -1,8 +1,9 @@
 vtk_module(vtkFiltersParallelImaging
+  GROUPS
+    Imaging
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkImagingCore
     vtkFiltersImaging
     vtkParallelCore
-  TEST_DEPENDS
-  DEFAULT ON)
+  )

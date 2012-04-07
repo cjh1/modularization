@@ -1,15 +1,11 @@
 vtk_module(vtkFiltersExtraction
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
-    vtkCommonDataModel
-    vtkCommonSystem
-    vtkCommonMisc
-    vtkCommonTransforms
-    vtkCommonMath
     vtkFiltersCore
     vtkFiltersGeneral
   TEST_DEPENDS
     vtkRenderingOpenGL
     vtkTestingRendering
     vtkInteractionStyle
-  DEFAULT ON)
+  )

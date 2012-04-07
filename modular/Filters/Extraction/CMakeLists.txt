@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkConvertSelection.cxx
   vtkExtractArraysOverTime.cxx
   vtkExtractBlock.cxx
@@ -35,4 +35,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkFiltersExtraction ${Kit_SRCS})
+vtk_module_library(vtkFiltersExtraction ${Module_SRCS})

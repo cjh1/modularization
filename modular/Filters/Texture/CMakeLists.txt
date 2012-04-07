@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkTextureMapToCylinder.cxx
   vtkTextureMapToPlane.cxx
   vtkTextureMapToSphere.cxx
@@ -8,12 +8,4 @@ set(Kit_SRCS
   vtkTriangularTCoords.cxx
   )
 
-# set_source_files_properties(
-#   WRAP_EXCLUDE
-#   )
-
-# set_source_files_properties(
-#   ABSTRACT
-#   )
-
-vtk_module_library(vtkFiltersTexture ${Kit_SRCS})
+vtk_module_library(vtkFiltersTexture ${Module_SRCS})

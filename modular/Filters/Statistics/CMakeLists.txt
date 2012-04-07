@@ -1,5 +1,4 @@
-
-SET(Kit_SRCS
+set(Module_SRCS
   vtkBivariateLinearTableThreshold.cxx
   vtkContingencyStatistics.cxx
   vtkCorrelativeStatistics.cxx
@@ -20,5 +19,4 @@ set_source_files_properties(
   ABSTRACT
 )
 
-
-vtk_module_library(vtkFiltersStatistics ${Kit_SRCS})
+vtk_module_library(vtkFiltersStatistics ${Module_SRCS})

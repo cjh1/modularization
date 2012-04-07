@@ -1,11 +1,10 @@
 vtk_module(vtkFiltersGeometry
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
-    vtkCommonDataModel
-    vtkCommonExecutionModel
     vtkFiltersCore
   TEST_DEPENDS
     vtkIOXML
     vtkRenderingOpenGL
     vtkTestingRendering
-  DEFAULT ON)
+  )

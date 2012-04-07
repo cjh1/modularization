@@ -1,7 +1,7 @@
 vtk_module(vtkAMRCore
+  GROUPS
+    StandAlone
   DEPENDS 
-    vtkCommonCore
-    vtkCommonExecutionModel
     vtkParallelCore
     vtkFiltersGeneral
     vtkhdf5
@@ -9,4 +9,4 @@ vtk_module(vtkAMRCore
   TEST_DEPENDS
     vtkTestingCore
     vtkTestingRendering
-  DEFAULT OFF)
+  )

@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkCompassRepresentation.cxx
   vtkCompassWidget.cxx
   vtkGeoAdaptiveArcs.cxx
@@ -25,16 +25,12 @@ set(Kit_SRCS
   vtkGeoTreeNode.cxx
   vtkGeoTreeNodeCache.cxx
   vtkGlobeSource.cxx
-	vtkGeoAlignedImageRepresentation.cxx
+  vtkGeoAlignedImageRepresentation.cxx
   )
-
-# set_source_files_properties(
-#   WRAP_EXCLUDE
-#   )
 
 set_source_files_properties(
   vtkGeoSource
   ABSTRACT
   )
 
-vtk_module_library(vtkGeovisCore ${Kit_SRCS})
+vtk_module_library(vtkGeovisCore ${Module_SRCS})

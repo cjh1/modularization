@@ -1,5 +1,6 @@
 vtk_module(vtkCommonMisc
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonMath
-  DEFAULT ON)
+  )

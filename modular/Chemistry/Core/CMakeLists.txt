@@ -1,12 +1,4 @@
-set(KIT Chemistry)
-set(UKIT CHEMISTRY)
-
-set(KIT_TCL_LIBS vtkFilteringTCL vtkRenderingTCL vtkVolumeRenderingTCL)
-set(KIT_PYTHON_LIBS vtkFilteringPythonD vtkRenderingPythonD vtkVolumeRenderingPythonD)
-set(KIT_JAVA_LIBS vtkFilteringJava vtkRenderingJava vtkVolumeRenderingJava)
-set(KIT_INTERFACE_LIBRARIES vtkFiltering vtkRendering vtkVolumeRendering)
-
-set(Kit_SRCS
+set(Module_SRCS
   vtkBlueObeliskData.cxx
   vtkBlueObeliskDataParser.cxx
   vtkCMLMoleculeReader.cxx
@@ -33,6 +25,6 @@ set_source_files_properties(
 
 # Generate configured header file
 configure_file(${vtkChemistryCore_SOURCE_DIR}/vtkChemistryConfigure.h.in
-               ${vtkChemistryCore_BINARY_DIR}/vtkChemistryConfigure.h IMMEDIATE)
+  ${vtkChemistryCore_BINARY_DIR}/vtkChemistryConfigure.h IMMEDIATE)
 
-vtk_module_library(vtkChemistryCore ${Kit_SRCS})
+vtk_module_library(vtkChemistryCore ${Module_SRCS})

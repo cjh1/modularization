@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkAppendFilter.cxx
   vtkAppendPolyData.cxx
   vtkAppendSelection.cxx
@@ -83,4 +83,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkFiltersCore ${Kit_SRCS})
+vtk_module_library(vtkFiltersCore ${Module_SRCS})

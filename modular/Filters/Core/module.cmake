@@ -1,7 +1,7 @@
 vtk_module(vtkFiltersCore
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
-    vtkCommonDataModel
     vtkCommonExecutionModel
     vtkCommonSystem
     vtkCommonMisc
@@ -13,4 +13,4 @@ vtk_module(vtkFiltersCore
     vtkImagingCore
     vtkFiltersGeneral
     vtkRenderingOpenGL
-  DEFAULT ON)
+  )

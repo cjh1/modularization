@@ -2,7 +2,6 @@ vtk_module(vtkGUISupportQt
   GROUPS
     Qt
   DEPENDS
-    vtkCommonDataModel
     vtkCommonExecutionModel
     vtkRenderingOpenGL
     vtkInteractionStyle

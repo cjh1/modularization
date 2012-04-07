@@ -1,4 +1,4 @@
-set(module_SRCS
+set(Module_SRCS
   vtkAxis.cxx
   vtkAxisExtended.cxx
   vtkChart.cxx
@@ -41,4 +41,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkChartsCore ${module_SRCS})
+vtk_module_library(vtkChartsCore ${Module_SRCS})

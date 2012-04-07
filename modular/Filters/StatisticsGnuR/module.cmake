@@ -5,5 +5,4 @@ vtk_module(vtkFiltersStatisticsGnuR
     vtkCommonCore
     vtkCommonExecutionModel 
     vtkFiltersStatistics
-  TEST_DEPENDS
   EXCLUDE_FROM_ALL)

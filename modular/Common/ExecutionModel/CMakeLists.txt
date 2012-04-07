@@ -1,4 +1,4 @@
-SET(Kit_SRCS
+SET(Module_SRCS
   vtkAlgorithm.cxx
   vtkAlgorithmOutput.cxx
   vtkAnnotationLayersAlgorithm.cxx
@@ -77,4 +77,4 @@ set_source_files_properties(
   WRAP_EXCLUDE
   )
 
-vtk_module_library(vtkCommonExecutionModel ${Kit_SRCS})
+vtk_module_library(vtkCommonExecutionModel ${Module_SRCS})

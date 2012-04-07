@@ -1,8 +1,7 @@
 vtk_module(vtkFiltersGeneric
+  GROUPS
+    StandAlone
   DEPENDS
-  vtkCommonCore
-  vtkCommonExecutionModel
-  vtkCommonDataModel
-  vtkFiltersCore
-  vtkFiltersSources
-  DEFAULT ON)
+    vtkFiltersCore
+    vtkFiltersSources
+  )

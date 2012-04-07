@@ -1,5 +1,4 @@
-
-SET(Kit_SRCS
+set(Module_SRCS
   vtkCardinalSpline.cxx
   vtkKochanekSpline.cxx
   vtkParametricBoy.cxx
@@ -25,7 +24,4 @@ set_source_files_properties(
   ABSTRACT
 )
 
-
-
-
-vtk_module_library(vtkCommonComputationalGeometry ${Kit_SRCS})
+vtk_module_library(vtkCommonComputationalGeometry ${Module_SRCS})

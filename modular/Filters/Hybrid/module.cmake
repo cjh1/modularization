@@ -1,12 +1,12 @@
 vtk_module(vtkFiltersHybrid
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonDataModel
-    vtkCommonExecutionModel
     vtkImagingSources
-    vtkRenderingOpenGL
+    vtkRenderingOpenGL # This should not be allowed - FIXME - move classes.
     vtkFiltersGeneral
   COMPILE_DEPENDS
-    vtkUtilitiesEncodeString
+    vtkUtilitiesEncodeString # This is only here as GL is in this module. FIXME.
   TEST_DEPENDS
     vtkImagingCore
     vtkTestingRendering

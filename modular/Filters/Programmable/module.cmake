@@ -1,4 +1,6 @@
 vtk_module(vtkFiltersProgrammable
+  GROUPS
+    StandAlone
   DEPENDS
-  vtkCommonExecutionModel
-  DEFAULT ON)
+    vtkCommonExecutionModel
+  )

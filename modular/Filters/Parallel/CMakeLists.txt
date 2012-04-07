@@ -1,7 +1,7 @@
-include (FindMPI)
+find_package(MPI REQUIRED)
 include_directories(${MPI_INCLUDE_PATH})
 
-set(Kit_SRCS
+set(Module_SRCS
   vtkCollectGraph.cxx
   vtkCollectPolyData.cxx
   vtkCollectTable.cxx
@@ -52,4 +52,4 @@ set_source_files_properties(
   HEADER_FILE_ONLY
   )
 
-vtk_module_library(vtkFiltersParallel ${Kit_SRCS})
+vtk_module_library(vtkFiltersParallel ${Module_SRCS})

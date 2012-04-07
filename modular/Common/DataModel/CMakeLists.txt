@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkAbstractCellLocator.cxx
   vtkAbstractInterpolatedVelocityField.cxx
   vtkAbstractPointLocator.cxx
@@ -253,4 +253,4 @@ set_source_files_properties(
   PROPERTIES WRAP_SPECIAL 1
   )
 
-vtk_module_library(vtkCommonDataModel ${Kit_SRCS})
+vtk_module_library(vtkCommonDataModel ${Module_SRCS})

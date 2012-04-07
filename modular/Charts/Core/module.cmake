@@ -1,4 +1,6 @@
 vtk_module(vtkChartsCore
+  GROUPS
+    StandAlone
   DEPENDS
     vtkRenderingContext2D
     vtkInfovisCore # Needed for plot parallel coordinates vtkStringToCategory
@@ -7,4 +9,4 @@ vtk_module(vtkChartsCore
     vtkTestingRendering
     vtkViewsContext2D
     vtkIOInfovis
-  DEFAULT ON)
+  )

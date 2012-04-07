@@ -1,10 +1,11 @@
 vtk_module(vtkFiltersParallelStatistics
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonMath
     vtkCommonDataModel
     vtkCommonSystem
     vtkalglib
     vtkFiltersStatistics
     vtkParallelCore
-  DEFAULT ON)
+  )

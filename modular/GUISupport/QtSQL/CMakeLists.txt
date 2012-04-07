@@ -9,7 +9,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # import Qt4 build settings
 set(QT_USE_QTSQL 1)
-find_package(Qt4 REQUIRED)
+find_package(Qt4 REQUIRED QUIET)
 include(${QT_USE_FILE})
 
 vtk_module_library(${vtk-module} ${LibSrcs})

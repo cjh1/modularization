@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkAnnotationLink.cxx
   vtkAppendCompositeDataLeaves.cxx
   vtkAppendPoints.cxx
@@ -133,4 +133,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkFiltersGeneral ${Kit_SRCS})
+vtk_module_library(vtkFiltersGeneral ${Module_SRCS})

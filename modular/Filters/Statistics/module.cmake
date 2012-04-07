@@ -1,12 +1,12 @@
 vtk_module(vtkFiltersStatistics
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonMath
-    vtkCommonDataModel
     vtkCommonExecutionModel
     vtkCommonTransforms
     vtkCommonMisc
     vtkalglib
-   TEST_DEPENDS
+  TEST_DEPENDS
     vtkTestingCore
-  DEFAULT ON)
+  )

@@ -1,6 +1,7 @@
 vtk_module(vtkFiltersHyperOctree
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonExecutionModel
     vtkFiltersGeneral
   TEST_DEPENDS
     vtkRenderingOpenGL

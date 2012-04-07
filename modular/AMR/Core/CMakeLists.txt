@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkAMRBaseParticlesReader.cxx
   vtkAMRBaseReader.cxx
   vtkAMRCutPlane.cxx
@@ -29,4 +29,4 @@ set_source_files_properties(
   WRAP_EXCLUDE
   )
 
-vtk_module_library(vtkAMRCore ${Kit_SRCS})
+vtk_module_library(vtkAMRCore ${Module_SRCS})

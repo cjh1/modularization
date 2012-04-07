@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkBSplineTransform.cxx
   vtkDepthSortPolyData.cxx
   vtkDSPFilterDefinition.cxx
@@ -17,19 +17,22 @@ set(Kit_SRCS
   vtkProcrustesAlignmentFilter.cxx
   vtkProjectedTerrainPath.cxx
   vtkRenderLargeImage.cxx
-  vtkStructuredGridLIC2D.cxx
   vtkTemporalDataSetCache.cxx
   vtkTemporalInterpolator.cxx
   vtkTemporalShiftScale.cxx
   vtkTemporalSnapToTimeStep.cxx
   vtkTransformToGrid.cxx
   vtkWeightedTransformFilter.cxx
+  # FIXME: These should not be in filters.
+  vtkStructuredGridLIC2D.cxx
   vtkStructuredGridLIC2D_fs.cxx 
-)
+  )
 
 set(shader_files
   vtkStructuredGridLIC2D_fs.glsl
   )
+
+# FIXME: This should be in a rendering module (an OpenGL rendering module)
 # for vtkStructuredGridLIC2D
 SET( shader_h_files )
 FOREACH( file ${shader_files} )
@@ -49,4 +52,4 @@ FOREACH( file ${shader_files} )
   set_source_files_properties(${res} WRAP_EXCLUDE)
 ENDFOREACH( file )
 
-vtk_module_library(vtkFiltersHybrid ${Kit_SRCS})
+vtk_module_library(vtkFiltersHybrid ${Module_SRCS})

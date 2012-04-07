@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkArcSource.cxx
   vtkArrowSource.cxx
   vtkButtonSource.cxx
@@ -38,4 +38,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkFiltersSources ${Kit_SRCS})
+vtk_module_library(vtkFiltersSources ${Module_SRCS})

@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkGenericClip.cxx
   vtkGenericContourFilter.cxx
   vtkGenericCutter.cxx
@@ -10,4 +10,4 @@ set(Kit_SRCS
   vtkGenericStreamTracer.cxx
   )
 
-vtk_module_library(vtkFiltersGeneric ${Kit_SRCS})
+vtk_module_library(vtkFiltersGeneric ${Module_SRCS})

@@ -5,4 +5,4 @@ vtk_module(vtkCommonMath
     vtkTestingCore
     vtkCommonSystem
     vtkCommonTransforms
-  DEFAULT ON)
+  )

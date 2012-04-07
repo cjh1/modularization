@@ -1,4 +1,6 @@
 vtk_module(vtkChemistryCore
+  GROUPS
+    StandAlone
   DEPENDS 
     vtkCommonDataModel
     vtkIOXML
@@ -8,4 +10,4 @@ vtk_module(vtkChemistryCore
     vtkTestingRendering
     vtkInteractionStyle
     vtkRenderingOpenGL
-  DEFAULT ON)
+  )

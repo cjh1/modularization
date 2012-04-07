@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkBandedPolyDataContourFilter.cxx
   vtkButterflySubdivisionFilter.cxx
   vtkDijkstraGraphGeodesicPath.cxx
@@ -30,4 +30,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkFiltersModeling ${Kit_SRCS})
+vtk_module_library(vtkFiltersModeling ${Module_SRCS})

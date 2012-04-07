@@ -1,5 +1,4 @@
-
-SET(Kit_SRCS
+set(Module_SRCS
   vtkAmoebaMinimizer.cxx
   vtkFastNumericConversion.cxx
   vtkFunctionSet.cxx
@@ -14,11 +13,8 @@ SET(Kit_SRCS
   )
 
 if(CMAKE_COMPILER_IS_GNUCXX)
-  set_source_files_properties(
-   vtkPolynomialSolversUnivariate.cxx
-   PROPERTIES
-   COMPILE_FLAGS -O0
-   )
+  set_source_files_properties(vtkPolynomialSolversUnivariate.cxx
+    PROPERTIES COMPILE_FLAGS -O0)
 endif()
 
 set_source_files_properties(
@@ -27,4 +23,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkCommonMath ${Kit_SRCS})
+vtk_module_library(vtkCommonMath ${Module_SRCS})

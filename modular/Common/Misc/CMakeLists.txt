@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkContourValues.cxx
   vtkErrorCode.cxx
   vtkFunctionParser.cxx
@@ -10,4 +10,4 @@ set_source_files_properties(
   WRAP_EXCLUDE
   )
 
-vtk_module_library(vtkCommonMisc ${Kit_SRCS})
+vtk_module_library(vtkCommonMisc ${Module_SRCS})

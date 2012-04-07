@@ -1,5 +1,4 @@
-
-SET(Kit_SRCS
+set(Module_SRCS
   vtkPContingencyStatistics.cxx
   vtkPCorrelativeStatistics.cxx
   vtkPDescriptiveStatistics.cxx
@@ -10,4 +9,4 @@ SET(Kit_SRCS
   vtkPBivariateLinearTableThreshold.cxx
   )
 
-vtk_module_library(vtkFiltersParallelStatistics ${Kit_SRCS})
+vtk_module_library(vtkFiltersParallelStatistics ${Module_SRCS})

@@ -1,4 +1,4 @@
-SET(Kit_SRCS
+set(Module_SRCS
   vtkAbstractTransform.cxx
   vtkCylindricalTransform.cxx
   vtkGeneralTransform.cxx
@@ -25,4 +25,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkCommonTransforms ${Kit_SRCS})
+vtk_module_library(vtkCommonTransforms ${Module_SRCS})
