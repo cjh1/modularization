@@ -7,4 +7,4 @@ vtk_module(vtkViewsInfovis
     vtkInteractionStyle
     vtkFiltersModeling
     vtkFiltersImaging
-  DEFAULT OFF)
+  )

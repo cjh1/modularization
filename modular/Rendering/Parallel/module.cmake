@@ -1,6 +1,8 @@
 vtk_module(vtkRenderingParallel
+  GROUPS
+    StandAlone
   DEPENDS
-  vtkParallelCore
-  vtkFiltersParallel
-  vtkRenderingOpenGL
-  DEFAULT ON)
+    vtkParallelCore
+    vtkFiltersParallel
+    vtkRenderingOpenGL
+  )

@@ -1,8 +1,9 @@
 vtk_module(vtkViewsCore
+  GROUPS
+    StandAlone
   DEPENDS
     vtkCommonExecutionModel
     vtkFiltersGeneral
     vtkRenderingCore
     vtkInteractionWidgets
-  EXCLUDE_FROM_ALL
-  DEFAULT OFF)
+  )

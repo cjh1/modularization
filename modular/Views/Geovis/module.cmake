@@ -1,6 +1,7 @@
 vtk_module(vtkViewsGeovis
+  GROUPS
+    StandAlone
   DEPENDS
-  vtkViewsCore
-  vtkViewsInfovis
-  vtkGeovisCore
-  DEFAULT ON)
+    vtkViewsInfovis
+    vtkGeovisCore
+  )

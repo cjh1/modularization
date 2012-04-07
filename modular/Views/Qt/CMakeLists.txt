@@ -26,6 +26,4 @@ qt4_wrap_cpp(LibMocSrcs ${MocHeaders})
 
 vtk_module_library(${vtk-module} ${LibSrcs} ${LibMocSrcs})
 
-TARGET_LINK_LIBRARIES(${vtk-module}
-  ${QT_LIBRARIES}
-  )
+target_link_libraries(${vtk-module} ${QT_LIBRARIES})

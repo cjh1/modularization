@@ -2,11 +2,9 @@ vtk_module(vtkRenderingQt
   GROUPS
     Qt
   DEPENDS
-  #vtkRenderingText
     vtkRenderingLabel
     vtkGUISupportQt
     vtkFiltersTexture
   TEST_DEPENDS
     vtkTestingCore
-  EXCLUDE_FROM_WRAPPING
   )
