@@ -206,11 +206,6 @@ set_source_files_properties(
   OBJECT_DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/vtkUnicodeCaseFoldData.h
   )
 
-if(CMAKE_COMPILER_IS_GNUCXX)
-  set_source_files_properties(
-    vtkPolynomialSolversUnivariate.cxx PROPERTIES COMPILE_FLAGS -O0)
-endif()
-
 if(VTK_TYPE_USE_LONG_LONG)
   list(APPEND Module_SRCS
     vtkLongLongArray.cxx

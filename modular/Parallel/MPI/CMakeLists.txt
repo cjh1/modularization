@@ -1,4 +1,5 @@
 find_package(MPI)
+mark_as_advanced(MPI_LIBRARY MPI_EXTRA_LIBRARY)
 include_directories(${MPI_INCLUDE_PATH})
 
 set(Kit_SRCS

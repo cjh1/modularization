@@ -53,6 +53,7 @@ set(QVTKNonMocHeaders
 # import Qt4 build settings
 set(QT_USE_QTNETWORK 1)
 find_package(Qt4 REQUIRED QUIET)
+mark_as_advanced(QT_QMAKE_EXECUTABLE)
 include(${QT_USE_FILE})
 
 qt4_wrap_cpp(QVTKLibMocSrcs ${QVTKMocHeaders})

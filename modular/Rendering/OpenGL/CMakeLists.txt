@@ -14,10 +14,12 @@ elseif(UNIX)
 endif()
 
 option(VTK_USE_X "Use X for VTK render windows" ${VTK_USE_X_DEFAULT})
+mark_as_advanced(VTK_USE_X)
 
 # FIXME: The TDx support needs some refactoring before we can build it in a
 # modular fashion, for now it must remain an option on vtkRenderingOpenGL.
 option(VTK_USE_TDX "Use TDx interaction devices" OFF)
+mark_as_advanced(VTK_USE_TDX)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/vtkTDxConfigure.h.in
   ${CMAKE_CURRENT_BINARY_DIR}/vtkTDxConfigure.h)
 
@@ -172,6 +174,7 @@ else()
       endif()
     endif()
     find_package(NVCtrlLib QUIET)
+    mark_as_advanced(NVCtrlLib_INCLUDE_DIR NVCtrlLib_LIBRARY)
     if(NVCtrlLib_FOUND)
       set(VTK_USE_NVCONTROL 1)
     endif()
