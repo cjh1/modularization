@@ -788,6 +788,9 @@ Common/Testing/Tcl/TestString.tcl:
 Common/Testing/Tcl/otherInterp.tcl:
 Common/Testing/Tcl/otherPrint.tcl:
 
+modular/CommonCore.patch: <ignore>
+<patch>: CommonCore.patch
+
 [Common/ComputationalGeometry]
 
 modular/Common/ComputationalGeometry/CMakeLists.txt:
