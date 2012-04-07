@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkExporter.cxx
   vtkIVExporter.cxx
   vtkOBJExporter.cxx
@@ -19,7 +19,7 @@ set(Kit_SRCS
 
 if(NOT VTK_USE_SYSTEM_GL2PS)
   # TODO: Build vtkgl2ps library over in its module
-  list(APPEND Kit_SRCS ${VTK_SOURCE_DIR}/ThirdParty/gl2ps/vtkgl2ps/gl2ps.c)
+  list(APPEND Module_SRCS ${VTK_SOURCE_DIR}/ThirdParty/gl2ps/vtkgl2ps/gl2ps.c)
   add_definitions(-DGL2PS_HAVE_ZLIB)
   add_definitions(-DGL2PS_HAVE_LIBPNG)
   set_source_files_properties(
@@ -33,11 +33,12 @@ set_source_files_properties(
   vtkX3DExporterWriter
   vtkX3DExporterFIWriter
   vtkX3DExporterXMLWriter
-  WRAP_EXCLUDE)
+  WRAP_EXCLUDE
+  )
 
 set_source_files_properties(
   vtkExporter
   ABSTRACT
   )
 
-vtk_module_library(vtkIOExport ${Kit_SRCS})
+vtk_module_library(vtkIOExport ${Module_SRCS})

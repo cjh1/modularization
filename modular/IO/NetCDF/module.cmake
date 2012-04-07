@@ -1,10 +1,10 @@
 vtk_module(vtkIONetCDF
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonDataModel
     vtkCommonSystem
     vtkIOCore
-    vtksys
   COMPILE_DEPENDS
     vtknetcdf
   TEST_DEPENDS

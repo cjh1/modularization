@@ -1,4 +1,6 @@
 vtk_module(vtkInfovisLayout
+  GROUPS
+    StandAlone
   DEPENDS
     vtkCommonExecutionModel
     vtkImagingHybrid

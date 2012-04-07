@@ -1,4 +1,6 @@
 vtk_module(vtkIOExport
+  GROUPS
+    StandAlone
   DEPENDS
     vtkCommonCore
     vtkRenderingCore

@@ -1,4 +1,6 @@
 vtk_module(vtkParallelCore
+  GROUPS
+    StandAlone
   DEPENDS
     vtkCommonCore
     vtkCommonDataModel
@@ -7,4 +9,4 @@ vtk_module(vtkParallelCore
     vtkIOGeometry
   COMPILE_DEPENDS
     vtkUtilitiesHashSource
-  DEFAULT ON)
+  )

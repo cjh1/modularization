@@ -1,7 +1,7 @@
-include (FindMPI)
+find_package(MPI REQUIRED)
 include_directories(${MPI_INCLUDE_PATH})
 
-set(Kit_SRCS
+set(Module_SRCS
   vtkEnSightWriter.cxx
   # vtkExodusIIWriter.cxx needs vtkMultiProcessController
   vtkPChacoReader.cxx
@@ -18,4 +18,4 @@ set(Kit_SRCS
   vtkXMLPMultiBlockDataWriter.cxx
   )
 
-vtk_module_library(vtkIOParallel ${Kit_SRCS})
+vtk_module_library(vtkIOParallel ${Module_SRCS})

@@ -1,4 +1,4 @@
-SET(Kit_SRCS
+SET(Module_SRCS
   vtkAVSucdReader.cxx
   vtkBYUReader.cxx
   vtkBYUWriter.cxx
@@ -58,4 +58,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkIOGeometry ${Kit_SRCS})
+vtk_module_library(vtkIOGeometry ${Module_SRCS})

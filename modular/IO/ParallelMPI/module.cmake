@@ -1,5 +1,7 @@
 vtk_module(vtkIOParallelMPI
+  GROUPS
+    MPI
   DEPENDS
-  vtkParallelCore
-  vtkIOImage
-  DEFAULT ON)
+    vtkParallelCore
+    vtkIOImage
+  )

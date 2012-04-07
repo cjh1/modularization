@@ -1,7 +1,8 @@
-find_package(Boost REQUIRED)
+find_package(Boost 1.40.0 REQUIRED
+  COMPONENTS serialization mpi filesystem system graph_parallel)
 include_directories(${Boost_INCLUDE_DIRS})
 
-set(Kit_SRCS
+set(Module_SRCS
   vtkPBGLBreadthFirstSearch.cxx
   vtkPBGLCollapseGraph.cxx
   vtkPBGLCollapseParallelEdges.cxx
@@ -16,5 +17,5 @@ set(Kit_SRCS
   vtkPBGLVertexColoring.cxx
   )
 
-
-vtk_module_library(vtkInfovisParallel ${Kit_SRCS})
+vtk_module_library(vtkInfovisParallel ${Module_SRCS})
+target_link_libraries(vtkInfovisParallel ${Boost_LIBRARIES})

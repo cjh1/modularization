@@ -1,9 +1,9 @@
 vtk_module(vtkInfovisCore
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonDataModel
     vtkCommonSystem
-    vtkFiltersCore
     vtkFiltersExtraction
   TEST_DEPENDS
     vtkInfovisLayout

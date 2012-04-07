@@ -1,5 +1,4 @@
-
-set(Kit_SRCS
+set(Module_SRCS
   vtkDatabaseToTableReader.cxx
   vtkRowQuery.cxx
   vtkRowQueryToTable.cxx
@@ -28,8 +27,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-include_directories(
-  ${VTK_SOURCE_DIR}/Common/Misc
-  )
-
-vtk_module_library(vtkIOSQL ${Kit_SRCS} ${SQLite_SRCS})
+vtk_module_library(vtkIOSQL ${Module_SRCS} ${SQLite_SRCS})

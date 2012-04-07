@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkPLSDynaReader.cxx
   )
 
@@ -7,4 +7,4 @@ include_directories(
   ${vtkIOLSDyna_BINARY_DIR}/private
   )
 
-vtk_module_library(vtkIOParallelLSDyna ${Kit_SRCS})
+vtk_module_library(vtkIOParallelLSDyna ${Module_SRCS})

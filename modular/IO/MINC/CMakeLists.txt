@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkMINCImageAttributes.cxx
   vtkMINCImageReader.cxx
   vtkMINCImageWriter.cxx
@@ -10,12 +10,4 @@ set(Kit_SRCS
   vtkMNITransformWriter.cxx
   )
 
-vtk_module_library(vtkIOMINC ${Kit_SRCS})
-
-#IF(NOT VTK_INSTALL_NO_DEVELOPMENT)
-#  INSTALL(FILES
-#    ${CMAKE_CURRENT_SOURCE_DIR}/vtkMINC.h
-#    DESTINATION ${VTK_INSTALL_INCLUDE_DIR_CM24}
-#    COMPONENT Development
-#    )
-#ENDIF(NOT VTK_INSTALL_NO_DEVELOPMENT)
+vtk_module_library(vtkIOMINC ${Module_SRCS})

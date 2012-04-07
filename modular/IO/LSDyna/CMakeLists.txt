@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkLSDynaPart.cxx
   vtkLSDynaPartCollection.cxx
   vtkLSDynaReader.cxx
@@ -10,7 +10,7 @@ set(Kit_SRCS
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/private/LSDynaExport.h.in
   ${CMAKE_CURRENT_BINARY_DIR}/private/LSDynaExport.h
-)
+  )
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/private
@@ -25,4 +25,4 @@ set_source_files_properties(
   WRAP_EXCLUDE
   )
 
-vtk_module_library(vtkIOLSDyna ${Kit_SRCS})
+vtk_module_library(vtkIOLSDyna ${Module_SRCS})

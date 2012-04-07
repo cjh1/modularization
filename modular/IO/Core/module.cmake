@@ -1,4 +1,6 @@
 vtk_module(vtkIOCore
+  GROUPS
+    StandAlone
   DEPENDS
     vtkCommonDataModel
     vtkCommonExecutionModel
@@ -6,5 +8,5 @@ vtk_module(vtkIOCore
     vtkzlib
     vtksys
   TEST_DEPENDS
-   vtkTestingCore
-  DEFAULT ON)
+    vtkTestingCore
+  )

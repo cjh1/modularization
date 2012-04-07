@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkPLY.cxx
   vtkPLYReader.cxx
   vtkPLYWriter.cxx
@@ -9,4 +9,4 @@ SET_SOURCE_FILES_PROPERTIES(
   WRAP_EXCLUDE
 )
 
-vtk_module_library(vtkIOPLY ${Kit_SRCS})
+vtk_module_library(vtkIOPLY ${Module_SRCS})

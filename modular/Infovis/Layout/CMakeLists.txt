@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkArcParallelEdgeStrategy.cxx
   vtkAreaLayout.cxx
   vtkAreaLayoutStrategy.cxx
@@ -53,4 +53,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkInfovisLayout ${Kit_SRCS})
+vtk_module_library(vtkInfovisLayout ${Module_SRCS})

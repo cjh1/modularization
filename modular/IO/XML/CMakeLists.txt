@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkRTXMLPolyDataReader.cxx
   vtkXMLCompositeDataReader.cxx
   vtkXMLCompositeDataWriter.cxx
@@ -81,4 +81,4 @@ set_source_files_properties(
   WRAP_EXCLUDE
   )
 
-vtk_module_library(vtkIOXML ${Kit_SRCS})
+vtk_module_library(vtkIOXML ${Module_SRCS})

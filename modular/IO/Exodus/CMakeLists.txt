@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkExodusIICache.cxx
   vtkExodusIIReader.cxx
   vtkExodusIIReaderParser.cxx
@@ -6,12 +6,10 @@ set(Kit_SRCS
   vtkExodusModel.cxx
   )
 
-
 set_source_files_properties(
   vtkExodusIIReaderParser
   vtkExodusIIReaderVariableCheck
   WRAP_EXCLUDE
   )
 
-
-vtk_module_library(vtkIOExodus ${Kit_SRCS})
+vtk_module_library(vtkIOExodus ${Module_SRCS})

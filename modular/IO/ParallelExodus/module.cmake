@@ -3,4 +3,4 @@ vtk_module(vtkIOParallelExodus
     vtkParallelCore
     vtkIOExodus
     vtkexodusII
-  DEFAULT OFF)
+  )

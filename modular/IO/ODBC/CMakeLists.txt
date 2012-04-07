@@ -1,4 +1,3 @@
-
 find_package(ODBC REQUIRED)
 
 set(ODBC_SRCS
@@ -6,9 +5,7 @@ set(ODBC_SRCS
   vtkODBCQuery.cxx
   )
 
-include_directories(
-  ${ODBC_INCLUDE_DIRECTORIES}
-  )
+include_directories(${ODBC_INCLUDE_DIRECTORIES})
 
 vtk_module_library(vtkIOODBC ${ODBC_SRCS})
 

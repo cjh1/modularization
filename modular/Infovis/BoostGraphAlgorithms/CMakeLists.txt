@@ -1,4 +1,7 @@
-set(Kit_SRCS
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
+set(Module_SRCS
   vtkBoostBetweennessClustering.cxx
   vtkBoostBiconnectedComponents.cxx
   vtkBoostBrandesCentrality.cxx
@@ -13,7 +16,4 @@ set(Kit_SRCS
   vtkBoostSplitTableField.cxx  
   )
 
-find_package(Boost REQUIRED)
-include_directories(${Boost_INCLUDE_DIRS})
-
-vtk_module_library(vtkInfovisBoostGraphAlgorithms ${Kit_SRCS})
+vtk_module_library(vtkInfovisBoostGraphAlgorithms ${Module_SRCS})

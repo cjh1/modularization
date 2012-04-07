@@ -6,4 +6,4 @@ vtk_module(vtkIOMySQL
   TEST_DEPENDS
     vtkTestingCore
     vtkTestingIOSQL
-  DEFAULT OFF)
+  )

@@ -1,6 +1,7 @@
 vtk_module(vtkIOPLY
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonMisc
     vtkCommonExecutionModel
     vtkIOGeometry
@@ -8,4 +9,4 @@ vtk_module(vtkIOPLY
     vtkRenderingOpenGL
     vtkIOImage
     vtkTestingRendering
-  DEFAULT ON)
+  )

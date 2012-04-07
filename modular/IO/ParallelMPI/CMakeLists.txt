@@ -1,8 +1,8 @@
-include (FindMPI)
+find_package(MPI REQUIRED)
 include_directories(${MPI_INCLUDE_PATH})
 
-set(Kit_SRCS
+set(Module_SRCS
   vtkMPIImageReader.cxx
   )
 
-vtk_module_library(vtkIOParallelMPI ${Kit_SRCS})
+vtk_module_library(vtkIOParallelMPI ${Module_SRCS})

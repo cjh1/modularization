@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkBMPReader.cxx
   vtkBMPWriter.cxx
   vtkDEMReader.cxx
@@ -36,7 +36,7 @@ set(Kit_SRCS
 
 if(WIN32)
   # Should we force this on Windows?
-  list(APPEND Kit_SRCS vtkAVIWriter.cxx)
+  list(APPEND Module_SRCS vtkAVIWriter.cxx)
 endif()
 
 set_source_files_properties(
@@ -44,7 +44,7 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkIOImage ${Kit_SRCS})
+vtk_module_library(vtkIOImage ${Module_SRCS})
 
 if(WIN32)
   target_link_libraries(vtkIOImage vfw32)

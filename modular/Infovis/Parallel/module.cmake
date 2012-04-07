@@ -1,13 +1,11 @@
-if(VTK_USE_MPI)
-  set(_EXCLUDE_FROM_ALL)
-else()
-  set(_EXCLUDE_FROM_ALL EXCLUDE_FROM_ALL)
-endif()
 vtk_module(vtkInfovisParallel
+  GROUPS
+    MPI
   DEPENDS
-  vtkInfovisCore
-  vtkCommonExecutionModel
-  vtkParallelMPI
-  vtkFiltersParallel
-  ${_EXCLUDE_FROM_ALL}
-  DEFAULT OFF)
+    vtkInfovisBoost
+    vtkInfovisBoostGraphAlgorithms
+    vtkCommonExecutionModel
+    vtkParallelMPI
+    vtkFiltersParallel
+    vtkIOSQL
+  )

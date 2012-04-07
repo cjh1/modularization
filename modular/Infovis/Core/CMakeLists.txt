@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkAddMembershipArray.cxx
   vtkAdjacencyMatrixToEdgeTable.cxx
   vtkArrayNorm.cxx
@@ -38,4 +38,4 @@ set(Kit_SRCS
   vtkKCoreDecomposition.cxx
   )
 
-vtk_module_library(vtkInfovisCore ${Kit_SRCS})
+vtk_module_library(vtkInfovisCore ${Module_SRCS})

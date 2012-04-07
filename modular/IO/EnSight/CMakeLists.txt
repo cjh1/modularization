@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkEnSight6BinaryReader.cxx
   vtkEnSight6Reader.cxx
   vtkEnSightGoldBinaryReader.cxx
@@ -8,10 +8,9 @@ set(Kit_SRCS
   vtkGenericEnSightReader.cxx
 )
 
-SET_SOURCE_FILES_PROPERTIES(
+set_source_files_properties(
   vtkEnSightReader
   ABSTRACT
-)
+  )
 
-
-vtk_module_library(vtkIOEnSight ${Kit_SRCS})
+vtk_module_library(vtkIOEnSight ${Module_SRCS})

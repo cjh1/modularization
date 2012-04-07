@@ -1,10 +1,9 @@
 vtk_module(vtkIOLSDyna
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonDataModel
     vtkCommonExecutionModel
     vtkIOXML
-  COMPILE_DEPENDS
-    vtkCommonCore
   TEST_DEPENDS
     vtkRenderingOpenGL
     vtkTestingRendering

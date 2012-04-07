@@ -1,22 +1,20 @@
 vtk_module(vtkIOImage
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonDataModel
     vtkCommonSystem
     vtkCommonMath
     vtkCommonMisc
     vtkCommonTransforms
-    vtkIOCore
     vtkIOGeometry
-    vtkzlib
     vtkjpeg
     vtkpng
     vtktiff
     vtkMetaIO
     vtkoggtheora
-    vtksys
     vtkDICOMParser
   TEST_DEPENDS
     vtkTestingCore
     vtkImagingSources
-  DEFAULT ON)
+  )

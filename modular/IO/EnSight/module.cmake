@@ -1,4 +1,6 @@
 vtk_module(vtkIOEnSight
+  GROUPS
+    StandAlone
   DEPENDS
     vtkCommonExecutionModel
-  DEFAULT ON)
+  )

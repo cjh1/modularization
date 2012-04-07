@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkChacoGraphReader.cxx
   vtkChacoGraphReader.h
   vtkDelimitedTextReader.cxx
@@ -21,4 +21,4 @@ set(Kit_SRCS
   vtkXMLTreeReader.h
   )
 
-vtk_module_library(vtkIOInfovis ${Kit_SRCS})
+vtk_module_library(vtkIOInfovis ${Module_SRCS})

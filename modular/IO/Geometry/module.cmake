@@ -1,12 +1,12 @@
 vtk_module(vtkIOGeometry
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
     vtkCommonDataModel
     vtkCommonSystem
     vtkCommonMisc
     vtkIOCore
     vtkzlib
-    vtksys
   COMPILE_DEPENDS
     vtkUtilitiesMaterialLibrary
   TEST_DEPENDS

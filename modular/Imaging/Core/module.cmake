@@ -1,7 +1,7 @@
 vtk_module(vtkImagingCore
+  GROUPS
+    StandAlone
   DEPENDS
-    vtkCommonCore
-    vtkCommonDataModel
     vtkCommonSystem
     vtkCommonTransforms
     vtkCommonMath
@@ -9,7 +9,6 @@ vtk_module(vtkImagingCore
     vtkCommonExecutionModel
     vtkImagingMath
   TEST_DEPENDS
-    vtkFiltersCore
     vtkFiltersModeling
     vtkFiltersGeneral
     vtkFiltersHybrid

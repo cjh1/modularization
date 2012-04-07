@@ -1,5 +1,4 @@
-
-SET(Kit_SRCS
+SET(Module_SRCS
   vtkAbstractParticleWriter.cxx
   vtkArrayReader.cxx
   vtkArrayWriter.cxx
@@ -32,9 +31,7 @@ SET(Kit_SRCS
   vtkArrayDataWriter.cxx
   )
 
-include_directories(
-  ${VTK_SOURCE_DIR}/ThirdParty/utf8/source
-  )
+include_directories(${VTK_SOURCE_DIR}/ThirdParty/utf8/source)
 
 set_source_files_properties(
   vtkAbstractParticleWriter
@@ -44,4 +41,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkIOCore ${Kit_SRCS})
+vtk_module_library(vtkIOCore ${Module_SRCS})

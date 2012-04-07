@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkImageStencilIterator.cxx
   vtkExtractVOI.cxx
   vtkImageAppendComponents.cxx
@@ -61,4 +61,4 @@ SET_SOURCE_FILES_PROPERTIES(
   WRAP_EXCLUDE
 )
 
-vtk_module_library(vtkImagingCore ${Kit_SRCS})
+vtk_module_library(vtkImagingCore ${Module_SRCS})
