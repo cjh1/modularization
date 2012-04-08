@@ -2,10 +2,6 @@ vtk_module(vtkParallelCore
   GROUPS
     StandAlone
   DEPENDS
-    vtkCommonCore
-    vtkCommonDataModel
-    vtkCommonSystem
-    vtkIOCore
     vtkIOGeometry
   COMPILE_DEPENDS
     vtkUtilitiesHashSource
