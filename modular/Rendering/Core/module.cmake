@@ -2,13 +2,8 @@ vtk_module(vtkRenderingCore
   GROUPS
     StandAlone
   DEPENDS
-    vtkCommonDataModel
     vtkCommonExecutionModel
-    vtkCommonMath
-    vtkCommonMisc
-    vtkCommonSystem
     vtkCommonTransforms
-    vtkCommonComputationalGeometry
     vtkFiltersSources
     vtkFiltersGeneral
     vtkFiltersGeometry

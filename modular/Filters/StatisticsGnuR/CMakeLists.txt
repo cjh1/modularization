@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkRRandomTableSource.cxx
   vtkRCalculatorFilter.cxx
   vtkRInterface.cxx
@@ -57,6 +57,6 @@ configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.h.in
 configure_file(${VTK_CMAKE_DIR}/vtkObjectFactory.cxx.in
   ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.cxx)
 
-vtk_module_library(vtkFiltersStatisticsGnuR ${Kit_SRCS})
+vtk_module_library(vtkFiltersStatisticsGnuR ${Module_SRCS})
 
 target_link_libraries(vtkFiltersStatisticsGnuR ${R_LIBRARIES})

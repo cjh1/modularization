@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkAbstractMapper3D.cxx
   vtkAbstractMapper.cxx
   vtkAbstractPicker.cxx
@@ -166,4 +166,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkRenderingCore ${Kit_SRCS})
+vtk_module_library(vtkRenderingCore ${Module_SRCS})

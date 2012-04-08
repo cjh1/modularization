@@ -24,7 +24,7 @@ mark_as_advanced(VTK_USE_TDX)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/vtkTDxConfigure.h.in
   ${CMAKE_CURRENT_BINARY_DIR}/vtkTDxConfigure.h)
 
-set(Kit_SRCS
+set(Module_SRCS
   vtkCameraPass.cxx
   vtkClearZPass.cxx
   vtkColorMaterialHelper.cxx
@@ -238,7 +238,7 @@ foreach(file ${shader_files})
     COMMAND vtkEncodeString
     ARGS ${res} ${src} ${file_we} --build-header VTKRENDERINGOPENGL_EXPORT vtkRenderingOpenGLModule.h
     )
-  list(APPEND Kit_SRCS ${res})
+  list(APPEND Module_SRCS ${res})
   set_source_files_properties(${file_we} WRAP_EXCLUDE)
 endforeach()
 
@@ -288,7 +288,7 @@ if(VTK_USE_X)
   set(vtk_module_vtkRenderWindowInteractor_override "vtkXRenderWindowInteractor")
   list(APPEND vtk_module_overrides "vtkRenderWindow")
   set(vtk_module_vtkRenderWindow_override "vtkXOpenGLRenderWindow")
-  list(APPEND Kit_SRCS
+  list(APPEND Module_SRCS
     vtkXRenderWindowInteractor.cxx
     vtkXOpenGLRenderWindow.cxx
     )
@@ -298,7 +298,7 @@ elseif(WIN32)
   set(vtk_module_vtkRenderWindowInteractor_override "vtkWin32RenderWindowInteractor")
   list(APPEND vtk_module_overrides "vtkRenderWindow")
   set(vtk_module_vtkRenderWindow_override "vtkWin32OpenGLRenderWindow")
-  list(APPEND Kit_SRCS
+  list(APPEND Module_SRCS
     vtkWin32RenderWindowInteractor.cxx
     vtkWin32OpenGLRenderWindow.cxx
     )
@@ -308,7 +308,7 @@ elseif(VTK_USE_COCOA)
   set(vtk_module_vtkRenderWindowInteractor_override "vtkCocoaRenderWindowInteractor")
   list(APPEND vtk_module_overrides "vtkRenderWindow")
   set(vtk_module_vtkRenderWindow_override "vtkCocoaRenderWindow")
-  list(APPEND Kit_SRCS
+  list(APPEND Module_SRCS
     vtkCocoaRenderWindowInteractor.mm
     vtkCocoaRenderWindow.mm
     vtkCocoaGLView.mm
@@ -320,7 +320,7 @@ elseif(VTK_USE_CARBON)
   set(vtk_module_vtkRenderWindowInteractor_override "vtkCarbonRenderWindowInteractor")
   list(APPEND vtk_module_overrides "vtkRenderWindow")
   set(vtk_module_vtkRenderWindow_override "vtkCarbonRenderWindow")
-  list(APPEND Kit_SRCS
+  list(APPEND Module_SRCS
     vtkCarbonRenderWindowInteractor.mm
     vtkCarbonRenderWindow.mm
     )
@@ -329,23 +329,23 @@ endif()
 # Now to see about the GPU info list.
 list(APPEND vtk_module_overrides "vtkGPUInfoList")
 if(VTK_USE_NVCONTROL)
-  list(APPEND Kit_SRCS "vtkXGPUInfoList.cxx")
+  list(APPEND Module_SRCS "vtkXGPUInfoList.cxx")
   set(extra_libs ${NVCtrlLib_LIBRARY})
   include_directories(${NVCtrlLib_INCLUDE_DIR})
   set(vtk_module_vtkGPUInfoList_override "vtkXGPUInfoList")
 elseif(VTK_USE_CORE_GRAPHICS)
-  list(APPEND Kit_SRCS "vtkCoreGraphicsGPUInfoList.cxx")
+  list(APPEND Module_SRCS "vtkCoreGraphicsGPUInfoList.cxx")
   set(extra_libs ${ApplicationServices_LIBRARY} ${IOKit_LIBRARY})
   include_directories(${ApplicationServices_INCLUDE_DIR} ${IOKit_INCLUDE_DIR})
   set(vtk_module_vtkGPUInfoList_override "vtkCoreGraphicsGPUInfoList")
 elseif(VTK_USE_DIRECTX)
-  list(APPEND Kit_SRCS "vtkDirectXGPUInfoList.cxx")
+  list(APPEND Module_SRCS "vtkDirectXGPUInfoList.cxx")
   set(extra_libs ${DirectX_LIBRARY} wbemuuid)
   include_directories(${DirectX_INCLUDE_DIR})
   set(vtk_module_vtkGPUInfoList_override "vtkDirectXGPUInfoList")
 else()
   # Shouldn't this just be the base class, and the others override if needed?
-  list(APPEND Kit_SRCS "vtkDummyGPUInfoList.cxx")
+  list(APPEND Module_SRCS "vtkDummyGPUInfoList.cxx")
   set(vtk_module_vtkGPUInfoList_override "vtkDummyGPUInfoList")
 endif()
 
@@ -381,7 +381,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/vtkRenderingOpenGLConfigure.h.in
 # Set up some of the module specific preprocessor definitions.
 set(${vtk-module}_EXPORT_CODE "#include \"vtkRenderingOpenGLConfigure.h\"")
 
-vtk_module_library(vtkRenderingOpenGL ${Kit_SRCS})
+vtk_module_library(vtkRenderingOpenGL ${Module_SRCS})
 target_link_libraries(vtkRenderingOpenGL ${OPENGL_LIBRARIES} ${extra_libs})
 if(VTK_USE_X)
   target_link_libraries(vtkRenderingOpenGL ${X11_LIBRARIES} ${X11_Xt_LIB})

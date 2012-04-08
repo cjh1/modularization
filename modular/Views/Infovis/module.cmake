@@ -3,7 +3,6 @@ vtk_module(vtkViewsInfovis
     vtkViewsCore
     vtkRenderingLabel
     vtkInfovisLayout
-    vtkInfovisCore
     vtkInteractionStyle
     vtkFiltersModeling
     vtkFiltersImaging

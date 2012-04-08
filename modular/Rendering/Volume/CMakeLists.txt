@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkDirectionEncoder.cxx
   vtkEncodedGradientEstimator.cxx
   vtkEncodedGradientShader.cxx
@@ -129,8 +129,8 @@ foreach(file ${shader_files})
     COMMAND vtkEncodeString
     ARGS ${res} ${src} ${file_we} --build-header VTKRENDERINGVOLUME_EXPORT vtkRenderingVolumeModule.h
     )
-  list(APPEND Kit_SRCS ${res})
+  list(APPEND Module_SRCS ${res})
   set_source_files_properties(${file_we} WRAP_EXCLUDE)
 endforeach()
 
-vtk_module_library(vtkRenderingVolume ${Kit_SRCS})
+vtk_module_library(vtkRenderingVolume ${Module_SRCS})

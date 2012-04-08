@@ -1,7 +1,7 @@
 find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
-SET(Kit_SRCS
+SET(Module_SRCS
   vtkApplyColors.cxx
   vtkApplyIcons.cxx
   vtkGraphLayoutView.cxx
@@ -26,4 +26,4 @@ SET(Kit_SRCS
   vtkViewUpdater.cxx
   )
 
-vtk_module_library(vtkViewsInfovis ${Kit_SRCS})
+vtk_module_library(vtkViewsInfovis ${Module_SRCS})

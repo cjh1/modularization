@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkCommunicator.cxx
   vtkDummyCommunicator.cxx
   vtkDummyController.cxx
@@ -24,8 +24,7 @@ add_custom_command(
     vtkSocketCommunicatorHash vtkSocketCommunicatorHash.h
   )
 
-set(Kit_SRCS
-  ${Kit_SRCS}
+list(APPEND Module_SRCS
   ${VTK_BINARY_DIR}/Parallel/Core/vtkSocketCommunicatorHash.h
   )
 
@@ -36,11 +35,10 @@ set_source_files_properties(
   )
 
 set_source_files_properties(
-  vtkMultiProcessStream
   vtkCommunicator
   vtkMultiProcessController
   vtkProcess
   ABSTRACT
   )
 
-vtk_module_library(vtkParallelCore ${Kit_SRCS})
+vtk_module_library(vtkParallelCore ${Module_SRCS})

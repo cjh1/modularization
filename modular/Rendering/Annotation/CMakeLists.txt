@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkAnnotatedCubeActor.cxx
   vtkArcPlotter.cxx
   vtkAxesActor.cxx
@@ -19,4 +19,5 @@ set(Kit_SRCS
   vtkSpiderPlotActor.cxx
   vtkXYPlotActor.cxx
   )
-vtk_module_library(vtkRenderingAnnotation ${Kit_SRCS})
+
+vtk_module_library(vtkRenderingAnnotation ${Module_SRCS})

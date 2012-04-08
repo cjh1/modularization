@@ -1,5 +1,4 @@
-
-SET(Kit_SRCS
+set(Module_SRCS
   vtkConvertSelectionDomain.cxx
   vtkDataRepresentation.cxx
   vtkEmptyRepresentation.cxx
@@ -8,4 +7,4 @@ SET(Kit_SRCS
   vtkViewTheme.cxx
   )
 
-vtk_module_library(vtkViewsCore ${Kit_SRCS})
+vtk_module_library(vtkViewsCore ${Module_SRCS})

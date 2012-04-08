@@ -5,13 +5,6 @@ vtk_module(vtkRenderingOpenGL
   IMPLEMENTS
     vtkRenderingCore
   DEPENDS
-    vtkCommonCore
-    vtkCommonDataModel
-    vtkCommonMath
-    vtkCommonTransforms
-    vtkCommonSystem
-    vtkFiltersCore
-    vtkIOXML
     # These are likely to be removed soon - split Rendering/OpenGL further.
     vtkRenderingFreeType # For vtkTextMapper
     vtkIOImage # For vtkImageExport

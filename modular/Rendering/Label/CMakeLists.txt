@@ -1,4 +1,4 @@
-set(Kit_SRCS
+set(Module_SRCS
   vtkLabeledDataMapper.cxx
   vtkLabeledTreeMapDataMapper.cxx
   vtkLabelHierarchyAlgorithm.cxx
@@ -21,4 +21,4 @@ set_source_files_properties(
   )
 
 include_directories(${VTK_SOURCE_DIR}/Utilities) # octree
-vtk_module_library(vtkRenderingLabel ${Kit_SRCS})
+vtk_module_library(vtkRenderingLabel ${Module_SRCS})

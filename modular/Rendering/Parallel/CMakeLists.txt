@@ -1,7 +1,7 @@
-find_package(MPI)
+find_package(MPI REQUIRED)
 include_directories(${MPI_INCLUDE_PATH})
 
-set(Kit_SRCS
+set(Module_SRCS
   vtkClientServerCompositePass.cxx
   vtkClientServerSynchronizedRenderers.cxx
   vtkCompositedSynchronizedRenderers.cxx
@@ -23,4 +23,4 @@ set_source_files_properties(
   ABSTRACT
   )
 
-vtk_module_library(vtkRenderingParallel ${Kit_SRCS})
+vtk_module_library(vtkRenderingParallel ${Module_SRCS})
