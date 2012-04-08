@@ -234,7 +234,7 @@ set(VTK_MODULES_DIR \"${VTK_MODULES_DIR}\")")
 set(VTK_CONFIG_CMAKE_DIR "${VTK_SOURCE_DIR}/CMake")
 set(VTK_CONFIG_TARGETS_CONDITION " AND NOT VTK_BINARY_DIR")
 set(VTK_CONFIG_TARGETS_FILE "${VTK_BINARY_DIR}/VTKTargets.cmake")
-set(VTK_CONFIG_MODULE_API_FILE "${VTK_SOURCE_DIR}/CMake/VTKModuleAPI.cmake")
+set(VTK_CONFIG_MODULE_API_FILE "${VTK_SOURCE_DIR}/CMake/vtkModuleAPI.cmake")
 configure_file(CMake/VTKConfig.cmake.in VTKConfig.cmake @ONLY)
 
 # Generate VTKConfig.cmake for the install tree.
@@ -253,14 +253,14 @@ set(VTK_MODULES_DIR \"\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}/Modules\
 set(VTK_CONFIG_CMAKE_DIR "\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}")
 set(VTK_CONFIG_TARGETS_CONDITION "")
 set(VTK_CONFIG_TARGETS_FILE "\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}/VTKTargets.cmake")
-set(VTK_CONFIG_MODULE_API_FILE "\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}/VTKModuleAPI.cmake")
+set(VTK_CONFIG_MODULE_API_FILE "\${VTK_INSTALL_PREFIX}/${VTK_INSTALL_PACKAGE_DIR}/vtkModuleAPI.cmake")
 configure_file(CMake/VTKConfig.cmake.in CMakeFiles/VTKConfig.cmake @ONLY)
 
 configure_file(CMake/VTKConfigVersion.cmake.in VTKConfigVersion.cmake @ONLY)
 
 install(FILES ${VTK_BINARY_DIR}/CMakeFiles/VTKConfig.cmake
               ${VTK_BINARY_DIR}/VTKConfigVersion.cmake
-              CMake/VTKModuleAPI.cmake
+              CMake/vtkModuleAPI.cmake
               CMake/UseVTK.cmake
   DESTINATION ${VTK_INSTALL_PACKAGE_DIR})
 get_property(VTK_TARGETS GLOBAL PROPERTY VTK_TARGETS)

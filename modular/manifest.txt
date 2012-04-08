@@ -2725,10 +2725,10 @@ Wrapping/Java/vtk/test/Regression.java:
 
 [CMake]
 
-modular/CMake/VTKModuleAPI.cmake:
-modular/CMake/VTKModuleInfo.cmake.in:
-modular/CMake/VTKModuleMacros.cmake:
-modular/CMake/VTKModuleTop.cmake:
+modular/CMake/vtkModuleAPI.cmake:
+modular/CMake/vtkModuleInfo.cmake.in:
+modular/CMake/vtkModuleMacros.cmake:
+modular/CMake/vtkModuleTop.cmake:
 modular/CMake/vtkGroups.cmake:
 modular/CMake/vtkThirdParty.cmake:
 modular/CMake/UseVTK.cmake:
@@ -2775,10 +2775,10 @@ CMake/FindPQXX.cmake:
 CMake/FindPythonLibs.cmake:
 CMake/FindR.cmake:
 CMake/FindTCL.cmake:
-CMake/KitCommonBlock.cmake:
-CMake/KitCommonJavaWrapBlock.cmake:
-CMake/KitCommonPythonWrapBlock.cmake:
-CMake/KitCommonTclWrapBlock.cmake:
+CMake/KitCommonBlock.cmake:<ignore>
+CMake/KitCommonJavaWrapBlock.cmake:<ignore>
+CMake/KitCommonPythonWrapBlock.cmake:<ignore>
+CMake/KitCommonTclWrapBlock.cmake:<ignore>
 CMake/OptionODBC.cmake:
 CMake/pre-commit:
 CMake/SharedLibraryPathInfo.cxx:

@@ -6,7 +6,7 @@ set(VTK_CMAKE_DIR "${VTK_SOURCE_DIR}/CMake")
 set(CMAKE_MODULE_PATH ${VTK_CMAKE_DIR} ${CMAKE_MODULE_PATH})
 SET(VTK_ENCODESTRING_EXE vtkEncodeString)
 
-include(VTKModuleMacros)
+include(vtkModuleMacros)
 
 # Set a default build type if none was specified
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -381,7 +381,7 @@ endif()
 
 #----------------------------------------------------------------------
 # Load the module DAG.
-include(VTKModuleTop)
+include(vtkModuleTop)
 
 # The wrapping must come after all other modules are processed.
 if(VTK_WRAP_PYTHON OR VTK_WRAP_TCL OR VTK_WRAP_JAVA)

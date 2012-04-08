@@ -2,7 +2,7 @@ get_filename_component(_VTKModuleMacros_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 
 set(_VTKModuleMacros_DEFAULT_LABEL "VTKModular")
 
-include(${_VTKModuleMacros_DIR}/VTKModuleAPI.cmake)
+include(${_VTKModuleMacros_DIR}/vtkModuleAPI.cmake)
 include(GenerateExportHeader)
 include(vtkWrapping)
 
@@ -140,10 +140,10 @@ macro(vtk_module_impl)
   set(vtk-module-LIBRARY_DIRS "${${vtk-module}_SYSTEM_LIBRARY_DIRS}")
   set(vtk-module-INCLUDE_DIRS "${vtk-module-INCLUDE_DIRS-build}")
   set(vtk-module-EXPORT_CODE "${vtk-module-EXPORT_CODE-build}")
-  configure_file(${_VTKModuleMacros_DIR}/VTKModuleInfo.cmake.in ${VTK_MODULES_DIR}/${vtk-module}.cmake @ONLY)
+  configure_file(${_VTKModuleMacros_DIR}/vtkModuleInfo.cmake.in ${VTK_MODULES_DIR}/${vtk-module}.cmake @ONLY)
   set(vtk-module-INCLUDE_DIRS "${vtk-module-INCLUDE_DIRS-install}")
   set(vtk-module-EXPORT_CODE "${vtk-module-EXPORT_CODE-install}")
-  configure_file(${_VTKModuleMacros_DIR}/VTKModuleInfo.cmake.in CMakeFiles/${vtk-module}.cmake @ONLY)
+  configure_file(${_VTKModuleMacros_DIR}/vtkModuleInfo.cmake.in CMakeFiles/${vtk-module}.cmake @ONLY)
   install(FILES
     ${${vtk-module}_BINARY_DIR}/CMakeFiles/${vtk-module}.cmake
     DESTINATION ${VTK_INSTALL_PACKAGE_DIR}/Modules
