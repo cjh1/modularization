@@ -5105,23 +5105,23 @@ Graphics/vtkResliceCursorPolyDataAlgorithm.h:
 modular/Interaction/Widgets/Testing/Cxx/CMakeLists.txt:
 
 # Have not been building for over a year - will be removed from VTK. af7d4795 - Jan 2011
-Widgets/Testing/Cxx/TestAxesTransformWidget.cxx:<ignore>
-Widgets/Testing/Cxx/TestCaptionWidget.cxx:<ignore>
-Widgets/Testing/Cxx/vtkImplicitPlaneRepresentationTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkSplineRepresentationTest1.cxx:<ignore>
+Widgets/Testing/Cxx/TestAxesTransformWidget.cxx:
+Widgets/Testing/Cxx/TestCaptionWidget.cxx:
+Widgets/Testing/Cxx/vtkImplicitPlaneRepresentationTest1.cxx:
+Widgets/Testing/Cxx/vtkSplineRepresentationTest1.cxx:
 # This one 671f830 in September 2010.
-Widgets/Testing/Cxx/TestOrientedGlyphContour.cxx:<ignore>
+Widgets/Testing/Cxx/TestOrientedGlyphContour.cxx:
 
 # Tests that are not being built in VTK master. Commit 1f489a8 disabled this in July 2011.
-Widgets/Testing/Cxx/ScaledBoxWidget2.cxx:<ignore>
+Widgets/Testing/Cxx/ScaledBoxWidget2.cxx:
 
 # Commit 14349aa1 Aug 2010 added these disabled with comment about segfaulting.
-Widgets/Testing/Cxx/vtkPointHandleRepresentation2DTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkPointHandleRepresentation3DTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkConstrainedPointHandleRepresentationTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkPolygonalHandleRepresentation3DTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkSphereHandleRepresentationTest1.cxx:<ignore>
-Widgets/Testing/Cxx/vtkOrientedPolygonalHandleRepresentation3DTest1.cxx:<ignore>
+Widgets/Testing/Cxx/vtkPointHandleRepresentation2DTest1.cxx:
+Widgets/Testing/Cxx/vtkPointHandleRepresentation3DTest1.cxx:
+Widgets/Testing/Cxx/vtkConstrainedPointHandleRepresentationTest1.cxx:
+Widgets/Testing/Cxx/vtkPolygonalHandleRepresentation3DTest1.cxx:
+Widgets/Testing/Cxx/vtkSphereHandleRepresentationTest1.cxx:
+Widgets/Testing/Cxx/vtkOrientedPolygonalHandleRepresentation3DTest1.cxx:
 
 # These appear to be building in master.
 Widgets/Testing/Cxx/BoxWidget.cxx:
