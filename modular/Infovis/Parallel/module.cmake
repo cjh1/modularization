@@ -1,6 +1,4 @@
 vtk_module(vtkInfovisParallel
-  GROUPS
-    MPI
   DEPENDS
     vtkInfovisBoost
     vtkInfovisBoostGraphAlgorithms
@@ -8,4 +6,5 @@ vtk_module(vtkInfovisParallel
     vtkParallelMPI
     vtkFiltersParallel
     vtkIOSQL
+  EXCLUDE_FROM_ALL
   )
