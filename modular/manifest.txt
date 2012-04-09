@@ -32,7 +32,6 @@ Rendering/CMakeLists.txt: <ignore>
 VTKCPack.cmake: <ignore>
 Views/CMakeLists.txt: <ignore>
 Widgets/CMakeLists.txt: <ignore>
-vtkBanner.gif: <ignore>
 vtkMacros.cmake: <ignore>
 
 
@@ -118,6 +117,7 @@ Copyright.txt:
 README.html:
 vtkLogo.ico:
 vtkLogo.jpg:
+vtkBanner.gif:
 modular/CTestConfig.cmake:
 UseVTK.cmake.in: <ignore>
 VTKConfig.cmake.in: <ignore>
