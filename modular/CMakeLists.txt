@@ -55,9 +55,9 @@ set(VTK_BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS})
 
 #-----------------------------------------------------------------------------
 # VTK version number.  An even minor number corresponds to releases.
-set(VTK_MAJOR_VERSION 5)
-set(VTK_MINOR_VERSION 11)
-set(VTK_BUILD_VERSION 9)
+set(VTK_MAJOR_VERSION 6)
+set(VTK_MINOR_VERSION 0)
+set(VTK_BUILD_VERSION 0)
 set(VTK_VERSION
     "${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}.${VTK_BUILD_VERSION}")
 
